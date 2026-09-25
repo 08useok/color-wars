@@ -692,6 +692,10 @@ const NEW_PROFILE_CALIB={
 };
 function profileMarkup(type,evolved){
  const idx=NEW_PROFILE_ORDER.indexOf(type);
+ const evoArt=NEW_ATLASES[type]?.evolved;
+ if(idx>=0&&evolved&&evoArt?.walk){// 2진: crop the idle walk pose out of the 2진 body sheet instead of the shared portrait sheet
+  const [x,y,w,h]=evoArt.walk[0],k=+(112/Math.max(w,h)).toFixed(4);
+  return `<div class="generated-profile" role="img" aria-label="${UNIT_NAMES[type]} 2진 프로필" style="position:relative;overflow:hidden"><span style="position:absolute;left:${((126-w*k)/2).toFixed(1)}px;top:${((126-h*k)/2).toFixed(1)}px;width:${w}px;height:${h}px;background:url(${evoArt.sheet}) -${x}px -${y}px no-repeat;transform:scale(${k});transform-origin:0 0"></span></div>`}
  if(idx>=0){const c=NEW_PROFILE_CALIB[type];return `<div class="generated-profile" role="img" aria-label="${UNIT_NAMES[type]}${evolved?' 2진':''} 프로필" style="background-image:url(${NEW_PROFILE_SHEET});background-size:${c.size}px ${c.size}px;background-position:${c.x}px ${c.y}px"></div>`}
  const c=PROFILE_CALIB[type][evolved?'evolved':'base'];return `<div class="generated-profile" role="img" aria-label="${UNIT_NAMES[type]}${evolved?' 2진':''} 프로필" style="background-image:url(${PROFILE_SHEET});background-size:${c.size}px ${c.size}px;background-position:${c.x}px ${c.y}px"></div>`}
 const LV_EVOLVE=10,LV_MAX=20,HP_CURVE=.6,HP_LV10_MULT=1.8*2/1.15;// HP: Lv.11~20 front-loaded; Lv.10 is a jump so the 2진 (+15% HP) has 2x the Lv.9 HP
