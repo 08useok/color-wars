@@ -191,3 +191,4 @@ body { overflow:auto; }
 .special-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}.special-grid .stage-card small{display:block;color:#ffdc71}@media(max-width:700px){.special-grid{grid-template-columns:repeat(2,1fr)}}
 /* Large-enemy size boost (ENEMY_SIZE in game.js); the HP bar and freeze badge keep their normal size. */
 .unit{scale:var(--enemy-size,1)}.unit .bar,.unit .freeze-badge{scale:calc(1 / var(--enemy-size,1))}
+.unit.evolved .bar{top:-56px}/* legacy stick-man 2진 (~88px tall); new 2진 bodies set their own top inline */
