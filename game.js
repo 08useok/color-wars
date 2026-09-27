@@ -141,10 +141,13 @@ function greenUnlocked(){return cleared.some(i=>i>=6)}
 function cooldownKey(type){return type==='red'?'spawnCd':type+'Cd'}
 function unitCooldown(type){return game[cooldownKey(type)]||0}
 function reset(){syncBasePositions();last=0;game={money:0,level:0,units:[],defeated:[],spawnCd:0,orangeCd:0,yellowCd:0,greenCd:0,cyanCd:0,blueCd:0,purpleCd:0,pinkCd:0,boomerangs:[],projectiles:[],effects:[],running:false,ended:false,tutorial:0,paused:false,elapsed:0,speedMultiplier:1,speedUnlocked:false};game.spawnRules=(STAGE_SPAWNS[selectedStage]||[]).map(r=>({...r,triggered:false,clock:0,spawned:0}));data.bases.ally.hp=data.bases.ally.max=baseHpFor();data.bases.enemy.hp=data.bases.enemy.max=STAGES[selectedStage].hp;game.tutorial=selectedStage===0?0:6;$('#field').style.background=`linear-gradient(${STAGES[selectedStage].sky} 0 32%,${STAGES[selectedStage].land} 32% 100%)`;$('#field').setAttribute('aria-label',STAGES[selectedStage].name+' 전장');$('#stageMenu').classList.add('hidden');unitsEl.innerHTML='';$('#result').classList.add('hidden');tutorial();render()}
+const ALLY_DEPLOY_LIMIT=50;// Battle Cats' default Cat Deploy Limit (special restriction stages there lower or raise it); caps how many allies can be on the field at once so cheap units can't stack infinitely.
+function allyDeployCount(){return game.units.filter(u=>u.ally&&u.hp>0).length}
+function allyDeployFull(){return allyDeployCount()>=ALLY_DEPLOY_LIMIT}
 function addUnit(type,boss=false){
  if(game.ended)return;
  const d=data.units[type],ally=ALLIES.includes(type);
- if(ally&&(!(game.running||(type==='red'&&game.tutorial===2))||game.paused||unitCooldown(type)>0||game.money<unitCost(type)||!allyUnlocked(type)))return;
+ if(ally&&(!(game.running||(type==='red'&&game.tutorial===2))||game.paused||unitCooldown(type)>0||game.money<unitCost(type)||!allyUnlocked(type)||allyDeployFull()))return;
  const stats=unitStats(type);const u={type,ally,boss,stats,hp:stats.hp,max:stats.hp,x:ally?data.bases.ally.x:data.bases.enemy.x,emerging:true,atkCd:0,kb:0,animTime:0,attackTime:0,hurtTime:0,kbTime:0,flashTime:0};
  game.units.push(u);drawUnit(u);u.el.style.left=`calc(${u.x}% - 21px)`;
  if(ally){game.money-=unitCost(type);game[cooldownKey(type)]=stats.cooldown;if(game.tutorial===2){game.tutorial=3;tutorial()}}render();
@@ -242,8 +245,8 @@ function updateBoomerangs(dt){
  }
 }
 function renderGreenButton(){
- const b=$('#greenBtn'),d=data.units.green;b.disabled=!greenUnlocked()||!game.running||game.paused||game.ended||game.money<unitCost("green")||game.greenCd>0;
- b.querySelector('small').textContent=greenUnlocked()?'175원':'일본 클리어 시 해금';b.querySelector('em').style.display=game.greenCd?'block':'none';b.querySelector('em').style.transform=`scaleY(${game.greenCd/unitStats('green').cooldown})`;
+ const b=$('#greenBtn'),d=data.units.green;b.disabled=!greenUnlocked()||!game.running||game.paused||game.ended||game.money<unitCost("green")||game.greenCd>0||allyDeployFull();
+ b.querySelector('small').textContent=!greenUnlocked()?'일본 클리어 시 해금':allyDeployFull()?'출격 인원 가득참':'175원';b.querySelector('em').style.display=game.greenCd?'block':'none';b.querySelector('em').style.transform=`scaleY(${game.greenCd/unitStats('green').cooldown})`;
  b.title='체력 280 · 편도당 공격력 65 · 공격 주기 2.8초 · 재출격 7초';
 }
 function launchJuice(u,t){
@@ -327,18 +330,18 @@ game.spawnCd=Math.max(0,game.spawnCd-dt);game.orangeCd=Math.max(0,game.orangeCd-
  }
  render()
 }
-function render(){renderDeckButtons();renderSpeedButton();renderNewButtons();renderGreenButton();renderOrangeButton();renderYellowButton();renderUnitLevels();$('#battleNotice').classList.toggle('hidden',!(game.noticeTime>0));$('#pauseBtn').disabled=!game.running||game.ended;$('#pauseBtn').textContent=game.paused?'계속하기':'일시정지';$('#pauseNotice').classList.toggle('hidden',!game.paused);$('#timer').textContent=`${STAGES[selectedStage].name}${chapterOf(selectedStage)===2?' (2장)':''} · ${Math.floor(game.elapsed)}초`;let l=data.income[game.level];$('#money').textContent=`${Math.floor(game.money)} / ${walletMax()}원`;$('#enemyHp').textContent=data.bases.enemy.hp;$('#allyHp').textContent=data.bases.ally.hp;for(let [name,b] of Object.entries(data.bases))$(`#${name}Base span`).style.width=(b.hp/b.max*100)+'%';let sb=$('#spawnBtn'),ib=$('#incomeBtn'),canSpawn=!game.ended&&!game.paused&&(game.running||game.tutorial===2),canUpgrade=!game.ended&&!game.paused&&(game.running||game.tutorial===4);sb.disabled=game.money<unitCost('red')||game.spawnCd>0||!canSpawn;sb.querySelector('small').textContent=unitCost('red')+'원';sb.querySelector('em').style.display=game.spawnCd?'block':'none';sb.querySelector('em').style.transform=`scaleY(${game.spawnCd/unitStats('red').cooldown})`;ib.disabled=!canUpgrade||game.level===5||game.money<(l.cost||0);ib.innerHTML=game.level===5?'수입 Lv.MAX':`수입 업그레이드<br><small>${l.cost}원</small>`}
+function render(){renderDeckButtons();renderSpeedButton();renderNewButtons();renderGreenButton();renderOrangeButton();renderYellowButton();renderUnitLevels();$('#battleNotice').classList.toggle('hidden',!(game.noticeTime>0));$('#pauseBtn').disabled=!game.running||game.ended;$('#pauseBtn').textContent=game.paused?'계속하기':'일시정지';$('#pauseNotice').classList.toggle('hidden',!game.paused);$('#timer').textContent=`${STAGES[selectedStage].name}${chapterOf(selectedStage)===2?' (2장)':''} · ${Math.floor(game.elapsed)}초`;let l=data.income[game.level];$('#money').textContent=`${Math.floor(game.money)} / ${walletMax()}원`;$('#enemyHp').textContent=data.bases.enemy.hp;$('#allyHp').textContent=data.bases.ally.hp;for(let [name,b] of Object.entries(data.bases))$(`#${name}Base span`).style.width=(b.hp/b.max*100)+'%';let sb=$('#spawnBtn'),ib=$('#incomeBtn'),canSpawn=!game.ended&&!game.paused&&(game.running||game.tutorial===2),canUpgrade=!game.ended&&!game.paused&&(game.running||game.tutorial===4);sb.disabled=game.money<unitCost('red')||game.spawnCd>0||!canSpawn||allyDeployFull();sb.querySelector('small').textContent=allyDeployFull()?'출격 인원 가득참':unitCost('red')+'원';sb.querySelector('em').style.display=game.spawnCd?'block':'none';sb.querySelector('em').style.transform=`scaleY(${game.spawnCd/unitStats('red').cooldown})`;ib.disabled=!canUpgrade||game.level===5||game.money<(l.cost||0);ib.innerHTML=game.level===5?'수입 Lv.MAX':`수입 업그레이드<br><small>${l.cost}원</small>`}
 function renderOrangeButton(){
  const button=$('#orangeBtn'),d=data.units.orange,unlocked=orangeUnlocked();
- button.disabled=!unlocked||!game.running||game.paused||game.ended||game.money<unitCost("orange")||game.orangeCd>0;
- button.querySelector('small').textContent=unlocked?`${unitCost("orange")}원`:'중국 클리어 시 해금';
+ button.disabled=!unlocked||!game.running||game.paused||game.ended||game.money<unitCost("orange")||game.orangeCd>0||allyDeployFull();
+ button.querySelector('small').textContent=!unlocked?'중국 클리어 시 해금':allyDeployFull()?'출격 인원 가득참':`${unitCost("orange")}원`;
  button.querySelector('em').style.display=game.orangeCd>0?'block':'none';button.querySelector('em').style.transform=`scaleY(${game.orangeCd/unitStats('orange').cooldown})`;
  button.title='체력 220 · 공격력 100 · 공격 주기 2.4초 · 재출격 6.5초';
 }
 function renderYellowButton(){
  const button=$('#yellowBtn'),d=data.units.yellow;
- button.disabled=!yellowUnlocked()||!game.running||game.paused||game.ended||game.money<unitCost("yellow")||game.yellowCd>0;
- button.querySelector('small').textContent=yellowUnlocked()?`${unitCost("yellow")}원`:'필리핀 클리어 시 해금';
+ button.disabled=!yellowUnlocked()||!game.running||game.paused||game.ended||game.money<unitCost("yellow")||game.yellowCd>0||allyDeployFull();
+ button.querySelector('small').textContent=!yellowUnlocked()?'필리핀 클리어 시 해금':allyDeployFull()?'출격 인원 가득참':`${unitCost("yellow")}원`;
  button.querySelector('em').style.display=game.yellowCd>0?'block':'none';button.querySelector('em').style.transform=`scaleY(${game.yellowCd/unitStats('yellow').cooldown})`;
  button.title='체력 900 · 공격력 45 · 공격 주기 1.8초 · 재출격 5초';
 }
@@ -523,13 +526,13 @@ function updateStageSpawns(dt){
 }
 function renderNewButtons(){for(const type of GENERIC_CD_TYPES){
  const b=$('#'+type+'Btn'),d=data.units[type],unlocked=allyUnlocked(type),cd=unitCooldown(type);
- b.disabled=!unlocked||!game.running||game.paused||game.ended||game.money<unitCost(type)||cd>0;
- b.querySelector('small').textContent=unlocked?`${unitCost(type)}원`:STAGES[UNLOCK_AT[type]].name+(STAGES[UNLOCK_AT[type]].chapter===2?' 2장':'')+' 클리어 시 해금';
+ b.disabled=!unlocked||!game.running||game.paused||game.ended||game.money<unitCost(type)||cd>0||allyDeployFull();
+ b.querySelector('small').textContent=!unlocked?STAGES[UNLOCK_AT[type]].name+(STAGES[UNLOCK_AT[type]].chapter===2?' 2장':'')+' 클리어 시 해금':allyDeployFull()?'출격 인원 가득참':`${unitCost(type)}원`;
  b.querySelector('em').style.display=cd?'block':'none';b.querySelector('em').style.transform=`scaleY(${cd/unitStats(type).cooldown})`;
 }}
 
 const NEW_ATLASES={
-rhino:{scale:.55,left:-27,walk:[[3,1,106,81,0],[111,2,108,80,2],[225,4,104,78,-1],[331,1,106,78,0],[2,88,107,77,2],[111,84,108,81,2],[224,85,105,80,0],[331,81,106,78,1]],attack:[[1,170,108,78,4,0,-10],[113,171,106,77,6,0,-24],[223,167,106,86,-16],[1,170,108,78,-4]],hurt:[[2,88,107,77,2]]},
+rhino:{scale:.55,left:-27,walk:[[3,1,106,81,0],[111,2,108,80,2],[225,4,104,78,-1],[2,88,107,77,2],[111,84,108,81,2],[224,85,105,80,0],[1,170,108,78,0],[113,171,106,77,1],[223,167,106,81,0]],attack:[[2,88,107,75,8,0,-8],[2,88,107,75,12,0,-14],[331,81,106,78,-10],[331,1,106,78,-18],[331,81,106,78,-8]],hurt:[[2,88,107,77,2]]},
 face:{scale:.62,left:-25,lift:34,walk:[[1,1,118,127,0,0]],attack:[[121,1,121,138,2,-11],[244,1,125,157,2,-28],[371,1,126,163,3,-34]],hurt:[[1,134,155,121,9,5]]},
 rabbit:{scale:.72,left:-10,walk:[[6,11,56,76,0],[79,26,56,61,-1],[153,28,55,59,-1],[220,5,61,82,2],[293,1,71,71,14],[375,10,60,77,7]],attack:[[1,107,79,64,20],[105,89,74,71,18],[235,96,52,58,-6],[325,102,90,66,33]],hurt:[[13,188,90,56,6]]},
 squirrel:{scale:.68,left:-12,walk:[[20,51,54,41,0],[99,52,59,40,3],[177,49,68,43,15],[259,46,75,46,13],[345,45,72,47,16]],attack:[[5,102,69,83,13],[90,98,70,87,15],[181,94,76,91,18],[269,123,70,62,12]],hurt:[[357,145,59,44,4]]},
@@ -582,7 +585,7 @@ function animateAtlas(u){
   // Play all seven attack drawings across the complete animation. Damage still lands at windup.
   const elapsed=Math.max(0,duration-u.attackTime);
   index=Math.min(frames.length-1,Math.floor(elapsed/duration*frames.length));
- }else if(visualState==='attack'&&data.units[u.type].windup){const elapsed=duration-u.attackTime,windup=data.units[u.type].windup,strike={gory:2,baa:2,seal:4,croco:3,rabbit:3,squirrel:2,mooth:3}[u.type];if(strike!==undefined)index=elapsed<windup?Math.min(strike-1,Math.floor(elapsed/windup*strike)):Math.min(frames.length-1,strike+Math.floor((elapsed-windup)/Math.max(.01,duration-windup)*(frames.length-strike)));}
+ }else if(visualState==='attack'&&data.units[u.type].windup){const elapsed=duration-u.attackTime,windup=data.units[u.type].windup,strike={gory:2,baa:2,seal:4,croco:3,rabbit:3,squirrel:2,mooth:3,rhino:2}[u.type];if(strike!==undefined)index=elapsed<windup?Math.min(strike-1,Math.floor(elapsed/windup*strike)):Math.min(frames.length-1,strike+Math.floor((elapsed-windup)/Math.max(.01,duration-windup)*(frames.length-strike)));}
  if(visualState==='attack'&&data.units[u.type].hits){const elapsed=duration-u.attackTime;index=Math.min(frames.length-1,Math.max(0,data.units[u.type].hits.filter(h=>h.at<=elapsed).length-1))}
  if(state==='hurt'&&u.type==='gory')index=0;
  // Optional 5th value: how far (sheet px) the body sits right of the crop's left edge
@@ -596,7 +599,7 @@ function animateAtlas(u){
  sprite.style.bottom=(((atlas.lift??baseAtlas.lift??0)+oy)*scale)+'px';
  // flip: the sheet faces right while allies march left; mirror inside the same box.
  // Optional 7th value: rotation (deg) about the rear-bottom pivot, e.g. the rhino rears its
- // head up before slamming down (the sheet's own rearing drawings are cropped through the face).
+ // head up before dropping it into a horn thrust (the sheet's own rearing drawings are cropped through the face).
  sprite.style.transform=atlas.flip?`translateX(${w*scale}px) scale(${-scale},${scale})`:`scale(${scale})`+(rot?` rotate(${rot}deg)`:'');sprite.style.transformOrigin='left bottom';
  sprite.style.filter=state==='hurt'&&!atlas.hurt?'brightness(1.8)':'none';
  u.el.dataset.animation=state;
