@@ -405,24 +405,32 @@ function leanRig(u,pieces,pivotX,scale){
 // bear_sheet.png is the same kind of rig: a legless torso (its belly is cut flat at y=110)
 // plus separate 4-frame leg pieces whose 40px-wide top fits that gap exactly. The attack
 // poses are full-body drawings: [x,y,w,h,ox], ox re-anchoring the body onto the walk spot.
+// The hitback pose is one drawing split across two sheet rows (the right column was too
+// narrow): its left half sits at (442,131) and continues at (452,0) — column 509 of the lower
+// strip equals column 451 of the upper one. Draw both halves side by side, head over the
+// walking head (axis 85.3 in the joined drawing vs 41.5 in the walk torso).
+const BEAR_HIT=[[442,131,69,125,0,4],[452,0,60,129,68,0]],BEAR_HIT_AXIS=85.3,BEAR_WALK_AXIS=41.5;
 const BEAR_TORSO={x:1,y:1,w:88,h:129},BEAR_LEGS=[[105,3],[195,2],[285,1],[375,2]],BEAR_ATTACK=[[91,56,91,199,6],[184,60,100,195,17],[294,74,146,181,42]];
 function animateBear(u){
  const scale=.58,left=-22,d=data.units.bear;
  const body=u.el.querySelector('.dog-sprite'),legs=u.el.querySelector('.dog-sprite-legs');
  const state=u.hurtTime>0?'hurt':u.attackTime>0?'attack':'walk';
  body.style.transform=legs.style.transform=`scale(${scale})`;body.style.transformOrigin=legs.style.transformOrigin='left bottom';
- if(state==='attack'){
+ if(state==='hurt'){
+  const hx=left+(BEAR_WALK_AXIS-BEAR_HIT_AXIS)*scale;
+  [body,legs].forEach((el,i)=>{const [x,y,w,h,cx,b]=BEAR_HIT[i];el.style.display='block';el.style.width=w+'px';el.style.height=h+'px';el.style.left=(hx+cx*scale)+'px';el.style.bottom=(b*scale)+'px';el.style.backgroundPosition=`-${x}px -${y}px`;el.style.filter='none'});
+ }else if(state==='attack'){
   const elapsed=d.attackDuration-u.attackTime,[x,y,w,h,ox]=BEAR_ATTACK[elapsed<d.windup?(elapsed<d.windup/2?0:1):2];
   legs.style.display='none';
   body.style.width=w+'px';body.style.height=h+'px';body.style.left=(left-ox*scale)+'px';body.style.bottom='0px';
   body.style.backgroundPosition=`-${x}px -${y}px`;body.style.filter='none';
  }else{
-  const [lx,ly]=BEAR_LEGS[state==='walk'?Math.floor(u.animTime/.16)%4:0],lh=39-ly;
+  const [lx,ly]=BEAR_LEGS[Math.floor(u.animTime/.16)%4],lh=39-ly;
   legs.style.display='block';legs.style.width='62px';legs.style.height=lh+'px';
   legs.style.left=(left+15*scale)+'px';legs.style.bottom='0px';legs.style.backgroundPosition=`-${lx}px -${ly}px`;
   body.style.width=BEAR_TORSO.w+'px';body.style.height=BEAR_TORSO.h+'px';body.style.left=left+'px';
   body.style.bottom=((lh-20)*scale)+'px';body.style.backgroundPosition=`-${BEAR_TORSO.x}px -${BEAR_TORSO.y}px`;
-  body.style.filter=legs.style.filter=u.hurtTime>0?'brightness(1.8)':'none';
+  body.style.filter=legs.style.filter='none';
  }
  leanRig(u,[legs,body],left+45*scale,scale);
  u.el.dataset.animation=state;
