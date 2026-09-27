@@ -387,6 +387,18 @@ function animateSnache(u){
  u.el.dataset.animation=u.hurtTime>0?'hurt':attacking?'attack':'walk';
 }
 
+// Multi-piece rigs (bear, leboin) must lean as one body during a hitback: rotating each
+// piece about its own corner (the generic .knocked-back rule) pulls torso and legs apart.
+// Rotate every piece about one shared ground pivot instead, easing back upright.
+function leanRig(u,pieces,pivotX,scale){
+ const p=u.kbTime>0?1-u.kbTime/HITBACK_DURATION:1,deg=-14*Math.sin(Math.PI*p);
+ for(const el of pieces){
+  const base=`scale(${scale})`;
+  if(!deg||el.style.display==='none'){el.style.transform=base;continue}
+  const dx=pivotX-parseFloat(el.style.left),dy=parseFloat(el.style.bottom)||0;
+  el.style.transform=`translate(${dx}px,${dy}px) rotate(${deg}deg) translate(${-dx}px,${-dy}px) ${base}`;
+ }
+}
 // bear_sheet.png is the same kind of rig: a legless torso (its belly is cut flat at y=110)
 // plus separate 4-frame leg pieces whose 40px-wide top fits that gap exactly. The attack
 // poses are full-body drawings: [x,y,w,h,ox], ox re-anchoring the body onto the walk spot.
@@ -409,6 +421,7 @@ function animateBear(u){
   body.style.bottom=((lh-20)*scale)+'px';body.style.backgroundPosition=`-${BEAR_TORSO.x}px -${BEAR_TORSO.y}px`;
   body.style.filter=legs.style.filter=u.hurtTime>0?'brightness(1.8)':'none';
  }
+ leanRig(u,[legs,body],left+45*scale,scale);
  u.el.dataset.animation=state;
 }
 // leboin_dog-sprite.png is a three-piece rig: a body block (with a tail and stubby legs),
@@ -437,6 +450,7 @@ function animateLeboin(u){
  place(head,h[0],h[1],h[2],h[3],h[4],h[5]);
  body.style.zIndex=1;legs.style.zIndex=1;head.style.zIndex=2;
  head.style.filter=body.style.filter=legs.style.filter=u.hurtTime>0?'brightness(1.8)':'none';
+ leanRig(u,[body,legs,head],L+60*scale,scale);
  u.el.dataset.animation=state;
 }
 
