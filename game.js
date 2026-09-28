@@ -61,12 +61,33 @@ const TUESDAY_STAGES=[
  {name:'광속 전사 초상급',flag:'⚡',hp:50000,chance:1,count:2,boss:'leboin',desc:'빠옹 · 스피드업 2개 100%'}
 ];
 TUESDAY_STAGES.forEach(t=>STAGES.push({name:t.name,flag:t.flag,hp:t.hp,gap:4,wave:0,sky:'#f6e39a',land:'#c9a24e',desc:t.desc,chapter:3,special:{chance:t.chance,count:t.count},maxEnemies:10}));
+// Legend Story subchapter 1 "전설의 시작": opens after the chapter-1 Moon. Each stage is replayed
+// at crown ★1~★4 (enemy stats and enemy-base HP x1/1.5/2/3); clearing all 8 at ★n opens ★n+1.
+const LEGEND_STAGES=[
+ {name:'전설의 초원',flag:'🌾',hp:20000,sky:'#9fd8f0',land:'#8ec85a',desc:'신규 적 다크 멍뭉이'},
+ {name:'어둠의 숲',flag:'🌲',hp:25000,sky:'#6f8fa6',land:'#4f7a4a',desc:'다크 멍뭉이 무리와 고릴라저씨'},
+ {name:'유령 골짜기',flag:'👻',hp:25000,sky:'#9aa6c8',land:'#6d7389',desc:'신규 적 엑토 낼름이'},
+ {name:'천사의 계단',flag:'👼',hp:30000,sky:'#f3e6c4',land:'#d8c9a2',desc:'신규 적 가브리엘 · 매우 빠른 돌격'},
+ {name:'붉은 협곡',flag:'🏜️',hp:35000,sky:'#f0b58c',land:'#b8683f',desc:'빨간 적 총출동 · 퍼플을 활용하세요'},
+ {name:'폭풍의 해안',flag:'🌊',hp:35000,sky:'#7fb3cf',land:'#c9b98a',desc:'나나나난나방과 신규 적 혼성'},
+ {name:'검은 성채',flag:'🏰',hp:40000,sky:'#4f4a66',land:'#6b6474',desc:'빠옹 · 투뿔소와 다크 멍뭉이 대군'},
+ {name:'전설의 문',flag:'⛩️',hp:60000,sky:'#2b2f52',land:'#7b6f8f',desc:'곰선생과 대갈이군 · 전설의 시작 최종 관문'}
+];
+const LEGEND_START=STAGES.length,LEGEND_CROWN_MULT=[1,1.5,2,3];
+LEGEND_STAGES.forEach((t,k)=>STAGES.push({...t,gap:4,wave:0,chapter:4,legend:{k},maxEnemies:10}));
 let selectedStage=0,cleared=[];
 try{const saved=JSON.parse(localStorage.getItem('red-battle-progress-v1')||'[]');if(Array.isArray(saved))cleared=[...new Set(saved.filter(x=>Number.isInteger(x)&&x>=0&&x<MAIN_STAGE_COUNT))]}catch{}
 function saveProgress(){try{localStorage.setItem('red-battle-progress-v1',JSON.stringify(cleared))}catch{}}
+let legendCrown=1,legendProgress={1:[],2:[],3:[],4:[]};
+try{const saved=JSON.parse(localStorage.getItem('red-battle-legend-v1')||'{}');for(const c of [1,2,3,4])if(Array.isArray(saved[c]))legendProgress[c]=[...new Set(saved[c].filter(k=>Number.isInteger(k)&&k>=0&&k<LEGEND_STAGES.length))]}catch{}
+function saveLegend(){try{localStorage.setItem('red-battle-legend-v1',JSON.stringify(legendProgress))}catch{}}
+function legendOpen(){return cleared.includes(CHAPTER1_LEN-1)}
+function legendCrownUnlocked(c){return c===1||legendProgress[c-1].length===LEGEND_STAGES.length}
+function legendStageUnlocked(k,c=legendCrown){return legendOpen()&&legendCrownUnlocked(c)&&(k===0||legendProgress[c].includes(k-1)||legendProgress[c].includes(k))}
+function stageBaseHp(i){const s=STAGES[i];return s.legend?Math.round(s.hp*LEGEND_CROWN_MULT[legendCrown-1]):s.hp}
 function isUnlocked(i){return i===0||cleared.includes(i-1)||cleared.includes(i)}
 function chapterOf(i){return STAGES[i]?.chapter||1}
-function enemyMagnification(){return chapterOf(selectedStage)===2?1.5:1}
+function enemyMagnification(){const c=chapterOf(selectedStage);return c===2?1.5:c===4?LEGEND_CROWN_MULT[legendCrown-1]:1}
 const RHINO_SHEET='assets/rhino_sheet.png';
 const BEAR_SHEET='assets/bear_sheet.png';
 const FACE_SHEET='assets/face_sheet.png?v=2';
@@ -87,6 +108,10 @@ data.units.pink={hp:520,atk:125,interval:1.9,speed:6,range:23,engageRange:4.5,co
 data.units.rhino={hp:5200,atk:420,interval:2.1,speed:5.5,range:5.2,reward:900,knockbacks:2,attackDuration:.9,windup:.45,area:true};
 data.units.bear={hp:6500,atk:520,interval:2.4,speed:4.5,range:8.5,reward:1050,knockbacks:10,attackDuration:1,windup:.5,area:true};
 data.units.face={trait:"floating",hp:18000,atk:850,interval:3.4,speed:1.8,range:14,reward:2500,knockbacks:3,attackDuration:1.2,windup:.65,area:true};
+// Legend Story enemies, drawn from the variant sheets kept alongside the Doge / Snache art.
+data.units.darkdog={hp:900,atk:90,interval:1.4,speed:6,range:4,reward:150,knockbacks:3};
+data.units.gabriel={hp:600,atk:70,interval:1.2,speed:12,range:4,reward:130,knockbacks:3};
+data.units.ectosnache={hp:1100,atk:150,interval:1.1,speed:8,range:4.5,reward:180,knockbacks:3};
 const CRIMSON_SHEET='assets/unitcrimson_ally-sprite.png';
 const CRIMSON_EVOLVED_SHEET='assets/crimson_evolved.webp';
 const GOLD_SHEET='assets/unitgold_ally-sprite.webp';
@@ -140,7 +165,7 @@ function yellowUnlocked(){return cleared.some(i=>i>=5)}
 function greenUnlocked(){return cleared.some(i=>i>=6)}
 function cooldownKey(type){return type==='red'?'spawnCd':type+'Cd'}
 function unitCooldown(type){return game[cooldownKey(type)]||0}
-function reset(){syncBasePositions();last=0;game={money:0,level:0,units:[],defeated:[],spawnCd:0,orangeCd:0,yellowCd:0,greenCd:0,cyanCd:0,blueCd:0,purpleCd:0,pinkCd:0,boomerangs:[],projectiles:[],effects:[],running:false,ended:false,tutorial:0,paused:false,elapsed:0,speedMultiplier:1,speedUnlocked:false};game.spawnRules=(STAGE_SPAWNS[selectedStage]||[]).map(r=>({...r,triggered:false,clock:0,spawned:0}));data.bases.ally.hp=data.bases.ally.max=baseHpFor();data.bases.ally.attackLock=null;data.bases.enemy.hp=data.bases.enemy.max=STAGES[selectedStage].hp;data.bases.enemy.attackLock=null;game.tutorial=selectedStage===0?0:6;$('#field').style.background=`linear-gradient(${STAGES[selectedStage].sky} 0 32%,${STAGES[selectedStage].land} 32% 100%)`;$('#field').setAttribute('aria-label',STAGES[selectedStage].name+' 전장');$('#stageMenu').classList.add('hidden');unitsEl.innerHTML='';$('#result').classList.add('hidden');tutorial();render()}
+function reset(){syncBasePositions();last=0;game={money:0,level:0,units:[],defeated:[],spawnCd:0,orangeCd:0,yellowCd:0,greenCd:0,cyanCd:0,blueCd:0,purpleCd:0,pinkCd:0,boomerangs:[],projectiles:[],effects:[],running:false,ended:false,tutorial:0,paused:false,elapsed:0,speedMultiplier:1,speedUnlocked:false};game.spawnRules=(STAGE_SPAWNS[selectedStage]||[]).map(r=>({...r,triggered:false,clock:0,spawned:0}));data.bases.ally.hp=data.bases.ally.max=baseHpFor();data.bases.ally.attackLock=null;data.bases.enemy.hp=data.bases.enemy.max=stageBaseHp(selectedStage);data.bases.enemy.attackLock=null;game.tutorial=selectedStage===0?0:6;$('#field').style.background=`linear-gradient(${STAGES[selectedStage].sky} 0 32%,${STAGES[selectedStage].land} 32% 100%)`;$('#field').setAttribute('aria-label',STAGES[selectedStage].name+' 전장');$('#stageMenu').classList.add('hidden');unitsEl.innerHTML='';$('#result').classList.add('hidden');tutorial();render()}
 const ENGAGE_SYNC_WINDOW=.12;// how close (sec) two attackers' swing-starts must be to count as "the same motion" and land together
 function canEngage(target){const lock=target.attackLock;return!lock||game.elapsed>=lock.until||game.elapsed<lock.joinBy}
 function lockEngage(target,duration){if(!target.attackLock||game.elapsed>=target.attackLock.until)target.attackLock={until:game.elapsed+duration,joinBy:game.elapsed+ENGAGE_SYNC_WINDOW}}
@@ -333,7 +358,7 @@ game.spawnCd=Math.max(0,game.spawnCd-dt);game.orangeCd=Math.max(0,game.orangeCd-
  }
  render()
 }
-function render(){renderDeckButtons();renderSpeedButton();renderNewButtons();renderGreenButton();renderOrangeButton();renderYellowButton();renderUnitLevels();$('#battleNotice').classList.toggle('hidden',!(game.noticeTime>0));$('#pauseBtn').disabled=!game.running||game.ended;$('#pauseBtn').textContent=game.paused?'계속하기':'일시정지';$('#pauseNotice').classList.toggle('hidden',!game.paused);$('#timer').textContent=`${STAGES[selectedStage].name}${chapterOf(selectedStage)===2?' (2장)':''} · ${Math.floor(game.elapsed)}초`;let l=data.income[game.level];$('#money').textContent=`${Math.floor(game.money)} / ${walletMax()}원`;$('#enemyHp').textContent=data.bases.enemy.hp;$('#allyHp').textContent=data.bases.ally.hp;for(let [name,b] of Object.entries(data.bases))$(`#${name}Base span`).style.width=(b.hp/b.max*100)+'%';let sb=$('#spawnBtn'),ib=$('#incomeBtn'),canSpawn=!game.ended&&!game.paused&&(game.running||game.tutorial===2),canUpgrade=!game.ended&&!game.paused&&(game.running||game.tutorial===4);sb.disabled=game.money<unitCost('red')||game.spawnCd>0||!canSpawn||allyDeployFull();sb.querySelector('small').textContent=allyDeployFull()?'출격 인원 가득참':unitCost('red')+'원';sb.querySelector('em').style.display=game.spawnCd?'block':'none';sb.querySelector('em').style.transform=`scaleY(${game.spawnCd/unitStats('red').cooldown})`;ib.disabled=!canUpgrade||game.level===5||game.money<(l.cost||0);ib.innerHTML=game.level===5?'수입 Lv.MAX':`수입 업그레이드<br><small>${l.cost}원</small>`}
+function render(){renderDeckButtons();renderSpeedButton();renderNewButtons();renderGreenButton();renderOrangeButton();renderYellowButton();renderUnitLevels();$('#battleNotice').classList.toggle('hidden',!(game.noticeTime>0));$('#pauseBtn').disabled=!game.running||game.ended;$('#pauseBtn').textContent=game.paused?'계속하기':'일시정지';$('#pauseNotice').classList.toggle('hidden',!game.paused);$('#timer').textContent=`${STAGES[selectedStage].name}${chapterOf(selectedStage)===2?' (2장)':''}${STAGES[selectedStage].legend?' ★'+legendCrown:''} · ${Math.floor(game.elapsed)}초`;let l=data.income[game.level];$('#money').textContent=`${Math.floor(game.money)} / ${walletMax()}원`;$('#enemyHp').textContent=data.bases.enemy.hp;$('#allyHp').textContent=data.bases.ally.hp;for(let [name,b] of Object.entries(data.bases))$(`#${name}Base span`).style.width=(b.hp/b.max*100)+'%';let sb=$('#spawnBtn'),ib=$('#incomeBtn'),canSpawn=!game.ended&&!game.paused&&(game.running||game.tutorial===2),canUpgrade=!game.ended&&!game.paused&&(game.running||game.tutorial===4);sb.disabled=game.money<unitCost('red')||game.spawnCd>0||!canSpawn||allyDeployFull();sb.querySelector('small').textContent=allyDeployFull()?'출격 인원 가득참':unitCost('red')+'원';sb.querySelector('em').style.display=game.spawnCd?'block':'none';sb.querySelector('em').style.transform=`scaleY(${game.spawnCd/unitStats('red').cooldown})`;ib.disabled=!canUpgrade||game.level===5||game.money<(l.cost||0);ib.innerHTML=game.level===5?'수입 Lv.MAX':`수입 업그레이드<br><small>${l.cost}원</small>`}
 function renderOrangeButton(){
  const button=$('#orangeBtn'),d=data.units.orange,unlocked=orangeUnlocked();
  button.disabled=!unlocked||!game.running||game.paused||game.ended||game.money<unitCost("orange")||game.orangeCd>0||allyDeployFull();
@@ -351,7 +376,7 @@ function renderYellowButton(){
 function loop(t){const raw=last?Math.min(.05,(t-last)/1000):0;last=t;const dt=raw*(game.speedMultiplier||1);if(game&&!game.ended&&!game.paused){if(game.running)update(dt);else if(game.tutorial===2||game.tutorial===4){game.money=Math.min(walletMax(),game.money+incomeRate()*dt);render()}}requestAnimationFrame(loop)}
 function highlight(sel){document.querySelectorAll('.tutorial-target').forEach(e=>e.classList.remove('tutorial-target'));if(sel)$(sel).classList.add('tutorial-target');$('#game').classList.toggle('guiding',!!sel)}
 function tutorial(){let text=$('#tutorialText'),next=$('#nextBtn'),box=$('#tutorial');let steps=[['오른쪽은 아군의 성입니다.','#allyBase'],['왼쪽의 적 성을 파괴하면 승리합니다!','#enemyBase'],['돈을 사용해서 레드를 생성해 보세요!','#spawnBtn'],['돈은 시간이 지나면 자동으로 모입니다. 적을 쓰러뜨려도 돈을 얻습니다!','#money'],['수입을 업그레이드하면 더 많은 돈을 더 빠르게 모을 수 있습니다!','#incomeBtn'],['캐릭터와 적은 자동으로 이동하고 공격합니다. 레드를 계속 생성해 적 성을 파괴하세요!','']];if(game.tutorial>=steps.length){box.classList.add('hidden');highlight();game.running=true;return}box.classList.remove('hidden');text.textContent=steps[game.tutorial][0];highlight(steps[game.tutorial][1]);next.style.display=(game.tutorial===2||game.tutorial===4)?'none':'inline-block'}
-$('#nextBtn').onclick=()=>{game.tutorial++;tutorial();render()};$('#spawnBtn').onclick=()=>addUnit('red');$('#orangeBtn').onclick=()=>addUnit('orange');$('#yellowBtn').onclick=()=>addUnit('yellow');$('#greenBtn').onclick=()=>addUnit('green');for(const t of GENERIC_CD_TYPES)$('#'+t+'Btn').onclick=()=>addUnit(t);$('#incomeBtn').onclick=()=>{let l=data.income[game.level];if(!game.ended&&!game.paused&&(game.running||game.tutorial===4)&&l.cost!==null&&game.money>=l.cost){game.money-=l.cost;game.level++;if(game.tutorial===4){game.tutorial++;tutorial()}render()}};function finish(win){if(game.ended)return;const sp=STAGES[selectedStage].special,xpReward=win&&!sp?awardXP():0;const speedDropped=win&&!sp&&selectedStage>=18&&Math.random()<0.3;let specialDrop=0;if(win&&sp&&Math.random()<sp.chance){specialDrop=sp.count;speedTickets+=specialDrop;saveSpeedTickets();renderSpeedButton()}if(speedDropped){speedTickets++;saveSpeedTickets();renderSpeedButton()}game.ended=true;game.running=false;highlight();$('#result').classList.remove('hidden');$('#resultTitle').textContent=win?STAGES[selectedStage].name+' 정복 완료!':'패배...';if(win&&!sp&&!cleared.includes(selectedStage)){cleared.push(selectedStage);saveProgress()}$('#nextStageBtn').classList.toggle('hidden',!win||!!sp||selectedStage===MAIN_STAGE_COUNT-1);$('#resultDetail').textContent=win?(sp?'':selectedStage===MAIN_STAGE_COUNT-1?MAIN_STAGE_COUNT+'개 스테이지를 모두 정복했어요!':(STAGES[selectedStage+1]||{}).name+' 스테이지가 열렸어요!'):'수입을 올리고 아군을 모아서 다시 도전하세요.';if(win&&selectedStage===2)$('#resultDetail').textContent+=' 오렌지가 해금됐어요!';if(win&&selectedStage===5)$('#resultDetail').textContent+=' 옐로우가 해금됐어요!';if(win&&selectedStage===6)$('#resultDetail').textContent+=' 그린이 해금됐어요!';if(win){for(const t of ['cyan','blue','purple',...NEW_ALLY_TYPES])if(selectedStage===UNLOCK_AT[t])$('#resultDetail').textContent+=' '+UNIT_NAMES[t]+' 해금!';$('#resultDetail').textContent+=` 보상 +${xpReward} XP`;}if(speedDropped)$('#resultDetail').textContent+=' 2배속권 획득!';if(sp)$('#resultDetail').textContent=win?(specialDrop?`스피드업 ${specialDrop}개 획득! (보유 ${speedTickets}개)`:'이번에는 스피드업을 얻지 못했어요. 다시 도전해 보세요!'):'전력을 올리고 다시 도전하세요.';renderNewButtons();renderOrangeButton();renderYellowButton();renderGreenButton()}$('#restartBtn').onclick=reset;
+$('#nextBtn').onclick=()=>{game.tutorial++;tutorial();render()};$('#spawnBtn').onclick=()=>addUnit('red');$('#orangeBtn').onclick=()=>addUnit('orange');$('#yellowBtn').onclick=()=>addUnit('yellow');$('#greenBtn').onclick=()=>addUnit('green');for(const t of GENERIC_CD_TYPES)$('#'+t+'Btn').onclick=()=>addUnit(t);$('#incomeBtn').onclick=()=>{let l=data.income[game.level];if(!game.ended&&!game.paused&&(game.running||game.tutorial===4)&&l.cost!==null&&game.money>=l.cost){game.money-=l.cost;game.level++;if(game.tutorial===4){game.tutorial++;tutorial()}render()}};function finish(win){if(game.ended)return;if(STAGES[selectedStage].legend){legendFinish(win);return}const sp=STAGES[selectedStage].special,xpReward=win&&!sp?awardXP():0;const speedDropped=win&&!sp&&selectedStage>=18&&Math.random()<0.3;let specialDrop=0;if(win&&sp&&Math.random()<sp.chance){specialDrop=sp.count;speedTickets+=specialDrop;saveSpeedTickets();renderSpeedButton()}if(speedDropped){speedTickets++;saveSpeedTickets();renderSpeedButton()}game.ended=true;game.running=false;highlight();$('#result').classList.remove('hidden');$('#resultTitle').textContent=win?STAGES[selectedStage].name+' 정복 완료!':'패배...';if(win&&!sp&&!cleared.includes(selectedStage)){cleared.push(selectedStage);saveProgress()}$('#nextStageBtn').classList.toggle('hidden',!win||!!sp||selectedStage===MAIN_STAGE_COUNT-1);$('#resultDetail').textContent=win?(sp?'':selectedStage===MAIN_STAGE_COUNT-1?MAIN_STAGE_COUNT+'개 스테이지를 모두 정복했어요!':(STAGES[selectedStage+1]||{}).name+' 스테이지가 열렸어요!'):'수입을 올리고 아군을 모아서 다시 도전하세요.';if(win&&selectedStage===2)$('#resultDetail').textContent+=' 오렌지가 해금됐어요!';if(win&&selectedStage===5)$('#resultDetail').textContent+=' 옐로우가 해금됐어요!';if(win&&selectedStage===6)$('#resultDetail').textContent+=' 그린이 해금됐어요!';if(win){for(const t of ['cyan','blue','purple',...NEW_ALLY_TYPES])if(selectedStage===UNLOCK_AT[t])$('#resultDetail').textContent+=' '+UNIT_NAMES[t]+' 해금!';$('#resultDetail').textContent+=` 보상 +${xpReward} XP`;}if(speedDropped)$('#resultDetail').textContent+=' 2배속권 획득!';if(sp)$('#resultDetail').textContent=win?(specialDrop?`스피드업 ${specialDrop}개 획득! (보유 ${speedTickets}개)`:'이번에는 스피드업을 얻지 못했어요. 다시 도전해 보세요!'):'전력을 올리고 다시 도전하세요.';renderNewButtons();renderOrangeButton();renderYellowButton();renderGreenButton()}$('#restartBtn').onclick=reset;
 $('#skipBtn').onclick=()=>{game.tutorial=6;tutorial();render()};
 $('#pauseBtn').onclick=()=>{if(game.running&&!game.ended){game.paused=!game.paused;render()}};
 document.addEventListener('visibilitychange',()=>{if(document.hidden&&game.running&&!game.ended){game.paused=true;render()}});
@@ -465,7 +490,7 @@ function animateLeboin(u){
  u.el.dataset.animation=state;
 }
 
-const UNIT_NAMES={pink:'핑크',rhino:'투뿔소',bear:'곰선생',face:'대갈이군',cyan:'시안',blue:'블루',purple:'퍼플',peng:'재키펭',gory:'고릴라저씨',baa:'메에메에',seal:'바다레오파드',croco:'아거',leboin:'빠옹',rabbit:'엘리트래빗',squirrel:'다람G',kangaroo:'캥거류',mooth:'나나나난나방',red:'레드',orange:'오렌지',green:'그린',yellow:'옐로우',dog:'멍뭉이',snache:'낼름이',guys:'놈놈놈',hippo:'하마양',pigge:'돼지새끼',crimson:'크림슨',gold:'골드',ivory:'아이보리',chartreuse:'샤르트뢰즈',mint:'민트',azure:'애저',crystal:'크리스탈',lavender:'라벤더',salmon:'살몬',raspberry:'라즈베리'};
+const UNIT_NAMES={pink:'핑크',rhino:'투뿔소',bear:'곰선생',face:'대갈이군',cyan:'시안',blue:'블루',purple:'퍼플',peng:'재키펭',gory:'고릴라저씨',baa:'메에메에',seal:'바다레오파드',croco:'아거',leboin:'빠옹',rabbit:'엘리트래빗',squirrel:'다람G',kangaroo:'캥거류',mooth:'나나나난나방',red:'레드',orange:'오렌지',green:'그린',yellow:'옐로우',dog:'멍뭉이',darkdog:'다크 멍뭉이',gabriel:'가브리엘',ectosnache:'엑토 낼름이',snache:'낼름이',guys:'놈놈놈',hippo:'하마양',pigge:'돼지새끼',crimson:'크림슨',gold:'골드',ivory:'아이보리',chartreuse:'샤르트뢰즈',mint:'민트',azure:'애저',crystal:'크리스탈',lavender:'라벤더',salmon:'살몬',raspberry:'라즈베리'};
 // Every rule sourced from each stage's wiki Battleground section: {type, at:{t:seconds}|{hp:percent}, delay:[min,max] (omit for a one-shot), count (omit = infinite), boss:true (adds the shockwave+banner, only where the wiki says "spawns as the boss")}.
 const STAGE_SPAWNS={
 0:[{type:'dog',at:{t:0},count:1},{type:'dog',at:{t:20},delay:[6,10]}],
@@ -521,6 +546,16 @@ const STAGE_SPAWNS={
 // unitStats() magnification differs at spawn time.
 for(let i=0;i<CHAPTER1_LEN-1;i++){STAGE_SPAWNS[CHAPTER1_LEN+i]=STAGE_SPAWNS[i].map(r=>({...r}))}
 TUESDAY_STAGES.forEach((t,k)=>{const boss=t.boss,rules=[{type:'dog',at:{t:0},delay:[4,8]},{type:'snache',at:{t:5},delay:[8,20]},{type:'guys',at:{t:15},delay:[10,26]},{type:boss,at:{hp:90},count:1,boss:true}];if(k>=1)rules.push({type:boss,at:{hp:50},count:k>=3?2:1,delay:[6,10]});STAGE_SPAWNS[MAIN_STAGE_COUNT+k]=rules});
+[
+ [{type:'dog',at:{t:0},delay:[3,8]},{type:'darkdog',at:{t:10},delay:[12,25]},{type:'snache',at:{t:20},delay:[10,20]},{type:'darkdog',at:{hp:70},count:3,delay:[2,4]}],
+ [{type:'darkdog',at:{t:0},delay:[6,12]},{type:'snache',at:{t:0},delay:[8,16]},{type:'guys',at:{t:15},delay:[8,18]},{type:'gory',at:{hp:90},count:1,boss:true}],
+ [{type:'snache',at:{t:0},delay:[4,10]},{type:'ectosnache',at:{t:20},delay:[15,30]},{type:'darkdog',at:{t:30},delay:[10,20]},{type:'ectosnache',at:{hp:80},count:2,delay:[3,6]},{type:'peng',at:{hp:50},count:1}],
+ [{type:'dog',at:{t:0},delay:[3,6]},{type:'gabriel',at:{t:0},delay:[8,16]},{type:'croco',at:{t:30},delay:[10,20]},{type:'baa',at:{t:60},delay:[15,30]},{type:'gabriel',at:{hp:60},count:5,delay:[1,2]}],
+ [{type:'darkdog',at:{t:0},delay:[6,12]},{type:'pigge',at:{t:20},delay:[20,35]},{type:'rabbit',at:{t:40},delay:[15,30]},{type:'seal',at:{hp:80},count:1,boss:true}],
+ [{type:'gabriel',at:{t:0},delay:[8,14]},{type:'ectosnache',at:{t:10},delay:[12,24]},{type:'kangaroo',at:{t:40},delay:[25,40]},{type:'mooth',at:{hp:70},count:1,boss:true}],
+ [{type:'darkdog',at:{t:0},delay:[3,6]},{type:'ectosnache',at:{t:20},delay:[10,20]},{type:'rhino',at:{t:60},delay:[25,40]},{type:'leboin',at:{hp:90},count:1,boss:true}],
+ [{type:'darkdog',at:{t:0},delay:[4,8]},{type:'gabriel',at:{t:10},delay:[8,16]},{type:'ectosnache',at:{t:20},delay:[10,20]},{type:'bear',at:{hp:90},count:1,boss:true},{type:'face',at:{hp:50},count:1,boss:true}]
+].forEach((rules,k)=>{STAGE_SPAWNS[LEGEND_START+k]=rules});
 // Max enemies alive at once, per Battle Cats wiki (EoC Korea~Moon). Chapter 2 reuses the same caps.
 const STAGE_MAX_ENEMIES=[3,4,30,5,6,7,6,5,10,5,6,7,12,3,4,6,10,10,10,10,10,4,5,3,5,20,8,8,10,10,10,8,6,10,10,10,4,8,5,10,10,5,10,4,2,10,3,4];
 function maxEnemies(i){return STAGES[i]?.maxEnemies??STAGE_MAX_ENEMIES[i<CHAPTER1_LEN?i:i-CHAPTER1_LEN]??Infinity}
@@ -557,6 +592,9 @@ function renderNewButtons(){for(const type of GENERIC_CD_TYPES){
 }}
 
 const NEW_ATLASES={
+darkdog:{scale:1,left:-4,sheet:'assets/darkdog_sheet.png',walk:[[4,11,50,55],[57,11,50,55],[110,11,50,55]],attack:[[4,86,50,56],[57,86,50,56],[110,91,50,51],[164,91,50,51]],hurt:[[4,162,50,56]]},
+gabriel:{scale:1,left:-10,sheet:'assets/gabriel_sheet.png',walk:[[5,11,62,56],[70,11,62,56],[135,11,62,56]],attack:[[5,87,61,58,-1],[69,88,62,57],[134,94,60,51],[197,94,60,51]],hurt:[[5,165,61,58,-1]]},
+ectosnache:{scale:1,left:-10,sheet:'assets/snache_dog-sprite.png',walk:[[299,43,55,63],[357,43,57,63],[417,43,61,63],[481,43,68,63]],attack:[[299,127,52,57],[354,124,51,60],[408,130,73,54],[484,142,73,42]]},
 rhino:{scale:.55,left:-27,walk:[[3,1,106,81,0],[111,2,108,80,2],[225,4,104,78,-1],[2,88,107,77,2],[111,84,108,81,2],[224,85,105,80,0],[1,170,108,78,0],[113,171,106,77,1],[223,167,106,81,0]],attack:[[2,88,107,75,8,0,-8],[2,88,107,75,12,0,-14],[331,81,106,78,-10],[331,1,106,78,-18],[331,81,106,78,-8]],hurt:[[2,88,107,77,2]]},
 face:{scale:.62,left:-25,lift:34,walk:[[1,1,118,127,0,0]],attack:[[121,1,121,138,2,-11],[244,1,125,157,2,-28],[371,1,126,163,3,-34]],hurt:[[1,134,155,121,9,5]]},
 rabbit:{scale:.72,left:-10,walk:[[6,11,56,76,0],[79,26,56,61,-1],[153,28,55,59,-1],[220,5,61,82,2],[293,1,71,71,14],[375,10,60,77,7]],attack:[[1,107,79,64,20],[105,89,74,71,18],[235,96,52,58,-6],[325,102,90,66,33]],hurt:[[13,188,90,56,6]]},
@@ -631,7 +669,7 @@ function animateAtlas(u){
 }
 
 let stageChapterView=1;
-function renderStageMenu(){renderTraining();renderBaseUpgrade();renderSpecialStages();
+function renderStageMenu(){renderTraining();renderBaseUpgrade();renderSpecialStages();renderLegend();
  $('#stageGrid').innerHTML='';
  const viewStages=STAGES.map((stage,i)=>({stage,i})).filter(o=>chapterOf(o.i)===stageChapterView);
  viewStages.forEach(({stage,i})=>{const button=document.createElement('button');button.className='stage-card'+(cleared.includes(i)?' cleared':'');button.disabled=!isUnlocked(i);button.title=`등장 적: ${stageEnemies(i).map(type=>UNIT_NAMES[type]).join(' · ')} · 적 성 체력 ${stage.hp}`;button.innerHTML=`<strong>${stage.name}</strong>${cleared.includes(i)?'<small>✓</small>':''}`;button.onclick=()=>{selectedStage=i;reset()};$('#stageGrid').append(button)});
@@ -651,13 +689,42 @@ function renderSpecialStages(){
  TUESDAY_STAGES.forEach((t,k)=>{const i=MAIN_STAGE_COUNT+k,b=document.createElement('button');b.className='stage-card';const locked=!open||!tue||(k===3&&!cleared.includes(MAIN_STAGE_COUNT-1));b.disabled=locked;b.title=t.desc+' · 적 성 체력 '+t.hp;b.innerHTML=`<strong>${t.name.replace('광속 전사 ','')}</strong><small>${Math.round(t.chance*100)}%${t.count>1?' ×'+t.count:''}</small>`;b.onclick=()=>{selectedStage=i;reset()};grid.append(b)});
  const buy=document.createElement('button');buy.className='stage-card';buy.disabled=training.xp<SPEED_PACK.xp;buy.innerHTML=`<strong>스피드업 ${SPEED_PACK.count}개 구매</strong><small>${SPEED_PACK.xp} XP</small>`;buy.onclick=buySpeedPack;grid.append(buy);
 }
+function legendXP(k,c){return Math.round((3000+k*500)*LEGEND_CROWN_MULT[c-1])}
+const LEGEND_BOSS_TICKETS=[1,1,2,3];// first clear of the final stage at each crown; other wins: 10%×crown for 1
+function renderLegend(){
+ const grid=$('#legendGrid'),tabs=$('#legendCrowns');grid.innerHTML='';tabs.innerHTML='';
+ const open=legendOpen();
+ $('#legendText').textContent=open?`★${legendCrown} · ${legendProgress[legendCrown].length} / ${LEGEND_STAGES.length}`:'';
+ $('#legendNote').textContent=!open?'세계편 1장 마지막 스테이지(달)를 클리어하면 열립니다.':`왕관 난이도 ★${legendCrown}: 적 능력치·적 성 체력 ${Math.round(LEGEND_CROWN_MULT[legendCrown-1]*100)}% · 한 난이도의 8개 스테이지를 모두 클리어하면 다음 왕관이 열립니다.`;
+ for(const c of [1,2,3,4]){const b=document.createElement('button');b.className='codex-tab'+(c===legendCrown?' active':'');b.textContent='★'.repeat(c);b.disabled=!open||!legendCrownUnlocked(c);b.onclick=()=>{legendCrown=c;renderLegend()};tabs.append(b)}
+ LEGEND_STAGES.forEach((t,k)=>{const i=LEGEND_START+k,done=legendProgress[legendCrown].includes(k),b=document.createElement('button');b.className='stage-card'+(done?' cleared':'');b.disabled=!legendStageUnlocked(k);b.title=`${t.desc} · 등장 적: ${stageEnemies(i).map(type=>UNIT_NAMES[type]).join(' · ')} · 적 성 체력 ${Math.round(t.hp*LEGEND_CROWN_MULT[legendCrown-1])}`;b.innerHTML=`<strong>${t.flag} ${t.name}</strong><small>${done?'✓ ':''}${legendXP(k,legendCrown)} XP</small>`;b.onclick=()=>{selectedStage=i;reset()};grid.append(b)});
+}
+function legendFinish(win){
+ const k=STAGES[selectedStage].legend.k,c=legendCrown,list=legendProgress[c],first=win&&!list.includes(k);
+ let xp=0,tickets=0;
+ if(win){
+  xp=legendXP(k,c);if(!first)xp=Math.floor(xp/2);training.xp+=xp;saveTraining();
+  if(first&&k===LEGEND_STAGES.length-1)tickets=LEGEND_BOSS_TICKETS[c-1];else if(Math.random()<.1*c)tickets=1;
+  if(tickets){speedTickets+=tickets;saveSpeedTickets();renderSpeedButton()}
+  if(first){list.push(k);saveLegend()}
+ }
+ game.ended=true;game.running=false;highlight();$('#result').classList.remove('hidden');
+ $('#resultTitle').textContent=win?`${STAGES[selectedStage].name} ★${c} 정복 완료!`:'패배...';
+ let detail=win?`보상 +${xp} XP`:'아군을 강화하고 다시 도전하세요.';
+ if(win&&first&&k<LEGEND_STAGES.length-1)detail=`${LEGEND_STAGES[k+1].name} 스테이지가 열렸어요! `+detail;
+ if(tickets)detail+=` · 스피드업 ${tickets}개 획득! (보유 ${speedTickets}개)`;
+ if(win&&first&&list.length===LEGEND_STAGES.length)detail+=c<4?` · 전설의 시작 ★${c+1} 난이도가 열렸어요!`:' · 전설의 시작 ★4 완전 정복!';
+ $('#resultDetail').textContent=detail;
+ $('#nextStageBtn').classList.toggle('hidden',!win||k===LEGEND_STAGES.length-1);
+ renderNewButtons();renderOrangeButton();renderYellowButton();renderGreenButton();
+}
 $('#chapter1Tab').onclick=()=>{stageChapterView=1;renderStageMenu()};
 $('#chapter2Tab').onclick=()=>{stageChapterView=2;renderStageMenu()};
 function openStages(){if(game.running&&!game.ended)game.paused=true;highlight();render();renderStageMenu();$('#stageMenu').classList.remove('hidden');$('#resumeBtn').textContent=game.ended?'결과로 돌아가기':'전투로 돌아가기'}
 $('#stagesBtn').onclick=openStages;
 $('#resultStagesBtn').onclick=openStages;
 $('#resumeBtn').onclick=()=>{$('#stageMenu').classList.add('hidden');if(!game.ended){game.paused=false;tutorial()}render()};
-$('#nextStageBtn').onclick=()=>{if(game.ended&&selectedStage<MAIN_STAGE_COUNT-1&&!STAGES[selectedStage].special&&isUnlocked(selectedStage+1)){selectedStage++;reset()}};
+$('#nextStageBtn').onclick=()=>{const lg=STAGES[selectedStage].legend;if(lg){if(game.ended&&lg.k<LEGEND_STAGES.length-1&&legendStageUnlocked(lg.k+1)){selectedStage++;reset()}return}if(game.ended&&selectedStage<MAIN_STAGE_COUNT-1&&!STAGES[selectedStage].special&&isUnlocked(selectedStage+1)){selectedStage++;reset()}};
 window.addEventListener('resize',syncBasePositions);
 
 
@@ -871,10 +938,13 @@ addEventListener('pagehide',saveAll);
 document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')saveAll()});
 
 // Order is rough difficulty progression from Korea to the Moon; used only for codex browsing.
-const ENEMY_ORDER=['dog','snache','guys','hippo','pigge','peng','gory','baa','croco','rabbit','squirrel','seal','leboin','kangaroo','mooth','rhino','bear','face'];
+const ENEMY_ORDER=['dog','snache','guys','hippo','pigge','peng','gory','baa','croco','rabbit','squirrel','seal','leboin','kangaroo','mooth','rhino','bear','face','darkdog','ectosnache','gabriel'];
 const ENEMY_TEXT={
  dog:'가장 먼저 마주치는 흔한 잡병. 느리지 않은 속도로 꾸준히 밀려온다.',
  snache:'혀를 길게 뻗어 공격하는 정찰병. 멍뭉이보다 빠르게 접근해 온다.',
+ darkdog:'어둠에 물든 멍뭉이. 멍뭉이보다 훨씬 단단하고 매섭게 물어뜯는다. (레전드 스토리)',
+ ectosnache:'유령이 된 낼름이. 낼름이보다 강한 혀 공격을 쉬지 않고 날린다. (레전드 스토리)',
+ gabriel:'천사의 날개를 단 멍뭉이. 체력은 낮지만 눈 깜짝할 사이에 전선까지 돌격한다. (레전드 스토리)',
  guys:'세 마리가 함께 몰려다니며 공격력이 제법 매섭다. 다만 한 방이면 크게 휘청인다.',
  hippo:'두툼한 몸집으로 범위 공격을 가하는 초반 보스급 적. 은근히 단단하다.',
  pigge:'빨간 몸을 가진 범위 공격형 적. 퍼플에게는 약점을 보이지만 그 외엔 위협적이다.',
