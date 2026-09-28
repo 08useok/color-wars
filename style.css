@@ -88,7 +88,7 @@ body { overflow:auto; }
 
 .training{background:#203149;border:1px solid #476180;border-radius:16px;padding:18px;margin:18px 0 26px}.training h2{margin:0}.training h2 small{color:#ffdc71;margin-left:16px}.training p{color:#bdd0e4;font-size:13px;line-height:1.6}#trainingGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.training-card{background:#142236;padding:14px;border-radius:12px}.training-card h3{font-size:16px;margin:0}.training-card button{width:100%;font-size:13px;padding:10px}.training-card button+button{margin-top:6px}.deck-btn.active{background:#3a6b4a;border:1px solid #6fcf8f}#deckText{color:#9fd6ff;font-weight:700}#saveWarning{color:#ffbd7b}@media(max-width:700px){#trainingGrid{grid-template-columns:repeat(2,1fr)}}
 
-.unit.ally-art{background:none;border:0;box-shadow:none}.ally-sprite,.ally-shadow{position:absolute;width:77.6125px;height:77.6125px;left:-18px;bottom:-3px;background-image:url(assets/ally_atlas.png);background-size:620.9px 310.45px;background-repeat:no-repeat;pointer-events:none}.ally-sprite{z-index:1}.ally-shadow{z-index:0}
+.unit.ally-art{background:none;border:0;box-shadow:none}.ally-sprite,.ally-shadow{position:absolute;width:77.6125px;height:77.6125px;left:-18px;bottom:-3px;background-image:url(assets/ally_atlas.webp);background-size:620.9px 310.45px;background-repeat:no-repeat;pointer-events:none}.ally-sprite{z-index:1}.ally-shadow{z-index:0}
 
 /* Seven allies: compact cards, two rows on narrow screens. */
 .controls{grid-template-columns:repeat(10,minmax(0,1fr));gap:6px;padding:8px;flex-basis:108px}.controls button{font-size:12px;padding:5px;height:78px}.controls strong{display:block}.controls small{font-size:10px;line-height:1.4;margin-top:4px}.unit-btn i{margin:0}
