@@ -201,3 +201,6 @@ body { overflow:auto; }
 .legend-grid{grid-template-columns:repeat(4,1fr)}.legend-crowns{margin:0 0 10px}.legend-crowns .codex-tab{color:#ffd35a;letter-spacing:1px}
 @media(max-width:700px){.legend-grid{grid-template-columns:repeat(2,1fr)}}
 .stage-note.credits{margin-top:6px;font-size:11px}.stage-note.credits a{color:#b8cbe6}
+.unit.metalhippo{background:none;border:0;border-radius:0;width:42px;height:42px}
+.metalhippo .dog-shadow{background-image:url("assets/metal_hippo_sheet.png");background-position:-349px -207px;width:79px;height:3px;left:-18px}
+.unit.metalhippo .bar{top:-59px;width:68px;left:-13px}

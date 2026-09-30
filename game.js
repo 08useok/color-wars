@@ -67,7 +67,7 @@ TUESDAY_STAGES.forEach(t=>STAGES.push({name:t.name,flag:t.flag,hp:t.hp,gap:4,wav
 // magnification by 1/1.5/2/3; the enemy base HP is the same on every crown.
 const LEGEND_STAGES=[
  {name:'대지를 흔드는 자',en:'Earthshaker',flag:'🌾',hp:60000,max:7,xp:950,drop:{speed:.01},sky:'#9fd8f0',land:'#8ec85a',desc:'멍뭉이·낼름이·놈놈놈 200% 각 50마리'},
- {name:'공포의 재림',en:'Return of Terror',flag:'🦛',hp:50000,max:4,xp:950,drop:{speed:.01},sky:'#b9c3cf',land:'#8f9aa8',desc:'놈놈놈 400% · 보스 하마양(원작: 메탈 하마양)'},
+ {name:'공포의 재림',en:'Return of Terror',flag:'🦛',hp:50000,max:4,xp:950,drop:{speed:.01},sky:'#b9c3cf',land:'#8f9aa8',desc:'놈놈놈 400% · 보스 메탈 하마양 (치명타 외 피해 1)'},
  {name:'석양의 블루스',en:'Sunset Blues',flag:'🌇',hp:70000,max:40,xp:1045,sky:'#f2b27a',land:'#b9864f',desc:'적 성 99%에서 아거 30마리 러시'},
  {name:'우울한 습지',en:'Melancholy Damp',flag:'🌧️',hp:80000,max:4,xp:1140,drop:{speed:.01},sky:'#8fa3b1',land:'#5f7560',desc:'메에메에·놈놈놈 · 50%에서 보스 돼지새끼(원작: 성 돼지새끼 2세)'},
  {name:'바운시 파크',en:'Bouncy Park',flag:'🎡',hp:90000,max:4,xp:1140,sky:'#9fd8ef',land:'#9ccf6a',desc:'40초 후 재키펭 3마리'},
@@ -111,6 +111,8 @@ data.units.rhino={hp:5200,atk:420,interval:2.1,speed:5.5,range:5.2,reward:900,kn
 data.units.bear={hp:6500,atk:520,interval:2.4,speed:4.5,range:8.5,reward:1050,knockbacks:10,attackDuration:1,windup:.5,area:true};
 data.units.face={trait:"floating",hp:18000,atk:850,interval:3.4,speed:1.8,range:14,reward:2500,knockbacks:3,attackDuration:1.2,windup:.65,area:true};
 // Legend Story enemies, drawn from the variant sheets kept alongside the Doge / Snache art.
+// Metal Hippoe (wiki): same art/frames as Hippoe; the metal trait takes 1 damage from non-critical hits.
+data.units.metalhippo={trait:'metal',hp:128,atk:300,interval:.6,speed:2.8,range:5,reward:200,knockbacks:2,attackDuration:.5,area:true};
 data.units.darkdog={hp:900,atk:90,interval:1.4,speed:6,range:4,reward:150,knockbacks:3};
 data.units.gabriel={hp:600,atk:70,interval:1.2,speed:12,range:4,reward:130,knockbacks:3};
 data.units.ectosnache={hp:1100,atk:150,interval:1.1,speed:8,range:4.5,reward:180,knockbacks:3};
@@ -232,10 +234,11 @@ function damage(v,amount,from){
  if(v.stats?.floatStrong&&from&&data.units[from.type].trait==='floating')amount*=v.stats.floatResist||.5;
  if(v.stats?.armor)amount*=v.stats.armor;
  if(from?.atkDownUntil>game.elapsed)amount*=from.atkDownMult;
- if(from?.stats?.critChance&&Math.random()<from.stats.critChance){amount*=from.stats.critMult||2;v.critFxUntil=game.elapsed+STATUS_FX_TIME}
+ let crit=false;if(from?.stats?.critChance&&Math.random()<from.stats.critChance){crit=true;amount*=from.stats.critMult||2;v.critFxUntil=game.elapsed+STATUS_FX_TIME}
  const isBoss=v.boss||data.units[v.type].hp>=BOSS_HP_THRESHOLD;// base HP, so Chapter 2's x1.5 doesn't change who counts as a boss
  if(from?.stats?.pull&&isBoss)amount*=1.3;
  if(from?.stats?.bossDamage&&isBoss)amount*=from.stats.bossDamage;
+ if(data.units[v.type].trait==='metal'&&!crit)amount=1;// metal: every non-critical hit deals exactly 1
  v.hp=Math.max(0,v.hp-amount);v.flashTime=.1;v.el.classList.add('damage-flash');
  v.el.querySelector('i').style.setProperty('width',Math.max(0,v.hp/v.max)*100+'%');
  if(v.hp===0){
@@ -492,7 +495,7 @@ function animateLeboin(u){
  u.el.dataset.animation=state;
 }
 
-const UNIT_NAMES={pink:'핑크',rhino:'투뿔소',bear:'곰선생',face:'대갈이군',cyan:'시안',blue:'블루',purple:'퍼플',peng:'재키펭',gory:'고릴라저씨',baa:'메에메에',seal:'바다레오파드',croco:'아거',leboin:'빠옹',rabbit:'엘리트래빗',squirrel:'다람G',kangaroo:'캥거류',mooth:'나나나난나방',red:'레드',orange:'오렌지',green:'그린',yellow:'옐로우',dog:'멍뭉이',darkdog:'다크 멍뭉이',gabriel:'가브리엘',ectosnache:'엑토 낼름이',snache:'낼름이',guys:'놈놈놈',hippo:'하마양',pigge:'돼지새끼',crimson:'크림슨',gold:'골드',ivory:'아이보리',chartreuse:'샤르트뢰즈',mint:'민트',azure:'애저',crystal:'크리스탈',lavender:'라벤더',salmon:'살몬',raspberry:'라즈베리'};
+const UNIT_NAMES={pink:'핑크',rhino:'투뿔소',bear:'곰선생',face:'대갈이군',cyan:'시안',blue:'블루',purple:'퍼플',peng:'재키펭',gory:'고릴라저씨',baa:'메에메에',seal:'바다레오파드',croco:'아거',leboin:'빠옹',rabbit:'엘리트래빗',squirrel:'다람G',kangaroo:'캥거류',mooth:'나나나난나방',red:'레드',orange:'오렌지',green:'그린',yellow:'옐로우',dog:'멍뭉이',darkdog:'다크 멍뭉이',metalhippo:'메탈 하마양',gabriel:'가브리엘',ectosnache:'엑토 낼름이',snache:'낼름이',guys:'놈놈놈',hippo:'하마양',pigge:'돼지새끼',crimson:'크림슨',gold:'골드',ivory:'아이보리',chartreuse:'샤르트뢰즈',mint:'민트',azure:'애저',crystal:'크리스탈',lavender:'라벤더',salmon:'살몬',raspberry:'라즈베리'};
 // Every rule sourced from each stage's wiki Battleground section: {type, at:{t:seconds}|{hp:percent}, delay:[min,max] (omit for a one-shot), count (omit = infinite), boss:true (adds the shockwave+banner, only where the wiki says "spawns as the boss")}.
 const STAGE_SPAWNS={
 0:[{type:'dog',at:{t:0},count:1},{type:'dog',at:{t:20},delay:[6,10]}],
@@ -550,7 +553,7 @@ for(let i=0;i<CHAPTER1_LEN-1;i++){STAGE_SPAWNS[CHAPTER1_LEN+i]=STAGE_SPAWNS[i].m
 TUESDAY_STAGES.forEach((t,k)=>{const boss=t.boss,rules=[{type:'dog',at:{t:0},delay:[4,8]},{type:'snache',at:{t:5},delay:[8,20]},{type:'guys',at:{t:15},delay:[10,26]},{type:boss,at:{hp:90},count:1,boss:true}];if(k>=1)rules.push({type:boss,at:{hp:50},count:k>=3?2:1,delay:[6,10]});STAGE_SPAWNS[MAIN_STAGE_COUNT+k]=rules});
 [
  [{type:'dog',at:{t:0},delay:[2,6],count:50,mag:200},{type:'snache',at:{t:0},delay:[2,6],count:50,mag:200},{type:'guys',at:{t:0},delay:[2,6],count:50,mag:200}],
- [{type:'guys',at:{t:0},delay:[2,12],mag:400},{type:'hippo',at:{hp:99},count:1,boss:true,mag:400}],
+ [{type:'guys',at:{t:0},delay:[2,12],mag:400},{type:'metalhippo',at:{hp:99},count:1,boss:true,mag:100}],
  [{type:'dog',at:{t:0},delay:[3,20],mag:400},{type:'snache',at:{t:0},delay:[3,20],mag:400},{type:'guys',at:{t:40},delay:[3,20],mag:400},{type:'croco',at:{hp:99},count:30,delay:[.13,.8],mag:400}],
  [{type:'baa',at:{t:0},count:1,mag:400},{type:'baa',at:{t:40},delay:[20,40],mag:400},{type:'guys',at:{t:0},delay:[3,20],mag:400},{type:'pigge',at:{hp:50},count:1,boss:true,mag:400}],
  [{type:'dog',at:{t:0},delay:[3,20],mag:400},{type:'snache',at:{t:0},delay:[3,20],mag:400},{type:'guys',at:{t:40},delay:[3,20],mag:400},{type:'peng',at:{t:40},delay:[2,8],count:3,mag:400}],
@@ -621,7 +624,8 @@ croco:{scale:0.72,left:-10,walk:[[2,29,85,39,0],[89,29,86,39,1],[177,28,86,40,1]
  salmon:{scale:0.45,left:-30,sheet:SALMON_SHEET,walk:[[51,72,131,143,0],[264,72,130,142,-2],[454,72,135,144,3]],attack:[[648,6,176,208,11],[824,74,339,141,207],[1231,71,131,143,-1]],hurt:[[1427,70,185,146,9]],evolved:{sheet:SALMON_EVOLVED_SHEET,scale:0.298,left:-34,walk:[[6,0,229,344,0],[241,0,200,344,-28],[447,0,212,344,-17]],attack:[[665,0,253,344,-14],[924,0,528,344,216],[1458,0,200,344,-36]],hurt:[[1664,0,280,344,-5]]}},
  raspberry:{scale:0.45,left:-30,sheet:RASPBERRY_SHEET,walk:[[37,34,141,152,0],[256,35,136,147,-3],[475,33,144,154,2]],attack:[[663,36,197,151,56],[877,36,279,151,139],[1221,33,140,153,-1]],hurt:[[1453,37,191,150,9]],evolved:{sheet:RASPBERRY_EVOLVED_SHEET,scale:0.328,left:-33,walk:[[6,0,206,279,0],[218,0,209,279,2],[433,0,199,279,-14]],attack:[[638,0,265,279,24],[909,0,483,279,232],[1398,0,210,279,-2]],hurt:[[1614,0,261,279,30]]}},
  guys:{scale:1,left:0,walk:[[30,40,43,32],[90,40,42,32],[150,40,43,32],[210,40,43,32],[270,40,43,32]],attack:[[30,100,43,32],[90,100,48,32],[150,100,51,32],[210,100,54,32],[270,87,63,45],[30,147,64,45],[100,154,56,38],[160,154,56,38],[220,161,43,31]],hurt:[[33,221,41,31]]},
- hippo:{scale:.9,left:-26,walk:[[1,24,105,78],[113,24,105,78],[226,24,104,78]],attack:[[337,4,99,98],[1,104,99,101],[113,118,110,87],[225,140,109,65],[338,127,104,78]]}
+ hippo:{scale:.9,left:-26,walk:[[1,24,105,78],[113,24,105,78],[226,24,104,78]],attack:[[337,4,99,98],[1,104,99,101],[113,118,110,87],[225,140,109,65],[338,127,104,78]]},
+ metalhippo:{sheet:'assets/metal_hippo_sheet.png',scale:.9,left:-26,walk:[[1,24,105,78],[113,24,105,78],[226,24,104,78]],attack:[[337,4,99,98],[1,104,99,101],[113,118,110,87],[225,140,109,65],[338,127,104,78]]}
 };
 // The first column is locomotion; the second is windup; the third is impact/recovery.
 // Keep the body anchored and show impact at the same 14f threshold as damage.
@@ -941,10 +945,11 @@ addEventListener('pagehide',saveAll);
 document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')saveAll()});
 
 // Order is rough difficulty progression from Korea to the Moon; used only for codex browsing.
-const ENEMY_ORDER=['dog','snache','guys','hippo','pigge','peng','gory','baa','croco','rabbit','squirrel','seal','leboin','kangaroo','mooth','rhino','bear','face','darkdog'];
+const ENEMY_ORDER=['dog','snache','guys','hippo','pigge','peng','gory','baa','croco','rabbit','squirrel','seal','leboin','kangaroo','mooth','rhino','bear','face','darkdog','metalhippo'];
 const ENEMY_TEXT={
  dog:'가장 먼저 마주치는 흔한 잡병. 느리지 않은 속도로 꾸준히 밀려온다.',
  snache:'혀를 길게 뻗어 공격하는 정찰병. 멍뭉이보다 빠르게 접근해 온다.',
+ metalhippo:'강철 갑옷을 두른 하마양. 치명타가 아니면 어떤 공격도 피해 1밖에 주지 못한다. 크리스탈의 치명타가 열쇠. (레전드 스토리)',
  darkdog:'어둠에 물든 멍뭉이. 멍뭉이보다 훨씬 단단하고 매섭게 물어뜯는다. (레전드 스토리)',
  ectosnache:'유령이 된 낼름이. 낼름이보다 강한 혀 공격을 쉬지 않고 날린다. (레전드 스토리)',
  gabriel:'천사의 날개를 단 멍뭉이. 체력은 낮지만 눈 깜짝할 사이에 전선까지 돌격한다. (레전드 스토리)',
@@ -965,7 +970,7 @@ const ENEMY_TEXT={
  bear:'느리지만 압도적인 파괴력을 지닌 곰. 사거리도 넓어 미리 대비해야 한다.',
  face:'공중에 떠서 전장을 압도하는 최종 보스. 넓은 범위와 강력한 한 방으로 아군 전열을 무너뜨린다.'
 };
-function codexTraitBadges(d){const b=[];if(d.trait==='red')b.push('빨간 적');if(d.trait==='floating')b.push('공중');if(d.area||d.splash||d.projectile)b.push('범위 공격');return b}
+function codexTraitBadges(d){const b=[];if(d.trait==='red')b.push('빨간 적');if(d.trait==='floating')b.push('공중');if(d.trait==='metal')b.push('메탈');if(d.area||d.splash||d.projectile)b.push('범위 공격');return b}
 let codexTab='ally',codexType='red',codexEvolved=false,codexUnit=null,codexRAF=0,codexLast=0,codexAutoPaused=false;
 function codexEntries(){return codexTab==='ally'?ALLIES.filter(allyUnlocked):ENEMY_ORDER}
 function buildCodexPreviewUnit(type,ally,evolved){
