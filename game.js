@@ -52,6 +52,9 @@ const STAGES=[
 // 150% enemy strength magnification. Moon (the chapter-1 finale) is not repeated.
 const CHAPTER1_LEN=STAGES.length;
 for(let i=0;i<CHAPTER1_LEN-1;i++){const base=STAGES[i];STAGES.push({...base,chapter:2,hp:Math.round(base.hp*1.5),desc:'세계편 2장 재도전 · 모든 적 능력치 150% 강화'});}
+// Chapter 2 ends on its own Moon (wiki "Moon (Empire of Cats)", Ch.2): boss 악의제왕 야옹마 (Dark Emperor Nyandam).
+STAGES.push({...STAGES[CHAPTER1_LEN-1],chapter:2,hp:200000,maxEnemies:12,desc:'세계편 2장 최종 보스 악의제왕 야옹마'});
+const CH2_HAWAII=CHAPTER1_LEN*2-2;// last pre-Moon chapter-2 stage: keeps the Lv.20 / Tuesday top-tier unlocks where they were
 const MAIN_STAGE_COUNT=STAGES.length;// chapter 1 + chapter 2; everything after this index is a special stage
 // Tuesday special stage "광속 전사": pre-15.4 Speed Up source (drop chance 20/50/100/100% (x2 on the hardest)).
 const TUESDAY_STAGES=[
@@ -115,6 +118,8 @@ data.units.face={trait:"floating",hp:18000,atk:850,interval:3.4,speed:1.8,range:
 data.units.metalhippo={trait:'metal',hp:128,atk:300,interval:.6,speed:2.8,range:5,reward:200,knockbacks:2,attackDuration:.5,area:true};
 // St. Pigge the 2nd / 엘리자베스 2세 (wiki): Pigge's exact art plus a crown part worn on the head.
 data.units.stpigge={trait:'red',hp:64000,atk:600,interval:22/30,speed:5.6,range:5,reward:300,knockbacks:4,attackDuration:22/30,windup:14/30,area:true};
+// 악의제왕 야옹마 / Dark Emperor Nyandam (wiki). Art is assembled from the part sheet 023_e.png into nyandam_frames.png.
+data.units.nyandam={trait:'red',hp:160000,atk:2700,interval:463/30,speed:1.4,range:15.6,reward:3000,knockbacks:3,attackDuration:1.2,windup:.7,area:true};
 data.units.darkdog={hp:900,atk:90,interval:1.4,speed:6,range:4,reward:150,knockbacks:3};
 data.units.gabriel={hp:600,atk:70,interval:1.2,speed:12,range:4,reward:130,knockbacks:3};
 data.units.ectosnache={hp:1100,atk:150,interval:1.1,speed:8,range:4.5,reward:180,knockbacks:3};
@@ -187,7 +192,7 @@ function addUnit(type,boss=false,mag=1){
  if(ally){game.money-=unitCost(type);game[cooldownKey(type)]=stats.cooldown;if(game.tutorial===2){game.tutorial=3;tutorial()}}render();
 }
 // Display-only size boost for large enemies so they read bigger than 2진 allies (hippo ~76px is the baseline).
-const ENEMY_SIZE={pigge:1.27,stpigge:1.6,seal:1.44,rhino:1.94,kangaroo:1.3,leboin:1.2,mooth:1.15,bear:1.26,face:1.2};
+const ENEMY_SIZE={pigge:1.27,stpigge:1.6,nyandam:1.5,seal:1.44,rhino:1.94,kangaroo:1.3,leboin:1.2,mooth:1.15,bear:1.26,face:1.2};
 // Displayed height (px) of each new 2진 body sprite; the HP bar sits just above it instead of at the default 1진 spot.
 const EVO_BODY_H={crimson:76,gold:78,ivory:77,chartreuse:78,mint:80,azure:89,crystal:81,lavender:80,salmon:74,raspberry:89};
 function drawUnit(u){let e=document.createElement('div'),evolved=u.ally&&u.stats?.evolved,legacyAlly=u.ally&&!NEW_ATLASES[u.type];e.className='unit '+u.type+(u.ally?' ally-art':'')+(evolved?' evolved':'');e.style.setProperty('--unit-color',COLORS?.[u.type]||'#fff');e.innerHTML='<div class="bar"><i style="width:100%"></i></div><span class="status-badges"><span class="freeze-icon st-freeze"></span><span class="slow-icon st-slow"></span><span class="weaken-icon st-weaken"></span><span class="crit-icon st-crit"></span><span class="pull-icon st-pull"></span></span>'+(legacyAlly?'<span class="ally-shadow"></span><span class="ally-sprite"></span>'+(evolved?'<span class="evolved-sprite"></span>':'')+(u.type==='pink'&&!evolved?'<span class="pink-ribbon"><i></i></span>':''):'<span class="dog-shadow"></span><span class="dog-sprite"></span>'+(u.type==='leboin'||u.type==='bear'?'<span class="dog-sprite-legs"></span>':'')+(u.type==='leboin'?'<span class="dog-sprite-body"></span>':'')+(u.type==='stpigge'?'<span class="pigge-crown"></span>':''));e.setAttribute('aria-label',UNIT_NAMES[u.type]+(evolved?' 2진':''));u.el=e;if(evolved&&EVO_BODY_H[u.type])e.querySelector('.bar').style.top=(33-EVO_BODY_H[u.type])+'px';if(!u.ally&&ENEMY_SIZE[u.type])e.style.setProperty('--enemy-size',ENEMY_SIZE[u.type]);unitsEl.append(e);const newAtlas=NEW_ATLASES[u.type];const sheet={rabbit:ELITE_RABBIT_SHEET,squirrel:SQUIRREL_G_SHEET,kangaroo:KANG_ROO_SHEET,mooth:MOOTH_SHEET,rhino:RHINO_SHEET,bear:BEAR_SHEET,face:FACE_SHEET}[u.type]||(evolved&&newAtlas?.evolved?newAtlas.evolved.sheet:newAtlas?.sheet);if(sheet)e.querySelector('.dog-sprite').style.backgroundImage=`url(${sheet})`;if(legacyAlly)animateAlly(u);else animateDog(u)}
@@ -497,7 +502,7 @@ function animateLeboin(u){
  u.el.dataset.animation=state;
 }
 
-const UNIT_NAMES={pink:'핑크',rhino:'투뿔소',bear:'곰선생',face:'대갈이군',cyan:'시안',blue:'블루',purple:'퍼플',peng:'재키펭',gory:'고릴라저씨',baa:'메에메에',seal:'바다레오파드',croco:'아거',leboin:'빠옹',rabbit:'엘리트래빗',squirrel:'다람G',kangaroo:'캥거류',mooth:'나나나난나방',red:'레드',orange:'오렌지',green:'그린',yellow:'옐로우',dog:'멍뭉이',darkdog:'다크 멍뭉이',metalhippo:'메탈 하마양',stpigge:'엘리자베스 2세',gabriel:'가브리엘',ectosnache:'엑토 낼름이',snache:'낼름이',guys:'놈놈놈',hippo:'하마양',pigge:'돼지새끼',crimson:'크림슨',gold:'골드',ivory:'아이보리',chartreuse:'샤르트뢰즈',mint:'민트',azure:'애저',crystal:'크리스탈',lavender:'라벤더',salmon:'살몬',raspberry:'라즈베리'};
+const UNIT_NAMES={pink:'핑크',rhino:'투뿔소',bear:'곰선생',face:'대갈이군',cyan:'시안',blue:'블루',purple:'퍼플',peng:'재키펭',gory:'고릴라저씨',baa:'메에메에',seal:'바다레오파드',croco:'아거',leboin:'빠옹',rabbit:'엘리트래빗',squirrel:'다람G',kangaroo:'캥거류',mooth:'나나나난나방',red:'레드',orange:'오렌지',green:'그린',yellow:'옐로우',dog:'멍뭉이',nyandam:'악의제왕 야옹마',darkdog:'다크 멍뭉이',metalhippo:'메탈 하마양',stpigge:'엘리자베스 2세',gabriel:'가브리엘',ectosnache:'엑토 낼름이',snache:'낼름이',guys:'놈놈놈',hippo:'하마양',pigge:'돼지새끼',crimson:'크림슨',gold:'골드',ivory:'아이보리',chartreuse:'샤르트뢰즈',mint:'민트',azure:'애저',crystal:'크리스탈',lavender:'라벤더',salmon:'살몬',raspberry:'라즈베리'};
 // Every rule sourced from each stage's wiki Battleground section: {type, at:{t:seconds}|{hp:percent}, delay:[min,max] (omit for a one-shot), count (omit = infinite), boss:true (adds the shockwave+banner, only where the wiki says "spawns as the boss")}.
 const STAGE_SPAWNS={
 0:[{type:'dog',at:{t:0},count:1},{type:'dog',at:{t:20},delay:[6,10]}],
@@ -552,6 +557,7 @@ const STAGE_SPAWNS={
 // Mirror the same spawn composition/timing onto the Chapter 2 stage indices; only the
 // unitStats() magnification differs at spawn time.
 for(let i=0;i<CHAPTER1_LEN-1;i++){STAGE_SPAWNS[CHAPTER1_LEN+i]=STAGE_SPAWNS[i].map(r=>({...r}))}
+STAGE_SPAWNS[CHAPTER1_LEN*2-1]=[{type:'nyandam',at:{t:0},count:1,boss:true},{type:'guys',at:{t:0},delay:[.13,1]},{type:'hippo',at:{t:0},delay:[10,40]},{type:'peng',at:{t:0},delay:[13.33,60]},{type:'rhino',at:{t:40},delay:[66.67,100]},{type:'croco',at:{t:0},delay:[6,33.33]},{type:'croco',at:{t:80},delay:[.27,1.33]},{type:'squirrel',at:{t:0},delay:[6,66.67]},{type:'squirrel',at:{t:120},delay:[.27,1.33]}];
 TUESDAY_STAGES.forEach((t,k)=>{const boss=t.boss,rules=[{type:'dog',at:{t:0},delay:[4,8]},{type:'snache',at:{t:5},delay:[8,20]},{type:'guys',at:{t:15},delay:[10,26]},{type:boss,at:{hp:90},count:1,boss:true}];if(k>=1)rules.push({type:boss,at:{hp:50},count:k>=3?2:1,delay:[6,10]});STAGE_SPAWNS[MAIN_STAGE_COUNT+k]=rules});
 [
  [{type:'dog',at:{t:0},delay:[2,6],count:50,mag:200},{type:'snache',at:{t:0},delay:[2,6],count:50,mag:200},{type:'guys',at:{t:0},delay:[2,6],count:50,mag:200}],
@@ -599,6 +605,7 @@ function renderNewButtons(){for(const type of GENERIC_CD_TYPES){
 }}
 
 const NEW_ATLASES={
+nyandam:{scale:.55,left:-70,sheet:'assets/nyandam_frames.png',walk:[[0,0,368,192],[368,0,368,192],[736,0,368,192],[1104,0,368,192]],attack:[[1472,0,368,192],[1840,0,368,192],[2208,0,368,192]]},
 darkdog:{scale:1,left:-4,sheet:'assets/darkdog_sheet.png',walk:[[4,11,50,55],[57,11,50,55],[110,11,50,55]],attack:[[4,86,50,56],[57,86,50,56],[110,91,50,51],[164,91,50,51]],hurt:[[4,162,50,56]]},
 gabriel:{scale:1,left:-10,sheet:'assets/gabriel_sheet.png',walk:[[5,11,62,56],[70,11,62,56],[135,11,62,56]],attack:[[5,87,61,58,-1],[69,88,62,57],[134,94,60,51],[197,94,60,51]],hurt:[[5,165,61,58,-1]]},
 ectosnache:{scale:1,left:-10,sheet:'assets/snache_dog-sprite.png',walk:[[299,43,55,63],[357,43,57,63],[417,43,61,63],[481,43,68,63]],attack:[[299,127,52,57],[354,124,51,60],[408,130,73,54],[484,142,73,42]]},
@@ -682,13 +689,17 @@ function animateAtlas(u){
 }
 
 let stageChapterView=1;
-function renderStageMenu(){renderTraining();renderBaseUpgrade();renderSpecialStages();renderLegend();
+let legendSub=0;// 0 = subchapter list, 1 = inside "전설의 시작"
+function renderStageMenu(){renderTraining();renderBaseUpgrade();renderSpecialStages();
+ $('#legendArrow').textContent=stageChapterView==='legend'?'‹':'›';$('#legendArrow').classList.toggle('active',stageChapterView==='legend');
+ $('#legendBar').classList.toggle('hidden',stageChapterView!=='legend');
+ if(stageChapterView==='legend'){$('#chapter1Tab').classList.remove('active');$('#chapter2Tab').classList.remove('active');renderLegend();return}
  $('#stageGrid').innerHTML='';
  const viewStages=STAGES.map((stage,i)=>({stage,i})).filter(o=>chapterOf(o.i)===stageChapterView);
  viewStages.forEach(({stage,i})=>{const button=document.createElement('button');button.className='stage-card'+(cleared.includes(i)?' cleared':'');button.disabled=!isUnlocked(i);button.title=`등장 적: ${stageEnemies(i).map(type=>UNIT_NAMES[type]).join(' · ')} · 적 성 체력 ${stage.hp}`;button.innerHTML=`<strong>${stage.name}</strong>${cleared.includes(i)?'<small>✓</small>':''}`;button.onclick=()=>{selectedStage=i;reset()};$('#stageGrid').append(button)});
  $('#chapter1Tab').classList.toggle('active',stageChapterView===1);
  $('#chapter2Tab').classList.toggle('active',stageChapterView===2);
- $('#chapterNote').textContent=stageChapterView===2?'한국 ~ 하와이 재도전 · 모든 적 체력·공격력 150% 강화':'';
+ $('#chapterNote').textContent=stageChapterView===2?'한국 ~ 달 재도전 · 모든 적 체력·공격력 150% 강화 · 달의 보스는 악의제왕 야옹마':'';
  $('#progressText').textContent=`${viewStages.filter(o=>cleared.includes(o.i)).length} / ${viewStages.length} 스테이지 클리어 · 세계편 ${stageChapterView}장`;
 }
 const SPEED_PACK={count:9,xp:1000};// pre-15.4: bought in packs of 9 (50 cat food in the original) - paid in XP here
@@ -699,17 +710,26 @@ function renderSpecialStages(){
  const open=cleared.includes(CHAPTER1_LEN-1),tue=isTuesday();
  $('#speedText').textContent=`스피드업 ${speedTickets}개`;
  $('#specialNote').textContent=!open?'세계편 1장 마지막 스테이지(달)를 클리어하면 열립니다.':tue?'오늘은 화요일! 스피드업을 얻을 수 있는 스테이지가 열려 있습니다. (초상급은 세계편 2장 클리어 후)':'화요일에만 열립니다. 스피드업은 아래에서 XP로 구매할 수도 있습니다.';
- TUESDAY_STAGES.forEach((t,k)=>{const i=MAIN_STAGE_COUNT+k,b=document.createElement('button');b.className='stage-card';const locked=!open||!tue||(k===3&&!cleared.includes(MAIN_STAGE_COUNT-1));b.disabled=locked;b.title=t.desc+' · 적 성 체력 '+t.hp;b.innerHTML=`<strong>${t.name.replace('광속 전사 ','')}</strong><small>${Math.round(t.chance*100)}%${t.count>1?' ×'+t.count:''}</small>`;b.onclick=()=>{selectedStage=i;reset()};grid.append(b)});
+ TUESDAY_STAGES.forEach((t,k)=>{const i=MAIN_STAGE_COUNT+k,b=document.createElement('button');b.className='stage-card';const locked=!open||!tue||(k===3&&!cleared.includes(CH2_HAWAII));b.disabled=locked;b.title=t.desc+' · 적 성 체력 '+t.hp;b.innerHTML=`<strong>${t.name.replace('광속 전사 ','')}</strong><small>${Math.round(t.chance*100)}%${t.count>1?' ×'+t.count:''}</small>`;b.onclick=()=>{selectedStage=i;reset()};grid.append(b)});
  const buy=document.createElement('button');buy.className='stage-card';buy.disabled=training.xp<SPEED_PACK.xp;buy.innerHTML=`<strong>스피드업 ${SPEED_PACK.count}개 구매</strong><small>${SPEED_PACK.xp} XP</small>`;buy.onclick=buySpeedPack;grid.append(buy);
 }
 function legendXP(k){return LEGEND_STAGES[k].xp*LEGEND_XP_SCALE}
 function renderLegend(){
- const grid=$('#legendGrid'),tabs=$('#legendCrowns');grid.innerHTML='';tabs.innerHTML='';
- const open=legendOpen();
- $('#legendText').textContent=open?`★${legendCrown} · ${legendProgress[legendCrown].length} / ${LEGEND_STAGES.length}`:'';
- $('#legendNote').textContent=!open?'세계편 1장 마지막 스테이지(달)를 클리어하면 열립니다.':`왕관 난이도 ★${legendCrown}: 적 능력치 ${Math.round(LEGEND_CROWN_MULT[legendCrown-1]*100)}% · 한 난이도의 8개 스테이지를 모두 클리어하면 다음 왕관이 열립니다.`;
- for(const c of [1,2,3,4]){const b=document.createElement('button');b.className='codex-tab'+(c===legendCrown?' active':'');b.textContent='★'.repeat(c);b.disabled=!open||!legendCrownUnlocked(c);b.onclick=()=>{legendCrown=c;renderLegend()};tabs.append(b)}
- LEGEND_STAGES.forEach((t,k)=>{const i=LEGEND_START+k,done=legendProgress[legendCrown].includes(k),b=document.createElement('button');b.className='stage-card'+(done?' cleared':'');b.disabled=!legendStageUnlocked(k);b.title=`${t.en} · ${t.desc} · 등장 적: ${stageEnemies(i).map(type=>UNIT_NAMES[type]).join(' · ')} · 적 성 체력 ${t.hp}`;b.innerHTML=`<strong>${t.flag} ${t.name}</strong><small>${done?'✓ ':''}${legendXP(k)} XP</small>`;b.onclick=()=>{selectedStage=i;reset()};grid.append(b)});
+ const grid=$('#stageGrid'),tabs=$('#legendCrowns');grid.innerHTML='';tabs.innerHTML='';
+ const open=legendOpen(),done=legendProgress[legendCrown];
+ $('#progressText').textContent=`레전드 스토리 · 전설의 시작 ★${legendCrown} · ${done.length} / ${LEGEND_STAGES.length}`;
+ $('#chapterNote').textContent=!open?'세계편 1장 마지막 스테이지(달)를 클리어하면 열립니다.':legendSub?'':'서브챕터를 선택하세요.';
+ tabs.classList.toggle('hidden',!legendSub);
+ $('#legendNote').textContent=legendSub?`왕관 난이도 ★${legendCrown}: 적 능력치 ${Math.round(LEGEND_CROWN_MULT[legendCrown-1]*100)}% · 8개 스테이지를 모두 클리어하면 다음 왕관이 열립니다.`:'';
+ if(!legendSub){
+  const b=document.createElement('button');b.className='stage-card legend-sub'+(legendProgress[1].length===LEGEND_STAGES.length?' cleared':'');b.disabled=!open;
+  b.innerHTML=`<strong>전설의 시작</strong><small>${open?`★${legendCrown} ${done.length} / ${LEGEND_STAGES.length}`:'잠김'}</small>`;
+  b.onclick=()=>{legendSub=1;renderLegend()};grid.append(b);return;
+ }
+ const back=document.createElement('button');back.className='codex-tab';back.textContent='‹ 서브챕터';back.onclick=()=>{legendSub=0;renderLegend()};tabs.append(back);
+ for(const c of [1,2,3,4]){const b=document.createElement('button');b.className='codex-tab'+(c===legendCrown?' active':'');b.textContent='★'.repeat(c);b.disabled=!legendCrownUnlocked(c);b.onclick=()=>{legendCrown=c;renderLegend()};tabs.append(b)}
+ // only the stages reached so far are shown: the first one, plus one more after each clear
+ LEGEND_STAGES.forEach((t,k)=>{if(!legendStageUnlocked(k))return;const i=LEGEND_START+k,cl=done.includes(k),b=document.createElement('button');b.className='stage-card'+(cl?' cleared':'');b.title=`${t.en} · ${t.desc} · 등장 적: ${stageEnemies(i).map(type=>UNIT_NAMES[type]).join(' · ')} · 적 성 체력 ${t.hp}`;b.innerHTML=`<strong>${t.flag} ${t.name}</strong><small>${cl?'✓ ':''}${legendXP(k)} XP</small>`;b.onclick=()=>{selectedStage=i;reset()};grid.append(b)});
 }
 function legendFinish(win){
  const k=STAGES[selectedStage].legend.k,c=legendCrown,list=legendProgress[c],first=win&&!list.includes(k);
@@ -733,6 +753,7 @@ function legendFinish(win){
  renderNewButtons();renderOrangeButton();renderYellowButton();renderGreenButton();
 }
 $('#chapter1Tab').onclick=()=>{stageChapterView=1;renderStageMenu()};
+$('#legendArrow').onclick=()=>{stageChapterView=stageChapterView==='legend'?1:'legend';if(stageChapterView==='legend')legendSub=0;renderStageMenu()};
 $('#chapter2Tab').onclick=()=>{stageChapterView=2;renderStageMenu()};
 function openStages(){if(game.running&&!game.ended)game.paused=true;highlight();render();renderStageMenu();$('#stageMenu').classList.remove('hidden');$('#resumeBtn').textContent=game.ended?'결과로 돌아가기':'전투로 돌아가기'}
 $('#stagesBtn').onclick=openStages;
@@ -810,7 +831,7 @@ function profileMarkup(type,evolved){
  if(idx>=0){const c=NEW_PROFILE_CALIB[type];return `<div class="generated-profile" role="img" aria-label="${UNIT_NAMES[type]}${evolved?' 2진':''} 프로필" style="background-image:url(${NEW_PROFILE_SHEET});background-size:${c.size}px ${c.size}px;background-position:${c.x}px ${c.y}px"></div>`}
  const c=PROFILE_CALIB[type][evolved?'evolved':'base'];return `<div class="generated-profile" role="img" aria-label="${UNIT_NAMES[type]}${evolved?' 2진':''} 프로필" style="background-image:url(${PROFILE_SHEET});background-size:${c.size}px ${c.size}px;background-position:${c.x}px ${c.y}px"></div>`}
 const LV_EVOLVE=10,LV_MAX=20,HP_CURVE=.6,HP_LV10_MULT=1.8*2/1.15;// HP: Lv.11~20 front-loaded; Lv.10 is a jump so the 2진 (+15% HP) has 2x the Lv.9 HP
-function levelCap(){return cleared.includes(MAIN_STAGE_COUNT-1)?LV_MAX:LV_EVOLVE}// Lv.11~20 unlocks after clearing the last chapter-2 stage
+function levelCap(){return cleared.includes(CH2_HAWAII)?LV_MAX:LV_EVOLVE}// Lv.11~20 unlocks after clearing the last chapter-2 stage
 const ECON_COST=[1000,2000,4000,8000,16000,32000],WALLET_STEP=400,PROD_STEP=.15;// permanent XP upgrades: wallet cap +400/level, money rate +15%/level
 let training={xp:0,baseLevel:1,levels:Object.fromEntries(ALLIES.map(t=>[t,1])),forms:{},walletLevel:0,prodLevel:0},trainingSaveFailed=false;
 function stageXP(i){return (200+i*50)*2}
@@ -952,12 +973,13 @@ addEventListener('pagehide',saveAll);
 document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')saveAll()});
 
 // Order is rough difficulty progression from Korea to the Moon; used only for codex browsing.
-const ENEMY_ORDER=['dog','snache','guys','hippo','pigge','peng','gory','baa','croco','rabbit','squirrel','seal','leboin','kangaroo','mooth','rhino','bear','face','darkdog','metalhippo','stpigge'];
+const ENEMY_ORDER=['dog','snache','guys','hippo','pigge','peng','gory','baa','croco','rabbit','squirrel','seal','leboin','kangaroo','mooth','rhino','bear','face','nyandam','darkdog','metalhippo','stpigge'];
 const ENEMY_TEXT={
  dog:'가장 먼저 마주치는 흔한 잡병. 느리지 않은 속도로 꾸준히 밀려온다.',
  snache:'혀를 길게 뻗어 공격하는 정찰병. 멍뭉이보다 빠르게 접근해 온다.',
  metalhippo:'강철 갑옷을 두른 하마양. 치명타가 아니면 어떤 공격도 피해 1밖에 주지 못한다. 크리스탈의 치명타가 열쇠. (레전드 스토리)',
  stpigge:'왕관을 쓴 거대한 돼지새끼. 넉백이 많고 공격이 빠르며 체력이 매우 높은 빨간 적. 퍼플을 활용하자. (레전드 스토리)',
+ nyandam:'그림자 부하들이 떠받친 옥좌에 앉아 와인잔을 기울이는 악의 제왕. 느리지만 체력이 엄청나고, 그림자 손 떼로 먼 거리까지 휩쓴다. (세계편 2장 달)',
  darkdog:'어둠에 물든 멍뭉이. 멍뭉이보다 훨씬 단단하고 매섭게 물어뜯는다. (레전드 스토리)',
  ectosnache:'유령이 된 낼름이. 낼름이보다 강한 혀 공격을 쉬지 않고 날린다. (레전드 스토리)',
  gabriel:'천사의 날개를 단 멍뭉이. 체력은 낮지만 눈 깜짝할 사이에 전선까지 돌격한다. (레전드 스토리)',
