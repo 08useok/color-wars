@@ -64,19 +64,20 @@ const TUESDAY_STAGES=[
  {name:'광속 전사 초상급',flag:'⚡',hp:50000,chance:1,count:2,boss:'leboin',desc:'빠옹 · 스피드업 2개 100%'}
 ];
 TUESDAY_STAGES.forEach(t=>STAGES.push({name:t.name,flag:t.flag,hp:t.hp,gap:4,wave:0,sky:'#f6e39a',land:'#c9a24e',desc:t.desc,chapter:3,special:{chance:t.chance,count:t.count},maxEnemies:10}));
-// Legend Story subchapter 1 "전설의 시작" (Stories of Legend: The Legend Begins), per the
+// Legend Story subchapter 1 "전설의 시작" (Stories of Legend: The Legend Begins); Korean stage names per
+// 나무위키 '냥코 대전쟁/레전드 스토리', stage data per the
 // Battle Cats wiki: 8 stages, base HP / max enemies / XP / drops as listed there (XP x4 to match
 // this game's XP scale). Opens after the chapter-1 Moon. Crowns multiply every enemy's
 // magnification by 1/1.5/2/3; the enemy base HP is the same on every crown.
 const LEGEND_STAGES=[
- {name:'대지를 흔드는 자',en:'Earthshaker',flag:'🌾',hp:60000,max:7,xp:950,drop:{speed:.01},sky:'#9fd8f0',land:'#8ec85a',desc:'멍뭉이·낼름이·놈놈놈 200% 각 50마리'},
- {name:'공포의 재림',en:'Return of Terror',flag:'🦛',hp:50000,max:4,xp:950,drop:{speed:.01},sky:'#b9c3cf',land:'#8f9aa8',desc:'놈놈놈 400% · 보스 메탈 하마양 (치명타 외 피해 1)'},
- {name:'석양의 블루스',en:'Sunset Blues',flag:'🌇',hp:70000,max:40,xp:1045,sky:'#f2b27a',land:'#b9864f',desc:'적 성 99%에서 아거 30마리 러시'},
- {name:'우울한 습지',en:'Melancholy Damp',flag:'🌧️',hp:80000,max:4,xp:1140,drop:{speed:.01},sky:'#8fa3b1',land:'#5f7560',desc:'메에메에·놈놈놈 · 50%에서 보스 엘리자베스 2세'},
- {name:'바운시 파크',en:'Bouncy Park',flag:'🎡',hp:90000,max:4,xp:1140,sky:'#9fd8ef',land:'#9ccf6a',desc:'40초 후 재키펭 3마리'},
- {name:'상냥한 미소',en:'Gentle Smile',flag:'🙂',hp:100000,max:4,xp:1140,drop:{speed:.01},sky:'#e8d4b0',land:'#b9a56f',desc:'적 성 90%에서 보스 고릴라저씨 500% 3연속'},
+ {name:'대지를 흔들다',en:'Earthshaker',flag:'🌾',hp:60000,max:7,xp:950,drop:{speed:.01},sky:'#9fd8f0',land:'#8ec85a',desc:'멍뭉이·낼름이·놈놈놈 200% 각 50마리'},
+ {name:'그 공포, 또다시',en:'Return of Terror',flag:'🦛',hp:50000,max:4,xp:950,drop:{speed:.01},sky:'#b9c3cf',land:'#8f9aa8',desc:'놈놈놈 400% · 보스 메탈 하마양 (치명타 외 피해 1)'},
+ {name:'수고하세트',en:'Sunset Blues',flag:'🌇',hp:70000,max:40,xp:1045,sky:'#f2b27a',land:'#b9864f',desc:'적 성 99%에서 아거 30마리 러시'},
+ {name:'멜랑꼴리 습지',en:'Melancholy Damp',flag:'🌧️',hp:80000,max:4,xp:1140,drop:{speed:.01},sky:'#8fa3b1',land:'#5f7560',desc:'메에메에·놈놈놈 · 50%에서 보스 엘리자베스 2세'},
+ {name:'탱글탱글 광장',en:'Bouncy Park',flag:'🎡',hp:90000,max:4,xp:1140,sky:'#9fd8ef',land:'#9ccf6a',desc:'40초 후 재키펭 3마리'},
+ {name:'애정의 눈빛',en:'Gentle Smile',flag:'🙂',hp:100000,max:4,xp:1140,drop:{speed:.01},sky:'#e8d4b0',land:'#b9a56f',desc:'적 성 90%에서 보스 고릴라저씨 500% 3연속'},
  {name:'목장의 수호자',en:'Guardian of the Ranch',flag:'🐄',hp:110000,max:6,xp:1330,sky:'#a8d8e8',land:'#7fb35c',desc:'적 성 90%에서 보스 빠옹 300%'},
- {name:'잠자는 사자',en:'Sleeping Lion',flag:'🦁',hp:120000,max:6,xp:1710,drop:{xp:13500,xpChance:.05},sky:'#3b3f66',land:'#7b6f8f',desc:'고릴라저씨·하마양 4연속 · 50%에서 다크 멍뭉이 4마리와 보스 다람G'}
+ {name:'잠자는 라이온',en:'Sleeping Lion',flag:'🦁',hp:120000,max:6,xp:1710,drop:{xp:13500,xpChance:.05},sky:'#3b3f66',land:'#7b6f8f',desc:'고릴라저씨·하마양 4연속 · 50%에서 다크 멍뭉이 4마리와 보스 다람G'}
 ];
 const LEGEND_START=STAGES.length,LEGEND_CROWN_MULT=[1,1.5,2,3],LEGEND_XP_SCALE=4;
 LEGEND_STAGES.forEach((t,k)=>STAGES.push({...t,gap:4,wave:0,chapter:4,legend:{k},maxEnemies:t.max}));
@@ -729,7 +730,7 @@ function renderLegend(){
  const back=document.createElement('button');back.className='codex-tab';back.textContent='‹ 서브챕터';back.onclick=()=>{legendSub=0;renderLegend()};tabs.append(back);
  for(const c of [1,2,3,4]){const b=document.createElement('button');b.className='codex-tab'+(c===legendCrown?' active':'');b.textContent='★'.repeat(c);b.disabled=!legendCrownUnlocked(c);b.onclick=()=>{legendCrown=c;renderLegend()};tabs.append(b)}
  // only the stages reached so far are shown: the first one, plus one more after each clear
- LEGEND_STAGES.forEach((t,k)=>{if(!legendStageUnlocked(k))return;const i=LEGEND_START+k,cl=done.includes(k),b=document.createElement('button');b.className='stage-card'+(cl?' cleared':'');b.title=`${t.en} · ${t.desc} · 등장 적: ${stageEnemies(i).map(type=>UNIT_NAMES[type]).join(' · ')} · 적 성 체력 ${t.hp}`;b.innerHTML=`<strong>${t.flag} ${t.name}</strong><small>${cl?'✓ ':''}${legendXP(k)} XP</small>`;b.onclick=()=>{selectedStage=i;reset()};grid.append(b)});
+ LEGEND_STAGES.forEach((t,k)=>{if(!legendStageUnlocked(k))return;const i=LEGEND_START+k,cl=done.includes(k),b=document.createElement('button');b.className='stage-card legend-stage'+(cl?' cleared':'');b.title=`${t.en} · ${t.desc} · 등장 적: ${stageEnemies(i).map(type=>UNIT_NAMES[type]).join(' · ')} · 적 성 체력 ${t.hp}`;b.innerHTML=`<strong>${t.flag} ${t.name}</strong><small>${cl?'✓ ':''}${legendXP(k)} XP</small>`;b.onclick=()=>{selectedStage=i;reset()};grid.append(b)});
 }
 function legendFinish(win){
  const k=STAGES[selectedStage].legend.k,c=legendCrown,list=legendProgress[c],first=win&&!list.includes(k);

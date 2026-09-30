@@ -211,3 +211,4 @@ body { overflow:auto; }
 .pigge-crown{position:absolute;width:35px;height:37px;background:url("assets/st_pigge2_sheet.png") -354px -139px no-repeat;transform-origin:left bottom;z-index:2;pointer-events:none}
 .unit.nyandam{background:none;border:0;border-radius:0;width:42px;height:42px}.unit.nyandam .dog-shadow{display:none}.unit.nyandam .bar{top:-110px;width:90px;left:-20px}
 .legend-arrow{margin-left:auto;font-size:18px;font-weight:700;min-width:44px}.legend-bar.hidden,.legend-crowns.hidden{display:none}.stage-card.legend-sub{grid-column:span 2;padding:16px 8px}.stage-card.legend-sub strong{font-size:16px;color:#ffd35a}
+.stage-card.legend-stage strong{white-space:normal;overflow:visible;text-overflow:clip;line-height:1.25;word-break:keep-all}
