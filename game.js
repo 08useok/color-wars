@@ -61,20 +61,22 @@ const TUESDAY_STAGES=[
  {name:'광속 전사 초상급',flag:'⚡',hp:50000,chance:1,count:2,boss:'leboin',desc:'빠옹 · 스피드업 2개 100%'}
 ];
 TUESDAY_STAGES.forEach(t=>STAGES.push({name:t.name,flag:t.flag,hp:t.hp,gap:4,wave:0,sky:'#f6e39a',land:'#c9a24e',desc:t.desc,chapter:3,special:{chance:t.chance,count:t.count},maxEnemies:10}));
-// Legend Story subchapter 1 "전설의 시작": opens after the chapter-1 Moon. Each stage is replayed
-// at crown ★1~★4 (enemy stats and enemy-base HP x1/1.5/2/3); clearing all 8 at ★n opens ★n+1.
+// Legend Story subchapter 1 "전설의 시작" (Stories of Legend: The Legend Begins), per the
+// Battle Cats wiki: 8 stages, base HP / max enemies / XP / drops as listed there (XP x4 to match
+// this game's XP scale). Opens after the chapter-1 Moon. Crowns multiply every enemy's
+// magnification by 1/1.5/2/3; the enemy base HP is the same on every crown.
 const LEGEND_STAGES=[
- {name:'전설의 초원',flag:'🌾',hp:20000,sky:'#9fd8f0',land:'#8ec85a',desc:'신규 적 다크 멍뭉이'},
- {name:'어둠의 숲',flag:'🌲',hp:25000,sky:'#6f8fa6',land:'#4f7a4a',desc:'다크 멍뭉이 무리와 고릴라저씨'},
- {name:'유령 골짜기',flag:'👻',hp:25000,sky:'#9aa6c8',land:'#6d7389',desc:'신규 적 엑토 낼름이'},
- {name:'천사의 계단',flag:'👼',hp:30000,sky:'#f3e6c4',land:'#d8c9a2',desc:'신규 적 가브리엘 · 매우 빠른 돌격'},
- {name:'붉은 협곡',flag:'🏜️',hp:35000,sky:'#f0b58c',land:'#b8683f',desc:'빨간 적 총출동 · 퍼플을 활용하세요'},
- {name:'폭풍의 해안',flag:'🌊',hp:35000,sky:'#7fb3cf',land:'#c9b98a',desc:'나나나난나방과 신규 적 혼성'},
- {name:'검은 성채',flag:'🏰',hp:40000,sky:'#4f4a66',land:'#6b6474',desc:'빠옹 · 투뿔소와 다크 멍뭉이 대군'},
- {name:'전설의 문',flag:'⛩️',hp:60000,sky:'#2b2f52',land:'#7b6f8f',desc:'곰선생과 대갈이군 · 전설의 시작 최종 관문'}
+ {name:'대지를 흔드는 자',en:'Earthshaker',flag:'🌾',hp:60000,max:7,xp:950,drop:{speed:.01},sky:'#9fd8f0',land:'#8ec85a',desc:'멍뭉이·낼름이·놈놈놈 200% 각 50마리'},
+ {name:'공포의 재림',en:'Return of Terror',flag:'🦛',hp:50000,max:4,xp:950,drop:{speed:.01},sky:'#b9c3cf',land:'#8f9aa8',desc:'놈놈놈 400% · 보스 하마양(원작: 메탈 하마양)'},
+ {name:'석양의 블루스',en:'Sunset Blues',flag:'🌇',hp:70000,max:40,xp:1045,sky:'#f2b27a',land:'#b9864f',desc:'적 성 99%에서 아거 30마리 러시'},
+ {name:'우울한 습지',en:'Melancholy Damp',flag:'🌧️',hp:80000,max:4,xp:1140,drop:{speed:.01},sky:'#8fa3b1',land:'#5f7560',desc:'메에메에·놈놈놈 · 50%에서 보스 돼지새끼(원작: 성 돼지새끼 2세)'},
+ {name:'바운시 파크',en:'Bouncy Park',flag:'🎡',hp:90000,max:4,xp:1140,sky:'#9fd8ef',land:'#9ccf6a',desc:'40초 후 재키펭 3마리'},
+ {name:'상냥한 미소',en:'Gentle Smile',flag:'🙂',hp:100000,max:4,xp:1140,drop:{speed:.01},sky:'#e8d4b0',land:'#b9a56f',desc:'적 성 90%에서 보스 고릴라저씨 500% 3연속'},
+ {name:'목장의 수호자',en:'Guardian of the Ranch',flag:'🐄',hp:110000,max:6,xp:1330,sky:'#a8d8e8',land:'#7fb35c',desc:'적 성 90%에서 보스 빠옹 300%'},
+ {name:'잠자는 사자',en:'Sleeping Lion',flag:'🦁',hp:120000,max:6,xp:1710,drop:{xp:13500,xpChance:.05},sky:'#3b3f66',land:'#7b6f8f',desc:'고릴라저씨·하마양 4연속 · 50%에서 다크 멍뭉이 4마리와 보스 다람G'}
 ];
-const LEGEND_START=STAGES.length,LEGEND_CROWN_MULT=[1,1.5,2,3];
-LEGEND_STAGES.forEach((t,k)=>STAGES.push({...t,gap:4,wave:0,chapter:4,legend:{k},maxEnemies:10}));
+const LEGEND_START=STAGES.length,LEGEND_CROWN_MULT=[1,1.5,2,3],LEGEND_XP_SCALE=4;
+LEGEND_STAGES.forEach((t,k)=>STAGES.push({...t,gap:4,wave:0,chapter:4,legend:{k},maxEnemies:t.max}));
 let selectedStage=0,cleared=[];
 try{const saved=JSON.parse(localStorage.getItem('red-battle-progress-v1')||'[]');if(Array.isArray(saved))cleared=[...new Set(saved.filter(x=>Number.isInteger(x)&&x>=0&&x<MAIN_STAGE_COUNT))]}catch{}
 function saveProgress(){try{localStorage.setItem('red-battle-progress-v1',JSON.stringify(cleared))}catch{}}
@@ -84,7 +86,7 @@ function saveLegend(){try{localStorage.setItem('red-battle-legend-v1',JSON.strin
 function legendOpen(){return cleared.includes(CHAPTER1_LEN-1)}
 function legendCrownUnlocked(c){return c===1||legendProgress[c-1].length===LEGEND_STAGES.length}
 function legendStageUnlocked(k,c=legendCrown){return legendOpen()&&legendCrownUnlocked(c)&&(k===0||legendProgress[c].includes(k-1)||legendProgress[c].includes(k))}
-function stageBaseHp(i){const s=STAGES[i];return s.legend?Math.round(s.hp*LEGEND_CROWN_MULT[legendCrown-1]):s.hp}
+function stageBaseHp(i){return STAGES[i].hp}
 function isUnlocked(i){return i===0||cleared.includes(i-1)||cleared.includes(i)}
 function chapterOf(i){return STAGES[i]?.chapter||1}
 function enemyMagnification(){const c=chapterOf(selectedStage);return c===2?1.5:c===4?LEGEND_CROWN_MULT[legendCrown-1]:1}
@@ -172,11 +174,11 @@ function lockEngage(target,duration){if(!target.attackLock||game.elapsed>=target
 const ALLY_DEPLOY_LIMIT=50;// Battle Cats' default Cat Deploy Limit (special restriction stages there lower or raise it); caps how many allies can be on the field at once so cheap units can't stack infinitely.
 function allyDeployCount(){return game.units.filter(u=>u.ally&&u.hp>0).length}
 function allyDeployFull(){return allyDeployCount()>=ALLY_DEPLOY_LIMIT}
-function addUnit(type,boss=false){
+function addUnit(type,boss=false,mag=1){
  if(game.ended)return;
  const d=data.units[type],ally=ALLIES.includes(type);
  if(ally&&(!(game.running||(type==='red'&&game.tutorial===2))||game.paused||unitCooldown(type)>0||game.money<unitCost(type)||!allyUnlocked(type)||allyDeployFull()))return;
- const stats=unitStats(type);const u={type,ally,boss,stats,hp:stats.hp,max:stats.hp,x:ally?data.bases.ally.x:data.bases.enemy.x,emerging:true,atkCd:0,kb:0,animTime:0,attackTime:0,hurtTime:0,kbTime:0,flashTime:0};
+ const stats=unitStats(type);if(!ally&&mag!==1){stats.hp=Math.round(stats.hp*mag);stats.atk=Math.round(stats.atk*mag)}const u={type,ally,boss,stats,hp:stats.hp,max:stats.hp,x:ally?data.bases.ally.x:data.bases.enemy.x,emerging:true,atkCd:0,kb:0,animTime:0,attackTime:0,hurtTime:0,kbTime:0,flashTime:0};
  game.units.push(u);drawUnit(u);u.el.style.left=`calc(${u.x}% - 21px)`;
  if(ally){game.money-=unitCost(type);game[cooldownKey(type)]=stats.cooldown;if(game.tutorial===2){game.tutorial=3;tutorial()}}render();
 }
@@ -547,14 +549,14 @@ const STAGE_SPAWNS={
 for(let i=0;i<CHAPTER1_LEN-1;i++){STAGE_SPAWNS[CHAPTER1_LEN+i]=STAGE_SPAWNS[i].map(r=>({...r}))}
 TUESDAY_STAGES.forEach((t,k)=>{const boss=t.boss,rules=[{type:'dog',at:{t:0},delay:[4,8]},{type:'snache',at:{t:5},delay:[8,20]},{type:'guys',at:{t:15},delay:[10,26]},{type:boss,at:{hp:90},count:1,boss:true}];if(k>=1)rules.push({type:boss,at:{hp:50},count:k>=3?2:1,delay:[6,10]});STAGE_SPAWNS[MAIN_STAGE_COUNT+k]=rules});
 [
- [{type:'dog',at:{t:0},delay:[3,8]},{type:'darkdog',at:{t:10},delay:[12,25]},{type:'snache',at:{t:20},delay:[10,20]},{type:'darkdog',at:{hp:70},count:3,delay:[2,4]}],
- [{type:'darkdog',at:{t:0},delay:[6,12]},{type:'snache',at:{t:0},delay:[8,16]},{type:'guys',at:{t:15},delay:[8,18]},{type:'gory',at:{hp:90},count:1,boss:true}],
- [{type:'snache',at:{t:0},delay:[4,10]},{type:'ectosnache',at:{t:20},delay:[15,30]},{type:'darkdog',at:{t:30},delay:[10,20]},{type:'ectosnache',at:{hp:80},count:2,delay:[3,6]},{type:'peng',at:{hp:50},count:1}],
- [{type:'dog',at:{t:0},delay:[3,6]},{type:'gabriel',at:{t:0},delay:[8,16]},{type:'croco',at:{t:30},delay:[10,20]},{type:'baa',at:{t:60},delay:[15,30]},{type:'gabriel',at:{hp:60},count:5,delay:[1,2]}],
- [{type:'darkdog',at:{t:0},delay:[6,12]},{type:'pigge',at:{t:20},delay:[20,35]},{type:'rabbit',at:{t:40},delay:[15,30]},{type:'seal',at:{hp:80},count:1,boss:true}],
- [{type:'gabriel',at:{t:0},delay:[8,14]},{type:'ectosnache',at:{t:10},delay:[12,24]},{type:'kangaroo',at:{t:40},delay:[25,40]},{type:'mooth',at:{hp:70},count:1,boss:true}],
- [{type:'darkdog',at:{t:0},delay:[3,6]},{type:'ectosnache',at:{t:20},delay:[10,20]},{type:'rhino',at:{t:60},delay:[25,40]},{type:'leboin',at:{hp:90},count:1,boss:true}],
- [{type:'darkdog',at:{t:0},delay:[4,8]},{type:'gabriel',at:{t:10},delay:[8,16]},{type:'ectosnache',at:{t:20},delay:[10,20]},{type:'bear',at:{hp:90},count:1,boss:true},{type:'face',at:{hp:50},count:1,boss:true}]
+ [{type:'dog',at:{t:0},delay:[2,6],count:50,mag:200},{type:'snache',at:{t:0},delay:[2,6],count:50,mag:200},{type:'guys',at:{t:0},delay:[2,6],count:50,mag:200}],
+ [{type:'guys',at:{t:0},delay:[2,12],mag:400},{type:'hippo',at:{hp:99},count:1,boss:true,mag:400}],
+ [{type:'dog',at:{t:0},delay:[3,20],mag:400},{type:'snache',at:{t:0},delay:[3,20],mag:400},{type:'guys',at:{t:40},delay:[3,20],mag:400},{type:'croco',at:{hp:99},count:30,delay:[.13,.8],mag:400}],
+ [{type:'baa',at:{t:0},count:1,mag:400},{type:'baa',at:{t:40},delay:[20,40],mag:400},{type:'guys',at:{t:0},delay:[3,20],mag:400},{type:'pigge',at:{hp:50},count:1,boss:true,mag:400}],
+ [{type:'dog',at:{t:0},delay:[3,20],mag:400},{type:'snache',at:{t:0},delay:[3,20],mag:400},{type:'guys',at:{t:40},delay:[3,20],mag:400},{type:'peng',at:{t:40},delay:[2,8],count:3,mag:400}],
+ [{type:'dog',at:{t:0},delay:[3,20],mag:400},{type:'snache',at:{t:0},delay:[3,20],mag:400},{type:'guys',at:{t:40},delay:[3,20],mag:400},{type:'gory',at:{hp:90},count:3,delay:[1,2],boss:true,mag:500}],
+ [{type:'dog',at:{t:0},delay:[3,20],mag:400},{type:'snache',at:{t:0},delay:[3,20],mag:400},{type:'guys',at:{t:40},delay:[3,20],mag:400},{type:'leboin',at:{hp:90},count:1,boss:true,mag:300}],
+ [{type:'dog',at:{t:0},delay:[3,20],mag:400},{type:'snache',at:{t:0},delay:[3,20],mag:400},{type:'guys',at:{t:40},delay:[3,20],mag:400},{type:'gory',at:{hp:95},count:1,mag:400},{type:'hippo',at:{hp:95},count:1,mag:400},{type:'gory',at:{hp:85},count:1,mag:400},{type:'hippo',at:{hp:85},count:1,mag:400},{type:'gory',at:{hp:75},count:1,mag:400},{type:'hippo',at:{hp:75},count:1,mag:400},{type:'gory',at:{hp:65},count:1,mag:400},{type:'hippo',at:{hp:65},count:1,mag:400},{type:'darkdog',at:{hp:50},count:4,delay:[.07,.13]},{type:'squirrel',at:{hp:50},count:1,boss:true}]
 ].forEach((rules,k)=>{STAGE_SPAWNS[LEGEND_START+k]=rules});
 // Max enemies alive at once, per Battle Cats wiki (EoC Korea~Moon). Chapter 2 reuses the same caps.
 const STAGE_MAX_ENEMIES=[3,4,30,5,6,7,6,5,10,5,6,7,12,3,4,6,10,10,10,10,10,4,5,3,5,20,8,8,10,10,10,8,6,10,10,10,4,8,5,10,10,5,10,4,2,10,3,4];
@@ -579,7 +581,7 @@ function updateStageSpawns(dt){
  ready.sort((x,y)=>x.clock-y.clock);
  for(const r of ready){
   if(alive>=cap&&!r.boss)continue;
-  addUnit(r.type,r.boss);r.spawned++;alive++;
+  addUnit(r.type,r.boss,r.mag?r.mag/100:1);r.spawned++;alive++;
   if(r.boss){triggerBossShockwave();$('#battleNotice').textContent='보스 '+UNIT_NAMES[r.type]+' 등장!';game.noticeTime=3}
   r.clock=Math.max(r.clock,-dt)+(r.delay?pickDelay(r.delay):1e9);
  }
@@ -689,22 +691,22 @@ function renderSpecialStages(){
  TUESDAY_STAGES.forEach((t,k)=>{const i=MAIN_STAGE_COUNT+k,b=document.createElement('button');b.className='stage-card';const locked=!open||!tue||(k===3&&!cleared.includes(MAIN_STAGE_COUNT-1));b.disabled=locked;b.title=t.desc+' · 적 성 체력 '+t.hp;b.innerHTML=`<strong>${t.name.replace('광속 전사 ','')}</strong><small>${Math.round(t.chance*100)}%${t.count>1?' ×'+t.count:''}</small>`;b.onclick=()=>{selectedStage=i;reset()};grid.append(b)});
  const buy=document.createElement('button');buy.className='stage-card';buy.disabled=training.xp<SPEED_PACK.xp;buy.innerHTML=`<strong>스피드업 ${SPEED_PACK.count}개 구매</strong><small>${SPEED_PACK.xp} XP</small>`;buy.onclick=buySpeedPack;grid.append(buy);
 }
-function legendXP(k,c){return Math.round((3000+k*500)*LEGEND_CROWN_MULT[c-1])}
-const LEGEND_BOSS_TICKETS=[1,1,2,3];// first clear of the final stage at each crown; other wins: 10%×crown for 1
+function legendXP(k){return LEGEND_STAGES[k].xp*LEGEND_XP_SCALE}
 function renderLegend(){
  const grid=$('#legendGrid'),tabs=$('#legendCrowns');grid.innerHTML='';tabs.innerHTML='';
  const open=legendOpen();
  $('#legendText').textContent=open?`★${legendCrown} · ${legendProgress[legendCrown].length} / ${LEGEND_STAGES.length}`:'';
- $('#legendNote').textContent=!open?'세계편 1장 마지막 스테이지(달)를 클리어하면 열립니다.':`왕관 난이도 ★${legendCrown}: 적 능력치·적 성 체력 ${Math.round(LEGEND_CROWN_MULT[legendCrown-1]*100)}% · 한 난이도의 8개 스테이지를 모두 클리어하면 다음 왕관이 열립니다.`;
+ $('#legendNote').textContent=!open?'세계편 1장 마지막 스테이지(달)를 클리어하면 열립니다.':`왕관 난이도 ★${legendCrown}: 적 능력치 ${Math.round(LEGEND_CROWN_MULT[legendCrown-1]*100)}% · 한 난이도의 8개 스테이지를 모두 클리어하면 다음 왕관이 열립니다.`;
  for(const c of [1,2,3,4]){const b=document.createElement('button');b.className='codex-tab'+(c===legendCrown?' active':'');b.textContent='★'.repeat(c);b.disabled=!open||!legendCrownUnlocked(c);b.onclick=()=>{legendCrown=c;renderLegend()};tabs.append(b)}
- LEGEND_STAGES.forEach((t,k)=>{const i=LEGEND_START+k,done=legendProgress[legendCrown].includes(k),b=document.createElement('button');b.className='stage-card'+(done?' cleared':'');b.disabled=!legendStageUnlocked(k);b.title=`${t.desc} · 등장 적: ${stageEnemies(i).map(type=>UNIT_NAMES[type]).join(' · ')} · 적 성 체력 ${Math.round(t.hp*LEGEND_CROWN_MULT[legendCrown-1])}`;b.innerHTML=`<strong>${t.flag} ${t.name}</strong><small>${done?'✓ ':''}${legendXP(k,legendCrown)} XP</small>`;b.onclick=()=>{selectedStage=i;reset()};grid.append(b)});
+ LEGEND_STAGES.forEach((t,k)=>{const i=LEGEND_START+k,done=legendProgress[legendCrown].includes(k),b=document.createElement('button');b.className='stage-card'+(done?' cleared':'');b.disabled=!legendStageUnlocked(k);b.title=`${t.en} · ${t.desc} · 등장 적: ${stageEnemies(i).map(type=>UNIT_NAMES[type]).join(' · ')} · 적 성 체력 ${t.hp}`;b.innerHTML=`<strong>${t.flag} ${t.name}</strong><small>${done?'✓ ':''}${legendXP(k)} XP</small>`;b.onclick=()=>{selectedStage=i;reset()};grid.append(b)});
 }
 function legendFinish(win){
  const k=STAGES[selectedStage].legend.k,c=legendCrown,list=legendProgress[c],first=win&&!list.includes(k);
- let xp=0,tickets=0;
+ let xp=0,tickets=0,bonusXp=0;
  if(win){
-  xp=legendXP(k,c);if(!first)xp=Math.floor(xp/2);training.xp+=xp;saveTraining();
-  if(first&&k===LEGEND_STAGES.length-1)tickets=LEGEND_BOSS_TICKETS[c-1];else if(Math.random()<.1*c)tickets=1;
+  const drop=LEGEND_STAGES[k].drop||{};
+  xp=legendXP(k);if(!first)xp=Math.floor(xp/2);if(drop.xpChance&&Math.random()<drop.xpChance)bonusXp=drop.xp*LEGEND_XP_SCALE;training.xp+=xp+bonusXp;saveTraining();
+  if(drop.speed&&Math.random()<drop.speed)tickets=1;
   if(tickets){speedTickets+=tickets;saveSpeedTickets();renderSpeedButton()}
   if(first){list.push(k);saveLegend()}
  }
@@ -712,6 +714,7 @@ function legendFinish(win){
  $('#resultTitle').textContent=win?`${STAGES[selectedStage].name} ★${c} 정복 완료!`:'패배...';
  let detail=win?`보상 +${xp} XP`:'아군을 강화하고 다시 도전하세요.';
  if(win&&first&&k<LEGEND_STAGES.length-1)detail=`${LEGEND_STAGES[k+1].name} 스테이지가 열렸어요! `+detail;
+ if(bonusXp)detail+=` · 보물 발견! 보너스 +${bonusXp} XP`;
  if(tickets)detail+=` · 스피드업 ${tickets}개 획득! (보유 ${speedTickets}개)`;
  if(win&&first&&list.length===LEGEND_STAGES.length)detail+=c<4?` · 전설의 시작 ★${c+1} 난이도가 열렸어요!`:' · 전설의 시작 ★4 완전 정복!';
  $('#resultDetail').textContent=detail;
@@ -938,7 +941,7 @@ addEventListener('pagehide',saveAll);
 document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')saveAll()});
 
 // Order is rough difficulty progression from Korea to the Moon; used only for codex browsing.
-const ENEMY_ORDER=['dog','snache','guys','hippo','pigge','peng','gory','baa','croco','rabbit','squirrel','seal','leboin','kangaroo','mooth','rhino','bear','face','darkdog','ectosnache','gabriel'];
+const ENEMY_ORDER=['dog','snache','guys','hippo','pigge','peng','gory','baa','croco','rabbit','squirrel','seal','leboin','kangaroo','mooth','rhino','bear','face','darkdog'];
 const ENEMY_TEXT={
  dog:'가장 먼저 마주치는 흔한 잡병. 느리지 않은 속도로 꾸준히 밀려온다.',
  snache:'혀를 길게 뻗어 공격하는 정찰병. 멍뭉이보다 빠르게 접근해 온다.',
