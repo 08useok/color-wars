@@ -69,7 +69,7 @@ const LEGEND_STAGES=[
  {name:'대지를 흔드는 자',en:'Earthshaker',flag:'🌾',hp:60000,max:7,xp:950,drop:{speed:.01},sky:'#9fd8f0',land:'#8ec85a',desc:'멍뭉이·낼름이·놈놈놈 200% 각 50마리'},
  {name:'공포의 재림',en:'Return of Terror',flag:'🦛',hp:50000,max:4,xp:950,drop:{speed:.01},sky:'#b9c3cf',land:'#8f9aa8',desc:'놈놈놈 400% · 보스 메탈 하마양 (치명타 외 피해 1)'},
  {name:'석양의 블루스',en:'Sunset Blues',flag:'🌇',hp:70000,max:40,xp:1045,sky:'#f2b27a',land:'#b9864f',desc:'적 성 99%에서 아거 30마리 러시'},
- {name:'우울한 습지',en:'Melancholy Damp',flag:'🌧️',hp:80000,max:4,xp:1140,drop:{speed:.01},sky:'#8fa3b1',land:'#5f7560',desc:'메에메에·놈놈놈 · 50%에서 보스 돼지새끼(원작: 성 돼지새끼 2세)'},
+ {name:'우울한 습지',en:'Melancholy Damp',flag:'🌧️',hp:80000,max:4,xp:1140,drop:{speed:.01},sky:'#8fa3b1',land:'#5f7560',desc:'메에메에·놈놈놈 · 50%에서 보스 엘리자베스 2세'},
  {name:'바운시 파크',en:'Bouncy Park',flag:'🎡',hp:90000,max:4,xp:1140,sky:'#9fd8ef',land:'#9ccf6a',desc:'40초 후 재키펭 3마리'},
  {name:'상냥한 미소',en:'Gentle Smile',flag:'🙂',hp:100000,max:4,xp:1140,drop:{speed:.01},sky:'#e8d4b0',land:'#b9a56f',desc:'적 성 90%에서 보스 고릴라저씨 500% 3연속'},
  {name:'목장의 수호자',en:'Guardian of the Ranch',flag:'🐄',hp:110000,max:6,xp:1330,sky:'#a8d8e8',land:'#7fb35c',desc:'적 성 90%에서 보스 빠옹 300%'},
@@ -113,6 +113,8 @@ data.units.face={trait:"floating",hp:18000,atk:850,interval:3.4,speed:1.8,range:
 // Legend Story enemies, drawn from the variant sheets kept alongside the Doge / Snache art.
 // Metal Hippoe (wiki): same art/frames as Hippoe; the metal trait takes 1 damage from non-critical hits.
 data.units.metalhippo={trait:'metal',hp:128,atk:300,interval:.6,speed:2.8,range:5,reward:200,knockbacks:2,attackDuration:.5,area:true};
+// St. Pigge the 2nd / 엘리자베스 2세 (wiki): Pigge's exact art plus a crown part worn on the head.
+data.units.stpigge={trait:'red',hp:64000,atk:600,interval:22/30,speed:5.6,range:5,reward:300,knockbacks:4,attackDuration:22/30,windup:14/30,area:true};
 data.units.darkdog={hp:900,atk:90,interval:1.4,speed:6,range:4,reward:150,knockbacks:3};
 data.units.gabriel={hp:600,atk:70,interval:1.2,speed:12,range:4,reward:130,knockbacks:3};
 data.units.ectosnache={hp:1100,atk:150,interval:1.1,speed:8,range:4.5,reward:180,knockbacks:3};
@@ -185,10 +187,10 @@ function addUnit(type,boss=false,mag=1){
  if(ally){game.money-=unitCost(type);game[cooldownKey(type)]=stats.cooldown;if(game.tutorial===2){game.tutorial=3;tutorial()}}render();
 }
 // Display-only size boost for large enemies so they read bigger than 2진 allies (hippo ~76px is the baseline).
-const ENEMY_SIZE={pigge:1.27,seal:1.44,rhino:1.94,kangaroo:1.3,leboin:1.2,mooth:1.15,bear:1.26,face:1.2};
+const ENEMY_SIZE={pigge:1.27,stpigge:1.6,seal:1.44,rhino:1.94,kangaroo:1.3,leboin:1.2,mooth:1.15,bear:1.26,face:1.2};
 // Displayed height (px) of each new 2진 body sprite; the HP bar sits just above it instead of at the default 1진 spot.
 const EVO_BODY_H={crimson:76,gold:78,ivory:77,chartreuse:78,mint:80,azure:89,crystal:81,lavender:80,salmon:74,raspberry:89};
-function drawUnit(u){let e=document.createElement('div'),evolved=u.ally&&u.stats?.evolved,legacyAlly=u.ally&&!NEW_ATLASES[u.type];e.className='unit '+u.type+(u.ally?' ally-art':'')+(evolved?' evolved':'');e.style.setProperty('--unit-color',COLORS?.[u.type]||'#fff');e.innerHTML='<div class="bar"><i style="width:100%"></i></div><span class="status-badges"><span class="freeze-icon st-freeze"></span><span class="slow-icon st-slow"></span><span class="weaken-icon st-weaken"></span><span class="crit-icon st-crit"></span><span class="pull-icon st-pull"></span></span>'+(legacyAlly?'<span class="ally-shadow"></span><span class="ally-sprite"></span>'+(evolved?'<span class="evolved-sprite"></span>':'')+(u.type==='pink'&&!evolved?'<span class="pink-ribbon"><i></i></span>':''):'<span class="dog-shadow"></span><span class="dog-sprite"></span>'+(u.type==='leboin'||u.type==='bear'?'<span class="dog-sprite-legs"></span>':'')+(u.type==='leboin'?'<span class="dog-sprite-body"></span>':''));e.setAttribute('aria-label',UNIT_NAMES[u.type]+(evolved?' 2진':''));u.el=e;if(evolved&&EVO_BODY_H[u.type])e.querySelector('.bar').style.top=(33-EVO_BODY_H[u.type])+'px';if(!u.ally&&ENEMY_SIZE[u.type])e.style.setProperty('--enemy-size',ENEMY_SIZE[u.type]);unitsEl.append(e);const newAtlas=NEW_ATLASES[u.type];const sheet={rabbit:ELITE_RABBIT_SHEET,squirrel:SQUIRREL_G_SHEET,kangaroo:KANG_ROO_SHEET,mooth:MOOTH_SHEET,rhino:RHINO_SHEET,bear:BEAR_SHEET,face:FACE_SHEET}[u.type]||(evolved&&newAtlas?.evolved?newAtlas.evolved.sheet:newAtlas?.sheet);if(sheet)e.querySelector('.dog-sprite').style.backgroundImage=`url(${sheet})`;if(legacyAlly)animateAlly(u);else animateDog(u)}
+function drawUnit(u){let e=document.createElement('div'),evolved=u.ally&&u.stats?.evolved,legacyAlly=u.ally&&!NEW_ATLASES[u.type];e.className='unit '+u.type+(u.ally?' ally-art':'')+(evolved?' evolved':'');e.style.setProperty('--unit-color',COLORS?.[u.type]||'#fff');e.innerHTML='<div class="bar"><i style="width:100%"></i></div><span class="status-badges"><span class="freeze-icon st-freeze"></span><span class="slow-icon st-slow"></span><span class="weaken-icon st-weaken"></span><span class="crit-icon st-crit"></span><span class="pull-icon st-pull"></span></span>'+(legacyAlly?'<span class="ally-shadow"></span><span class="ally-sprite"></span>'+(evolved?'<span class="evolved-sprite"></span>':'')+(u.type==='pink'&&!evolved?'<span class="pink-ribbon"><i></i></span>':''):'<span class="dog-shadow"></span><span class="dog-sprite"></span>'+(u.type==='leboin'||u.type==='bear'?'<span class="dog-sprite-legs"></span>':'')+(u.type==='leboin'?'<span class="dog-sprite-body"></span>':'')+(u.type==='stpigge'?'<span class="pigge-crown"></span>':''));e.setAttribute('aria-label',UNIT_NAMES[u.type]+(evolved?' 2진':''));u.el=e;if(evolved&&EVO_BODY_H[u.type])e.querySelector('.bar').style.top=(33-EVO_BODY_H[u.type])+'px';if(!u.ally&&ENEMY_SIZE[u.type])e.style.setProperty('--enemy-size',ENEMY_SIZE[u.type]);unitsEl.append(e);const newAtlas=NEW_ATLASES[u.type];const sheet={rabbit:ELITE_RABBIT_SHEET,squirrel:SQUIRREL_G_SHEET,kangaroo:KANG_ROO_SHEET,mooth:MOOTH_SHEET,rhino:RHINO_SHEET,bear:BEAR_SHEET,face:FACE_SHEET}[u.type]||(evolved&&newAtlas?.evolved?newAtlas.evolved.sheet:newAtlas?.sheet);if(sheet)e.querySelector('.dog-sprite').style.backgroundImage=`url(${sheet})`;if(legacyAlly)animateAlly(u);else animateDog(u)}
 function target(u){let foes=game.units.filter(v=>v.hp>0&&v.kbTime<=0&&!v.emerging&&v.ally!==u.ally);let dir=u.ally?-1:1;return foes.filter(v=>dir*(v.x-u.x)>=-1).sort((a,b)=>Math.abs(a.x-u.x)-Math.abs(b.x-u.x))[0]}
 // Canonical knockback counts include death. Red keeps its original two live hitbacks.
 const HITBACK_DURATION=20/30;
@@ -391,7 +393,7 @@ document.addEventListener('visibilitychange',()=>{if(document.hidden&&game.runni
 // Original PNG atlas coordinates: Doge only, not Doge Dark or variants.
 const DOG_FRAMES={walk:[[4,50],[57,50],[110,50]],attack:[[4,125],[57,125],[110,125],[164,125]],hurt:[[4,201]]};
 function animateDog(u){
- if(u.type==='pigge'){animatePigge(u);return}
+ if(u.type==='pigge'||u.type==='stpigge'){animatePigge(u);return}
  if(u.type==='snache'){animateSnache(u);return}
  if(u.type==='leboin'){animateLeboin(u);return}
  if(u.type==='bear'){animateBear(u);return}
@@ -495,7 +497,7 @@ function animateLeboin(u){
  u.el.dataset.animation=state;
 }
 
-const UNIT_NAMES={pink:'핑크',rhino:'투뿔소',bear:'곰선생',face:'대갈이군',cyan:'시안',blue:'블루',purple:'퍼플',peng:'재키펭',gory:'고릴라저씨',baa:'메에메에',seal:'바다레오파드',croco:'아거',leboin:'빠옹',rabbit:'엘리트래빗',squirrel:'다람G',kangaroo:'캥거류',mooth:'나나나난나방',red:'레드',orange:'오렌지',green:'그린',yellow:'옐로우',dog:'멍뭉이',darkdog:'다크 멍뭉이',metalhippo:'메탈 하마양',gabriel:'가브리엘',ectosnache:'엑토 낼름이',snache:'낼름이',guys:'놈놈놈',hippo:'하마양',pigge:'돼지새끼',crimson:'크림슨',gold:'골드',ivory:'아이보리',chartreuse:'샤르트뢰즈',mint:'민트',azure:'애저',crystal:'크리스탈',lavender:'라벤더',salmon:'살몬',raspberry:'라즈베리'};
+const UNIT_NAMES={pink:'핑크',rhino:'투뿔소',bear:'곰선생',face:'대갈이군',cyan:'시안',blue:'블루',purple:'퍼플',peng:'재키펭',gory:'고릴라저씨',baa:'메에메에',seal:'바다레오파드',croco:'아거',leboin:'빠옹',rabbit:'엘리트래빗',squirrel:'다람G',kangaroo:'캥거류',mooth:'나나나난나방',red:'레드',orange:'오렌지',green:'그린',yellow:'옐로우',dog:'멍뭉이',darkdog:'다크 멍뭉이',metalhippo:'메탈 하마양',stpigge:'엘리자베스 2세',gabriel:'가브리엘',ectosnache:'엑토 낼름이',snache:'낼름이',guys:'놈놈놈',hippo:'하마양',pigge:'돼지새끼',crimson:'크림슨',gold:'골드',ivory:'아이보리',chartreuse:'샤르트뢰즈',mint:'민트',azure:'애저',crystal:'크리스탈',lavender:'라벤더',salmon:'살몬',raspberry:'라즈베리'};
 // Every rule sourced from each stage's wiki Battleground section: {type, at:{t:seconds}|{hp:percent}, delay:[min,max] (omit for a one-shot), count (omit = infinite), boss:true (adds the shockwave+banner, only where the wiki says "spawns as the boss")}.
 const STAGE_SPAWNS={
 0:[{type:'dog',at:{t:0},count:1},{type:'dog',at:{t:20},delay:[6,10]}],
@@ -555,7 +557,7 @@ TUESDAY_STAGES.forEach((t,k)=>{const boss=t.boss,rules=[{type:'dog',at:{t:0},del
  [{type:'dog',at:{t:0},delay:[2,6],count:50,mag:200},{type:'snache',at:{t:0},delay:[2,6],count:50,mag:200},{type:'guys',at:{t:0},delay:[2,6],count:50,mag:200}],
  [{type:'guys',at:{t:0},delay:[2,12],mag:400},{type:'metalhippo',at:{hp:99},count:1,boss:true,mag:100}],
  [{type:'dog',at:{t:0},delay:[3,20],mag:400},{type:'snache',at:{t:0},delay:[3,20],mag:400},{type:'guys',at:{t:40},delay:[3,20],mag:400},{type:'croco',at:{hp:99},count:30,delay:[.13,.8],mag:400}],
- [{type:'baa',at:{t:0},count:1,mag:400},{type:'baa',at:{t:40},delay:[20,40],mag:400},{type:'guys',at:{t:0},delay:[3,20],mag:400},{type:'pigge',at:{hp:50},count:1,boss:true,mag:400}],
+ [{type:'baa',at:{t:0},count:1,mag:400},{type:'baa',at:{t:40},delay:[20,40],mag:400},{type:'guys',at:{t:0},delay:[3,20],mag:400},{type:'stpigge',at:{hp:50},count:1,boss:true,mag:100}],
  [{type:'dog',at:{t:0},delay:[3,20],mag:400},{type:'snache',at:{t:0},delay:[3,20],mag:400},{type:'guys',at:{t:40},delay:[3,20],mag:400},{type:'peng',at:{t:40},delay:[2,8],count:3,mag:400}],
  [{type:'dog',at:{t:0},delay:[3,20],mag:400},{type:'snache',at:{t:0},delay:[3,20],mag:400},{type:'guys',at:{t:40},delay:[3,20],mag:400},{type:'gory',at:{hp:90},count:3,delay:[1,2],boss:true,mag:500}],
  [{type:'dog',at:{t:0},delay:[3,20],mag:400},{type:'snache',at:{t:0},delay:[3,20],mag:400},{type:'guys',at:{t:40},delay:[3,20],mag:400},{type:'leboin',at:{hp:90},count:1,boss:true,mag:300}],
@@ -633,14 +635,18 @@ function animatePigge(u){
  let frame,state;
  if(u.hurtTime>0){state='hurt';frame=[368,72,103,65]}
  else if(u.attackTime>0){
-  state='attack';const f=(data.units.pigge.attackDuration-u.attackTime)*30;
+  state='attack';const f=(data.units[u.type].attackDuration-u.attackTime)*30;
   frame=f<5?[115,5,104,73]:f<10?[112,80,109,76]:f<14?[115,158,104,75]:f<17?[225,1,126,104]:f<22?[225,107,126,67]:[225,177,126,67];
  }else{
-  const t=target(u),stationary=(t&&Math.abs(t.x-u.x)<=data.units.pigge.range)||(!t&&data.bases.ally.frontX-u.x<=data.units.pigge.range);
+  const rng=data.units[u.type].range,t=target(u),stationary=(t&&Math.abs(t.x-u.x)<=rng)||(!t&&data.bases.ally.frontX-u.x<=rng);
   state=stationary?'idle':'walk';frame=[[4,1,103,77],[4,79,103,76],[4,157,103,76]][stationary?0:Math.floor(u.animTime/.16)%3];
  }
  const [x,y,w,h]=frame,el=u.el.querySelector('.dog-sprite');el.style.backgroundPosition=`-${x}px -${y}px`;el.style.width=w+'px';el.style.height=h+'px';el.style.left='-20px';el.style.transform='scale(.8)';el.style.transformOrigin='left bottom';el.style.filter='none';u.el.dataset.animation=state;
+ const crown=u.el.querySelector('.pigge-crown');
+ if(crown){const [cx,cy]=PIGGE_CROWN[`${x},${y}`]||[55,-14];crown.style.left=(-20+cx*.8)+'px';crown.style.bottom=((h-cy-37)*.8)+'px';crown.style.transform='scale(.8)'}
 }
+// Crown top-left (frame px) per Pigge frame, found from the snout: it sits on the head, not the back.
+const PIGGE_CROWN={'4,1':[55,-14],'4,79':[55,-13],'4,157':[55,-13],'115,5':[55,-15],'112,80':[60,-8],'115,158':[55,-14],'225,1':[67,22],'225,107':[67,-15],'225,177':[67,-14],'368,72':[55,-16]};
 function animateAtlas(u){
  const baseAtlas=NEW_ATLASES[u.type];
  const atlas=(u.stats?.evolved&&baseAtlas.evolved)?baseAtlas.evolved:baseAtlas;
@@ -945,11 +951,12 @@ addEventListener('pagehide',saveAll);
 document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')saveAll()});
 
 // Order is rough difficulty progression from Korea to the Moon; used only for codex browsing.
-const ENEMY_ORDER=['dog','snache','guys','hippo','pigge','peng','gory','baa','croco','rabbit','squirrel','seal','leboin','kangaroo','mooth','rhino','bear','face','darkdog','metalhippo'];
+const ENEMY_ORDER=['dog','snache','guys','hippo','pigge','peng','gory','baa','croco','rabbit','squirrel','seal','leboin','kangaroo','mooth','rhino','bear','face','darkdog','metalhippo','stpigge'];
 const ENEMY_TEXT={
  dog:'가장 먼저 마주치는 흔한 잡병. 느리지 않은 속도로 꾸준히 밀려온다.',
  snache:'혀를 길게 뻗어 공격하는 정찰병. 멍뭉이보다 빠르게 접근해 온다.',
  metalhippo:'강철 갑옷을 두른 하마양. 치명타가 아니면 어떤 공격도 피해 1밖에 주지 못한다. 크리스탈의 치명타가 열쇠. (레전드 스토리)',
+ stpigge:'왕관을 쓴 거대한 돼지새끼. 넉백이 많고 공격이 빠르며 체력이 매우 높은 빨간 적. 퍼플을 활용하자. (레전드 스토리)',
  darkdog:'어둠에 물든 멍뭉이. 멍뭉이보다 훨씬 단단하고 매섭게 물어뜯는다. (레전드 스토리)',
  ectosnache:'유령이 된 낼름이. 낼름이보다 강한 혀 공격을 쉬지 않고 날린다. (레전드 스토리)',
  gabriel:'천사의 날개를 단 멍뭉이. 체력은 낮지만 눈 깜짝할 사이에 전선까지 돌격한다. (레전드 스토리)',

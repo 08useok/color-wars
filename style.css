@@ -204,3 +204,8 @@ body { overflow:auto; }
 .unit.metalhippo{background:none;border:0;border-radius:0;width:42px;height:42px}
 .metalhippo .dog-shadow{background-image:url("assets/metal_hippo_sheet.png");background-position:-349px -207px;width:79px;height:3px;left:-18px}
 .unit.metalhippo .bar{top:-59px;width:68px;left:-13px}
+.unit.stpigge{background:none;border:0;border-radius:0}
+.stpigge .dog-sprite{background-image:url("assets/st_pigge2_sheet.png")}
+.stpigge .dog-shadow{background-image:url("assets/st_pigge2_sheet.png");background-position:-128px -235px;width:73px;height:4px;left:-12px}
+.unit.stpigge .bar{top:-40px;width:66px;left:-12px}
+.pigge-crown{position:absolute;width:35px;height:37px;background:url("assets/st_pigge2_sheet.png") -354px -139px no-repeat;transform-origin:left bottom;z-index:2;pointer-events:none}
