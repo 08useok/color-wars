@@ -643,10 +643,11 @@ function animatePigge(u){
  }
  const [x,y,w,h]=frame,el=u.el.querySelector('.dog-sprite');el.style.backgroundPosition=`-${x}px -${y}px`;el.style.width=w+'px';el.style.height=h+'px';el.style.left='-20px';el.style.transform='scale(.8)';el.style.transformOrigin='left bottom';el.style.filter='none';u.el.dataset.animation=state;
  const crown=u.el.querySelector('.pigge-crown');
- if(crown){const [cx,cy]=PIGGE_CROWN[`${x},${y}`]||[55,-14];crown.style.left=(-20+cx*.8)+'px';crown.style.bottom=((h-cy-37)*.8)+'px';crown.style.transform='scale(.8)'}
+ if(crown){const [cx,cy]=PIGGE_CROWN[`${x},${y}`]||[42,-21];crown.style.left=(-20+cx*.8)+'px';crown.style.bottom=((h-cy-37)*.8)+'px';crown.style.transform='scale(.8)'}
 }
-// Crown top-left (frame px) per Pigge frame, found from the snout: it sits on the head, not the back.
-const PIGGE_CROWN={'4,1':[55,-14],'4,79':[55,-13],'4,157':[55,-13],'115,5':[55,-15],'112,80':[60,-8],'115,158':[55,-14],'225,1':[67,22],'225,107':[67,-15],'225,177':[67,-14],'368,72':[55,-16]};
+// Crown top-left (frame px) per Pigge frame: matched to the wiki render (E_048.png) on the idle frame
+// (jewel centre over the ears, above the head), then carried to each frame by the snout offset.
+const PIGGE_CROWN={'4,1':[42,-21],'4,79':[42,-20],'4,157':[42,-20],'115,5':[42,-22],'112,80':[47,-15],'115,158':[42,-21],'225,1':[54,15],'225,107':[54,-22],'225,177':[54,-21],'368,72':[42,-23]};
 function animateAtlas(u){
  const baseAtlas=NEW_ATLASES[u.type];
  const atlas=(u.stats?.evolved&&baseAtlas.evolved)?baseAtlas.evolved:baseAtlas;
