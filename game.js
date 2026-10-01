@@ -661,6 +661,8 @@ function animatePigge(u){
 // Crown top-left (frame px) per Pigge frame: matched to the wiki render (E_048.png) on the idle frame
 // (jewel centre over the ears, above the head), then carried to each frame by the snout offset.
 const PIGGE_CROWN={'4,1':[42,-21],'4,79':[42,-20],'4,157':[42,-20],'115,5':[42,-22],'112,80':[47,-15],'115,158':[42,-21],'225,1':[54,15],'225,107':[54,-22],'225,177':[54,-21],'368,72':[42,-23]};
+// Enemies whose identity is grey detail: brightening would erase it (see also .damage-flash in style.css).
+const GLOW_FLASH=new Set(['metalhippo','ectosnache']);
 function animateAtlas(u){
  const baseAtlas=NEW_ATLASES[u.type];
  const atlas=(u.stats?.evolved&&baseAtlas.evolved)?baseAtlas.evolved:baseAtlas;
@@ -691,9 +693,9 @@ function animateAtlas(u){
  // head up before dropping it into a horn thrust (the sheet's own rearing drawings are cropped through the face).
  // Optional 8th value: mirror just this frame (a few generated sheets drew one pose facing the wrong way).
  sprite.style.transform=!atlas.flip!==!fl?`translateX(${w*scale}px) scale(${-scale},${scale})`:`scale(${scale})`+(rot?` rotate(${rot}deg)`:'');sprite.style.transformOrigin='left bottom';
- // Hit flash for enemies without a hurt drawing. Metal plates (grey 200) wash out to white under any
- // real brightening, so metal enemies flash with a white glow around the outline instead.
- sprite.style.filter=state==='hurt'&&!atlas.hurt?(data.units[u.type].trait==='metal'?'drop-shadow(0 0 3px #fff) drop-shadow(0 0 2px #fff)':'brightness(1.8)'):'none';
+ // Hit flash for enemies without a hurt drawing. Grey details (metal plates, ecto spots) wash out to
+ // white under brightening, so those enemies flash with a white glow around the outline instead.
+ sprite.style.filter=state==='hurt'&&!atlas.hurt?(GLOW_FLASH.has(u.type)?'drop-shadow(0 0 3px #fff) drop-shadow(0 0 2px #fff)':'brightness(1.8)'):'none';
  u.el.dataset.animation=state;
 }
 
