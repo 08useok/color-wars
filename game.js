@@ -634,8 +634,8 @@ croco:{scale:0.72,left:-10,walk:[[2,29,85,39,0],[89,29,86,39,1],[177,28,86,40,1]
  chartreuse:{scale:0.45,left:-30,sheet:CHARTREUSE_SHEET,walk:[[45,35,142,153,0],[260,39,140,146,0],[471,33,148,155,3]],attack:[[681,35,163,153,-3],[859,39,286,150,145],[1202,35,137,151,-4]],hurt:[[1413,37,191,152,7]],evolved:{sheet:CHARTREUSE_EVOLVED_SHEET,scale:0.259,left:-24,walk:[[31,219,187,302,0],[276,219,187,302,-3],[524,219,197,302,-4]],attack:[[773,219,223,302,-4],[1017,219,413,302,167],[1483,219,192,302,-4]],hurt:[[1741,219,250,302,20]]}},
  mint:{scale:0.45,left:-30,sheet:MINT_SHEET,walk:[[51,43,132,142,0],[266,44,131,142,-1],[473,43,137,143,4]],attack:[[668,33,176,153,37],[878,46,266,141,134],[1198,44,129,141,-2]],hurt:[[1407,45,170,143,9]],evolved:{sheet:MINT_EVOLVED_SHEET,scale:0.284,left:-23,walk:[[6,0,169,320,0],[181,0,186,320,18],[373,0,179,320,-10]],attack:[[558,0,239,320,40],[803,0,477,320,249],[1286,0,207,320,8]],hurt:[[1499,0,287,320,-10]]}},
  azure:{scale:0.45,left:-30,sheet:AZURE_SHEET,walk:[[46,47,144,157,0],[252,51,143,151,-1],[452,46,148,158,3]],attack:[[665,5,182,195,17],[861,7,322,210,38],[1226,44,141,157,-3]],hurt:[[1411,46,199,156,11]],evolved:{sheet:AZURE_EVOLVED_SHEET,scale:0.319,left:-29,walk:[[6,0,186,321,0],[198,0,182,321,-11],[386,0,185,321,15]],attack:[[577,0,306,321,40],[889,0,474,321,162],[1369,0,198,321,-23]],hurt:[[1573,0,292,321,16]]}},
- crystal:{scale:0.45,left:-30,sheet:CRYSTAL_SHEET,walk:[[47,35,144,155,0],[256,38,143,151,0],[463,35,146,155,2]],attack:[[678,35,165,154,-1],[857,35,274,154,132],[1186,35,143,155,0]],hurt:[[1399,33,191,157,8]],evolved:{sheet:CRYSTAL_EVOLVED_SHEET,scale:0.277,left:-23,walk:[[6,0,167,297,0],[179,0,168,297,2],[353,0,164,297,-1]],attack:[[523,0,272,297,88],[801,0,515,297,294],[1322,0,194,297,-2]],hurt:[[1522,0,240,297,66]]}},
- lavender:{scale:0.45,left:-30,sheet:LAVENDER_SHEET,walk:[[51,35,140,153,0],[263,37,139,149,0],[470,35,144,153,4]],attack:[[681,35,169,153,0],[872,35,259,152,119],[1190,35,138,152,-1]],hurt:[[1416,35,188,151,5]],evolved:{sheet:LAVENDER_EVOLVED_SHEET,scale:0.293,left:-29,walk:[[6,0,199,274,0],[211,0,193,274,-8],[410,0,192,274,-8]],attack:[[608,0,206,274,-6],[820,0,498,274,291],[1324,0,192,274,32]],hurt:[[1522,0,272,274,76]]}},
+ crystal:{scale:0.45,left:-30,sheet:CRYSTAL_SHEET,walk:[[47,35,144,155,0],[256,38,143,151,0],[463,35,146,155,2]],attack:[[678,35,165,154,-1],[857,35,274,154,132],[1186,35,143,155,0]],hurt:[[1399,33,191,157,8]],evolved:{sheet:CRYSTAL_EVOLVED_SHEET,scale:0.277,left:-23,walk:[[6,0,167,297,0],[179,0,168,297,2],[353,0,164,297,-1]],attack:[[523,0,272,297,88],[801,0,515,297,294],[1322,0,194,297,-2]],hurt:[[1522,0,240,297,7,0,0,1]]}},
+ lavender:{scale:0.45,left:-30,sheet:LAVENDER_SHEET,walk:[[51,35,140,153,0],[263,37,139,149,0],[470,35,144,153,4]],attack:[[681,35,169,153,0],[872,35,259,152,119],[1190,35,138,152,-1]],hurt:[[1416,35,188,151,5]],evolved:{sheet:LAVENDER_EVOLVED_SHEET,scale:0.293,left:-29,walk:[[6,0,199,274,0],[211,0,193,274,-8],[410,0,192,274,-8]],attack:[[608,0,206,274,-6],[820,0,498,274,291],[1324,0,192,274,32]],hurt:[[1522,0,272,274,-3,0,0,1]]}},
  salmon:{scale:0.45,left:-30,sheet:SALMON_SHEET,walk:[[51,72,131,143,0],[264,72,130,142,-2],[454,72,135,144,3]],attack:[[648,6,176,208,11],[824,74,339,141,207],[1231,71,131,143,-1]],hurt:[[1427,70,185,146,9]],evolved:{sheet:SALMON_EVOLVED_SHEET,scale:0.298,left:-34,walk:[[6,0,229,344,0],[241,0,200,344,-28],[447,0,212,344,-17]],attack:[[665,0,253,344,-14],[924,0,528,344,216],[1458,0,200,344,-36]],hurt:[[1664,0,280,344,-5]]}},
  raspberry:{scale:0.45,left:-30,sheet:RASPBERRY_SHEET,walk:[[37,34,141,152,0],[256,35,136,147,-3],[475,33,144,154,2]],attack:[[663,36,197,151,56],[877,36,279,151,139],[1221,33,140,153,-1]],hurt:[[1453,37,191,150,9]],evolved:{sheet:RASPBERRY_EVOLVED_SHEET,scale:0.328,left:-33,walk:[[6,0,206,279,0],[218,0,209,279,2],[433,0,199,279,-14]],attack:[[638,0,265,279,24],[909,0,483,279,232],[1398,0,210,279,-2]],hurt:[[1614,0,261,279,30]]}},
  guys:{scale:1,left:0,walk:[[30,40,43,32],[90,40,42,32],[150,40,43,32],[210,40,43,32],[270,40,43,32]],attack:[[30,100,43,32],[90,100,48,32],[150,100,51,32],[210,100,54,32],[270,87,63,45],[30,147,64,45],[100,154,56,38],[160,154,56,38],[220,161,43,31]],hurt:[[33,221,41,31]]},
@@ -679,7 +679,7 @@ function animateAtlas(u){
  if(state==='hurt'&&u.type==='gory')index=0;
  // Optional 5th value: how far (sheet px) the body sits right of the crop's left edge
  // compared to walk frame 0, so wide impact crops don't shove the body backwards.
- const [x,y,w,h,ox=0,oy=0,rot=0]=frames[index];const sprite=u.el.querySelector('.dog-sprite');
+ const [x,y,w,h,ox=0,oy=0,rot=0,fl=0]=frames[index];const sprite=u.el.querySelector('.dog-sprite');
  const scale=atlas.scale??baseAtlas.scale,left=(atlas.left??baseAtlas.left)-ox*scale;
  sprite.style.backgroundPosition=`-${x}px -${y}px`;
  sprite.style.width=w+'px';sprite.style.height=h+'px';sprite.style.left=left+'px';
@@ -689,7 +689,8 @@ function animateAtlas(u){
  // flip: the sheet faces right while allies march left; mirror inside the same box.
  // Optional 7th value: rotation (deg) about the rear-bottom pivot, e.g. the rhino rears its
  // head up before dropping it into a horn thrust (the sheet's own rearing drawings are cropped through the face).
- sprite.style.transform=atlas.flip?`translateX(${w*scale}px) scale(${-scale},${scale})`:`scale(${scale})`+(rot?` rotate(${rot}deg)`:'');sprite.style.transformOrigin='left bottom';
+ // Optional 8th value: mirror just this frame (a few generated sheets drew one pose facing the wrong way).
+ sprite.style.transform=!atlas.flip!==!fl?`translateX(${w*scale}px) scale(${-scale},${scale})`:`scale(${scale})`+(rot?` rotate(${rot}deg)`:'');sprite.style.transformOrigin='left bottom';
  sprite.style.filter=state==='hurt'&&!atlas.hurt?'brightness(1.8)':'none';
  u.el.dataset.animation=state;
 }
