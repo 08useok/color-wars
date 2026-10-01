@@ -237,6 +237,17 @@ const BOSS_HP_THRESHOLD=2000;
 const STATUS_FX_TIME=.6;// crit/pull are instant, so their badge lingers briefly
 const SLOW_SPEED=.5;// Battle Cats: a slowed enemy's speed drops to 0.5
 function baseDamage(n){return Math.round(n)}// castle HP stays an integer: x.5 and above rounds up (.999 -> +1), below rounds down (.001 -> +0)
+// Critical hit burst: flash + starburst + ring + sparks + "CRITICAL!" pop, drawn on the field at the
+// target (so it survives the target dying), plus a short field shake.
+function critBurst(v){
+ if(typeof setTimeout!=='function'||!v.el?.isConnected)return;
+ const field=$('#field'),fr=field.getBoundingClientRect(),r=v.el.getBoundingClientRect();
+ const fx=document.createElement('div');fx.className='crit-fx';
+ fx.style.left=(r.left+r.width/2-fr.left)+'px';fx.style.top=(r.top+r.height*.35-fr.top)+'px';
+ fx.innerHTML='<i class="crit-flash"></i><i class="crit-star"></i><i class="crit-ring"></i>'+Array.from({length:8},(_,k)=>`<i class="crit-spark" style="--a:${k*45+Math.random()*20-10}deg"></i>`).join('')+'<b class="crit-text">CRITICAL!</b>';
+ field.append(fx);setTimeout(()=>fx.remove(),900);
+ field.classList.remove('crit-shake');void field.offsetWidth;field.classList.add('crit-shake');setTimeout(()=>field.classList.remove('crit-shake'),200);
+}
 function damage(v,amount,from){
  if(game.ended||v.hp<=0||v.kbTime>0)return;
  if(from?.stats?.redStrong&&data.units[v.type].trait==='red')amount*=from.stats.redDamage||1.5;
@@ -245,7 +256,7 @@ function damage(v,amount,from){
  if(v.stats?.floatStrong&&from&&data.units[from.type].trait==='floating')amount*=v.stats.floatResist||.5;
  if(v.stats?.armor)amount*=v.stats.armor;
  if(from?.atkDownUntil>game.elapsed)amount*=from.atkDownMult;
- let crit=false;if(from?.stats?.critChance&&Math.random()<from.stats.critChance){crit=true;amount*=from.stats.critMult||2;v.critFxUntil=game.elapsed+STATUS_FX_TIME}
+ let crit=false;if(from?.stats?.critChance&&Math.random()<from.stats.critChance){crit=true;amount*=from.stats.critMult||2;v.critFxUntil=game.elapsed+STATUS_FX_TIME;critBurst(v)}
  const isBoss=v.boss||data.units[v.type].hp>=BOSS_HP_THRESHOLD;// base HP, so Chapter 2's x1.5 doesn't change who counts as a boss
  if(from?.stats?.pull&&isBoss)amount*=1.3;
  if(from?.stats?.bossDamage&&isBoss)amount*=from.stats.bossDamage;
