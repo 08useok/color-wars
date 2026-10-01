@@ -781,12 +781,17 @@ const EVOLVED_CELL_W=1536/7*.75,EVOLVED_CELL_H=1024/8*.75;
 // and the impact body at once. dx re-anchors the impact body onto the walk position.
 const LEGACY_THROW_CROPS={orange:{3:[665,858],4:[862,1109,66]},yellow:{3:[665,870],4:[871,1109,64]},green:{3:[665,876],4:[879,1109,55]}};
 LEGACY_THROW_CROPS.purple=LEGACY_THROW_CROPS.cyan=LEGACY_THROW_CROPS.orange;
+// evolved_sheet.png's walk cycle (cols 0-2) only draws the held weapon/item in some
+// frames for these three - col 2 drops red's sword entirely, and green/cyan only hold
+// their boomerang/orb in col 0. Restrict their walk cycle to the frame(s) that keep it
+// visible instead of letting it flicker in and out every stride.
+const EVOLVED_WALK_FRAMES={red:[0,1],green:[0],cyan:[0]};
 function animateAlly(u){
  const state=u.hurtTime>0?'hurt':u.attackTime>0?'attack':'walk';
  if(u.stats?.evolved){
   const sprite=u.el.querySelector('.evolved-sprite'),row=ALLIES.indexOf(u.type);
   const duration=data.units[u.type].attackDuration||.56;
-  const col=u.hurtTime>0?6:u.attackTime>0?3+Math.min(2,Math.max(0,Math.floor((duration-u.attackTime)/duration*3))):Math.floor(u.animTime/.16)%3;
+  const walkFrames=EVOLVED_WALK_FRAMES[u.type],col=u.hurtTime>0?6:u.attackTime>0?3+Math.min(2,Math.max(0,Math.floor((duration-u.attackTime)/duration*3))):walkFrames?walkFrames[Math.floor(u.animTime/.16)%walkFrames.length]:Math.floor(u.animTime/.16)%3;
   sprite.style.backgroundPosition=`${-col*EVOLVED_CELL_W}px ${-row*EVOLVED_CELL_H}px`;
   u.el.dataset.animation=state;
   return;
