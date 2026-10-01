@@ -691,9 +691,9 @@ function animateAtlas(u){
  // head up before dropping it into a horn thrust (the sheet's own rearing drawings are cropped through the face).
  // Optional 8th value: mirror just this frame (a few generated sheets drew one pose facing the wrong way).
  sprite.style.transform=!atlas.flip!==!fl?`translateX(${w*scale}px) scale(${-scale},${scale})`:`scale(${scale})`+(rot?` rotate(${rot}deg)`:'');sprite.style.transformOrigin='left bottom';
- // Hit flash for enemies without a hurt drawing. Metal plates (~176 grey) would clip to white at 1.8x,
- // so metal enemies get a softer flash that keeps the armour grey.
- sprite.style.filter=state==='hurt'&&!atlas.hurt?(data.units[u.type].trait==='metal'?'brightness(1.2)':'brightness(1.8)'):'none';
+ // Hit flash for enemies without a hurt drawing. Metal plates (grey 200) wash out to white under any
+ // real brightening, so metal enemies flash with a white glow around the outline instead.
+ sprite.style.filter=state==='hurt'&&!atlas.hurt?(data.units[u.type].trait==='metal'?'drop-shadow(0 0 3px #fff) drop-shadow(0 0 2px #fff)':'brightness(1.8)'):'none';
  u.el.dataset.animation=state;
 }
 
