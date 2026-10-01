@@ -146,7 +146,7 @@ const RASPBERRY_SHEET='assets/unitraspberry_ally-sprite.png';
 const RASPBERRY_EVOLVED_SHEET='assets/raspberry_evolved.webp';
 // 오닉스 (onyx #353839): original character, the chapter-2 Moon reward. Art generated for this game.
 const ONYX_SHEET='assets/onyx_sheet.webp',ONYX_EVOLVED_SHEET='assets/onyx_evolved.webp',ONYX_PROFILE='assets/onyx_profile.webp';
-data.units.crimson={hp:900,atk:650,interval:2.8,speed:5,range:7,cost:300,cooldown:10,knockbacks:3,forceKnockback:true};
+data.units.crimson={hp:900,atk:650,interval:2.8,speed:5,range:7,cost:300,cooldown:10,knockbacks:3,forceKnockback:true,critChance:.1,critMult:2};
 data.units.gold={hp:600,atk:180,interval:3.6,speed:5,range:21,cost:425,cooldown:15,knockbacks:3,multiHit:3};
 data.units.ivory={hp:650,atk:380,interval:3,speed:5,range:20,cost:350,cooldown:13,knockbacks:3,area:true,slowChance:.4,slowDuration:2};
 data.units.chartreuse={hp:600,atk:95,interval:2.4,speed:5,range:16,cost:325,cooldown:12,knockbacks:3,multiHit:5};
@@ -155,7 +155,7 @@ data.units.azure={hp:800,atk:520,interval:3.2,speed:6.5,range:9,cost:400,cooldow
 data.units.crystal={hp:700,atk:460,interval:3.8,speed:5,range:22.5,cost:450,cooldown:16,knockbacks:3,pierce:3,critChance:.15,critMult:2,floatStrong:true};
 data.units.lavender={hp:500,atk:260,interval:4,speed:5,range:23.5,cost:400,cooldown:15,knockbacks:3,area:true,atkDownPct:.5,atkDownChance:.4,atkDownDuration:4};
 data.units.salmon={hp:450,atk:430,interval:4.2,speed:5,range:26,cost:475,cooldown:17,knockbacks:3,pull:true};
-data.units.raspberry={hp:400,atk:450,interval:4.5,speed:3,range:30,cost:500,cooldown:18,knockbacks:3,windup:.8,damageTiers:[{max:10,dmg:450},{max:17.5,dmg:750},{max:25,dmg:1200},{max:999,dmg:1600}]};
+data.units.raspberry={hp:400,atk:450,interval:4.5,speed:3,range:30,cost:500,cooldown:18,knockbacks:3,windup:.8,critChance:.1,critMult:2,damageTiers:[{max:10,dmg:450},{max:17.5,dmg:750},{max:25,dmg:1200},{max:999,dmg:1600}]};
 data.units.onyx={hp:2400,atk:1400,interval:3.4,speed:4.5,range:8,cost:900,cooldown:30,knockbacks:3,area:true,bossDamage:1.5,attackDuration:.9,windup:.45};
 const ALLIES=['red','orange','yellow','green','cyan','blue','purple','pink','crimson','gold','ivory','chartreuse','mint','azure','crystal','lavender','salmon','raspberry','onyx'];
 const NEW_ALLY_TYPES=['crimson','gold','ivory','chartreuse','mint','azure','crystal','lavender','salmon','raspberry','onyx'];
@@ -165,7 +165,7 @@ const ALWAYS_UNLOCKED=new Set(['red']);
 // 중국50 일본54 인도58 케냐62 사하라사막66 러시아69 스페인73 노르웨이77 뉴욕81 브라질85.
 const UNLOCK_AT={red:-1,orange:2,yellow:5,green:6,cyan:12,blue:15,purple:18,pink:37,crimson:50,gold:54,ivory:58,chartreuse:62,mint:66,azure:69,crystal:73,lavender:77,salmon:81,raspberry:85,onyx:CHAPTER1_LEN*2-1};
 const ROLES={red:'기본 근접',orange:'중거리 범위',yellow:'방어형 전기',green:'왕복 부메랑',cyan:'초장거리 저격',blue:'고속 연타',purple:'근접 빨간 적 특화',pink:'근거리 광역',crimson:'근거리 강타',gold:'분열 광역형',ivory:'원거리 둔화형',chartreuse:'중거리 연사형',mint:'중거리 정지형',azure:'돌진 광역형',crystal:'관통 치명타형',lavender:'장거리 약화형',salmon:'초장거리 끌어오기',raspberry:'초장거리 저격형',onyx:'근접 광역 강타 · 보스에 강함'};
-const STATUS_ICONS={mint:['freeze','정지'],ivory:['slow','둔화'],lavender:['weaken','약화'],crystal:['crit','치명타'],salmon:['pull','끌어오기']};
+const STATUS_ICONS={mint:['freeze','정지'],ivory:['slow','둔화'],lavender:['weaken','약화'],crystal:['crit','치명타'],salmon:['pull','끌어오기'],crimson:['crit','치명타'],raspberry:['crit','치명타']};
 const ABILITY_ICONS={purple:['strong','엄청 강하다'],...STATUS_ICONS};
 const COLORS={red:'#ff7272',orange:'#ffb452',yellow:'#ffe46d',green:'#83e595',cyan:'#53e5ef',blue:'#629aff',purple:'#c893ff',pink:'#ff73b8',crimson:'#dc143c',gold:'#ffd700',ivory:'#fffff0',chartreuse:'#7fff00',mint:'#98ff98',azure:'#007fff',crystal:'#ace5ee',lavender:'#b57edc',salmon:'#fa8072',raspberry:'#e30b5c',onyx:'#9ea3bd'};
 const domCache=new Map();const $=s=>{let el=domCache.get(s);if(!el){el=document.querySelector(s);domCache.set(s,el)}return el}, unitsEl=$('#units');let game, last=0;
@@ -808,7 +808,7 @@ function animateAlly(u){
 }
 
 const PROFILE_SHEET='assets/profile_sheet.webp';
-const PROFILE_TEXT={red:'가장 먼저 전선에 뛰어든 기본 전투원. 단순하지만 어떤 전투에서도 믿을 만하다.',orange:'멀리서 과즙을 던져 모여 있는 적을 한꺼번에 공격한다.',yellow:'튼튼한 몸으로 앞줄을 지키며 가까운 적에게 전기를 방출한다.',green:'왕복하는 부메랑으로 같은 적을 두 번 공격할 수 있다.',cyan:'아주 먼 거리에서 넓은 범위를 노리는 장거리 전투원.',blue:'빠른 이동과 연속 공격으로 빈틈을 놓치지 않는 속공 전투원.',purple:'빨간 적을 상대하도록 특별히 훈련된 색상 특화 전투원.',pink:'가까이 접근한 뒤 긴 광역 판정으로 뒤쪽의 적까지 휩쓴다.',crimson:'적 앞까지 달려가 강력한 펀치를 꽂는다. 맞은 적은 짧게 밀려난다.',gold:'금광석을 던져 비행 중 세 조각으로 퍼뜨린다. 조각들은 적중 시 금괴로 변해 각각 피해를 준다.',ivory:'아이스크림을 던져 범위 피해를 주고, 맞은 적의 이동 속도를 늦춘다.',chartreuse:'주머니를 열어 콩알탄 다섯 발을 빠르게 퍼붓는다.',mint:'민트 아이스크림을 터뜨려 주변을 공격하며, 확률적으로 적을 얼려 움직임을 멈춘다.',azure:'서핑보드를 타고 전방으로 돌진하며 경로의 모든 적을 휩쓴다.',crystal:'날카로운 크리스탈 조각으로 앞줄의 적을 꿰뚫는다. 가끔 강력한 치명타가 터진다.',lavender:'향수 구름을 퍼뜨려 범위 안의 적을 공격하고 공격력을 약화시킨다.',salmon:'낚싯바늘을 멀리 던져 적을 맞히고 아군 쪽으로 끌어당긴다.',raspberry:'아주 먼 거리에서 저격한다. 멀리 있는 적일수록 총알이 가속해 피해가 커진다.',onyx:'흑요석처럼 단단한 몸으로 거대한 망치를 내리찍는 수수께끼의 전사. 이름 말고는 나이도 성별도 고향도 알려진 것이 없고, 악의제왕을 쓰러뜨린 자에게만 모습을 드러낸다. 보스에게 1.5배 피해.'};
+const PROFILE_TEXT={red:'가장 먼저 전선에 뛰어든 기본 전투원. 단순하지만 어떤 전투에서도 믿을 만하다.',orange:'멀리서 과즙을 던져 모여 있는 적을 한꺼번에 공격한다.',yellow:'튼튼한 몸으로 앞줄을 지키며 가까운 적에게 전기를 방출한다.',green:'왕복하는 부메랑으로 같은 적을 두 번 공격할 수 있다.',cyan:'아주 먼 거리에서 넓은 범위를 노리는 장거리 전투원.',blue:'빠른 이동과 연속 공격으로 빈틈을 놓치지 않는 속공 전투원.',purple:'빨간 적을 상대하도록 특별히 훈련된 색상 특화 전투원.',pink:'가까이 접근한 뒤 긴 광역 판정으로 뒤쪽의 적까지 휩쓴다.',crimson:'적 앞까지 달려가 강력한 펀치를 꽂는다. 맞은 적은 짧게 밀려난다. 10% 확률로 급소에 꽂히는 2배 치명타.',gold:'금광석을 던져 비행 중 세 조각으로 퍼뜨린다. 조각들은 적중 시 금괴로 변해 각각 피해를 준다.',ivory:'아이스크림을 던져 범위 피해를 주고, 맞은 적의 이동 속도를 늦춘다.',chartreuse:'주머니를 열어 콩알탄 다섯 발을 빠르게 퍼붓는다.',mint:'민트 아이스크림을 터뜨려 주변을 공격하며, 확률적으로 적을 얼려 움직임을 멈춘다.',azure:'서핑보드를 타고 전방으로 돌진하며 경로의 모든 적을 휩쓴다.',crystal:'날카로운 크리스탈 조각으로 앞줄의 적을 꿰뚫는다. 가끔 강력한 치명타가 터진다.',lavender:'향수 구름을 퍼뜨려 범위 안의 적을 공격하고 공격력을 약화시킨다.',salmon:'낚싯바늘을 멀리 던져 적을 맞히고 아군 쪽으로 끌어당긴다.',raspberry:'아주 먼 거리에서 저격한다. 멀리 있는 적일수록 총알이 가속해 피해가 커진다. 10% 확률로 급소를 꿰뚫는 2배 치명타.',onyx:'흑요석처럼 단단한 몸으로 거대한 망치를 내리찍는 수수께끼의 전사. 이름 말고는 나이도 성별도 고향도 알려진 것이 없고, 악의제왕을 쓰러뜨린 자에게만 모습을 드러낸다. 보스에게 1.5배 피해.'};
 const EVOLUTION_TEXT={red:'강타 · 넉백 +1회 · 재사용 대기 -20%',orange:'과즙 범위 확대 · 처치 시 돈 2배',yellow:'추가 체력 · 받는 피해 -15%',green:'귀환 부메랑 강화 · 재사용 대기 -15%',cyan:'광역 범위 확대 · 떠 있는 적에게 1.8배 피해(받는 피해 0.4배)',blue:'공격 속도 증가 · 이동 속도 +25%',purple:'빨간 적 특화 강화 · 보스 피해 +30%',pink:'광역 공격력 증가 · 30% 확률로 1.5초간 느리게',crimson:'강타 위력 증가 · 보스 피해 +30%',gold:'파편 피해 증가 · 처치 시 돈 2배',ivory:'둔화 확률 40%→60% · 재사용 대기 -15%',chartreuse:'연사 피해 증가 · 연사 +1발',mint:'빙결 확률 증가 · 빙결 시간 +0.5초',azure:'돌진 피해 증가 · 20% 확률로 2배 치명타',crystal:'플로팅 특화 강화 · 관통 +1',lavender:'약화 확률 40%→60% · 약화 시간 +2초',salmon:'끌어오기 강화 · 재사용 대기 -15%',raspberry:'사거리 확장 및 관통 · 선딜 -25%',onyx:'보스 피해 2배 · 넉백 +1회'};
 const PROFILE_TEXT_EVOLVED={red:'수많은 전투를 거치며 맨몸으로도 강력한 일격을 날릴 수 있게 되었다. 이제는 단순한 몸빵이 아니라 한 방을 노리는 타격형 전투원.',orange:'더 많은 과즙을 담아 던지게 되면서 폭발 범위가 눈에 띄게 넓어졌다.',yellow:'두꺼워진 몸으로 더 오래 버티며 최전선을 든든하게 지킨다.',green:'부메랑을 던지는 손목 힘이 강해져 돌아올 때 더 강력한 일격을 남긴다.',cyan:'조준 실력이 늘어 폭발 범위가 한층 넓어진 저격수로 거듭났다.',blue:'손이 더 빨라져 눈 깜짝할 사이에 연타를 꽂아 넣는다.',purple:'빨간 적의 약점을 완벽히 파악해 압도적인 피해를 입히고, 받는 피해는 최소화한다.',pink:'리본을 휘두르는 힘이 강해져 광역 공격의 위력이 한층 강력해졌다.',crimson:'주먹에 실리는 힘이 늘어나 강타의 위력이 한층 강해졌다.',gold:'더 많은 금맥을 다뤄본 경험으로 파편 하나하나의 피해가 늘어났다.',ivory:'차가운 냉기가 짙어져 적을 더 자주, 더 오래 둔화시킨다.',chartreuse:'손놀림이 빨라져 콩알탄 한 발 한 발의 위력이 늘어났다.',mint:'냉기가 응축되어 적을 얼릴 확률이 크게 늘어났다.',azure:'파도의 기세가 거세져 돌진 한 방의 위력이 늘어났다.',crystal:'결정 순도가 높아져 플로팅 적을 상대로 한층 압도적인 위력을 낸다.',lavender:'향이 짙어져 더 자주, 더 오래 적의 공격력을 떨어뜨린다.',salmon:'손맛이 늘어 적을 더 강하게 끌어당긴다.',raspberry:'조준 실력이 늘어 사거리가 늘고, 먼 거리에서는 뒤쪽 적까지 꿰뚫는다.',onyx:'흑요석 갑옷을 두르고 한층 거대해졌다. 양손 망치의 일격은 어떤 보스의 껍질도 부순다. 갑옷 속 정체는 여전히 아무도 모른다.'};
 const PROFILE_CALIB={
@@ -996,7 +996,7 @@ const ENEMY_ORDER=['dog','snache','guys','hippo','pigge','peng','gory','baa','cr
 const ENEMY_TEXT={
  dog:'가장 먼저 마주치는 흔한 잡병. 느리지 않은 속도로 꾸준히 밀려온다.',
  snache:'혀를 길게 뻗어 공격하는 정찰병. 멍뭉이보다 빠르게 접근해 온다.',
- metalhippo:'강철 갑옷을 두른 하마양. 치명타가 아니면 어떤 공격도 피해 1밖에 주지 못한다. 크리스탈의 치명타가 열쇠. (레전드 스토리)',
+ metalhippo:'강철 갑옷을 두른 하마양. 치명타가 아니면 어떤 공격도 피해 1밖에 주지 못한다. 크리스탈·크림슨·라즈베리의 치명타가 열쇠. (레전드 스토리)',
  stpigge:'왕관을 쓴 거대한 돼지새끼. 넉백이 많고 공격이 빠르며 체력이 매우 높은 빨간 적. 퍼플을 활용하자. (레전드 스토리)',
  nyandam:'그림자 부하들이 떠받친 옥좌에 앉아 와인잔을 기울이는 악의 제왕. 느리지만 체력이 엄청나고, 그림자 손 떼로 먼 거리까지 휩쓴다. (세계편 2장 달)',
  darkdog:'어둠에 물든 멍뭉이. 멍뭉이보다 훨씬 단단하고 매섭게 물어뜯는다. (레전드 스토리)',
