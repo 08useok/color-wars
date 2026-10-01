@@ -199,7 +199,7 @@ function addUnit(type,boss=false,mag=1){
 const ENEMY_SIZE={pigge:1.27,stpigge:1.6,nyandam:1.5,seal:1.44,rhino:1.94,kangaroo:1.3,leboin:1.2,mooth:1.15,bear:1.26,face:1.2};
 // Displayed height (px) of each new 2진 body sprite; the HP bar sits just above it instead of at the default 1진 spot.
 const EVO_BODY_H={crimson:76,gold:78,ivory:77,chartreuse:78,mint:80,azure:89,crystal:81,lavender:80,salmon:74,raspberry:89,onyx:105};
-function drawUnit(u){let e=document.createElement('div'),evolved=u.ally&&u.stats?.evolved,legacyAlly=u.ally&&!NEW_ATLASES[u.type];e.className='unit '+u.type+(u.ally?' ally-art':'')+(evolved?' evolved':'');e.style.setProperty('--unit-color',COLORS?.[u.type]||'#fff');e.innerHTML='<div class="bar"><i style="width:100%"></i></div><span class="status-badges"><span class="freeze-icon st-freeze"></span><span class="slow-icon st-slow"></span><span class="weaken-icon st-weaken"></span><span class="crit-icon st-crit"></span><span class="pull-icon st-pull"></span></span>'+(legacyAlly?'<span class="ally-shadow"></span><span class="ally-sprite"></span>'+(evolved?'<span class="evolved-sprite"></span>':'')+(u.type==='pink'&&!evolved?'<span class="pink-ribbon"><i></i></span>':''):'<span class="dog-shadow"></span><span class="dog-sprite"></span>'+(u.type==='leboin'||u.type==='bear'?'<span class="dog-sprite-legs"></span>':'')+(u.type==='leboin'?'<span class="dog-sprite-body"></span>':'')+(u.type==='stpigge'?'<span class="pigge-crown"></span>':''));e.setAttribute('aria-label',UNIT_NAMES[u.type]+(evolved?' 2진':''));u.el=e;if(evolved&&EVO_BODY_H[u.type])e.querySelector('.bar').style.top=(33-EVO_BODY_H[u.type])+'px';if(!u.ally&&ENEMY_SIZE[u.type])e.style.setProperty('--enemy-size',ENEMY_SIZE[u.type]);unitsEl.append(e);const newAtlas=NEW_ATLASES[u.type];const sheet={rabbit:ELITE_RABBIT_SHEET,squirrel:SQUIRREL_G_SHEET,kangaroo:KANG_ROO_SHEET,mooth:MOOTH_SHEET,rhino:RHINO_SHEET,bear:BEAR_SHEET,face:FACE_SHEET}[u.type]||(evolved&&newAtlas?.evolved?newAtlas.evolved.sheet:newAtlas?.sheet);if(sheet)e.querySelector('.dog-sprite').style.backgroundImage=`url(${sheet})`;if(legacyAlly)animateAlly(u);else animateDog(u)}
+function drawUnit(u){let e=document.createElement('div'),evolved=u.ally&&u.stats?.evolved,legacyAlly=u.ally&&!NEW_ATLASES[u.type];e.className='unit '+u.type+(u.ally?' ally-art':'')+(evolved?' evolved':'');e.style.setProperty('--unit-color',COLORS?.[u.type]||'#fff');e.innerHTML='<div class="bar"><i style="width:100%"></i></div><span class="status-badges"><span class="freeze-icon st-freeze"></span><span class="slow-icon st-slow"></span><span class="weaken-icon st-weaken"></span><span class="crit-icon st-crit"></span><span class="pull-icon st-pull"></span></span>'+(legacyAlly?'<span class="ally-shadow"></span><span class="ally-sprite"></span>'+(evolved?'<span class="evolved-sprite"></span>'+(EVOLVED_HELD_ITEM[u.type]?'<span class="evolved-item"></span>':''):'')+(u.type==='pink'&&!evolved?'<span class="pink-ribbon"><i></i></span>':''):'<span class="dog-shadow"></span><span class="dog-sprite"></span>'+(u.type==='leboin'||u.type==='bear'?'<span class="dog-sprite-legs"></span>':'')+(u.type==='leboin'?'<span class="dog-sprite-body"></span>':'')+(u.type==='stpigge'?'<span class="pigge-crown"></span>':''));e.setAttribute('aria-label',UNIT_NAMES[u.type]+(evolved?' 2진':''));u.el=e;if(evolved&&EVO_BODY_H[u.type])e.querySelector('.bar').style.top=(33-EVO_BODY_H[u.type])+'px';if(!u.ally&&ENEMY_SIZE[u.type])e.style.setProperty('--enemy-size',ENEMY_SIZE[u.type]);unitsEl.append(e);const newAtlas=NEW_ATLASES[u.type];const sheet={rabbit:ELITE_RABBIT_SHEET,squirrel:SQUIRREL_G_SHEET,kangaroo:KANG_ROO_SHEET,mooth:MOOTH_SHEET,rhino:RHINO_SHEET,bear:BEAR_SHEET,face:FACE_SHEET}[u.type]||(evolved&&newAtlas?.evolved?newAtlas.evolved.sheet:newAtlas?.sheet);if(sheet)e.querySelector('.dog-sprite').style.backgroundImage=`url(${sheet})`;if(legacyAlly)animateAlly(u);else animateDog(u)}
 function target(u){let foes=game.units.filter(v=>v.hp>0&&v.kbTime<=0&&!v.emerging&&v.ally!==u.ally);let dir=u.ally?-1:1;return foes.filter(v=>dir*(v.x-u.x)>=-1).sort((a,b)=>Math.abs(a.x-u.x)-Math.abs(b.x-u.x))[0]}
 // Canonical knockback counts include death. Red keeps its original two live hitbacks.
 const HITBACK_DURATION=20/30;
@@ -785,7 +785,16 @@ LEGACY_THROW_CROPS.purple=LEGACY_THROW_CROPS.cyan=LEGACY_THROW_CROPS.orange;
 // frames for these three - col 2 drops red's sword entirely, and green/cyan only hold
 // their boomerang/orb in col 0. Restrict their walk cycle to the frame(s) that keep it
 // visible instead of letting it flicker in and out every stride.
-const EVOLVED_WALK_FRAMES={red:[0,1],green:[0],cyan:[0]};
+const EVOLVED_WALK_FRAMES={red:[0,1]};
+// evolved_sheet.png only draws green's boomerang / cyan's orb in walk col 0 - the fist is
+// tucked to a different spot in cols 1-2 (mid-stride) with nothing in hand. Crop the item
+// out of col 0 (native sheet px, cell-relative) and re-anchor that patch to each frame's
+// actual fist spot so the full 3-frame walk plays while the item stays visibly held.
+const EVOLVED_HELD_ITEM={
+ green:{x:134,y:28,w:76,h:78,hand0:[156,88],handOther:[130,73]},
+ cyan:{x:130,y:55,w:58,h:58,hand0:[159,84],handOther:[137,84]}
+};
+const EVOLVED_SCALE=.75,EVOLVED_SPRITE_LEFT=-61.3,EVOLVED_SPRITE_BOTTOM=-3,EVOLVED_CELL_W_NATIVE=1536/7,EVOLVED_CELL_H_NATIVE=1024/8;
 function animateAlly(u){
  const state=u.hurtTime>0?'hurt':u.attackTime>0?'attack':'walk';
  if(u.stats?.evolved){
@@ -793,6 +802,18 @@ function animateAlly(u){
   const duration=data.units[u.type].attackDuration||.56;
   const walkFrames=EVOLVED_WALK_FRAMES[u.type],col=u.hurtTime>0?6:u.attackTime>0?3+Math.min(2,Math.max(0,Math.floor((duration-u.attackTime)/duration*3))):walkFrames?walkFrames[Math.floor(u.animTime/.16)%walkFrames.length]:Math.floor(u.animTime/.16)%3;
   sprite.style.backgroundPosition=`${-col*EVOLVED_CELL_W}px ${-row*EVOLVED_CELL_H}px`;
+  const item=EVOLVED_HELD_ITEM[u.type],itemEl=u.el.querySelector('.evolved-item');
+  if(item){
+   const onFrame0=state==='walk'&&col===0;
+   itemEl.style.display=state==='walk'?'block':'none';
+   if(state==='walk'){
+    const [hx,hy]=onFrame0?[0,0]:[item.handOther[0]-item.hand0[0],item.handOther[1]-item.hand0[1]];
+    itemEl.style.left=(EVOLVED_SPRITE_LEFT+(EVOLVED_CELL_W_NATIVE-(item.x+item.w))*EVOLVED_SCALE-hx*EVOLVED_SCALE)+'px';
+    itemEl.style.bottom=(EVOLVED_SPRITE_BOTTOM+96-(item.y+item.h)*EVOLVED_SCALE-hy*EVOLVED_SCALE)+'px';
+    itemEl.style.width=(item.w*EVOLVED_SCALE)+'px';itemEl.style.height=(item.h*EVOLVED_SCALE)+'px';
+    itemEl.style.backgroundPosition=`${-(item.x*EVOLVED_SCALE)}px ${-(row*EVOLVED_CELL_H+item.y*EVOLVED_SCALE)}px`;
+   }
+  }
   u.el.dataset.animation=state;
   return;
  }
