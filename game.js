@@ -55,7 +55,10 @@ for(let i=0;i<CHAPTER1_LEN-1;i++){const base=STAGES[i];STAGES.push({...base,chap
 // Chapter 2 ends on its own Moon (wiki "Moon (Empire of Cats)", Ch.2): boss 악의제왕 야옹마 (Dark Emperor Nyandam).
 STAGES.push({...STAGES[CHAPTER1_LEN-1],chapter:2,hp:200000,maxEnemies:12,desc:'세계편 2장 최종 보스 악의제왕 야옹마'});
 const CH2_HAWAII=CHAPTER1_LEN*2-2;// last pre-Moon chapter-2 stage: keeps the Lv.20 / Tuesday top-tier unlocks where they were
-const MAIN_STAGE_COUNT=STAGES.length;// chapter 1 + chapter 2; everything after this index is a special stage
+// Empire of Cats Chapter 3: the same Korea-to-Hawaii roster again at 400% (wiki: Ch.3 = x4 enemy magnification).
+const CH3_START=STAGES.length;
+for(let i=0;i<CHAPTER1_LEN-1;i++){const base=STAGES[i];STAGES.push({...base,chapter:3,hp:Math.round(base.hp*4),desc:'세계편 3장 재도전 · 모든 적 능력치 400% 강화'});}
+const MAIN_STAGE_COUNT=STAGES.length;// chapters 1-3; everything after this index is a special stage
 // Tuesday special stage "광속 전사": pre-15.4 Speed Up source (drop chance 20/50/100/100% (x2 on the hardest)).
 const TUESDAY_STAGES=[
  {name:'광속 전사 초급',flag:'⚡',hp:10000,chance:.2,count:1,boss:'hippo',desc:'하마양 · 스피드업 20%'},
@@ -63,7 +66,7 @@ const TUESDAY_STAGES=[
  {name:'광속 전사 상급',flag:'⚡',hp:30000,chance:1,count:1,boss:'bear',desc:'곰선생 · 스피드업 100%'},
  {name:'광속 전사 초상급',flag:'⚡',hp:50000,chance:1,count:2,boss:'leboin',desc:'빠옹 · 스피드업 2개 100%'}
 ];
-TUESDAY_STAGES.forEach(t=>STAGES.push({name:t.name,flag:t.flag,hp:t.hp,gap:4,wave:0,sky:'#f6e39a',land:'#c9a24e',desc:t.desc,chapter:3,special:{chance:t.chance,count:t.count},maxEnemies:10}));
+TUESDAY_STAGES.forEach(t=>STAGES.push({name:t.name,flag:t.flag,hp:t.hp,gap:4,wave:0,sky:'#f6e39a',land:'#c9a24e',desc:t.desc,chapter:'special',special:{chance:t.chance,count:t.count},maxEnemies:10}));
 // Friday special stage "가시밭길": Nyanko Computer (야옹컴) source (drop chance 30/60/100% (x2 on the hardest), per 나무위키).
 const FRIDAY_START=STAGES.length;
 const FRIDAY_STAGES=[
@@ -71,7 +74,7 @@ const FRIDAY_STAGES=[
  {name:'가시밭길 중급',flag:'🌵',hp:24000,chance:.6,count:1,boss:'seal',desc:'바다레오파드 · 야옹컴 60%'},
  {name:'가시밭길 초상급',flag:'🌵',hp:60000,chance:1,count:2,boss:'kangaroo',desc:'캥거류 · 야옹컴 2개 100%'}
 ];
-FRIDAY_STAGES.forEach(t=>STAGES.push({name:t.name,flag:t.flag,hp:t.hp,gap:4,wave:0,sky:'#d4e6b2',land:'#7f9b55',desc:t.desc,chapter:3,special:{chance:t.chance,count:t.count,item:'nyancom'},maxEnemies:10}));
+FRIDAY_STAGES.forEach(t=>STAGES.push({name:t.name,flag:t.flag,hp:t.hp,gap:4,wave:0,sky:'#d4e6b2',land:'#7f9b55',desc:t.desc,chapter:'special',special:{chance:t.chance,count:t.count,item:'nyancom'},maxEnemies:10}));
 // Legend Story subchapter 1 "전설의 시작" (Stories of Legend: The Legend Begins); Korean stage names per
 // 나무위키 '냥코 대전쟁/레전드 스토리', stage data per the
 // Battle Cats wiki: 8 stages, base HP / max enemies / XP / drops as listed there (XP x4 to match
@@ -101,7 +104,7 @@ function legendStageUnlocked(k,c=legendCrown){return legendOpen()&&legendCrownUn
 function stageBaseHp(i){return STAGES[i].hp}
 function isUnlocked(i){return i===0||cleared.includes(i-1)||cleared.includes(i)}
 function chapterOf(i){return STAGES[i]?.chapter||1}
-function enemyMagnification(){const c=chapterOf(selectedStage);return c===2?1.5:c===4?LEGEND_CROWN_MULT[legendCrown-1]:1}
+function enemyMagnification(){const c=chapterOf(selectedStage);return c===2?1.5:c===3?4:c===4?LEGEND_CROWN_MULT[legendCrown-1]:1}
 const RHINO_SHEET='assets/rhino_sheet.png';
 const BEAR_SHEET='assets/bear_sheet.png';
 const FACE_SHEET='assets/face_sheet.png?v=2';
@@ -428,7 +431,7 @@ game.spawnCd=Math.max(0,game.spawnCd-dt);game.orangeCd=Math.max(0,game.orangeCd-
  }
  render()
 }
-function render(){renderDeckButtons();renderSpeedButton();renderNyancomButton();renderNewButtons();renderGreenButton();renderOrangeButton();renderYellowButton();renderUnitLevels();$('#battleNotice').classList.toggle('hidden',!(game.noticeTime>0));$('#pauseBtn').disabled=!game.running||game.ended;$('#pauseBtn').textContent=game.paused?'계속하기':'일시정지';$('#pauseNotice').classList.toggle('hidden',!game.paused);$('#timer').textContent=`${STAGES[selectedStage].name}${chapterOf(selectedStage)===2?' (2장)':''}${STAGES[selectedStage].legend?' ★'+legendCrown:''} · ${Math.floor(game.elapsed)}초`;let l=data.income[game.level];$('#money').textContent=`${Math.floor(game.money)} / ${walletMax()}원`;$('#enemyHp').textContent=data.bases.enemy.hp;$('#allyHp').textContent=data.bases.ally.hp;for(let [name,b] of Object.entries(data.bases))$(`#${name}Base span`).style.width=(b.hp/b.max*100)+'%';let sb=$('#spawnBtn'),ib=$('#incomeBtn'),canSpawn=!game.ended&&!game.paused&&(game.running||game.tutorial===2),canUpgrade=!game.ended&&!game.paused&&(game.running||game.tutorial===4);sb.disabled=game.money<unitCost('red')||game.spawnCd>0||!canSpawn||allyDeployFull();sb.querySelector('small').textContent=allyDeployFull()?'출격 인원 가득참':unitCost('red')+'원';sb.querySelector('em').style.display=game.spawnCd?'block':'none';sb.querySelector('em').style.transform=`scaleY(${game.spawnCd/unitStats('red').cooldown})`;ib.disabled=!canUpgrade||game.level===5||game.money<(l.cost||0);ib.innerHTML=game.level===5?'수입 Lv.MAX':`수입 업그레이드<br><small>${l.cost}원</small>`}
+function render(){renderDeckButtons();renderSpeedButton();renderNyancomButton();renderNewButtons();renderGreenButton();renderOrangeButton();renderYellowButton();renderUnitLevels();$('#battleNotice').classList.toggle('hidden',!(game.noticeTime>0));$('#pauseBtn').disabled=!game.running||game.ended;$('#pauseBtn').textContent=game.paused?'계속하기':'일시정지';$('#pauseNotice').classList.toggle('hidden',!game.paused);$('#timer').textContent=`${STAGES[selectedStage].name}${chapterOf(selectedStage)===2||chapterOf(selectedStage)===3?` (${chapterOf(selectedStage)}장)`:''}${STAGES[selectedStage].legend?' ★'+legendCrown:''} · ${Math.floor(game.elapsed)}초`;let l=data.income[game.level];$('#money').textContent=`${Math.floor(game.money)} / ${walletMax()}원`;$('#enemyHp').textContent=data.bases.enemy.hp;$('#allyHp').textContent=data.bases.ally.hp;for(let [name,b] of Object.entries(data.bases))$(`#${name}Base span`).style.width=(b.hp/b.max*100)+'%';let sb=$('#spawnBtn'),ib=$('#incomeBtn'),canSpawn=!game.ended&&!game.paused&&(game.running||game.tutorial===2),canUpgrade=!game.ended&&!game.paused&&(game.running||game.tutorial===4);sb.disabled=game.money<unitCost('red')||game.spawnCd>0||!canSpawn||allyDeployFull();sb.querySelector('small').textContent=allyDeployFull()?'출격 인원 가득참':unitCost('red')+'원';sb.querySelector('em').style.display=game.spawnCd?'block':'none';sb.querySelector('em').style.transform=`scaleY(${game.spawnCd/unitStats('red').cooldown})`;ib.disabled=!canUpgrade||game.level===5||game.money<(l.cost||0);ib.innerHTML=game.level===5?'수입 Lv.MAX':`수입 업그레이드<br><small>${l.cost}원</small>`}
 function renderOrangeButton(){
  const button=$('#orangeBtn'),d=data.units.orange,unlocked=orangeUnlocked();
  button.disabled=!unlocked||!game.running||game.paused||game.ended||game.money<unitCost("orange")||game.orangeCd>0||allyDeployFull();
@@ -615,6 +618,7 @@ const STAGE_SPAWNS={
 // Mirror the same spawn composition/timing onto the Chapter 2 stage indices; only the
 // unitStats() magnification differs at spawn time.
 for(let i=0;i<CHAPTER1_LEN-1;i++){STAGE_SPAWNS[CHAPTER1_LEN+i]=STAGE_SPAWNS[i].map(r=>({...r}))}
+for(let i=0;i<CHAPTER1_LEN-1;i++){STAGE_SPAWNS[CH3_START+i]=STAGE_SPAWNS[i].map(r=>({...r}))}
 STAGE_SPAWNS[CHAPTER1_LEN*2-1]=[{type:'nyandam',at:{t:0},count:1,boss:true},{type:'guys',at:{t:0},delay:[.13,1]},{type:'hippo',at:{t:0},delay:[10,40]},{type:'peng',at:{t:0},delay:[13.33,60]},{type:'rhino',at:{t:40},delay:[66.67,100]},{type:'croco',at:{t:0},delay:[6,33.33]},{type:'croco',at:{t:80},delay:[.27,1.33]},{type:'squirrel',at:{t:0},delay:[6,66.67]},{type:'squirrel',at:{t:120},delay:[.27,1.33]}];
 TUESDAY_STAGES.forEach((t,k)=>{const boss=t.boss,rules=[{type:'dog',at:{t:0},delay:[4,8]},{type:'snache',at:{t:5},delay:[8,20]},{type:'guys',at:{t:15},delay:[10,26]},{type:boss,at:{hp:90},count:1,boss:true}];if(k>=1)rules.push({type:boss,at:{hp:50},count:k>=3?2:1,delay:[6,10]});STAGE_SPAWNS[MAIN_STAGE_COUNT+k]=rules});
 FRIDAY_STAGES.forEach((t,k)=>{const boss=t.boss,rules=[{type:'dog',at:{t:0},delay:[4,8]},{type:'croco',at:{t:3},delay:[2,5]},{type:'guys',at:{t:12},delay:[8,22]},{type:boss,at:{hp:90},count:1,boss:true}];if(k>=1)rules.push({type:boss,at:{hp:50},count:k>=2?2:1,delay:[6,10]});STAGE_SPAWNS[FRIDAY_START+k]=rules});
@@ -630,7 +634,7 @@ FRIDAY_STAGES.forEach((t,k)=>{const boss=t.boss,rules=[{type:'dog',at:{t:0},dela
 ].forEach((rules,k)=>{STAGE_SPAWNS[LEGEND_START+k]=rules});
 // Max enemies alive at once, per Battle Cats wiki (EoC Korea~Moon). Chapter 2 reuses the same caps.
 const STAGE_MAX_ENEMIES=[3,4,30,5,6,7,6,5,10,5,6,7,12,3,4,6,10,10,10,10,10,4,5,3,5,20,8,8,10,10,10,8,6,10,10,10,4,8,5,10,10,5,10,4,2,10,3,4];
-function maxEnemies(i){return STAGES[i]?.maxEnemies??STAGE_MAX_ENEMIES[i<CHAPTER1_LEN?i:i-CHAPTER1_LEN]??Infinity}
+function maxEnemies(i){return STAGES[i]?.maxEnemies??(i<MAIN_STAGE_COUNT?STAGE_MAX_ENEMIES[i%CHAPTER1_LEN]:undefined)??Infinity}
 function stageEnemies(i){return [...new Set((STAGE_SPAWNS[i]||[]).map(r=>r.type))]}
 function pickDelay(range){return range[0]+Math.random()*(range[1]-range[0])}
 function updateStageSpawns(dt){
@@ -759,13 +763,14 @@ let legendSub=0;// 0 = subchapter list, 1 = inside "전설의 시작"
 function renderStageMenu(){renderTraining();renderBaseUpgrade();renderSpecialStages();renderSweepBar();
  $('#legendArrow').textContent=stageChapterView==='legend'?'‹':'›';$('#legendArrow').classList.toggle('active',stageChapterView==='legend');
  $('#legendBar').classList.toggle('hidden',stageChapterView!=='legend');
- if(stageChapterView==='legend'){$('#chapter1Tab').classList.remove('active');$('#chapter2Tab').classList.remove('active');renderLegend();return}
+ if(stageChapterView==='legend'){$('#chapter1Tab').classList.remove('active');$('#chapter2Tab').classList.remove('active');$('#chapter3Tab').classList.remove('active');renderLegend();return}
  $('#stageGrid').innerHTML='';
  const viewStages=STAGES.map((stage,i)=>({stage,i})).filter(o=>chapterOf(o.i)===stageChapterView);
  viewStages.forEach(({stage,i})=>{const button=document.createElement('button');button.className='stage-card'+(cleared.includes(i)?' cleared':'');button.disabled=!isUnlocked(i);button.title=`등장 적: ${stageEnemies(i).map(type=>UNIT_NAMES[type]).join(' · ')} · 적 성 체력 ${stage.hp}`;button.innerHTML=`<strong>${stage.name}</strong>${cleared.includes(i)?`<small>${sweepMode?'소탕':'✓'}</small>`:''}`;if(sweepMode)button.disabled=!cleared.includes(i)||nyancom<SWEEP_COST;button.onclick=()=>{if(sweepMode)sweepStage(i);else{selectedStage=i;reset()}};$('#stageGrid').append(button)});
  $('#chapter1Tab').classList.toggle('active',stageChapterView===1);
  $('#chapter2Tab').classList.toggle('active',stageChapterView===2);
- $('#chapterNote').textContent=stageChapterView===2?'한국 ~ 달 재도전 · 모든 적 체력·공격력 150% 강화 · 달의 보스는 악의제왕 야옹마':'';
+ $('#chapter3Tab').classList.toggle('active',stageChapterView===3);
+ $('#chapterNote').textContent=stageChapterView===2?'한국 ~ 달 재도전 · 모든 적 체력·공격력 150% 강화 · 달의 보스는 악의제왕 야옹마':stageChapterView===3?'한국 ~ 하와이 재도전 · 모든 적 체력·공격력 400% 강화 · 2장 달을 클리어하면 열립니다':'';
  $('#progressText').textContent=`${viewStages.filter(o=>cleared.includes(o.i)).length} / ${viewStages.length} 스테이지 클리어 · 세계편 ${stageChapterView}장`;
 }
 const SPEED_PACK={count:9,xp:1000};// pre-15.4: bought in packs of 9 (50 cat food in the original) - paid in XP here
@@ -779,7 +784,7 @@ function sweepStage(i){
  if(!(i<MAIN_STAGE_COUNT&&cleared.includes(i))||nyancom<SWEEP_COST)return false;
  nyancom-=SWEEP_COST;saveNyancom();
  const xp=studyXP(Math.floor(stageXP(i)/2));training.xp+=xp;saveTraining();
- let note=`${STAGES[i].name}${chapterOf(i)===2?' (2장)':''} 소탕 완료! +${xp} XP (야옹컴 ${SWEEP_COST}개 사용)`;
+ let note=`${STAGES[i].name}${chapterOf(i)===2||chapterOf(i)===3?` (${chapterOf(i)}장)`:''} 소탕 완료! +${xp} XP (야옹컴 ${SWEEP_COST}개 사용)`;
  if(i>=18&&Math.random()<.3){speedTickets++;saveSpeedTickets();note+=' · 배속권 1개 획득'}
  sweepNote=note;renderStageMenu();renderSpeedButton();renderNyancomButton();return true;
 }
@@ -843,6 +848,7 @@ function legendFinish(win){
 $('#chapter1Tab').onclick=()=>{stageChapterView=1;renderStageMenu()};
 $('#legendArrow').onclick=()=>{stageChapterView=stageChapterView==='legend'?1:'legend';if(stageChapterView==='legend')legendSub=0;renderStageMenu()};
 $('#chapter2Tab').onclick=()=>{stageChapterView=2;renderStageMenu()};
+$('#chapter3Tab').onclick=()=>{stageChapterView=3;renderStageMenu()};
 function openStages(){if(game.running&&!game.ended)game.paused=true;highlight();render();renderStageMenu();$('#stageMenu').classList.remove('hidden');$('#resumeBtn').textContent=game.ended?'결과로 돌아가기':'전투로 돌아가기'}
 $('#stagesBtn').onclick=openStages;
 $('#resultStagesBtn').onclick=openStages;
