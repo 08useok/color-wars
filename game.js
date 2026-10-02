@@ -133,7 +133,7 @@ data.units.stpigge={trait:'red',hp:64000,atk:600,interval:22/30,speed:5.6,range:
 // 악의제왕 야옹마 / Dark Emperor Nyandam (wiki). Art is assembled from the part sheet 023_e.png into nyandam_frames.png.
 data.units.nyandam={trait:'red',hp:160000,atk:2700,interval:463/30,speed:1.4,range:15.6,reward:3000,knockbacks:3,attackDuration:1.2,windup:.7,area:true};
 // 살의의 멍뭉이 / Doge Dark (wiki): Black enemy, single attack with a long 41-frame foreswing, 8 knockbacks. Range 110/20; speed is a rough rescale of the wiki's 30.
-data.units.darkdog={trait:'black',hp:5000,atk:2000,interval:1.5,speed:12,range:5.5,reward:400,knockbacks:8,attackDuration:1.5,windup:41/30};
+data.units.darkdog={trait:'black',notBoss:true,hp:5000,atk:2000,interval:1.5,speed:12,range:5.5,reward:400,knockbacks:8,attackDuration:1.5,windup:41/30};
 data.units.gabriel={hp:600,atk:70,interval:1.2,speed:12,range:4,reward:130,knockbacks:3};
 data.units.ectosnache={hp:1100,atk:150,interval:1.1,speed:8,range:4.5,reward:180,knockbacks:3};
 const CRIMSON_SHEET='assets/unitcrimson_ally-sprite.png';
@@ -274,7 +274,7 @@ function damage(v,amount,from){
  if(v.stats?.armor)amount*=v.stats.armor;
  if(from?.atkDownUntil>game.elapsed)amount*=from.atkDownMult;
  let crit=false;if(from?.stats?.critChance&&Math.random()<from.stats.critChance){crit=true;amount*=from.stats.critMult||2;v.critFxUntil=game.elapsed+STATUS_FX_TIME;critBurst(v)}
- const isBoss=v.boss||data.units[v.type].hp>=BOSS_HP_THRESHOLD;// base HP, so Chapter 2's x1.5 doesn't change who counts as a boss
+ const isBoss=v.boss||(!data.units[v.type].notBoss&&data.units[v.type].hp>=BOSS_HP_THRESHOLD);// base HP, so Chapter 2's x1.5 doesn't change who counts as a boss
  if(from?.stats?.pull&&isBoss)amount*=1.3;
  if(from?.stats?.bossDamage&&isBoss)amount*=from.stats.bossDamage;
  if(data.units[v.type].trait==='metal'&&!crit)amount=1;// metal: every non-critical hit deals exactly 1
