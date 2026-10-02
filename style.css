@@ -252,3 +252,9 @@ body { overflow:auto; }
 .salmon-bolt{width:22px;height:11px;border-radius:55% 45% 45% 55%;background:#5ab8ff;border:2px solid #2b7bbf;box-shadow:7px 0 0 -3px #5ab8ff}
 .raspberry-bolt{width:32px;height:7px;transform:scaleX(-1);border-radius:7px;background:linear-gradient(90deg,#ff2a6a00,#ff2a6a 55%,#ffd0de);box-shadow:0 0 9px #ff5a8a}
 @keyframes shot-spin{to{rotate:360deg}}
+
+/* 야옹컴 auto-battle button + 황금 야옹컴 sweep bar */
+.topline button.active{background:#3a7a4c;border-color:#78d494}
+.sweep-bar{display:flex;align-items:center;gap:12px;margin:8px 0 12px}
+.sweep-bar small{color:#bdd0e4}
+.stage-card.friday small{color:#9fe6a4}
