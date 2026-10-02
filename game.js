@@ -88,7 +88,7 @@ const LEGEND_STAGES=[
  {name:'탱글탱글 광장',en:'Bouncy Park',flag:'🎡',hp:90000,max:4,xp:1140,sky:'#9fd8ef',land:'#9ccf6a',desc:'40초 후 재키펭 3마리'},
  {name:'애정의 눈빛',en:'Gentle Smile',flag:'🙂',hp:100000,max:4,xp:1140,drop:{speed:.01},sky:'#e8d4b0',land:'#b9a56f',desc:'적 성 90%에서 보스 고릴라저씨 500% 3연속'},
  {name:'목장의 수호자',en:'Guardian of the Ranch',flag:'🐄',hp:110000,max:6,xp:1330,sky:'#a8d8e8',land:'#7fb35c',desc:'적 성 90%에서 보스 빠옹 300%'},
- {name:'잠자는 라이온',en:'Sleeping Lion',flag:'🦁',hp:120000,max:6,xp:1710,drop:{xp:13500,xpChance:.05},sky:'#3b3f66',land:'#7b6f8f',desc:'고릴라저씨·하마양 4연속 · 50%에서 다크 멍뭉이 4마리와 보스 다람G'}
+ {name:'잠자는 라이온',en:'Sleeping Lion',flag:'🦁',hp:120000,max:6,xp:1710,drop:{xp:13500,xpChance:.05},sky:'#3b3f66',land:'#7b6f8f',desc:'고릴라저씨·하마양 4연속 · 50%에서 살의의 멍뭉이 4마리와 보스 다람G'}
 ];
 const LEGEND_START=STAGES.length,LEGEND_CROWN_MULT=[1,1.5,2,3],LEGEND_XP_SCALE=4;
 LEGEND_STAGES.forEach((t,k)=>STAGES.push({...t,gap:4,wave:0,chapter:4,legend:{k},maxEnemies:t.max}));
@@ -132,7 +132,8 @@ data.units.metalhippo={trait:'metal',hp:128,atk:300,interval:.6,speed:2.8,range:
 data.units.stpigge={trait:'red',hp:64000,atk:600,interval:22/30,speed:5.6,range:5,reward:300,knockbacks:4,attackDuration:22/30,windup:14/30,area:true};
 // 악의제왕 야옹마 / Dark Emperor Nyandam (wiki). Art is assembled from the part sheet 023_e.png into nyandam_frames.png.
 data.units.nyandam={trait:'red',hp:160000,atk:2700,interval:463/30,speed:1.4,range:15.6,reward:3000,knockbacks:3,attackDuration:1.2,windup:.7,area:true};
-data.units.darkdog={hp:900,atk:90,interval:1.4,speed:6,range:4,reward:150,knockbacks:3};
+// 살의의 멍뭉이 / Doge Dark (wiki): Black enemy, single attack with a long 41-frame foreswing, 8 knockbacks. Range 110/20; speed is a rough rescale of the wiki's 30.
+data.units.darkdog={trait:'black',hp:5000,atk:2000,interval:1.5,speed:12,range:5.5,reward:400,knockbacks:8,attackDuration:1.5,windup:41/30};
 data.units.gabriel={hp:600,atk:70,interval:1.2,speed:12,range:4,reward:130,knockbacks:3};
 data.units.ectosnache={hp:1100,atk:150,interval:1.1,speed:8,range:4.5,reward:180,knockbacks:3};
 const CRIMSON_SHEET='assets/unitcrimson_ally-sprite.png';
@@ -563,7 +564,7 @@ function animateLeboin(u){
  u.el.dataset.animation=state;
 }
 
-const UNIT_NAMES={pink:'핑크',rhino:'투뿔소',bear:'곰선생',face:'대갈이군',cyan:'시안',blue:'블루',purple:'퍼플',peng:'재키펭',gory:'고릴라저씨',baa:'메에메에',seal:'바다레오파드',croco:'아거',leboin:'빠옹',rabbit:'엘리트래빗',squirrel:'다람G',kangaroo:'캥거류',mooth:'나나나난나방',red:'레드',orange:'오렌지',green:'그린',yellow:'옐로우',dog:'멍뭉이',onyx:'오닉스',nyandam:'악의제왕 야옹마',darkdog:'다크 멍뭉이',metalhippo:'메탈 하마양',stpigge:'엘리자베스 2세',gabriel:'가브리엘',ectosnache:'엑토 낼름이',snache:'낼름이',guys:'놈놈놈',hippo:'하마양',pigge:'돼지새끼',crimson:'크림슨',gold:'골드',ivory:'아이보리',chartreuse:'샤르트뢰즈',mint:'민트',azure:'애저',crystal:'크리스탈',lavender:'라벤더',salmon:'살몬',raspberry:'라즈베리'};
+const UNIT_NAMES={pink:'핑크',rhino:'투뿔소',bear:'곰선생',face:'대갈이군',cyan:'시안',blue:'블루',purple:'퍼플',peng:'재키펭',gory:'고릴라저씨',baa:'메에메에',seal:'바다레오파드',croco:'아거',leboin:'빠옹',rabbit:'엘리트래빗',squirrel:'다람G',kangaroo:'캥거류',mooth:'나나나난나방',red:'레드',orange:'오렌지',green:'그린',yellow:'옐로우',dog:'멍뭉이',onyx:'오닉스',nyandam:'악의제왕 야옹마',darkdog:'살의의 멍뭉이',metalhippo:'메탈 하마양',stpigge:'엘리자베스 2세',gabriel:'가브리엘',ectosnache:'엑토 낼름이',snache:'낼름이',guys:'놈놈놈',hippo:'하마양',pigge:'돼지새끼',crimson:'크림슨',gold:'골드',ivory:'아이보리',chartreuse:'샤르트뢰즈',mint:'민트',azure:'애저',crystal:'크리스탈',lavender:'라벤더',salmon:'살몬',raspberry:'라즈베리'};
 // Every rule sourced from each stage's wiki Battleground section: {type, at:{t:seconds}|{hp:percent}, delay:[min,max] (omit for a one-shot), count (omit = infinite), boss:true (adds the shockwave+banner, only where the wiki says "spawns as the boss")}.
 const STAGE_SPAWNS={
 0:[{type:'dog',at:{t:0},count:1},{type:'dog',at:{t:20},delay:[6,10]}],
@@ -735,7 +736,7 @@ function animateAtlas(u){
   // Play all seven attack drawings across the complete animation. Damage still lands at windup.
   const elapsed=Math.max(0,duration-u.attackTime);
   index=Math.min(frames.length-1,Math.floor(elapsed/duration*frames.length));
- }else if(visualState==='attack'&&data.units[u.type].windup){const elapsed=duration-u.attackTime,windup=data.units[u.type].windup,strike={gory:2,baa:2,seal:4,croco:3,rabbit:3,squirrel:2,mooth:3,rhino:2,nyandam:3}[u.type];if(strike!==undefined)index=elapsed<windup?Math.min(strike-1,Math.floor(elapsed/windup*strike)):Math.min(frames.length-1,strike+Math.floor((elapsed-windup)/Math.max(.01,duration-windup)*(frames.length-strike)));}
+ }else if(visualState==='attack'&&data.units[u.type].windup){const elapsed=duration-u.attackTime,windup=data.units[u.type].windup,strike={gory:2,baa:2,seal:4,croco:3,rabbit:3,squirrel:2,mooth:3,rhino:2,nyandam:3,darkdog:2}[u.type];if(strike!==undefined)index=elapsed<windup?Math.min(strike-1,Math.floor(elapsed/windup*strike)):Math.min(frames.length-1,strike+Math.floor((elapsed-windup)/Math.max(.01,duration-windup)*(frames.length-strike)));}
  if(visualState==='attack'&&data.units[u.type].hits){const elapsed=duration-u.attackTime;index=Math.min(frames.length-1,Math.max(0,data.units[u.type].hits.filter(h=>h.at<=elapsed).length-1))}
  if(state==='hurt'&&u.type==='gory')index=0;
  // Optional 5th value: how far (sheet px) the body sits right of the crop's left edge
@@ -1122,7 +1123,7 @@ const ENEMY_TEXT={
  metalhippo:'강철 갑옷을 두른 하마양. 치명타가 아니면 어떤 공격도 피해 1밖에 주지 못한다. 크리스탈·크림슨·라즈베리의 치명타가 열쇠. (레전드 스토리)',
  stpigge:'왕관을 쓴 거대한 돼지새끼. 넉백이 많고 공격이 빠르며 체력이 매우 높은 빨간 적. 퍼플을 활용하자. (레전드 스토리)',
  nyandam:'그림자 부하들이 떠받친 옥좌에 앉아 와인잔을 기울이는 악의 제왕. 느리지만 체력이 엄청나고, 그림자 손 떼로 먼 거리까지 휩쓴다. (세계편 2장 달)',
- darkdog:'어둠에 물든 멍뭉이. 멍뭉이보다 훨씬 단단하고 매섭게 물어뜯는다. (레전드 스토리)',
+ darkdog:'고수익 암살 알바에 뛰어든 검은 멍뭉이. 체력은 낮지만 한 방이 무겁고, 맞아도 쉽게 물러나지 않는다. 검은 적. (레전드 스토리)',
  ectosnache:'유령이 된 낼름이. 낼름이보다 강한 혀 공격을 쉬지 않고 날린다. (레전드 스토리)',
  gabriel:'천사의 날개를 단 멍뭉이. 체력은 낮지만 눈 깜짝할 사이에 전선까지 돌격한다. (레전드 스토리)',
  guys:'세 마리가 함께 몰려다니며 공격력이 제법 매섭다. 다만 한 방이면 크게 휘청인다.',
@@ -1147,7 +1148,7 @@ const ENEMY_TEXT={
 const LONG_RANGE_MIN=20;
 function attackTypeOf(d){return d.range>=LONG_RANGE_MIN?'원거리':d.area||d.splash||d.pierce||d.dash||d.boomerang?'범위':'개체'}
 function attackType(t){return attackTypeOf(data.units[t])}
-function codexTraitBadges(d){const b=[attackTypeOf(d)+' 공격'];if(d.trait==='red')b.push('빨간 적');if(d.trait==='floating')b.push('공중');if(d.trait==='metal')b.push('메탈');return b}
+function codexTraitBadges(d){const b=[attackTypeOf(d)+' 공격'];if(d.trait==='red')b.push('빨간 적');if(d.trait==='floating')b.push('공중');if(d.trait==='metal')b.push('메탈');if(d.trait==='black')b.push('검은 적');return b}
 let codexTab='ally',codexType='red',codexEvolved=false,codexUnit=null,codexRAF=0,codexLast=0,codexAutoPaused=false;
 function codexEntries(){return codexTab==='ally'?ALLIES.filter(allyUnlocked):ENEMY_ORDER}
 function buildCodexPreviewUnit(type,ally,evolved){
