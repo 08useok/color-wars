@@ -1011,7 +1011,7 @@ function renderUnitLevels(){for(const t of ALLIES){const b=$(t==='red'?'#spawnBt
 function renderTraining(){
  $('#xpText').textContent=training.xp+' XP';$('#trainingGrid').innerHTML='';
  $('#deckText').textContent=`출전 덱 ${deck.length} / ${DECK_SIZE} · 전투에는 덱에 넣은 아군만 나옵니다`;
- for(const t of ALLIES){const cap=levelCap(),l=training.levels[t],d=unitStats(t),next=unitStats(t,Math.min(cap,l+1)),unlocked=allyUnlocked(t),inDeck=deck.includes(t),evolved=l>=LV_EVOLVE&&training.forms[t]!==1;if(!unlocked)continue;const card=document.createElement('article');card.className='training-card';card.innerHTML=`${profileMarkup(t,evolved)}<h3 style="color:${COLORS[t]}">${UNIT_NAMES[t]}${evolved?' 2진':''} <small>Lv.${l} / ${LV_MAX}</small>${ABILITY_ICONS[t]?`<span class="${ABILITY_ICONS[t][0]}-icon title-icon" aria-label="${ABILITY_ICONS[t][1]}" title="${ABILITY_ICONS[t][1]}"></span>`:''}</h3><p class="profile-copy"><strong>${ROLES[t]}</strong>${t==='purple'?' · 빨간 적에게 강함':''}${t==='cyan'||t==='crystal'?' · 떠다니는 적에게 강함':''}<br>${evolved?PROFILE_TEXT_EVOLVED[t]:PROFILE_TEXT[t]}${evolved?'<br><strong>2진 효과: '+EVOLUTION_TEXT[t]+' · 사거리 20% 증가</strong>':''}</p><p>체력 ${d.hp}${l<cap?' → '+next.hp:''}<br>공격력 ${d.atk}${l<cap?' → '+next.atk:''}</p>`;const b=document.createElement('button');b.textContent=!unlocked?STAGES[UNLOCK_AT[t]].name+(STAGES[UNLOCK_AT[t]].chapter===2?' 2장':'')+' 클리어로 해금':l>=cap?(cap<LV_MAX?'최대 Lv.10 · 2장 클리어 시 Lv.20':'최대 레벨'):upgradeCost(t)+' XP · 강화';b.disabled=!unlocked||l>=cap||training.xp<upgradeCost(t);b.onclick=()=>upgradeCharacter(t);card.append(b);
+ for(const t of ALLIES){const cap=levelCap(),l=training.levels[t],d=unitStats(t),next=unitStats(t,Math.min(cap,l+1)),unlocked=allyUnlocked(t),inDeck=deck.includes(t),evolved=l>=LV_EVOLVE&&training.forms[t]!==1;if(!unlocked)continue;const card=document.createElement('article');card.className='training-card';card.innerHTML=`${profileMarkup(t,evolved)}<h3 style="color:${COLORS[t]}">${UNIT_NAMES[t]}${evolved?' 2진':''} <small>Lv.${l} / ${LV_MAX}</small>${ABILITY_ICONS[t]?`<span class="${ABILITY_ICONS[t][0]}-icon title-icon" aria-label="${ABILITY_ICONS[t][1]}" title="${ABILITY_ICONS[t][1]}"></span>`:''}</h3><p class="profile-copy"><strong>${ROLES[t]}</strong> · ${attackType(t)} 공격${t==='purple'?' · 빨간 적에게 강함':''}${t==='cyan'||t==='crystal'?' · 떠다니는 적에게 강함':''}<br>${evolved?PROFILE_TEXT_EVOLVED[t]:PROFILE_TEXT[t]}${evolved?'<br><strong>2진 효과: '+EVOLUTION_TEXT[t]+' · 사거리 20% 증가</strong>':''}</p><p>체력 ${d.hp}${l<cap?' → '+next.hp:''}<br>공격력 ${d.atk}${l<cap?' → '+next.atk:''}</p>`;const b=document.createElement('button');b.textContent=!unlocked?STAGES[UNLOCK_AT[t]].name+(STAGES[UNLOCK_AT[t]].chapter===2?' 2장':'')+' 클리어로 해금':l>=cap?(cap<LV_MAX?'최대 Lv.10 · 2장 클리어 시 Lv.20':'최대 레벨'):upgradeCost(t)+' XP · 강화';b.disabled=!unlocked||l>=cap||training.xp<upgradeCost(t);b.onclick=()=>upgradeCharacter(t);card.append(b);
   if(unlocked){const db=document.createElement('button');db.className='deck-btn';db.textContent=inDeck?'덱에서 제외':deck.length>=DECK_SIZE?'덱 가득참':'덱에 추가';db.disabled=!inDeck&&deck.length>=DECK_SIZE;db.classList.toggle('active',inDeck);db.onclick=()=>toggleDeck(t);card.append(db)}
   if(unlocked&&l>=LV_EVOLVE){const fb=document.createElement('button');fb.className='form-btn';fb.textContent=evolved?'1진으로 변경 (약함)':'2진으로 변경';fb.onclick=()=>setForm(t,evolved?1:2);card.append(fb)}
   $('#trainingGrid').append(card)}
@@ -1051,7 +1051,12 @@ const ENEMY_TEXT={
  bear:'느리지만 압도적인 파괴력을 지닌 곰. 사거리도 넓어 미리 대비해야 한다.',
  face:'공중에 떠서 전장을 압도하는 최종 보스. 넓은 범위와 강력한 한 방으로 아군 전열을 무너뜨린다.'
 };
-function codexTraitBadges(d){const b=[];if(d.trait==='red')b.push('빨간 적');if(d.trait==='floating')b.push('공중');if(d.trait==='metal')b.push('메탈');if(d.area||d.splash||d.projectile)b.push('범위 공격');return b}
+// Every character attacks one of three ways: 원거리 (reaches far: range >= LONG_RANGE_MIN),
+// 범위 (shorter reach but hits several targets: splash/area/pierce/dash/boomerang) or 개체 (one target at a time).
+const LONG_RANGE_MIN=20;
+function attackTypeOf(d){return d.range>=LONG_RANGE_MIN?'원거리':d.area||d.splash||d.pierce||d.dash||d.boomerang?'범위':'개체'}
+function attackType(t){return attackTypeOf(data.units[t])}
+function codexTraitBadges(d){const b=[attackTypeOf(d)+' 공격'];if(d.trait==='red')b.push('빨간 적');if(d.trait==='floating')b.push('공중');if(d.trait==='metal')b.push('메탈');return b}
 let codexTab='ally',codexType='red',codexEvolved=false,codexUnit=null,codexRAF=0,codexLast=0,codexAutoPaused=false;
 function codexEntries(){return codexTab==='ally'?ALLIES.filter(allyUnlocked):ENEMY_ORDER}
 function buildCodexPreviewUnit(type,ally,evolved){
@@ -1088,7 +1093,7 @@ function renderCodexPreview(){
  $('#codexEvolveToggle').textContent=codexEvolved?'기본 형태 보기':'2진 진화 보기';
  const d=data.units[codexType],s=ally?unitStats(codexType,codexEvolved?10:1,2):d;
  $('#codexName').textContent=UNIT_NAMES[codexType]+(ally&&codexEvolved?' 2진':'');const codexIcon=ally&&ABILITY_ICONS[codexType];if(codexIcon){const ic=document.createElement('span');ic.className=codexIcon[0]+'-icon title-icon';ic.title=codexIcon[1];ic.setAttribute('aria-label',codexIcon[1]);$('#codexName').append(ic)}
- $('#codexRole').textContent=ally?ROLES[codexType]:(codexTraitBadges(d).join(' · ')||'근접형');
+ $('#codexRole').textContent=ally?ROLES[codexType]+' · '+attackType(codexType)+' 공격':codexTraitBadges(d).join(' · ');
  $('#codexDesc').innerHTML=ally?(codexEvolved?PROFILE_TEXT_EVOLVED[codexType]+`<br><strong>2진 효과: ${EVOLUTION_TEXT[codexType]} · 사거리 20% 증가</strong>`:PROFILE_TEXT[codexType]):ENEMY_TEXT[codexType];
  $('#codexStats').innerHTML=`<dt>체력</dt><dd>${s.hp}</dd><dt>공격력</dt><dd>${s.atk}</dd><dt>사거리</dt><dd>${Math.round(s.range)}</dd><dt>공격 주기</dt><dd>${s.interval.toFixed(2)}초</dd><dt>이동 속도</dt><dd>${s.speed}</dd>`+(ally?`<dt>비용</dt><dd>${s.cost}원</dd>`:'');
 }
