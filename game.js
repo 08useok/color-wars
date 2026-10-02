@@ -139,7 +139,7 @@ data.units.bunbun={trait:'floating',hp:99999,atk:2250,interval:31/30,speed:11.5,
 data.units.nyandam={trait:'red',hp:160000,atk:2700,interval:463/30,speed:1.4,range:15.6,reward:3000,knockbacks:3,attackDuration:1.2,windup:.7,area:true};
 // 살의의 멍뭉이 / Doge Dark (wiki): Black enemy, single attack with a long 41-frame foreswing, 8 knockbacks. Range 110/20; speed is a rough rescale of the wiki's 30.
 data.units.darkdog={trait:'black',notBoss:true,hp:5000,atk:2000,interval:1.5,speed:12,range:5.5,reward:400,knockbacks:8,attackDuration:1.5,windup:41/30};
-data.units.gabriel={hp:600,atk:70,interval:1.2,speed:12,range:4,reward:130,knockbacks:3};
+data.units.gabriel={trait:'angel',hp:600,atk:70,interval:1.2,speed:12,range:4,reward:130,knockbacks:3};
 data.units.ectosnache={hp:1100,atk:150,interval:1.1,speed:8,range:4.5,reward:180,knockbacks:3};
 const CRIMSON_SHEET='assets/unitcrimson_ally-sprite.png';
 const CRIMSON_EVOLVED_SHEET='assets/crimson_evolved.webp';
@@ -256,6 +256,19 @@ function tickBossKnockback(u,dt){
  if(u.bossKbTime===0){u.el.classList.remove('boss-knocked');u.el.style.translate='0 0'}
 }
 const BOSS_HP_THRESHOLD=2000;
+// Battle Cats style trait abilities, declared per unit as arrays of enemy traits:
+//   strongVs 엄강 (deal x1.8 / take x0.5), massiveVs 초뎀 (deal x3), resistVs 맷집 (take x0.25), extremeVs 극뎀 (deal x5)
+//   statusVs: slow/freeze/weaken only land on enemies with one of these traits.
+const TRAIT_MULT={strongVs:[1.8,.5],massiveVs:[3,1],resistVs:[1,.25],extremeVs:[5,1]};
+const TRAIT_NAMES={red:'빨간 적',floating:'공중',metal:'메탈',black:'검은 적',angel:'천사'};
+const TRAIT_NOTE={strongVs:'엄청 강하다',massiveVs:'굉장히 아프다',resistVs:'맷집이 좋다',extremeVs:'극딜'};
+function traitsOf(d){return d.traits||(d.trait?[d.trait]:[])}
+function hasTrait(d,t){return traitsOf(d).includes(t)}
+function traitMult(own,other){// [dealt, taken] multipliers for `own` (stats holding the ability) against an opponent's unit data
+ const ts=traitsOf(other);let dealt=1,taken=1;if(!own||!ts.length)return[1,1];
+ for(const k in TRAIT_MULT){const list=own[k];if(list&&ts.some(t=>list.includes(t))){dealt*=TRAIT_MULT[k][0];taken*=TRAIT_MULT[k][1]}}
+ return[dealt,taken]}
+function statusLands(from,v){const list=from?.stats?.statusVs;return !list||traitsOf(data.units[v.type]).some(t=>list.includes(t))}
 const STATUS_FX_TIME=.6;// crit/pull are instant, so their badge lingers briefly
 const SLOW_SPEED=.5;// Battle Cats: a slowed enemy's speed drops to 0.5
 function baseDamage(n){return Math.round(n)}// castle HP stays an integer: x.5 and above rounds up (.999 -> +1), below rounds down (.001 -> +0)
@@ -272,17 +285,18 @@ function critBurst(v){
 }
 function damage(v,amount,from){
  if(game.ended||v.hp<=0||v.kbTime>0)return;
- if(from?.stats?.redStrong&&data.units[v.type].trait==='red')amount*=from.stats.redDamage||1.5;
- if(v.stats?.redStrong&&from&&data.units[from.type].trait==='red')amount*=v.stats.redResist||.5;
- if(from?.stats?.floatStrong&&data.units[v.type].trait==='floating')amount*=from.stats.floatDamage||1.5;
- if(v.stats?.floatStrong&&from&&data.units[from.type].trait==='floating')amount*=v.stats.floatResist||.5;
+ if(from?.stats?.redStrong&&hasTrait(data.units[v.type],'red'))amount*=from.stats.redDamage||1.5;
+ if(v.stats?.redStrong&&from&&hasTrait(data.units[from.type],'red'))amount*=v.stats.redResist||.5;
+ if(from?.stats?.floatStrong&&hasTrait(data.units[v.type],'floating'))amount*=from.stats.floatDamage||1.5;
+ if(v.stats?.floatStrong&&from&&hasTrait(data.units[from.type],'floating'))amount*=v.stats.floatResist||.5;
+ if(from){amount*=traitMult(from.stats,data.units[v.type])[0];amount*=traitMult(v.stats,data.units[from.type])[1]}
  if(v.stats?.armor)amount*=v.stats.armor;
  if(from?.atkDownUntil>game.elapsed)amount*=from.atkDownMult;
  let crit=false;if(from?.stats?.critChance&&Math.random()<from.stats.critChance){crit=true;amount*=from.stats.critMult||2;v.critFxUntil=game.elapsed+STATUS_FX_TIME;critBurst(v)}
  const isBoss=v.boss||(!data.units[v.type].notBoss&&data.units[v.type].hp>=BOSS_HP_THRESHOLD);// base HP, so Chapter 2's x1.5 doesn't change who counts as a boss
  if(from?.stats?.pull&&isBoss)amount*=1.3;
  if(from?.stats?.bossDamage&&isBoss)amount*=from.stats.bossDamage;
- if(data.units[v.type].trait==='metal'&&!crit)amount=1;// metal: every non-critical hit deals exactly 1
+ if(hasTrait(data.units[v.type],'metal')&&!crit)amount=1;// metal: every non-critical hit deals exactly 1
  v.hp=Math.max(0,v.hp-amount);v.flashTime=.1;v.el.classList.add('damage-flash');
  v.el.querySelector('i').style.setProperty('width',Math.max(0,v.hp/v.max)*100+'%');
  if(v.hp===0){
@@ -290,9 +304,10 @@ function damage(v,amount,from){
   game.units.splice(game.units.indexOf(v),1);
   startHitback(v);v.el.classList.add('defeated');game.defeated.push(v);return;
  }
- if(from?.stats?.slowChance&&Math.random()<from.stats.slowChance)v.slowUntil=game.elapsed+from.stats.slowDuration;
- if(from?.stats?.freezeChance&&Math.random()<from.stats.freezeChance)v.freezeUntil=Math.max(v.freezeUntil||0,game.elapsed+from.stats.freezeDuration);
- if(from?.stats?.atkDownPct&&Math.random()<(from.stats.atkDownChance??1)){v.atkDownUntil=game.elapsed+from.stats.atkDownDuration;v.atkDownMult=1-from.stats.atkDownPct}
+ const lands=statusLands(from,v);
+ if(lands&&from?.stats?.slowChance&&Math.random()<from.stats.slowChance)v.slowUntil=game.elapsed+from.stats.slowDuration;
+ if(lands&&from?.stats?.freezeChance&&Math.random()<from.stats.freezeChance)v.freezeUntil=Math.max(v.freezeUntil||0,game.elapsed+from.stats.freezeDuration);
+ if(lands&&from?.stats?.atkDownPct&&Math.random()<(from.stats.atkDownChance??1)){v.atkDownUntil=game.elapsed+from.stats.atkDownDuration;v.atkDownMult=1-from.stats.atkDownPct}
  if(from?.stats?.pull&&!isBoss){const dir=Math.sign(from.x-v.x)||(from.ally?-1:1);v.x=Math.max(0,Math.min(100,v.x+dir*(from.stats.pullDistance||3)));v.el.style.left=`calc(${v.x}% - 21px)`;v.pullFxUntil=game.elapsed+STATUS_FX_TIME}
  if(from?.stats?.forceKnockback&&!isBoss){startHitback(v)}
  else{
@@ -1156,7 +1171,9 @@ const ENEMY_TEXT={
 const LONG_RANGE_MIN=20;
 function attackTypeOf(d){return d.range>=LONG_RANGE_MIN?'원거리':d.area||d.splash||d.pierce||d.dash||d.boomerang?'범위':'개체'}
 function attackType(t){return attackTypeOf(data.units[t])}
-function codexTraitBadges(d){const b=[attackTypeOf(d)+' 공격'];if(d.trait==='red')b.push('빨간 적');if(d.trait==='floating')b.push('공중');if(d.trait==='metal')b.push('메탈');if(d.trait==='black')b.push('검은 적');return b}
+function codexTraitBadges(d){const b=[attackTypeOf(d)+' 공격'];for(const t of traitsOf(d))if(TRAIT_NAMES[t])b.push(TRAIT_NAMES[t]);
+ for(const k in TRAIT_NOTE)for(const t of d[k]||[])b.push(`${TRAIT_NAMES[t]}에게 ${TRAIT_NOTE[k]}`);
+ if(d.statusVs){const m=[d.slowChance&&'둔화',d.freezeChance&&'정지',d.atkDownPct&&'약화'].filter(Boolean).join('·');if(m)b.push(`${d.statusVs.map(t=>TRAIT_NAMES[t]).join('·')}에게만 ${m}`)}return b}
 let codexTab='ally',codexType='red',codexEvolved=false,codexUnit=null,codexRAF=0,codexLast=0,codexAutoPaused=false;
 function codexEntries(){return codexTab==='ally'?ALLIES.filter(allyUnlocked):ENEMY_ORDER}
 function buildCodexPreviewUnit(type,ally,evolved){
