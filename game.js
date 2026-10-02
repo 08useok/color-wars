@@ -862,14 +862,14 @@ LEGACY_THROW_CROPS.purple=LEGACY_THROW_CROPS.cyan=LEGACY_THROW_CROPS.orange;
 // frames for these three - col 2 drops red's sword entirely, and green/cyan only hold
 // their boomerang/orb in col 0. Restrict their walk cycle to the frame(s) that keep it
 // visible instead of letting it flicker in and out every stride.
-const EVOLVED_WALK_FRAMES={red:[0,1]};
+const EVOLVED_WALK_FRAMES={red:[0,1],green:[1,2],cyan:[1,2]};// green/cyan skip col 0 (a stationary pose with the arm out) so the stride is a clean 2-frame run with the item tucked in hand
 // evolved_sheet.png only draws green's boomerang / cyan's orb in walk col 0 - the fist is
 // tucked to a different spot in cols 1-2 (mid-stride) with nothing in hand. Crop the item
 // out of col 0 (native sheet px, cell-relative) and re-anchor that patch to each frame's
 // actual fist spot so the full 3-frame walk plays while the item stays visibly held.
 const EVOLVED_HELD_ITEM={
- green:{x:134,y:28,w:76,h:78,hand0:[156,88],handOther:[130,73]},
- cyan:{x:130,y:55,w:58,h:58,hand0:[159,84],handOther:[137,84]}
+ green:{x:134,y:28,w:76,h:78,hand0:[156,88],handOther:[130,73],hands:{1:[132,73],2:[128,74]}},
+ cyan:{x:130,y:55,w:58,h:58,hand0:[159,84],handOther:[137,84],hands:{1:[137,85],2:[134,83]}}
 };
 const EVOLVED_SCALE=.75,EVOLVED_SPRITE_LEFT=-61.3,EVOLVED_SPRITE_BOTTOM=-3,EVOLVED_CELL_W_NATIVE=1536/7,EVOLVED_CELL_H_NATIVE=1024/8;
 function animateAlly(u){
@@ -884,7 +884,7 @@ function animateAlly(u){
    const onFrame0=state==='walk'&&col===0;
    itemEl.style.display=state==='walk'?'block':'none';
    if(state==='walk'){
-    const [hx,hy]=onFrame0?[0,0]:[item.handOther[0]-item.hand0[0],item.handOther[1]-item.hand0[1]];
+    const ho=item.hands?.[col]||item.handOther,[hx,hy]=onFrame0?[0,0]:[ho[0]-item.hand0[0],ho[1]-item.hand0[1]];
     itemEl.style.left=(EVOLVED_SPRITE_LEFT+(EVOLVED_CELL_W_NATIVE-(item.x+item.w))*EVOLVED_SCALE-hx*EVOLVED_SCALE)+'px';
     itemEl.style.bottom=(EVOLVED_SPRITE_BOTTOM+96-(item.y+item.h)*EVOLVED_SCALE-hy*EVOLVED_SCALE)+'px';
     itemEl.style.width=(item.w*EVOLVED_SCALE)+'px';itemEl.style.height=(item.h*EVOLVED_SCALE)+'px';
