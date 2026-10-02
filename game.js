@@ -666,7 +666,7 @@ function renderNewButtons(){for(const type of GENERIC_CD_TYPES){
 const NEW_ATLASES={
 onyx:{scale:.335,left:-35,sheet:ONYX_SHEET,walk:[[8,88,220,224,0,0],[236,87,236,225,1,-1],[480,90,243,222,6,0]],attack:[[731,4,256,308,-5,1],[995,65,418,247,158,-63],[1421,89,241,223,5,1]],hurt:[[1670,116,252,196,8,-1]],
  evolved:{sheet:ONYX_EVOLVED_SHEET,scale:.265,left:-40,walk:[[8,177,307,396,0,0],[323,177,309,396,2,0],[640,178,296,395,-1,-2]],attack:[[944,4,447,569,20,-2],[1399,208,516,365,161,-12],[1923,186,334,387,10,-1]],hurt:[[2265,201,285,372,-31,32]]}},
-nyandam:{scale:.55,left:-70,sheet:'assets/nyandam_frames.png',walk:[[0,0,368,192],[368,0,368,192],[736,0,368,192],[1104,0,368,192]],attack:[[1472,0,368,192],[1840,0,368,192],[2208,0,368,192]]},
+nyandam:{scale:.55,left:-70,sheet:'assets/nyandam_frames.png?v=2',walk:[[0,0,368,192],[368,0,368,192],[736,0,368,192],[1104,0,368,192]],attack:[[2576,0,368,192],[2944,0,368,192],[3312,0,368,192],[1840,0,368,192],[2208,0,368,192]]},// attack: 3 windup frames (shadow minions rise out of the ground, arms up), the hand-mass sweep (strike), recovery
 darkdog:{scale:1,left:-4,sheet:'assets/darkdog_sheet.png',walk:[[4,11,50,55],[57,11,50,55],[110,11,50,55]],attack:[[4,86,50,56],[57,86,50,56],[110,91,50,51],[164,91,50,51]],hurt:[[4,162,50,56]]},
 gabriel:{scale:1,left:-10,sheet:'assets/gabriel_sheet.png',walk:[[5,11,62,56],[70,11,62,56],[135,11,62,56]],attack:[[5,87,61,58,-1],[69,88,62,57],[134,94,60,51],[197,94,60,51]],hurt:[[5,165,61,58,-1]]},
 ectosnache:{scale:1,left:-10,sheet:'assets/snache_dog-sprite.png',walk:[[299,43,55,63],[357,43,57,63],[417,43,61,63],[481,43,68,63]],attack:[[299,127,52,57],[354,124,51,60],[408,130,73,54],[484,142,73,42]]},
@@ -731,7 +731,7 @@ function animateAtlas(u){
   // Play all seven attack drawings across the complete animation. Damage still lands at windup.
   const elapsed=Math.max(0,duration-u.attackTime);
   index=Math.min(frames.length-1,Math.floor(elapsed/duration*frames.length));
- }else if(visualState==='attack'&&data.units[u.type].windup){const elapsed=duration-u.attackTime,windup=data.units[u.type].windup,strike={gory:2,baa:2,seal:4,croco:3,rabbit:3,squirrel:2,mooth:3,rhino:2}[u.type];if(strike!==undefined)index=elapsed<windup?Math.min(strike-1,Math.floor(elapsed/windup*strike)):Math.min(frames.length-1,strike+Math.floor((elapsed-windup)/Math.max(.01,duration-windup)*(frames.length-strike)));}
+ }else if(visualState==='attack'&&data.units[u.type].windup){const elapsed=duration-u.attackTime,windup=data.units[u.type].windup,strike={gory:2,baa:2,seal:4,croco:3,rabbit:3,squirrel:2,mooth:3,rhino:2,nyandam:3}[u.type];if(strike!==undefined)index=elapsed<windup?Math.min(strike-1,Math.floor(elapsed/windup*strike)):Math.min(frames.length-1,strike+Math.floor((elapsed-windup)/Math.max(.01,duration-windup)*(frames.length-strike)));}
  if(visualState==='attack'&&data.units[u.type].hits){const elapsed=duration-u.attackTime;index=Math.min(frames.length-1,Math.max(0,data.units[u.type].hits.filter(h=>h.at<=elapsed).length-1))}
  if(state==='hurt'&&u.type==='gory')index=0;
  // Optional 5th value: how far (sheet px) the body sits right of the crop's left edge
