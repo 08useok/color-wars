@@ -241,3 +241,14 @@ body { overflow:auto; }
 @keyframes critText{0%{scale:2.4;rotate:-8deg;opacity:0}15%{scale:.9;opacity:1}30%{scale:1.1;rotate:-4deg}45%{scale:1}75%{opacity:1;translate:0 -8px}100%{opacity:0;translate:0 -22px}}
 @keyframes critShake{0%,100%{translate:0 0}25%{translate:-3px 1px}50%{translate:3px -1px}75%{translate:-2px 0}}
 @media(prefers-reduced-motion:reduce){#field.crit-shake{animation:none}.crit-spark{display:none}}
+/* visible shots for the ranged allies (fire() in game.js) */
+.shot{position:absolute;bottom:15%;z-index:6;pointer-events:none;scale:1.7}
+.gold-bolt{width:13px;height:11px;background:linear-gradient(135deg,#fff3a0,#ffc400);border:2px solid #b87d00;border-radius:3px;animation:shot-spin .35s linear infinite}
+.ivory-bolt{width:15px;height:15px;border-radius:50%;background:#fffbe6;border:2px solid #d9b87a;box-shadow:inset -3px -3px 0 #f1dfb0,0 0 6px #fff3cf}
+.chartreuse-bolt{width:9px;height:9px;border-radius:50%;background:#a8ee1a;border:2px solid #3d6a00;box-shadow:0 0 5px #b8ff3a}
+.mint-bolt{width:15px;height:15px;border-radius:50%;background:radial-gradient(circle at 32% 30%,#d4ffdc 0 35%,#7be39a 36%);border:2px solid #3d8e5a;box-shadow:3px 2px 0 -2px #5a3a1e,0 0 6px #8cf5b0}
+.crystal-bolt{width:28px;height:9px;transform:scaleX(-1);clip-path:polygon(0 50%,22% 0,100% 50%,22% 100%);background:linear-gradient(90deg,#d8f7ff,#69dbff);filter:drop-shadow(0 0 4px #5fd7ff)}
+.lavender-bolt{width:22px;height:17px;border-radius:50%;background:#d9b8ffaa;border:2px solid #b78bf0;box-shadow:0 0 10px #c79bff,6px 3px 0 -3px #e8d3ff}
+.salmon-bolt{width:22px;height:11px;border-radius:55% 45% 45% 55%;background:#5ab8ff;border:2px solid #2b7bbf;box-shadow:7px 0 0 -3px #5ab8ff}
+.raspberry-bolt{width:32px;height:7px;transform:scaleX(-1);border-radius:7px;background:linear-gradient(90deg,#ff2a6a00,#ff2a6a 55%,#ffd0de);box-shadow:0 0 9px #ff5a8a}
+@keyframes shot-spin{to{rotate:360deg}}

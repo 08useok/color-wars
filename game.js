@@ -180,7 +180,7 @@ function yellowUnlocked(){return cleared.some(i=>i>=5)}
 function greenUnlocked(){return cleared.some(i=>i>=6)}
 function cooldownKey(type){return type==='red'?'spawnCd':type+'Cd'}
 function unitCooldown(type){return game[cooldownKey(type)]||0}
-function reset(){syncBasePositions();last=0;game={money:0,level:0,units:[],defeated:[],spawnCd:0,orangeCd:0,yellowCd:0,greenCd:0,cyanCd:0,blueCd:0,purpleCd:0,pinkCd:0,boomerangs:[],projectiles:[],effects:[],running:false,ended:false,tutorial:0,paused:false,elapsed:0,speedMultiplier:1,speedUnlocked:false};game.spawnRules=(STAGE_SPAWNS[selectedStage]||[]).map(r=>({...r,triggered:false,clock:0,spawned:0}));data.bases.ally.hp=data.bases.ally.max=baseHpFor();data.bases.ally.attackLock=null;data.bases.enemy.hp=data.bases.enemy.max=stageBaseHp(selectedStage);data.bases.enemy.attackLock=null;game.tutorial=selectedStage===0?0:6;$('#field').style.background=`linear-gradient(${STAGES[selectedStage].sky} 0 32%,${STAGES[selectedStage].land} 32% 100%)`;$('#field').setAttribute('aria-label',STAGES[selectedStage].name+' 전장');$('#stageMenu').classList.add('hidden');unitsEl.innerHTML='';$('#result').classList.add('hidden');tutorial();render()}
+function reset(){syncBasePositions();last=0;game={money:0,level:0,units:[],defeated:[],spawnCd:0,orangeCd:0,yellowCd:0,greenCd:0,cyanCd:0,blueCd:0,purpleCd:0,pinkCd:0,boomerangs:[],projectiles:[],shots:[],effects:[],running:false,ended:false,tutorial:0,paused:false,elapsed:0,speedMultiplier:1,speedUnlocked:false};game.spawnRules=(STAGE_SPAWNS[selectedStage]||[]).map(r=>({...r,triggered:false,clock:0,spawned:0}));data.bases.ally.hp=data.bases.ally.max=baseHpFor();data.bases.ally.attackLock=null;data.bases.enemy.hp=data.bases.enemy.max=stageBaseHp(selectedStage);data.bases.enemy.attackLock=null;game.tutorial=selectedStage===0?0:6;$('#field').style.background=`linear-gradient(${STAGES[selectedStage].sky} 0 32%,${STAGES[selectedStage].land} 32% 100%)`;$('#field').setAttribute('aria-label',STAGES[selectedStage].name+' 전장');$('#stageMenu').classList.add('hidden');unitsEl.innerHTML='';$('#result').classList.add('hidden');tutorial();render()}
 const ENGAGE_SYNC_WINDOW=.12;// how close (sec) two attackers' swing-starts must be to count as "the same motion" and land together
 function canEngage(target){const lock=target.attackLock;return!lock||game.elapsed>=lock.until||game.elapsed<lock.joinBy}
 function lockEngage(target,duration){if(!target.attackLock||game.elapsed>=target.attackLock.until)target.attackLock={until:game.elapsed+duration,joinBy:game.elapsed+ENGAGE_SYNC_WINDOW}}
@@ -200,6 +200,11 @@ const ENEMY_SIZE={pigge:1.27,stpigge:1.6,nyandam:1.5,seal:1.44,rhino:1.94,kangar
 // Displayed height (px) of each new 2진 body sprite; the HP bar sits just above it instead of at the default 1진 spot.
 const EVO_BODY_H={crimson:76,gold:78,ivory:77,chartreuse:78,mint:80,azure:89,crystal:81,lavender:80,salmon:74,raspberry:89,onyx:105};
 function drawUnit(u){let e=document.createElement('div'),evolved=u.ally&&u.stats?.evolved,legacyAlly=u.ally&&!NEW_ATLASES[u.type];e.className='unit '+u.type+(u.ally?' ally-art':'')+(evolved?' evolved':'');e.style.setProperty('--unit-color',COLORS?.[u.type]||'#fff');e.innerHTML='<div class="bar"><i style="width:100%"></i></div><span class="status-badges"><span class="freeze-icon st-freeze"></span><span class="slow-icon st-slow"></span><span class="weaken-icon st-weaken"></span><span class="crit-icon st-crit"></span><span class="pull-icon st-pull"></span></span>'+(legacyAlly?'<span class="ally-shadow"></span><span class="ally-sprite"></span>'+(evolved?'<span class="evolved-sprite"></span>'+(EVOLVED_HELD_ITEM[u.type]?'<span class="evolved-item"></span>':''):'')+(u.type==='pink'&&!evolved?'<span class="pink-ribbon"><i></i></span>':''):'<span class="dog-shadow"></span><span class="dog-sprite"></span>'+(u.type==='leboin'||u.type==='bear'?'<span class="dog-sprite-legs"></span>':'')+(u.type==='leboin'?'<span class="dog-sprite-body"></span>':'')+(u.type==='stpigge'?'<span class="pigge-crown"></span>':''));e.setAttribute('aria-label',UNIT_NAMES[u.type]+(evolved?' 2진':''));u.el=e;if(evolved&&EVO_BODY_H[u.type])e.querySelector('.bar').style.top=(33-EVO_BODY_H[u.type])+'px';if(!u.ally&&ENEMY_SIZE[u.type])e.style.setProperty('--enemy-size',ENEMY_SIZE[u.type]);unitsEl.append(e);const newAtlas=NEW_ATLASES[u.type];const sheet={rabbit:ELITE_RABBIT_SHEET,squirrel:SQUIRREL_G_SHEET,kangaroo:KANG_ROO_SHEET,mooth:MOOTH_SHEET,rhino:RHINO_SHEET,bear:BEAR_SHEET,face:FACE_SHEET}[u.type]||(evolved&&newAtlas?.evolved?newAtlas.evolved.sheet:newAtlas?.sheet);if(sheet)e.querySelector('.dog-sprite').style.backgroundImage=`url(${sheet})`;if(legacyAlly)animateAlly(u);else animateDog(u)}
+// 원거리 사각지대: an ally that attacks from far away (attackType '원거리') cannot hit anything closer than
+// DEAD_ZONE_RATIO of its range. It still stops for such an enemy, it just has to wait for a target in the window.
+const DEAD_ZONE_RATIO=.25;
+function deadZone(u){return u.ally&&attackType(u.type)==='원거리'?(u.stats||data.units[u.type]).range*DEAD_ZONE_RATIO:0}
+function targetValid(u){const dz=deadZone(u);if(!dz)return target(u);const dir=u.ally?-1:1;return game.units.filter(v=>v.hp>0&&v.kbTime<=0&&!v.emerging&&v.ally!==u.ally&&dir*(v.x-u.x)>=-1&&Math.abs(v.x-u.x)>=dz).sort((a,b)=>Math.abs(a.x-u.x)-Math.abs(b.x-u.x))[0]}
 function target(u){let foes=game.units.filter(v=>v.hp>0&&v.kbTime<=0&&!v.emerging&&v.ally!==u.ally);let dir=u.ally?-1:1;return foes.filter(v=>dir*(v.x-u.x)>=-1).sort((a,b)=>Math.abs(a.x-u.x)-Math.abs(b.x-u.x))[0]}
 // Canonical knockback counts include death. Red keeps its original two live hitbacks.
 const HITBACK_DURATION=20/30;
@@ -304,6 +309,25 @@ function renderGreenButton(){
  b.querySelector('small').textContent=!greenUnlocked()?'일본 클리어 시 해금':allyDeployFull()?'출격 인원 가득참':'175원';b.querySelector('em').style.display=game.greenCd?'block':'none';b.querySelector('em').style.transform=`scaleY(${game.greenCd/unitStats('green').cooldown})`;
  b.title='체력 280 · 편도당 공격력 65 · 공격 주기 2.8초 · 재출격 7초';
 }
+// Ranged attackers that used to hit instantly now throw a visible shot first; the hit (resolveAttack) lands when it arrives.
+const SHOT_STYLE={gold:{n:3,arc:1},ivory:{n:1,arc:1},chartreuse:{n:5,arc:0},mint:{n:1,arc:1},crystal:{n:1,arc:0},lavender:{n:1,arc:1},salmon:{n:1,arc:0},raspberry:{n:1,arc:0}};
+const SHOT_SPEED=80;// field % per second
+function fire(u,t,share=1){
+ const st=u.ally&&SHOT_STYLE[u.type];
+ if(!st){resolveAttack(u,t,share);return}
+ const tt=t&&t.hp>0?t:targetValid(u),end=tt?tt.x:data.bases.enemy.frontX,fireX=u.x,dur=Math.max(.14,Math.min(.55,Math.abs(end-fireX)/SHOT_SPEED));
+ const group={left:st.n,u,t:tt,share,fireX};
+ for(let i=0;i<st.n;i++){const el=document.createElement('span');el.className='shot '+u.type+'-bolt';unitsEl.append(el);const shot={start:fireX,end,time:-i*.06,duration:dur,arc:st.arc,el,group};game.shots.push(shot);placeShot(shot)}
+}
+function placeShot(p){const k=Math.max(0,p.time)/p.duration;p.el.style.visibility=p.time<0?'hidden':'visible';p.el.style.left=(p.start+(p.end-p.start)*k)+'%';p.el.style.translate=`-50% ${-30-(p.arc?Math.sin(k*Math.PI)*26:0)}px`}
+function updateShots(dt){
+ for(const p of [...game.shots]){
+  p.time+=dt;placeShot(p);if(p.time<p.duration)continue;
+  p.el.remove();game.shots.splice(game.shots.indexOf(p),1);
+  const g=p.group;if(--g.left>0)continue;
+  const keep=g.u.x;g.u.x=g.fireX;resolveAttack(g.u,g.t,g.share);g.u.x=keep;if(game.ended)return;
+ }
+}
 function launchJuice(u,t){
  const end=t?t.x:data.bases.enemy.frontX,el=document.createElement('span');el.className='juice-projectile '+u.type+'-shot';unitsEl.append(el);
  const shot={start:u.x,end,time:0,duration:u.stats.flight||.35,damage:u.stats.atk,radius:u.stats.splash,source:u,type:u.type,el};
@@ -322,8 +346,8 @@ function updateJuice(dt){
 }
 function tierDamage(tiers,dist){for(const t of tiers)if(dist<=t.max)return t.dmg;return tiers[tiers.length-1].dmg}
 function resolveAttack(u,t,share=1){
- const d=u.stats||data.units[u.type],dir=u.ally?-1:1;
- const inRange=v=>v&&v.hp>0&&v.kbTime<=0&&v.ally!==u.ally&&dir*(v.x-u.x)>=-1&&Math.abs(v.x-u.x)<=d.range;
+ const d=u.stats||data.units[u.type],dir=u.ally?-1:1,dz=deadZone(u);
+ const inRange=v=>v&&v.hp>0&&v.kbTime<=0&&v.ally!==u.ally&&dir*(v.x-u.x)>=-1&&Math.abs(v.x-u.x)<=d.range&&Math.abs(v.x-u.x)>=dz;
  if(d.dash){
   const farX=u.x+dir*d.range,lo=Math.min(u.x,farX),hi=Math.max(u.x,farX);
   for(const v of [...game.units])if(v.hp>0&&v.kbTime<=0&&v.ally!==u.ally&&v.x>=lo&&v.x<=hi)damage(v,d.atk,u);
@@ -332,11 +356,11 @@ function resolveAttack(u,t,share=1){
   for(const v of targets)damage(v,d.atk,u);
  }else if(d.area){for(const v of [...game.units])if(inRange(v))damage(v,d.atk,u)}
  else if(d.multiHit){
-  let remaining=d.multiHit,victim=inRange(t)?t:target(u);
-  while(remaining>0&&victim&&inRange(victim)){damage(victim,d.atk,u);remaining--;if(victim.hp<=0&&remaining>0)victim=target(u)}
+  let remaining=d.multiHit,victim=inRange(t)?t:targetValid(u);
+  while(remaining>0&&victim&&inRange(victim)){damage(victim,d.atk,u);remaining--;if(victim.hp<=0&&remaining>0)victim=targetValid(u)}
   if(remaining<d.multiHit)return;
  }else{
-  const victim=inRange(t)?t:target(u);
+  const victim=inRange(t)?t:targetValid(u);
   if(inRange(victim)){
    const distV=Math.abs(victim.x-u.x),atk=(d.damageTiers?tierDamage(d.damageTiers,distV):d.atk)*share;
    damage(victim,atk,u);
@@ -354,10 +378,10 @@ function attack(u,t){
  if(game.ended||u.hp<=0||u.kbTime>0)return;
  const d=u.stats||data.units[u.type];u.atkCd=d.interval;
  u.attackTime=d.attackDuration||.56;
- if(u.type==='yellow'){const bolt=document.createElement('span');bolt.className='electric-bolt';bolt.textContent='ϟ';bolt.style.left=((u.x+(t?t.x:data.bases.enemy.frontX))/2)+'%';unitsEl.append(bolt);game.effects.push({el:bolt,time:.25})}if(d.boomerang){launchBoomerang(u);return}if(d.projectile){launchJuice(u,t);return}if(d.hits)u.pendingAttack={remaining:d.hits[0].at,hit:0};else if(d.windup)u.pendingAttack={remaining:d.windup};else resolveAttack(u,t);
+ if(u.type==='yellow'){const bolt=document.createElement('span');bolt.className='electric-bolt';bolt.textContent='ϟ';bolt.style.left=((u.x+(t?t.x:data.bases.enemy.frontX))/2)+'%';unitsEl.append(bolt);game.effects.push({el:bolt,time:.25})}if(d.boomerang){launchBoomerang(u);return}if(d.projectile){launchJuice(u,t);return}if(d.hits)u.pendingAttack={remaining:d.hits[0].at,hit:0};else if(d.windup)u.pendingAttack={remaining:d.windup};else fire(u,t);
 }
 function update(dt){
- updateBoomerangs(dt);if(game.ended){render();return}updateJuice(dt);if(game.ended){render();return}
+ updateBoomerangs(dt);if(game.ended){render();return}updateJuice(dt);if(game.ended){render();return}updateShots(dt);if(game.ended){render();return}
  for(const v of [...game.defeated]){tickHitback(v,dt);v.el.style.opacity=v.kbTime/HITBACK_DURATION;if(v.kbTime===0){v.el.remove();game.defeated.splice(game.defeated.indexOf(v),1)}}
  game.noticeTime=Math.max(0,(game.noticeTime||0)-dt);game.elapsed+=dt;game.money=Math.min(walletMax(),game.money+incomeRate()*dt);updateStageSpawns(dt);
 game.spawnCd=Math.max(0,game.spawnCd-dt);game.orangeCd=Math.max(0,game.orangeCd-dt);game.yellowCd=Math.max(0,game.yellowCd-dt);game.greenCd=Math.max(0,game.greenCd-dt);for(const t of GENERIC_CD_TYPES)game[cooldownKey(t)]=Math.max(0,unitCooldown(t)-dt);
@@ -367,14 +391,14 @@ game.spawnCd=Math.max(0,game.spawnCd-dt);game.orangeCd=Math.max(0,game.orangeCd-
   if(u.bossKbTime>0){tickBossKnockback(u,dt);continue}
   if(u.kbTime>0){tickHitback(u,dt);continue}
   if(u.freezeUntil>game.elapsed){animateUnit(u);continue}
-  if(u.pendingAttack){u.pendingAttack.remaining-=dt;if(u.pendingAttack.remaining<=0){const p=u.pendingAttack,hits=(u.stats||data.units[u.type]).hits,h=hits?.[p.hit];u.pendingAttack=null;resolveAttack(u,undefined,h?h.share:1);if(game.ended)break;if(h&&hits[p.hit+1])u.pendingAttack={remaining:hits[p.hit+1].at-h.at+p.remaining,hit:p.hit+1}}}
+  if(u.pendingAttack){u.pendingAttack.remaining-=dt;if(u.pendingAttack.remaining<=0){const p=u.pendingAttack,hits=(u.stats||data.units[u.type]).hits,h=hits?.[p.hit];u.pendingAttack=null;fire(u,undefined,h?h.share:1);if(game.ended)break;if(h&&hits[p.hit+1])u.pendingAttack={remaining:hits[p.hit+1].at-h.at+p.remaining,hit:p.hit+1}}}
   u.atkCd-=dt;u.animTime+=dt;u.attackTime=Math.max(0,u.attackTime-dt);u.hurtTime=Math.max(0,u.hurtTime-dt);
   let d=u.stats||data.units[u.type];
   const spd=u.slowUntil>game.elapsed?Math.min(d.speed,SLOW_SPEED):d.speed;
   if(!u.ally&&(u.emerging||u.x<data.bases.enemy.frontX)){u.emerging=true;u.x=Math.min(data.bases.enemy.frontX,u.x+spd*dt);if(u.x>=data.bases.enemy.frontX)u.emerging=false;u.el.style.left=`calc(${u.x}% - 21px)`;animateDog(u);continue}
   if(u.ally&&(u.emerging||u.x>data.bases.ally.frontX)){u.emerging=true;u.x=Math.max(data.bases.ally.frontX,u.x-spd*dt);if(u.x<=data.bases.ally.frontX)u.emerging=false;u.el.style.left=`calc(${u.x}% - 21px)`;animateUnit(u);continue}
   let t=target(u),dist=t?Math.abs(t.x-u.x):Infinity;
-  if(t&&dist<=(d.engageRange??d.range)){if(u.atkCd<=0&&canEngage(t)){lockEngage(t,d.attackDuration||d.interval||.56);attack(u,t)}}
+  if(t&&dist<=(d.engageRange??d.range)){const tv=deadZone(u)&&dist<deadZone(u)?targetValid(u):t;if(tv&&Math.abs(tv.x-u.x)<=(d.engageRange??d.range)&&u.atkCd<=0&&canEngage(tv)){lockEngage(tv,d.attackDuration||d.interval||.56);attack(u,tv)}}
   else{
    let baseDist=u.ally?u.x-data.bases.enemy.frontX:data.bases.ally.frontX-u.x,base=u.ally?data.bases.enemy:data.bases.ally;
    if(!t&&baseDist<=(d.engageRange??d.range)){if(u.atkCd<=0&&canEngage(base)){lockEngage(base,d.attackDuration||d.interval||.56);attack(u)}}
@@ -1095,7 +1119,7 @@ function renderCodexPreview(){
  $('#codexName').textContent=UNIT_NAMES[codexType]+(ally&&codexEvolved?' 2진':'');const codexIcon=ally&&ABILITY_ICONS[codexType];if(codexIcon){const ic=document.createElement('span');ic.className=codexIcon[0]+'-icon title-icon';ic.title=codexIcon[1];ic.setAttribute('aria-label',codexIcon[1]);$('#codexName').append(ic)}
  $('#codexRole').textContent=ally?ROLES[codexType]+' · '+attackType(codexType)+' 공격':codexTraitBadges(d).join(' · ');
  $('#codexDesc').innerHTML=ally?(codexEvolved?PROFILE_TEXT_EVOLVED[codexType]+`<br><strong>2진 효과: ${EVOLUTION_TEXT[codexType]} · 사거리 20% 증가</strong>`:PROFILE_TEXT[codexType]):ENEMY_TEXT[codexType];
- $('#codexStats').innerHTML=`<dt>체력</dt><dd>${s.hp}</dd><dt>공격력</dt><dd>${s.atk}</dd><dt>사거리</dt><dd>${Math.round(s.range)}</dd><dt>공격 주기</dt><dd>${s.interval.toFixed(2)}초</dd><dt>이동 속도</dt><dd>${s.speed}</dd>`+(ally?`<dt>비용</dt><dd>${s.cost}원</dd>`:'');
+ $('#codexStats').innerHTML=`<dt>체력</dt><dd>${s.hp}</dd><dt>공격력</dt><dd>${s.atk}</dd><dt>사거리</dt><dd>${Math.round(s.range)}</dd><dt>공격 주기</dt><dd>${s.interval.toFixed(2)}초</dd><dt>이동 속도</dt><dd>${s.speed}</dd>`+(ally&&attackType(codexType)==='원거리'?`<dt>사각지대</dt><dd>${Math.round(s.range*DEAD_ZONE_RATIO)} 이내</dd>`:'')+(ally?`<dt>비용</dt><dd>${s.cost}원</dd>`:'');
 }
 function renderCodexGrid(){
  const grid=$('#codexGrid');grid.innerHTML='';
