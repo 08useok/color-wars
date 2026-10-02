@@ -228,9 +228,9 @@ const HITBACK_DURATION=20/30;
 // Shorter displacement tuned to this compact battlefield.
 const HITBACK_DISTANCE=6;
 function animateUnit(u){if(u.ally&&!NEW_ATLASES[u.type])animateAlly(u);else animateDog(u)}
-function startHitback(u){
+function startHitback(u,dist=HITBACK_DISTANCE){
  u.kbTime=HITBACK_DURATION;u.hurtTime=HITBACK_DURATION;
- u.kbStart=u.x;u.kbEnd=Math.max(0,Math.min(100,u.x+(u.ally?1:-1)*HITBACK_DISTANCE));
+ u.kbStart=u.x;u.kbEnd=Math.max(0,Math.min(100,u.x+(u.ally?1:-1)*dist));
  u.attackTime=0;u.atkCd=0;u.pendingAttack=null;
  u.el.classList.add('knocked-back');animateUnit(u);
 }
@@ -297,6 +297,7 @@ function damage(v,amount,from){
  if(from?.stats?.pull&&isBoss)amount*=1.3;
  if(from?.stats?.bossDamage&&isBoss)amount*=from.stats.bossDamage;
  if(hasTrait(data.units[v.type],'metal')&&!crit)amount=1;// metal: every non-critical hit deals exactly 1
+ if(v.stats?.survive&&amount>=v.hp&&Math.random()<v.stats.survive){amount=v.hp-1;v.surviveFxUntil=game.elapsed+STATUS_FX_TIME}// 오기: a lethal blow leaves 1 HP
  v.hp=Math.max(0,v.hp-amount);v.flashTime=.1;v.el.classList.add('damage-flash');
  v.el.querySelector('i').style.setProperty('width',Math.max(0,v.hp/v.max)*100+'%');
  if(v.hp===0){
@@ -309,8 +310,11 @@ function damage(v,amount,from){
  if(lands&&from?.stats?.freezeChance&&Math.random()<from.stats.freezeChance)v.freezeUntil=Math.max(v.freezeUntil||0,game.elapsed+from.stats.freezeDuration);
  if(lands&&from?.stats?.atkDownPct&&Math.random()<(from.stats.atkDownChance??1)){v.atkDownUntil=game.elapsed+from.stats.atkDownDuration;v.atkDownMult=1-from.stats.atkDownPct}
  if(from?.stats?.pull&&!isBoss){const dir=Math.sign(from.x-v.x)||(from.ally?-1:1);v.x=Math.max(0,Math.min(100,v.x+dir*(from.stats.pullDistance||3)));v.el.style.left=`calc(${v.x}% - 21px)`;v.pullFxUntil=game.elapsed+STATUS_FX_TIME}
- if(from?.stats?.forceKnockback&&!isBoss){startHitback(v)}
- else{
+ if(lands&&from?.stats?.intervalUpChance&&Math.random()<from.stats.intervalUpChance){v.intervalUntil=game.elapsed+from.stats.intervalUpDuration;v.intervalMult=from.stats.intervalUpMult||1.5}// 공격 주기 증가
+ const kbImmune=v.stats?.knockbackImmune||data.units[v.type].knockbackImmune;// 넉백 무효
+ if(from?.stats?.push&&!kbImmune)startHitback(v,from.stats.push);// 밀치기: always shoves the target back (bosses too) unless knockback-immune
+ else if(from?.stats?.forceKnockback&&!isBoss&&!kbImmune){startHitback(v)}
+ else if(!kbImmune){
   const total=v.stats?.knockbacks??data.units[v.type].knockbacks;
   // Consume every crossed threshold, but play only one hitback for a single blow.
   const crossed=Math.min(total-1,Math.floor((v.max-v.hp)*total/v.max+1e-9));
@@ -388,8 +392,14 @@ function updateJuice(dt){
  }
 }
 function tierDamage(tiers,dist){for(const t of tiers)if(dist<=t.max)return t.dmg;return tiers[tiers.length-1].dmg}
+function launchWave(u,d){
+ const dir=u.ally?-1:1,far=u.x+dir*d.wave.reach,lo=Math.min(u.x,far),hi=Math.max(u.x,far);
+ const el=document.createElement('span');el.className='juice-splash wave-splash';el.style.left=(lo+hi)/2+'%';el.style.width=(hi-lo)+'%';unitsEl.append(el);game.effects.push({el,time:.35});
+ for(const v of [...game.units])if(v.hp>0&&v.kbTime<=0&&v.ally!==u.ally&&v.x>=lo&&v.x<=hi)damage(v,d.atk*(d.wave.mult||1),u);
+}
 function resolveAttack(u,t,share=1){
  const d=u.stats||data.units[u.type],dir=u.ally?-1:1,dz=deadZone(u);
+ if(d.wave&&Math.random()<d.wave.chance)launchWave(u,d);
  const inRange=v=>v&&v.hp>0&&v.kbTime<=0&&v.ally!==u.ally&&dir*(v.x-u.x)>=-1&&Math.abs(v.x-u.x)<=d.range&&Math.abs(v.x-u.x)>=dz;
  if(d.dash){
   const farX=u.x+dir*d.range,lo=Math.min(u.x,farX),hi=Math.max(u.x,farX);
@@ -419,7 +429,7 @@ function resolveAttack(u,t,share=1){
 }
 function attack(u,t){
  if(game.ended||u.hp<=0||u.kbTime>0)return;
- const d=u.stats||data.units[u.type];u.atkCd=d.interval;
+ const d=u.stats||data.units[u.type];u.atkCd=d.interval*(u.intervalUntil>game.elapsed?u.intervalMult:1);
  u.attackTime=d.attackDuration||.56;
  if(u.type==='yellow'){const bolt=document.createElement('span');bolt.className='electric-bolt';bolt.textContent='ϟ';bolt.style.left=((u.x+(t?t.x:data.bases.enemy.frontX))/2)+'%';unitsEl.append(bolt);game.effects.push({el:bolt,time:.25})}if(d.boomerang){launchBoomerang(u);return}if(d.projectile){launchJuice(u,t);return}if(d.hits)u.pendingAttack={remaining:d.hits[0].at,hit:0};else if(d.windup)u.pendingAttack={remaining:d.windup};else fire(u,t);
 }
@@ -430,7 +440,7 @@ function update(dt){
 game.spawnCd=Math.max(0,game.spawnCd-dt);game.orangeCd=Math.max(0,game.orangeCd-dt);game.yellowCd=Math.max(0,game.yellowCd-dt);game.greenCd=Math.max(0,game.greenCd-dt);for(const t of GENERIC_CD_TYPES)game[cooldownKey(t)]=Math.max(0,unitCooldown(t)-dt);
  for(const u of [...game.units]){
   if(game.ended)break;if(u.hp<=0)continue;
-  u.flashTime=Math.max(0,u.flashTime-dt);u.el.classList.toggle('damage-flash',u.flashTime>0);u.el.classList.toggle('frozen',u.freezeUntil>game.elapsed);u.el.classList.toggle('slowed',u.slowUntil>game.elapsed);u.el.classList.toggle('weakened',u.atkDownUntil>game.elapsed);u.el.classList.toggle('crit-hit',u.critFxUntil>game.elapsed);u.el.classList.toggle('pulled',u.pullFxUntil>game.elapsed);
+  u.flashTime=Math.max(0,u.flashTime-dt);u.el.classList.toggle('damage-flash',u.flashTime>0);u.el.classList.toggle('frozen',u.freezeUntil>game.elapsed);u.el.classList.toggle('slowed',u.slowUntil>game.elapsed);u.el.classList.toggle('weakened',u.atkDownUntil>game.elapsed);u.el.classList.toggle('crit-hit',u.critFxUntil>game.elapsed);u.el.classList.toggle('pulled',u.pullFxUntil>game.elapsed);u.el.classList.toggle('surviving',u.surviveFxUntil>game.elapsed);u.el.classList.toggle('slow-cycle',u.intervalUntil>game.elapsed);
   if(u.bossKbTime>0){tickBossKnockback(u,dt);continue}
   if(u.kbTime>0){tickHitback(u,dt);continue}
   if(u.freezeUntil>game.elapsed){animateUnit(u);continue}
