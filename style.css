@@ -258,3 +258,4 @@ body { overflow:auto; }
 .sweep-bar{display:flex;align-items:center;gap:12px;margin:8px 0 12px}
 .sweep-bar small{color:#bdd0e4}
 .stage-card.friday small{color:#9fe6a4}
+.unit.bunbun{background:none;border:0;border-radius:0;width:42px;height:42px}.unit.bunbun .dog-shadow{display:none}.unit.bunbun .bar{top:-88px;width:90px;left:-24px}

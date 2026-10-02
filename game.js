@@ -58,6 +58,8 @@ const CH2_HAWAII=CHAPTER1_LEN*2-2;// last pre-Moon chapter-2 stage: keeps the Lv
 // Empire of Cats Chapter 3: the same Korea-to-Hawaii roster again at 400% (wiki: Ch.3 = x4 enemy magnification).
 const CH3_START=STAGES.length;
 for(let i=0;i<CHAPTER1_LEN-1;i++){const base=STAGES[i];STAGES.push({...base,chapter:3,hp:Math.round(base.hp*4),desc:'세계편 3장 재도전 · 모든 적 능력치 400% 강화'});}
+// Chapter 3 Moon (wiki "Moon (Empire of Cats)", Ch.3): base 900,000 · max 8 · boss 맴매 선생 (Teacher Bun Bun) at 70%.
+STAGES.push({...STAGES[CHAPTER1_LEN-1],chapter:3,hp:900000,maxEnemies:8,desc:'세계편 3장 최종 보스 맴매 선생'});
 const MAIN_STAGE_COUNT=STAGES.length;// chapters 1-3; everything after this index is a special stage
 // Tuesday special stage "광속 전사": pre-15.4 Speed Up source (drop chance 20/50/100/100% (x2 on the hardest)).
 const TUESDAY_STAGES=[
@@ -130,6 +132,9 @@ data.units.face={trait:"floating",hp:18000,atk:850,interval:3.4,speed:1.8,range:
 data.units.metalhippo={trait:'metal',hp:128,atk:300,interval:.6,speed:2.8,range:5,reward:200,knockbacks:2,attackDuration:.5,area:true};
 // St. Pigge the 2nd / 엘리자베스 2세 (wiki): Pigge's exact art plus a crown part worn on the head.
 data.units.stpigge={trait:'red',hp:64000,atk:600,interval:22/30,speed:5.6,range:5,reward:300,knockbacks:4,attackDuration:22/30,windup:14/30,area:true};
+// 맴매 선생 / Teacher Bun Bun (wiki: HP 99,999 · atk 2,250 · 31f · range 200 area · speed 23 · 10 KB · floating).
+// Art is assembled from the part sheet 024_e.png into bunbun_frames.png (fitted to E_024.png).
+data.units.bunbun={trait:'floating',hp:99999,atk:2250,interval:31/30,speed:11.5,range:6.5,reward:3000,knockbacks:10,attackDuration:.8,windup:.4,area:true};
 // 악의제왕 야옹마 / Dark Emperor Nyandam (wiki). Art is assembled from the part sheet 023_e.png into nyandam_frames.png.
 data.units.nyandam={trait:'red',hp:160000,atk:2700,interval:463/30,speed:1.4,range:15.6,reward:3000,knockbacks:3,attackDuration:1.2,windup:.7,area:true};
 // 살의의 멍뭉이 / Doge Dark (wiki): Black enemy, single attack with a long 41-frame foreswing, 8 knockbacks. Range 110/20; speed is a rough rescale of the wiki's 30.
@@ -208,7 +213,7 @@ function addUnit(type,boss=false,mag=1){
  if(ally){game.money-=unitCost(type);game[cooldownKey(type)]=stats.cooldown;if(game.tutorial===2){game.tutorial=3;tutorial()}}render();
 }
 // Display-only size boost for large enemies so they read bigger than 2진 allies (hippo ~76px is the baseline).
-const ENEMY_SIZE={pigge:1.27,stpigge:1.6,nyandam:1.5,seal:1.44,rhino:1.94,kangaroo:1.3,leboin:1.2,mooth:1.15,bear:1.26,face:1.2};
+const ENEMY_SIZE={bunbun:1.3,pigge:1.27,stpigge:1.6,nyandam:1.5,seal:1.44,rhino:1.94,kangaroo:1.3,leboin:1.2,mooth:1.15,bear:1.26,face:1.2};
 // Displayed height (px) of each new 2진 body sprite; the HP bar sits just above it instead of at the default 1진 spot.
 const EVO_BODY_H={crimson:76,gold:78,ivory:77,chartreuse:78,mint:80,azure:89,crystal:81,lavender:80,salmon:74,raspberry:89,onyx:105};
 function drawUnit(u){let e=document.createElement('div'),evolved=u.ally&&u.stats?.evolved,legacyAlly=u.ally&&!NEW_ATLASES[u.type];e.className='unit '+u.type+(u.ally?' ally-art':'')+(evolved?' evolved':'');e.style.setProperty('--unit-color',COLORS?.[u.type]||'#fff');e.innerHTML='<div class="bar"><i style="width:100%"></i></div><span class="status-badges"><span class="freeze-icon st-freeze"></span><span class="slow-icon st-slow"></span><span class="weaken-icon st-weaken"></span><span class="crit-icon st-crit"></span><span class="pull-icon st-pull"></span></span>'+(legacyAlly?'<span class="ally-shadow"></span><span class="ally-sprite"></span>'+(evolved?'<span class="evolved-sprite"></span>'+(EVOLVED_HELD_ITEM[u.type]?'<span class="evolved-item"></span>':''):'')+(u.type==='pink'&&!evolved?'<span class="pink-ribbon"><i></i></span>':''):'<span class="dog-shadow"></span><span class="dog-sprite"></span>'+(u.type==='leboin'||u.type==='bear'?'<span class="dog-sprite-legs"></span>':'')+(u.type==='leboin'?'<span class="dog-sprite-body"></span>':'')+(u.type==='stpigge'?'<span class="pigge-crown"></span>':''));e.setAttribute('aria-label',UNIT_NAMES[u.type]+(evolved?' 2진':''));u.el=e;if(evolved&&EVO_BODY_H[u.type])e.querySelector('.bar').style.top=(33-EVO_BODY_H[u.type])+'px';if(!u.ally&&ENEMY_SIZE[u.type])e.style.setProperty('--enemy-size',ENEMY_SIZE[u.type]);unitsEl.append(e);const newAtlas=NEW_ATLASES[u.type];const sheet={rabbit:ELITE_RABBIT_SHEET,squirrel:SQUIRREL_G_SHEET,kangaroo:KANG_ROO_SHEET,mooth:MOOTH_SHEET,rhino:RHINO_SHEET,bear:BEAR_SHEET,face:FACE_SHEET}[u.type]||(evolved&&newAtlas?.evolved?newAtlas.evolved.sheet:newAtlas?.sheet);if(sheet)e.querySelector('.dog-sprite').style.backgroundImage=`url(${sheet})`;if(legacyAlly)animateAlly(u);else animateDog(u)}
@@ -564,7 +569,7 @@ function animateLeboin(u){
  u.el.dataset.animation=state;
 }
 
-const UNIT_NAMES={pink:'핑크',rhino:'투뿔소',bear:'곰선생',face:'대갈이군',cyan:'시안',blue:'블루',purple:'퍼플',peng:'재키펭',gory:'고릴라저씨',baa:'메에메에',seal:'바다레오파드',croco:'아거',leboin:'빠옹',rabbit:'엘리트래빗',squirrel:'다람G',kangaroo:'캥거류',mooth:'나나나난나방',red:'레드',orange:'오렌지',green:'그린',yellow:'옐로우',dog:'멍뭉이',onyx:'오닉스',nyandam:'악의제왕 야옹마',darkdog:'살의의 멍뭉이',metalhippo:'메탈 하마양',stpigge:'엘리자베스 2세',gabriel:'가브리엘',ectosnache:'엑토 낼름이',snache:'낼름이',guys:'놈놈놈',hippo:'하마양',pigge:'돼지새끼',crimson:'크림슨',gold:'골드',ivory:'아이보리',chartreuse:'샤르트뢰즈',mint:'민트',azure:'애저',crystal:'크리스탈',lavender:'라벤더',salmon:'살몬',raspberry:'라즈베리'};
+const UNIT_NAMES={pink:'핑크',rhino:'투뿔소',bear:'곰선생',face:'대갈이군',cyan:'시안',blue:'블루',purple:'퍼플',peng:'재키펭',gory:'고릴라저씨',baa:'메에메에',seal:'바다레오파드',croco:'아거',leboin:'빠옹',rabbit:'엘리트래빗',squirrel:'다람G',kangaroo:'캥거류',mooth:'나나나난나방',red:'레드',orange:'오렌지',green:'그린',yellow:'옐로우',dog:'멍뭉이',onyx:'오닉스',nyandam:'악의제왕 야옹마',bunbun:'맴매 선생',darkdog:'살의의 멍뭉이',metalhippo:'메탈 하마양',stpigge:'엘리자베스 2세',gabriel:'가브리엘',ectosnache:'엑토 낼름이',snache:'낼름이',guys:'놈놈놈',hippo:'하마양',pigge:'돼지새끼',crimson:'크림슨',gold:'골드',ivory:'아이보리',chartreuse:'샤르트뢰즈',mint:'민트',azure:'애저',crystal:'크리스탈',lavender:'라벤더',salmon:'살몬',raspberry:'라즈베리'};
 // Every rule sourced from each stage's wiki Battleground section: {type, at:{t:seconds}|{hp:percent}, delay:[min,max] (omit for a one-shot), count (omit = infinite), boss:true (adds the shockwave+banner, only where the wiki says "spawns as the boss")}.
 const STAGE_SPAWNS={
 0:[{type:'dog',at:{t:0},count:1},{type:'dog',at:{t:20},delay:[6,10]}],
@@ -620,6 +625,7 @@ const STAGE_SPAWNS={
 // unitStats() magnification differs at spawn time.
 for(let i=0;i<CHAPTER1_LEN-1;i++){STAGE_SPAWNS[CHAPTER1_LEN+i]=STAGE_SPAWNS[i].map(r=>({...r}))}
 for(let i=0;i<CHAPTER1_LEN-1;i++){STAGE_SPAWNS[CH3_START+i]=STAGE_SPAWNS[i].map(r=>({...r}))}
+STAGE_SPAWNS[CH3_START+CHAPTER1_LEN-1]=[{type:'guys',at:{t:0},delay:[.13,1]},{type:'croco',at:{t:20},delay:[.27,1.33]},{type:'rabbit',at:{t:20},delay:[.27,1.33]},{type:'kangaroo',at:{t:0},delay:[13.33,60]},{type:'seal',at:{t:0},delay:[10,40]},{type:'mooth',at:{t:40},delay:[60,80]},{type:'gory',at:{hp:99},delay:[6.67,20]},{type:'pigge',at:{hp:99},delay:[6.67,20]},{type:'guys',at:{hp:99},delay:[.67,2]},{type:'mooth',at:{hp:99},count:4,delay:[.07,.07]},{type:'kangaroo',at:{hp:99},count:6,delay:[.07,4]},{type:'seal',at:{hp:99},count:6,delay:[4,13.33]},{type:'gory',at:{hp:99},count:10,delay:[.07,1.33]},{type:'bunbun',at:{hp:70},count:1,boss:true}];
 STAGE_SPAWNS[CHAPTER1_LEN*2-1]=[{type:'nyandam',at:{t:0},count:1,boss:true},{type:'guys',at:{t:0},delay:[.13,1]},{type:'hippo',at:{t:0},delay:[10,40]},{type:'peng',at:{t:0},delay:[13.33,60]},{type:'rhino',at:{t:40},delay:[66.67,100]},{type:'croco',at:{t:0},delay:[6,33.33]},{type:'croco',at:{t:80},delay:[.27,1.33]},{type:'squirrel',at:{t:0},delay:[6,66.67]},{type:'squirrel',at:{t:120},delay:[.27,1.33]}];
 TUESDAY_STAGES.forEach((t,k)=>{const boss=t.boss,rules=[{type:'dog',at:{t:0},delay:[4,8]},{type:'snache',at:{t:5},delay:[8,20]},{type:'guys',at:{t:15},delay:[10,26]},{type:boss,at:{hp:90},count:1,boss:true}];if(k>=1)rules.push({type:boss,at:{hp:50},count:k>=3?2:1,delay:[6,10]});STAGE_SPAWNS[MAIN_STAGE_COUNT+k]=rules});
 FRIDAY_STAGES.forEach((t,k)=>{const boss=t.boss,rules=[{type:'dog',at:{t:0},delay:[4,8]},{type:'croco',at:{t:3},delay:[2,5]},{type:'guys',at:{t:12},delay:[8,22]},{type:boss,at:{hp:90},count:1,boss:true}];if(k>=1)rules.push({type:boss,at:{hp:50},count:k>=2?2:1,delay:[6,10]});STAGE_SPAWNS[FRIDAY_START+k]=rules});
@@ -669,6 +675,7 @@ function renderNewButtons(){for(const type of GENERIC_CD_TYPES){
 }}
 
 const NEW_ATLASES={
+bunbun:{scale:.5,left:-49,sheet:'assets/bunbun_frames.png',walk:[[0,0,354,243],[354,0,354,243],[708,0,354,243],[1062,0,354,243]],attack:[[1416,0,354,243],[1770,0,354,243],[2124,0,354,243],[2478,0,354,243]],hurt:[[2832,0,354,243]]},
 onyx:{scale:.335,left:-35,sheet:ONYX_SHEET,walk:[[8,88,220,224,0,0],[236,87,236,225,1,-1],[480,90,243,222,6,0]],attack:[[731,4,256,308,-5,1],[995,65,418,247,158,-63],[1421,89,241,223,5,1]],hurt:[[1670,116,252,196,8,-1]],
  evolved:{sheet:ONYX_EVOLVED_SHEET,scale:.265,left:-40,walk:[[8,177,307,396,0,0],[323,177,309,396,2,0],[640,178,296,395,-1,-2]],attack:[[944,4,447,569,20,-2],[1399,208,516,365,161,-12],[1923,186,334,387,10,-1]],hurt:[[2265,201,285,372,-31,32]]}},
 nyandam:{scale:.55,left:-70,sheet:'assets/nyandam_frames.png?v=2',walk:[[0,0,368,192],[368,0,368,192],[736,0,368,192],[1104,0,368,192]],attack:[[2576,0,368,192],[2944,0,368,192],[3312,0,368,192],[1840,0,368,192],[2208,0,368,192]]},// attack: 3 windup frames (shadow minions rise out of the ground, arms up), the hand-mass sweep (strike), recovery
@@ -771,7 +778,7 @@ function renderStageMenu(){renderTraining();renderBaseUpgrade();renderSpecialSta
  $('#chapter1Tab').classList.toggle('active',stageChapterView===1);
  $('#chapter2Tab').classList.toggle('active',stageChapterView===2);
  $('#chapter3Tab').classList.toggle('active',stageChapterView===3);
- $('#chapterNote').textContent=stageChapterView===2?'한국 ~ 달 재도전 · 모든 적 체력·공격력 150% 강화 · 달의 보스는 악의제왕 야옹마':stageChapterView===3?'한국 ~ 하와이 재도전 · 모든 적 체력·공격력 400% 강화 · 2장 달을 클리어하면 열립니다':'';
+ $('#chapterNote').textContent=stageChapterView===2?'한국 ~ 달 재도전 · 모든 적 체력·공격력 150% 강화 · 달의 보스는 악의제왕 야옹마':stageChapterView===3?'한국 ~ 달 재도전 · 모든 적 체력·공격력 400% 강화 · 달의 보스는 맴매 선생 · 2장 달을 클리어하면 열립니다':'';
  $('#progressText').textContent=`${viewStages.filter(o=>cleared.includes(o.i)).length} / ${viewStages.length} 스테이지 클리어 · 세계편 ${stageChapterView}장`;
 }
 const SPEED_PACK={count:9,xp:1000};// pre-15.4: bought in packs of 9 (50 cat food in the original) - paid in XP here
@@ -1116,12 +1123,13 @@ addEventListener('pagehide',saveAll);
 document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')saveAll()});
 
 // Order is rough difficulty progression from Korea to the Moon; used only for codex browsing.
-const ENEMY_ORDER=['dog','snache','guys','hippo','pigge','peng','gory','baa','croco','rabbit','squirrel','seal','leboin','kangaroo','mooth','rhino','bear','face','nyandam','darkdog','metalhippo','stpigge'];
+const ENEMY_ORDER=['dog','snache','guys','hippo','pigge','peng','gory','baa','croco','rabbit','squirrel','seal','leboin','kangaroo','mooth','rhino','bear','face','nyandam','bunbun','darkdog','metalhippo','stpigge'];
 const ENEMY_TEXT={
  dog:'가장 먼저 마주치는 흔한 잡병. 느리지 않은 속도로 꾸준히 밀려온다.',
  snache:'혀를 길게 뻗어 공격하는 정찰병. 멍뭉이보다 빠르게 접근해 온다.',
  metalhippo:'강철 갑옷을 두른 하마양. 치명타가 아니면 어떤 공격도 피해 1밖에 주지 못한다. 크리스탈·크림슨·라즈베리의 치명타가 열쇠. (레전드 스토리)',
  stpigge:'왕관을 쓴 거대한 돼지새끼. 넉백이 많고 공격이 빠르며 체력이 매우 높은 빨간 적. 퍼플을 활용하자. (레전드 스토리)',
+ bunbun:'강철 건틀릿을 낀 뿔 달린 거구의 선생. 떠다니며 빠르게 다가와 1초마다 광역 펀치를 날리고, 웬만한 공격에는 끄떡없이 버틴다. (세계편 3장 달)',
  nyandam:'그림자 부하들이 떠받친 옥좌에 앉아 와인잔을 기울이는 악의 제왕. 느리지만 체력이 엄청나고, 그림자 손 떼로 먼 거리까지 휩쓴다. (세계편 2장 달)',
  darkdog:'고수익 암살 알바에 뛰어든 검은 멍뭉이. 체력은 낮지만 한 방이 무겁고, 맞아도 쉽게 물러나지 않는다. 검은 적. (레전드 스토리)',
  ectosnache:'유령이 된 낼름이. 낼름이보다 강한 혀 공격을 쉬지 않고 날린다. (레전드 스토리)',
