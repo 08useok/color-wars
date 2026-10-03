@@ -294,3 +294,4 @@ body { overflow:auto; }
 .gacha-lobby-btn{padding:16px 30px;border-radius:14px;font-weight:900;font-size:1.1rem;border:2px solid #ffd35a;background:#7a3fa6;color:#fff;cursor:pointer}.gacha-lobby-btn:hover{filter:brightness(1.15)}
 .grade-tabs{flex-wrap:wrap;margin:10px 0 14px}.grade-tab{padding:8px 14px;font-size:.92rem}.grade-tab.active{background:#4a3a8a;border-color:#ffd35a;color:#fff}
 .grade-empty{grid-column:1/-1;color:#9fb3cf;padding:18px;text-align:center;background:#18253a;border-radius:12px}
+.bear .dog-shadow{background:radial-gradient(closest-side,#000a,#0000);border-radius:50%;width:62px;height:8px;left:-18px;bottom:-3px;opacity:1}/* bear rig: torso 88px x .58 */
