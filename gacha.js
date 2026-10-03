@@ -1,0 +1,155 @@
+// 뽑기 (gacha): SR 16명 + 프리즘.
+// Self-contained: game.js is only wrapped (finish / legendFinish / allyUnlocked) and read (XP, items, stage progress).
+// Tickets: 1회권 / 10회권. 매달 1일~10일은 10회권이 10+1 (보너스 1회는 SR 확정).
+const GACHA_KEY='red-battle-gacha-v1';
+const GACHA_SR=[['plum','플럼'],['forest','포레스트'],['canary','카나리'],['cherry','체리'],['charcoal','차콜'],['mustard','머스터드'],['mauve','모브'],['khaki','카키'],['tangerine','탠저린'],['burgundy','버건디'],['sky','스카이'],['denim','데님'],['astronaut','우주인'],['robot','로봇'],['chef','요리사'],['pirate','해적 선장']].map(([id,name])=>({id,name}));
+const GACHA_PRISM={id:'prism',name:'프리즘'};
+const GACHA_CFG={
+ prism:.01,sr:.11,// of every pull: 프리즘 1%, SR 11% (16명 균등); the other 88% is the misc table below
+ pity:100,// 프리즘 guaranteed within this many pulls
+ dupXp:5000,dupXpPrism:30000,// 이미 가진 SR/프리즘은 XP로 환산
+ bonusFrom:1,bonusTo:10,// 10+1 days of the month
+ specialChance:.15,// 화/금 스페셜 스테이지 클리어 시 10회권 드롭 확률
+ dailyStreakBonus:7,// 7일 연속 출석마다 10회권
+ repeatLegend:.05// 이미 클리어한 전설 스테이지 반복 시 1회권 확률
+};
+const GACHA_MISC=[{w:40,kind:'xp',n:1000,label:'XP 1,000'},{w:24,kind:'xp',n:3000,label:'XP 3,000'},{w:16,kind:'speed',n:1,label:'배속권 1개'},{w:8,kind:'cpu',n:1,label:'야옹컴 1개'}];
+let gacha={t1:0,t10:0,pity:0,pulls:0,owned:[],lastDaily:'',streak:0};
+try{
+ const s=JSON.parse(localStorage.getItem(GACHA_KEY)||'{}'),n=v=>Number.isInteger(v)&&v>=0?v:0;
+ gacha={t1:n(s.t1),t10:n(s.t10),pity:n(s.pity),pulls:n(s.pulls),owned:Array.isArray(s.owned)?[...new Set(s.owned.filter(x=>typeof x==='string'))]:[],lastDaily:typeof s.lastDaily==='string'?s.lastDaily:'',streak:n(s.streak)};
+}catch{}
+function saveGacha(){try{localStorage.setItem(GACHA_KEY,JSON.stringify(gacha))}catch{}}
+function gachaOwns(t){return gacha.owned.includes(t)}
+function gachaBonusDay(){try{const d=new Date().getDate();return(d>=GACHA_CFG.bonusFrom&&d<=GACHA_CFG.bonusTo)||new URLSearchParams(location.search).has('bonus')}catch{return false}}
+function gachaGive(t1,t10){gacha.t1+=t1;gacha.t10+=t10;saveGacha();renderGachaBadge();if(gachaOpen())renderGacha()}
+function gachaTicketText(t1,t10){return [t1&&`뽑기권(1회) ${t1}장`,t10&&`뽑기권(10회) ${t10}장`].filter(Boolean).join(' · ')}
+function gachaName(id){return(GACHA_SR.find(s=>s.id===id)||(id===GACHA_PRISM.id?GACHA_PRISM:null))?.name||id}
+function gachaPoolSR(){return GACHA_SR.filter(s=>data.units[s.id])}// SRs whose unit data exists in game.js
+function gachaPrismReady(){return !!data.units[GACHA_PRISM.id]}
+
+// ---- one pull
+function gachaRoll(guaranteed=false){
+ gacha.pulls++;gacha.pity++;
+ const r=Math.random();let kind;
+ if(gacha.pity>=GACHA_CFG.pity||r<GACHA_CFG.prism)kind='prism';
+ else if(guaranteed||r<GACHA_CFG.prism+GACHA_CFG.sr)kind='sr';
+ else kind='misc';
+ const res={kind,guaranteed};
+ if(kind==='prism'){
+  gacha.pity=0;res.id=GACHA_PRISM.id;res.name=GACHA_PRISM.name;
+  if(!gachaPrismReady()){res.pending=true;res.xp=GACHA_CFG.dupXpPrism;training.xp+=res.xp;saveTraining()}
+  else if(gachaOwns(res.id)){res.dup=true;res.xp=GACHA_CFG.dupXpPrism;training.xp+=res.xp;saveTraining()}
+  else{gacha.owned.push(res.id);res.isNew=true}
+ }else if(kind==='sr'){
+  const pool=gachaPoolSR();
+  if(!pool.length){const s=GACHA_SR[Math.floor(Math.random()*GACHA_SR.length)];res.id=s.id;res.name=s.name;res.pending=true;res.xp=GACHA_CFG.dupXp;training.xp+=res.xp;saveTraining()}
+  else{
+   const s=pool[Math.floor(Math.random()*pool.length)];res.id=s.id;res.name=s.name;
+   if(gachaOwns(s.id)){res.dup=true;res.xp=GACHA_CFG.dupXp;training.xp+=res.xp;saveTraining()}
+   else{gacha.owned.push(s.id);res.isNew=true}
+  }
+ }else{
+  let w=Math.random()*GACHA_MISC.reduce((a,m)=>a+m.w,0),m=GACHA_MISC[0];
+  for(const x of GACHA_MISC){if(w<x.w){m=x;break}w-=x.w}
+  res.name=m.label;res.misc=m.kind;
+  if(m.kind==='xp'){training.xp+=m.n;saveTraining()}
+  else if(m.kind==='speed'){speedTickets+=m.n;saveSpeedTickets();renderSpeedButton()}
+  else{nyancom+=m.n;saveNyancom();renderNyancomButton()}
+ }
+ return res;
+}
+function gachaPull(times){
+ const bonus=times===10&&gachaBonusDay();
+ if(times===1){if(gacha.t1<1)return null;gacha.t1--}else{if(gacha.t10<1)return null;gacha.t10--}
+ const out=[];for(let i=0;i<times;i++)out.push(gachaRoll(false));
+ if(bonus){const b=gachaRoll(true);b.bonus=true;out.push(b)}
+ saveGacha();
+ if(typeof renderTraining==='function')renderTraining();
+ renderGachaBadge();
+ return out;
+}
+
+// ---- ticket sources
+function gachaToday(d=new Date()){return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`}
+function gachaClaimDaily(){
+ const today=gachaToday();if(gacha.lastDaily===today)return null;
+ const y=new Date();y.setDate(y.getDate()-1);
+ gacha.streak=gacha.lastDaily===gachaToday(y)?gacha.streak+1:1;gacha.lastDaily=today;
+ const t10=gacha.streak%GACHA_CFG.dailyStreakBonus===0?1:0;
+ gacha.t1+=1;gacha.t10+=t10;saveGacha();
+ return {streak:gacha.streak,t1:1,t10};
+}
+function gachaStageReward(i){// 세계편 첫 클리어: 각 장의 달 = 10회권, 2·3장 일반 스테이지 = 1회권
+ const ch=STAGES[i].chapter||1;
+ if(i===CHAPTER1_LEN-1||i===CHAPTER1_LEN*2-1||i===MAIN_STAGE_COUNT-1)return {t1:0,t10:1};
+ if(ch>=2)return {t1:1,t10:0};
+ return {t1:0,t10:0};
+}
+function gachaAppendDetail(text){const el=document.querySelector('#resultDetail');if(el&&text)el.textContent+=(el.textContent?' · ':'')+text}
+const _finish=finish;
+finish=function(win){
+ const fresh=!game.ended,idx=selectedStage,st=STAGES[idx],was=cleared.includes(idx);
+ _finish(win);
+ if(!fresh||!win||st.legend)return;
+ if(st.special){if(Math.random()<GACHA_CFG.specialChance){gachaGive(0,1);gachaAppendDetail('뽑기권(10회) 1장 획득!')}return}
+ if(!was&&cleared.includes(idx)){const r=gachaStageReward(idx);if(r.t1||r.t10){gachaGive(r.t1,r.t10);gachaAppendDetail(gachaTicketText(r.t1,r.t10)+' 획득!')}}
+};
+const _legendFinish=legendFinish;
+legendFinish=function(win){
+ const k=STAGES[selectedStage].legend.k,c=legendCrown,had=legendProgress[c].includes(k);
+ _legendFinish(win);
+ if(!win)return;
+ let t1=0,t10=0;
+ if(!had){t1+=c;if(legendProgress[c].length===LEGEND_STAGES.length)t10+=c}// ★n 왕관은 n배
+ else if(Math.random()<GACHA_CFG.repeatLegend)t1+=1;
+ if(t1||t10){gachaGive(t1,t10);gachaAppendDetail(gachaTicketText(t1,t10)+' 획득!')}
+};
+const _allyUnlocked=allyUnlocked;
+allyUnlocked=function(t){return _allyUnlocked(t)||gachaOwns(t)};
+
+// ---- UI
+const GACHA_OVERLAY=document.createElement('section');
+GACHA_OVERLAY.id='gachaMenu';GACHA_OVERLAY.className='overlay hidden';
+GACHA_OVERLAY.innerHTML='<div class="gacha-panel"><div class="codex-heading"><h1>뽑기</h1><button id="gachaCloseBtn">닫기</button></div><div id="gachaTickets" class="gacha-tickets"></div><p id="gachaBonusNote" class="gacha-note"></p><div class="gacha-actions"><button id="gachaPull1" class="gacha-pull"></button><button id="gachaPull10" class="gacha-pull ten"></button></div><p id="gachaPity" class="gacha-note"></p><div id="gachaResults" class="gacha-results"></div><p id="gachaRates" class="gacha-note"></p><h2>컬렉션 <small id="gachaOwnedText"></small></h2><div id="gachaOwned" class="gacha-owned"></div></div>';
+document.querySelector('#game').append(GACHA_OVERLAY);
+const GACHA_TOAST=document.createElement('div');GACHA_TOAST.id='gachaToast';GACHA_TOAST.className='hidden';document.querySelector('#game').append(GACHA_TOAST);
+let gachaToastTimer=0;
+function gachaToast(text){GACHA_TOAST.textContent=text;GACHA_TOAST.classList.remove('hidden');clearTimeout(gachaToastTimer);gachaToastTimer=setTimeout(()=>GACHA_TOAST.classList.add('hidden'),4200)}
+function gachaOpen(){return !GACHA_OVERLAY.classList.contains('hidden')}
+const GACHA_BTN=document.createElement('button');GACHA_BTN.id='gachaOpenBtn';GACHA_BTN.type='button';
+document.querySelector('.stage-heading-actions').prepend(GACHA_BTN);
+function renderGachaBadge(){GACHA_BTN.textContent=`뽑기 🎟 ${gacha.t1+gacha.t10}`}
+function gachaCard(r){
+ const c=document.createElement('div');c.className='gacha-card '+(r.kind==='misc'?'misc':r.kind)+(r.bonus?' bonus':'');
+ const tag=r.bonus?'<em>보너스 · SR 확정</em>':'';
+ let body;
+ if(r.kind==='misc')body=`<strong>${r.name}</strong>`;
+ else if(r.pending)body=`<strong>${r.kind==='prism'?'프리즘':'SR'}</strong><small>준비 중 → XP +${r.xp.toLocaleString()}</small>`;
+ else if(r.dup)body=`<strong>${r.name}</strong><small>중복 → XP +${r.xp.toLocaleString()}</small>`;
+ else body=`<strong>${r.name}</strong><small class="new">NEW!</small>`;
+ c.innerHTML=(r.kind==='prism'?'<b>★ 울트라 슈퍼 레어</b>':r.kind==='sr'?'<b>슈퍼 레어</b>':'<b>보상</b>')+body+tag;
+ return c;
+}
+function renderGacha(results){
+ $('#gachaTickets').innerHTML=`<span>1회권 <b>${gacha.t1}</b></span><span>10회권 <b>${gacha.t10}</b></span>`;
+ const bonus=gachaBonusDay();
+ $('#gachaBonusNote').textContent=bonus?'🎉 지금은 10+1 기간! 10회 뽑기를 하면 SR 확정 보너스 1회가 추가돼요. (매달 1일~10일)':'매달 1일~10일에는 10회 뽑기가 10+1이 돼요. 보너스 1회는 SR 확정!';
+ $('#gachaBonusNote').classList.toggle('active',bonus);
+ $('#gachaPull1').textContent='1회 뽑기 (1회권 1장)';$('#gachaPull1').disabled=gacha.t1<1;
+ $('#gachaPull10').textContent=bonus?'10+1 뽑기 (10회권 1장)':'10회 뽑기 (10회권 1장)';$('#gachaPull10').disabled=gacha.t10<1;
+ $('#gachaPity').textContent=`프리즘 천장 ${gacha.pity} / ${GACHA_CFG.pity} · 누적 ${gacha.pulls}회`;
+ const ready=gachaPoolSR().length;
+ $('#gachaRates').textContent=`확률: 프리즘 ${GACHA_CFG.prism*100}% · SR ${GACHA_CFG.sr*100}% (16명 균등) · 나머지는 XP·배속권·야옹컴. 프리즘은 ${GACHA_CFG.pity}회 안에 확정. 중복은 XP로 환산(SR ${GACHA_CFG.dupXp.toLocaleString()}, 프리즘 ${GACHA_CFG.dupXpPrism.toLocaleString()}).`+(ready<GACHA_SR.length?` 아직 추가되지 않은 SR(${GACHA_SR.length-ready}명)이 나오면 XP로 대체돼요.`:'');
+ if(results){const box=$('#gachaResults');box.innerHTML='';results.forEach(r=>box.append(gachaCard(r)))}
+ const own=$('#gachaOwned');own.innerHTML='';
+ for(const s of [...GACHA_SR,GACHA_PRISM]){const d=document.createElement('div');d.className='gacha-slot'+(gachaOwns(s.id)?' owned':'')+(s.id==='prism'?' prism':'');d.textContent=gachaOwns(s.id)?s.name:data.units[s.id]?'？？？':'준비 중';own.append(d)}
+ $('#gachaOwnedText').textContent=`${gacha.owned.length} / ${GACHA_SR.length+1}`;
+}
+function gachaDoPull(times){const out=gachaPull(times);if(out)renderGacha(out)}
+GACHA_BTN.onclick=()=>{renderGacha();$('#gachaResults').innerHTML='';GACHA_OVERLAY.classList.remove('hidden')};
+$('#gachaCloseBtn').onclick=()=>GACHA_OVERLAY.classList.add('hidden');
+$('#gachaPull1').onclick=()=>gachaDoPull(1);
+$('#gachaPull10').onclick=()=>gachaDoPull(10);
+renderGachaBadge();
+{const d=gachaClaimDaily();if(d){renderGachaBadge();gachaToast(`일일 보상! ${gachaTicketText(d.t1,d.t10)} (${d.streak}일 연속 출석)`)}}
