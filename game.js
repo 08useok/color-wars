@@ -1427,8 +1427,8 @@ function renderBaseUpgrade(){
 }
 function awardXP(){const reward=studyXP(cleared.includes(selectedStage)?Math.floor(stageXP(selectedStage)/2):stageXP(selectedStage));training.xp+=reward;saveTraining();return reward}
 function renderUnitLevels(){for(const t of ALLIES){const b=$(t==='red'?'#spawnBtn':'#'+t+'Btn'),d=unitStats(t),e=d.evolved;if(t==='red')b.querySelector('small').textContent=d.cost+'원';b.querySelector('strong').firstChild.nodeValue=UNIT_NAMES[t]+(e?' 2진':'')+' Lv.'+training.levels[t];b.title=`${ROLES[t]} · 체력 ${d.hp} · 공격력 ${d.atk} · 사거리 ${Math.round(d.range)} · 공격 주기 ${d.interval.toFixed(2)}초 · 이동 ${d.speed} · ${d.cost}원${t==='purple'?' · 빨간 적에게 강함':''}${t==='cyan'||t==='crystal'?' · 떠다니는 적에게 강함':''}${RARE_TYPES.includes(t)||EX_TYPES.includes(t)||SR_TYPES.includes(t)?' · '+codexTraitBadges(data.units[t]).slice(1).join(' · '):''}${e?' · 스틱맨 2진':''}`}}
-// 등급 필터: 레어 · 슈퍼 레어 · 울트라 슈퍼 레어 · EX (처음 18명은 '전체'에서만 보임)
-const GRADE_LIST=[['all','전체'],['rare','레어'],['sr','슈퍼 레어'],['uber','울트라 슈퍼 레어'],['ex','EX']];
+// 등급 필터: 기본(레드~라즈베리 18명) · 레어 · 슈퍼 레어 · 울트라 슈퍼 레어 · EX
+const GRADE_LIST=[['all','전체'],['basic','기본'],['rare','레어'],['sr','슈퍼 레어'],['uber','울트라 슈퍼 레어'],['ex','EX']];
 const EX_GRADE=['onyx','garnet','lapis','selenite','topaz'];
 function gradeOf(t){return RARE_TYPES.includes(t)?'rare':SR_TYPES.includes(t)?'sr':t==='prism'?'uber':EX_GRADE.includes(t)?'ex':'basic'}
 let gradeFilter='all';try{const g=localStorage.getItem('red-battle-grade-v1');if(GRADE_LIST.some(x=>x[0]===g))gradeFilter=g}catch{}
