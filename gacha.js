@@ -2,7 +2,7 @@
 // Self-contained: game.js is only wrapped (finish / legendFinish / allyUnlocked) and read (XP, items, stage progress).
 // Tickets: 1회권 / 10회권. 매달 1일~10일은 10회권이 10+1 (보너스 1회는 SR 확정).
 const GACHA_KEY='red-battle-gacha-v1';
-const GACHA_SR=[['plum','플럼'],['forest','포레스트'],['canary','카나리'],['cherry','체리'],['charcoal','차콜'],['mustard','머스터드'],['mauve','모브'],['khaki','카키'],['tangerine','탠저린'],['burgundy','버건디'],['sky','스카이'],['denim','데님'],['astronaut','우주인'],['robot','로봇'],['chef','요리사'],['pirate','해적 선장']].map(([id,name])=>({id,name}));
+const GACHA_SR=[['plum','플럼'],['forest','포레스트'],['canary','카나리'],['cherry','체리'],['charcoal','차콜'],['mustard','머스터드'],['mauve','모브'],['khaki','카키'],['tangerine','탠저린'],['burgundy','버건디'],['sky','스카이'],['denim','데님'],['cornflower','콘플라워'],['verdigris','베르디그리'],['bittersweet','비터스위트'],['claret','클라레']].map(([id,name])=>({id,name}));
 const GACHA_PRISM={id:'prism',name:'프리즘'};
 const GACHA_CFG={
  prism:.01,sr:.11,// of every pull: 프리즘 1%, SR 11% (16명 균등); the other 88% is the misc table below
