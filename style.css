@@ -295,3 +295,4 @@ body { overflow:auto; }
 .grade-tabs{flex-wrap:wrap;margin:10px 0 14px}.grade-tab{padding:8px 14px;font-size:.92rem}.grade-tab.active{background:#4a3a8a;border-color:#ffd35a;color:#fff}
 .grade-empty{grid-column:1/-1;color:#9fb3cf;padding:18px;text-align:center;background:#18253a;border-radius:12px}
 .bear .dog-shadow{background:radial-gradient(closest-side,#000a,#0000);border-radius:50%;width:62px;height:8px;left:-18px;bottom:-3px;opacity:1}/* bear rig: torso 88px x .58 */
+.rainbow-btn i{background:conic-gradient(#f33,#fa0,#ee3,#3c3,#39f,#63f,#c3c,#f33)}
