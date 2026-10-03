@@ -86,14 +86,16 @@ function gachaStageReward(i){// 세계편 첫 클리어: 각 장의 달 = 10회�
  if(ch>=2)return {t1:1,t10:0};
  return {t1:0,t10:0};
 }
+const EX_NAME={garnet:'가넷',lapis:'라피스',selenite:'셀레나이트',topaz:'토파즈'};
+function grantEx(id){if(gachaOwns(id))return false;gacha.owned.push(id);saveGacha();gachaAppendDetail('EX '+EX_NAME[id]+' 획득!');renderNewButtons();renderDeckButtons();return true}
 function gachaAppendDetail(text){const el=document.querySelector('#resultDetail');if(el&&text)el.textContent+=(el.textContent?' · ':'')+text}
 const _finish=finish;
 finish=function(win){
  const fresh=!game.ended,idx=selectedStage,st=STAGES[idx],was=cleared.includes(idx);
  _finish(win);
  if(!fresh||!win||st.legend)return;
- if(st.special){if(Math.random()<GACHA_CFG.specialChance){gachaGive(0,1);gachaAppendDetail('뽑기권(10회) 1장 획득!')}return}
- if(!was&&cleared.includes(idx)){const r=gachaStageReward(idx);if(r.t1||r.t10){gachaGive(r.t1,r.t10);gachaAppendDetail(gachaTicketText(r.t1,r.t10)+' 획득!')}}
+ if(st.special){if(idx===MAIN_STAGE_COUNT+3)grantEx('lapis');if(Math.random()<GACHA_CFG.specialChance){gachaGive(0,1);gachaAppendDetail('뽑기권(10회) 1장 획득!')}return}
+ if(!was&&cleared.includes(idx)){if(idx===MAIN_STAGE_COUNT-1)grantEx('selenite');const r=gachaStageReward(idx);if(r.t1||r.t10){gachaGive(r.t1,r.t10);gachaAppendDetail(gachaTicketText(r.t1,r.t10)+' 획득!')}}
 };
 const _legendFinish=legendFinish;
 legendFinish=function(win){
@@ -104,6 +106,12 @@ legendFinish=function(win){
  if(!had){t1+=c;if(legendProgress[c].length===LEGEND_STAGES.length)t10+=c}// ★n 왕관은 n배
  else if(Math.random()<GACHA_CFG.repeatLegend)t1+=1;
  if(t1||t10){gachaGive(t1,t10);gachaAppendDetail(gachaTicketText(t1,t10)+' 획득!')}
+};
+// 토파즈 (EX): 레전드 ★2 난이도의 8개 스테이지를 모두 클리어하면 획득
+const _legendFinish3=legendFinish;
+legendFinish=function(win){
+ const c=legendCrown;_legendFinish3(win);
+ if(win&&c===2&&legendProgress[2].length===LEGEND_STAGES.length)grantEx('topaz');
 };
 // 가넷 (EX): 전설의 시작을 모두 클리어한 뒤 마지막 스테이지를 클리어할 때마다 30% 확률로 획득
 const GARNET_DROP=.3;
