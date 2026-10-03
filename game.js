@@ -284,7 +284,7 @@ data.units.ruby={hp:600,atk:260,interval:3,speed:5,range:12,cost:325,cooldown:12
 // EX 가넷: 레전드 스토리 1장 올클리어 30% 드롭 · 살아남는다 + 검은 적 엄강 · Lv.20 체력 10만 / 공격력 16,000 (3장 빠옹 한 방)
 data.units.garnet={hp:3100,atk:1600,interval:3.2,speed:5,range:5,cost:900,cooldown:30,knockbacks:4,strongVs:['black'],survive:.3,attackDuration:1,windup:.45};
 // 울슈레 프리즘: 원거리 범위 · 선딜 길고 맞은 적을 밀치기 · 인식 범위 28, 타격 구간 10~40 (처음 설계 400 / 250~550 ÷ 20 = 20 / 12.5~27.5에서 확대)
-data.units.prism={hp:1000,atk:600,interval:5.4,speed:5,range:28,zoneMin:10,zoneMax:40,cost:900,cooldown:25,knockbacks:3,area:true,push:7,attackDuration:1,windup:.6};
+data.units.prism={hp:1000,atk:3600,interval:5.4,speed:5,range:28,zoneMin:10,zoneMax:40,cost:900,cooldown:25,knockbacks:3,area:true,push:7,attackDuration:1,windup:.6};
 // SR 12명 (뽑기 전용, 2진 없음): 능력은 하나씩, 확률은 아주 가끔/가끔/자주로 설명
 data.units.plum={hp:450,atk:300,interval:4.4,speed:5,range:38,cost:550,cooldown:20,knockbacks:3,atkDownPct:.5,atkDownChance:.5,atkDownDuration:5,statusVs:['angel'],attackDuration:.8,windup:.35};
 data.units.forest={hp:1200,atk:520,interval:2.2,speed:5,range:5,cost:450,cooldown:15,knockbacks:3,strongVs:['angel'],attackDuration:.8,windup:.35};
@@ -1291,7 +1291,8 @@ const LV20_TARGET={
  raspberry:{hp:14800,atk:1200},
  onyx:{hp:38000,atk:6500},
  black:{hp:25600,atk:2000},white:{hp:12000,atk:850},maroon:{hp:14400,atk:2100},brown:{hp:26000,atk:1100},tan:{hp:17600,atk:1800},beige:{hp:22400,atk:3150},cream:{hp:22400,atk:1600},olive:{hp:19200,atk:1700},clover:{hp:15400,atk:2200},indigo:{hp:16000,atk:2300},lilac:{hp:17600,atk:1900},hotpink:{hp:14400,atk:2100},ruby:{hp:19200,atk:2750},hacienda:{hp:16000,atk:1900},
- garnet:{hp:100000,atk:16000},prism:{hp:26000,atk:4500},
+ garnet:{hp:100000,atk:16000},prism:{hp:26000,atk:37600},// 프리즘 Lv.20 공격력 = 레드 2진 DPS(800)의 10배 ÷ 공격 주기 5.4초 ÷ 2진 +15%
+ 
  plum:{hp:14400,atk:3000},forest:{hp:38000,atk:4200},canary:{hp:19200,atk:3800},cherry:{hp:22400,atk:4000},mauve:{hp:17600,atk:3600},khaki:{hp:13400,atk:5500},tangerine:{hp:28800,atk:3800},burgundy:{hp:35000,atk:4800},mustard:{hp:32000,atk:5200},sky:{hp:16000,atk:3800},denim:{hp:25600,atk:4600},charcoal:{hp:15400,atk:4000},
  cornflower:{hp:16000,atk:5500},bittersweet:{hp:22400,atk:4400},claret:{hp:14800,atk:3200},verdigris:{hp:32000,atk:4200},
  lapis:{hp:30000,atk:3200},selenite:{hp:20000,atk:4500},topaz:{hp:16000,atk:3800}
