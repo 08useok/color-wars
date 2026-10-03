@@ -286,3 +286,4 @@ body { overflow:auto; }
 .garnet-btn i{background:#9b293f;box-shadow:inset 0 0 0 2px #c9c9d4}.prism-btn i{background:linear-gradient(135deg,#ffd35a,#ff8fc5,#7ad7ff)}
 .plum-btn i{background:#a03c88}.forest-btn i{background:#297639}.canary-btn i{background:#fde804}.cherry-btn i{background:#e32951}.mauve-btn i{background:#e0b0ff}.khaki-btn i{background:#c3b091}.tangerine-btn i{background:#fc9601}.burgundy-btn i{background:#800020}.mustard-btn i{background:#ffdb58}.sky-btn i{background:#6dcefc}.denim-btn i{background:#1560bd}.charcoal-btn i{background:#405162}
 .cornflower-btn i{background:#8499fb}.bittersweet-btn i{background:#fc885c}.claret-btn i{background:#94263f}.verdigris-btn i{background:#1eb2af}
+.controls .unit-btn strong{word-break:keep-all}.controls #bittersweetBtn strong,.controls #claretBtn strong{font-size:.86em;line-height:1.1}
