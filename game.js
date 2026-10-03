@@ -183,7 +183,7 @@ const ALWAYS_UNLOCKED=new Set(['red']);
 const UNLOCK_AT={red:-1,orange:2,yellow:5,green:6,cyan:12,blue:15,purple:18,pink:37,crimson:50,gold:54,ivory:58,chartreuse:62,mint:66,azure:69,crystal:73,lavender:77,salmon:81,raspberry:85,onyx:CHAPTER1_LEN*2-1};
 const ROLES={red:'기본 근접',orange:'중거리 범위',yellow:'방어형 전기',green:'왕복 부메랑',cyan:'초장거리 저격',blue:'고속 연타',purple:'근접 빨간 적 특화',pink:'근거리 광역',crimson:'근거리 강타',gold:'분열 광역형',ivory:'원거리 둔화형',chartreuse:'중거리 연사형',mint:'중거리 정지형',azure:'돌진 광역형',crystal:'관통 치명타형',lavender:'장거리 약화형',salmon:'초장거리 끌어오기',raspberry:'초장거리 저격형',onyx:'근접 광역 강타 · 보스에 강함'};
 const STATUS_ICONS={mint:['freeze','정지'],ivory:['slow','둔화'],lavender:['weaken','약화'],crystal:['crit','치명타'],salmon:['pull','끌어오기'],crimson:['crit','치명타'],raspberry:['crit','치명타']};
-const ABILITY_ICONS={purple:['strong','엄청 강하다'],...STATUS_ICONS};
+const ABILITY_ICONS={purple:['strong','엄청 강하다'],cyan:['strong','떠 있는 적에게 엄청 강하다'],...STATUS_ICONS};
 const COLORS={red:'#ff7272',orange:'#ffb452',yellow:'#ffe46d',green:'#83e595',cyan:'#53e5ef',blue:'#629aff',purple:'#c893ff',pink:'#ff73b8',crimson:'#dc143c',gold:'#ffd700',ivory:'#fffff0',chartreuse:'#7fff00',mint:'#98ff98',azure:'#007fff',crystal:'#ace5ee',lavender:'#b57edc',salmon:'#fa8072',raspberry:'#e30b5c',onyx:'#9ea3bd'};
 const domCache=new Map();const $=s=>{let el=domCache.get(s);if(!el){el=document.querySelector(s);domCache.set(s,el)}return el}, unitsEl=$('#units');let game, last=0;
 function syncBasePositions(){
