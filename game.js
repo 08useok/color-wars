@@ -165,17 +165,62 @@ const FUTURE_END=STAGES.length;
 const ALIEN_BASE_MAG=7,ALIEN_SUPPRESSORS=[FUTURE_START+FUTURE_STAGES.findIndex(t=>t.name==='심해의 소용돌이'),FUTURE_END-1];
 function alienSuppressed(){return ALIEN_SUPPRESSORS.filter(i=>cleared.includes(i)).length}
 function alienMagnification(){return ALIEN_BASE_MAG-alienSuppressed()}
+// Legend Story subchapters 2-5 (정열의 나라 · 글루코사민 사막 · 헤엄치는 고양이 · 캣츠아이; Korean names per 나무위키,
+// stage data per battlecats-db, XP x4 like subchapter 1). Appended after the future chapter so saved stage indices
+// stay put; legend stage k (0..37, the number stored in red-battle-legend-v1) maps to STAGES via legendIdx(k).
+const LEGEND_STAGES2=[
+ // 정열의 나라 · 글루코사민 사막 · 헤엄치는 고양이 · 캣츠아이 (battlecats-db 情熱の国~見つめてキャッツアイ)
+ {name:'야옹달루시아',flag:'💃',hp:90000,max:4,xp:1140,sky:'#f7c873',land:'#c98a3f',desc:'메탈 하마양·멍뭉이·낼름이 (최대 400%)',drop:{speed:0.01}},
+ {name:'빠에야 초원',flag:'🥘',hp:90000,max:4,xp:1140,sky:'#f7c873',land:'#c98a3f',desc:'고릴라저씨·멍뭉이·낼름이 (최대 400%)',drop:{speed:0.01}},
+ {name:'플라멩코 구멍',flag:'⛏️',hp:95000,max:7,xp:1235,sky:'#f7c873',land:'#c98a3f',desc:'보스 나나나난나방 · 살의의 멍뭉이·멍뭉이·낼름이 (최대 400%)',drop:{xp:9750,xpChance:0.05}},
+ {name:'샹그리아 강',flag:'🍷',hp:98000,max:6,xp:1330,sky:'#f7c873',land:'#c98a3f',desc:'보스 엘리자베스 2세 · 메에메에·메탈 하마양·멍뭉이 (최대 400%)',drop:{speed:0.01}},
+ {name:'가스파초 고원',flag:'🍅',hp:100000,max:4,xp:1330,sky:'#f7c873',land:'#c98a3f',desc:'바다레오파드·돼지새끼·멍뭉이 (최대 400%)',drop:{nyan:0.01}},
+ {name:'츄러스 나이트',flag:'🌙',hp:120000,max:4,xp:1330,sky:'#f7c873',land:'#c98a3f',desc:'보스 다람G · 하마양·재키펭·캥거류 (최대 400%)',drop:{speed:0.01}},
+ {name:'메마른 정원',flag:'🌵',hp:150000,max:10,xp:1520,sky:'#f7c873',land:'#c98a3f',desc:'살의의 멍뭉이·멍뭉이·낼름이 (최대 400%)',drop:{xp:12000,xpChance:0.05}},
+ {name:'타파스 사막',flag:'🏜️',hp:200000,max:10,xp:1900,sky:'#f7c873',land:'#c98a3f',desc:'보스 스승 · 아거·멍뭉이·낼름이 (최대 400%)',drop:{nyan:0.01}},
+ {name:'콘드로이틴 사구',flag:'🏝️',hp:90000,max:4,xp:1235,sky:'#f3d9a0',land:'#d8b46a',desc:'하마양·재키펭·돼지새끼 (최대 400%)',drop:{xp:9750,xpChance:0.05}},
+ {name:'세사민 유적',flag:'🏛️',hp:90000,max:4,xp:1330,sky:'#f3d9a0',land:'#d8b46a',desc:'엘리자베스 2세·멍뭉이·낼름이 (최대 400%)',drop:{speed:0.01}},
+ {name:'이소플라본 동굴',flag:'🕳️',hp:95000,max:4,xp:1425,sky:'#f3d9a0',land:'#d8b46a',desc:'고릴라저씨·메에메에·살의의 멍뭉이 (최대 400%)'},
+ {name:'카테킨 구릉',flag:'⛰️',hp:98000,max:7,xp:1425,sky:'#f3d9a0',land:'#d8b46a',desc:'메에메에·돼지새끼·엘리트래빗 (최대 400%)',drop:{speed:0.01}},
+ {name:'리코펜의 노을',flag:'🌇',hp:100000,max:4,xp:1520,sky:'#f3d9a0',land:'#d8b46a',desc:'메에메에·빠옹·하마양 (최대 400%)',drop:{nyan:0.01}},
+ {name:'프로폴리스 연못',flag:'🏞️',hp:120000,max:6,xp:1520,sky:'#f3d9a0',land:'#d8b46a',desc:'재키펭·된장 푸들·스승 (최대 400%)',drop:{xp:12000,xpChance:0.05}},
+ {name:'펩타이드 설원',flag:'❄️',hp:150000,max:5,xp:1710,sky:'#f3d9a0',land:'#d8b46a',desc:'돼지새끼·바다레오파드·메탈 하마양 (최대 400%)'},
+ {name:'히알루론산',flag:'🗻',hp:200000,max:50,xp:2280,sky:'#f3d9a0',land:'#d8b46a',desc:'보스 다람G · 살의의 멍뭉이·핫도그',drop:{nyan:0.01}},
+ {name:'무모한 진수식',flag:'🚢',hp:95000,max:4,xp:1330,sky:'#7ccbe8',land:'#3f8fb5',desc:'하마양·다람G·스승 (최대 400%)',drop:{speed:0.01}},
+ {name:'커다란 대해',flag:'🌊',hp:100000,max:8,xp:1425,sky:'#7ccbe8',land:'#3f8fb5',desc:'아거·된장 푸들·바다레오파드 (최대 400%)',drop:{xp:11250,xpChance:0.05}},
+ {name:'인어의 후미',flag:'🧜',hp:110000,max:8,xp:1425,sky:'#7ccbe8',land:'#3f8fb5',desc:'아거·메에메에·고릴라저씨 (최대 400%)'},
+ {name:'카오스 라군',flag:'🌀',hp:120000,max:11,xp:1520,sky:'#7ccbe8',land:'#3f8fb5',desc:'보스 엘리자베스 2세 · 아거·오리룰루·메탈 하마양 (최대 400%)',drop:{speed:0.01}},
+ {name:'해적놀이',flag:'🏴‍☠️',hp:150000,max:8,xp:1520,sky:'#7ccbe8',land:'#3f8fb5',desc:'보스 다람G · 투뿔소·엘리트래빗·돼지새끼 (최대 400%)',drop:{nyan:0.01}},
+ {name:'모순의 어장',flag:'🎣',hp:175000,max:4,xp:1615,sky:'#7ccbe8',land:'#3f8fb5',desc:'고릴라저씨·바다레오파드·핫도그 (최대 400%)',drop:{speed:0.01}},
+ {name:'우뭇가사리 섬',flag:'🏝️',hp:180000,max:6,xp:1710,sky:'#7ccbe8',land:'#3f8fb5',desc:'곰선생·엘리트래빗·살의의 멍뭉이 (최대 400%)'},
+ {name:'바닷물은 짜다',flag:'🧂',hp:200000,max:4,xp:2280,sky:'#7ccbe8',land:'#3f8fb5',desc:'보스 늘보보 · 된장 푸들·살의의 멍뭉이',drop:{xp:18000,xpChance:0.05}},
+ {name:'사랑의 광석',flag:'💎',hp:95000,max:4,xp:1330,sky:'#5a4a6e',land:'#8a6f5a',desc:'아거·고릴라저씨·스승 (최대 400%)',drop:{xp:10500,xpChance:0.05}},
+ {name:'섹시 종유동',flag:'🦇',hp:100000,max:10,xp:1425,sky:'#5a4a6e',land:'#8a6f5a',desc:'스승·오리룰루·멍뭉이 (최대 400%)',drop:{speed:0.01}},
+ {name:'두근두근 구멍',flag:'💓',hp:150000,max:5,xp:1520,sky:'#5a4a6e',land:'#8a6f5a',desc:'보스 늘보보 · 재키펭·엘리자베스 2세·된장 푸들 (최대 400%)'},
+ {name:'바디 라인',flag:'🪨',hp:200000,max:9,xp:1710,sky:'#5a4a6e',land:'#8a6f5a',desc:'오리룰루·핫도그·멍뭉이 (최대 400%)',drop:{speed:0.01}},
+ {name:'가슴골',flag:'⛰️',hp:250000,max:8,xp:1805,sky:'#5a4a6e',land:'#8a6f5a',desc:'보스 대갈이군 · 살의의 멍뭉이·다람G·나나나난나방 (최대 400%)',drop:{nyan:0.01}},
+ {name:'스릴의 대가',flag:'🎢',hp:500000,max:10,xp:2280,sky:'#5a4a6e',land:'#8a6f5a',desc:'보스 늘보보 · 스승·된장 푸들·두드리 (최대 400%)',drop:{xp:18000,xpChance:0.05}}
+];
+const LEGEND_SUBS=[{name:'전설의 시작',start:0,len:8},{name:'정열의 나라',start:8,len:8},{name:'글루코사민 사막',start:16,len:8},{name:'헤엄치는 고양이',start:24,len:8},{name:'캣츠아이',start:32,len:6}];
+const LEGEND2_START=STAGES.length;
+LEGEND_STAGES2.forEach((t,j)=>STAGES.push({...t,gap:4,wave:0,chapter:4,legend:{k:8+j},maxEnemies:t.max}));
+LEGEND_STAGES.push(...LEGEND_STAGES2);
+function legendIdx(k){return k<8?LEGEND_START+k:LEGEND2_START+k-8}
+function legendSubOf(k){return LEGEND_SUBS.findIndex(sc=>k>=sc.start&&k<sc.start+sc.len)}
+function legendSubDone(sub,c){const sc=LEGEND_SUBS[sub];for(let k=sc.start;k<sc.start+sc.len;k++)if(!legendProgress[c].includes(k))return false;return true}
+function legendSubCount(sub,c){const sc=LEGEND_SUBS[sub];return legendProgress[c].filter(k=>k>=sc.start&&k<sc.start+sc.len).length}
 function isStoryStage(i){return i<MAIN_STAGE_COUNT||(i>=FUTURE_START&&i<FUTURE_END)}
 function isChainEnd(i){return i===MAIN_STAGE_COUNT-1||i===FUTURE_END-1}
 let selectedStage=0,cleared=[];
 try{const saved=JSON.parse(localStorage.getItem('red-battle-progress-v1')||'[]');if(Array.isArray(saved))cleared=[...new Set(saved.filter(x=>Number.isInteger(x)&&x>=0&&isStoryStage(x)))]}catch{}
 function saveProgress(){try{localStorage.setItem('red-battle-progress-v1',JSON.stringify(cleared))}catch{}}
 let legendCrown=1,legendProgress={1:[],2:[],3:[],4:[]};
-try{const saved=JSON.parse(localStorage.getItem('red-battle-legend-v1')||'{}');for(const c of [1,2,3,4])if(Array.isArray(saved[c]))legendProgress[c]=[...new Set(saved[c].filter(k=>Number.isInteger(k)&&k>=0&&k<LEGEND_STAGES.length))]}catch{}
+try{const saved=JSON.parse(localStorage.getItem('red-battle-legend-v1')||'{}');for(const c of [1,2,3,4])if(Array.isArray(saved[c]))legendProgress[c]=[...new Set(saved[c].filter(k=>Number.isInteger(k)&&k>=0&&k<38))]}catch{}
 function saveLegend(){try{localStorage.setItem('red-battle-legend-v1',JSON.stringify(legendProgress))}catch{}}
 function legendOpen(){return cleared.includes(CHAPTER1_LEN-1)}
-function legendCrownUnlocked(c){return c===1||legendProgress[c-1].length===LEGEND_STAGES.length}
-function legendStageUnlocked(k,c=legendCrown){return legendOpen()&&legendCrownUnlocked(c)&&(k===0||legendProgress[c].includes(k-1)||legendProgress[c].includes(k))}
+function legendCrownUnlocked(c,sub=legendSub-1){return c===1||legendSubDone(Math.max(0,sub),c-1)}
+function legendSubOpen(sub){return sub===0?legendOpen():legendSubDone(sub-1,1)}// the next subchapter opens once the previous one is cleared on ★1
+function legendStageUnlocked(k,c=legendCrown){const sub=legendSubOf(k);return legendSubOpen(sub)&&legendCrownUnlocked(c,sub)&&(k===LEGEND_SUBS[sub].start||legendProgress[c].includes(k-1)||legendProgress[c].includes(k))}
 function stageBaseHp(i){return STAGES[i].hp}
 function isUnlocked(i){return i===0||cleared.includes(i===FUTURE_START?MAIN_STAGE_COUNT-1:i-1)||cleared.includes(i)}
 function chapterOf(i){return STAGES[i]?.chapter||1}
@@ -234,6 +279,13 @@ data.units.shyboy={trait:'red',hp:30000,atk:1500,interval:3.4,speed:1.8,range:14
 data.units.gorydark={trait:'black',hp:12000,atk:600,interval:16/30,speed:8,range:5,reward:500,knockbacks:3,attackDuration:.5,windup:.27,area:true};
 data.units.shadowboxer={trait:'black',hp:40000,atk:1500,interval:1.5,speed:8,range:4,reward:1000,knockbacks:3,attackDuration:.6,windup:.3};
 data.units.heavenlyhippoe={trait:'angel',hp:6000,atk:600,interval:2.2,speed:6,range:5,reward:400,knockbacks:1,attackDuration:.8,windup:.4,area:true};
+// Legend Story subchapter 2-5 enemies (frames assembled from the game sheets on the Battle Cats Wiki; THE SLOTH from its idle GIF).
+data.units.mastera={hp:60000,atk:2500,interval:3,speed:3,range:8,reward:2500,knockbacks:3,attackDuration:1,windup:.5,area:true};
+data.units.celeboodle={hp:4000,atk:400,interval:1.5,speed:10,range:4,reward:300,knockbacks:3,attackDuration:.6,windup:.3};
+data.units.dagshund={hp:15000,atk:1200,interval:3,speed:4,range:6,reward:800,knockbacks:2,attackDuration:.8,windup:.4,area:true};
+data.units.duche={hp:3000,atk:300,interval:1.2,speed:8,range:5,reward:300,knockbacks:3,attackDuration:.6,windup:.3};
+data.units.sloth={hp:200000,atk:5000,interval:5,speed:1.5,range:10,reward:5000,knockbacks:3,attackDuration:1,windup:.5,area:true};
+data.units.otta={hp:20000,atk:2000,interval:2.5,speed:5,range:4,reward:1000,knockbacks:3,attackDuration:.8,windup:.4,area:true};
 const CRIMSON_SHEET='assets/unitcrimson_ally-sprite.png';
 const CRIMSON_EVOLVED_SHEET='assets/crimson_evolved.webp';
 const GOLD_SHEET='assets/unitgold_ally-sprite.webp';
@@ -352,7 +404,7 @@ function addUnit(type,boss=false,mag=1){
  if(ally){game.money-=unitCost(type);game[cooldownKey(type)]=stats.cooldown;if(game.tutorial===2){game.tutorial=3;tutorial()}}render();
 }
 // Display-only size boost for large enemies so they read bigger than 2진 allies (hippo ~76px is the baseline).
-const ENEMY_SIZE={sael:1.44,liz56:1.6,ursamajor:1.26,phace:1.2,shyboy:1.2,shadowboxer:1.3,nimoy:1.9,clione:1.6,bunbun:1.3,pigge:1.27,stpigge:1.6,nyandam:1.5,seal:1.44,rhino:1.94,kangaroo:1.3,leboin:1.2,mooth:1.15,bear:1.26,face:1.2};
+const ENEMY_SIZE={sloth:1.4,mastera:1.15,sael:1.44,liz56:1.6,ursamajor:1.26,phace:1.2,shyboy:1.2,shadowboxer:1.3,nimoy:1.9,clione:1.6,bunbun:1.3,pigge:1.27,stpigge:1.6,nyandam:1.5,seal:1.44,rhino:1.94,kangaroo:1.3,leboin:1.2,mooth:1.15,bear:1.26,face:1.2};
 // Displayed height (px) of each new 2진 body sprite; the HP bar sits just above it instead of at the default 1진 spot.
 const EVO_BODY_H={crimson:76,gold:78,ivory:77,chartreuse:78,mint:80,azure:89,crystal:81,lavender:80,salmon:74,raspberry:89,onyx:105,garnet:98,prism:92,black:77,white:77,maroon:77,brown:77,tan:77,beige:77,cream:77,olive:77,clover:77,indigo:77,lilac:77,hotpink:77,ruby:77,hacienda:77};
 Object.assign(EVO_BODY_H,{lapis:105,selenite:85,topaz:96});
@@ -742,7 +794,7 @@ function animateLeboin(u){
  u.el.dataset.animation=state;
 }
 
-const UNIT_NAMES={shibalien:'에이리뭉',kroxo:'아거리언',hyppoh:'하앜마양',sael:'스타레오파드',maawth:'날랄라라라방',lemurr:'빅글래숭이',krabbe:'소라게게',phace:'대머리군',ursamajor:'쿠만츄',clione:'파괴생물 쿠오리넨',nimoy:'불칸 보어',liz56:'엘리자베스 56세',shyboy:'홍당무왕',gorydark:'블랙 고릴라저씨',shadowboxer:'쉐도우 복서',heavenlyhippoe:'천사 하마양',pink:'핑크',rhino:'투뿔소',bear:'곰선생',face:'대갈이군',cyan:'시안',blue:'블루',purple:'퍼플',peng:'재키펭',gory:'고릴라저씨',baa:'메에메에',seal:'바다레오파드',croco:'아거',leboin:'빠옹',rabbit:'엘리트래빗',squirrel:'다람G',kangaroo:'캥거류',mooth:'나나나난나방',red:'레드',orange:'오렌지',green:'그린',yellow:'옐로우',dog:'멍뭉이',onyx:'오닉스',nyandam:'악의제왕 야옹마',bunbun:'맴매 선생',darkdog:'살의의 멍뭉이',metalhippo:'메탈 하마양',stpigge:'엘리자베스 2세',gabriel:'가브리엘',ectosnache:'엑토 낼름이',snache:'낼름이',guys:'놈놈놈',hippo:'하마양',pigge:'돼지새끼',crimson:'크림슨',gold:'골드',ivory:'아이보리',chartreuse:'샤르트뢰즈',mint:'민트',azure:'애저',crystal:'크리스탈',lavender:'라벤더',salmon:'살몬',raspberry:'라즈베리',black:'블랙',white:'화이트',maroon:'마룬',brown:'브라운',tan:'탄',beige:'베이지',cream:'크림',olive:'올리브',clover:'클로버',indigo:'인디고',lilac:'라일락',hotpink:'핫 핑크',ruby:'루비',hacienda:'하시엔다',garnet:'가넷',prism:'프리즘',plum:'플럼',forest:'포레스트',canary:'카나리',cherry:'체리',mauve:'모브',khaki:'카키',tangerine:'탠저린',burgundy:'버건디',mustard:'머스터드',sky:'스카이',denim:'데님',charcoal:'차콜',cornflower:'길리먼 블루',bittersweet:'그레이프프루트 펄프',claret:'아틀라스 레드',verdigris:'베르디그리',lapis:'라피스',selenite:'셀레나이트',topaz:'토파즈'};
+const UNIT_NAMES={mastera:'스승',celeboodle:'된장 푸들',dagshund:'핫도그',duche:'오리룰루',sloth:'늘보보',otta:'두드리',shibalien:'에이리뭉',kroxo:'아거리언',hyppoh:'하앜마양',sael:'스타레오파드',maawth:'날랄라라라방',lemurr:'빅글래숭이',krabbe:'소라게게',phace:'대머리군',ursamajor:'쿠만츄',clione:'파괴생물 쿠오리넨',nimoy:'불칸 보어',liz56:'엘리자베스 56세',shyboy:'홍당무왕',gorydark:'블랙 고릴라저씨',shadowboxer:'쉐도우 복서',heavenlyhippoe:'천사 하마양',pink:'핑크',rhino:'투뿔소',bear:'곰선생',face:'대갈이군',cyan:'시안',blue:'블루',purple:'퍼플',peng:'재키펭',gory:'고릴라저씨',baa:'메에메에',seal:'바다레오파드',croco:'아거',leboin:'빠옹',rabbit:'엘리트래빗',squirrel:'다람G',kangaroo:'캥거류',mooth:'나나나난나방',red:'레드',orange:'오렌지',green:'그린',yellow:'옐로우',dog:'멍뭉이',onyx:'오닉스',nyandam:'악의제왕 야옹마',bunbun:'맴매 선생',darkdog:'살의의 멍뭉이',metalhippo:'메탈 하마양',stpigge:'엘리자베스 2세',gabriel:'가브리엘',ectosnache:'엑토 낼름이',snache:'낼름이',guys:'놈놈놈',hippo:'하마양',pigge:'돼지새끼',crimson:'크림슨',gold:'골드',ivory:'아이보리',chartreuse:'샤르트뢰즈',mint:'민트',azure:'애저',crystal:'크리스탈',lavender:'라벤더',salmon:'살몬',raspberry:'라즈베리',black:'블랙',white:'화이트',maroon:'마룬',brown:'브라운',tan:'탄',beige:'베이지',cream:'크림',olive:'올리브',clover:'클로버',indigo:'인디고',lilac:'라일락',hotpink:'핫 핑크',ruby:'루비',hacienda:'하시엔다',garnet:'가넷',prism:'프리즘',plum:'플럼',forest:'포레스트',canary:'카나리',cherry:'체리',mauve:'모브',khaki:'카키',tangerine:'탠저린',burgundy:'버건디',mustard:'머스터드',sky:'스카이',denim:'데님',charcoal:'차콜',cornflower:'길리먼 블루',bittersweet:'그레이프프루트 펄프',claret:'아틀라스 레드',verdigris:'베르디그리',lapis:'라피스',selenite:'셀레나이트',topaz:'토파즈'};
 // Every rule sourced from each stage's wiki Battleground section: {type, at:{t:seconds}|{hp:percent}, delay:[min,max] (omit for a one-shot), count (omit = infinite), boss:true (adds the shockwave+banner, only where the wiki says "spawns as the boss")}.
 const STAGE_SPAWNS={
 0:[{type:'dog',at:{t:0},count:1},{type:'dog',at:{t:20},delay:[6,10]}],
@@ -812,6 +864,39 @@ FRIDAY_STAGES.forEach((t,k)=>{const boss=t.boss,rules=[{type:'dog',at:{t:0},dela
  [{type:'dog',at:{t:0},delay:[3,20],mag:400},{type:'snache',at:{t:0},delay:[3,20],mag:400},{type:'guys',at:{t:40},delay:[3,20],mag:400},{type:'leboin',at:{hp:90},count:1,boss:true,mag:300}],
  [{type:'dog',at:{t:0},delay:[3,20],mag:400},{type:'snache',at:{t:0},delay:[3,20],mag:400},{type:'guys',at:{t:40},delay:[3,20],mag:400},{type:'gory',at:{hp:95},count:1,mag:400},{type:'hippo',at:{hp:95},count:1,mag:400},{type:'gory',at:{hp:85},count:1,mag:400},{type:'hippo',at:{hp:85},count:1,mag:400},{type:'gory',at:{hp:75},count:1,mag:400},{type:'hippo',at:{hp:75},count:1,mag:400},{type:'gory',at:{hp:65},count:1,mag:400},{type:'hippo',at:{hp:65},count:1,mag:400},{type:'darkdog',at:{hp:50},count:4,delay:[.07,.13]},{type:'squirrel',at:{hp:50},count:1,boss:true}]
 ].forEach((rules,k)=>{STAGE_SPAWNS[LEGEND_START+k]=rules});
+// Legend subchapters 2-5 spawn tables (battlecats-db; frames /30 -> seconds, Ms. Sign left out).
+[
+ [{type:'dog',at:{t:0},delay:[3,20],mag:400},{type:'snache',at:{t:0},delay:[3,20],mag:400},{type:'guys',at:{t:40},delay:[3,20],mag:400},{type:'metalhippo',at:{t:0},count:1,mag:100}],
+ [{type:'dog',at:{t:0},delay:[3,20],mag:400},{type:'snache',at:{t:0},delay:[3,20],mag:400},{type:'guys',at:{t:40},delay:[3,20],mag:400},{type:'gory',at:{t:0},count:4,delay:[10.67,23.33],mag:400},{type:'gory',at:{hp:80},count:4,delay:[2,6],mag:400}],
+ [{type:'dog',at:{t:0},delay:[3,20],mag:400},{type:'snache',at:{t:0},delay:[3,20],mag:400},{type:'guys',at:{t:40},delay:[3,20],mag:400},{type:'mooth',at:{hp:90},count:1,boss:true,mag:400},{type:'darkdog',at:{hp:90},count:3,delay:[0.33,1.33],mag:100}],
+ [{type:'dog',at:{t:0},delay:[3,20],mag:400},{type:'snache',at:{t:0},delay:[3,20],mag:400},{type:'guys',at:{t:20},delay:[3,20],mag:400},{type:'guys',at:{hp:99},delay:[3,20],mag:400},{type:'baa',at:{hp:99},delay:[6.67,20],mag:400},{type:'metalhippo',at:{hp:99},count:1,mag:100},{type:'stpigge',at:{hp:99},count:1,boss:true,mag:100}],
+ [{type:'dog',at:{t:0},delay:[3,20],mag:400},{type:'snache',at:{t:0},delay:[3,20],mag:400},{type:'guys',at:{t:40},delay:[3,20],mag:400},{type:'seal',at:{t:0},count:1,mag:400},{type:'pigge',at:{t:16.67},delay:[20,40],mag:400}],
+ [{type:'dog',at:{t:0},delay:[3,20],mag:400},{type:'snache',at:{t:0},delay:[3,20],mag:400},{type:'guys',at:{t:20},delay:[20,40],mag:400},{type:'hippo',at:{t:13.33},delay:[20,40],mag:400},{type:'peng',at:{t:26.67},delay:[20,40],mag:400},{type:'peng',at:{hp:99},delay:[20,40],mag:400},{type:'kangaroo',at:{hp:99},count:2,delay:[0.07,0.13],mag:400},{type:'kangaroo',at:{hp:99},count:1,mag:400},{type:'squirrel',at:{hp:99},count:1,boss:true,mag:400}],
+ [{type:'dog',at:{t:0},delay:[3,20],mag:400},{type:'snache',at:{t:0},delay:[3,20],mag:400},{type:'guys',at:{t:40},delay:[3,20],mag:100},{type:'darkdog',at:{t:20},delay:[33.33,40],mag:100},{type:'darkdog',at:{hp:99},delay:[20,26.67],mag:100},{type:'darkdog',at:{hp:99},count:3,delay:[0.67,2],mag:100}],
+ [{type:'dog',at:{t:0},delay:[3,20],mag:400},{type:'snache',at:{t:0},delay:[3,20],mag:400},{type:'guys',at:{t:40},delay:[3,20],mag:400},{type:'guys',at:{hp:60},delay:[0.67,1.33],mag:400},{type:'croco',at:{hp:60},delay:[0.67,1.33],mag:400},{type:'mastera',at:{hp:60},count:1,boss:true,mag:100}],
+ [{type:'dog',at:{t:0},delay:[3,20],mag:400},{type:'snache',at:{t:0},delay:[3,20],mag:400},{type:'guys',at:{t:40},delay:[3,20],mag:400},{type:'hippo',at:{t:40},delay:[3,20],mag:400},{type:'peng',at:{t:13.33},delay:[3,20],mag:400},{type:'pigge',at:{t:26.67},delay:[3,20],mag:400},{type:'peng',at:{hp:95},count:3,delay:[2,4],mag:400}],
+ [{type:'dog',at:{t:0},delay:[3,20],mag:400},{type:'snache',at:{t:0},delay:[3,20],mag:400},{type:'guys',at:{t:40},delay:[3,20],mag:400},{type:'stpigge',at:{hp:99},count:1,mag:100},{type:'stpigge',at:{hp:99},count:1,mag:100},{type:'stpigge',at:{hp:99},count:1,mag:100}],
+ [{type:'guys',at:{t:0},delay:[3,20],mag:400},{type:'gory',at:{t:0},delay:[13.33,26.67],mag:400},{type:'baa',at:{t:40},delay:[6.67,20],mag:400},{type:'darkdog',at:{t:40},delay:[20,33.33],mag:100},{type:'celeboodle',at:{hp:90},delay:[3,20],mag:100},{type:'darkdog',at:{hp:90},count:4,delay:[0.07,0.67],mag:100},{type:'celeboodle',at:{hp:90},count:4,delay:[0.07,0.13],mag:100}],
+ [{type:'dog',at:{t:0},delay:[3,20],mag:400},{type:'snache',at:{t:0},delay:[3,20],mag:400},{type:'guys',at:{t:0},delay:[3,20],mag:400},{type:'guys',at:{hp:99},delay:[3,20],mag:400},{type:'baa',at:{hp:99},delay:[3,20],mag:400},{type:'pigge',at:{hp:99},delay:[3,20],mag:400},{type:'rabbit',at:{hp:99},delay:[3,20],mag:400},{type:'gory',at:{hp:99},delay:[3,20],mag:400}],
+ [{type:'dog',at:{t:0},delay:[3,20],mag:400},{type:'snache',at:{t:0},delay:[3,20],mag:400},{type:'guys',at:{t:40},delay:[3,20],mag:400},{type:'guys',at:{t:40},delay:[3,20],mag:400},{type:'baa',at:{t:40},delay:[3,20],mag:400},{type:'leboin',at:{t:53.33},delay:[40,66.67],mag:400},{type:'hippo',at:{t:40},delay:[3,20],mag:400},{type:'gory',at:{t:40},delay:[3,12],mag:400},{type:'peng',at:{t:40},delay:[3,12],mag:400},{type:'leboin',at:{hp:90},count:1,mag:400}],
+ [{type:'snache',at:{t:0},delay:[3,20],mag:400},{type:'guys',at:{t:0},delay:[3,20],mag:400},{type:'peng',at:{t:20},delay:[5.33,20],mag:400},{type:'celeboodle',at:{t:40},delay:[13.33,30.67],mag:100},{type:'mastera',at:{t:26.67},count:1,mag:100}],
+ [{type:'guys',at:{t:0},delay:[3,20],mag:400},{type:'pigge',at:{t:0},delay:[3,20],mag:400},{type:'seal',at:{t:40},delay:[6.67,20],mag:400},{type:'seal',at:{hp:80},count:1,mag:400},{type:'seal',at:{hp:60},count:1,mag:400},{type:'metalhippo',at:{t:0},count:2,delay:[3,20],mag:100}],
+ [{type:'darkdog',at:{t:23.33},delay:[29.33,29.33],mag:100},{type:'darkdog',at:{t:23},delay:[29.33,29.33],mag:100},{type:'darkdog',at:{t:22.67},delay:[29.33,29.33],mag:100},{type:'dagshund',at:{hp:99},count:1,mag:100},{type:'dagshund',at:{hp:99},count:1,mag:100},{type:'dagshund',at:{hp:99},count:1,mag:100},{type:'squirrel',at:{hp:99},count:1,boss:true,mag:100}],
+ [{type:'dog',at:{t:0},delay:[3,20],mag:400},{type:'snache',at:{t:0},delay:[3,20],mag:400},{type:'guys',at:{t:40},delay:[3,20],mag:400},{type:'hippo',at:{t:40},delay:[10,20],mag:400},{type:'squirrel',at:{t:20},delay:[3,20],mag:400},{type:'mastera',at:{t:40},count:1,mag:100},{type:'mastera',at:{t:40},count:1,mag:100}],
+ [{type:'croco',at:{t:0},delay:[2,10],mag:400},{type:'croco',at:{t:20},delay:[2,10],mag:400},{type:'celeboodle',at:{t:46.67},count:1,mag:100},{type:'seal',at:{t:0},delay:[6.67,20],mag:400}],
+ [{type:'dog',at:{t:0},delay:[3,20],mag:400},{type:'snache',at:{t:0},delay:[3,20],mag:400},{type:'guys',at:{t:40},delay:[3,20],mag:400},{type:'croco',at:{t:0},delay:[3,20],mag:400},{type:'baa',at:{t:20},delay:[3,20],mag:400},{type:'gory',at:{t:40},delay:[20,20],mag:400},{type:'gory',at:{t:40},delay:[20,20],mag:400},{type:'gory',at:{t:40},delay:[20,20],mag:400},{type:'seal',at:{t:40},delay:[3,20],mag:400},{type:'leboin',at:{t:0},count:1,mag:400}],
+ [{type:'dog',at:{t:0},delay:[3,20],mag:400},{type:'guys',at:{t:40},delay:[3,20],mag:400},{type:'croco',at:{t:40},delay:[3,20],mag:400},{type:'duche',at:{hp:80},delay:[4,8],mag:100},{type:'duche',at:{hp:80},count:1,mag:100},{type:'duche',at:{hp:80},count:1,mag:100},{type:'duche',at:{hp:80},count:1,mag:100},{type:'stpigge',at:{hp:80},count:1,boss:true,mag:100},{type:'metalhippo',at:{hp:80},count:1,mag:100},{type:'darkdog',at:{hp:80},delay:[6,10],mag:100},{type:'darkdog',at:{hp:80},delay:[6,10],mag:100},{type:'darkdog',at:{hp:80},delay:[6,10],mag:100},{type:'darkdog',at:{hp:80},count:2,delay:[0.07,0.13],mag:100},{type:'darkdog',at:{hp:80},count:1,mag:100}],
+ [{type:'dog',at:{t:0},delay:[3,20],mag:400},{type:'snache',at:{t:0},delay:[3,20],mag:400},{type:'guys',at:{t:40},delay:[3,20],mag:400},{type:'rhino',at:{t:0},count:1,mag:400},{type:'rabbit',at:{hp:96},delay:[1,6],mag:400},{type:'pigge',at:{hp:96},delay:[3,8],mag:400},{type:'rhino',at:{hp:96},count:3,delay:[0.07,0.13],mag:400},{type:'rhino',at:{hp:96},count:1,mag:400},{type:'squirrel',at:{hp:96},count:1,boss:true,mag:400}],
+ [{type:'dog',at:{t:0},delay:[3,20],mag:400},{type:'snache',at:{t:0},delay:[3,20],mag:400},{type:'guys',at:{t:40},delay:[3,20],mag:400},{type:'gory',at:{t:40},delay:[3,20],mag:400},{type:'seal',at:{t:40},delay:[6.67,20],mag:400},{type:'dagshund',at:{t:46.67},delay:[53.33,53.33],mag:100},{type:'mastera',at:{t:33.33},count:1,mag:100}],
+ [{type:'dog',at:{t:0},delay:[3,20],mag:400},{type:'snache',at:{t:0},delay:[3,20],mag:400},{type:'guys',at:{t:40},delay:[3,20],mag:400},{type:'bear',at:{t:0},delay:[40,53.33],mag:400},{type:'rabbit',at:{hp:99},delay:[3,6],mag:400},{type:'darkdog',at:{t:0},delay:[8,12],mag:100},{type:'darkdog',at:{hp:99},delay:[8,12],mag:100},{type:'darkdog',at:{hp:80},delay:[8,12],mag:100},{type:'bear',at:{hp:99},count:1,mag:400}],
+ [{type:'sloth',at:{t:0},count:1,boss:true,mag:100},{type:'celeboodle',at:{t:120},delay:[24,30.67],mag:100},{type:'darkdog',at:{t:100.67},delay:[24,30.67],mag:100},{type:'darkdog',at:{t:100.67},delay:[24,30.67],mag:100}],
+ [{type:'croco',at:{t:0},delay:[3,20],mag:400},{type:'snache',at:{t:0},delay:[3,20],mag:400},{type:'guys',at:{t:40},delay:[3,20],mag:400},{type:'gory',at:{t:40},delay:[3,20],mag:400},{type:'mastera',at:{hp:90},count:1,mag:100},{type:'dagshund',at:{hp:90},count:1,mag:100},{type:'dagshund',at:{hp:90},count:1,mag:100}],
+ [{type:'dog',at:{t:0},delay:[3,20],mag:400},{type:'snache',at:{t:0},delay:[3,20],mag:400},{type:'guys',at:{t:0},delay:[0.07,4],mag:400},{type:'mastera',at:{t:0},count:1,mag:100},{type:'mastera',at:{t:0},count:1,mag:100},{type:'duche',at:{t:80},delay:[33.33,53.33],mag:100}],
+ [{type:'dog',at:{t:0},delay:[3,20],mag:400},{type:'snache',at:{t:0},delay:[3,20],mag:400},{type:'guys',at:{t:0},delay:[0.07,6],mag:400},{type:'peng',at:{hp:99},delay:[2,8],mag:100},{type:'stpigge',at:{hp:99},delay:[40,53.33],mag:100},{type:'stpigge',at:{hp:99},delay:[40,53.33],mag:100},{type:'celeboodle',at:{hp:99},count:2,delay:[0.07,0.13],mag:100},{type:'sloth',at:{hp:99},count:1,boss:true,mag:100}],
+ [{type:'dog',at:{t:0},delay:[3,20],mag:400},{type:'snache',at:{t:0},delay:[3,20],mag:400},{type:'guys',at:{t:40},delay:[3,20],mag:400},{type:'duche',at:{t:40},delay:[53.33,53.33],mag:100},{type:'duche',at:{t:40.33},delay:[53.33,53.33],mag:100},{type:'duche',at:{t:40.67},delay:[53.33,53.33],mag:100},{type:'dagshund',at:{t:42.67},delay:[53.33,53.33],mag:100}],
+ [{type:'dog',at:{t:0},delay:[3,20],mag:400},{type:'darkdog',at:{hp:50},delay:[2.67,6],mag:100},{type:'squirrel',at:{hp:50},delay:[2.67,6],mag:100},{type:'mooth',at:{hp:50},count:1,mag:400},{type:'mooth',at:{hp:50},count:1,mag:400},{type:'shyboy',at:{hp:50},count:1,mag:400},{type:'shyboy',at:{hp:50},count:1,mag:400},{type:'face',at:{hp:50},count:1,boss:true,mag:400}],
+ [{type:'guys',at:{t:0},delay:[2,8],mag:400},{type:'mastera',at:{t:0},count:1,mag:100},{type:'celeboodle',at:{hp:99},count:3,delay:[0.27,0.67],mag:100},{type:'otta',at:{hp:99},count:1,mag:100},{type:'otta',at:{hp:99},count:1,mag:100},{type:'otta',at:{hp:99},count:1,mag:100},{type:'otta',at:{hp:99},delay:[14,26.67],mag:100},{type:'sloth',at:{hp:99},count:1,boss:true,mag:100}]
+].forEach((rules,j)=>{STAGE_SPAWNS[LEGEND2_START+j]=rules});
 // 未来編 第1章 spawn tables (battlecats-db: frames /30 -> seconds; Ms. Sign, the 15-minute timer mascot, left out).
 const FUTURE_SPAWNS=[
  [{type:'dog',at:{t:0},delay:[6.67,20],mag:200},{type:'snache',at:{t:3.33},delay:[6.67,20],mag:200},{type:'guys',at:{t:10},delay:[10,20],mag:200},{type:'shibalien',at:{hp:99},count:1,boss:true}],
@@ -901,6 +986,12 @@ function renderNewButtons(){for(const type of GENERIC_CD_TYPES){
 
 const RARE_STRIKE={lapis:2,selenite:2,topaz:2,cornflower:2,bittersweet:2,claret:2,verdigris:2,plum:2,forest:2,canary:2,cherry:2,mauve:2,khaki:2,tangerine:2,burgundy:2,mustard:2,sky:2,denim:2,charcoal:2,garnet:2,prism:2,black:1,white:1,maroon:1,brown:1,tan:1,beige:1,cream:1,olive:1,clover:2,indigo:1,lilac:1,hotpink:1,ruby:1,hacienda:2};// attack-frame index where the hit lands (frames before it are the windup)
 const NEW_ATLASES={
+mastera:{scale:0.7,left:-14,sheet:'assets/lg_mastera.png',walk:[[0,14,85,92],[87,13,85,93],[174,14,85,92],[261,14,85,92],[348,14,85,92]],attack:[[435,0,81,106],[518,4,119,102],[639,10,123,96]],hurt:[[764,0,81,106]]},
+celeboodle:{scale:0.8,left:-12,sheet:'assets/lg_celeboodle.png',walk:[[0,0,75,115],[77,0,75,115],[154,0,75,115],[231,0,75,115]],attack:[[308,2,65,113],[375,6,89,109],[466,6,116,109]],hurt:[[584,0,65,115]]},
+dagshund:{scale:0.85,left:-4,sheet:'assets/lg_dagshund.png',walk:[[0,5,95,114],[97,3,95,116],[194,5,95,114],[291,4,95,115]],attack:[[388,0,97,119],[487,7,94,112],[583,7,118,112]],hurt:[[703,6,95,113]]},
+duche:{scale:0.75,left:-10,sheet:'assets/lg_duche.png',walk:[[0,6,89,87],[91,6,89,87],[182,6,89,87],[273,6,89,87]],attack:[[364,0,79,93],[445,30,111,63],[558,10,121,83]],hurt:[[681,0,79,93]]},
+sloth:{scale:0.75,left:-20,sheet:'assets/lg_sloth.png',walk:[[0,18,130,54],[132,16,131,56],[265,16,130,56],[397,22,141,50],[540,17,144,55],[686,17,139,55]],attack:[[827,18,130,54],[959,16,130,56],[1091,0,181,72]],hurt:[[1274,16,131,56]]},
+otta:{scale:0.85,left:-10,sheet:'assets/lg_otta.png',walk:[[0,4,60,93],[62,3,60,94],[124,4,60,93],[186,6,60,91]],attack:[[248,0,57,97],[307,4,68,93],[377,4,91,93]],hurt:[[470,4,60,93]]},
 // Into the Future enemies: frames baked from the game sheets (Battle Cats Wiki NNN_e.png), multi-part rigs
 // assembled from the wiki idle GIFs (Shibalien, Helmut Krabbe, Cli-One, Nimoy Bore) or from their own parts.
 shibalien:{scale:1,left:-6,sheet:'assets/itf_shibalien.png',walk:[[0,8,45,52],[47,8,47,52],[96,8,46,52],[144,8,47,52],[193,8,47,52],[242,8,45,52]],attack:[[289,0,51,60],[342,1,51,59]],hurt:[[395,10,52,50]]},
@@ -1046,7 +1137,7 @@ function animateAtlas(u){
 }
 
 let stageChapterView=1;
-let legendSub=0;// 0 = subchapter list, 1 = inside "전설의 시작"
+let legendSub=0;// 0 = subchapter list, n = inside LEGEND_SUBS[n-1]
 function renderStageMenu(){renderTraining();renderBaseUpgrade();renderSpecialStages();renderSweepBar();
  $('#legendArrow').textContent=stageChapterView==='legend'?'‹':'›';$('#legendArrow').classList.toggle('active',stageChapterView==='legend');
  $('#legendBar').classList.toggle('hidden',stageChapterView!=='legend');
@@ -1097,40 +1188,44 @@ function renderSpecialStages(){
 function legendXP(k){return LEGEND_STAGES[k].xp*LEGEND_XP_SCALE}
 function renderLegend(){
  const grid=$('#stageGrid'),tabs=$('#legendCrowns');grid.innerHTML='';tabs.innerHTML='';
- const open=legendOpen(),done=legendProgress[legendCrown];
- $('#progressText').textContent=`레전드 스토리 · 전설의 시작 ★${legendCrown} · ${done.length} / ${LEGEND_STAGES.length}`;
- $('#chapterNote').textContent=!open?'세계편 1장 마지막 스테이지(달)를 클리어하면 열립니다.':legendSub?'':'서브챕터를 선택하세요.';
+ const open=legendOpen(),sub=legendSub-1,sc=LEGEND_SUBS[sub];
+ $('#progressText').textContent=sc?`레전드 스토리 · ${sc.name} ★${legendCrown} · ${legendSubCount(sub,legendCrown)} / ${sc.len}`:'레전드 스토리';
+ $('#chapterNote').textContent=!open?'세계편 1장 마지막 스테이지(달)를 클리어하면 열립니다.':legendSub?'':'서브챕터를 선택하세요. 앞 서브챕터를 ★1로 모두 클리어하면 다음 서브챕터가 열립니다.';
  tabs.classList.toggle('hidden',!legendSub);
- $('#legendNote').textContent=legendSub?`왕관 난이도 ★${legendCrown}: 적 능력치 ${Math.round(LEGEND_CROWN_MULT[legendCrown-1]*100)}% · 8개 스테이지를 모두 클리어하면 다음 왕관이 열립니다.`:'';
+ $('#legendNote').textContent=legendSub?`왕관 난이도 ★${legendCrown}: 적 능력치 ${Math.round(LEGEND_CROWN_MULT[legendCrown-1]*100)}% · ${sc.len}개 스테이지를 모두 클리어하면 다음 왕관이 열립니다.`:'';
  if(!legendSub){
-  const b=document.createElement('button');b.className='stage-card legend-sub'+(legendProgress[1].length===LEGEND_STAGES.length?' cleared':'');b.disabled=!open;
-  b.innerHTML=`<strong>전설의 시작</strong><small>${open?`★${legendCrown} ${done.length} / ${LEGEND_STAGES.length}`:'잠김'}</small>`;
-  b.onclick=()=>{legendSub=1;renderLegend()};grid.append(b);return;
+  LEGEND_SUBS.forEach((it,n)=>{const ok=legendSubOpen(n),b=document.createElement('button');b.className='stage-card legend-sub'+(legendSubDone(n,1)?' cleared':'');b.disabled=!ok;
+   b.innerHTML=`<strong>${it.name}</strong><small>${ok?`★1 ${legendSubCount(n,1)} / ${it.len}`:'잠김'}</small>`;
+   b.onclick=()=>{legendSub=n+1;if(!legendCrownUnlocked(legendCrown,n))legendCrown=1;renderLegend()};grid.append(b)});
+  return;
  }
  const back=document.createElement('button');back.className='codex-tab';back.textContent='‹ 서브챕터';back.onclick=()=>{legendSub=0;renderLegend()};tabs.append(back);
- for(const c of [1,2,3,4]){const b=document.createElement('button');b.className='codex-tab'+(c===legendCrown?' active':'');b.textContent='★'.repeat(c);b.disabled=!legendCrownUnlocked(c);b.onclick=()=>{legendCrown=c;renderLegend()};tabs.append(b)}
+ for(const c of [1,2,3,4]){const b=document.createElement('button');b.className='codex-tab'+(c===legendCrown?' active':'');b.textContent='★'.repeat(c);b.disabled=!legendCrownUnlocked(c,sub);b.onclick=()=>{legendCrown=c;renderLegend()};tabs.append(b)}
+ const done=legendProgress[legendCrown];
  // only the stages reached so far are shown: the first one, plus one more after each clear
- LEGEND_STAGES.forEach((t,k)=>{if(!legendStageUnlocked(k))return;const i=LEGEND_START+k,cl=done.includes(k),b=document.createElement('button');b.className='stage-card legend-stage'+(cl?' cleared':'');b.title=`${t.en} · ${t.desc} · 등장 적: ${stageEnemies(i).map(type=>UNIT_NAMES[type]).join(' · ')} · 적 성 체력 ${t.hp}`;b.innerHTML=`<strong>${t.flag} ${t.name}</strong><small>${cl?'✓ ':''}${legendXP(k)} XP</small>`;b.onclick=()=>{selectedStage=i;reset()};grid.append(b)});
+ for(let k=sc.start;k<sc.start+sc.len;k++){const t=LEGEND_STAGES[k];if(!legendStageUnlocked(k))continue;const i=legendIdx(k),cl=done.includes(k),b=document.createElement('button');b.className='stage-card legend-stage'+(cl?' cleared':'');b.title=`${t.en?t.en+' · ':''}${t.desc} · 등장 적: ${stageEnemies(i).map(type=>UNIT_NAMES[type]).join(' · ')} · 적 성 체력 ${t.hp}`;b.innerHTML=`<strong>${t.flag} ${t.name}</strong><small>${cl?'✓ ':''}${legendXP(k)} XP</small>`;b.onclick=()=>{selectedStage=i;reset()};grid.append(b)}
 }
 function legendFinish(win){
- const k=STAGES[selectedStage].legend.k,c=legendCrown,list=legendProgress[c],first=win&&!list.includes(k);
- let xp=0,tickets=0,bonusXp=0;
+ const k=STAGES[selectedStage].legend.k,c=legendCrown,list=legendProgress[c],first=win&&!list.includes(k),sub=legendSubOf(k),sc=LEGEND_SUBS[sub],last=k===sc.start+sc.len-1;
+ let xp=0,tickets=0,bonusXp=0,nyan=0;
  if(win){
   const drop=LEGEND_STAGES[k].drop||{};
   xp=legendXP(k);if(!first)xp=Math.floor(xp/2);if(drop.xpChance&&Math.random()<drop.xpChance)bonusXp=drop.xp*LEGEND_XP_SCALE;xp=studyXP(xp);bonusXp=studyXP(bonusXp);training.xp+=xp+bonusXp;saveTraining();
   if(drop.speed&&Math.random()<drop.speed)tickets=1;
   if(tickets){speedTickets+=tickets;saveSpeedTickets();renderSpeedButton()}
+  if(drop.nyan&&Math.random()<drop.nyan){nyan=1;nyancom++;saveNyancom();renderNyancomButton()}
   if(first){list.push(k);saveLegend()}
  }
  game.ended=true;game.running=false;highlight();$('#result').classList.remove('hidden');
  $('#resultTitle').textContent=win?`${STAGES[selectedStage].name} ★${c} 정복 완료!`:'패배...';
  let detail=win?`보상 +${xp} XP`:'아군을 강화하고 다시 도전하세요.';
- if(win&&first&&k<LEGEND_STAGES.length-1)detail=`${LEGEND_STAGES[k+1].name} 스테이지가 열렸어요! `+detail;
+ if(win&&first&&!last)detail=`${LEGEND_STAGES[k+1].name} 스테이지가 열렸어요! `+detail;
  if(bonusXp)detail+=` · 보물 발견! 보너스 +${bonusXp} XP`;
  if(tickets)detail+=` · 스피드업 ${tickets}개 획득! (보유 ${speedTickets}개)`;
- if(win&&first&&list.length===LEGEND_STAGES.length)detail+=c<4?` · 전설의 시작 ★${c+1} 난이도가 열렸어요!`:' · 전설의 시작 ★4 완전 정복!';
+ if(nyan)detail+=` · 야옹컴 1개 획득! (보유 ${nyancom}개)`;
+ if(win&&first&&legendSubDone(sub,c))detail+=(c<4?` · ${sc.name} ★${c+1} 난이도가 열렸어요!`:` · ${sc.name} ★4 완전 정복!`)+(c===1&&LEGEND_SUBS[sub+1]?` · ${LEGEND_SUBS[sub+1].name} 서브챕터가 열렸어요!`:'');
  $('#resultDetail').textContent=detail;
- $('#nextStageBtn').classList.toggle('hidden',!win||k===LEGEND_STAGES.length-1);
+ $('#nextStageBtn').classList.toggle('hidden',!win||last);
  renderNewButtons();renderOrangeButton();renderYellowButton();renderGreenButton();
 }
 $('#chapter1Tab').onclick=()=>{stageChapterView=1;renderStageMenu()};
@@ -1142,7 +1237,7 @@ function openStages(){if(game.running&&!game.ended)game.paused=true;highlight();
 $('#stagesBtn').onclick=openStages;
 $('#resultStagesBtn').onclick=openStages;
 $('#resumeBtn').onclick=()=>{$('#stageMenu').classList.add('hidden');if(!game.ended){game.paused=false;tutorial()}render()};
-$('#nextStageBtn').onclick=()=>{const lg=STAGES[selectedStage].legend;if(lg){if(game.ended&&lg.k<LEGEND_STAGES.length-1&&legendStageUnlocked(lg.k+1)){selectedStage++;reset()}return}if(game.ended&&isStoryStage(selectedStage)&&!isChainEnd(selectedStage)&&isUnlocked(selectedStage+1)){selectedStage++;reset()}};
+$('#nextStageBtn').onclick=()=>{const lg=STAGES[selectedStage].legend;if(lg){if(game.ended&&legendSubOf(lg.k+1)===legendSubOf(lg.k)&&legendStageUnlocked(lg.k+1)){selectedStage=legendIdx(lg.k+1);reset()}return}if(game.ended&&isStoryStage(selectedStage)&&!isChainEnd(selectedStage)&&isUnlocked(selectedStage+1)){selectedStage++;reset()}};
 window.addEventListener('resize',syncBasePositions);
 
 
@@ -1468,8 +1563,14 @@ addEventListener('pagehide',saveAll);
 document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')saveAll()});
 
 // Order is rough difficulty progression from Korea to the Moon; used only for codex browsing.
-const ENEMY_ORDER=['dog','snache','guys','hippo','pigge','peng','gory','baa','croco','rabbit','squirrel','seal','leboin','kangaroo','mooth','rhino','bear','face','nyandam','bunbun','darkdog','metalhippo','stpigge','shyboy','gorydark','shadowboxer','heavenlyhippoe','shibalien','kroxo','hyppoh','sael','maawth','lemurr','krabbe','liz56','ursamajor','phace','nimoy','clione'];
+const ENEMY_ORDER=['dog','snache','guys','hippo','pigge','peng','gory','baa','croco','rabbit','squirrel','seal','leboin','kangaroo','mooth','rhino','bear','face','nyandam','bunbun','darkdog','metalhippo','stpigge','duche','celeboodle','dagshund','otta','mastera','sloth','shyboy','gorydark','shadowboxer','heavenlyhippoe','shibalien','kroxo','hyppoh','sael','maawth','lemurr','krabbe','liz56','ursamajor','phace','nimoy','clione'];
 const ENEMY_TEXT={
+ duche:'꽥꽥거리며 다가오는 오리. 목을 쭉 내밀어 쪼아댄다. (레전드 스토리)',
+ celeboodle:'진주 목걸이를 건 우아한 푸들. 발걸음이 빨라 순식간에 파고든다. (레전드 스토리)',
+ dagshund:'두 발로 선 닥스훈트. 앞발로 땅을 내리쳐 주변을 휩쓴다. (레전드 스토리)',
+ otta:'돌을 품고 다니는 수달. 그 돌로 힘껏 내리친다. (레전드 스토리)',
+ mastera:'긴 혀를 휘두르는 개미핥기 스승. 사거리가 길고 한 방이 묵직하다. (레전드 스토리 보스)',
+ sloth:'엎드린 채 느릿느릿 기어 오는 나무늘보. 느리지만 체력과 공격력이 엄청나다. (레전드 스토리 보스)',
  shibalien:'우주에서 온 에이리언 멍뭉이. 미래편 어디에나 나타나며 멍뭉이보다 훨씬 단단하다. 에이리언. (미래편)',
  kroxo:'눈이 툭 튀어나온 외계 아거. 작지만 빠른 연속 물기로 전선을 갉아먹는다. 에이리언. (미래편)',
  hyppoh:'하마양을 닮은 외계 생물. 큰 입으로 주변을 한꺼번에 물어뜯는다. 에이리언. (미래편)',

@@ -103,15 +103,15 @@ legendFinish=function(win){
  _legendFinish(win);
  if(!win)return;
  let t1=0,t10=0;
- if(!had){t1+=c;if(legendProgress[c].length===LEGEND_STAGES.length)t10+=c}// ★n 왕관은 n배
+ if(!had){t1+=c;if(legendSubDone(legendSubOf(k),c))t10+=c}// ★n 왕관은 n배 · 서브챕터를 다 깨면 10회권
  else if(Math.random()<GACHA_CFG.repeatLegend)t1+=1;
  if(t1||t10){gachaGive(t1,t10);gachaAppendDetail(gachaTicketText(t1,t10)+' 획득!')}
 };
-// 토파즈 (EX): 레전드 ★2 난이도의 8개 스테이지를 모두 클리어하면 획득
+// 토파즈 (EX): 레전드 '전설의 시작' ★2 난이도의 8개 스테이지를 모두 클리어하면 획득
 const _legendFinish3=legendFinish;
 legendFinish=function(win){
  const c=legendCrown;_legendFinish3(win);
- if(win&&c===2&&legendProgress[2].length===LEGEND_STAGES.length)grantEx('topaz');
+ if(win&&c===2&&legendSubDone(0,2))grantEx('topaz');
 };
 // 가넷 (EX): 전설의 시작을 모두 클리어한 뒤 마지막 스테이지를 클리어할 때마다 30% 확률로 획득
 const GARNET_DROP=.3;
@@ -119,7 +119,7 @@ const _legendFinish2=legendFinish;
 legendFinish=function(win){
  const k=STAGES[selectedStage].legend.k,c=legendCrown;
  _legendFinish2(win);
- if(win&&k===LEGEND_STAGES.length-1&&legendProgress[c].length===LEGEND_STAGES.length&&!gachaOwns('garnet')&&Math.random()<GARNET_DROP){
+ if(win&&k===LEGEND_SUBS[0].len-1&&legendSubDone(0,c)&&!gachaOwns('garnet')&&Math.random()<GARNET_DROP){
   gacha.owned.push('garnet');saveGacha();gachaAppendDetail('EX 가넷 획득!');renderNewButtons();
  }
 };
