@@ -362,7 +362,8 @@ function drawUnit(u){let e=document.createElement('div'),evolved=u.ally&&u.stats
 // 원거리 사각지대: an ally that attacks from far away (attackType '원거리') cannot hit anything closer than
 // DEAD_ZONE_RATIO of its range. It still stops for such an enemy, it just has to wait for a target in the window.
 const DEAD_ZONE_RATIO=.25;
-function deadZone(u){if(!u.ally||attackType(u.type)!=='원거리')return 0;const d=u.stats||data.units[u.type];return d.zoneMin??d.range*DEAD_ZONE_RATIO}
+function deadZone(u){if(!u.ally||attackType(u.type)!=='원거리')return 0;const d=u.stats||data.units[u.type];if(d.engageRange)return 0;// engages up close (핑크): a blind spot would freeze it
+ return d.zoneMin??d.range*DEAD_ZONE_RATIO}
 function targetValid(u){const dz=deadZone(u);if(!dz)return target(u);const dir=u.ally?-1:1;return game.units.filter(v=>v.hp>0&&v.kbTime<=0&&!v.emerging&&v.ally!==u.ally&&dir*(v.x-u.x)>=-1&&Math.abs(v.x-u.x)>=dz).sort((a,b)=>Math.abs(a.x-u.x)-Math.abs(b.x-u.x))[0]}
 function target(u){let foes=game.units.filter(v=>v.hp>0&&v.kbTime<=0&&!v.emerging&&v.ally!==u.ally);let dir=u.ally?-1:1;return foes.filter(v=>dir*(v.x-u.x)>=-1).sort((a,b)=>Math.abs(a.x-u.x)-Math.abs(b.x-u.x))[0]}
 // Canonical knockback counts include death. Red keeps its original two live hitbacks.
@@ -523,7 +524,7 @@ function updateShots(dt){
 }
 function launchJuice(u,t){
  const end=t?t.x:data.bases.enemy.frontX,el=document.createElement('span');el.className='juice-projectile '+u.type+'-shot';unitsEl.append(el);
- const shot={start:u.x,end,time:0,duration:u.stats.flight||.35,damage:u.stats.atk,radius:u.stats.splash,source:u,type:u.type,el};
+ const shot={start:u.x,end,time:0,duration:u.stats.flight||.35,damage:u.stats.atk,radius:u.stats.splash,source:u,type:u.type,target:t,el};
  game.projectiles.push(shot);positionJuice(shot);
 }
 function positionJuice(p){const progress=p.time/p.duration;p.el.style.left=(p.start+(p.end-p.start)*progress)+'%';p.el.style.translate=`-50% ${-28-Math.sin(progress*Math.PI)*32}px`}
@@ -532,8 +533,9 @@ function updateJuice(dt){
  for(const p of [...game.projectiles]){
   p.time=Math.min(p.duration,p.time+dt);positionJuice(p);if(p.time<p.duration)continue;
   p.el.remove();game.projectiles.splice(game.projectiles.indexOf(p),1);
-  const effect=document.createElement('span');effect.className='juice-splash '+p.type+'-splash';effect.style.left=p.end+'%';effect.style.width=(p.radius*2)+'%';unitsEl.append(effect);game.effects.push({el:effect,time:.25});
-  for(const v of [...game.units])if(!v.ally&&Math.abs(v.x-p.end)<=p.radius)damage(v,p.damage,p.source);
+  const cx=p.target&&p.target.hp>0&&!p.target.ally?p.target.x:p.end;// land on where the target is now, not where it was
+  const effect=document.createElement('span');effect.className='juice-splash '+p.type+'-splash';effect.style.left=cx+'%';effect.style.width=(p.radius*2)+'%';unitsEl.append(effect);game.effects.push({el:effect,time:.25});
+  for(const v of [...game.units])if(!v.ally&&Math.abs(v.x-cx)<=p.radius)damage(v,p.damage,p.source);
   const base=data.bases.enemy;if(Math.abs(base.frontX-p.end)<=p.radius){base.hp=Math.max(0,base.hp-baseDamage(p.damage));if(!base.hp){finish(true);return}}
  }
 }
@@ -571,7 +573,7 @@ function resolveAttack(u,t,share=1){
   }
  }
  const base=u.ally?data.bases.enemy:data.bases.ally;
- if(Math.abs(base.frontX-u.x)<=(d.engageRange??d.range)){base.hp=Math.max(0,base.hp-baseDamage(d.atk*share));if(!base.hp)finish(u.ally)}
+ if(Math.abs(base.frontX-u.x)<=(d.engageRange??d.range)){base.hp=Math.max(0,base.hp-baseDamage((d.damageTiers?tierDamage(d.damageTiers,Math.abs(base.frontX-u.x)):d.atk)*(d.multiHit||1)*share));if(!base.hp)finish(u.ally)}
 }
 function attack(u,t){
  if(game.ended||u.hp<=0||u.kbTime>0)return;
