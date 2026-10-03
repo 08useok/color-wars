@@ -262,3 +262,6 @@ body { overflow:auto; }
 .wave-splash{border-radius:12px;border:3px solid #9fd8ff;background:linear-gradient(90deg,#9fd8ff22,#9fd8ff88);height:56px}
 .unit.surviving{filter:drop-shadow(0 0 6px #ff4d4d)}
 .unit.slow-cycle{filter:saturate(.6)}
+.item-group{display:flex;align-items:center;gap:3px}.topline .item-lock{padding:6px 7px;font-size:13px;line-height:1}.topline .item-lock.active{background:#6b5216;border-color:#ffd35a;box-shadow:0 0 6px #ffd35a66}
+@media(max-width:700px){.topline .item-lock{padding:5px 4px;font-size:12px}.item-group{gap:2px}}
+@media(max-width:700px){.topline{gap:3px}.topline button{padding:5px 6px;font-size:11px;white-space:nowrap;line-height:1.15}.topline button small{font-size:9px}.topline #timer{font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;flex:1 1 auto}.topline .item-lock{padding:5px 4px}}

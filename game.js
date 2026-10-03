@@ -477,7 +477,7 @@ function renderYellowButton(){
  button.querySelector('em').style.display=game.yellowCd>0?'block':'none';button.querySelector('em').style.transform=`scaleY(${game.yellowCd/unitStats('yellow').cooldown})`;
  button.title='체력 900 · 공격력 45 · 공격 주기 1.8초 · 재출격 5초';
 }
-function loop(t){const raw=last?Math.min(.05,(t-last)/1000):0;last=t;const dt=raw*(game.speedMultiplier||1);if(game&&!game.ended&&!game.paused){if(game.running)update(dt);else if(game.tutorial===2||game.tutorial===4){game.money=Math.min(walletMax(),game.money+incomeRate()*dt);render()}}requestAnimationFrame(loop)}
+function loop(t){if(game&&game.running&&!game.ended&&!game.paused&&!game.itemLocksApplied)applyItemLocks();const raw=last?Math.min(.05,(t-last)/1000):0;last=t;const dt=raw*(game.speedMultiplier||1);if(game&&!game.ended&&!game.paused){if(game.running)update(dt);else if(game.tutorial===2||game.tutorial===4){game.money=Math.min(walletMax(),game.money+incomeRate()*dt);render()}}requestAnimationFrame(loop)}
 function highlight(sel){document.querySelectorAll('.tutorial-target').forEach(e=>e.classList.remove('tutorial-target'));if(sel)$(sel).classList.add('tutorial-target');$('#game').classList.toggle('guiding',!!sel)}
 function tutorial(){let text=$('#tutorialText'),next=$('#nextBtn'),box=$('#tutorial');let steps=[['오른쪽은 아군의 성입니다.','#allyBase'],['왼쪽의 적 성을 파괴하면 승리합니다!','#enemyBase'],['돈을 사용해서 레드를 생성해 보세요!','#spawnBtn'],['돈은 시간이 지나면 자동으로 모입니다. 적을 쓰러뜨려도 돈을 얻습니다!','#money'],['수입을 업그레이드하면 더 많은 돈을 더 빠르게 모을 수 있습니다!','#incomeBtn'],['캐릭터와 적은 자동으로 이동하고 공격합니다. 레드를 계속 생성해 적 성을 파괴하세요!','']];if(game.tutorial>=steps.length){box.classList.add('hidden');highlight();game.running=true;return}box.classList.remove('hidden');text.textContent=steps[game.tutorial][0];highlight(steps[game.tutorial][1]);next.style.display=(game.tutorial===2||game.tutorial===4)?'none':'inline-block'}
 $('#nextBtn').onclick=()=>{game.tutorial++;tutorial();render()};$('#spawnBtn').onclick=()=>addUnit('red');$('#orangeBtn').onclick=()=>addUnit('orange');$('#yellowBtn').onclick=()=>addUnit('yellow');$('#greenBtn').onclick=()=>addUnit('green');for(const t of GENERIC_CD_TYPES)$('#'+t+'Btn').onclick=()=>addUnit(t);$('#incomeBtn').onclick=()=>{let l=data.income[game.level];if(!game.ended&&!game.paused&&(game.running||game.tutorial===4)&&l.cost!==null&&game.money>=l.cost){game.money-=l.cost;game.level++;if(game.tutorial===4){game.tutorial++;tutorial()}render()}};function finish(win){if(game.ended)return;if(STAGES[selectedStage].legend){legendFinish(win);return}const sp=STAGES[selectedStage].special,xpReward=win&&!sp?awardXP():0;const speedDropped=win&&!sp&&selectedStage>=18&&Math.random()<0.3;let specialDrop=0;if(win&&sp&&Math.random()<sp.chance){specialDrop=sp.count;if(sp.item==='nyancom'){nyancom+=specialDrop;saveNyancom()}else{speedTickets+=specialDrop;saveSpeedTickets()}renderSpeedButton();renderNyancomButton()}if(speedDropped){speedTickets++;saveSpeedTickets();renderSpeedButton()}game.ended=true;game.running=false;highlight();$('#result').classList.remove('hidden');$('#resultTitle').textContent=win?STAGES[selectedStage].name+' 정복 완료!':'패배...';if(win&&!sp&&!cleared.includes(selectedStage)){cleared.push(selectedStage);saveProgress()}$('#nextStageBtn').classList.toggle('hidden',!win||!!sp||selectedStage===MAIN_STAGE_COUNT-1);$('#resultDetail').textContent=win?(sp?'':selectedStage===MAIN_STAGE_COUNT-1?MAIN_STAGE_COUNT+'개 스테이지를 모두 정복했어요!':(STAGES[selectedStage+1]||{}).name+' 스테이지가 열렸어요!'):'수입을 올리고 아군을 모아서 다시 도전하세요.';if(win&&selectedStage===2)$('#resultDetail').textContent+=' 오렌지가 해금됐어요!';if(win&&selectedStage===5)$('#resultDetail').textContent+=' 옐로우가 해금됐어요!';if(win&&selectedStage===6)$('#resultDetail').textContent+=' 그린이 해금됐어요!';if(win){for(const t of ['cyan','blue','purple',...NEW_ALLY_TYPES])if(selectedStage===UNLOCK_AT[t])$('#resultDetail').textContent+=' '+UNIT_NAMES[t]+' 해금!';$('#resultDetail').textContent+=` 보상 +${xpReward} XP`;}if(speedDropped)$('#resultDetail').textContent+=' 2배속권 획득!';if(sp){const itemName=sp.item==='nyancom'?'야옹컴':'스피드업',held=sp.item==='nyancom'?nyancom:speedTickets;$('#resultDetail').textContent=win?(specialDrop?`${itemName} ${specialDrop}개 획득! (보유 ${held}개)`:`이번에는 ${itemName}을(를) 얻지 못했어요. 다시 도전해 보세요!`):'전력을 올리고 다시 도전하세요.'}renderNewButtons();renderOrangeButton();renderYellowButton();renderGreenButton()}$('#restartBtn').onclick=reset;
@@ -1082,6 +1082,21 @@ function saveSpeedTickets(){try{localStorage.setItem('red-battle-speed-v1',Strin
 let nyancom=0;// 야옹컴 count (Friday stage drops / XP shop); 1 per auto-battle, 2 per 황금 야옹컴 sweep
 try{const raw=localStorage.getItem('red-battle-nyancom-v1');const n=parseInt(raw,10);if(Number.isInteger(n)&&n>=0)nyancom=n}catch{}
 function saveNyancom(){try{localStorage.setItem('red-battle-nyancom-v1',String(nyancom))}catch{}}
+// Item-Lock (original: the padlock at the end of the pre-battle item row keeps chosen items selected for
+// every stage). Here: a locked 배속/야옹컴 switches itself on when each battle starts, spending one item as usual.
+let itemLock={speed:false,cpu:false};
+try{const saved=JSON.parse(localStorage.getItem('red-battle-itemlock-v1')||'{}');itemLock.speed=saved.speed===true;itemLock.cpu=saved.cpu===true}catch{}
+function saveItemLock(){try{localStorage.setItem('red-battle-itemlock-v1',JSON.stringify(itemLock))}catch{}}
+function useSpeedItem(){if(game.speedUnlocked||speedTickets<=0)return false;speedTickets--;saveSpeedTickets();game.speedUnlocked=true;game.speedMultiplier=2;return true}
+function useCpuItem(){if(game.autoUnlocked||nyancom<=0||game.tutorial<6)return false;nyancom--;saveNyancom();game.autoUnlocked=true;game.auto=true;return true}
+// Runs once per battle, on its first unpaused tick (so the paused battle behind the menu on page load spends nothing).
+function applyItemLocks(){game.itemLocksApplied=true;if(itemLock.speed)useSpeedItem();if(itemLock.cpu)useCpuItem();renderSpeedButton();renderNyancomButton()}
+function renderItemLocks(){for(const [k,id,name] of [['speed','#speedLock','배속'],['cpu','#nyancomLock','야옹컴']]){const b=$(id);if(!b)continue;b.textContent=itemLock[k]?'🔒':'🔓';b.classList.toggle('active',itemLock[k]);b.title=itemLock[k]?`${name} 잠금 중: 전투가 시작되면 자동으로 켜집니다 (1개 사용)`:`${name} 잠금: 누르면 전투마다 자동으로 켜집니다`;b.setAttribute('aria-pressed',itemLock[k])}}
+for(const [k,id] of [['speed','#speedLock'],['cpu','#nyancomLock']])$(id).onclick=()=>{itemLock[k]=!itemLock[k];saveItemLock();
+ // locking mid-battle also switches the item on now if this battle hasn't used it yet
+ if(itemLock[k]&&game.running&&!game.ended&&game.itemLocksApplied){if(k==='speed')useSpeedItem();else useCpuItem()}
+ renderItemLocks();renderSpeedButton();renderNyancomButton()};
+renderItemLocks();
 function renderNyancomButton(){
  const b=$('#nyancomBtn');if(!b)return;
  b.firstChild.textContent=game.auto?'야옹컴 작동 중':'야옹컴';
@@ -1091,7 +1106,7 @@ function renderNyancomButton(){
 }
 $('#nyancomBtn').onclick=()=>{
  if(game.ended||!game.running||game.tutorial<6)return;
- if(!game.autoUnlocked){if(nyancom<=0)return;nyancom--;saveNyancom();game.autoUnlocked=true;game.auto=true}
+ if(!game.autoUnlocked){if(!useCpuItem())return}
  else game.auto=!game.auto;
  renderNyancomButton();
 };
@@ -1103,8 +1118,7 @@ function renderSpeedButton(){
 }
 $('#speedBtn').onclick=()=>{
  if(!game.speedUnlocked){
-  if(speedTickets<=0)return;
-  speedTickets--;saveSpeedTickets();game.speedUnlocked=true;game.speedMultiplier=2;
+  if(!useSpeedItem())return;
  }else{
   game.speedMultiplier=game.speedMultiplier===2?1:2;
  }
