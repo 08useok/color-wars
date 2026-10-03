@@ -105,6 +105,16 @@ legendFinish=function(win){
  else if(Math.random()<GACHA_CFG.repeatLegend)t1+=1;
  if(t1||t10){gachaGive(t1,t10);gachaAppendDetail(gachaTicketText(t1,t10)+' 획득!')}
 };
+// 가넷 (EX): 전설의 시작을 모두 클리어한 뒤 마지막 스테이지를 클리어할 때마다 30% 확률로 획득
+const GARNET_DROP=.3;
+const _legendFinish2=legendFinish;
+legendFinish=function(win){
+ const k=STAGES[selectedStage].legend.k,c=legendCrown;
+ _legendFinish2(win);
+ if(win&&k===LEGEND_STAGES.length-1&&legendProgress[c].length===LEGEND_STAGES.length&&!gachaOwns('garnet')&&Math.random()<GARNET_DROP){
+  gacha.owned.push('garnet');saveGacha();gachaAppendDetail('EX 가넷 획득!');renderNewButtons();
+ }
+};
 const _allyUnlocked=allyUnlocked;
 allyUnlocked=function(t){return _allyUnlocked(t)||gachaOwns(t)};
 
@@ -144,7 +154,7 @@ function renderGacha(results){
  if(results){const box=$('#gachaResults');box.innerHTML='';results.forEach(r=>box.append(gachaCard(r)))}
  const own=$('#gachaOwned');own.innerHTML='';
  for(const s of [...GACHA_SR,GACHA_PRISM]){const d=document.createElement('div');d.className='gacha-slot'+(gachaOwns(s.id)?' owned':'')+(s.id==='prism'?' prism':'');d.textContent=gachaOwns(s.id)?s.name:data.units[s.id]?'？？？':'준비 중';own.append(d)}
- $('#gachaOwnedText').textContent=`${gacha.owned.length} / ${GACHA_SR.length+1}`;
+ $('#gachaOwnedText').textContent=`${[...GACHA_SR,GACHA_PRISM].filter(s=>gachaOwns(s.id)).length} / ${GACHA_SR.length+1}`;
 }
 function gachaDoPull(times){const out=gachaPull(times);if(out)renderGacha(out)}
 GACHA_BTN.onclick=()=>{renderGacha();$('#gachaResults').innerHTML='';GACHA_OVERLAY.classList.remove('hidden')};
