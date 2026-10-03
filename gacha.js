@@ -137,7 +137,13 @@ function gachaToast(text){GACHA_TOAST.textContent=text;GACHA_TOAST.classList.rem
 function gachaOpen(){return !GACHA_OVERLAY.classList.contains('hidden')}
 const GACHA_BTN=document.createElement('button');GACHA_BTN.id='gachaOpenBtn';GACHA_BTN.type='button';
 document.querySelector('.stage-heading-actions').prepend(GACHA_BTN);
-function renderGachaBadge(){GACHA_BTN.textContent=`뽑기 🎟 ${gacha.t1+gacha.t10}`}
+const GACHA_LOBBY=document.createElement('section');GACHA_LOBBY.className='training gacha-lobby';
+GACHA_LOBBY.innerHTML='<div class="gacha-lobby-info"><h2>뽑기</h2><p id="gachaLobbyText"></p></div><button id="gachaLobbyBtn" type="button" class="gacha-lobby-btn">뽑기 하러 가기</button>';
+document.querySelector('.stage-panel .stage-intro').after(GACHA_LOBBY);
+function renderGachaBadge(){
+ GACHA_BTN.textContent=`뽑기 🎟 ${gacha.t1+gacha.t10}`;
+ $('#gachaLobbyText').innerHTML=`1회권 <b>${gacha.t1}</b>장 · 10회권 <b>${gacha.t10}</b>장`+(gachaBonusDay()?' · <em>10+1 기간! 보너스는 SR 확정</em>':' · 매달 1~10일 10+1')+'<br><small>SR 16명 · 울트라 슈퍼 레어 프리즘</small>';
+}
 function gachaCard(r){
  const c=document.createElement('div');c.className='gacha-card '+(r.kind==='misc'?'misc':r.kind)+(r.bonus?' bonus':'');
  const tag=r.bonus?'<em>보너스 · SR 확정</em>':'';
@@ -165,7 +171,9 @@ function renderGacha(results){
  $('#gachaOwnedText').textContent=`${[...GACHA_SR,GACHA_PRISM].filter(s=>gachaOwns(s.id)).length} / ${GACHA_SR.length+1}`;
 }
 function gachaDoPull(times){const out=gachaPull(times);if(out)renderGacha(out)}
-GACHA_BTN.onclick=()=>{renderGacha();$('#gachaResults').innerHTML='';GACHA_OVERLAY.classList.remove('hidden')};
+function openGacha(){renderGacha();$('#gachaResults').innerHTML='';GACHA_OVERLAY.classList.remove('hidden')}
+GACHA_BTN.onclick=openGacha;$('#gachaLobbyBtn').onclick=openGacha;
+GACHA_OVERLAY.addEventListener('click',e=>{if(e.target===GACHA_OVERLAY)GACHA_OVERLAY.classList.add('hidden')});
 $('#gachaCloseBtn').onclick=()=>GACHA_OVERLAY.classList.add('hidden');
 $('#gachaPull1').onclick=()=>gachaDoPull(1);
 $('#gachaPull10').onclick=()=>gachaDoPull(10);

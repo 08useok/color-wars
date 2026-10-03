@@ -271,9 +271,10 @@ body { overflow:auto; }
 .white-btn i{box-shadow:inset 0 0 0 2px #999}.black-btn i{box-shadow:inset 0 0 0 2px #777}
 
 /* 뽑기 */
-#gachaMenu{z-index:42;pointer-events:auto;background:#101b2cf5;overflow:auto;align-items:flex-start;padding:28px 20px;}
+#gachaMenu{z-index:42;pointer-events:auto;background:#050a14b8;align-items:center;justify-content:center;padding:0}
 #gachaMenu.hidden{display:none;}
-.gacha-panel{width:min(900px,100%);margin:auto;}
+.gacha-panel{width:70vw;height:75vh;overflow:auto;margin:0;padding:22px 26px;background:#14223a;border:1px solid #5a7399;border-radius:18px;box-shadow:0 18px 60px #000a}
+@media(max-width:800px){.gacha-panel{width:94vw;height:88vh;padding:16px}}
 .gacha-tickets{display:flex;gap:12px;margin:12px 0;flex-wrap:wrap}.gacha-tickets span{background:#20314a;border:1px solid #4d6685;border-radius:12px;padding:10px 18px;font-weight:800;color:#cfe0f7}.gacha-tickets b{color:#ffd35a;font-size:1.3rem;margin-left:6px}
 .gacha-note{color:#b9c8dd;font-size:.92rem;margin:8px 0;line-height:1.5}.gacha-note.active{color:#ffe89a;font-weight:800}
 .gacha-actions{display:flex;gap:12px;flex-wrap:wrap;margin:10px 0}
@@ -288,3 +289,6 @@ body { overflow:auto; }
 .cornflower-btn i{background:#8499fb}.bittersweet-btn i{background:#fc885c}.claret-btn i{background:#94263f}.verdigris-btn i{background:#1eb2af}
 .controls .unit-btn strong{word-break:keep-all}.controls #bittersweetBtn strong,.controls #claretBtn strong{font-size:.86em;line-height:1.1}
 .lapis-btn i{background:#26619c}.selenite-btn i{background:#cfc8ee}.topaz-btn i{background:#f9a825}
+.gacha-lobby{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;background:linear-gradient(135deg,#3a2a6a,#1f3a68);border:1px solid #9a86e0}
+.gacha-lobby h2{margin:0 0 6px}.gacha-lobby p{margin:0;color:#e4dcff;line-height:1.6}.gacha-lobby b{color:#ffd35a;font-size:1.15rem}.gacha-lobby em{font-style:normal;color:#ffe89a;font-weight:800}.gacha-lobby small{color:#bfb4ee}
+.gacha-lobby-btn{padding:16px 30px;border-radius:14px;font-weight:900;font-size:1.1rem;border:2px solid #ffd35a;background:#7a3fa6;color:#fff;cursor:pointer}.gacha-lobby-btn:hover{filter:brightness(1.15)}
