@@ -283,8 +283,8 @@ data.units.hotpink={hp:450,atk:200,interval:3.4,speed:5,range:20,cost:300,cooldo
 data.units.ruby={hp:600,atk:260,interval:3,speed:5,range:12,cost:325,cooldown:12,knockbacks:3,area:true,freezeChance:.25,freezeDuration:1.5,statusVs:['red'],attackDuration:.6,windup:.2};
 // EX 가넷: 레전드 스토리 1장 올클리어 30% 드롭 · 살아남는다 + 검은 적 엄강 · Lv.20 체력 10만 / 공격력 16,000 (3장 빠옹 한 방)
 data.units.garnet={hp:3100,atk:1600,interval:3.2,speed:5,range:5,cost:900,cooldown:30,knockbacks:4,strongVs:['black'],survive:.3,attackDuration:1,windup:.45};
-// 울슈레 프리즘: 원거리 범위 · 선딜 길고 맞은 적을 밀치기 · 사거리 20, 타격 구간 12.5~27.5 (원작 400 / 250~550 ÷ 20)
-data.units.prism={hp:1000,atk:600,interval:5.4,speed:5,range:20,zoneMin:12.5,zoneMax:27.5,cost:900,cooldown:25,knockbacks:3,area:true,push:7,attackDuration:1,windup:.6};
+// 울슈레 프리즘: 원거리 범위 · 선딜 길고 맞은 적을 밀치기 · 인식 범위 28, 타격 구간 10~40 (처음 설계 400 / 250~550 ÷ 20 = 20 / 12.5~27.5에서 확대)
+data.units.prism={hp:1000,atk:600,interval:5.4,speed:5,range:28,zoneMin:10,zoneMax:40,cost:900,cooldown:25,knockbacks:3,area:true,push:7,attackDuration:1,windup:.6};
 // SR 12명 (뽑기 전용, 2진 없음): 능력은 하나씩, 확률은 아주 가끔/가끔/자주로 설명
 data.units.plum={hp:450,atk:300,interval:4.4,speed:5,range:38,cost:550,cooldown:20,knockbacks:3,atkDownPct:.5,atkDownChance:.5,atkDownDuration:5,statusVs:['angel'],attackDuration:.8,windup:.35};
 data.units.forest={hp:1200,atk:520,interval:2.2,speed:5,range:5,cost:450,cooldown:15,knockbacks:3,strongVs:['angel'],attackDuration:.8,windup:.35};
