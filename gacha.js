@@ -178,4 +178,6 @@ $('#gachaCloseBtn').onclick=()=>GACHA_OVERLAY.classList.add('hidden');
 $('#gachaPull1').onclick=()=>gachaDoPull(1);
 $('#gachaPull10').onclick=()=>gachaDoPull(10);
 renderGachaBadge();
+// game.js drew the first screen before this file loaded, so characters owned through the gacha/rewards were still locked: redraw now.
+{const menuOpen=!$('#stageMenu').classList.contains('hidden');if(menuOpen)renderStageMenu();renderNewButtons();renderDeckButtons();render()}
 {const d=gachaClaimDaily();if(d){renderGachaBadge();gachaToast(`일일 보상! ${gachaTicketText(d.t1,d.t10)} (${d.streak}일 연속 출석)`)}}
