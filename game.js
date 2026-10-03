@@ -970,12 +970,15 @@ $('#nextStageBtn').onclick=()=>{const lg=STAGES[selectedStage].legend;if(lg){if(
 window.addEventListener('resize',syncBasePositions);
 
 
-const EVOLVED_CELL_W=1536/7*.75,EVOLVED_CELL_H=1024/8*.75;
+// evolved_sheet.png: 7x8 cells of 1536/7 x 159. Each cell is the original 128px cell with 16px added above
+// and 15px below, so art that used to spill into the neighbouring row (feet, sparkles) has its own room.
+const EVOLVED_PAD_TOP=16,EVOLVED_CELL_W=1536/7*.75,EVOLVED_CELL_H=159*.75;
 // Windup (col 3) / impact (col 4) crops in source px of the 1774px-wide ally sheets:
 // [x0,x1,dx]. The thrown object starts inside col 3, right after the windup body, so
 // plain cell crops either cut it or (showing cols 3+4 together) draw the windup body
 // and the impact body at once. dx re-anchors the impact body onto the walk position.
-const LEGACY_THROW_CROPS={orange:{3:[665,858],4:[862,1109,66]},yellow:{3:[665,870],4:[871,1109,64]},green:{3:[665,876],4:[879,1109,55]}};
+// purple reuses orange's row and cyan's own sheet is laid out identically, so both need orange's throw crops
+const LEGACY_THROW_CROPS={orange:{3:[665,858],4:[862,1109,66]},purple:{3:[665,858],4:[862,1109,66]},cyan:{3:[665,858],4:[862,1109,66]},yellow:{3:[665,870],4:[871,1109,64]},green:{3:[665,876],4:[876,1109,58]}};
 LEGACY_THROW_CROPS.purple=LEGACY_THROW_CROPS.cyan=LEGACY_THROW_CROPS.orange;
 // evolved_sheet.png's walk cycle (cols 0-2) only draws the held weapon/item in some
 // frames for these three - col 2 drops red's sword entirely, and green/cyan only hold
@@ -990,7 +993,7 @@ const EVOLVED_HELD_ITEM={
  green:{x:134,y:28,w:76,h:78,hand0:[156,88],handOther:[130,73],hands:{1:[132,73],2:[128,74]}},
  cyan:{x:130,y:55,w:58,h:58,hand0:[159,84],handOther:[137,84],hands:{1:[137,85],2:[134,83]}}
 };
-const EVOLVED_SCALE=.75,EVOLVED_SPRITE_LEFT=-61.3,EVOLVED_SPRITE_BOTTOM=-3,EVOLVED_CELL_W_NATIVE=1536/7,EVOLVED_CELL_H_NATIVE=1024/8;
+const EVOLVED_SCALE=.75,EVOLVED_SPRITE_LEFT=-61.3,EVOLVED_SPRITE_BOTTOM=-3,EVOLVED_CELL_W_NATIVE=1536/7,EVOLVED_CELL_H_NATIVE=159;
 function animateAlly(u){
  const state=u.hurtTime>0?'hurt':u.attackTime>0?'attack':'walk';
  if(u.stats?.evolved){
@@ -1007,7 +1010,7 @@ function animateAlly(u){
     itemEl.style.left=(EVOLVED_SPRITE_LEFT+(EVOLVED_CELL_W_NATIVE-(item.x+item.w))*EVOLVED_SCALE-hx*EVOLVED_SCALE)+'px';
     itemEl.style.bottom=(EVOLVED_SPRITE_BOTTOM+96-(item.y+item.h)*EVOLVED_SCALE-hy*EVOLVED_SCALE)+'px';
     itemEl.style.width=(item.w*EVOLVED_SCALE)+'px';itemEl.style.height=(item.h*EVOLVED_SCALE)+'px';
-    itemEl.style.backgroundPosition=`${-(item.x*EVOLVED_SCALE)}px ${-(row*EVOLVED_CELL_H+item.y*EVOLVED_SCALE)}px`;
+    itemEl.style.backgroundPosition=`${-(item.x*EVOLVED_SCALE)}px ${-(row*EVOLVED_CELL_H+(item.y+EVOLVED_PAD_TOP)*EVOLVED_SCALE)}px`;
    }
   }
   u.el.dataset.animation=state;
