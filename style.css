@@ -292,3 +292,5 @@ body { overflow:auto; }
 .gacha-lobby{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;background:linear-gradient(135deg,#3a2a6a,#1f3a68);border:1px solid #9a86e0}
 .gacha-lobby h2{margin:0 0 6px}.gacha-lobby p{margin:0;color:#e4dcff;line-height:1.6}.gacha-lobby b{color:#ffd35a;font-size:1.15rem}.gacha-lobby em{font-style:normal;color:#ffe89a;font-weight:800}.gacha-lobby small{color:#bfb4ee}
 .gacha-lobby-btn{padding:16px 30px;border-radius:14px;font-weight:900;font-size:1.1rem;border:2px solid #ffd35a;background:#7a3fa6;color:#fff;cursor:pointer}.gacha-lobby-btn:hover{filter:brightness(1.15)}
+.grade-tabs{flex-wrap:wrap;margin:10px 0 14px}.grade-tab{padding:8px 14px;font-size:.92rem}.grade-tab.active{background:#4a3a8a;border-color:#ffd35a;color:#fff}
+.grade-empty{grid-column:1/-1;color:#9fb3cf;padding:18px;text-align:center;background:#18253a;border-radius:12px}

@@ -1268,10 +1268,25 @@ function renderBaseUpgrade(){
 }
 function awardXP(){const reward=studyXP(cleared.includes(selectedStage)?Math.floor(stageXP(selectedStage)/2):stageXP(selectedStage));training.xp+=reward;saveTraining();return reward}
 function renderUnitLevels(){for(const t of ALLIES){const b=$(t==='red'?'#spawnBtn':'#'+t+'Btn'),d=unitStats(t),e=d.evolved;if(t==='red')b.querySelector('small').textContent=d.cost+'원';b.querySelector('strong').firstChild.nodeValue=UNIT_NAMES[t]+(e?' 2진':'')+' Lv.'+training.levels[t];b.title=`${ROLES[t]} · 체력 ${d.hp} · 공격력 ${d.atk} · 사거리 ${Math.round(d.range)} · 공격 주기 ${d.interval.toFixed(2)}초 · 이동 ${d.speed} · ${d.cost}원${t==='purple'?' · 빨간 적에게 강함':''}${t==='cyan'||t==='crystal'?' · 떠다니는 적에게 강함':''}${RARE_TYPES.includes(t)||EX_TYPES.includes(t)||SR_TYPES.includes(t)?' · '+codexTraitBadges(data.units[t]).slice(1).join(' · '):''}${e?' · 스틱맨 2진':''}`}}
+// 등급 필터: 레어 · 슈퍼 레어 · 울트라 슈퍼 레어 · EX (처음 18명은 '전체'에서만 보임)
+const GRADE_LIST=[['all','전체'],['rare','레어'],['sr','슈퍼 레어'],['uber','울트라 슈퍼 레어'],['ex','EX']];
+const EX_GRADE=['onyx','garnet','lapis','selenite','topaz'];
+function gradeOf(t){return RARE_TYPES.includes(t)?'rare':SR_TYPES.includes(t)?'sr':t==='prism'?'uber':EX_GRADE.includes(t)?'ex':'basic'}
+let gradeFilter='all';try{const g=localStorage.getItem('red-battle-grade-v1');if(GRADE_LIST.some(x=>x[0]===g))gradeFilter=g}catch{}
+function gradeMatch(t){return gradeFilter==='all'||gradeOf(t)===gradeFilter}
+function renderGradeTabs(){
+ for(const id of ['#gradeTabs','#codexGradeTabs']){const box=$(id);if(!box)continue;box.innerHTML='';
+  for(const [k,label] of GRADE_LIST){
+   const all=k==='all'?null:ALLIES.filter(t=>gradeOf(t)===k),b=document.createElement('button');b.type='button';b.className='codex-tab grade-tab'+(gradeFilter===k?' active':'');
+   b.textContent=all?`${label} ${all.filter(allyUnlocked).length}/${all.length}`:label;
+   b.onclick=()=>{gradeFilter=k;try{localStorage.setItem('red-battle-grade-v1',k)}catch{}renderTraining();
+    if(!$('#codexMenu').classList.contains('hidden')){const e=codexEntries();if(codexTab==='ally'&&e.length&&!e.includes(codexType)){codexType=e[0];codexEvolved=false;renderCodexPreview()}renderCodexGrid()}};
+   box.append(b)}}
+}
 function renderTraining(){
  $('#xpText').textContent=training.xp+' XP';$('#trainingGrid').innerHTML='';
  $('#deckText').textContent=`출전 덱 ${deck.length} / ${DECK_SIZE} · 전투에는 덱에 넣은 아군만 나옵니다`;
- for(const t of ALLIES){const cap=levelCap(),l=training.levels[t],d=unitStats(t),next=unitStats(t,Math.min(cap,l+1)),unlocked=allyUnlocked(t),inDeck=deck.includes(t),evolved=l>=LV_EVOLVE&&training.forms[t]!==1&&!d.noEvolve;if(!unlocked)continue;const card=document.createElement('article');card.className='training-card';card.innerHTML=`${profileMarkup(t,evolved)}<h3 style="color:${COLORS[t]}">${UNIT_NAMES[t]}${evolved?' 2진':''} <small>Lv.${l} / ${LV_MAX}</small>${ABILITY_ICONS[t]?`<span class="${ABILITY_ICONS[t][0]}-icon title-icon" aria-label="${ABILITY_ICONS[t][1]}" title="${ABILITY_ICONS[t][1]}"></span>`:''}</h3><p class="profile-copy"><strong>${ROLES[t]}</strong> · ${attackType(t)} 공격${t==='purple'?' · 빨간 적에게 강함':''}${t==='cyan'||t==='crystal'?' · 떠다니는 적에게 강함':''}${RARE_TYPES.includes(t)||EX_TYPES.includes(t)||SR_TYPES.includes(t)?' · '+codexTraitBadges(data.units[t]).slice(1).join(' · '):''}<br>${evolved?PROFILE_TEXT_EVOLVED[t]:PROFILE_TEXT[t]}</p>`;const b=document.createElement('button');b.textContent=!unlocked?STAGES[UNLOCK_AT[t]].name+(chapterTag(UNLOCK_AT[t]))+' 클리어로 해금':l>=cap?(cap<LV_MAX?'최대 Lv.10 · 2장 클리어 시 Lv.20':'최대 레벨'):upgradeCost(t)+' XP · 강화';b.disabled=!unlocked||l>=cap||training.xp<upgradeCost(t);b.onclick=()=>upgradeCharacter(t);card.append(b);
+ for(const t of ALLIES){const cap=levelCap(),l=training.levels[t],d=unitStats(t),next=unitStats(t,Math.min(cap,l+1)),unlocked=allyUnlocked(t),inDeck=deck.includes(t),evolved=l>=LV_EVOLVE&&training.forms[t]!==1&&!d.noEvolve;if(!unlocked||!gradeMatch(t))continue;const card=document.createElement('article');card.className='training-card';card.innerHTML=`${profileMarkup(t,evolved)}<h3 style="color:${COLORS[t]}">${UNIT_NAMES[t]}${evolved?' 2진':''} <small>Lv.${l} / ${LV_MAX}</small>${ABILITY_ICONS[t]?`<span class="${ABILITY_ICONS[t][0]}-icon title-icon" aria-label="${ABILITY_ICONS[t][1]}" title="${ABILITY_ICONS[t][1]}"></span>`:''}</h3><p class="profile-copy"><strong>${ROLES[t]}</strong> · ${attackType(t)} 공격${t==='purple'?' · 빨간 적에게 강함':''}${t==='cyan'||t==='crystal'?' · 떠다니는 적에게 강함':''}${RARE_TYPES.includes(t)||EX_TYPES.includes(t)||SR_TYPES.includes(t)?' · '+codexTraitBadges(data.units[t]).slice(1).join(' · '):''}<br>${evolved?PROFILE_TEXT_EVOLVED[t]:PROFILE_TEXT[t]}</p>`;const b=document.createElement('button');b.textContent=!unlocked?STAGES[UNLOCK_AT[t]].name+(chapterTag(UNLOCK_AT[t]))+' 클리어로 해금':l>=cap?(cap<LV_MAX?'최대 Lv.10 · 2장 클리어 시 Lv.20':'최대 레벨'):upgradeCost(t)+' XP · 강화';b.disabled=!unlocked||l>=cap||training.xp<upgradeCost(t);b.onclick=()=>upgradeCharacter(t);card.append(b);
   if(unlocked){const db=document.createElement('button');db.className='deck-btn';db.textContent=inDeck?'덱에서 제외':deck.length>=DECK_SIZE?'덱 가득참':'덱에 추가';db.disabled=!inDeck&&deck.length>=DECK_SIZE;db.classList.toggle('active',inDeck);db.onclick=()=>toggleDeck(t);card.append(db)}
   if(unlocked&&l>=LV_EVOLVE&&!d.noEvolve){const fb=document.createElement('button');fb.className='form-btn';fb.textContent=evolved?'1진으로 변경 (약함)':'2진으로 변경';fb.onclick=()=>setForm(t,evolved?1:2);card.append(fb)}
   $('#trainingGrid').append(card)}
@@ -1328,7 +1343,9 @@ function codexTraitBadges(d){const b=[attackTypeOf(d)+' 공격'];for(const t of 
  if(d.multiHit)b.push(`${d.multiHit}연타`);
  if(d.statusVs){const tg=d.statusVs.map(t=>TRAIT_TARGET[t]).join('·'),m=[d.slowChance&&`둔화(${freqWord(d.slowChance)})`,d.freezeChance&&`정지(${freqWord(d.freezeChance)})`,d.atkDownPct&&`약화(${freqWord(d.atkDownChance??1)})`,d.intervalUpChance&&`공격 주기 증가(${freqWord(d.intervalUpChance)})`].filter(Boolean).join('·');if(m)b.push(`${tg}에게 ${m}`)}return b}
 let codexTab='ally',codexType='red',codexEvolved=false,codexUnit=null,codexRAF=0,codexLast=0,codexAutoPaused=false;
-function codexEntries(){return codexTab==='ally'?ALLIES.filter(allyUnlocked):ENEMY_ORDER}
+function codexEntries(){return codexTab==='ally'?ALLIES.filter(t=>allyUnlocked(t)&&gradeMatch(t)):ENEMY_ORDER}
+const _renderTraining=renderTraining;
+renderTraining=function(){_renderTraining();renderGradeTabs();const g=$('#trainingGrid');if(!g.children.length){const p=document.createElement('p');p.className='grade-empty';p.textContent='이 등급에서 얻은 캐릭터가 아직 없어요.';g.append(p)}};
 function buildCodexPreviewUnit(type,ally,evolved){
  const stats=ally?unitStats(type,evolved?10:1,2):{...data.units[type]};
  const u={type,ally,stats,x:50,animTime:0,attackTime:0,attackCd:1.4,hurtTime:0,kbTime:0};
@@ -1386,6 +1403,7 @@ function tickCodexPreview(t){
  animateUnit(u);
 }
 function openCodex(tab){
+ renderGradeTabs();
  codexTab=tab;codexType=tab==='ally'?'red':'dog';codexEvolved=false;
  $('#codexAllyTab').classList.toggle('active',tab==='ally');
  $('#codexEnemyTab').classList.toggle('active',tab==='enemy');
