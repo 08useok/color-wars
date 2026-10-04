@@ -375,7 +375,7 @@ data.units.navy={hp:360,atk:416,interval:2.27,speed:4.5,range:8.5,cost:350,coold
 data.units.dandelion={hp:430,atk:151,interval:2.7,speed:4.5,range:14.5,cost:200,cooldown:6,knockbacks:3,slowChance:.3,slowDuration:2,statusVs:['black'],attackDuration:0.8,windup:0.35};
 data.units.babyblue={hp:190,atk:62,interval:1.5,speed:4.0,range:13.5,cost:250,cooldown:11,knockbacks:3,blowChance:.3,blowDistance:14,attackDuration:0.8,windup:0.35};
 data.units.mintcyan={hp:180,atk:123,interval:1.63,speed:5.0,range:7.5,cost:90,cooldown:4,knockbacks:3,survive:.5,attackDuration:0.8,windup:0.35};
-data.units.peach={hp:270,atk:61,interval:0.33,speed:4.0,range:6.0,cost:75,cooldown:6,knockbacks:1,resistVs:['angel'],attackDuration:0.3,windup:0.12};
+data.units.peach={hp:460,atk:61,interval:0.33,speed:4.0,range:6.0,cost:100,cooldown:8,knockbacks:1,resistVs:['angel'],attackDuration:0.3,windup:0.12};
 data.units.lightcream={hp:350,atk:138,interval:1.03,speed:6.0,range:7.5,cost:250,cooldown:12,knockbacks:3,critChance:.05,critMult:2,attackDuration:0.8,windup:0.35};
 data.units.midnight={hp:110,atk:76,interval:2.7,speed:4.0,range:17.0,cost:300,cooldown:12,knockbacks:3,freezeChance:.2,freezeDuration:2,statusVs:['alien'],attackDuration:0.8,windup:0.35};
 data.units.darklilac={hp:210,atk:57,interval:4.03,speed:4.0,range:15.5,cost:250,cooldown:15,knockbacks:3,atkDownPct:.5,atkDownChance:.5,atkDownDuration:6.67,statusVs:['alien'],attackDuration:0.8,windup:0.35};
@@ -1458,7 +1458,7 @@ const LV20_TARGET={
  plum:{hp:14400,atk:3000},forest:{hp:38000,atk:4200},canary:{hp:19200,atk:3800},cherry:{hp:22400,atk:4000},mauve:{hp:17600,atk:3600},khaki:{hp:13400,atk:5500},tangerine:{hp:28800,atk:3800},burgundy:{hp:35000,atk:4800},mustard:{hp:32000,atk:5200},sky:{hp:16000,atk:3800},denim:{hp:25600,atk:4600},charcoal:{hp:15400,atk:4000},
  cornflower:{hp:16000,atk:5500},bittersweet:{hp:22400,atk:4400},claret:{hp:14800,atk:3200},verdigris:{hp:32000,atk:4200},
  lapis:{hp:30000,atk:3200},selenite:{hp:20000,atk:4500},topaz:{hp:16000,atk:3800},
- cobalt:{hp:10200,atk:3400},flame:{hp:9350,atk:1700},scarlet:{hp:11305,atk:1360},moss:{hp:6460,atk:850},coral:{hp:3060,atk:1665},aqua:{hp:6460,atk:630},cooper:{hp:9690,atk:1240},navy:{hp:10200,atk:3740},dandelion:{hp:12000,atk:1360},babyblue:{hp:5185,atk:560},mintcyan:{hp:5100,atk:1105},peach:{hp:7650,atk:545},lightcream:{hp:9690,atk:1240},midnight:{hp:3060,atk:680},darklilac:{hp:5950,atk:510},fusioncream:{hp:13600,atk:1020},silver:{hp:10200,atk:5100},lava:{hp:22950,atk:8585},babypink:{hp:10540,atk:5610},magenta:{hp:30600,atk:12240}
+ cobalt:{hp:10200,atk:3400},flame:{hp:9350,atk:1700},scarlet:{hp:11305,atk:1360},moss:{hp:6460,atk:850},coral:{hp:3060,atk:1665},aqua:{hp:6460,atk:630},cooper:{hp:9690,atk:1240},navy:{hp:10200,atk:3740},dandelion:{hp:12000,atk:1360},babyblue:{hp:5185,atk:560},mintcyan:{hp:5100,atk:1105},peach:{hp:12750,atk:545},lightcream:{hp:9690,atk:1240},midnight:{hp:3060,atk:680},darklilac:{hp:5950,atk:510},fusioncream:{hp:13600,atk:1020},silver:{hp:10200,atk:5100},lava:{hp:22950,atk:8585},babypink:{hp:10540,atk:5610},magenta:{hp:30600,atk:12240}
 };
 function levelMult(base,target,level,curve=1,m10Hp=null,slope=.1){
  const lv=Math.min(level,LV_MAX),m10=m10Hp||1+slope*(LV_EVOLVE-1);
