@@ -378,7 +378,7 @@ data.units.mintcyan={hp:240,atk:142,interval:1.63,speed:5.0,range:7.5,cost:90,co
 data.units.peach={hp:460,atk:102,interval:0.33,speed:4.0,range:6.0,cost:100,cooldown:8,knockbacks:1,resistVs:['angel'],attackDuration:0.3,windup:0.12};
 data.units.lightcream={hp:410,atk:157,interval:1.03,speed:6.0,range:7.5,cost:250,cooldown:12,knockbacks:3,critChance:.05,critMult:2,attackDuration:0.8,windup:0.35};
 data.units.midnight={hp:110,atk:76,interval:2.7,speed:4.0,range:17.0,cost:300,cooldown:12,knockbacks:3,freezeChance:.2,freezeDuration:2,statusVs:['alien'],attackDuration:0.8,windup:0.35};
-data.units.darklilac={hp:250,atk:72,interval:4.03,speed:4.0,range:15.5,cost:250,cooldown:15,knockbacks:3,atkDownPct:.5,atkDownChance:.5,atkDownDuration:6.67,statusVs:['alien'],attackDuration:0.8,windup:0.35};
+data.units.darklilac={hp:250,atk:294,interval:4.03,speed:4.0,range:15.5,cost:250,cooldown:15,knockbacks:3,atkDownPct:.5,atkDownChance:.5,atkDownDuration:6.67,statusVs:['alien'],attackDuration:0.8,windup:0.35};
 data.units.fusioncream={hp:610,atk:132,interval:0.3,speed:6.0,range:9.0,cost:400,cooldown:25,knockbacks:1,massiveVs:['alien'],attackDuration:0.27,windup:0.1};
 data.units.silver={hp:490,atk:756,interval:15,speed:5.0,range:17.5,cost:400,cooldown:30,knockbacks:3,area:true,attackClass:'범위',backRange:15,critChance:1,critMult:2,attackDuration:0.8,windup:0.35};// 원본 치어리더 캣(20.3초)을 15초로 줄이고 범위 · 전방 사거리 ~ 뒤쪽 -300(15)까지 타격
 data.units.lava={hp:940,atk:1351,interval:4.03,speed:3.0,range:11.0,cost:425,cooldown:21,knockbacks:2,area:true,massiveVs:['black'],attackDuration:0.8,windup:0.35};
@@ -1458,7 +1458,7 @@ const LV20_TARGET={
  plum:{hp:14400,atk:3000},forest:{hp:38000,atk:4200},canary:{hp:19200,atk:3800},cherry:{hp:22400,atk:4000},mauve:{hp:17600,atk:3600},khaki:{hp:13400,atk:5500},tangerine:{hp:28800,atk:3800},burgundy:{hp:35000,atk:4800},mustard:{hp:32000,atk:5200},sky:{hp:16000,atk:3800},denim:{hp:25600,atk:4600},charcoal:{hp:15400,atk:4000},
  cornflower:{hp:16000,atk:5500},bittersweet:{hp:22400,atk:4400},claret:{hp:14800,atk:3200},verdigris:{hp:32000,atk:4200},
  lapis:{hp:30000,atk:3200},selenite:{hp:20000,atk:4500},topaz:{hp:16000,atk:3800},
- cobalt:{hp:13600,atk:4250},flame:{hp:11050,atk:1870},scarlet:{hp:13005,atk:1530},moss:{hp:7480,atk:1020},coral:{hp:4080,atk:1665},aqua:{hp:7480,atk:800},cooper:{hp:11390,atk:1410},navy:{hp:13600,atk:5440},dandelion:{hp:12000,atk:2470},babyblue:{hp:5950,atk:730},mintcyan:{hp:6800,atk:1275},peach:{hp:12750,atk:917},lightcream:{hp:11390,atk:1410},midnight:{hp:3060,atk:680},darklilac:{hp:6970,atk:645},fusioncream:{hp:17000,atk:1190},silver:{hp:13600,atk:6800},lava:{hp:26350,atk:12155},babypink:{hp:12240,atk:6800},magenta:{hp:30600,atk:12240}
+ cobalt:{hp:13600,atk:4250},flame:{hp:11050,atk:1870},scarlet:{hp:13005,atk:1530},moss:{hp:7480,atk:1020},coral:{hp:4080,atk:1665},aqua:{hp:7480,atk:800},cooper:{hp:11390,atk:1410},navy:{hp:13600,atk:5440},dandelion:{hp:12000,atk:2470},babyblue:{hp:5950,atk:730},mintcyan:{hp:6800,atk:1275},peach:{hp:12750,atk:917},lightcream:{hp:11390,atk:1410},midnight:{hp:3060,atk:680},darklilac:{hp:6970,atk:2650},fusioncream:{hp:17000,atk:1190},silver:{hp:13600,atk:6800},lava:{hp:26350,atk:12155},babypink:{hp:12240,atk:6800},magenta:{hp:30600,atk:12240}
 };
 function levelMult(base,target,level,curve=1,m10Hp=null,slope=.1){
  const lv=Math.min(level,LV_MAX),m10=m10Hp||1+slope*(LV_EVOLVE-1);
