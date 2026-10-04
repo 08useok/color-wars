@@ -6,7 +6,7 @@ const GACHA_SR=[['plum','플럼'],['forest','포레스트'],['canary','카나리
 const GACHA_PRISM={id:'prism',name:'프리즘'};
 const GACHA_UBER=[GACHA_PRISM,{id:'rainbow',name:'레인보우'}];// 울트라 슈퍼 레어 두 명이 같은 확률 칸을 나눠 가짐
 const GACHA_CFG={
- prism:.01,sr:.11,// of every pull: 프리즘 1%, SR 11% (16명 균등); the other 88% is the misc table below
+ prism:.03,sr:.11,// of every pull: 울슈레 3% (프리즘·레인보우), SR 11% (16명 균등); the other 86% is the misc table below
  pity:100,// 프리즘 guaranteed within this many pulls
  dupXp:5000,dupXpPrism:30000,// 이미 가진 SR/프리즘은 XP로 환산
  bonusFrom:1,bonusTo:10,// 10+1 days of the month
