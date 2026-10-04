@@ -327,11 +327,11 @@ data.units.brown={hp:1100,atk:120,interval:1.4,speed:5,range:4,cost:200,cooldown
 data.units.tan={hp:550,atk:170,interval:2.8,speed:5,range:10,cost:300,cooldown:11,knockbacks:3,area:true,slowChance:.5,slowDuration:2.5,statusVs:['angel'],attackDuration:.6,windup:.2};
 data.units.beige={hp:700,atk:300,interval:3,speed:5,range:6,cost:350,cooldown:13,knockbacks:3,area:true,freezeChance:.25,freezeDuration:1.5,statusVs:['black'],attackDuration:.6,windup:.2};
 data.units.cream={hp:700,atk:150,interval:2,speed:5,range:8,cost:300,cooldown:10,knockbacks:3,slowChance:.4,slowDuration:2,statusVs:['black'],attackDuration:.6,windup:.2};
-data.units.olive={hp:600,atk:160,interval:2.2,speed:5,range:8,cost:275,cooldown:10,knockbacks:3,area:true,atkDownPct:.4,atkDownChance:.5,atkDownDuration:3,statusVs:['floating'],attackDuration:.6,windup:.2};
-data.units.clover={hp:480,atk:210,interval:3.4,speed:5,range:20,cost:325,cooldown:12,knockbacks:3,atkDownPct:.4,atkDownChance:.5,atkDownDuration:3,statusVs:['black'],attackDuration:.6,windup:.2};
+data.units.olive={hp:600,atk:160,interval:2.2,speed:5,range:8,cost:275,cooldown:10,knockbacks:3,area:true,atkDownPct:.5,atkDownChance:.5,atkDownDuration:3,statusVs:['floating'],attackDuration:.6,windup:.2};
+data.units.clover={hp:480,atk:210,interval:3.4,speed:5,range:20,cost:325,cooldown:12,knockbacks:3,atkDownPct:.5,atkDownChance:.5,atkDownDuration:3,statusVs:['black'],attackDuration:.6,windup:.2};
 data.units.indigo={hp:500,atk:220,interval:3.2,speed:5,range:20,cost:350,cooldown:13,knockbacks:3,freezeChance:.3,freezeDuration:1.5,statusVs:['floating'],attackDuration:.6,windup:.2};
 data.units.lilac={hp:550,atk:180,interval:2.8,speed:5,range:14,cost:300,cooldown:11,knockbacks:3,area:true,slowChance:.4,slowDuration:2,statusVs:['floating'],attackDuration:.6,windup:.2};
-data.units.hotpink={hp:450,atk:200,interval:3.4,speed:5,range:20,cost:300,cooldown:11,knockbacks:3,atkDownPct:.4,atkDownChance:.5,atkDownDuration:3,statusVs:['red'],attackDuration:.6,windup:.2};
+data.units.hotpink={hp:450,atk:200,interval:3.4,speed:5,range:20,cost:300,cooldown:11,knockbacks:3,atkDownPct:.5,atkDownChance:.5,atkDownDuration:3,statusVs:['red'],attackDuration:.6,windup:.2};
 data.units.ruby={hp:600,atk:260,interval:3,speed:5,range:12,cost:325,cooldown:12,knockbacks:3,area:true,freezeChance:.25,freezeDuration:1.5,statusVs:['red'],attackDuration:.6,windup:.2};
 // EX 가넷: 레전드 스토리 1장 올클리어 30% 드롭 · 살아남는다 + 검은 적 엄강 · Lv.20 체력 10만 / 공격력 16,000 (3장 빠옹 한 방)
 data.units.garnet={hp:3100,atk:1600,interval:3.2,speed:5,range:5,cost:900,cooldown:30,knockbacks:4,strongVs:['black'],survive:.3,attackDuration:1,windup:.45};
