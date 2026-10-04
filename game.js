@@ -1691,7 +1691,7 @@ const LONG_RANGE_MIN=20;
 function attackTypeOf(d){if(d.attackClass)return d.attackClass;return d.range>=LONG_RANGE_MIN?'원거리':d.area||d.splash||d.pierce||d.dash||d.boomerang?'범위':'개체'}
 function attackType(t){return attackTypeOf(data.units[t])}
 function codexTraitBadges(d){const b=[attackTypeOf(d)+' 공격'];for(const t of traitsOf(d))if(TRAIT_NAMES[t])b.push(TRAIT_NAMES[t]);
- for(const k in TRAIT_NOTE)for(const t of d[k]||[])b.push(`${TRAIT_TARGET[t]}에게 ${TRAIT_NOTE[k]}`);
+ for(const k in TRAIT_NOTE){const ts=d[k]||[];if(Object.keys(TRAIT_TARGET).every(t=>ts.includes(t))){b.push(`모든 속성에게 ${TRAIT_NOTE[k]}`);continue}for(const t of ts)b.push(`${TRAIT_TARGET[t]}에게 ${TRAIT_NOTE[k]}`)}
  if(d.hiddenAbility&&!futureOpen()){b.length=0;b.push(attackTypeOf(d)+' 공격','???');return b}// 미래편 전용: 미래편이 열리기 전까지 능력을 가림
  if(d.survive)b.push(`살아남는다(${freqWord(d.survive)})`);
  if(d.wave)b.push(`파동 공격(${freqWord(d.wave.chance)})`);
