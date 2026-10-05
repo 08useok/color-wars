@@ -98,7 +98,7 @@ function gachaStageReward(i){// 세계편·미래편 첫 클리어: 각 장의 �
  if(ch>=2)return {t1:1,t10:0};
  return {t1:0,t10:0};
 }
-const EX_NAME={garnet:'가넷',lapis:'라피스',selenite:'셀레나이트',topaz:'토파즈'};
+const EX_NAME={ribbonorange:'리본 오렌지',garnet:'가넷',lapis:'라피스',selenite:'셀레나이트',topaz:'토파즈'};
 function grantEx(id){if(gachaOwns(id))return false;gacha.owned.push(id);saveGacha();gachaAppendDetail('EX '+EX_NAME[id]+' 획득!');renderNewButtons();renderDeckButtons();return true}
 function gachaAppendDetail(text){const el=document.querySelector('#resultDetail');if(el&&text)el.textContent+=(el.textContent?' · ':'')+text}
 const _finish=finish;
