@@ -303,3 +303,9 @@ body { overflow:auto; }
 .maple-btn i{background:#b88e72}.brick-btn i{background:#a03623}.korn-btn i{background:#fbec5d}.teal-btn i{background:#008080}.violet-btn i{background:#9e0eea}.orchid-btn i{background:#7a81ff}
 .surge-splash{border-radius:14px;border:3px solid #7a81ff;background:repeating-linear-gradient(90deg,#7a81ff33 0 10px,#c6c9ff77 10px 20px);height:44px;pointer-events:none}
 .unit.raging{filter:drop-shadow(0 0 6px #ff3b30) saturate(1.4)}
+.rank-lobby{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;background:linear-gradient(135deg,#2a4a3a,#1f3a58);border:1px solid #7ad1a0}
+.rank-lobby.hidden{display:none}
+.rank-info{flex:1;min-width:240px}.rank-lobby h2{margin:0 0 6px}.rank-lobby p{margin:0 0 6px;color:#dcf5e6}.rank-lobby b{color:#ffd35a;font-size:1.3rem}.rank-lobby small{color:#b9e3cb}
+.rank-bar{height:12px;border-radius:8px;background:#0e2230;border:1px solid #7ad1a0;overflow:hidden;margin:6px 0}.rank-bar i{display:block;height:100%;background:linear-gradient(90deg,#7ad1a0,#ffd35a);transition:width .3s}
+.rank-lobby details{margin-top:6px;color:#dcf5e6}.rank-lobby summary{cursor:pointer;font-weight:700}.rank-lobby ul{margin:6px 0 0;padding-left:18px;font-size:.9rem;line-height:1.6}.rank-lobby li.done{color:#8fbba3;text-decoration:line-through}.rank-lobby li.ready{color:#ffe89a;font-weight:800}
+.rank-claim-btn{padding:14px 24px;border-radius:14px;font-weight:900;font-size:1.05rem;border:2px solid #ffd35a;background:#2f8f5f;color:#fff;cursor:pointer}.rank-claim-btn:disabled{opacity:.5;cursor:default;border-color:#7ad1a0}.rank-claim-btn:not(:disabled):hover{filter:brightness(1.15)}
