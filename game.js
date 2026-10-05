@@ -473,11 +473,11 @@ data.units.lava={hp:940,atk:1351,interval:4.03,speed:3.0,range:11.0,cost:425,coo
 data.units.babypink={hp:440,atk:756,interval:4.53,speed:5.5,range:16.5,cost:400,cooldown:20,knockbacks:3,area:true,slowChance:.3,slowDuration:3,statusVs:['angel'],attackDuration:0.8,windup:0.35};
 data.units.magenta={hp:1090,atk:1360,interval:4.23,speed:4.0,range:12.75,cost:450,cooldown:30,knockbacks:3,area:true,wave:{chance:1,reach:36,mult:1},attackDuration:0.8,windup:0.35};
 // 신규 54~59: 메이플·브릭·콘·바이올=레어(미래편 스테이지 해금), 틸=슈퍼 레어(뽑기), 오키드=울슈레(뽑기, 1·2진 같은 가격)
-data.units.maple={hp:500,atk:200,interval:1.8,speed:5,range:7,cost:325,cooldown:10,knockbacks:3,rage:1,attackDuration:0.8,windup:0.35};
+data.units.maple={hp:930,atk:378,interval:1.8,speed:5,range:7,cost:325,cooldown:10,knockbacks:3,rage:1,attackDuration:0.8,windup:0.35};
 data.units.brick={hp:550,atk:472,interval:2.17,speed:5,range:6.25,cost:300,cooldown:12,knockbacks:3,resistVs:['red','floating','metal','black','angel','alien'],attackDuration:0.8,windup:0.35};
-data.units.korn={hp:320,atk:167,interval:2.6,speed:5,range:22,cost:350,cooldown:12,knockbacks:3,killGold:.75,attackDuration:0.8,windup:0.35};
-data.units.teal={hp:540,atk:244,interval:3,speed:5,range:14,cost:550,cooldown:17,knockbacks:3,atkDownPct:.5,atkDownChance:.5,atkDownDuration:5,statusVs:['red','floating','black','angel','alien'],attackDuration:0.8,windup:0.35};
-data.units.violet={hp:430,atk:178,interval:2.8,speed:5,range:12,cost:325,cooldown:11,knockbacks:3,area:true,slowChance:.3,slowDuration:3,statusVs:['red','floating','black','angel','alien'],attackDuration:0.8,windup:0.35};
+data.units.korn={hp:430,atk:367,interval:2.6,speed:5,range:22,cost:350,cooldown:12,knockbacks:3,killGold:.75,attackDuration:0.8,windup:0.35};
+data.units.teal={hp:540,atk:511,interval:3,speed:5,range:14,cost:550,cooldown:17,knockbacks:3,atkDownPct:.5,atkDownChance:.5,atkDownDuration:5,statusVs:['red','floating','black','angel','alien'],attackDuration:0.8,windup:0.35};
+data.units.violet={hp:430,atk:144,interval:2.8,speed:5,range:12,cost:325,cooldown:11,knockbacks:3,area:true,slowChance:.15,slowDuration:2,statusVs:['red','floating','black','angel','alien'],attackDuration:0.8,windup:0.35};
 data.units.orchid={hp:1070,atk:1000,interval:4.5,speed:5,range:24,cost:3000,cooldown:25,knockbacks:3,area:true,attackClass:'범위',flatCost:true,surge:{start:22,end:44,dur:2.4,tick:.6,mult:.5},attackDuration:0.8,windup:0.35};
 const EX_TYPES=['garnet','prism','rainbow','orchid','lapis','selenite','topaz'];
 const SR_TYPES=['plum','forest','canary','cherry','mauve','khaki','tangerine','burgundy','mustard','sky','denim','charcoal','cornflower','bittersweet','claret','verdigris','teal'];
@@ -1644,7 +1644,7 @@ const LV20_TARGET={
  
  plum:{hp:14400,atk:3000},forest:{hp:38000,atk:4200},canary:{hp:19200,atk:3800},cherry:{hp:22400,atk:4000},mauve:{hp:17600,atk:3600},khaki:{hp:13400,atk:5500},tangerine:{hp:28800,atk:3800},burgundy:{hp:35000,atk:4800},mustard:{hp:32000,atk:5200},sky:{hp:16000,atk:3800},denim:{hp:25600,atk:4600},charcoal:{hp:15400,atk:4000},
  cornflower:{hp:16000,atk:5500},bittersweet:{hp:22400,atk:4400},claret:{hp:14800,atk:3200},verdigris:{hp:32000,atk:4200},
- lapis:{hp:30000,atk:3200},selenite:{hp:20000,atk:4500},topaz:{hp:16000,atk:3800},maple:{hp:14000,atk:1800},brick:{hp:15300,atk:4250},korn:{hp:9000,atk:1500},teal:{hp:15000,atk:2200},violet:{hp:12000,atk:1600},orchid:{hp:30000,atk:9000},
+ lapis:{hp:30000,atk:3200},selenite:{hp:20000,atk:4500},topaz:{hp:16000,atk:3800},maple:{hp:26000,atk:3400},brick:{hp:15300,atk:4250},korn:{hp:12000,atk:3300},teal:{hp:15000,atk:4600},violet:{hp:12000,atk:1300},orchid:{hp:30000,atk:9000},
  cobalt:{hp:13600,atk:4250},flame:{hp:11050,atk:1870},scarlet:{hp:13005,atk:1530},moss:{hp:7480,atk:1020},coral:{hp:4080,atk:1665},aqua:{hp:7480,atk:800},cooper:{hp:11390,atk:1410},navy:{hp:13600,atk:5440},dandelion:{hp:12000,atk:2470},babyblue:{hp:5950,atk:730},mintcyan:{hp:6800,atk:1275},peach:{hp:12750,atk:917},lightcream:{hp:11390,atk:1410},midnight:{hp:3060,atk:680},darklilac:{hp:6970,atk:2650},fusioncream:{hp:17000,atk:1190},silver:{hp:13600,atk:6800},lava:{hp:26350,atk:12155},babypink:{hp:12240,atk:6800},magenta:{hp:30600,atk:12240}
 };
 function levelMult(base,target,level,curve=1,m10Hp=null,slope=.1){
