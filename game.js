@@ -310,6 +310,15 @@ function legendStageUnlocked(k,c=legendCrown){const sub=legendSubOf(k);return le
 function stageBaseHp(i){return STAGES[i].hp}
 function isUnlocked(i){return i===0||cleared.includes(i===FUTURE_START?MAIN_STAGE_COUNT-1:i-1)||cleared.includes(i)}
 function chapterOf(i){return STAGES[i]?.chapter||1}
+// Difficulty stars (★1-5) on stage cards (legend subchapter cards show the rounded average of their stages at 👑1): score = log10 of the toughest spawn's sqrt(HP x DPS), both scaled by the stage
+// magnification x the chapter / crown multiplier; thresholds put 세계편 1장 at ★1-2 and late legend / 미래편 at ★4-5.
+const STAR_STEPS=[2.4,2.9,3.5,4.2];
+function stageScore(i,crown=legendCrown){const st=STAGES[i],c=st.chapter,g=c===2?1.5:c===3?4:c===4?LEGEND_CROWN_MULT[crown-1]:1;let best=1;
+ for(const r of STAGE_SPAWNS[i]||[]){const d=data.units[r.type];if(!d)continue;const m=(r.mag||100)/100*g;best=Math.max(best,m*Math.sqrt(d.hp*d.atk*(d.multiHit||1)/Math.max(.3,d.interval||1)))}
+ return Math.log10(best)}
+function stageStars(i,crown){const v=stageScore(i,crown);return 1+STAR_STEPS.filter(x=>v>=x).length}
+function starText(n){return '★'.repeat(n)+'☆'.repeat(5-n)}
+function starHTML(n){return `<span class="stage-stars" title="난이도 ${n} / 5">${starText(n)}</span>`}
 function enemyMagnification(){const c=chapterOf(selectedStage);return c===2?1.5:c===3?4:c===4?LEGEND_CROWN_MULT[legendCrown-1]:1}
 const RHINO_SHEET='assets/rhino_sheet.png';
 const BEAR_SHEET='assets/bear_sheet.png';
@@ -1416,7 +1425,7 @@ function renderStageMenu(){renderTraining();renderBaseUpgrade();renderSpecialSta
  if(stageChapterView==='legend'){$('#chapter1Tab').classList.remove('active');$('#chapter2Tab').classList.remove('active');$('#chapter3Tab').classList.remove('active');$('#futureTab').classList.remove('active');renderLegend();return}
  $('#stageGrid').innerHTML='';
  const viewStages=STAGES.map((stage,i)=>({stage,i})).filter(o=>chapterOf(o.i)===stageChapterView);
- viewStages.forEach(({stage,i})=>{const button=document.createElement('button');button.className='stage-card'+(cleared.includes(i)?' cleared':'');button.disabled=!isUnlocked(i);button.title=`등장 적: ${stageEnemies(i).map(type=>UNIT_NAMES[type]).join(' · ')} · 적 성 체력 ${stage.hp}`;button.innerHTML=`<strong>${stage.name}</strong>${cleared.includes(i)?`<small>${sweepMode?'소탕':'✓'}</small>`:''}`;if(sweepMode)button.disabled=!cleared.includes(i)||nyancom<SWEEP_COST;button.onclick=()=>{if(sweepMode)sweepStage(i);else{selectedStage=i;reset()}};$('#stageGrid').append(button)});
+ viewStages.forEach(({stage,i})=>{const button=document.createElement('button');button.className='stage-card'+(cleared.includes(i)?' cleared':'');button.disabled=!isUnlocked(i);button.title=`등장 적: ${stageEnemies(i).map(type=>UNIT_NAMES[type]).join(' · ')} · 적 성 체력 ${stage.hp}`;button.innerHTML=`<strong>${stage.name}</strong>${starHTML(stageStars(i))}${cleared.includes(i)?`<small>${sweepMode?'소탕':'✓'}</small>`:''}`;if(sweepMode)button.disabled=!cleared.includes(i)||nyancom<SWEEP_COST;button.onclick=()=>{if(sweepMode)sweepStage(i);else{selectedStage=i;reset()}};$('#stageGrid').append(button)});
  $('#chapter1Tab').classList.toggle('active',stageChapterView===1);
  $('#chapter2Tab').classList.toggle('active',stageChapterView===2);
  $('#chapter3Tab').classList.toggle('active',stageChapterView===3);
@@ -1453,10 +1462,10 @@ function renderSpecialStages(){
  $('#speedText').textContent=`스피드업 ${speedTickets}개 · 야옹컴 ${nyancom}개 · 📚${boosts.doctor} 💰${boosts.rich} 🎯${boosts.sniper}`;
  const todays=[tue&&'광속 전사(스피드업)',fri&&'가시밭길(야옹컴)',...WEEKDAY_SETS.filter(isWeekdayOpen).map(st=>`${st.title}(${st.item==='all'?'부스트 3종 + XP':BOOST_NAME[st.item]})`)].filter(Boolean);
  $('#specialNote').textContent=!open?'세계편 1장 마지막 스테이지(달)를 클리어하면 열립니다.':(todays.length?`오늘 열린 스테이지: ${todays.join(' · ')}.`:'')+' 월 고양이 박사 · 화 광속 전사 · 수 부자 고양이 · 목 저격 훈련장 · 금 가시밭길 · 토일 주말 특별전 · 매일 리본 오렌지 강림. 아이템은 아래에서 XP로 살 수도 있습니다. (초상급은 세계편 2장 클리어 후)';
- TUESDAY_STAGES.forEach((t,k)=>{const i=MAIN_STAGE_COUNT+k,b=document.createElement('button');b.className='stage-card';const locked=!open||!tue||(k===3&&!cleared.includes(CH2_HAWAII));b.disabled=locked;b.title=t.desc+' · 적 성 체력 '+t.hp;b.innerHTML=`<strong>${t.name.replace('광속 전사 ','')}</strong><small>${Math.round(t.chance*100)}%${t.count>1?' ×'+t.count:''}</small>`;b.onclick=()=>{selectedStage=i;reset()};grid.append(b)});
- FRIDAY_STAGES.forEach((t,k)=>{const i=FRIDAY_START+k,b=document.createElement('button');b.className='stage-card friday';if(k===0)b.style.gridColumnStart=1;b.disabled=!open||!fri||(k===2&&!cleared.includes(CH2_HAWAII));b.title=t.desc+' · 적 성 체력 '+t.hp;b.innerHTML=`<strong>${t.name.replace('가시밭길 ','🌵 ')}</strong><small>${Math.round(t.chance*100)}%${t.count>1?' ×'+t.count:''}</small>`;b.onclick=()=>{selectedStage=i;reset()};grid.append(b)});
- WEEKDAY_SETS.forEach((set,si)=>{const today=isWeekdayOpen(set);WEEKDAY_TIERS.forEach((t,k)=>{const i=weekdayIdx(si,k),b=document.createElement('button');b.className='stage-card weekday';if(k===0)b.style.gridColumnStart=1;b.disabled=!open||!today||(k===2&&!cleared.includes(CH2_HAWAII));b.title=STAGES[i].desc+' · 적 성 체력 '+STAGES[i].hp;b.innerHTML=`<strong>${set.flag} ${t.n}</strong><small>${set.title} ${Math.round(t.chance*100)}%${t.count>1?' ×'+t.count:''}</small>`;b.onclick=()=>{selectedStage=i;reset()};grid.append(b)})});
- const ribbonOwned=typeof gachaOwns==='function'&&gachaOwns('ribbonorange');RIBBON_TIERS.forEach((t,k)=>{const i=RIBBON_START+k,b=document.createElement('button');b.className='stage-card ribbon';if(k===0)b.style.gridColumnStart=1;b.disabled=!open||(k===2&&!cleared.includes(CH2_HAWAII));b.title=STAGES[i].desc+' · 적 성 체력 '+STAGES[i].hp;b.innerHTML=`<strong>🎀 ${t.n}</strong><small>리본 오렌지 강림 ${!ribbonReady()?'준비 중':ribbonOwned?'획득 완료':Math.round(t.chance*100)+'%'}</small>`;b.onclick=()=>{selectedStage=i;reset()};grid.append(b)});
+ TUESDAY_STAGES.forEach((t,k)=>{const i=MAIN_STAGE_COUNT+k,b=document.createElement('button');b.className='stage-card';const locked=!open||!tue||(k===3&&!cleared.includes(CH2_HAWAII));b.disabled=locked;b.title=t.desc+' · 적 성 체력 '+t.hp;b.innerHTML=`<strong>${t.name.replace('광속 전사 ','')}</strong>${starHTML(stageStars(i))}<small>${Math.round(t.chance*100)}%${t.count>1?' ×'+t.count:''}</small>`;b.onclick=()=>{selectedStage=i;reset()};grid.append(b)});
+ FRIDAY_STAGES.forEach((t,k)=>{const i=FRIDAY_START+k,b=document.createElement('button');b.className='stage-card friday';if(k===0)b.style.gridColumnStart=1;b.disabled=!open||!fri||(k===2&&!cleared.includes(CH2_HAWAII));b.title=t.desc+' · 적 성 체력 '+t.hp;b.innerHTML=`<strong>${t.name.replace('가시밭길 ','🌵 ')}</strong>${starHTML(stageStars(i))}<small>${Math.round(t.chance*100)}%${t.count>1?' ×'+t.count:''}</small>`;b.onclick=()=>{selectedStage=i;reset()};grid.append(b)});
+ WEEKDAY_SETS.forEach((set,si)=>{const today=isWeekdayOpen(set);WEEKDAY_TIERS.forEach((t,k)=>{const i=weekdayIdx(si,k),b=document.createElement('button');b.className='stage-card weekday';if(k===0)b.style.gridColumnStart=1;b.disabled=!open||!today||(k===2&&!cleared.includes(CH2_HAWAII));b.title=STAGES[i].desc+' · 적 성 체력 '+STAGES[i].hp;b.innerHTML=`<strong>${set.flag} ${t.n}</strong>${starHTML(stageStars(i))}<small>${set.title} ${Math.round(t.chance*100)}%${t.count>1?' ×'+t.count:''}</small>`;b.onclick=()=>{selectedStage=i;reset()};grid.append(b)})});
+ const ribbonOwned=typeof gachaOwns==='function'&&gachaOwns('ribbonorange');RIBBON_TIERS.forEach((t,k)=>{const i=RIBBON_START+k,b=document.createElement('button');b.className='stage-card ribbon';if(k===0)b.style.gridColumnStart=1;b.disabled=!open||(k===2&&!cleared.includes(CH2_HAWAII));b.title=STAGES[i].desc+' · 적 성 체력 '+STAGES[i].hp;b.innerHTML=`<strong>🎀 ${t.n}</strong>${starHTML(stageStars(i))}<small>리본 오렌지 강림 ${!ribbonReady()?'준비 중':ribbonOwned?'획득 완료':Math.round(t.chance*100)+'%'}</small>`;b.onclick=()=>{selectedStage=i;reset()};grid.append(b)});
  const buy=document.createElement('button');buy.className='stage-card';buy.disabled=training.xp<SPEED_PACK.xp;buy.innerHTML=`<strong>스피드업 ${SPEED_PACK.count}개 구매</strong><small>${SPEED_PACK.xp} XP</small>`;buy.onclick=buySpeedPack;grid.append(buy);
  for(const k in BOOSTS){const bb=document.createElement('button');bb.className='stage-card';bb.disabled=training.xp<BOOST_PACK.xp;bb.title=BOOSTS[k].desc;bb.innerHTML=`<strong>${BOOSTS[k].icon} ${BOOST_NAME[k]} ${BOOST_PACK.count}개 구매</strong><small>${BOOST_PACK.xp} XP · 보유 ${boosts[k]}개</small>`;bb.onclick=()=>buyBoostPack(k);grid.append(bb)}
  const buy2=document.createElement('button');buy2.className='stage-card';buy2.disabled=training.xp<NYAN_PACK.xp;buy2.innerHTML=`<strong>야옹컴 ${NYAN_PACK.count}개 구매</strong><small>${NYAN_PACK.xp} XP</small>`;buy2.onclick=buyNyancom;grid.append(buy2);
@@ -1471,7 +1480,7 @@ function renderLegend(){
  $('#legendNote').textContent=legendSub?`왕관 난이도 ★${legendCrown}: 적 능력치 ${Math.round(LEGEND_CROWN_MULT[legendCrown-1]*100)}% · ${sc.len}개 스테이지를 모두 클리어하면 다음 왕관이 열립니다.`:'';
  if(!legendSub){
   LEGEND_SUBS.forEach((it,n)=>{const ok=legendSubOpen(n),b=document.createElement('button');b.className='stage-card legend-sub'+(legendSubDone(n,1)?' cleared':'');b.disabled=!ok;
-   b.innerHTML=`<strong>${it.name}</strong><small>${ok?`★1 ${legendSubCount(n,1)} / ${it.len}`:'잠김'}</small>`;
+   const subStars=Math.round(Array.from({length:it.len},(_,j)=>stageStars(legendIdx(it.start+j),1)).reduce((a,b)=>a+b)/it.len);b.innerHTML=`<strong>${it.name}</strong>${starHTML(subStars)}<small>${ok?`👑1 ${legendSubCount(n,1)} / ${it.len}`:'잠김'}</small>`;
    b.onclick=()=>{legendSub=n+1;if(!legendCrownUnlocked(legendCrown,n))legendCrown=1;renderLegend()};grid.append(b)});
   return;
  }
@@ -1479,7 +1488,7 @@ function renderLegend(){
  for(const c of [1,2,3,4]){const b=document.createElement('button');b.className='codex-tab'+(c===legendCrown?' active':'');b.textContent='★'.repeat(c);b.disabled=!legendCrownUnlocked(c,sub);b.onclick=()=>{legendCrown=c;renderLegend()};tabs.append(b)}
  const done=legendProgress[legendCrown];
  // only the stages reached so far are shown: the first one, plus one more after each clear
- for(let k=sc.start;k<sc.start+sc.len;k++){const t=LEGEND_STAGES[k];if(!legendStageUnlocked(k))continue;const i=legendIdx(k),cl=done.includes(k),b=document.createElement('button');b.className='stage-card legend-stage'+(cl?' cleared':'');b.title=`${t.en?t.en+' · ':''}${t.desc} · 등장 적: ${stageEnemies(i).map(type=>UNIT_NAMES[type]).join(' · ')} · 적 성 체력 ${t.hp}`;b.innerHTML=`<strong>${t.flag} ${t.name}</strong><small>${cl?'✓ ':''}${legendXP(k)} XP</small>`;b.onclick=()=>{selectedStage=i;reset()};grid.append(b)}
+ for(let k=sc.start;k<sc.start+sc.len;k++){const t=LEGEND_STAGES[k];if(!legendStageUnlocked(k))continue;const i=legendIdx(k),cl=done.includes(k),b=document.createElement('button');b.className='stage-card legend-stage'+(cl?' cleared':'');b.title=`${t.en?t.en+' · ':''}${t.desc} · 등장 적: ${stageEnemies(i).map(type=>UNIT_NAMES[type]).join(' · ')} · 적 성 체력 ${t.hp}`;b.innerHTML=`<strong>${t.flag} ${t.name}</strong>${starHTML(stageStars(i,legendCrown))}<small>${cl?'✓ ':''}${legendXP(k)} XP</small>`;b.onclick=()=>{selectedStage=i;reset()};grid.append(b)}
 }
 function legendFinish(win){
  const k=STAGES[selectedStage].legend.k,c=legendCrown,list=legendProgress[c],first=win&&!list.includes(k),sub=legendSubOf(k),sc=LEGEND_SUBS[sub],last=k===sc.start+sc.len-1;
