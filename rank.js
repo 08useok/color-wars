@@ -15,11 +15,21 @@ const RANK_REWARDS=[
  {at:1000,text:'XP 200,000',xp:200000},
  {at:1200,text:'뽑기권(10회) 2장',t10:2},
  {at:1400,text:'XP 500,000',xp:500000},
- {at:1600,text:'뽑기권(10회) 3장 · 야옹컴 5개',t10:3,cpu:5}
-];
+ {at:1600,text:'뽑기권(10회) 3장 · 야옹컴 5개',t10:3,cpu:5},
+ // 레벨 상한 증가 (원작처럼 높은 랭크에서 등급별로 상한이 늘어남): Lv.21 이상은 레벨당 체력·공격력 +4%
+ {at:900,text:'기본·레어 레벨 상한 Lv.25',cap:{grades:['basic','rare'],to:25}},
+ {at:1100,text:'슈퍼 레어 레벨 상한 Lv.25',cap:{grades:['sr'],to:25}},
+ {at:1300,text:'EX·울트라 슈퍼 레어 레벨 상한 Lv.25',cap:{grades:['ex','uber'],to:25}},
+ {at:1500,text:'기본·레어 레벨 상한 Lv.30',cap:{grades:['basic','rare'],to:30}},
+ {at:1700,text:'슈퍼 레어 레벨 상한 Lv.30',cap:{grades:['sr'],to:30}},
+ {at:1900,text:'EX·울트라 슈퍼 레어 레벨 상한 Lv.30',cap:{grades:['ex','uber'],to:30}}
+].sort((a,b)=>a.at-b.at);
 let rankClaimed=[];
 try{const s=JSON.parse(localStorage.getItem(RANK_KEY)||'{}');if(Array.isArray(s.claimed))rankClaimed=s.claimed.filter(n=>Number.isInteger(n))}catch{}
 function saveRank(){try{localStorage.setItem(RANK_KEY,JSON.stringify({claimed:rankClaimed}))}catch{}}
+// 받은 레벨 상한 보상에 따른 등급별 최대 레벨 (game.js의 levelCapOf가 호출)
+function rankCapOf(grade){let c=20;for(const x of RANK_REWARDS)if(x.cap&&rankClaimed.includes(x.at)&&x.cap.grades.includes(grade))c=Math.max(c,x.cap.to);return c}
+function rankMax(){return ALLIES.reduce((a,t)=>a+levelCapOf(t),0)}
 function rankOpen(){return cleared.includes(1)||cleared.some(i=>i>=1)}// 한국(2번째 스테이지) 클리어 후
 function userRank(){let n=0;for(const t of ALLIES)if(allyUnlocked(t))n+=training.levels[t]||1;return n}
 function rankClaimable(r=userRank()){return RANK_REWARDS.filter(x=>x.at<=r&&!rankClaimed.includes(x.at))}
@@ -42,7 +52,7 @@ document.querySelector('.stage-panel .stage-intro').after(RANK_CARD);
 let rankLastClaimable=0;
 function renderRank(){
  const open=rankOpen();RANK_CARD.classList.toggle('hidden',!open);if(!open)return;
- const r=userRank(),max=ALLIES.length*20,claimable=rankClaimable(r),next=RANK_REWARDS.find(x=>x.at>r),prev=[...RANK_REWARDS].reverse().find(x=>x.at<=r);
+ const r=userRank(),max=rankMax(),claimable=rankClaimable(r),next=RANK_REWARDS.find(x=>x.at>r),prev=[...RANK_REWARDS].reverse().find(x=>x.at<=r);
  $('#rankText').innerHTML=`랭크 <b>${r.toLocaleString()}</b> <small>(모든 아군 레벨 합 · 최대 ${max.toLocaleString()})</small>`;
  const lo=prev?prev.at:0,hi=next?next.at:Math.max(lo,r);
  $('#rankFill').style.width=(next?Math.max(0,Math.min(1,(r-lo)/(hi-lo)))*100:100)+'%';
