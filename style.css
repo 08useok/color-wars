@@ -322,3 +322,9 @@ body { overflow:auto; }
 .rainbow-hit{background:conic-gradient(#ff5252,#ffa02e,#ffe94d,#5fe36a,#4db8ff,#b85bff,#ff5252);-webkit-mask-image:radial-gradient(circle,transparent 28%,#000 31%,#000 47%,transparent 50%);mask-image:radial-gradient(circle,transparent 28%,#000 31%,#000 47%,transparent 50%);filter:drop-shadow(0 0 4px #fff)}
 .prism-hit{background:radial-gradient(circle,#fff 0 18%,#d9f6ff 30%,#ffe94d55 45%,transparent 62%);box-shadow:0 0 14px 4px #c9a8ff88}
 @keyframes beam-hit{from{transform:scale(.3)}to{transform:scale(1.5)}}
+/* 대갈이군·대머리군·홍당무왕: 입에서 퍼지는 음파(몸 색), 나나나난나방: 날갯짓 바람 줄기 — 판정 거리까지 */
+.shout-beam{height:70px;bottom:calc(15% + 6px);background:repeating-radial-gradient(circle at 0 50%,transparent 0 12px,#0007 12px 13px,var(--fx,#fff) 13px 19px,#0007 19px 20px,transparent 20px 30px);-webkit-mask-image:linear-gradient(90deg,#000 0,#000 78%,transparent);mask-image:linear-gradient(90deg,#000 0,#000 78%,transparent);opacity:.95}
+.gust-beam{height:56px;bottom:calc(15% + 22px);background:repeating-linear-gradient(180deg,transparent 0 5px,#0005 5px 6px,#fff 6px 10px,#0005 10px 11px,transparent 11px 17px),radial-gradient(ellipse at 0 50%,#e9dcffaa,transparent 70%);border-radius:0 40px 40px 0;-webkit-mask-image:linear-gradient(90deg,#000a,#000 10%,#000 72%,transparent);mask-image:linear-gradient(90deg,#000a,#000 10%,#000 72%,transparent)}
+.beam-fx.beam-right{z-index:4}
+.shout-hit{border:4px solid var(--fx,#fff);box-shadow:0 0 0 2px #0006,inset 0 0 0 2px #0006}
+.gust-hit{background:radial-gradient(circle,#fff 0 25%,#ffffffaa 40%,transparent 65%);filter:drop-shadow(0 0 2px #0008)}
