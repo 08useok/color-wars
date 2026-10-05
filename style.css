@@ -309,3 +309,14 @@ body { overflow:auto; }
 .rank-bar{height:12px;border-radius:8px;background:#0e2230;border:1px solid #7ad1a0;overflow:hidden;margin:6px 0}.rank-bar i{display:block;height:100%;background:linear-gradient(90deg,#7ad1a0,#ffd35a);transition:width .3s}
 .rank-lobby details{margin-top:6px;color:#dcf5e6}.rank-lobby summary{cursor:pointer;font-weight:700}.rank-lobby ul{margin:6px 0 0;padding-left:18px;font-size:.9rem;line-height:1.6}.rank-lobby li.done{color:#8fbba3;text-decoration:line-through}.rank-lobby li.ready{color:#ffe89a;font-weight:800}
 .rank-claim-btn{padding:14px 24px;border-radius:14px;font-weight:900;font-size:1.05rem;border:2px solid #ffd35a;background:#2f8f5f;color:#fff;cursor:pointer}.rank-claim-btn:disabled{opacity:.5;cursor:default;border-color:#7ad1a0}.rank-claim-btn:not(:disabled):hover{filter:brightness(1.15)}
+/* 레인보우·프리즘: 타격 순간 판정 범위(zoneMax)까지 뻗는 빛줄기 + 맞은 적 위치의 폭발 */
+.beam-fx{position:absolute;bottom:calc(15% + 8px);height:44px;z-index:2;pointer-events:none;transform-origin:right center;animation:beam-grow .18s ease-out both}
+.beam-fx.beam-right{transform-origin:left center}
+@keyframes beam-grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.rainbow-beam{border-radius:22px;background:linear-gradient(180deg,#ff5252 0 14%,#ffa02e 14% 28%,#ffe94d 28% 42%,#5fe36a 42% 57%,#4db8ff 57% 71%,#5b6bff 71% 85%,#b85bff 85%);-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 88%,#0009);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 88%,#0009);filter:drop-shadow(0 0 6px #fffa);opacity:.85}
+.prism-beam{height:58px;bottom:calc(15% + 2px);background:linear-gradient(180deg,#ff5252,#ffa02e,#ffe94d,#5fe36a,#4db8ff,#5b6bff,#b85bff);clip-path:polygon(0 0,100% 45%,100% 55%,0 100%);-webkit-mask-image:linear-gradient(270deg,#0005 0,#0005 var(--dead,0%),#000 calc(var(--dead,0%) + 4%),#000 92%,transparent);mask-image:linear-gradient(270deg,#0005 0,#0005 var(--dead,0%),#000 calc(var(--dead,0%) + 4%),#000 92%,transparent)}
+.prism-beam::after{content:"";position:absolute;left:0;right:0;top:46%;height:8%;background:#fff;box-shadow:0 0 8px 2px #fff}
+.beam-hit{position:absolute;bottom:calc(15% + 8px);width:46px;height:46px;margin-left:-23px;border-radius:50%;z-index:6;pointer-events:none;animation:beam-hit .4s ease-out both}
+.rainbow-hit{background:conic-gradient(#ff5252,#ffa02e,#ffe94d,#5fe36a,#4db8ff,#b85bff,#ff5252);-webkit-mask-image:radial-gradient(circle,transparent 28%,#000 31%,#000 47%,transparent 50%);mask-image:radial-gradient(circle,transparent 28%,#000 31%,#000 47%,transparent 50%);filter:drop-shadow(0 0 4px #fff)}
+.prism-hit{background:radial-gradient(circle,#fff 0 18%,#d9f6ff 30%,#ffe94d55 45%,transparent 62%);box-shadow:0 0 14px 4px #c9a8ff88}
+@keyframes beam-hit{from{transform:scale(.3)}to{transform:scale(1.5)}}

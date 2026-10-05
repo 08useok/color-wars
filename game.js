@@ -744,6 +744,16 @@ function launchWave(u,d){
  const el=document.createElement('span');el.className='juice-splash wave-splash';el.style.left=(lo+hi)/2+'%';el.style.width=(hi-lo)+'%';unitsEl.append(el);game.effects.push({el,time:.35});
  for(const v of [...game.units])if(v.hp>0&&v.kbTime<=0&&v.ally!==u.ally&&v.x>=lo&&v.x<=hi)damage(v,d.atk*(d.wave.mult||1),u);
 }
+// Long-range area beams: the sheet's own swing art only reaches a body length, so the strike also draws a beam out to
+// zoneMax (prism leaves its dead zone faint) and a burst on every target it hits.
+const BEAM_FX={rainbow:'rainbow-beam',prism:'prism-beam'};
+function beamFx(u,d){
+ const dir=u.ally?-1:1,near=u.x+dir,far=u.x+dir*(d.zoneMax??d.range),lo=Math.min(near,far),hi=Math.max(near,far);
+ const el=document.createElement('span');el.className='beam-fx '+BEAM_FX[u.type]+(u.ally?'':' beam-right');el.style.left=lo+'%';el.style.width=(hi-lo)+'%';
+ if(d.zoneMin)el.style.setProperty('--dead',Math.min(100,(d.zoneMin-1)/(hi-lo)*100)+'%');
+ unitsEl.append(el);game.effects.push({el,time:.5});
+}
+function beamHit(x,type){const el=document.createElement('span');el.className='beam-hit '+type+'-hit';el.style.left=x+'%';unitsEl.append(el);game.effects.push({el,time:.4})}
 function resolveAttack(u,t,share=1){
  const d=u.stats||data.units[u.type],dir=u.ally?-1:1,dz=deadZone(u);
  if(d.wave&&Math.random()<d.wave.chance)launchWave(u,d);
@@ -755,7 +765,7 @@ function resolveAttack(u,t,share=1){
  }else if(d.pierce){
   const targets=game.units.filter(inRange).sort((a,b)=>Math.abs(a.x-u.x)-Math.abs(b.x-u.x)).slice(0,d.pierce);
   for(const v of targets)damage(v,d.atk,u);
- }else if(d.area){for(const v of [...game.units])if(inRange(v))damage(v,d.atk,u)}
+ }else if(d.area){const fx=BEAM_FX[u.type];if(fx)beamFx(u,d);for(const v of [...game.units])if(inRange(v)){damage(v,d.atk,u);if(fx)beamHit(v.x,u.type)}}
  else if(d.multiHit){
   let remaining=d.multiHit,victim=inRange(t)?t:targetValid(u);
   while(remaining>0&&victim&&inRange(victim)){damage(victim,d.atk,u);remaining--;if(victim.hp<=0&&remaining>0)victim=targetValid(u)}
@@ -773,7 +783,7 @@ function resolveAttack(u,t,share=1){
   }
  }
  const base=u.ally?data.bases.enemy:data.bases.ally;
- if(Math.abs(base.frontX-u.x)<=(d.engageRange??d.range)){base.hp=Math.max(0,base.hp-baseDamage((d.damageTiers?tierDamage(d.damageTiers,Math.abs(base.frontX-u.x)):d.atk)*(d.multiHit||1)*(d.castleMult||1)*share));if(!base.hp)finish(u.ally)}
+ if(Math.abs(base.frontX-u.x)<=(d.engageRange??d.range)){if(BEAM_FX[u.type])beamHit(base.frontX,u.type);base.hp=Math.max(0,base.hp-baseDamage((d.damageTiers?tierDamage(d.damageTiers,Math.abs(base.frontX-u.x)):d.atk)*(d.multiHit||1)*(d.castleMult||1)*share));if(!base.hp)finish(u.ally)}
 }
 function attack(u,t){
  if(game.ended||u.hp<=0||u.kbTime>0)return;
