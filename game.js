@@ -328,7 +328,7 @@ const ELITE_RABBIT_SHEET='assets/elite_rabbit_sheet.png';
 // Reserved user-supplied enemy sheets for the next Empire of Cats expansion.
 const SQUIRREL_G_SHEET='assets/squirrel_g_sheet.png';
 const KANG_ROO_SHEET='assets/kang_roo_sheet.png?v=2';
-const data={bases:{ally:{hp:2000,max:2000,x:90},enemy:{hp:1000,max:1000,x:10}},units:{cyan:{"hp": 180, "atk": 200, "interval": 3.4, "speed": 4.3, "range": 30, "cost": 260, "cooldown": 9, "knockbacks": 3, "projectile": true, "splash": 0.5, "flight": 0.6, "floatStrong": true},blue:{"hp": 240, "atk": 38, "interval": 0.4, "speed": 13, "range": 4, "cost": 140, "evoCost": 500, "cooldown": 3, "knockbacks": 3, "attackDuration": 0.3},purple:{"hp": 600, "atk": 90, "interval": 1.6, "speed": 5, "range": 6, "cost": 180, "cooldown": 6, "knockbacks": 3, "projectile": true, "splash": 1.5, "redStrong": true},peng:{"hp": 1300, "atk": 80, "interval": 0.8, "speed": 7, "range": 5, "reward": 180, "knockbacks": 3, "attackDuration": 0.55, "windup": 0.26666666666666666},gory:{"hp": 1000, "atk": 80, "interval": 0.5333333333333333, "speed": 8, "range": 5, "reward": 220, "knockbacks": 3, "attackDuration": 0.5, "windup": 0.26666666666666666, "area": true},baa:{"hp": 800, "atk": 50, "interval": 1.1, "speed": 4.5, "range": 3.7, "reward": 100, "knockbacks": 3, "attackDuration": 0.8, "windup": 0.4666666666666667},seal:{"hp": 2500, "atk": 150, "interval": 0.7666666666666667, "speed": 5, "range": 5.7, "reward": 450, "knockbacks": 1, "attackDuration": 0.6, "windup": 0.26666666666666666, "area": true, "trait": "red"},croco:{"hp": 70, "atk": 30, "interval": 0.6, "speed": 7.5, "range": 3.7, "reward": 30, "knockbacks": 1, "attackDuration": 0.5, "windup": 0.26666666666666666},red:{hp:450,atk:15,interval:1.2,speed:6,range:4.5,cost:30,evoCost:75,cooldown:2,knockbacks:3},orange:{hp:220,atk:100,interval:2.4,speed:4.5,range:16,cost:150,cooldown:6.5,knockbacks:3,projectile:true,splash:3.5},yellow:{hp:900,atk:45,interval:1.8,speed:5,range:4,cost:125,cooldown:5,knockbacks:1},green:{hp:280,atk:65,interval:2.8,speed:5.5,range:12,cost:175,cooldown:7,knockbacks:3,boomerang:true},dog:{hp:200,atk:50,interval:1.4,speed:5,range:4,reward:40,knockbacks:3},snache:{hp:220,atk:85,interval:1.1,speed:7,range:4,reward:70,knockbacks:3},guys:{hp:420,atk:120,interval:1,speed:4.8,range:4.2,reward:110,knockbacks:1,attackDuration:.9},pigge:{trait:"red",hp:2400,atk:130,interval:1.8,speed:2.5,range:5,reward:400,knockbacks:2,attackDuration:28/30,windup:14/30,area:true},hippo:{hp:1600,atk:150,interval:2.2,speed:2.8,range:5,reward:200,knockbacks:1,attackDuration:.8,area:true}},income:[{max:1000,rate:20,cost:100},{max:1300,rate:28,cost:150},{max:1700,rate:38,cost:220},{max:2200,rate:50,cost:320},{max:2800,rate:65,cost:450},{max:3600,rate:85,cost:null}]};
+const data={bases:{ally:{hp:2000,max:2000,x:90},enemy:{hp:1000,max:1000,x:10}},units:{cyan:{"hp": 180, "atk": 200, "interval": 3.4, "speed": 4.3, "range": 30, "cost": 260, "cooldown": 9, "knockbacks": 3, "projectile": true, "splash": 0.5, "flight": 0.6, "floatStrong": true},blue:{"hp": 240, "atk": 38, "interval": 0.4, "speed": 13, "range": 4, "cost": 140, "evoCost": 500, "cooldown": 3, "knockbacks": 3, "attackDuration": 0.3},purple:{"hp": 600, "atk": 90, "interval": 1.6, "speed": 5, "range": 6, "cost": 230, "cooldown": 6, "knockbacks": 3, "projectile": true, "splash": 1.5, "redStrong": true},peng:{"hp": 1300, "atk": 80, "interval": 0.8, "speed": 7, "range": 5, "reward": 180, "knockbacks": 3, "attackDuration": 0.55, "windup": 0.26666666666666666},gory:{"hp": 1000, "atk": 80, "interval": 0.5333333333333333, "speed": 8, "range": 5, "reward": 220, "knockbacks": 3, "attackDuration": 0.5, "windup": 0.26666666666666666, "area": true},baa:{"hp": 800, "atk": 50, "interval": 1.1, "speed": 4.5, "range": 3.7, "reward": 100, "knockbacks": 3, "attackDuration": 0.8, "windup": 0.4666666666666667},seal:{"hp": 2500, "atk": 150, "interval": 0.7666666666666667, "speed": 5, "range": 5.7, "reward": 450, "knockbacks": 1, "attackDuration": 0.6, "windup": 0.26666666666666666, "area": true, "trait": "red"},croco:{"hp": 70, "atk": 30, "interval": 0.6, "speed": 7.5, "range": 3.7, "reward": 30, "knockbacks": 1, "attackDuration": 0.5, "windup": 0.26666666666666666},red:{hp:450,atk:15,interval:1.2,speed:6,range:4.5,cost:30,evoCost:75,cooldown:2,knockbacks:3},orange:{hp:220,atk:100,interval:2.4,speed:4.5,range:16,cost:200,cooldown:6.5,knockbacks:3,projectile:true,splash:3.5},yellow:{hp:999,atk:50,interval:1.8,speed:5,range:4,cost:125,cooldown:5,knockbacks:1},green:{hp:280,atk:65,interval:2.8,speed:5.5,range:12,cost:235,cooldown:7,knockbacks:3,boomerang:true},dog:{hp:200,atk:50,interval:1.4,speed:5,range:4,reward:40,knockbacks:3},snache:{hp:220,atk:85,interval:1.1,speed:7,range:4,reward:70,knockbacks:3},guys:{hp:420,atk:120,interval:1,speed:4.8,range:4.2,reward:110,knockbacks:1,attackDuration:.9},pigge:{trait:"red",hp:2400,atk:130,interval:1.8,speed:2.5,range:5,reward:400,knockbacks:2,attackDuration:28/30,windup:14/30,area:true},hippo:{hp:1600,atk:150,interval:2.2,speed:2.8,range:5,reward:200,knockbacks:1,attackDuration:.8,area:true}},income:[{max:1000,rate:20,cost:100},{max:1300,rate:28,cost:150},{max:1700,rate:38,cost:220},{max:2200,rate:50,cost:320},{max:2800,rate:65,cost:450},{max:3600,rate:85,cost:null}]};
 data.units.leboin={hp:4000,atk:654,interval:187/30,speed:2.5,range:13.5,reward:650,knockbacks:1,attackDuration:.9,windup:8/30,area:true};
 const MOOTH_SHEET='assets/mooth_sheet.png';
 data.units.rabbit={trait:"red",hp:320,atk:60,interval:41/30,speed:9,range:4,reward:70,knockbacks:3,attackDuration:16/30,windup:12/30};
@@ -336,7 +336,7 @@ data.units.squirrel={hp:300,atk:45,interval:16/30,speed:8.5,range:4.2,reward:85,
 // Kang Roo's 250 is split 213/12/25 over three punches at 2f/8f/16f (share of atk, so Chapter 2's x1.5 still applies).
 data.units.kangaroo={hp:4000,atk:250,interval:36/30,speed:10,range:5.5,reward:700,knockbacks:1,attackDuration:.85,windup:2/30,hits:[{at:2/30,share:213/250},{at:8/30,share:12/250},{at:16/30,share:25/250}]};
 data.units.mooth={trait:"floating",hp:5000,atk:300,interval:88/30,speed:3.2,range:12,reward:850,knockbacks:1,attackDuration:1.6,windup:34/30,area:true};
-data.units.pink={hp:520,atk:125,interval:1.9,speed:6,range:23,engageRange:4.5,cost:225,cooldown:7,knockbacks:3,attackDuration:.7,windup:.3,area:true};
+data.units.pink={hp:520,atk:125,interval:1.9,speed:6,range:23,engageRange:4.5,cost:260,cooldown:7,knockbacks:3,attackDuration:.7,windup:.3,area:true};
 data.units.rhino={hp:5200,atk:420,interval:2.1,speed:5.5,range:5.2,reward:900,knockbacks:2,attackDuration:.9,windup:.45,area:true};
 data.units.bear={hp:6500,atk:520,interval:2.4,speed:4.5,range:8.5,reward:1050,knockbacks:10,attackDuration:1,windup:.5,area:true};
 data.units.face={trait:"floating",hp:18000,atk:850,interval:3.4,speed:1.8,range:14,reward:2500,knockbacks:3,attackDuration:1.2,windup:.65,area:true};
@@ -413,88 +413,88 @@ const RASPBERRY_EVOLVED_SHEET='assets/raspberry_evolved.webp';
 // 오닉스 (onyx #353839): original character, the chapter-2 Moon reward. Art generated for this game.
 const ONYX_SHEET='assets/onyx_sheet.webp',ONYX_EVOLVED_SHEET='assets/onyx_evolved.webp',ONYX_PROFILE='assets/onyx_profile.webp';
 data.units.crimson={hp:900,atk:650,interval:2.8,speed:5,range:7,cost:300,cooldown:10,knockbacks:3,forceKnockback:true,critChance:.1,critMult:2};
-data.units.gold={hp:600,atk:180,interval:3.6,speed:5,range:21,cost:425,cooldown:15,knockbacks:3,multiHit:3};
-data.units.ivory={hp:650,atk:380,interval:3,speed:5,range:20,cost:350,cooldown:13,knockbacks:3,area:true,slowChance:.4,slowDuration:2};
-data.units.chartreuse={hp:600,atk:95,interval:2.4,speed:5,range:16,cost:325,cooldown:12,knockbacks:3,multiHit:5};
-data.units.mint={hp:650,atk:340,interval:3.4,speed:5,range:17.5,cost:375,cooldown:14,knockbacks:3,area:true,freezeChance:.25,freezeDuration:1.5};
+data.units.gold={hp:718,atk:215,interval:3.6,speed:5,range:21,cost:425,cooldown:15,knockbacks:3,multiHit:3};
+data.units.ivory={hp:650,atk:380,interval:3,speed:5,range:20,cost:430,cooldown:13,knockbacks:3,area:true,slowChance:.4,slowDuration:2};
+data.units.chartreuse={hp:600,atk:95,interval:2.4,speed:5,range:16,cost:380,cooldown:12,knockbacks:3,multiHit:5};
+data.units.mint={hp:650,atk:340,interval:3.4,speed:5,range:17.5,cost:480,cooldown:14,knockbacks:3,area:true,freezeChance:.25,freezeDuration:1.5};
 data.units.azure={hp:800,atk:520,interval:3.2,speed:6.5,range:9,cost:400,cooldown:14,knockbacks:2,dash:true};
 data.units.crystal={hp:700,atk:460,interval:3.8,speed:5,range:22.5,cost:450,cooldown:16,knockbacks:3,pierce:3,critChance:.15,critMult:2,floatStrong:true};
-data.units.lavender={hp:500,atk:260,interval:4,speed:5,range:23.5,cost:400,cooldown:15,knockbacks:3,area:true,atkDownPct:.5,atkDownChance:.4,atkDownDuration:4};
-data.units.salmon={hp:450,atk:430,interval:4.2,speed:5,range:26,cost:475,cooldown:17,knockbacks:3,pull:true};
-data.units.raspberry={hp:400,atk:450,interval:4.5,speed:3,range:30,cost:500,cooldown:18,knockbacks:3,windup:.8,critChance:.1,critMult:2,damageTiers:[{max:10,dmg:450},{max:17.5,dmg:750},{max:25,dmg:1200},{max:999,dmg:1600}]};
-data.units.onyx={hp:2400,atk:1400,interval:3.4,speed:4.5,range:8,cost:900,cooldown:30,knockbacks:3,area:true,bossDamage:1.5,attackDuration:.9,windup:.45};
+data.units.lavender={hp:500,atk:260,interval:4,speed:5,range:23.5,cost:450,cooldown:15,knockbacks:3,area:true,atkDownPct:.5,atkDownChance:.4,atkDownDuration:4};
+data.units.salmon={hp:585,atk:559,interval:4.2,speed:5,range:26,cost:475,cooldown:17,knockbacks:3,pull:true};
+data.units.raspberry={hp:490,atk:552,interval:4.5,speed:3,range:30,cost:500,cooldown:18,knockbacks:3,windup:.8,critChance:.1,critMult:2,damageTiers:[{max:10,dmg:552},{max:17.5,dmg:920},{max:25,dmg:1471},{max:999,dmg:1962}]};
+data.units.onyx={hp:2784,atk:1624,interval:3.4,speed:4.5,range:8,cost:900,cooldown:30,knockbacks:3,area:true,bossDamage:1.5,attackDuration:.9,windup:.45};
 // 레어 14종 (정식 1): 세계편 3장 스테이지 클리어로 해금. 특성 대응 메즈/엄강/맷집 + 양산형 딜러.
-data.units.black={hp:800,atk:220,interval:1.8,speed:5,range:9,cost:350,cooldown:12,knockbacks:3,massiveVs:['black'],attackDuration:.6,windup:.2};
-data.units.white={hp:500,atk:60,interval:1,speed:6,range:7,cost:75,cooldown:3,knockbacks:3,attackDuration:.6,windup:.2};
-data.units.maroon={hp:450,atk:200,interval:3.4,speed:5,range:22,cost:325,cooldown:12,knockbacks:3,slowChance:.4,slowDuration:2,statusVs:['red'],attackDuration:.6,windup:.2};
-data.units.brown={hp:1100,atk:120,interval:1.4,speed:5,range:4,cost:200,cooldown:8,knockbacks:3,resistVs:['angel'],attackDuration:.6,windup:.2};
+data.units.black={hp:890,atk:245,interval:1.8,speed:5,range:9,cost:350,cooldown:12,knockbacks:3,massiveVs:['black'],attackDuration:.6,windup:.2};
+data.units.white={hp:500,atk:60,interval:1,speed:6,range:7,cost:100,cooldown:3,knockbacks:3,attackDuration:.6,windup:.2};
+data.units.maroon={hp:530,atk:236,interval:3.4,speed:5,range:22,cost:325,cooldown:12,knockbacks:3,slowChance:.4,slowDuration:2,statusVs:['red'],attackDuration:.6,windup:.2};
+data.units.brown={hp:1226,atk:134,interval:1.4,speed:5,range:4,cost:200,cooldown:8,knockbacks:3,resistVs:['angel'],attackDuration:.6,windup:.2};
 data.units.tan={hp:550,atk:170,interval:2.8,speed:5,range:10,cost:300,cooldown:11,knockbacks:3,area:true,slowChance:.5,slowDuration:2.5,statusVs:['angel'],attackDuration:.6,windup:.2};
 data.units.beige={hp:700,atk:300,interval:3,speed:5,range:6,cost:350,cooldown:13,knockbacks:3,area:true,freezeChance:.25,freezeDuration:1.5,statusVs:['black'],attackDuration:.6,windup:.2};
-data.units.cream={hp:700,atk:150,interval:2,speed:5,range:8,cost:300,cooldown:10,knockbacks:3,slowChance:.4,slowDuration:2,statusVs:['black'],attackDuration:.6,windup:.2};
-data.units.olive={hp:600,atk:160,interval:2.2,speed:5,range:8,cost:275,cooldown:10,knockbacks:3,area:true,atkDownPct:.5,atkDownChance:.5,atkDownDuration:3,statusVs:['floating'],attackDuration:.6,windup:.2};
-data.units.clover={hp:480,atk:210,interval:3.4,speed:5,range:20,cost:325,cooldown:12,knockbacks:3,atkDownPct:.5,atkDownChance:.5,atkDownDuration:3,statusVs:['black'],attackDuration:.6,windup:.2};
-data.units.indigo={hp:500,atk:220,interval:3.2,speed:5,range:20,cost:350,cooldown:13,knockbacks:3,freezeChance:.3,freezeDuration:1.5,statusVs:['floating'],attackDuration:.6,windup:.2};
-data.units.lilac={hp:550,atk:180,interval:2.8,speed:5,range:14,cost:300,cooldown:11,knockbacks:3,area:true,slowChance:.4,slowDuration:2,statusVs:['floating'],attackDuration:.6,windup:.2};
-data.units.hotpink={hp:450,atk:200,interval:3.4,speed:5,range:20,cost:300,cooldown:11,knockbacks:3,atkDownPct:.5,atkDownChance:.5,atkDownDuration:3,statusVs:['red'],attackDuration:.6,windup:.2};
-data.units.ruby={hp:600,atk:260,interval:3,speed:5,range:12,cost:325,cooldown:12,knockbacks:3,area:true,freezeChance:.25,freezeDuration:1.5,statusVs:['red'],attackDuration:.6,windup:.2};
+data.units.cream={hp:794,atk:170,interval:2,speed:5,range:8,cost:300,cooldown:10,knockbacks:3,slowChance:.4,slowDuration:2,statusVs:['black'],attackDuration:.6,windup:.2};
+data.units.olive={hp:600,atk:160,interval:2.2,speed:5,range:8,cost:310,cooldown:10,knockbacks:3,area:true,atkDownPct:.5,atkDownChance:.5,atkDownDuration:3,statusVs:['floating'],attackDuration:.6,windup:.2};
+data.units.clover={hp:566,atk:248,interval:3.4,speed:5,range:20,cost:325,cooldown:12,knockbacks:3,atkDownPct:.5,atkDownChance:.5,atkDownDuration:3,statusVs:['black'],attackDuration:.6,windup:.2};
+data.units.indigo={hp:560,atk:247,interval:3.2,speed:5,range:20,cost:350,cooldown:13,knockbacks:3,freezeChance:.3,freezeDuration:1.5,statusVs:['floating'],attackDuration:.6,windup:.2};
+data.units.lilac={hp:550,atk:180,interval:2.8,speed:5,range:14,cost:390,cooldown:11,knockbacks:3,area:true,slowChance:.4,slowDuration:2,statusVs:['floating'],attackDuration:.6,windup:.2};
+data.units.hotpink={hp:493,atk:219,interval:3.4,speed:5,range:20,cost:300,cooldown:11,knockbacks:3,atkDownPct:.5,atkDownChance:.5,atkDownDuration:3,statusVs:['red'],attackDuration:.6,windup:.2};
+data.units.ruby={hp:600,atk:260,interval:3,speed:5,range:12,cost:425,cooldown:12,knockbacks:3,area:true,freezeChance:.25,freezeDuration:1.5,statusVs:['red'],attackDuration:.6,windup:.2};
 // EX 가넷: 레전드 스토리 1장 올클리어 30% 드롭 · 살아남는다 + 검은 적 엄강 · Lv.20 체력 10만 / 공격력 16,000 (3장 빠옹 한 방)
-data.units.garnet={hp:3100,atk:1600,interval:3.2,speed:5,range:5,cost:900,cooldown:30,knockbacks:4,strongVs:['black'],survive:.3,attackDuration:1,windup:.45};
+data.units.garnet={hp:3825,atk:1974,interval:3.2,speed:5,range:5,cost:900,cooldown:30,knockbacks:4,strongVs:['black'],survive:.3,attackDuration:1,windup:.45};
 // 울슈레 프리즘: 원거리 범위 · 선딜 길고 맞은 적을 밀치기 · 인식 범위 28, 타격 구간 10~40 (처음 설계 400 / 250~550 ÷ 20 = 20 / 12.5~27.5에서 확대)
 data.units.prism={hp:1000,atk:3600,interval:5.4,speed:5,range:28,zoneMin:10,zoneMax:40,cost:4000,flatCost:true,cooldown:25,knockbacks:3,area:true,push:7,attackDuration:1,windup:.6};
 // 울슈레 레인보우 (시즌 2, 두 번째 울슈레): 모든 속성 적에게 초데미지(×3) · 범위 · 인식 거리 50 / 타격 구간 0~52.5 (원작 1000 / 0~1050 ÷ 20) · 사각지대 없음 · 서포터 능력 없음
 data.units.rainbow={hp:1000,atk:1550,interval:4,speed:5,range:50,zoneMin:0,zoneMax:52.5,cost:4000,flatCost:true,cooldown:25,knockbacks:3,area:true,attackClass:'범위',noRangeGrow:true,massiveVs:['red','floating','metal','black','angel','alien'],attackDuration:1,windup:.5};
 // SR 12명 (뽑기 전용, 2진 없음): 능력은 하나씩, 확률은 아주 가끔/가끔/자주로 설명
-data.units.plum={hp:450,atk:300,interval:4.4,speed:5,range:38,cost:550,cooldown:20,knockbacks:3,atkDownPct:.5,atkDownChance:.5,atkDownDuration:5,statusVs:['angel'],attackDuration:.8,windup:.35};
-data.units.forest={hp:1200,atk:520,interval:2.2,speed:5,range:5,cost:450,cooldown:15,knockbacks:3,strongVs:['angel'],attackDuration:.8,windup:.35};
+data.units.plum={hp:511,atk:341,interval:4.4,speed:5,range:38,cost:550,cooldown:20,knockbacks:3,atkDownPct:.5,atkDownChance:.5,atkDownDuration:5,statusVs:['angel'],attackDuration:.8,windup:.35};
+data.units.forest={hp:1498,atk:649,interval:2.2,speed:5,range:5,cost:450,cooldown:15,knockbacks:3,strongVs:['angel'],attackDuration:.8,windup:.35};
 data.units.canary={hp:600,atk:480,interval:3.4,speed:5,range:14,cost:575,cooldown:18,knockbacks:3,area:true,freezeChance:.3,freezeDuration:1.5,statusVs:['angel'],attackDuration:.8,windup:.35};
-data.units.cherry={hp:700,atk:650,interval:2,speed:5,range:6,cost:500,cooldown:14,knockbacks:3,extremeVs:['angel'],attackDuration:.8,windup:.35};
-data.units.mauve={hp:550,atk:380,interval:3.6,speed:5,range:24,cost:550,cooldown:18,knockbacks:3,freezeChance:.3,freezeDuration:1.5,statusVs:['floating'],attackDuration:.8,windup:.35};
+data.units.cherry={hp:787,atk:731,interval:2,speed:5,range:6,cost:500,cooldown:14,knockbacks:3,extremeVs:['angel'],attackDuration:.8,windup:.35};
+data.units.mauve={hp:703,atk:486,interval:3.6,speed:5,range:24,cost:550,cooldown:18,knockbacks:3,freezeChance:.3,freezeDuration:1.5,statusVs:['floating'],attackDuration:.8,windup:.35};
 data.units.khaki={hp:420,atk:520,interval:3,speed:5,range:28,cost:500,cooldown:16,knockbacks:3,massiveVs:['floating'],attackDuration:.8,windup:.35};
-data.units.tangerine={hp:900,atk:380,interval:3,speed:5,range:12,cost:525,cooldown:17,knockbacks:3,area:true,slowChance:.5,slowDuration:3,statusVs:['red'],attackDuration:.8,windup:.35};
-data.units.burgundy={hp:1100,atk:560,interval:2,speed:5,range:5,cost:450,cooldown:15,knockbacks:3,strongVs:['red'],attackDuration:.8,windup:.35};
-data.units.mustard={hp:1000,atk:520,interval:3.2,speed:5,range:7,cost:550,cooldown:18,knockbacks:3,area:true,massiveVs:['red'],attackDuration:.8,windup:.35};
-data.units.sky={hp:500,atk:400,interval:3.4,speed:5,range:26,cost:525,cooldown:17,knockbacks:3,freezeChance:.3,freezeDuration:1.5,statusVs:['black'],attackDuration:.8,windup:.35};
-data.units.denim={hp:800,atk:480,interval:2.4,speed:5,range:8,cost:450,cooldown:14,knockbacks:3,strongVs:['black'],attackDuration:.8,windup:.35};
+data.units.tangerine={hp:900,atk:380,interval:3,speed:5,range:12,cost:635,cooldown:17,knockbacks:3,area:true,slowChance:.5,slowDuration:3,statusVs:['red'],attackDuration:.8,windup:.35};
+data.units.burgundy={hp:1212,atk:617,interval:2,speed:5,range:5,cost:450,cooldown:15,knockbacks:3,strongVs:['red'],attackDuration:.8,windup:.35};
+data.units.mustard={hp:1000,atk:520,interval:3.2,speed:5,range:7,cost:620,cooldown:18,knockbacks:3,area:true,massiveVs:['red'],attackDuration:.8,windup:.35};
+data.units.sky={hp:615,atk:492,interval:3.4,speed:5,range:26,cost:525,cooldown:17,knockbacks:3,freezeChance:.3,freezeDuration:1.5,statusVs:['black'],attackDuration:.8,windup:.35};
+data.units.denim={hp:990,atk:594,interval:2.4,speed:5,range:8,cost:450,cooldown:14,knockbacks:3,strongVs:['black'],attackDuration:.8,windup:.35};
 data.units.charcoal={hp:480,atk:420,interval:3,speed:5,range:22,cost:500,cooldown:16,knockbacks:3,intervalUpChance:.5,intervalUpMult:1.5,intervalUpDuration:4,statusVs:['black'],attackDuration:.8,windup:.35};
 // 직업 SR 4명 (뽑기 전용): 우주인=길리먼 블루, 요리사=그레이프프루트 펄프, 해적 선장=아틀라스 레드, 로봇=베르디그리
 data.units.cornflower={hp:500,atk:700,interval:3.2,speed:5,range:22,cost:550,cooldown:18,knockbacks:3,freezeChance:.35,freezeDuration:1.5,statusVs:['alien'],massiveVs:['alien'],hiddenAbility:true,attackDuration:.8,windup:.35};
 data.units.bittersweet={hp:700,atk:600,interval:2.4,speed:5,range:7,cost:450,cooldown:15,knockbacks:3,critChance:.4,critMult:2,attackDuration:.8,windup:.35};
-data.units.claret={hp:450,atk:480,interval:3.4,speed:5,range:22,cost:525,cooldown:17,knockbacks:3,multiHit:3,killGold:.3,attackDuration:.8,windup:.35};
-data.units.verdigris={hp:1000,atk:520,interval:2.2,speed:5,range:6,cost:500,cooldown:15,knockbacks:3,blowChance:.3,blowDistance:14,attackDuration:.8,windup:.35};
+data.units.claret={hp:450,atk:480,interval:3.4,speed:5,range:22,cost:590,cooldown:17,knockbacks:3,multiHit:3,killGold:.3,attackDuration:.8,windup:.35};
+data.units.verdigris={hp:1000,atk:520,interval:2.2,speed:5,range:6,cost:550,cooldown:15,knockbacks:3,blowChance:.3,blowDistance:14,attackDuration:.8,windup:.35};
 // EX 라피스·셀레나이트·토파즈: 라피스=화요일 광속 전사 초상급, 셀레나이트=3장 달, 토파즈=레전드 ★2 올클리어 (각 첫 클리어 보상)
-data.units.lapis={hp:1800,atk:700,interval:2,speed:9,range:5,cost:800,cooldown:28,knockbacks:3,multiHit:3,critChance:.25,critMult:2,attackDuration:.9,windup:.3};
-data.units.selenite={hp:900,atk:900,interval:3.6,speed:5,range:20,cost:850,cooldown:28,knockbacks:3,area:true,wave:{chance:.35,reach:28,mult:1},attackDuration:1,windup:.5};
+data.units.lapis={hp:2088,atk:812,interval:2,speed:9,range:5,cost:800,cooldown:28,knockbacks:3,multiHit:3,critChance:.25,critMult:2,attackDuration:.9,windup:.3};
+data.units.selenite={hp:1043,atk:1043,interval:3.6,speed:5,range:20,cost:850,cooldown:28,knockbacks:3,area:true,wave:{chance:.35,reach:28,mult:1},attackDuration:1,windup:.5};
 // EX 리본 오렌지 (오렌지 아종, 리본 오렌지 강림 드롭): 중거리 범위 · 리본으로 묶어 정지 30% / 2초. Not playable until its sprite sheet arrives.
 data.units.ribbonorange={hp:800,atk:650,interval:3,speed:5,range:18,cost:600,cooldown:20,knockbacks:3,area:true,freezeChance:.3,freezeDuration:2,attackDuration:.9,windup:.4};
-data.units.topaz={hp:700,atk:600,interval:3,speed:5,range:24,cost:600,cooldown:20,knockbacks:3,killGold:1,attackDuration:.8,windup:.3};
-data.units.hacienda={hp:500,atk:180,interval:2.4,speed:5,range:12,cost:300,cooldown:11,knockbacks:3,massiveVs:['angel'],attackDuration:.6,windup:.2};
+data.units.topaz={hp:881,atk:755,interval:3,speed:5,range:24,cost:600,cooldown:20,knockbacks:3,killGold:1,attackDuration:.8,windup:.3};
+data.units.hacienda={hp:566,atk:204,interval:2.4,speed:5,range:12,cost:300,cooldown:11,knockbacks:3,massiveVs:['angel'],attackDuration:.6,windup:.2};
 // 시즌 2 레어 20명 (냥코 원작 같은 능력의 레어·슈퍼 레어 캐릭터 Lv.30 값 = 이 게임 Lv.20, 사거리는 ÷20, 이동 속도는 ÷2):
 // 15명은 미래편 스테이지 첫 클리어로 해금, 5명(퓨전 크림·실버·라바·베이비 핑크·마젠타)은 뽑기 전용
 data.units.cobalt={hp:490,atk:472,interval:3.03,speed:5.0,range:6.0,cost:150,cooldown:10,knockbacks:3,strongVs:['alien'],attackDuration:0.8,windup:0.35};
 data.units.flame={hp:390,atk:208,interval:1.1,speed:5.5,range:7.75,cost:325,cooldown:10,knockbacks:3,massiveVs:['red'],attackDuration:0.8,windup:0.35};
 data.units.scarlet={hp:460,atk:170,interval:0.83,speed:5.5,range:7.0,cost:250,cooldown:10,knockbacks:3,strongVs:['red'],attackDuration:0.75,windup:0.29};
-data.units.moss={hp:270,atk:113,interval:3.5,speed:3.0,range:18.25,cost:250,cooldown:12,knockbacks:3,slowChance:.5,slowDuration:4,statusVs:['alien'],attackDuration:0.8,windup:0.35};
-data.units.coral={hp:150,atk:185,interval:2.4,speed:5.0,range:17.0,cost:375,cooldown:15,knockbacks:3,massiveVs:['floating'],attackDuration:0.8,windup:0.35};
-data.units.aqua={hp:270,atk:89,interval:0.97,speed:5.0,range:10.0,cost:250,cooldown:10,knockbacks:3,slowChance:.2,slowDuration:4,statusVs:['floating'],attackDuration:0.8,windup:0.34};
+data.units.moss={hp:305,atk:128,interval:3.5,speed:3.0,range:18.25,cost:250,cooldown:12,knockbacks:3,slowChance:.5,slowDuration:4,statusVs:['alien'],attackDuration:0.8,windup:0.35};
+data.units.coral={hp:182,atk:224,interval:2.4,speed:5.0,range:17.0,cost:375,cooldown:15,knockbacks:3,massiveVs:['floating'],attackDuration:0.8,windup:0.35};
+data.units.aqua={hp:309,atk:102,interval:0.97,speed:5.0,range:10.0,cost:250,cooldown:10,knockbacks:3,slowChance:.2,slowDuration:4,statusVs:['floating'],attackDuration:0.8,windup:0.34};
 data.units.cooper={hp:410,atk:157,interval:2.5,speed:4.5,range:9.5,cost:200,cooldown:8,knockbacks:3,freezeChance:.2,freezeDuration:4,statusVs:['metal'],attackDuration:0.8,windup:0.35};
-data.units.navy={hp:490,atk:604,interval:2.27,speed:4.5,range:8.5,cost:350,cooldown:15,knockbacks:2,area:true,massiveVs:['alien'],attackDuration:0.8,windup:0.35};
+data.units.navy={hp:490,atk:604,interval:2.27,speed:4.5,range:8.5,cost:440,cooldown:15,knockbacks:2,area:true,massiveVs:['alien'],attackDuration:0.8,windup:0.35};
 data.units.dandelion={hp:430,atk:274,interval:2.7,speed:4.5,range:14.5,cost:200,cooldown:6,knockbacks:3,slowChance:.3,slowDuration:2,statusVs:['black'],attackDuration:0.8,windup:0.35};
-data.units.babyblue={hp:210,atk:81,interval:1.5,speed:4.0,range:13.5,cost:250,cooldown:11,knockbacks:3,blowChance:.3,blowDistance:14,attackDuration:0.8,windup:0.35};
-data.units.mintcyan={hp:240,atk:142,interval:1.63,speed:5.0,range:7.5,cost:90,cooldown:4,knockbacks:3,survive:.5,attackDuration:0.8,windup:0.35};
-data.units.peach={hp:460,atk:102,interval:0.33,speed:4.0,range:6.0,cost:100,cooldown:8,knockbacks:1,resistVs:['angel'],attackDuration:0.3,windup:0.12};
+data.units.babyblue={hp:210,atk:81,interval:1.5,speed:4.0,range:13.5,cost:295,cooldown:11,knockbacks:3,blowChance:.3,blowDistance:14,attackDuration:0.8,windup:0.35};
+data.units.mintcyan={hp:240,atk:142,interval:1.63,speed:5.0,range:7.5,cost:110,cooldown:4,knockbacks:3,survive:.5,attackDuration:0.8,windup:0.35};
+data.units.peach={hp:460,atk:102,interval:0.33,speed:4.0,range:6.0,cost:135,cooldown:8,knockbacks:1,resistVs:['angel'],attackDuration:0.3,windup:0.12};
 data.units.lightcream={hp:410,atk:157,interval:1.03,speed:6.0,range:7.5,cost:250,cooldown:12,knockbacks:3,critChance:.05,critMult:2,attackDuration:0.8,windup:0.35};
-data.units.midnight={hp:110,atk:76,interval:2.7,speed:4.0,range:17.0,cost:300,cooldown:12,knockbacks:3,freezeChance:.2,freezeDuration:2,statusVs:['alien'],attackDuration:0.8,windup:0.35};
-data.units.darklilac={hp:250,atk:294,interval:4.03,speed:4.0,range:15.5,cost:250,cooldown:15,knockbacks:3,atkDownPct:.5,atkDownChance:.5,atkDownDuration:6.67,statusVs:['alien'],attackDuration:0.8,windup:0.35};
+data.units.midnight={hp:129,atk:89,interval:2.7,speed:4.0,range:17.0,cost:300,cooldown:12,knockbacks:3,freezeChance:.2,freezeDuration:2,statusVs:['alien'],attackDuration:0.8,windup:0.35};
+data.units.darklilac={hp:280,atk:329,interval:4.03,speed:4.0,range:15.5,cost:250,cooldown:15,knockbacks:3,atkDownPct:.5,atkDownChance:.5,atkDownDuration:6.67,statusVs:['alien'],attackDuration:0.8,windup:0.35};
 data.units.fusioncream={hp:610,atk:132,interval:0.3,speed:6.0,range:9.0,cost:400,cooldown:25,knockbacks:1,massiveVs:['alien'],attackDuration:0.27,windup:0.1};
-data.units.silver={hp:490,atk:756,interval:15,speed:5.0,range:17.5,cost:400,cooldown:30,knockbacks:3,area:true,attackClass:'범위',backRange:15,critChance:1,critMult:2,attackDuration:0.8,windup:0.35};// 원본 치어리더 캣(20.3초)을 15초로 줄이고 범위 · 전방 사거리 ~ 뒤쪽 -300(15)까지 타격
-data.units.lava={hp:940,atk:1351,interval:4.03,speed:3.0,range:11.0,cost:425,cooldown:21,knockbacks:2,area:true,massiveVs:['black'],attackDuration:0.8,windup:0.35};
-data.units.babypink={hp:440,atk:756,interval:4.53,speed:5.5,range:16.5,cost:400,cooldown:20,knockbacks:3,area:true,slowChance:.3,slowDuration:3,statusVs:['angel'],attackDuration:0.8,windup:0.35};
-data.units.magenta={hp:1090,atk:1360,interval:4.23,speed:4.0,range:12.75,cost:450,cooldown:30,knockbacks:3,area:true,wave:{chance:1,reach:36,mult:1},attackDuration:0.8,windup:0.35};
+data.units.silver={hp:490,atk:756,interval:15,speed:5.0,range:17.5,cost:470,cooldown:30,knockbacks:3,area:true,attackClass:'범위',backRange:15,critChance:1,critMult:2,attackDuration:0.8,windup:0.35};// 원본 치어리더 캣(20.3초)을 15초로 줄이고 범위 · 전방 사거리 ~ 뒤쪽 -300(15)까지 타격
+data.units.lava={hp:940,atk:1351,interval:4.03,speed:3.0,range:11.0,cost:555,cooldown:21,knockbacks:2,area:true,massiveVs:['black'],attackDuration:0.8,windup:0.35};
+data.units.babypink={hp:440,atk:756,interval:4.53,speed:5.5,range:16.5,cost:520,cooldown:20,knockbacks:3,area:true,slowChance:.3,slowDuration:3,statusVs:['angel'],attackDuration:0.8,windup:0.35};
+data.units.magenta={hp:1090,atk:1360,interval:4.23,speed:4.0,range:12.75,cost:610,cooldown:30,knockbacks:3,area:true,wave:{chance:1,reach:36,mult:1},attackDuration:0.8,windup:0.35};
 // 신규 54~59: 메이플·브릭·콘·바이올=레어(미래편 스테이지 해금), 틸=슈퍼 레어(뽑기), 오키드=울슈레(뽑기, 1·2진 같은 가격)
-data.units.maple={hp:930,atk:378,interval:1.8,speed:5,range:7,cost:325,cooldown:10,knockbacks:3,rage:1,attackDuration:0.8,windup:0.35};
-data.units.brick={hp:550,atk:472,interval:2.17,speed:5,range:6.25,cost:300,cooldown:12,knockbacks:3,resistVs:['red','floating','metal','black','angel','alien'],attackDuration:0.8,windup:0.35};
+data.units.maple={hp:1011,atk:411,interval:1.8,speed:5,range:7,cost:325,cooldown:10,knockbacks:3,rage:1,attackDuration:0.8,windup:0.35};
+data.units.brick={hp:550,atk:472,interval:2.17,speed:5,range:6.25,cost:345,cooldown:12,knockbacks:3,resistVs:['red','floating','metal','black','angel','alien'],attackDuration:0.8,windup:0.35};
 data.units.korn={hp:430,atk:367,interval:2.6,speed:5,range:22,cost:350,cooldown:12,knockbacks:3,killGold:.75,attackDuration:0.8,windup:0.35};
-data.units.teal={hp:540,atk:511,interval:3,speed:5,range:14,cost:550,cooldown:17,knockbacks:3,atkDownPct:.5,atkDownChance:.5,atkDownDuration:5,statusVs:['red','floating','black','angel','alien'],attackDuration:0.8,windup:0.35};
+data.units.teal={hp:586,atk:555,interval:3,speed:5,range:14,cost:550,cooldown:17,knockbacks:3,atkDownPct:.5,atkDownChance:.5,atkDownDuration:5,statusVs:['red','floating','black','angel','alien'],attackDuration:0.8,windup:0.35};
 data.units.violet={hp:430,atk:144,interval:2.8,speed:5,range:12,cost:325,cooldown:11,knockbacks:3,area:true,slowChance:.15,slowDuration:2,statusVs:['red','floating','black','angel','alien'],attackDuration:0.8,windup:0.35};
 data.units.orchid={hp:1070,atk:1000,interval:4.5,speed:5,range:24,cost:3000,cooldown:25,knockbacks:3,area:true,attackClass:'범위',flatCost:true,surge:{start:22,end:44,dur:2.4,tick:.6,mult:.5},attackDuration:0.8,windup:0.35};
 const EX_TYPES=['garnet','prism','rainbow','orchid','lapis','selenite','topaz'];
@@ -1656,30 +1656,30 @@ const ATK_SLOPE={red:.55};// per-level ATK growth for Lv.1~10 (default .1); red'
 const LV20_TARGET={
  red:{hp:9000,atk:800},
  orange:{hp:9600,atk:2200},
- yellow:{hp:25000,atk:1400},
+ yellow:{hp:27750,atk:1554},
  green:{hp:11300,atk:1800},
  cyan:{hp:8700,atk:3000},
  blue:{hp:10400,atk:450},
  purple:{hp:19100,atk:2100},
  pink:{hp:17400,atk:2400},
  crimson:{hp:26000,atk:4150},
- gold:{hp:19100,atk:1500},
+ gold:{hp:22844,atk:1794},
  ivory:{hp:20900,atk:3900},
  chartreuse:{hp:19100,atk:850},
  mint:{hp:20900,atk:3600},
  azure:{hp:23500,atk:4000},
  crystal:{hp:21700,atk:4200},
  lavender:{hp:17400,atk:3200},
- salmon:{hp:15650,atk:4000},
- raspberry:{hp:14800,atk:1200},
- onyx:{hp:38000,atk:6500},
- black:{hp:25600,atk:2000},white:{hp:12000,atk:850},maroon:{hp:14400,atk:2100},brown:{hp:26000,atk:1100},tan:{hp:17600,atk:1800},beige:{hp:22400,atk:3150},cream:{hp:22400,atk:1600},olive:{hp:19200,atk:1700},clover:{hp:15400,atk:2200},indigo:{hp:16000,atk:2300},lilac:{hp:17600,atk:1900},hotpink:{hp:14400,atk:2100},ruby:{hp:19200,atk:2750},hacienda:{hp:16000,atk:1900},
- garnet:{hp:100000,atk:16000},prism:{hp:26000,atk:37600},rainbow:{hp:30000,atk:16000},// 프리즘 Lv.20 공격력 = 레드 2진 DPS(800)의 10배 ÷ 공격 주기 5.4초 ÷ 2진 +15%
+ salmon:{hp:20345,atk:5200},
+ raspberry:{hp:18145,atk:1471},
+ onyx:{hp:44080,atk:7540},
+ black:{hp:28493,atk:2226},white:{hp:12000,atk:850},maroon:{hp:16963,atk:2474},brown:{hp:28990,atk:1226},tan:{hp:17600,atk:1800},beige:{hp:22400,atk:3150},cream:{hp:25424,atk:1816},olive:{hp:19200,atk:1700},clover:{hp:18157,atk:2594},indigo:{hp:17936,atk:2578},lilac:{hp:17600,atk:1900},hotpink:{hp:15782,atk:2302},ruby:{hp:19200,atk:2750},hacienda:{hp:18112,atk:2151},
+ garnet:{hp:123400,atk:19744},prism:{hp:26000,atk:37600},rainbow:{hp:30000,atk:16000},// 프리즘 Lv.20 공격력 = 레드 2진 DPS(800)의 10배 ÷ 공격 주기 5.4초 ÷ 2진 +15%
  
- plum:{hp:14400,atk:3000},forest:{hp:38000,atk:4200},canary:{hp:19200,atk:3800},cherry:{hp:22400,atk:4000},mauve:{hp:17600,atk:3600},khaki:{hp:13400,atk:5500},tangerine:{hp:28800,atk:3800},burgundy:{hp:35000,atk:4800},mustard:{hp:32000,atk:5200},sky:{hp:16000,atk:3800},denim:{hp:25600,atk:4600},charcoal:{hp:15400,atk:4000},
+ plum:{hp:16358,atk:3408},forest:{hp:47424,atk:5242},canary:{hp:19200,atk:3800},cherry:{hp:25178,atk:4496},mauve:{hp:22493,atk:4601},khaki:{hp:13400,atk:5500},tangerine:{hp:28800,atk:3800},burgundy:{hp:38570,atk:5290},mustard:{hp:32000,atk:5200},sky:{hp:19680,atk:4674},denim:{hp:31667,atk:5690},charcoal:{hp:15400,atk:4000},
  cornflower:{hp:16000,atk:5500},bittersweet:{hp:22400,atk:4400},claret:{hp:14800,atk:3200},verdigris:{hp:32000,atk:4200},
- lapis:{hp:30000,atk:3200},selenite:{hp:20000,atk:4500},topaz:{hp:16000,atk:3800},maple:{hp:26000,atk:3400},brick:{hp:15300,atk:4250},korn:{hp:12000,atk:3300},teal:{hp:15000,atk:4600},violet:{hp:12000,atk:1300},orchid:{hp:30000,atk:9000},
- cobalt:{hp:13600,atk:4250},flame:{hp:11050,atk:1870},scarlet:{hp:13005,atk:1530},moss:{hp:7480,atk:1020},coral:{hp:4080,atk:1665},aqua:{hp:7480,atk:800},cooper:{hp:11390,atk:1410},navy:{hp:13600,atk:5440},dandelion:{hp:12000,atk:2470},babyblue:{hp:5950,atk:730},mintcyan:{hp:6800,atk:1275},peach:{hp:12750,atk:917},lightcream:{hp:11390,atk:1410},midnight:{hp:3060,atk:680},darklilac:{hp:6970,atk:2650},fusioncream:{hp:17000,atk:1190},silver:{hp:13600,atk:6800},lava:{hp:26350,atk:12155},babypink:{hp:12240,atk:6800},magenta:{hp:30600,atk:12240}
+ lapis:{hp:34800,atk:3712},selenite:{hp:23180,atk:5216},topaz:{hp:20128,atk:4780},maple:{hp:28262,atk:3696},brick:{hp:15300,atk:4250},korn:{hp:12000,atk:3300},teal:{hp:16290,atk:4996},violet:{hp:12000,atk:1300},orchid:{hp:30000,atk:9000},
+ cobalt:{hp:13600,atk:4250},flame:{hp:11050,atk:1870},scarlet:{hp:13005,atk:1530},moss:{hp:8460,atk:1154},coral:{hp:4949,atk:2020},aqua:{hp:8550,atk:914},cooper:{hp:11390,atk:1410},navy:{hp:13600,atk:5440},dandelion:{hp:12000,atk:2470},babyblue:{hp:5950,atk:730},mintcyan:{hp:6800,atk:1275},peach:{hp:12750,atk:917},lightcream:{hp:11390,atk:1410},midnight:{hp:3599,atk:800},darklilac:{hp:7799,atk:2965},fusioncream:{hp:17000,atk:1190},silver:{hp:13600,atk:6800},lava:{hp:26350,atk:12155},babypink:{hp:12240,atk:6800},magenta:{hp:30600,atk:12240}
 };
 function levelMult(base,target,level,curve=1,m10Hp=null,slope=.1){
  const lv=Math.min(level,LV_MAX),m10=m10Hp||1+slope*(LV_EVOLVE-1);
