@@ -2,10 +2,10 @@
 // Self-contained: game.js is only wrapped (finish / legendFinish / allyUnlocked) and read (XP, items, stage progress).
 // Tickets: 1회권 / 10회권. 매달 1일~10일은 10회권이 10+1 (보너스 1회는 SR 확정).
 const GACHA_KEY='red-battle-gacha-v1';
-const GACHA_SR=[['plum','플럼'],['forest','포레스트'],['canary','카나리'],['cherry','체리'],['charcoal','차콜'],['mustard','머스터드'],['mauve','모브'],['khaki','카키'],['tangerine','탠저린'],['burgundy','버건디'],['sky','스카이'],['denim','데님'],['cornflower','길리먼 블루'],['verdigris','베르디그리'],['bittersweet','그레이프프루트 펄프'],['claret','아틀라스 레드']].map(([id,name])=>({id,name}));
+const GACHA_SR=[['plum','플럼'],['forest','포레스트'],['canary','카나리'],['cherry','체리'],['charcoal','차콜'],['mustard','머스터드'],['mauve','모브'],['khaki','카키'],['tangerine','탠저린'],['burgundy','버건디'],['sky','스카이'],['denim','데님'],['cornflower','길리먼 블루'],['verdigris','베르디그리'],['teal','틸'],['bittersweet','그레이프프루트 펄프'],['claret','아틀라스 레드']].map(([id,name])=>({id,name}));
 const GACHA_RARE=[['fusioncream','퓨전 크림'],['silver','실버'],['lava','라바'],['babypink','베이비 핑크'],['magenta','마젠타']].map(([id,name])=>({id,name}));// 뽑기 전용 레어 5명 (시즌 2)
 const GACHA_PRISM={id:'prism',name:'프리즘'};
-const GACHA_UBER=[GACHA_PRISM,{id:'rainbow',name:'레인보우'}];// 울트라 슈퍼 레어 두 명이 같은 확률 칸을 나눠 가짐
+const GACHA_UBER=[GACHA_PRISM,{id:'rainbow',name:'레인보우'},{id:'orchid',name:'오키드'}];// 울트라 슈퍼 레어 두 명이 같은 확률 칸을 나눠 가짐
 const GACHA_CFG={
  prism:.03,sr:.11,rare:.3,// of every pull: 울슈레 3% (프리즘·레인보우), SR 11% (16명 균등), 레어 30% (5명 균등); the other 56% is the misc table below
  pity:100,// 프리즘 guaranteed within this many pulls
@@ -154,7 +154,7 @@ GACHA_LOBBY.innerHTML='<div class="gacha-lobby-info"><h2>뽑기</h2><p id="gacha
 document.querySelector('.stage-panel .stage-intro').after(GACHA_LOBBY);
 function renderGachaBadge(){
  GACHA_BTN.textContent=`뽑기 🎟 ${gacha.t1+gacha.t10}`;
- $('#gachaLobbyText').innerHTML=`1회권 <b>${gacha.t1}</b>장 · 10회권 <b>${gacha.t10}</b>장`+(gachaBonusDay()?' · <em>10+1 기간! 보너스는 SR 확정</em>':' · 매달 1~10일 10+1')+'<br><small>슈퍼 레어 16명 · 레어 5명 · 울트라 슈퍼 레어 2명</small>';
+ $('#gachaLobbyText').innerHTML=`1회권 <b>${gacha.t1}</b>장 · 10회권 <b>${gacha.t10}</b>장`+(gachaBonusDay()?' · <em>10+1 기간! 보너스는 SR 확정</em>':' · 매달 1~10일 10+1')+'<br><small>슈퍼 레어 '+GACHA_SR.length+'명 · 레어 '+GACHA_RARE.length+'명 · 울트라 슈퍼 레어 '+GACHA_UBER.length+'명</small>';
 }
 function gachaCard(r){
  const c=document.createElement('div');c.className='gacha-card '+(r.kind==='misc'?'misc':r.kind)+(r.bonus?' bonus':'');
@@ -176,7 +176,7 @@ function renderGacha(results){
  $('#gachaPull10').textContent=bonus?'10+1 뽑기 (10회권 1장)':'10회 뽑기 (10회권 1장)';$('#gachaPull10').disabled=gacha.t10<1;
  $('#gachaPity').textContent=`울슈레 천장 ${gacha.pity} / ${GACHA_CFG.pity} · 누적 ${gacha.pulls}회`;
  const ready=gachaPoolSR().length;
- $('#gachaRates').textContent=`확률: 울트라 슈퍼 레어(프리즘·레인보우) ${GACHA_CFG.prism*100}% · SR ${GACHA_CFG.sr*100}% (16명 균등) · 레어 ${GACHA_CFG.rare*100}% (5명 균등) · 나머지는 XP·배속권·야옹컴. 울트라 슈퍼 레어는 ${GACHA_CFG.pity}회 안에 확정. 중복은 XP로 환산(SR ${GACHA_CFG.dupXp.toLocaleString()}, 레어 ${GACHA_CFG.dupXpRare.toLocaleString()}, 울슈레 ${GACHA_CFG.dupXpPrism.toLocaleString()}).`+(ready<GACHA_SR.length?` 아직 추가되지 않은 SR(${GACHA_SR.length-ready}명)이 나오면 XP로 대체돼요.`:'');
+ $('#gachaRates').textContent=`확률: 울트라 슈퍼 레어(프리즘·레인보우·오키드) ${GACHA_CFG.prism*100}% · SR ${GACHA_CFG.sr*100}% (${GACHA_SR.length}명 균등) · 레어 ${GACHA_CFG.rare*100}% (5명 균등) · 나머지는 XP·배속권·야옹컴. 울트라 슈퍼 레어는 ${GACHA_CFG.pity}회 안에 확정. 중복은 XP로 환산(SR ${GACHA_CFG.dupXp.toLocaleString()}, 레어 ${GACHA_CFG.dupXpRare.toLocaleString()}, 울슈레 ${GACHA_CFG.dupXpPrism.toLocaleString()}).`+(ready<GACHA_SR.length?` 아직 추가되지 않은 SR(${GACHA_SR.length-ready}명)이 나오면 XP로 대체돼요.`:'');
  if(results){const box=$('#gachaResults');box.innerHTML='';results.forEach(r=>box.append(gachaCard(r)))}
  const own=$('#gachaOwned');own.innerHTML='';
  for(const s of [...GACHA_SR,...GACHA_RARE,...GACHA_UBER]){const d=document.createElement('div');d.className='gacha-slot'+(gachaOwns(s.id)?' owned':'')+(GACHA_UBER.includes(s)?' prism':'');d.textContent=gachaOwns(s.id)?s.name:data.units[s.id]?'？？？':'준비 중';own.append(d)}

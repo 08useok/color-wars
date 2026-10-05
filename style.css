@@ -300,3 +300,6 @@ body { overflow:auto; }
 .topline .boost-btn{padding:4px 6px;font-size:15px;line-height:1.05;min-width:34px}.topline .boost-btn small{display:block;font-size:10px;margin-top:1px}.topline .boost-btn.active{background:#2f5a2a;border-color:#9be36b;box-shadow:0 0 6px #9be36b88}/* weekday-stage battle boosts */
 @media(max-width:700px){.topline .boost-btn{padding:3px 3px;font-size:12px;min-width:24px}.topline .boost-btn small{font-size:8px}}
 @media(max-width:700px){.topline .boost-group{position:fixed;top:52px;right:6px;z-index:6}}/* phones: the boosts float beside the money pill so the top row keeps fitting */
+.maple-btn i{background:#b88e72}.brick-btn i{background:#a03623}.korn-btn i{background:#fbec5d}.teal-btn i{background:#008080}.violet-btn i{background:#9e0eea}.orchid-btn i{background:#7a81ff}
+.surge-splash{border-radius:14px;border:3px solid #7a81ff;background:repeating-linear-gradient(90deg,#7a81ff33 0 10px,#c6c9ff77 10px 20px);height:44px;pointer-events:none}
+.unit.raging{filter:drop-shadow(0 0 6px #ff3b30) saturate(1.4)}
