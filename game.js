@@ -316,15 +316,19 @@ function legendStageUnlocked(k,c=legendCrown){const sub=legendSubOf(k);return le
 function stageBaseHp(i){return STAGES[i].hp}
 function isUnlocked(i){return i===0||cleared.includes(i===FUTURE_START?MAIN_STAGE_COUNT-1:i-1)||cleared.includes(i)}
 function chapterOf(i){return STAGES[i]?.chapter||1}
-// Difficulty stars (★1-5) on stage cards (legend subchapter cards show the rounded average of their stages at 👑1): score = log10 of the toughest spawn's sqrt(HP x DPS), both scaled by the stage
-// magnification x the chapter / crown multiplier; thresholds put 세계편 1장 at ★1-2 and late legend / 미래편 at ★4-5.
-const STAR_STEPS=[2.4,2.9,3.5,4.2];
+// Difficulty stars ★1-12 like the original. Legend stages use the original map ratings (battlecats wiki {{Stars}}:
+// 전설의 시작 ★1~3 … 생선의 요새 ★6); a ranged map is spread over its stages from the low end to the high end, and the
+// rating ignores crowns, as in the original. Other stages: score = log10 of the toughest spawn's sqrt(HP x DPS) scaled by
+// stage magnification x chapter multiplier, mapped linearly onto the same scale (fitted to the legend ratings).
+const LEGEND_STAR_RANGES=[[1,3],[3,3],[3,4],[4,4],[4,4],[4,5],[5,5],[5,5],[5,5],[5,6],[6,6],[6,6]];
+const STAR_FIT={a:2,b:-3};// score 2.0 (세계편 1장 한국) → ★1, 4.5 (볼케이노 화산 끝) → ★6; a straight regression on the legend stages (r .6) put 세계편 1장 above 전설의 시작
 function stageScore(i,crown=legendCrown){const st=STAGES[i],c=st.chapter,g=c===2?1.5:c===3?4:c===4?LEGEND_CROWN_MULT[crown-1]:1;let best=1;
  for(const r of STAGE_SPAWNS[i]||[]){const d=data.units[r.type];if(!d)continue;const m=(r.mag||100)/100*g;best=Math.max(best,m*Math.sqrt(d.hp*d.atk*(d.multiHit||1)/Math.max(.3,d.interval||1)))}
  return Math.log10(best)}
-function stageStars(i,crown){const v=stageScore(i,crown);return 1+STAR_STEPS.filter(x=>v>=x).length}
-function starText(n){return '★'.repeat(n)+'☆'.repeat(5-n)}
-function starHTML(n){return `<span class="stage-stars" title="난이도 ${n} / 5">${starText(n)}</span>`}
+function legendStars(k){const sub=legendSubOf(k),sc=LEGEND_SUBS[sub],r=LEGEND_STAR_RANGES[sub];if(!r)return null;const j=k-sc.start;return r[0]+Math.floor(j*(r[1]-r[0]+1)/sc.len)}
+function stageStars(i){const k=STAGES[i]?.legend?.k;if(k!==undefined){const v=legendStars(k);if(v)return v}
+ return Math.max(1,Math.min(12,Math.round(STAR_FIT.a*stageScore(i,1)+STAR_FIT.b)))}
+function starHTML(n){return `<span class="stage-stars" title="난이도 ★${n} / 12">${'★'.repeat(n)}</span>`}
 function enemyMagnification(){const c=chapterOf(selectedStage);return c===2?1.5:c===3?4:c===4?LEGEND_CROWN_MULT[legendCrown-1]:1}
 const RHINO_SHEET='assets/rhino_sheet.png';
 const BEAR_SHEET='assets/bear_sheet.png';
@@ -1499,7 +1503,7 @@ function renderLegend(){
  $('#legendNote').textContent=legendSub?`왕관 난이도 ★${legendCrown}: 적 능력치 ${Math.round(LEGEND_CROWN_MULT[legendCrown-1]*100)}% · ${sc.len}개 스테이지를 모두 클리어하면 다음 왕관이 열립니다.`:'';
  if(!legendSub){
   LEGEND_SUBS.forEach((it,n)=>{const ok=legendSubOpen(n),b=document.createElement('button');b.className='stage-card legend-sub'+(legendSubDone(n,1)?' cleared':'');b.disabled=!ok;
-   const subStars=Math.round(Array.from({length:it.len},(_,j)=>stageStars(legendIdx(it.start+j),1)).reduce((a,b)=>a+b)/it.len);b.innerHTML=`<strong>${it.name}</strong>${starHTML(subStars)}<small>${ok?`👑1 ${legendSubCount(n,1)} / ${it.len}`:'잠김'}</small>`;
+   const sr=LEGEND_STAR_RANGES[n];b.innerHTML=`<strong>${it.name}</strong><span class="stage-stars" title="난이도 ★${sr[0]}${sr[1]>sr[0]?'~'+sr[1]:''} / 12">${'★'.repeat(sr[1])}</span><small>${ok?`👑1 ${legendSubCount(n,1)} / ${it.len}`:'잠김'}</small>`;
    b.onclick=()=>{legendSub=n+1;if(!legendCrownUnlocked(legendCrown,n))legendCrown=1;renderLegend()};grid.append(b)});
   return;
  }
@@ -1507,7 +1511,7 @@ function renderLegend(){
  for(const c of [1,2,3,4]){const b=document.createElement('button');b.className='codex-tab'+(c===legendCrown?' active':'');b.textContent='★'.repeat(c);b.disabled=!legendCrownUnlocked(c,sub);b.onclick=()=>{legendCrown=c;renderLegend()};tabs.append(b)}
  const done=legendProgress[legendCrown];
  // only the stages reached so far are shown: the first one, plus one more after each clear
- for(let k=sc.start;k<sc.start+sc.len;k++){const t=LEGEND_STAGES[k];if(!legendStageUnlocked(k))continue;const i=legendIdx(k),cl=done.includes(k),b=document.createElement('button');b.className='stage-card legend-stage'+(cl?' cleared':'');b.title=`${t.en?t.en+' · ':''}${t.desc} · 등장 적: ${stageEnemies(i).map(type=>UNIT_NAMES[type]).join(' · ')} · 적 성 체력 ${t.hp}`;b.innerHTML=`<strong>${t.flag} ${t.name}</strong>${starHTML(stageStars(i,legendCrown))}<small>${cl?'✓ ':''}${legendXP(k)} XP</small>`;b.onclick=()=>{selectedStage=i;reset()};grid.append(b)}
+ for(let k=sc.start;k<sc.start+sc.len;k++){const t=LEGEND_STAGES[k];if(!legendStageUnlocked(k))continue;const i=legendIdx(k),cl=done.includes(k),b=document.createElement('button');b.className='stage-card legend-stage'+(cl?' cleared':'');b.title=`${t.en?t.en+' · ':''}${t.desc} · 등장 적: ${stageEnemies(i).map(type=>UNIT_NAMES[type]).join(' · ')} · 적 성 체력 ${t.hp}`;b.innerHTML=`<strong>${t.flag} ${t.name}</strong>${starHTML(stageStars(i))}<small>${cl?'✓ ':''}${legendXP(k)} XP</small>`;b.onclick=()=>{selectedStage=i;reset()};grid.append(b)}
 }
 function legendFinish(win){
  const k=STAGES[selectedStage].legend.k,c=legendCrown,list=legendProgress[c],first=win&&!list.includes(k),sub=legendSubOf(k),sc=LEGEND_SUBS[sub],last=k===sc.start+sc.len-1;
