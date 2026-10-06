@@ -2042,7 +2042,9 @@ $('#speedBtn').onclick=()=>{
  renderSpeedButton();
 };
 function setForm(t,f){if(!ALLIES.includes(t)||training.levels[t]<LV_EVOLVE)return false;if(f===1)training.forms[t]=1;else delete training.forms[t];saveTraining();renderTraining();render();return true}
-function upgradeCost(t){return training.levels[t]*100}
+// 레벨업 비용: 등급 배율(기본 ×1 · 레어 ×1.5 · EX ×2 · 슈퍼 레어 ×2.5 · 울슈레 ×4) × 레벨당 100 XP × (1 + 레벨/20), 10 XP 단위
+const UPGRADE_GRADE_MULT={basic:1,rare:1.5,ex:2,sr:2.5,uber:4};
+function upgradeCost(t,l=training.levels[t]){return Math.round(l*100*(1+l/20)*(UPGRADE_GRADE_MULT[gradeOf(t)]||1)/10)*10}
 function upgradeCharacter(t){if(!ALLIES.includes(t)||!allyUnlocked(t)||training.levels[t]>=levelCapOf(t)||training.xp<upgradeCost(t))return false;training.xp-=upgradeCost(t);training.levels[t]++;saveTraining();renderTraining();renderBaseUpgrade();render();return true}
 function studyMult(){return 1+STUDY_STEP*training.studyLevel}
 function studyXP(n){return Math.round(n*studyMult())}
