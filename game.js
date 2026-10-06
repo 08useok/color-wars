@@ -1,10 +1,10 @@
 const STAGES=[
- {name:'한국',flag:'🇰🇷',hp:500,gap:5,wave:0,desc:'첫 출격 · 5초마다 멍뭉이'},
- {name:'몽골',flag:'🇲🇳',hp:500,gap:4.8,wave:0,desc:'신규 적 낼름이 · 빠른 접근에 주의하세요'},
- {name:'중국',flag:'🇨🇳',hp:500,gap:4.6,wave:24,desc:'멍뭉이가 더 자주 몰려옵니다 · 클리어 보상: 오렌지'},
- {name:'태국',flag:'🇹🇭',hp:500,gap:4.4,wave:22,desc:'신규 적 놈놈놈 · 세 명이 함께 달려옵니다'},
- {name:'캄보디아',flag:'🇰🇭',hp:750,gap:4.2,wave:20,desc:'놈놈놈 합류 · 수입 업그레이드를 활용하세요'},
- {name:'필리핀',flag:'🇵🇭',hp:750,gap:4,wave:18,desc:'멍뭉이 · 낼름이 · 놈놈놈 혼성 · 클리어 보상: 옐로우'},
+ {name:'한국',flag:'🇰🇷',hp:1000,gap:5,wave:0,desc:'첫 출격 · 5초마다 멍뭉이'},
+ {name:'몽골',flag:'🇲🇳',hp:1000,gap:4.8,wave:0,desc:'신규 적 낼름이 · 빠른 접근에 주의하세요'},
+ {name:'중국',flag:'🇨🇳',hp:1000,gap:4.6,wave:24,desc:'멍뭉이가 더 자주 몰려옵니다 · 클리어 보상: 오렌지'},
+ {name:'태국',flag:'🇹🇭',hp:1000,gap:4.4,wave:22,desc:'신규 적 놈놈놈 · 세 명이 함께 달려옵니다'},
+ {name:'캄보디아',flag:'🇰🇭',hp:1500,gap:4.2,wave:20,desc:'놈놈놈 합류 · 수입 업그레이드를 활용하세요'},
+ {name:'필리핀',flag:'🇵🇭',hp:1500,gap:4,wave:18,desc:'멍뭉이 · 낼름이 · 놈놈놈 혼성 · 클리어 보상: 옐로우'},
  {name:'일본',flag:'🇯🇵',hp:2400,gap:3.8,wave:16,desc:'신규 적 하마양 · 적 성 체력 50%에서 보스 출현 · 보상: 그린'},
  {name:'호주',flag:'🇦🇺',hp:1500,gap:3.6,wave:15,desc:'멍뭉이 · 낼름이 · 놈놈놈의 혼성 전투'},
  {name:'싱가포르',flag:'🇸🇬',hp:3000,gap:3.5,wave:15,desc:'몰디브로 향하는 전선'},
@@ -57,13 +57,13 @@ STAGES.forEach((st,i)=>Object.assign(st,STAGE_BG[EOC_BG[i]]));
 // Empire of Cats Chapter 2: same Korea-to-Hawaii roster replayed with the wiki-sourced
 // 150% enemy strength magnification. Moon (the chapter-1 finale) is not repeated.
 const CHAPTER1_LEN=STAGES.length;
-for(let i=0;i<CHAPTER1_LEN-1;i++){const base=STAGES[i];STAGES.push({...base,chapter:2,hp:Math.round(base.hp*1.5),desc:'세계편 2장 재도전 · 모든 적 능력치 150% 강화'});}
+for(let i=0;i<CHAPTER1_LEN-1;i++){const base=STAGES[i];STAGES.push({...base,chapter:2,hp:Math.round(base.hp*2),desc:'세계편 2장 재도전 · 모든 적 능력치 150% 강화'});}
 // Chapter 2 ends on its own Moon (wiki "Moon (Empire of Cats)", Ch.2): boss 악의제왕 야옹마 (Dark Emperor Nyandam).
 STAGES.push({...STAGES[CHAPTER1_LEN-1],...STAGE_BG[2],chapter:2,hp:200000,maxEnemies:12,desc:'세계편 2장 최종 보스 악의제왕 야옹마'});// chapter-2 Moon is the night background
 const CH2_HAWAII=CHAPTER1_LEN*2-2;// last pre-Moon chapter-2 stage: keeps the Lv.20 / Tuesday top-tier unlocks where they were
 // Empire of Cats Chapter 3: the same Korea-to-Hawaii roster again at 400% (wiki: Ch.3 = x4 enemy magnification).
 const CH3_START=STAGES.length;
-for(let i=0;i<CHAPTER1_LEN-1;i++){const base=STAGES[i];STAGES.push({...base,chapter:3,hp:Math.round(base.hp*4),desc:'세계편 3장 재도전 · 모든 적 능력치 400% 강화'});}
+for(let i=0;i<CHAPTER1_LEN-1;i++){const base=STAGES[i];STAGES.push({...base,chapter:3,hp:Math.round(base.hp*3),desc:'세계편 3장 재도전 · 모든 적 능력치 400% 강화'});}
 // Chapter 3 Moon (wiki "Moon (Empire of Cats)", Ch.3): base 900,000 · max 8 · boss 맴매 선생 (Teacher Bun Bun) at 70%.
 STAGES.push({...STAGES[CHAPTER1_LEN-1],chapter:3,hp:900000,maxEnemies:8,desc:'세계편 3장 최종 보스 맴매 선생'});
 const MAIN_STAGE_COUNT=STAGES.length;// chapters 1-3; everything after this index is a special stage
@@ -2182,7 +2182,9 @@ function accMult(){return 1+ACC_STEP*training.accLevel+CHAPTER_BONUS.gold*chapte
 function walletMax(lv=game.level){return data.income[lv].max+WALLET_STEP*training.walletLevel+CHAPTER_BONUS.wallet*chapterBonusCount()}
 function incomeRate(lv=game.level){return data.income[lv].rate*(1+PROD_STEP*training.prodLevel+CHAPTER_BONUS.rate*chapterBonusCount())}
 function upgradeEcon(k){const l=training[k];if(l>=ECON_COST.length||training.xp<ECON_COST[l])return false;training.xp-=ECON_COST[l];training[k]++;saveTraining();renderBaseUpgrade();renderTraining();if(typeof render==='function')render();return true}
-function baseHpFor(level=training.baseLevel){return Math.round(2000*(1+.1*(level-1)))}
+// Cat Base health per level, as in the original (Base Defense upgrade Lv.1~10; the original goes on to Lv.30 = 78,000)
+const BASE_HP=[1000,2000,3000,4000,6000,8000,10000,12000,15000,18000];
+function baseHpFor(level=training.baseLevel){return BASE_HP[Math.max(1,Math.min(BASE_HP.length,level))-1]}
 function baseHpCost(){return training.baseLevel*150}
 function upgradeBase(){if(training.baseLevel>=10||training.xp<baseHpCost())return false;training.xp-=baseHpCost();training.baseLevel++;saveTraining();renderBaseUpgrade();renderTraining();return true}
 function renderBaseUpgrade(){
