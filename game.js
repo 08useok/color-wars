@@ -1938,8 +1938,10 @@ function unitCost(t){return ALLIES.includes(t)?unitStats(t).cost:data.units[t].c
 const EVO_COST_MULT={basic:2,rare:1.3,sr:1.4,ex:1.5,uber:1.5};
 // 전체 아군 비용 ×1.3 (레드와 1·2진 같은 가격인 울슈레는 제외): 너무 쉬워서 인상
 const COST_SCALE=1.3;
-function scaledCost(type,c){const d=data.units[type];return type==='red'||d?.flatCost?c:Math.round(c*COST_SCALE/5)*5}
-function evoCost(type,base){const fixed=data.units[type]?.evoCost;if(fixed)return fixed;// evoCost: 2진 가격을 직접 지정 (레드 75, 블루 500)
+// 세계편 1장 비용: 원작처럼 챕터 1은 챕터 2의 2/3 가격 (레드 50원 기준)
+function ch1Cost(c){return selectedStage>=0&&selectedStage<CHAPTER1_LEN?Math.round(c*2/3/5)*5:c}
+function scaledCost(type,c){const d=data.units[type];return ch1Cost(type==='red'||d?.flatCost?c:Math.round(c*COST_SCALE/5)*5)}
+function evoCost(type,base){const fixed=data.units[type]?.evoCost;if(fixed)return ch1Cost(fixed);// evoCost: 2진 가격을 직접 지정 (레드 75, 블루 500)
  if(data.units[type]?.flatCost)return base;return Math.round(base*EVO_COST_MULT[gradeOf(type)]/5)*5}// flatCost: 울슈레는 1·2진 같은 가격
 function unitStats(type,level=training.levels[type]||1,form=training.forms?.[type]===1?1:2){const d=data.units[type],T=LV20_TARGET[type],hpM=levelMult(d.hp,T?.hp,level,HP_CURVE,d.noEvolve?null:HP_LV10_MULT)*overMult(level),atkM=levelMult(d.atk,T?.atk,level,1,null,ATK_SLOPE[type])*overMult(level),mag=ALLIES.includes(type)?1:enemyMagnification()*(hasTrait(d,'alien')?alienMagnification():1),stats={...d,hp:Math.round(d.hp*hpM*mag),atk:Math.round(d.atk*atkM*mag)};if(ALLIES.includes(type))stats.cost=scaledCost(type,d.cost);if(d.damageTiers)stats.damageTiers=d.damageTiers.map(t=>({...t,dmg:Math.round(t.dmg*atkM)}));if(level<LV_EVOLVE||form===1||d.noEvolve)return stats;stats.evolved=true;stats.cost=evoCost(type,scaledCost(type,d.cost));stats.hp=Math.round(stats.hp*(type==='yellow'?1.2:1.15));if(!EVO_ATK_BONUS[type]){const k=1.15;stats.atk=Math.round(stats.atk*k);if(stats.damageTiers)stats.damageTiers=stats.damageTiers.map(t=>({...t,dmg:Math.round(t.dmg*k)}))}stats.range=type==='raspberry'?d.range*1.1:d.noRangeGrow?d.range:d.range*1.2;if(d.engageRange)stats.engageRange=d.engageRange*1.2;if(type==='red')stats.atk=Math.round(stats.atk*1.2);if(type==='orange')stats.splash=d.splash*1.35;if(type==='green')stats.returnMult=1.35;if(type==='cyan')stats.splash=d.splash*1.3;if(type==='blue')stats.interval=d.interval*.8;if(type==='purple'){stats.redDamage=1.8;stats.redResist=.4}if(type==='pink')stats.atk=Math.round(stats.atk*1.15);
  if(type==='crimson')stats.atk=Math.round(stats.atk*1.2);
