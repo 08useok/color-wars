@@ -283,7 +283,7 @@ const LEGEND3_START=STAGES.length;
 LEGEND_STAGES3.forEach((t,j)=>STAGES.push({...t,gap:4,wave:0,chapter:4,legend:{k:38+j},maxEnemies:t.max}));
 LEGEND_STAGES.push(...LEGEND_STAGES3);
 // 리본 오렌지 강림: always-open 초급·중급·상급 series (like the original's 강림 stages) that drops the EX 리본 오렌지
-// (오렌지 아종). Boss 까치 도둑 (magpie) at 100/200/400%; 상급 after chapter 2; 고난도 after clearing 상급 once
+// (오렌지 아종). Boss 까치 도둑 (magpie) at 100/200/400%; each tier opens after the previous one (상급 also after chapter 2)
 // (first clear: 리본 오렌지 level cap +5). Clears of these stages are kept in red-battle-ribbon-v1.
 const RIBBON_TIERS=[{n:'초급',hp:30000,chance:.1,xp:2000,mag:100,bossMag:100},{n:'중급',hp:80000,chance:.25,xp:5000,mag:150,bossMag:200},{n:'상급',hp:200000,chance:.5,xp:10000,mag:200,bossMag:400},
  {n:'고난도',hp:500000,chance:1,xp:20000,mag:300,bossMag:600,hard:true}];
@@ -294,7 +294,9 @@ RIBBON_TIERS.forEach((t,k)=>STAGES.push({name:'리본 오렌지 강림 '+t.n,fla
 let ribbonSave={clear:[],cap:false};
 try{const v=JSON.parse(localStorage.getItem('red-battle-ribbon-v1')||'{}');if(Array.isArray(v.clear))ribbonSave.clear=v.clear.filter(Number.isInteger);ribbonSave.cap=v.cap===true}catch{}
 function saveRibbon(){try{localStorage.setItem('red-battle-ribbon-v1',JSON.stringify(ribbonSave))}catch{}}
-function ribbonTierOpen(k){return k<2||(k===2?cleared.includes(CH2_HAWAII):ribbonSave.clear.includes(2))}
+// Like the original 강림 stages each tier opens after clearing the one before it (상급 also needs 세계편 2장).
+function ribbonTierOpen(k){return k===0||ribbonSave.clear.includes(k-1)&&(k!==2||cleared.includes(CH2_HAWAII))}
+function ribbonLockText(k){return !ribbonSave.clear.includes(k-1)?RIBBON_TIERS[k-1].n+' 클리어 시 열림':'세계편 2장 클리어 시 열림'}
 function weekdayIdx(si,k){return WEEKDAY_START+si*WEEKDAY_TIERS.length+k}
 function isWeekdayOpen(set){try{const q=new URLSearchParams(location.search);return set.days.includes(new Date().getDay())||q.has(set.key)}catch{return false}}
 function legendIdx(k){return k<8?LEGEND_START+k:k<38?LEGEND2_START+k-8:LEGEND3_START+k-38}
@@ -1488,7 +1490,7 @@ function renderSpecialStages(){
  TUESDAY_STAGES.forEach((t,k)=>{const i=MAIN_STAGE_COUNT+k,b=document.createElement('button');b.className='stage-card';const locked=!open||!tue||(k===3&&!cleared.includes(CH2_HAWAII));b.disabled=locked;b.title=t.desc+' · 적 성 체력 '+t.hp;b.innerHTML=`<strong>${t.name.replace('광속 전사 ','')}</strong>${starHTML(stageStars(i))}<small>${Math.round(t.chance*100)}%${t.count>1?' ×'+t.count:''}</small>`;b.onclick=()=>{selectedStage=i;reset()};grid.append(b)});
  FRIDAY_STAGES.forEach((t,k)=>{const i=FRIDAY_START+k,b=document.createElement('button');b.className='stage-card friday';if(k===0)b.style.gridColumnStart=1;b.disabled=!open||!fri||(k===2&&!cleared.includes(CH2_HAWAII));b.title=t.desc+' · 적 성 체력 '+t.hp;b.innerHTML=`<strong>${t.name.replace('가시밭길 ','🌵 ')}</strong>${starHTML(stageStars(i))}<small>${Math.round(t.chance*100)}%${t.count>1?' ×'+t.count:''}</small>`;b.onclick=()=>{selectedStage=i;reset()};grid.append(b)});
  WEEKDAY_SETS.forEach((set,si)=>{const today=isWeekdayOpen(set);WEEKDAY_TIERS.forEach((t,k)=>{const i=weekdayIdx(si,k),b=document.createElement('button');b.className='stage-card weekday';if(k===0)b.style.gridColumnStart=1;b.disabled=!open||!today||(k===2&&!cleared.includes(CH2_HAWAII));b.title=STAGES[i].desc+' · 적 성 체력 '+STAGES[i].hp;b.innerHTML=`<strong>${set.flag} ${t.n}</strong>${starHTML(stageStars(i))}<small>${set.title} ${Math.round(t.chance*100)}%${t.count>1?' ×'+t.count:''}</small>`;b.onclick=()=>{selectedStage=i;reset()};grid.append(b)})});
- const ribbonOwned=typeof gachaOwns==='function'&&gachaOwns('ribbonorange');RIBBON_TIERS.forEach((t,k)=>{const i=RIBBON_START+k,b=document.createElement('button');b.className='stage-card ribbon';if(k===0)b.style.gridColumnStart=1;b.disabled=!open||!ribbonTierOpen(k);b.title=STAGES[i].desc+' · 적 성 체력 '+STAGES[i].hp;b.innerHTML=`<strong>🎀 ${t.n}</strong>${starHTML(stageStars(i))}<small>${t.hard?(ribbonSave.cap?'레벨 상한 +5 받음':ribbonTierOpen(k)?'레벨 상한 +5':'상급 클리어 시 열림'):`리본 오렌지 강림 ${!ribbonReady()?'준비 중':ribbonOwned?'획득 완료':Math.round(t.chance*100)+'%'}`}</small>`;b.onclick=()=>{selectedStage=i;reset()};grid.append(b)});
+ const ribbonOwned=typeof gachaOwns==='function'&&gachaOwns('ribbonorange');RIBBON_TIERS.forEach((t,k)=>{const i=RIBBON_START+k,b=document.createElement('button');b.className='stage-card ribbon';if(k===0)b.style.gridColumnStart=1;b.disabled=!open||!ribbonTierOpen(k);b.title=STAGES[i].desc+' · 적 성 체력 '+STAGES[i].hp;b.innerHTML=`<strong>🎀 ${t.n}</strong>${starHTML(stageStars(i))}<small>${!ribbonTierOpen(k)?ribbonLockText(k):t.hard?(ribbonSave.cap?'레벨 상한 +5 받음':'레벨 상한 +5'):`리본 오렌지 강림 ${!ribbonReady()?'준비 중':ribbonOwned?'획득 완료':Math.round(t.chance*100)+'%'}`}</small>`;b.onclick=()=>{selectedStage=i;reset()};grid.append(b)});
  const buy=document.createElement('button');buy.className='stage-card';buy.disabled=training.xp<SPEED_PACK.xp;buy.innerHTML=`<strong>스피드업 ${SPEED_PACK.count}개 구매</strong><small>${SPEED_PACK.xp} XP</small>`;buy.onclick=buySpeedPack;grid.append(buy);
  for(const k in BOOSTS){const bb=document.createElement('button');bb.className='stage-card';bb.disabled=training.xp<BOOST_PACK.xp;bb.title=BOOSTS[k].desc;bb.innerHTML=`<strong>${BOOSTS[k].icon} ${BOOST_NAME[k]} ${BOOST_PACK.count}개 구매</strong><small>${BOOST_PACK.xp} XP · 보유 ${boosts[k]}개</small>`;bb.onclick=()=>buyBoostPack(k);grid.append(bb)}
  const buy2=document.createElement('button');buy2.className='stage-card';buy2.disabled=training.xp<NYAN_PACK.xp;buy2.innerHTML=`<strong>야옹컴 ${NYAN_PACK.count}개 구매</strong><small>${NYAN_PACK.xp} XP</small>`;buy2.onclick=buyNyancom;grid.append(buy2);
