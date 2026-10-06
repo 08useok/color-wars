@@ -112,11 +112,11 @@ body { overflow:auto; }
 
 
 .unit.leboin{background:none;border:0;border-radius:0;width:58px;height:58px}
-.leboin .dog-sprite{background-image:url("assets/leboin_dog-sprite.png")}
+.leboin .dog-sprite{background-image:url("assets/leboin_dog-sprite.png?v=2")}
 .leboin .dog-shadow{background:none;width:104px;height:10px;left:-60px;bottom:-3px;border-radius:50%;background:#0005}
 .dog-sprite-legs{position:absolute;background-repeat:no-repeat;image-rendering:pixelated;z-index:1}
-.leboin .dog-sprite-legs{background-image:url("assets/leboin_dog-sprite.png")}
-.dog-sprite-body{position:absolute;display:none;background-repeat:no-repeat;image-rendering:pixelated;z-index:1}.leboin .dog-sprite-body{background-image:url("assets/leboin_dog-sprite.png")}
+.leboin .dog-sprite-legs{background-image:url("assets/leboin_dog-sprite.png?v=2")}
+.dog-sprite-body{position:absolute;display:none;background-repeat:no-repeat;image-rendering:pixelated;z-index:1}.leboin .dog-sprite-body{background-image:url("assets/leboin_dog-sprite.png?v=2")}
 .bear .dog-sprite-legs{background-image:url("assets/bear_sheet.png")}
 .unit.leboin .bar{top:-24px;width:76px;left:-45px}.unit.leboin .status-badges{left:-7px}
 .ability-icon{width:25px;height:25px;vertical-align:middle;margin-right:6px;border-radius:5px}
