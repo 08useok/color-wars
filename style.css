@@ -290,7 +290,7 @@ body { overflow:auto; }
 .plum-btn i{background:#a03c88}.forest-btn i{background:#297639}.canary-btn i{background:#fde804}.cherry-btn i{background:#e32951}.mauve-btn i{background:#e0b0ff}.khaki-btn i{background:#c3b091}.tangerine-btn i{background:#fc9601}.burgundy-btn i{background:#800020}.mustard-btn i{background:#ffdb58}.sky-btn i{background:#6dcefc}.denim-btn i{background:#1560bd}.charcoal-btn i{background:#405162}
 .cornflower-btn i{background:#8499fb}.bittersweet-btn i{background:#fc885c}.claret-btn i{background:#94263f}.verdigris-btn i{background:#1eb2af}
 .controls .unit-btn strong{word-break:keep-all}.controls #bittersweetBtn strong,.controls #claretBtn strong{font-size:.86em;line-height:1.1}
-.lapis-btn i{background:#26619c}.selenite-btn i{background:#cfc8ee}.topaz-btn i{background:#f9a825}.ribbonorange-btn i{background:#ff9a3c}.obsidian-btn i{background:#4a3560}
+.lapis-btn i{background:#26619c}.selenite-btn i{background:#cfc8ee}.topaz-btn i{background:#f9a825}.ribbonorange-btn i{background:#ff9a3c}.ribbonchart-btn i{background:#9bd400}.obsidian-btn i{background:#4a3560}
 .gacha-lobby{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;background:linear-gradient(135deg,#3a2a6a,#1f3a68);border:1px solid #9a86e0}
 .gacha-lobby h2{margin:0 0 6px}.gacha-lobby p{margin:0;color:#e4dcff;line-height:1.6}.gacha-lobby b{color:#ffd35a;font-size:1.15rem}.gacha-lobby em{font-style:normal;color:#ffe89a;font-weight:800}.gacha-lobby small{color:#bfb4ee}
 .gacha-lobby-btn{padding:16px 30px;border-radius:14px;font-weight:900;font-size:1.1rem;border:2px solid #ffd35a;background:#7a3fa6;color:#fff;cursor:pointer}.gacha-lobby-btn:hover{filter:brightness(1.15)}
