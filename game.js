@@ -1984,7 +1984,7 @@ let training={xp:0,baseLevel:1,levels:Object.fromEntries(ALLIES.map(t=>[t,1])),f
 function stageXP(i){return STAGES[i]?.future?STAGES[i].xp:(200+i*50)*2}
 try{
  const raw=localStorage.getItem('red-battle-training-v1');
- if(raw){const saved=JSON.parse(raw);training.xp=Number.isSafeInteger(saved.xp)&&saved.xp>=0?saved.xp:0;training.baseLevel=Number.isInteger(saved.baseLevel)?Math.max(1,Math.min(10,saved.baseLevel)):1;for(const t of ALLIES){const n=saved.levels?.[t];training.levels[t]=Number.isInteger(n)?Math.max(1,Math.min(LEVEL_HARD_MAX,n)):1;if(saved.forms?.[t]===1)training.forms[t]=1}for(const k of ['walletLevel','prodLevel','studyLevel','accLevel']){const n=saved[k];training[k]=Number.isInteger(n)?Math.max(0,Math.min(ECON_COST.length,n)):0}}
+ if(raw){const saved=JSON.parse(raw);training.xp=Number.isSafeInteger(saved.xp)&&saved.xp>=0?saved.xp:0;training.baseLevel=Number.isInteger(saved.baseLevel)?Math.max(1,Math.min(BASE_MAX,saved.baseLevel)):1;for(const t of ALLIES){const n=saved.levels?.[t];training.levels[t]=Number.isInteger(n)?Math.max(1,Math.min(LEVEL_HARD_MAX,n)):1;if(saved.forms?.[t]===1)training.forms[t]=1}for(const k of ['walletLevel','prodLevel','studyLevel','accLevel']){const n=saved[k];training[k]=Number.isInteger(n)?Math.max(0,Math.min(ECON_COST.length,n)):0}}
  else{training.xp=cleared.reduce((sum,i)=>sum+stageXP(i),0);saveTraining()}
 }catch{trainingSaveFailed=true}
 function saveTraining(){try{localStorage.setItem('red-battle-training-v1',JSON.stringify(training));trainingSaveFailed=false}catch{trainingSaveFailed=true}}
@@ -2182,16 +2182,20 @@ function accMult(){return 1+ACC_STEP*training.accLevel+CHAPTER_BONUS.gold*chapte
 function walletMax(lv=game.level){return data.income[lv].max+WALLET_STEP*training.walletLevel+CHAPTER_BONUS.wallet*chapterBonusCount()}
 function incomeRate(lv=game.level){return data.income[lv].rate*(1+PROD_STEP*training.prodLevel+CHAPTER_BONUS.rate*chapterBonusCount())}
 function upgradeEcon(k){const l=training[k];if(l>=ECON_COST.length||training.xp<ECON_COST[l])return false;training.xp-=ECON_COST[l];training[k]++;saveTraining();renderBaseUpgrade();renderTraining();if(typeof render==='function')render();return true}
-// Cat Base health per level, as in the original (Base Defense upgrade Lv.1~10; the original goes on to Lv.30 = 78,000)
-const BASE_HP=[1000,2000,3000,4000,6000,8000,10000,12000,15000,18000];
-function baseHpFor(level=training.baseLevel){return BASE_HP[Math.max(1,Math.min(BASE_HP.length,level))-1]}
-function baseHpCost(){return training.baseLevel*150}
-function upgradeBase(){if(training.baseLevel>=10||training.xp<baseHpCost())return false;training.xp-=baseHpCost();training.baseLevel++;saveTraining();renderBaseUpgrade();renderTraining();return true}
+// Cat Base health per Base Defense level, as in the original (Lv.30 = 78,000). Levels open like the original: 1~10
+// freely, 11~20 after clearing chapter 2 at twice the Lv.1~10 costs; the original's +10 capsule levels (21~30) are
+// bought with XP at three times, after clearing chapter 3.
+const BASE_HP=[1000,2000,3000,4000,6000,8000,10000,12000,15000,18000,21000,24000,27000,30000,33000,36000,39000,42000,45000,48000,51000,54000,57000,60000,63000,66000,69000,72000,75000,78000];
+const BASE_MAX=BASE_HP.length;
+function baseHpFor(level=training.baseLevel){return BASE_HP[Math.max(1,Math.min(BASE_MAX,level))-1]}
+function baseHpCost(l=training.baseLevel){return 150*((l-1)%10+1)*(l<=10?1:l<=20?2:3)}
+function baseLevelCap(){return cleared.includes(CHAPTER_FINALS[2])?30:cleared.includes(CHAPTER_FINALS[1])?20:10}
+function upgradeBase(){if(training.baseLevel>=baseLevelCap()||training.xp<baseHpCost())return false;training.xp-=baseHpCost();training.baseLevel++;saveTraining();renderBaseUpgrade();renderTraining();return true}
 function renderBaseUpgrade(){
  const grid=$('#baseGrid');grid.innerHTML='';
- const l=training.baseLevel,hp=baseHpFor(l),next=baseHpFor(Math.min(10,l+1)),card=document.createElement('article');card.className='training-card';
- card.innerHTML=`<h3>아군 성 체력 <small>Lv.${l} / 10</small></h3><p>기지 방어력 강화<br>체력 ${hp}${l<10?' → '+next:''}</p>`;
- const b=document.createElement('button');b.textContent=l===10?'최대 레벨':baseHpCost()+' XP · 강화';b.disabled=l>=10||training.xp<baseHpCost();b.onclick=()=>upgradeBase();card.append(b);
+ const l=training.baseLevel,cap=baseLevelCap(),hp=baseHpFor(l),next=baseHpFor(Math.min(BASE_MAX,l+1)),card=document.createElement('article');card.className='training-card';
+ card.innerHTML=`<h3>아군 성 체력 <small>Lv.${l} / ${BASE_MAX}</small></h3><p>기지 방어력 강화<br>체력 ${hp.toLocaleString()}${l<BASE_MAX?' → '+next.toLocaleString():''}${l>=cap&&cap<BASE_MAX?`<br><small>Lv.${cap+1}부터는 세계편 ${cap===10?2:3}장 클리어 후</small>`:''}</p>`;
+ const b=document.createElement('button');b.textContent=l>=BASE_MAX?'최대 레벨':l>=cap?`세계편 ${cap===10?2:3}장 클리어 시 Lv.${cap===10?20:30}`:baseHpCost().toLocaleString()+' XP · 강화';b.disabled=l>=cap||training.xp<baseHpCost();b.onclick=()=>upgradeBase();card.append(b);
  grid.append(card);
  {const n=chapterBonusCount(),c=document.createElement('article');c.className='training-card';c.innerHTML=`<h3>장 클리어 보너스 <small>${n} / 3장</small></h3><p>1·2·3장의 달을 처음 깨면 영구 적용<br>지갑 +${(CHAPTER_BONUS.wallet*n).toLocaleString()}원 · 생산 +${Math.round(CHAPTER_BONUS.rate*n*100)}% · 처치 시 돈 +${Math.round(CHAPTER_BONUS.gold*n*100)}%<br><small>장마다 지갑 +${CHAPTER_BONUS.wallet.toLocaleString()} · 생산 +${Math.round(CHAPTER_BONUS.rate*100)}% · 처치 시 돈 +${Math.round(CHAPTER_BONUS.gold*100)}%</small></p>`;grid.append(c)}
  for(const[k,title,desc,fmt]of[['walletLevel','지갑 상한','전투 중 보유할 수 있는 돈의 상한',n=>'+'+WALLET_STEP*n+'원'],['prodLevel','돈 생산력','시간당 돈이 모이는 속도',n=>'+'+Math.round(PROD_STEP*n*100)+'%'],['studyLevel','공부력','스테이지 클리어 보상 XP 증가',n=>'+'+Math.round(STUDY_STEP*n*100)+'%'],['accLevel','회계력','적을 쓰러뜨릴 때 받는 돈 증가',n=>'+'+Math.round(ACC_STEP*n*100)+'%']]){const lv=training[k],max=ECON_COST.length,c=document.createElement('article');c.className='training-card';c.innerHTML=`<h3>${title} <small>Lv.${lv} / ${max}</small></h3><p>${desc}<br>${fmt(lv)}${lv<max?' → '+fmt(lv+1):''}</p>`;const eb=document.createElement('button');eb.textContent=lv>=max?'최대 레벨':ECON_COST[lv]+' XP · 강화';eb.disabled=lv>=max||training.xp<ECON_COST[lv];eb.onclick=()=>upgradeEcon(k);c.append(eb);grid.append(c)}
