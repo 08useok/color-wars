@@ -550,9 +550,10 @@ data.units.selenite={hp:1043,atk:1043,interval:3.6,speed:5,range:20,cost:850,coo
 // EX 리본 오렌지 (오렌지 아종, 리본 오렌지 강림 드롭): 중거리 범위 · 리본으로 묶어 정지 30% / 2초.
 data.units.ribbonorange={hp:800,atk:650,interval:3,speed:5,range:18,cost:600,cooldown:20,knockbacks:3,area:true,freezeChance:.3,freezeDuration:2,attackDuration:.9,windup:.4};
 // EX 옵시디언 (원작 대탈주 보상 '울프와 우루룬' 대체, 탈옥터널 '대탈주' 첫 클리어 확정): 검은 늑대를 탄 밤의 사냥꾼.
-// Like the original Ururun: a backline DPS — long-range area volleys, fast attack cycle, knockback 10%, low HP, high cost, long cooldown.
+// Like the original Ururun: a backline DPS — long-range area volleys, low HP, high cost, long cooldown, and a 20% normal knockback
+// on every trait except metal (원작 대상: 빨간·떠 있는·검은·무속성·천사·에이리언… 메탈 제외).
 // All 148 drawings: walk 24 / attack 36 (windup 12 · release 12 · recovery 12, 30 fps) / chase dash 12 (when a foe is near) / hurt 1 per form.
-data.units.obsidian={hp:500,atk:420,interval:1.4,speed:6,range:22,cost:750,cooldown:30,knockbacks:3,area:true,blowChance:.1,blowDistance:6,attackDuration:1.2,windup:.4};
+data.units.obsidian={hp:500,atk:420,interval:1.4,speed:6,range:22,cost:750,cooldown:30,knockbacks:3,area:true,blowChance:.2,blowDistance:6,blowNot:['metal'],attackDuration:1.2,windup:.4};
 data.units.topaz={hp:881,atk:755,interval:3,speed:5,range:24,cost:600,cooldown:20,knockbacks:3,killGold:1,attackDuration:.8,windup:.3};
 data.units.hacienda={hp:566,atk:204,interval:2.4,speed:5,range:12,cost:300,cooldown:11,knockbacks:3,massiveVs:['angel'],attackDuration:.6,windup:.2};
 // 시즌 2 레어 20명 (냥코 원작 같은 능력의 레어·슈퍼 레어 캐릭터 Lv.30 값 = 이 게임 Lv.20, 사거리는 ÷20, 이동 속도는 ÷2):
@@ -750,7 +751,7 @@ function damage(v,amount,from){
  const kbImmune=v.stats?.knockbackImmune||data.units[v.type].knockbackImmune;// 넉백 무효
  if(from?.stats?.push&&!kbImmune)startHitback(v,from.stats.push);// 밀치기: always shoves the target back (bosses too) unless knockback-immune
  else if(from?.stats?.forceKnockback&&!isBoss&&!kbImmune){startHitback(v)}
- else if(!kbImmune&&from?.stats?.blowChance&&Math.random()<from.stats.blowChance){startHitback(v,from.stats.blowDistance||14)}// 날려버린다: a chance to hurl the target far back
+ else if(!kbImmune&&from?.stats?.blowChance&&!from.stats.blowNot?.some(t=>hasTrait(data.units[v.type],t))&&Math.random()<from.stats.blowChance){startHitback(v,from.stats.blowDistance||14)}// 날려버린다: a chance to hurl the target far back
  else if(!kbImmune){
   const total=v.stats?.knockbacks??data.units[v.type].knockbacks;
   // Consume every crossed threshold, but play only one hitback for a single blow.
@@ -2152,7 +2153,7 @@ function codexTraitBadges(d){const b=[attackTypeOf(d)+' 공격'];for(const t of 
  if(d.rage)b.push(`마지막 히트백 시 공격력 +${Math.round(d.rage*100)}%`);
  if(d.surge)b.push('서지 공격');
  if(d.critChance)b.push(`치명타(${freqWord(d.critChance)})`);
- if(d.blowChance)b.push(`날려버린다(${freqWord(d.blowChance)})`);
+ if(d.blowChance)b.push(d.blowNot?`메탈 제외 모든 적 넉백(${freqWord(d.blowChance)})`:`날려버린다(${freqWord(d.blowChance)})`);
  if(d.killGold)b.push(`처치 시 돈 +${Math.round(d.killGold*100)}%`);
  if(d.multiHit)b.push(`${d.multiHit}연타`);
  if(d.statusVs){const tg=d.statusVs.length>=5&&!d.statusVs.includes('metal')?'메탈을 뺀 모든 적':d.statusVs.map(t=>TRAIT_TARGET[t]).join('·'),m=[d.slowChance&&`둔화(${freqWord(d.slowChance)})`,d.freezeChance&&`정지(${freqWord(d.freezeChance)})`,d.atkDownPct&&`약화(${freqWord(d.atkDownChance??1)})`,d.intervalUpChance&&`공격 주기 증가(${freqWord(d.intervalUpChance)})`].filter(Boolean).join('·');if(m)b.push(`${tg}에게 ${m}`)}return b}
