@@ -98,7 +98,7 @@ function gachaStageReward(i){// 세계편·미래편 첫 클리어: 각 장의 �
  if(ch>=2)return {t1:1,t10:0};
  return {t1:0,t10:0};
 }
-const EX_NAME={ribbonorange:'리본 오렌지',garnet:'가넷',lapis:'라피스',selenite:'셀레나이트',topaz:'토파즈'};
+const EX_NAME={obsidian:'옵시디언',ribbonorange:'리본 오렌지',garnet:'가넷',lapis:'라피스',selenite:'셀레나이트',topaz:'토파즈'};
 function grantEx(id){if(gachaOwns(id))return false;gacha.owned.push(id);saveGacha();gachaAppendDetail('EX '+EX_NAME[id]+' 획득!');renderNewButtons();renderDeckButtons();return true}
 function gachaAppendDetail(text){const el=document.querySelector('#resultDetail');if(el&&text)el.textContent+=(el.textContent?' · ':'')+text}
 const _finish=finish;
@@ -125,6 +125,10 @@ legendFinish=function(win){
  const c=legendCrown;_legendFinish3(win);
  if(win&&c===2&&legendSubDone(0,2))grantEx('topaz');
 };
+// 옵시디언 (EX): 탈옥터널 '대탈주'(원작 울프와 우루룬 드롭 자리)를 처음 깨면 확정 획득 (어느 왕관이든)
+const OBSIDIAN_K=LEGEND_SUBS[17].start+5;
+const _legendFinish4=legendFinish;
+legendFinish=function(win){const k=STAGES[selectedStage].legend.k;_legendFinish4(win);if(win&&k===OBSIDIAN_K)grantEx('obsidian')};
 // 가넷 (EX): 전설의 시작을 모두 클리어한 뒤 마지막 스테이지를 클리어할 때마다 30% 확률로 획득
 const GARNET_DROP=.3;
 const _legendFinish2=legendFinish;
