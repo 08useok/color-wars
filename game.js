@@ -832,7 +832,7 @@ function launchJuice(u,t){
 }
 function positionJuice(p){const progress=p.time/p.duration;p.el.style.left=(p.start+(p.end-p.start)*progress)+'%';p.el.style.translate=`-50% ${-28-Math.sin(progress*Math.PI)*32}px`}
 function updateJuice(dt){
- updateSurges(dt);
+ updateSurges(dt);updateWaveFx(dt);
  for(const e of [...game.effects]){e.time-=dt;e.el.style.opacity=Math.max(0,e.time/.25);if(e.time<=0){e.el.remove();game.effects.splice(game.effects.indexOf(e),1)}}
  for(const p of [...game.projectiles]){
   p.time=Math.min(p.duration,p.time+dt);positionJuice(p);if(p.time<p.duration)continue;
@@ -857,10 +857,24 @@ function updateSurges(dt){
   if(sg.t>=sg.dur){sg.el.remove();game.surges.splice(game.surges.indexOf(sg),1)}
  }
 }
+// Wave attack drawn like the original (skill_wave_attack / _e): a wave segment pops up every 3 frames (0.1s), one step
+// further along, and each segment plays the 6 cells of skill004.png (cats, pink) / skill005.png (enemies, blue),
+// 2 frames per cell, fading out over 12 frames. A step is the game's 200 units, about 6.7% of the field here.
+const WAVE_CELLS=[[1,1],[59,1],[117,1],[1,83],[59,83],[117,83]],WAVE_STEP=6.7;
 function launchWave(u,d){
  const dir=u.ally?-1:1,far=u.x+dir*d.wave.reach,lo=Math.min(u.x,far),hi=Math.max(u.x,far);
- const el=document.createElement('span');el.className='juice-splash wave-splash';el.style.left=(lo+hi)/2+'%';el.style.width=(hi-lo)+'%';unitsEl.append(el);game.effects.push({el,time:.35});
+ const n=Math.max(1,Math.round(d.wave.reach/WAVE_STEP)),step=d.wave.reach/n;
+ for(let k=0;k<n;k++){const el=document.createElement('span');el.className='wave-seg '+(u.ally?'wave-cat':'wave-enemy');el.style.left=(u.x+dir*step*(k+.5))+'%';el.style.display='none';unitsEl.append(el);
+  (game.waveFx=game.waveFx||[]).push({el,t:-k*.1})}
  for(const v of [...game.units])if(v.hp>0&&v.kbTime<=0&&v.ally!==u.ally&&v.x>=lo&&v.x<=hi)damage(v,d.atk*(d.wave.mult||1),u);
+}
+function updateWaveFx(dt){
+ if(!game.waveFx)return;
+ for(const w of [...game.waveFx]){
+  w.t+=dt;if(w.t<0)continue;
+  const f=w.t*30;if(f>=12){w.el.remove();game.waveFx.splice(game.waveFx.indexOf(w),1);continue}
+  const [x,y]=WAVE_CELLS[Math.min(5,Math.floor(f/2))];w.el.style.display='block';w.el.style.backgroundPosition=`-${x}px -${y}px`;w.el.style.opacity=(1-f/12).toFixed(2);
+ }
 }
 // Long-range area beams: the sheet's own swing art only reaches a body length, so the strike also draws a beam out to
 // zoneMax (prism leaves its dead zone faint) and a burst on every target it hits.
