@@ -107,7 +107,7 @@ finish=function(win){
  _finish(win);
  if(!fresh||!win||st.legend)return;
  if(st.special){if(idx===MAIN_STAGE_COUNT+3)grantEx('lapis');if(Math.random()<GACHA_CFG.specialChance){gachaGive(0,1);gachaAppendDetail('뽑기권(10회) 1장 획득!')}return}
- if(!was&&cleared.includes(idx)){if(idx===MAIN_STAGE_COUNT-1)grantEx('selenite');const r=gachaStageReward(idx);if(r.t1||r.t10){gachaGive(r.t1,r.t10);gachaAppendDetail(gachaTicketText(r.t1,r.t10)+' 획득!')}}
+ if(!was&&cleared.includes(idx)){if(idx===GACHA_OPEN_AT){renderGachaBadge();gachaAppendDetail('뽑기가 열렸어요!')}if(idx===MAIN_STAGE_COUNT-1)grantEx('selenite');const r=gachaStageReward(idx);if(r.t1||r.t10){gachaGive(r.t1,r.t10);gachaAppendDetail(gachaTicketText(r.t1,r.t10)+' 획득!')}}
 };
 const _legendFinish=legendFinish;
 legendFinish=function(win){
@@ -151,12 +151,16 @@ const GACHA_TOAST=document.createElement('div');GACHA_TOAST.id='gachaToast';GACH
 let gachaToastTimer=0;
 function gachaToast(text){GACHA_TOAST.textContent=text;GACHA_TOAST.classList.remove('hidden');clearTimeout(gachaToastTimer);gachaToastTimer=setTimeout(()=>GACHA_TOAST.classList.add('hidden'),4200)}
 function gachaOpen(){return !GACHA_OVERLAY.classList.contains('hidden')}
+// 뽑기는 세계편 1장 일본(7번째 스테이지)을 깨면 열린다
+const GACHA_OPEN_AT=6;
+function gachaUnlocked(){return cleared.some(i=>i>=GACHA_OPEN_AT)}
 const GACHA_BTN=document.createElement('button');GACHA_BTN.id='gachaOpenBtn';GACHA_BTN.type='button';
 document.querySelector('.stage-heading-actions').prepend(GACHA_BTN);
 const GACHA_LOBBY=document.createElement('section');GACHA_LOBBY.className='training gacha-lobby';
 GACHA_LOBBY.innerHTML='<div class="gacha-lobby-info"><h2>뽑기</h2><p id="gachaLobbyText"></p></div><button id="gachaLobbyBtn" type="button" class="gacha-lobby-btn">뽑기 하러 가기</button>';
 document.querySelector('.stage-panel .stage-intro').after(GACHA_LOBBY);
 function renderGachaBadge(){
+ const on=gachaUnlocked();GACHA_BTN.classList.toggle('hidden',!on);GACHA_LOBBY.classList.toggle('hidden',!on);
  GACHA_BTN.textContent=`뽑기 🎟 ${gacha.t1+gacha.t10}`;
  $('#gachaLobbyText').innerHTML=`1회권 <b>${gacha.t1}</b>장 · 10회권 <b>${gacha.t10}</b>장`+(gachaBonusDay()?' · <em>10+1 기간! 보너스는 SR 확정</em>':' · 매달 1~10일 10+1')+'<br><small>슈퍼 레어 '+GACHA_SR.length+'명 · 레어 '+GACHA_RARE.length+'명 · 울트라 슈퍼 레어 '+GACHA_UBER.length+'명</small>';
 }
@@ -187,7 +191,7 @@ function renderGacha(results){
  $('#gachaOwnedText').textContent=`${[...GACHA_SR,...GACHA_RARE,...GACHA_UBER].filter(s=>gachaOwns(s.id)).length} / ${GACHA_SR.length+GACHA_RARE.length+GACHA_UBER.length}`;
 }
 function gachaDoPull(times){const out=gachaPull(times);if(out)renderGacha(out)}
-function openGacha(){renderGacha();$('#gachaResults').innerHTML='';GACHA_OVERLAY.classList.remove('hidden')}
+function openGacha(){if(!gachaUnlocked())return;renderGacha();$('#gachaResults').innerHTML='';GACHA_OVERLAY.classList.remove('hidden')}
 GACHA_BTN.onclick=openGacha;$('#gachaLobbyBtn').onclick=openGacha;
 GACHA_OVERLAY.addEventListener('click',e=>{if(e.target===GACHA_OVERLAY)GACHA_OVERLAY.classList.add('hidden')});
 $('#gachaCloseBtn').onclick=()=>GACHA_OVERLAY.classList.add('hidden');
@@ -196,4 +200,4 @@ $('#gachaPull10').onclick=()=>gachaDoPull(10);
 renderGachaBadge();
 // game.js drew the first screen before this file loaded, so characters owned through the gacha/rewards were still locked: redraw now.
 {const menuOpen=!$('#stageMenu').classList.contains('hidden');if(menuOpen)renderStageMenu();renderNewButtons();renderDeckButtons();render()}
-{const d=gachaClaimDaily();if(d){renderGachaBadge();gachaToast(`일일 보상! ${gachaTicketText(d.t1,d.t10)} (${d.streak}일 연속 출석)`)}}
+{const d=gachaUnlocked()?gachaClaimDaily():null;if(d){renderGachaBadge();gachaToast(`일일 보상! ${gachaTicketText(d.t1,d.t10)} (${d.streak}일 연속 출석)`)}}
