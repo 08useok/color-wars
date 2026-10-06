@@ -112,3 +112,16 @@ renderSpecialStages=function(){
   b.onclick=()=>{selectedStage=i;reset()};r.append(b)});
  const ribbonRow=[...grid.children].find(e=>e.querySelector?.('.stage-card.ribbon'));
  if(ribbonRow)ribbonRow.after(r);else grid.prepend(r)};
+
+// One-time level restore (2026-10-07): a load-order bug (BASE_MAX used before it was defined) reset every saved level to
+// Lv.1 and the next save wrote that back. Saves that clearly went through it (세계편 2장 cleared, 5+ unlocked characters
+// stuck at Lv.1) get every unlocked character raised to Lv.30 as 2진, once; nobody is lowered.
+(function restoreLevels(){
+ const KEY='red-battle-levelfix-v1';
+ try{if(localStorage.getItem(KEY))return}catch{return}
+ const unlocked=ALLIES.filter(t=>allyUnlocked(t)),stuck=unlocked.filter(t=>(training.levels[t]||1)<=1);
+ const hit=cleared.includes(CHAPTER1_LEN*2-1)&&stuck.length>=5;
+ if(hit){for(const t of unlocked){training.levels[t]=Math.max(training.levels[t]||1,30);delete training.forms[t]}saveTraining();renderTraining();render()}
+ try{localStorage.setItem(KEY,hit?'restored':'checked')}catch{}
+ if(hit){const n=document.createElement('div');n.className='restore-toast';n.textContent=`레벨 복구 완료: 캐릭터 ${unlocked.length}명을 Lv.30(2진)으로 되돌렸어요 (레벨 초기화 버그 보상)`;document.body.append(n);setTimeout(()=>n.remove(),9000)}
+})();
