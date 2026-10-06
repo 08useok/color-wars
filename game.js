@@ -397,7 +397,7 @@ data.units.camelle={hp:100000,atk:2637,interval:1.567,speed:4.29,range:18.7,rewa
 data.units.kory={hp:120000,atk:1400,interval:2,speed:3.75,range:6.8,reward:495,knockbacks:5,attackDuration:1,windup:0.7,area:true,castleMult:4,wave:{chance:1,reach:36.3}};
 // 까치 도둑 (오리지널 보스, 리본 오렌지 강림): 보석 보따리를 휘두르는 떠 있는 적 · 범위 · 성에 2배 피해. Base stats at 100%.
 // All 124 drawings are used: walk 50 at 30 fps, attack 36 windup + impact + 36 recovery at 60 fps (attackStep .5) = 1.3 s.
-data.units.magpie={trait:'floating',hp:20000,atk:800,interval:3.5,speed:4,range:6,reward:1500,knockbacks:3,area:true,castleMult:2,attackDuration:1.3,windup:.6};
+data.units.magpie={trait:'floating',hp:60000,atk:1500,interval:3.5,speed:4,range:6,reward:1500,knockbacks:3,area:true,castleMult:2,attackDuration:1.3,windup:.6};
 data.units.mastera={hp:60000,atk:2500,interval:3,speed:3,range:8,reward:2500,knockbacks:3,attackDuration:0.8,windup:0.033,area:true};
 data.units.celeboodle={hp:4000,atk:400,interval:1.5,speed:10,range:4,reward:300,knockbacks:3,attackDuration:1.367,windup:0.567};
 data.units.dagshund={hp:15000,atk:1200,interval:3,speed:4,range:6,reward:800,knockbacks:2,attackDuration:1.667,windup:0.433,area:true};
