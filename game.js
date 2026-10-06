@@ -2012,7 +2012,7 @@ let training={xp:0,baseLevel:1,levels:Object.fromEntries(ALLIES.map(t=>[t,1])),f
 function stageXP(i){return STAGES[i]?.future?STAGES[i].xp:(200+i*50)*2}
 try{
  const raw=localStorage.getItem('red-battle-training-v1');
- if(raw){const saved=JSON.parse(raw);training.xp=Number.isSafeInteger(saved.xp)&&saved.xp>=0?saved.xp:0;training.baseLevel=Number.isInteger(saved.baseLevel)?Math.max(1,Math.min(BASE_MAX,saved.baseLevel)):1;for(const t of ALLIES){const n=saved.levels?.[t];training.levels[t]=Number.isInteger(n)?Math.max(1,Math.min(LEVEL_HARD_MAX,n)):1;if(saved.forms?.[t]===1)training.forms[t]=1}for(const k of ['walletLevel','prodLevel','studyLevel','accLevel']){const n=saved[k];training[k]=Number.isInteger(n)?Math.max(0,Math.min(ECON_COST.length,n)):0}}
+ if(raw){const saved=JSON.parse(raw);training.xp=Number.isSafeInteger(saved.xp)&&saved.xp>=0?saved.xp:0;training.baseLevel=Number.isInteger(saved.baseLevel)?Math.max(1,saved.baseLevel):1;/* clamped to BASE_MAX once it is defined (below): using it here threw and reset every level to 1 */for(const t of ALLIES){const n=saved.levels?.[t];training.levels[t]=Number.isInteger(n)?Math.max(1,Math.min(LEVEL_HARD_MAX,n)):1;if(saved.forms?.[t]===1)training.forms[t]=1}for(const k of ['walletLevel','prodLevel','studyLevel','accLevel']){const n=saved[k];training[k]=Number.isInteger(n)?Math.max(0,Math.min(ECON_COST.length,n)):0}}
  else{training.xp=cleared.reduce((sum,i)=>sum+stageXP(i),0);saveTraining()}
 }catch{trainingSaveFailed=true}
 function saveTraining(){try{localStorage.setItem('red-battle-training-v1',JSON.stringify(training));trainingSaveFailed=false}catch{trainingSaveFailed=true}}
@@ -2215,6 +2215,7 @@ function upgradeEcon(k){const l=training[k];if(l>=ECON_COST.length||training.xp<
 // bought with XP at three times, after clearing chapter 3.
 const BASE_HP=[1000,2000,3000,4000,6000,8000,10000,12000,15000,18000,21000,24000,27000,30000,33000,36000,39000,42000,45000,48000,51000,54000,57000,60000,63000,66000,69000,72000,75000,78000];
 const BASE_MAX=BASE_HP.length;
+training.baseLevel=Math.min(BASE_MAX,training.baseLevel);
 function baseHpFor(level=training.baseLevel){return BASE_HP[Math.max(1,Math.min(BASE_MAX,level))-1]}
 function baseHpCost(l=training.baseLevel){return 150*((l-1)%10+1)*(l<=10?1:l<=20?2:3)}
 function baseLevelCap(){return cleared.includes(CHAPTER_FINALS[2])?30:cleared.includes(CHAPTER_FINALS[1])?20:10}
