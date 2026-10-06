@@ -381,18 +381,14 @@ function chapterOf(i){return STAGES[i]?.chapter||1}
 // stage magnification x chapter multiplier, mapped linearly onto the same scale (fitted to the legend ratings).
 const LEGEND_STAR_RANGES=[[1,3],[3,3],[3,4],[4,4],[4,4],[4,5],[5,5],[5,5],[5,5],[5,6],[6,6],[6,6],[6,6],[6,6],[6,6],[6,6],[6,6],[6,7],[7,7]];
 const STAR_FIT={a:2,b:-3};// score 2.0 (세계편 1장 한국) → ★1, 4.5 (볼케이노 화산 끝) → ★6; a straight regression on the legend stages (r .6) put 세계편 1장 above 전설의 시작
-function stageScore(i,crown=legendCrown){const st=STAGES[i],c=st.chapter,g=c===2?1.5:c===3?4:c===4?legendCrownMult(crown,legendSubOf(st.legend.k)):ch1Mag(i);let best=1;
+function stageScore(i,crown=legendCrown){const st=STAGES[i],c=st.chapter,g=c===2?1.5:c===3?4:c===4?legendCrownMult(crown,legendSubOf(st.legend.k)):1;let best=1;
  for(const r of STAGE_SPAWNS[i]||[]){const d=data.units[r.type];if(!d)continue;const m=(r.mag||100)/100*g;best=Math.max(best,m*Math.sqrt(d.hp*d.atk*(d.multiHit||1)/Math.max(.3,d.interval||1)))}
  return Math.log10(best)}
 function legendStars(k){const sub=legendSubOf(k),sc=LEGEND_SUBS[sub],r=LEGEND_STAR_RANGES[sub];if(!r)return null;const j=k-sc.start;return r[0]+Math.floor(j*(r[1]-r[0]+1)/sc.len)}
 function stageStars(i){const k=STAGES[i]?.legend?.k;if(k!==undefined){const v=legendStars(k);if(v)return v}
  return Math.max(1,Math.min(12,Math.round(STAR_FIT.a*stageScore(i,1)+STAR_FIT.b)))}
 function starHTML(n){return `<span class="stage-stars" title="난이도 ★${n} / 12">${'★'.repeat(n)}</span>`}
-// 세계편 1장 난이도 곡선: 기본 아군 8명(1장 해금 전체, 레벨 10, 첫 클리어 XP만 쓴 보통 플레이어)을 시뮬레이션해서 스테이지별 적 체력·공격력 배율을 잡음.
-// 가장 센 적의 점수가 4번(×1.0)에서 46번까지 고르게 오르게 하고(최대 ×2.0), 처음부터 센 구성인 이스터섬(40)·알래스카(45)는 ×0.7, 달(47)은 ×1.0 유지.
-const CH1_MAG=[1,1,1,1,1.05,1.11,1,1.22,1.1,1,1,1,1,1.13,1,1.07,1.05,1.1,1.25,1.22,1.1,1.05,1,1.5,1.55,1,1.04,1.1,1.25,1.22,1.38,1.35,1.42,1.5,1.21,1.79,1.34,1.8,1.94,1.56,.7,1.73,1.63,1.47,2,.7,1.72,1];
-function ch1Mag(i){return i>=0&&i<CHAPTER1_LEN?CH1_MAG[i]||1:1}
-function enemyMagnification(){const c=chapterOf(selectedStage);return c===2?1.5:c===3?4:c===4?legendCrownMult(legendCrown,legendSubOf(STAGES[selectedStage].legend.k)):ch1Mag(selectedStage)}
+function enemyMagnification(){const c=chapterOf(selectedStage);return c===2?1.5:c===3?4:c===4?legendCrownMult(legendCrown,legendSubOf(STAGES[selectedStage].legend.k)):1}
 const RHINO_SHEET='assets/rhino_sheet.png';
 const BEAR_SHEET='assets/bear_sheet.png';
 const FACE_SHEET='assets/face_sheet.png?v=2';
