@@ -1479,19 +1479,41 @@ function renderSweepBar(){
 $('#sweepToggle').onclick=()=>{sweepMode=!sweepMode;sweepNote='';renderStageMenu()};
 function isTuesday(){try{return new Date().getDay()===2||new URLSearchParams(location.search).has('tuesday')}catch{return false}}
 function buySpeedPack(){if(training.xp<SPEED_PACK.xp)return false;training.xp-=SPEED_PACK.xp;speedTickets+=SPEED_PACK.count;saveTraining();saveSpeedTickets();renderStageMenu();render();return true}
+// Special stages: one row per event (day badge · title · reward, then its tiers). Today's events and the daily
+// Ribbon Orange descent stay open; the other days fold into one collapsible list; item shop gets its own row.
+const DAY_NAMES=['일','월','화','수','목','금','토'];
 function renderSpecialStages(){
  const grid=$('#specialGrid');grid.innerHTML='';
- const open=cleared.includes(CHAPTER1_LEN-1),tue=isTuesday(),fri=isFriday();
+ const open=cleared.includes(CHAPTER1_LEN-1),hawaii=cleared.includes(CH2_HAWAII);
  $('#speedText').textContent=`스피드업 ${speedTickets}개 · 야옹컴 ${nyancom}개 · 📚${boosts.doctor} 💰${boosts.rich} 🎯${boosts.sniper}`;
- const todays=[tue&&'광속 전사(스피드업)',fri&&'가시밭길(야옹컴)',...WEEKDAY_SETS.filter(isWeekdayOpen).map(st=>`${st.title}(${st.item==='all'?'부스트 3종 + XP':BOOST_NAME[st.item]})`)].filter(Boolean);
- $('#specialNote').textContent=!open?'세계편 1장 마지막 스테이지(달)를 클리어하면 열립니다.':(todays.length?`오늘 열린 스테이지: ${todays.join(' · ')}.`:'')+' 월 고양이 박사 · 화 광속 전사 · 수 부자 고양이 · 목 저격 훈련장 · 금 가시밭길 · 토일 주말 특별전 · 매일 리본 오렌지 강림(세계편 2장 후). 아이템은 아래에서 XP로 살 수도 있습니다. (초상급은 세계편 2장 클리어 후)';
- TUESDAY_STAGES.forEach((t,k)=>{const i=MAIN_STAGE_COUNT+k,b=document.createElement('button');b.className='stage-card';const locked=!open||!tue||(k===3&&!cleared.includes(CH2_HAWAII));b.disabled=locked;b.title=t.desc+' · 적 성 체력 '+t.hp;b.innerHTML=`<strong>${t.name.replace('광속 전사 ','')}</strong>${starHTML(stageStars(i))}<small>${Math.round(t.chance*100)}%${t.count>1?' ×'+t.count:''}</small>`;b.onclick=()=>{selectedStage=i;reset()};grid.append(b)});
- FRIDAY_STAGES.forEach((t,k)=>{const i=FRIDAY_START+k,b=document.createElement('button');b.className='stage-card friday';if(k===0)b.style.gridColumnStart=1;b.disabled=!open||!fri||(k===2&&!cleared.includes(CH2_HAWAII));b.title=t.desc+' · 적 성 체력 '+t.hp;b.innerHTML=`<strong>${t.name.replace('가시밭길 ','🌵 ')}</strong>${starHTML(stageStars(i))}<small>${Math.round(t.chance*100)}%${t.count>1?' ×'+t.count:''}</small>`;b.onclick=()=>{selectedStage=i;reset()};grid.append(b)});
- WEEKDAY_SETS.forEach((set,si)=>{const today=isWeekdayOpen(set);WEEKDAY_TIERS.forEach((t,k)=>{const i=weekdayIdx(si,k),b=document.createElement('button');b.className='stage-card weekday';if(k===0)b.style.gridColumnStart=1;b.disabled=!open||!today||(k===2&&!cleared.includes(CH2_HAWAII));b.title=STAGES[i].desc+' · 적 성 체력 '+STAGES[i].hp;b.innerHTML=`<strong>${set.flag} ${t.n}</strong>${starHTML(stageStars(i))}<small>${set.title} ${Math.round(t.chance*100)}%${t.count>1?' ×'+t.count:''}</small>`;b.onclick=()=>{selectedStage=i;reset()};grid.append(b)})});
- const ribbonOwned=typeof gachaOwns==='function'&&gachaOwns('ribbonorange');RIBBON_TIERS.forEach((t,k)=>{const i=RIBBON_START+k,b=document.createElement('button');b.className='stage-card ribbon';if(k===0)b.style.gridColumnStart=1;b.disabled=!open||!ribbonTierOpen(k);b.title=STAGES[i].desc+' · 적 성 체력 '+STAGES[i].hp;b.innerHTML=`<strong>🎀 ${t.n}</strong>${starHTML(stageStars(i))}<small>${!ribbonTierOpen(k)?ribbonLockText(k):`리본 오렌지 강림 ${!ribbonReady()?'준비 중':ribbonOwned?'획득 완료':Math.round(t.chance*100)+'%'}`}</small>`;b.onclick=()=>{selectedStage=i;reset()};grid.append(b)});
- const buy=document.createElement('button');buy.className='stage-card';buy.disabled=training.xp<SPEED_PACK.xp;buy.innerHTML=`<strong>스피드업 ${SPEED_PACK.count}개 구매</strong><small>${SPEED_PACK.xp} XP</small>`;buy.onclick=buySpeedPack;grid.append(buy);
- for(const k in BOOSTS){const bb=document.createElement('button');bb.className='stage-card';bb.disabled=training.xp<BOOST_PACK.xp;bb.title=BOOSTS[k].desc;bb.innerHTML=`<strong>${BOOSTS[k].icon} ${BOOST_NAME[k]} ${BOOST_PACK.count}개 구매</strong><small>${BOOST_PACK.xp} XP · 보유 ${boosts[k]}개</small>`;bb.onclick=()=>buyBoostPack(k);grid.append(bb)}
- const buy2=document.createElement('button');buy2.className='stage-card';buy2.disabled=training.xp<NYAN_PACK.xp;buy2.innerHTML=`<strong>야옹컴 ${NYAN_PACK.count}개 구매</strong><small>${NYAN_PACK.xp} XP</small>`;buy2.onclick=buyNyancom;grid.append(buy2);
+ $('#specialNote').textContent=!open?'세계편 1장 마지막 스테이지(달)를 클리어하면 열립니다.':`오늘은 ${DAY_NAMES[new Date().getDay()]}요일 · 요일마다 열리는 스테이지가 바뀝니다. 마지막 단계는 세계편 2장 클리어 후 열립니다.`;
+ const chance=t=>`${Math.round(t.chance*100)}%${t.count>1?' ×'+t.count:''}`;
+ const ribbonOwned=typeof gachaOwns==='function'&&gachaOwns('ribbonorange');
+ const events=[
+  {days:[2],flag:'⚡',title:'광속 전사',reward:'스피드업',today:isTuesday(),tiers:TUESDAY_STAGES.map((t,k)=>({i:MAIN_STAGE_COUNT+k,n:t.name.replace('광속 전사 ',''),sub:chance(t),lock:k===3&&!hawaii,tip:t.desc+' · 적 성 체력 '+t.hp}))},
+  {days:[5],flag:'🌵',title:'가시밭길',reward:'야옹컴',cls:'friday',today:isFriday(),tiers:FRIDAY_STAGES.map((t,k)=>({i:FRIDAY_START+k,n:t.name.replace('가시밭길 ',''),sub:chance(t),lock:k===2&&!hawaii,tip:t.desc+' · 적 성 체력 '+t.hp}))},
+  ...WEEKDAY_SETS.map((set,si)=>({days:set.days,flag:set.flag,title:set.title,reward:set.item==='all'?'부스트 3종 + XP':BOOST_NAME[set.item],cls:'weekday',today:isWeekdayOpen(set),
+   tiers:WEEKDAY_TIERS.map((t,k)=>{const i=weekdayIdx(si,k);return {i,n:t.n,sub:chance(t),lock:k===2&&!hawaii,tip:STAGES[i].desc+' · 적 성 체력 '+STAGES[i].hp}})}))
+ ].sort((a,b)=>(a.days[0]+6)%7-(b.days[0]+6)%7);
+ const ribbon={days:null,flag:'🎀',title:'리본 오렌지 강림',reward:'리본 오렌지',cls:'ribbon',today:true,
+  tiers:RIBBON_TIERS.map((t,k)=>({i:RIBBON_START+k,n:t.n,lock:!ribbonTierOpen(k),sub:!ribbonTierOpen(k)?ribbonLockText(k):!ribbonReady()?'준비 중':ribbonOwned?'획득 완료':Math.round(t.chance*100)+'%',tip:STAGES[RIBBON_START+k].desc+' · 적 성 체력 '+STAGES[RIBBON_START+k].hp}))};
+ const label=(day,flag,title,sub)=>{const l=document.createElement('div');l.className='special-label';l.innerHTML=`<b class="day">${day}</b><strong>${flag} ${title}</strong><small>${sub}</small>`;return l};
+ const row=ev=>{
+  const r=document.createElement('div');r.className='special-row'+(ev.today?' today':' closed');
+  r.append(label(ev.days?ev.days.map(d=>DAY_NAMES[d]).join('·'):'매일',ev.flag,ev.title,ev.reward));
+  for(const t of ev.tiers){const b=document.createElement('button');b.className='stage-card'+(ev.cls?' '+ev.cls:'');b.disabled=!open||!ev.today||t.lock;b.title=t.tip;
+   b.innerHTML=`<strong>${t.n}</strong>${starHTML(stageStars(t.i))}<small>${t.sub}</small>`;b.onclick=()=>{selectedStage=t.i;reset()};r.append(b)}
+  return r};
+ for(const ev of events.filter(e=>e.today))grid.append(row(ev));
+ grid.append(row(ribbon));
+ const others=events.filter(e=>!e.today);
+ if(others.length){const det=document.createElement('details');det.className='special-other';det.innerHTML=`<summary>다른 요일 스테이지 ${others.length}개</summary>`;for(const ev of others)det.append(row(ev));grid.append(det)}
+ const shop=document.createElement('div');shop.className='special-shop';shop.append(label('XP','🛒','아이템 구매',`보유 ${training.xp} XP`));
+ const item=(html,cost,fn,tip)=>{const b=document.createElement('button');b.className='stage-card';b.disabled=training.xp<cost;if(tip)b.title=tip;b.innerHTML=html;b.onclick=fn;shop.append(b)};
+ item(`<strong>스피드업 ${SPEED_PACK.count}개</strong><small>${SPEED_PACK.xp} XP</small>`,SPEED_PACK.xp,buySpeedPack);
+ item(`<strong>야옹컴 ${NYAN_PACK.count}개</strong><small>${NYAN_PACK.xp} XP</small>`,NYAN_PACK.xp,buyNyancom);
+ for(const k in BOOSTS)item(`<strong>${BOOSTS[k].icon} ${BOOST_NAME[k]} ${BOOST_PACK.count}개</strong><small>${BOOST_PACK.xp} XP · 보유 ${boosts[k]}개</small>`,BOOST_PACK.xp,()=>buyBoostPack(k),BOOSTS[k].desc);
+ grid.append(shop);
 }
 function legendXP(k){return LEGEND_STAGES[k].xp*LEGEND_XP_SCALE}
 function renderLegend(){
