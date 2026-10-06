@@ -412,7 +412,8 @@ FUTURE2_STAGES.forEach((t,k)=>STAGES.push({name:FUTURE_STAGES[k].name,flag:FUTUR
 const FUTURE2_END=STAGES.length;
 const ALIEN_SUPPRESSORS2=[FUTURE2_START+ALIEN_SUPPRESSORS[0]-FUTURE_START,FUTURE2_END-1];
 // 리본 샤트 강림: 원작 강림처럼 극난도(세계편 2장 후, 30%) → 클리어 시 초극난도(100%). Boss 콩 도둑 너구리.
-const CHART_TIERS=[{n:'극난도',hp:220000,chance:.3,xp:10000,mag:250,bossMag:300},{n:'초극난도',hp:500000,chance:1,xp:20000,mag:400,bossMag:500,hard:true}];
+// Magnifications tuned by battle simulation (Lv.20 2진): 기본 8명 덱은 극난도에서 성을 못 깎고, 울슈레·EX 섞은 덱은 5분 안팎에 깬다.
+const CHART_TIERS=[{n:'극난도',hp:200000,chance:.3,xp:10000,mag:1400,sq:800,boar:300,bossMag:900},{n:'초극난도',hp:500000,chance:1,xp:20000,mag:1600,sq:900,boar:300,bossMag:1000,hard:true}];
 const CHART_START=STAGES.length;
 CHART_TIERS.forEach((t,k)=>STAGES.push({name:'리본 샤트 강림 '+t.n,flag:'🫛',hp:t.hp,gap:4,wave:0,sky:'#eaf7c8',land:'#8fbf3a',
  desc:`보스 콩 도둑 너구리 ${t.bossMag}%${t.hard?' ×2':''} · 리본 샤트 ${Math.round(t.chance*100)}% · XP ${t.xp}`,
@@ -1438,8 +1439,8 @@ const FUTURE_SPAWNS=[
 ];
 FUTURE_SPAWNS.forEach((rules,k)=>{STAGE_SPAWNS[FUTURE_START+k]=rules});
 CHART_TIERS.forEach((t,k)=>{const m=t.mag,b=t.bossMag;STAGE_SPAWNS[CHART_START+k]=[{type:'dog',at:{t:0},delay:[3,7],mag:m},{type:'snache',at:{t:5},delay:[6,12],mag:m},
- {type:'peasquirrel',at:{t:10},delay:[9,16],mag:m/2},{type:'ironboar',at:{t:25},delay:[20,30],mag:100},{type:'peathief',at:{hp:95},count:1,boss:true,mag:b},
- {type:'peasquirrel',at:{hp:60},count:3,delay:[3,6],mag:m/2},...(t.hard?[{type:'peathief',at:{hp:40},count:1,mag:b},{type:'ironboar',at:{hp:40},count:2,delay:[6,10],mag:150}]:[{type:'ironboar',at:{hp:40},count:1,mag:100}])]});
+ {type:'peasquirrel',at:{t:10},delay:[9,16],mag:t.sq},{type:'ironboar',at:{t:25},delay:[20,30],mag:t.boar},{type:'peathief',at:{hp:95},count:1,boss:true,mag:b},
+ {type:'peasquirrel',at:{hp:60},count:3,delay:[3,6],mag:t.sq},...(t.hard?[{type:'peathief',at:{hp:40},count:1,mag:b},{type:'ironboar',at:{hp:40},count:2,delay:[6,10],mag:t.boar}]:[{type:'ironboar',at:{hp:40},count:1,mag:t.boar}])]});
 const FUTURE2_SPAWNS=[
  [{type:'dog',at:{t:0},delay:[6.67,20],mag:400},{type:'snache',at:{t:3.33},delay:[6.67,20],mag:400},{type:'guys',at:{t:10},delay:[10,20],mag:400},{type:'shibalien',at:{hp:99},count:1,boss:true,mag:250}],
  [{type:'snache',at:{t:10},delay:[5,10],mag:400},{type:'guys',at:{t:16.67},delay:[10,20],mag:400},{type:'hippo',at:{t:40},delay:[40,60],mag:400},{type:'dog',at:{t:50},delay:[5,10],mag:400},{type:'hippo',at:{hp:90},count:1,mag:400},{type:'shibalien',at:{hp:90},count:1,mag:250}],
