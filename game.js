@@ -1806,8 +1806,11 @@ const NEW_PROFILE_CALIB={
  salmon:{size:699,x:-425,y:-399},
  raspberry:{size:696,x:-561,y:-397}
 };
+// Characters that came with their own portrait drawing (1진, 2진): shown as-is instead of a crop of the battle sheet.
+const PROFILE_ART={obsidian:['assets/obsidian_profile.webp','assets/obsidian_profile_2.webp']};
 function profileMarkup(type,evolved){
  const idx=NEW_PROFILE_ORDER.indexOf(type);
+ if(PROFILE_ART[type])return `<div class="generated-profile" role="img" aria-label="${UNIT_NAMES[type]}${evolved?' 2진':''} 프로필" style="background-image:url(${PROFILE_ART[type][evolved?1:0]});background-size:contain;background-position:center"></div>`;
  const evoArt=NEW_ATLASES[type]?.evolved;
  if(type==='onyx'&&!evolved)return `<div class="generated-profile" role="img" aria-label="오닉스 프로필" style="background-image:url(${ONYX_PROFILE});background-size:cover;background-position:center"></div>`;
  if((idx>=0||type==='onyx')&&evolved&&evoArt?.walk){// 2진: crop the idle walk pose out of the 2진 body sheet instead of the shared portrait sheet
