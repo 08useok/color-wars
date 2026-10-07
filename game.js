@@ -704,7 +704,7 @@ data.units.hacienda={hp:566,atk:204,interval:2.4,speed:5,range:12,cost:300,coold
 data.units.cobalt={hp:490,atk:472,interval:3.03,speed:5.0,range:6.0,cost:150,cooldown:10,knockbacks:3,strongVs:['alien'],attackDuration:0.8,windup:0.35};
 data.units.flame={hp:390,atk:208,interval:1.1,speed:5.5,range:7.75,cost:325,cooldown:10,knockbacks:3,massiveVs:['red'],attackDuration:0.8,windup:0.35};
 data.units.scarlet={hp:460,atk:170,interval:0.83,speed:5.5,range:7.0,cost:250,cooldown:10,knockbacks:3,strongVs:['red'],attackDuration:0.75,windup:0.29};
-data.units.moss={hp:305,atk:128,interval:3.5,speed:3.0,range:18.25,cost:250,cooldown:12,knockbacks:3,slowChance:.8,slowDuration:4,statusVs:['alien'],attackDuration:0.8,windup:0.35};
+data.units.moss={hp:915,atk:439,interval:3.5,speed:3.0,range:18.25,cost:250,cooldown:12,knockbacks:3,slowChance:.8,slowDuration:4,statusVs:['alien'],attackDuration:0.8,windup:0.35};
 data.units.coral={hp:182,atk:224,interval:2.4,speed:5.0,range:17.0,cost:375,cooldown:15,knockbacks:3,massiveVs:['floating'],attackDuration:0.8,windup:0.35};
 data.units.aqua={hp:309,atk:102,interval:0.97,speed:5.0,range:10.0,cost:250,cooldown:10,knockbacks:3,slowChance:.2,slowDuration:4,statusVs:['floating'],attackDuration:0.8,windup:0.34};
 data.units.cooper={hp:410,atk:157,interval:2.5,speed:4.5,range:9.5,cost:200,cooldown:8,knockbacks:3,freezeChance:.2,freezeDuration:4,statusVs:['metal'],attackDuration:0.8,windup:0.35};
@@ -2156,7 +2156,7 @@ const LV20_TARGET={
  plum:{hp:16358,atk:3408},forest:{hp:47424,atk:5242},canary:{hp:19200,atk:3800},cherry:{hp:25178,atk:4496},mauve:{hp:22493,atk:4601},khaki:{hp:13400,atk:5500},tangerine:{hp:28800,atk:3800},burgundy:{hp:38570,atk:5290},mustard:{hp:32000,atk:5200},sky:{hp:19680,atk:4674},denim:{hp:31667,atk:5690},charcoal:{hp:15400,atk:4000},
  cornflower:{hp:16000,atk:5500},bittersweet:{hp:22400,atk:4400},claret:{hp:14800,atk:3200},verdigris:{hp:32000,atk:4200},
  ribbonorange:{hp:22000,atk:4000},ribbonchart:{hp:20000,atk:1500},obsidian:{hp:14000,atk:3000},lapis:{hp:34800,atk:3712},selenite:{hp:23180,atk:5216},topaz:{hp:20128,atk:4780},maple:{hp:28262,atk:3696},brick:{hp:15300,atk:4250},korn:{hp:12000,atk:3300},teal:{hp:16290,atk:4996},violet:{hp:12000,atk:1300},orchid:{hp:30000,atk:9000},
- cobalt:{hp:13600,atk:4250},flame:{hp:11050,atk:1870},scarlet:{hp:13005,atk:1530},moss:{hp:8460,atk:1154},coral:{hp:4949,atk:2020},aqua:{hp:8550,atk:914},cooper:{hp:11390,atk:1410},navy:{hp:13600,atk:5440},dandelion:{hp:12000,atk:2470},babyblue:{hp:5950,atk:730},mintcyan:{hp:6800,atk:1275},peach:{hp:12750,atk:917},lightcream:{hp:11390,atk:1410},midnight:{hp:3599,atk:800},darklilac:{hp:7799,atk:2965},fusioncream:{hp:17000,atk:1190},silver:{hp:13600,atk:6800},lava:{hp:26350,atk:12155},babypink:{hp:12240,atk:6800},magenta:{hp:30600,atk:12240}
+ cobalt:{hp:13600,atk:4250},flame:{hp:11050,atk:1870},scarlet:{hp:13005,atk:1530},moss:{hp:25380,atk:3958},coral:{hp:4949,atk:2020},aqua:{hp:8550,atk:914},cooper:{hp:11390,atk:1410},navy:{hp:13600,atk:5440},dandelion:{hp:12000,atk:2470},babyblue:{hp:5950,atk:730},mintcyan:{hp:6800,atk:1275},peach:{hp:12750,atk:917},lightcream:{hp:11390,atk:1410},midnight:{hp:3599,atk:800},darklilac:{hp:7799,atk:2965},fusioncream:{hp:17000,atk:1190},silver:{hp:13600,atk:6800},lava:{hp:26350,atk:12155},babypink:{hp:12240,atk:6800},magenta:{hp:30600,atk:12240}
 };
 function levelMult(base,target,level,curve=1,m10Hp=null,slope=.1){
  const lv=Math.min(level,LV_MAX),m10=m10Hp||1+slope*(LV_EVOLVE-1);
