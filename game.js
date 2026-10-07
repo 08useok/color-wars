@@ -1210,7 +1210,10 @@ function animateBear(u){
 // and the eye position (so the spray head lands exactly where the walking head was).
 const LEBOIN_BODY={x:306,y:150,w:124,h:97,cut:67};
 const LEBOIN_LEGS=[[164,153,140],[166,189,138],[167,223,137]];
-const LEBOIN_HEADS={walk:[159,1,133,141,79,-58],windup:[294,1,133,144,79,-61],spray:[1,3,156,154,77,-67]};
+const LEBOIN_HEADS={windup:[294,1,133,144,79,-61],spray:[1,3,156,154,77,-67]};
+// Walking, as in the original 009_e animation: the body-and-head piece with the trunk curled down (cut 7) rides on
+// the leg strips (cuts 3,2,3,4 every 6 frames), bobbing 2px up on cuts 2 and 4. Its pivot (7,92) sits on the legs' origin.
+const LEBOIN_WALK={x:1,y:159,w:161,h:96},LEBOIN_WALK_STEPS=[1,0,1,2];
 function animateLeboin(u){
  const scale=.55,L=-65,G=99,d=data.units.leboin;
  const head=u.el.querySelector('.dog-sprite'),legs=u.el.querySelector('.dog-sprite-legs'),body=u.el.querySelector('.dog-sprite-body');
@@ -1221,12 +1224,12 @@ function animateLeboin(u){
   place(body,B.x,B.y,B.w,B.h,0,0);legs.style.display='none';
   h=LEBOIN_HEADS[(d.attackDuration-u.attackTime)>=d.windup?'spray':'windup'];
  }else{
-  place(body,B.x,B.y,B.w,B.cut,0,0);
-  const [lx,ly,lw]=LEBOIN_LEGS[state==='walk'?Math.floor(u.animTime/.16)%3:0];
+  const step=LEBOIN_WALK_STEPS[state==='walk'?Math.floor(u.animTime/.2)%4:0],[lx,ly,lw]=LEBOIN_LEGS[step],W=LEBOIN_WALK;
   place(legs,lx,ly,lw,32,143-lw,B.cut);
-  h=LEBOIN_HEADS.walk;
+  place(body,W.x,W.y,W.w,W.h,-4,B.cut-92-(step===1?0:2));
+  h=null;head.style.display='none';
  }
- place(head,h[0],h[1],h[2],h[3],h[4],h[5]);
+ if(h)place(head,h[0],h[1],h[2],h[3],h[4],h[5]);
  body.style.zIndex=1;legs.style.zIndex=1;head.style.zIndex=2;
  head.style.filter=body.style.filter=legs.style.filter=u.hurtTime>0?'brightness(1.8)':'none';
  leanRig(u,[body,legs,head],L+60*scale,scale);
