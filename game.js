@@ -2355,9 +2355,9 @@ function gradeMatch(t){return gradeFilter==='all'||gradeOf(t)===gradeFilter}
 function renderGradeTabs(){
  for(const id of ['#gradeTabs','#codexGradeTabs']){const box=$(id);if(!box)continue;box.innerHTML='';
   for(const [k,label] of GRADE_LIST){
-   const all=k==='all'?null:ALLIES.filter(t=>gradeOf(t)===k),b=document.createElement('button');b.type='button';b.className='codex-tab grade-tab'+(gradeFilter===k?' active':'');
-   b.textContent=all?`${label} ${all.filter(allyUnlocked).length}/${all.length}`:label;
-   b.onclick=()=>{gradeFilter=k;try{localStorage.setItem('red-battle-grade-v1',k)}catch{}renderTraining();
+   const all=k==='all'?null:ALLIES.filter(t=>gradeOf(t)===k),b=document.createElement('button');b.type='button';const wiki=id==='#codexGradeTabs'&&codexWiki;b.className='codex-tab grade-tab'+((wiki?codexGrade:gradeFilter)===k?' active':'');
+   b.textContent=all?(wiki?`${label} ${all.length}`:`${label} ${all.filter(allyUnlocked).length}/${all.length}`):label;
+   b.onclick=()=>{if(wiki){codexGrade=k;const e=codexEntries();if(e.length&&!e.includes(codexType)){codexType=e[0];codexEvolved=false}renderGradeTabs();renderCodexGrid();renderCodexPreview();return}gradeFilter=k;try{localStorage.setItem('red-battle-grade-v1',k)}catch{}renderTraining();
     if(!$('#codexMenu').classList.contains('hidden')){const e=codexEntries();if(codexTab==='ally'&&e.length&&!e.includes(codexType)){codexType=e[0];codexEvolved=false;renderCodexPreview()}renderCodexGrid()}};
    box.append(b)}}
 }
@@ -2473,7 +2473,7 @@ function attackType(t){return attackTypeOf(data.units[t])}
 function trainingAbilityLine(t){const a=[t==='purple'&&'빨간 적에게 강함',(t==='cyan'||t==='crystal')&&'떠다니는 적에게 강함',...(RARE_TYPES.includes(t)||EX_TYPES.includes(t)||SR_TYPES.includes(t)?codexTraitBadges(data.units[t]).slice(1):[])].filter(Boolean);return a.length?'<br>'+a.join(' · '):''}
 function codexTraitBadges(d){const b=[attackTypeOf(d)+' 공격'];for(const t of traitsOf(d))if(TRAIT_NAMES[t])b.push(TRAIT_NAMES[t]);
  for(const k in TRAIT_NOTE){const ts=d[k]||[];if(Object.keys(TRAIT_TARGET).every(t=>ts.includes(t))){b.push(`모든 속성에게 ${TRAIT_NOTE[k]}`);continue}for(const t of ts)b.push(`${TRAIT_TARGET[t]}에게 ${TRAIT_NOTE[k]}`)}
- if(d.hiddenAbility&&!futureOpen()){b.length=0;b.push(attackTypeOf(d)+' 공격','???');return b}// 미래편 전용: 미래편이 열리기 전까지 능력을 가림
+ if(d.hiddenAbility&&!futureOpen()&&!codexWiki){b.length=0;b.push(attackTypeOf(d)+' 공격','???');return b}// 미래편 전용: 미래편이 열리기 전까지 능력을 가림
  if(d.survive)b.push(`살아남는다(${freqWord(d.survive)})`);
  if(d.wave)b.push(`파동 공격(${freqWord(d.wave.chance)})`);
  if(d.backRange)b.push('뒤쪽까지 공격');
@@ -2485,7 +2485,12 @@ function codexTraitBadges(d){const b=[attackTypeOf(d)+' 공격'];for(const t of 
  if(d.multiHit)b.push(`${d.multiHit}연타`);
  if(d.statusVs){const tg=d.statusVs.length>=5&&!d.statusVs.includes('metal')?'메탈을 뺀 모든 적':d.statusVs.map(t=>TRAIT_TARGET[t]).join('·'),m=[d.slowChance&&`둔화(${freqWord(d.slowChance)})`,d.freezeChance&&`정지(${freqWord(d.freezeChance)})`,d.atkDownPct&&`약화(${freqWord(d.atkDownChance??1)})`,d.intervalUpChance&&`공격 주기 증가(${freqWord(d.intervalUpChance)})`].filter(Boolean).join('·');if(m)b.push(`${tg}에게 ${m}`)}return b}
 let codexTab='ally',codexType='red',codexEvolved=false,codexUnit=null,codexRAF=0,codexLast=0,codexAutoPaused=false;
-function codexEntries(){return codexTab==='ally'?ALLIES.filter(t=>allyUnlocked(t)&&gradeMatch(t)):codexTab==='stage'?codexStageEntries():ENEMY_ORDER}
+var codexWiki=false,codexGrade='all';// 위키 모드: 얻지 못한 아군·만나지 않은 적·스테이지까지 전부 보여주는 참고서. 로비 도감은 내 진행 기준
+function enemySeen(t){return stagesOfEnemy(t).some(isStageCleared)}
+function codexEntries(){
+ if(codexTab==='stage')return codexStageEntries();
+ if(codexTab==='ally')return ALLIES.filter(t=>codexWiki?(codexGrade==='all'||gradeOf(t)===codexGrade):(allyUnlocked(t)&&gradeMatch(t)));
+ return codexWiki?ENEMY_ORDER:ENEMY_ORDER.filter(enemySeen)}
 const _renderTraining=renderTraining;
 renderTraining=function(){_renderTraining();renderGradeTabs();const g=$('#trainingGrid');if(!g.children.length){const p=document.createElement('p');p.className='grade-empty';p.textContent='이 등급에서 얻은 캐릭터가 아직 없어요.';g.append(p)}};
 function buildCodexPreviewUnit(type,ally,evolved){
@@ -2514,6 +2519,7 @@ function fitCodexUnit(){
 }
 function renderCodexPreview(){
  if(codexTab==='stage'){renderCodexStagePreview();return}
+ if(!codexEntries().length){codexUnit=null;$('#codexPreviewStage').innerHTML='';$('#codexPreviewStage').style.background='';for(const q of ['#codexName','#codexRole','#codexStats','#codexExtra'])$(q).textContent='';$('#codexDesc').textContent='아직 만난 적이 없어요. 스테이지를 클리어하면 도감에 등록됩니다.';$('#codexEvolveToggle').classList.add('hidden');return}
  const ally=codexTab==='ally';
  $('#codexPreviewStage').innerHTML='';$('#codexPreviewStage').style.background='';$('#codexExtra').innerHTML='';
  codexUnit=buildCodexPreviewUnit(codexType,ally,ally&&codexEvolved);
@@ -2532,7 +2538,7 @@ function renderCodexGrid(){
  if(codexTab==='stage'){renderCodexStageGrid();return}
  const grid=$('#codexGrid');grid.innerHTML='';grid.classList.remove('stage-mode');
  for(const type of codexEntries()){
-  const btn=document.createElement('button');btn.className='codex-card'+(type===codexType?' active':'');btn.textContent=UNIT_NAMES[type];
+  const btn=document.createElement('button');const lock=codexWiki&&codexTab==='ally'&&!allyUnlocked(type);btn.className='codex-card'+(type===codexType?' active':'')+(lock?' locked':'');btn.textContent=(lock?'🔒 ':'')+UNIT_NAMES[type];
   btn.onclick=()=>{codexType=type;codexEvolved=false;renderCodexGrid();renderCodexPreview()};
   grid.append(btn);
  }
@@ -2550,8 +2556,10 @@ function tickCodexPreview(t){
 function openCodex(tab){
  renderGradeTabs();
  codexTab=tab;codexEvolved=false;
- if(tab==='stage'){if(!codexStageCat)codexStageCat='ch1';codexType=codexStageEntries()[0]}else codexType=tab==='ally'?'red':'dog';
+ if(tab==='stage'){if(!codexStageCat)codexStageCat='ch1';codexType=codexStageEntries()[0]}else codexType=tab==='ally'?'red':(codexEntries()[0]||'dog');
  for(const [id,t] of [['#codexAllyTab','ally'],['#codexEnemyTab','enemy'],['#codexStageTab','stage']])$(id).classList.toggle('active',tab===t);
+ $('#codexStageTab').classList.toggle('hidden',!codexWiki);$('#codexMenu h1').textContent=codexWiki?'위키':'도감';
+ $('#codexAllyTab').textContent=codexWiki?'아군':`아군 도감 ${ALLIES.filter(allyUnlocked).length}/${ALLIES.length}`;$('#codexEnemyTab').textContent=codexWiki?'적':`적 도감 ${ENEMY_ORDER.filter(enemySeen).length}/${ENEMY_ORDER.length}`;
  $('#codexGradeTabs').classList.toggle('hidden',tab!=='ally');$('#codexStageGroups').classList.toggle('hidden',tab!=='stage');
  if(tab==='stage')renderCodexStageGroups();
  if(game&&game.running&&!game.ended&&!game.paused){codexAutoPaused=true;game.paused=true;render()}
@@ -2560,10 +2568,10 @@ function openCodex(tab){
  codexLast=0;if(!codexRAF)codexRAF=requestAnimationFrame(tickCodexPreview);
 }
 function closeCodex(){
- $('#codexMenu').classList.add('hidden');
+ $('#codexMenu').classList.add('hidden');codexWiki=false;
  if(codexAutoPaused&&game&&!game.ended){game.paused=false;codexAutoPaused=false;render()}
 }
-$('#codexBtn').onclick=()=>openCodex('ally');
+$('#codexBtn').onclick=()=>{codexWiki=false;openCodex('ally')};$('#wikiBtn').onclick=()=>{codexWiki=true;codexGrade='all';openCodex('ally')};
 $('#codexAllyTab').onclick=()=>openCodex('ally');
 $('#codexEnemyTab').onclick=()=>openCodex('enemy');
 $('#codexEvolveToggle').onclick=()=>{codexEvolved=!codexEvolved;renderCodexPreview()};
@@ -2629,7 +2637,8 @@ function allyHowToGet(t){
  return null}
 function renderCodexExtra(ally){
  const ex=$('#codexExtra');ex.innerHTML='';
- if(ally){const how=allyHowToGet(codexType);if(how)ex.innerHTML=`<h3>획득 방법</h3><p class="codex-how">${how}</p>`;return}
+ if(ally){const how=allyHowToGet(codexType),lock=codexWiki&&!allyUnlocked(codexType);if(how||lock)ex.innerHTML=`<h3>획득 방법</h3><p class="codex-how">${how||'스테이지 보상·이벤트'}${lock?' · 🔒 아직 얻지 못함':''}</p>`;return}
+ if(!codexWiki)return;
  const list=stagesOfEnemy(codexType);ex.innerHTML=`<h3>등장 스테이지 <small>${list.length}곳</small></h3>`;
  const wrap=document.createElement('div');wrap.className='codex-chips';
  for(const k of list.slice(0,24)){const b=document.createElement('button');b.type='button';b.className='codex-chip';b.textContent=`${codexStageLabel(k)} · ${CODEX_STAGE_CATS.find(c=>c[0]===codexCatOf(k))[1]}`;b.title='스테이지 도감으로 이동';

@@ -360,3 +360,4 @@ body { overflow:auto; }
 .codex-stage-flag{position:absolute;left:12px;top:8px;font-size:34px;filter:drop-shadow(0 2px 3px #0006)}
 .codex-stage-cap{position:absolute;left:0;right:0;bottom:6px;text-align:center;font-size:12px;font-weight:700;color:#fff;text-shadow:0 1px 3px #000a}
 .codex-tabs.hidden{display:none}
+.codex-card.locked{opacity:.6;border-style:dashed}
