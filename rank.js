@@ -22,7 +22,15 @@ const RANK_REWARDS=[
  {at:1300,text:'EX·울트라 슈퍼 레어 레벨 상한 Lv.25',cap:{grades:['ex','uber'],to:25}},
  {at:1500,text:'기본·레어 레벨 상한 Lv.30',cap:{grades:['basic','rare'],to:30}},
  {at:1700,text:'슈퍼 레어 레벨 상한 Lv.30',cap:{grades:['sr'],to:30}},
- {at:1900,text:'EX·울트라 슈퍼 레어 레벨 상한 Lv.30',cap:{grades:['ex','uber'],to:30}}
+ {at:1900,text:'EX·울트라 슈퍼 레어 레벨 상한 Lv.30',cap:{grades:['ex','uber'],to:30}},
+ {at:2000,text:'XP 600,000',xp:600000},
+ {at:2100,text:'기본·레어 레벨 상한 Lv.35',cap:{grades:['basic','rare'],to:35}},
+ {at:2200,text:'뽑기권(10회) 3장',t10:3},
+ {at:2300,text:'슈퍼 레어 레벨 상한 Lv.35',cap:{grades:['sr'],to:35}},
+ {at:2400,text:'XP 800,000',xp:800000},
+ {at:2500,text:'EX·울트라 슈퍼 레어 레벨 상한 Lv.35',cap:{grades:['ex','uber'],to:35}},
+ {at:2600,text:'야옹컴 10개 · 배속권 10개',cpu:10,speed:10},
+ {at:2700,text:'뽑기권(10회) 5장 · XP 1,000,000',t10:5,xp:1000000}
 ].sort((a,b)=>a.at-b.at);
 let rankClaimed=[];
 try{const s=JSON.parse(localStorage.getItem(RANK_KEY)||'{}');if(Array.isArray(s.claimed))rankClaimed=s.claimed.filter(n=>Number.isInteger(n))}catch{}

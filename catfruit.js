@@ -1,6 +1,6 @@
 // 3진 (true form) and 개다래 열매 (catfruit), modelled on the original: clearing 미래편 2장 opens true forms, and each
 // true form costs catfruit of the unit's colour (보라·빨강·파랑·초록·노랑 열매/씨앗, plus 에픽 개다래 for EX·울슈레) and XP.
-// No 3진 drawings yet: a 3진 keeps its 2진 art with a gold glow and gets HP/ATK x1.2.
+// 3진 uses a dedicated atlas where available (cream), otherwise 2진 art with a gold glow; HP/ATK x1.2.
 // Catfruit comes from 미래편 stages and the daily '개다래 축제' special stage (the day decides the colour).
 const FRUIT_COLORS=['purple','red','blue','green','yellow'];
 const FRUIT_NAME={purple:'보라',red:'빨강',blue:'파랑',green:'초록',yellow:'노랑'};
@@ -113,15 +113,5 @@ renderSpecialStages=function(){
  const ribbonRow=[...grid.children].find(e=>e.querySelector?.('.stage-card.ribbon'));
  if(ribbonRow)ribbonRow.after(r);else grid.prepend(r)};
 
-// One-time level restore (2026-10-07): a load-order bug (BASE_MAX used before it was defined) reset every saved level to
-// Lv.1 and the next save wrote that back. Saves that clearly went through it (세계편 2장 cleared, 5+ unlocked characters
-// stuck at Lv.1) get every unlocked character raised to Lv.30 as 2진, once; nobody is lowered.
-(function restoreLevels(){
- const KEY='red-battle-levelfix-v1';
- try{if(localStorage.getItem(KEY))return}catch{return}
- const unlocked=ALLIES.filter(t=>allyUnlocked(t)),stuck=unlocked.filter(t=>(training.levels[t]||1)<=1);
- const hit=cleared.includes(CHAPTER1_LEN*2-1)&&stuck.length>=5;
- if(hit){for(const t of unlocked){training.levels[t]=Math.max(training.levels[t]||1,30);delete training.forms[t]}saveTraining();renderTraining();render()}
- try{localStorage.setItem(KEY,hit?'restored':'checked')}catch{}
- if(hit){const n=document.createElement('div');n.className='restore-toast';n.textContent=`레벨 복구 완료: 캐릭터 ${unlocked.length}명을 Lv.30(2진)으로 되돌렸어요 (레벨 초기화 버그 보상)`;document.body.append(n);setTimeout(()=>n.remove(),9000)}
-})();
+// Preserve saved levels: chapter progress and unused Lv.1 allies cannot identify a damaged save.
+// The training loader in game.js already fixes the BASE_MAX initialization order.

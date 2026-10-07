@@ -2,9 +2,11 @@
 // v1 세계편 (first push, 2026-09-24) · v2 레전드 스토리 (09-30) · v3 미래편 1장 (10-03) · v4 미래편 2장 + 3진 (10-06).
 // Between those, every push counts: a new feature bumps MINOR, fixes/balance only bump PATCH.
 // A new NOTICE.version shows the notice once on load; the 공지 button on the stage screen reopens it.
-const GAME_VERSION='4.4.0';
-const NOTICE={version:GAME_VERSION,date:'2026-10-07',title:`v${GAME_VERSION} 업데이트`,html:`
+const GAME_VERSION='4.5.0';
+const NOTICE={version:GAME_VERSION,date:'2026-10-08',title:`v${GAME_VERSION} 업데이트`,html:`
 <p class="notice-lead">지금까지 <b>세계편 1~3장 · 미래편 1~2장 · 레전드 스토리 1~25장</b>을 담았습니다. 다음은 미래편 3장입니다.</p>
+<h3>🍰 크림 3진 · 유저 랭크</h3>
+<ul><li>크림 3진 전용 초상화, 소환 이름, 그림자와 체력바 연결을 완성했습니다.</li><li>랭크 보상을 2,700까지 확장하고 2,100·2,300·2,500에서 등급별 Lv.35 상한을 해금합니다.</li><li>정상 저장을 Lv.30으로 바꾸던 자동 복구를 제거했습니다. 기존 저장 레벨은 유지됩니다.</li></ul>
 <h3>📖 위키 · 도감</h3>
 <ul><li><b>위키</b> 버튼 추가(스테이지 화면): 아군 84명·적 83종·스테이지 446곳을 전부 볼 수 있습니다. 못 얻은 캐릭터는 🔒와 획득 방법, 스테이지는 난이도·적 성 체력·등장 적 배율/마릿수, 적은 등장 스테이지 목록까지.</li>
 <li><b>도감</b>은 내 진행 기준: 얻은 아군, 클리어하며 만난 적만 등록됩니다. 숨은 능력은 미래편이 열리기 전까지 가려집니다.</li></ul>
