@@ -340,3 +340,9 @@ body { overflow:auto; }
 .stage-card.catfruit small{color:#d7b8ff}
 .restore-toast{position:fixed;left:50%;top:64px;transform:translateX(-50%);z-index:9999;background:#2b1f45;color:#fff3c4;border:2px solid #ffd54a;border-radius:12px;padding:10px 16px;font-size:14px;font-weight:700;box-shadow:0 6px 20px #0008;max-width:90vw;text-align:center}
 .game-version{display:inline-block;margin-left:6px;padding:1px 7px;border-radius:999px;background:#2b3c58;border:1px solid #5f7ea6;color:#cfe3ff;font-size:10px;letter-spacing:.5px;vertical-align:1px}
+/* 업데이트 공지 창 */
+.notice-overlay{position:fixed;inset:0;z-index:9998;background:#0b1220cc;display:flex;align-items:center;justify-content:center;padding:16px}
+.notice-box{width:min(560px,100%);max-height:86vh;display:flex;flex-direction:column;background:#17233a;border:2px solid #ffbd83;border-radius:16px;box-shadow:0 12px 40px #000a;color:#e8f0ff;overflow:hidden}
+.notice-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:14px 18px;background:#22334f;border-bottom:1px solid #3a5272}.notice-head b{font-size:16px;color:#ffd166}.notice-head small{color:#93a7bf;font-size:12px;white-space:nowrap}
+.notice-body{overflow:auto;padding:12px 18px;font-size:13px;line-height:1.6}.notice-body h3{font-size:14px;margin:14px 0 4px;color:#ffce80}.notice-body ul{margin:0;padding-left:18px}.notice-body p{margin:4px 0}.notice-lead{padding:8px 10px;border-radius:10px;background:#1e3a2c;border:1px solid #6dc69d}
+.notice-ok{margin:10px 18px 16px;padding:10px;border-radius:12px;border:none;background:#e9744c;color:#fff;font-weight:700;font-size:14px;cursor:pointer}
