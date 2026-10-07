@@ -2,25 +2,17 @@
 // v1 세계편 (first push, 2026-09-24) · v2 레전드 스토리 (09-30) · v3 미래편 1장 (10-03) · v4 미래편 2장 + 3진 (10-06).
 // Between those, every push counts: a new feature bumps MINOR, fixes/balance only bump PATCH.
 // A new NOTICE.version shows the notice once on load; the 공지 button on the stage screen reopens it.
-const GAME_VERSION='4.3.1';
+const GAME_VERSION='4.4.0';
 const NOTICE={version:GAME_VERSION,date:'2026-10-07',title:`v${GAME_VERSION} 업데이트`,html:`
 <p class="notice-lead">지금까지 <b>세계편 1~3장 · 미래편 1~2장 · 레전드 스토리 1~25장</b>을 담았습니다. 다음은 미래편 3장입니다.</p>
-<h3>⚠️ 레벨 초기화 문제 사과</h3>
-<p>10월 6일 밤 업데이트 뒤 캐릭터 레벨이 Lv.1로 돌아가는 문제가 있었습니다. 수정되었고, 피해를 입은 저장은 얻은 캐릭터 전부를 <b>Lv.30(2진)</b>으로 한 번 복구했습니다. 불편을 드려 죄송합니다.</p>
-<h3>🆕 새 스테이지</h3>
-<ul><li><b>레전드 스토리 13~25장</b>: 초밥 아일랜드 ~ 전쟁의 흔적, 88스테이지와 신규 적 18종</li>
-<li><b>미래편 2장</b>: 미래편 1장 달 클리어 후 · 신규 적 8종</li>
-<li><b>리본 샤트 강림</b>: 극난도(30%) → 초극난도(100%), 보스 콩 도둑 너구리</li>
-<li><b>개다래 축제</b>: 매일 · 요일마다 개다래 색이 바뀌고 주말엔 에픽 개다래</li></ul>
-<h3>✨ 새 캐릭터</h3>
-<ul><li><b>리본 샤트</b> (EX): 콩폭탄 중거리 범위 3연타 · 리본 샤트 강림</li>
-<li><b>옵시디언</b> (EX): 검은 늑대를 탄 원거리 범위 딜러, 메탈 제외 넉백 · 레전드 '대탈주' 첫 클리어</li></ul>
-<h3>🔺 3진 진화</h3>
-<p>미래편 2장 달을 클리어하면 열립니다. Lv.20 이상 2진 캐릭터를 개다래 열매·씨앗과 XP로 진화시키면 체력·공격력이 ×1.2가 됩니다.</p>
-<h3>⚖️ 변경</h3>
-<ul><li>기본 캐릭터 가격·성 체력을 원작 기준으로, 아군 성 강화 최대 Lv.30</li>
-<li>레벨업 비용 등급별 차등 · 스테이지 난이도 별 ★1~12</li>
-<li>리본 오렌지 강림은 극난도·초극난도 2단계 · 뽑기는 세계편 1장 '일본' 클리어 후</li></ul>`};
+<h3>📖 위키 · 도감</h3>
+<ul><li><b>위키</b> 버튼 추가(스테이지 화면): 아군 84명·적 83종·스테이지 446곳을 전부 볼 수 있습니다. 못 얻은 캐릭터는 🔒와 획득 방법, 스테이지는 난이도·적 성 체력·등장 적 배율/마릿수, 적은 등장 스테이지 목록까지.</li>
+<li><b>도감</b>은 내 진행 기준: 얻은 아군, 클리어하며 만난 적만 등록됩니다. 숨은 능력은 미래편이 열리기 전까지 가려집니다.</li></ul>
+<h3>⚖️ 밸런스</h3>
+<ul><li>모스: 체력·공격력 대폭 상향, 가장 약한 모스의 둔화 확률 50% → 80%</li></ul>
+<h3>🔧 수정</h3>
+<ul><li>투뿔소 공격 프레임 발밑에 비스듬한 선이 보이던 것 수정</li>
+<li>빠옹 걷기를 원작 애니메이션대로 수정</li></ul>`};
 function showNotice(){
  document.querySelector('.notice-overlay')?.remove();
  const o=document.createElement('div');o.className='notice-overlay';
