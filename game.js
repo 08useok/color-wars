@@ -781,7 +781,7 @@ Object.assign(EVO_BODY_H,{lapis:105,selenite:85,topaz:96,ribbonorange:98,obsidia
 EVO_BODY_H.rainbow=104;
 Object.assign(EVO_BODY_H,{cornflower:82,bittersweet:90,claret:76,verdigris:93});
 Object.assign(EVO_BODY_H,{plum:95,forest:77,canary:81,cherry:88,mauve:85,khaki:86,tangerine:92,burgundy:83,mustard:80,sky:87,denim:91,charcoal:86});
-function drawUnit(u){let e=document.createElement('div'),evolved=u.ally&&u.stats?.evolved,legacyAlly=u.ally&&!NEW_ATLASES[u.type];e.className='unit '+u.type+(u.ally?' ally-art':'')+(evolved?' evolved':'');e.style.setProperty('--unit-color',COLORS?.[u.type]||'#fff');e.innerHTML='<div class="bar"><i style="width:100%"></i></div><span class="status-badges"><span class="freeze-icon st-freeze"></span><span class="slow-icon st-slow"></span><span class="weaken-icon st-weaken"></span><span class="crit-icon st-crit"></span><span class="pull-icon st-pull"></span><span class="survive-icon st-survive"></span></span>'+(legacyAlly?'<span class="ally-shadow"></span><span class="ally-sprite"></span>'+(evolved?'<span class="evolved-sprite"></span>'+(EVOLVED_HELD_ITEM[u.type]?'<span class="evolved-item"></span>':''):'')+(u.type==='pink'&&!evolved?'<span class="pink-ribbon"><i></i></span>':''):'<span class="dog-shadow"></span><span class="dog-sprite"></span>'+(u.type==='leboin'||u.type==='bear'?'<span class="dog-sprite-legs"></span>':'')+(u.type==='leboin'?'<span class="dog-sprite-body"></span>':'')+(u.type==='stpigge'?'<span class="pigge-crown"></span>':''));e.setAttribute('aria-label',UNIT_NAMES[u.type]+(evolved?' 2진':''));u.el=e;if(evolved&&EVO_BODY_H[u.type])e.querySelector('.bar').style.top=(33-EVO_BODY_H[u.type])+'px';if(!u.ally&&ENEMY_SIZE[u.type])e.style.setProperty('--enemy-size',ENEMY_SIZE[u.type]);unitsEl.append(e);const newAtlas=NEW_ATLASES[u.type];const sheet={rabbit:ELITE_RABBIT_SHEET,squirrel:SQUIRREL_G_SHEET,kangaroo:KANG_ROO_SHEET,mooth:MOOTH_SHEET,rhino:RHINO_SHEET,bear:BEAR_SHEET,face:FACE_SHEET}[u.type]||(evolved&&newAtlas?.evolved?newAtlas.evolved.sheet:newAtlas?.sheet);if(sheet)e.querySelector('.dog-sprite').style.backgroundImage=`url(${sheet})`;if(legacyAlly)animateAlly(u);else animateDog(u);fitShadow(u);fitBar(u)}
+function drawUnit(u){let e=document.createElement('div'),evolved=u.ally&&u.stats?.evolved,legacyAlly=u.ally&&!NEW_ATLASES[u.type];e.className='unit '+u.type+(u.ally?' ally-art':'')+(evolved?' evolved':'');e.style.setProperty('--unit-color',COLORS?.[u.type]||'#fff');e.innerHTML='<div class="bar"><i style="width:100%"></i></div><span class="status-badges"><span class="freeze-icon st-freeze"></span><span class="slow-icon st-slow"></span><span class="weaken-icon st-weaken"></span><span class="crit-icon st-crit"></span><span class="pull-icon st-pull"></span><span class="survive-icon st-survive"></span></span>'+(legacyAlly?'<span class="ally-shadow"></span><span class="ally-sprite"></span>'+(evolved?'<span class="evolved-sprite"></span>'+(EVOLVED_HELD_ITEM[u.type]?'<span class="evolved-item"></span>':''):'')+(u.type==='pink'&&!evolved?'<span class="pink-ribbon"><i></i></span>':''):'<span class="dog-shadow"></span><span class="dog-sprite"></span>'+(u.type==='leboin'||u.type==='bear'?'<span class="dog-sprite-legs"></span>':'')+(u.type==='leboin'?'<span class="dog-sprite-body"></span>':'')+(u.type==='stpigge'?'<span class="pigge-crown"></span>':''));e.setAttribute('aria-label',UNIT_NAMES[u.type]+(evolved?' 2진':''));u.el=e;if(evolved&&EVO_BODY_H[u.type])e.querySelector('.bar').style.top=(33-EVO_BODY_H[u.type])+'px';if(!u.ally&&ENEMY_SIZE[u.type])e.style.setProperty('--enemy-size',ENEMY_SIZE[u.type]);unitsEl.append(e);const newAtlas=NEW_ATLASES[u.type];const sheet={rabbit:ELITE_RABBIT_SHEET,squirrel:SQUIRREL_G_SHEET,kangaroo:KANG_ROO_SHEET,mooth:MOOTH_SHEET,rhino:RHINO_SHEET,bear:BEAR_SHEET,face:FACE_SHEET}[u.type]||(u.stats?.trueForm&&newAtlas?.true?newAtlas.true.sheet:evolved&&newAtlas?.evolved?newAtlas.evolved.sheet:newAtlas?.sheet);if(sheet)e.querySelector('.dog-sprite').style.backgroundImage=`url(${sheet})`;if(legacyAlly)animateAlly(u);else animateDog(u);fitShadow(u);fitBar(u)}
 // Ground shadow sized to the body. The base .dog-shadow is the Doge's own 41px sheet shadow, so every atlas character
 // without a sheet shadow of its own (SHEET_SHADOW, plus the bosses whose frames already draw one) gets a soft ellipse
 // as wide as ~80% of its first walk frame instead.
@@ -1742,7 +1742,7 @@ croco:{scale:0.72,left:-10,walk:[[2,29,85,39,0],[89,29,86,39,1],[177,28,86,40,1]
  brown:{scale:0.408,left:-35,sheet:'assets/rare_brown.webp?v=2',walk:[[6,44,172,157,0,0],[184,42,172,159,-2,0],[362,42,171,159,2,0],[539,39,165,162,0,0]],attack:[[710,6,195,195,-11,0],[911,39,269,162,111,0],[1186,42,167,159,-5,0]],hurt:[[1359,40,214,161,-17,0]],evolved:{sheet:'assets/rare_brown.webp?v=2',scale:0.329,left:-26,walk:[[6,238,161,234,0,0],[173,238,165,234,3,0],[344,238,165,234,10,0],[515,239,164,233,9,0]],attack:[[685,207,211,265,15,0],[902,262,312,210,143,0],[1220,237,162,235,16,0]],hurt:[[1388,256,199,216,-4,0]]}},
  tan:{scale:0.408,left:-37,sheet:'assets/rare_tan.webp?v=2',walk:[[6,57,182,157,0,0],[194,52,177,162,-21,0],[377,54,171,160,-17,0],[554,54,173,160,-11,0]],attack:[[733,6,167,208,-12,0],[906,46,350,168,41,0],[1262,68,280,146,68,0]],hurt:[[1548,58,197,156,-4,0]],evolved:{sheet:'assets/rare_tan.webp?v=2',scale:0.338,left:-28,walk:[[6,262,168,228,0,0],[180,262,165,228,-3,0],[351,262,163,228,-2,0],[520,262,154,228,2,0]],attack:[[680,220,193,270,42,0],[879,256,385,234,41,0],[1270,282,265,208,88,0]],hurt:[[1541,291,199,199,-2,0]]}},
  beige:{scale:0.4,left:-38,sheet:'assets/rare_beige.webp?v=2',walk:[[6,49,189,161,0,0],[201,48,191,162,-1,0],[398,46,197,164,9,0],[601,53,190,157,-3,0]],attack:[[797,6,164,204,2,0],[967,55,291,155,108,0],[1264,48,192,162,38,0]],hurt:[[1462,35,174,175,7,0]],evolved:{sheet:'assets/rare_beige.webp?v=2',scale:0.363,left:-34,walk:[[6,274,190,212,0,0],[202,275,185,211,1,0],[393,272,178,214,1,0],[577,270,174,216,-2,0]],attack:[[757,216,158,270,17,0],[921,278,334,208,142,0],[1261,286,260,200,106,0]],hurt:[[1527,263,167,223,51,0]]}},
- cream:{scale:0.41,left:-39,sheet:'assets/rare_cream.webp?v=2',walk:[[6,35,192,156,0,0],[204,36,179,155,-1,0],[389,36,177,155,-2,0],[572,34,177,157,-5,0]],attack:[[755,6,183,185,-8,0],[944,35,298,156,137,0],[1248,33,157,158,5,0]],hurt:[[1411,13,213,178,-19,0]],evolved:{sheet:'assets/rare_cream.webp?v=2',scale:0.356,left:-27,walk:[[6,242,153,216,0,0],[165,240,154,218,1,0],[325,241,152,217,3,0],[483,240,151,218,0,0]],attack:[[640,197,181,261,12,0],[827,245,347,213,202,0],[1180,241,151,217,17,0]],hurt:[[1337,208,222,250,-15,0]]}},
+ cream:{scale:0.41,left:-39,sheet:'assets/rare_cream.webp?v=2',walk:[[6,35,192,156,0,0],[204,36,179,155,-1,0],[389,36,177,155,-2,0],[572,34,177,157,-5,0]],attack:[[755,6,183,185,-8,0],[944,35,298,156,137,0],[1248,33,157,158,5,0]],hurt:[[1411,13,213,178,-19,0]],evolved:{sheet:'assets/rare_cream.webp?v=2',scale:0.356,left:-27,walk:[[6,242,153,216,0,0],[165,240,154,218,1,0],[325,241,152,217,3,0],[483,240,151,218,0,0]],attack:[[640,197,181,261,12,0],[827,245,347,213,202,0],[1180,241,151,217,17,0]],hurt:[[1337,208,222,250,-15,0]]},true:{sheet:'assets/cream_3.webp?v=1',scale:0.2416,left:-32,walkStep:.09,strike:3,walk:[[6,31,266,356,0,0],[278,31,268,356,3,0],[552,32,264,355,1,0],[822,36,265,351,2,0],[1093,27,267,360,6,0],[1366,31,267,356,6,0],[1639,26,269,361,9,0],[1914,30,267,357,6,0]],attack:[[2187,75,248,312,-18,0],[2441,73,276,314,-19,0],[2723,69,254,318,-4,0],[2983,69,395,318,113,0],[3384,64,262,323,6,0],[3652,62,265,325,3,0],[3923,61,242,326,-4,0],[4171,61,211,326,-21,0]],hurt:[[4388,6,393,381,56,0]]}},
  olive:{scale:0.41,left:-36,sheet:'assets/rare_olive.webp',walk:[[30,159,177,156,0,0],[230,159,161,158,-8,0],[409,159,169,159,-3,0],[589,158,176,160,5,0]],attack:[[778,115,204,203,0,0],[1018,159,453,169,282,0],[1494,158,180,158,2,0]],hurt:[[1684,141,221,178,8,0]],evolved:{sheet:'assets/rare_olive.webp',scale:0.322,left:-26,walk:[[36,408,159,239,0,0],[229,409,160,239,-4,0],[417,410,161,237,0,0],[606,409,159,237,-3,0]],attack:[[789,362,219,286,16,0],[1031,410,458,239,294,0],[1518,410,167,239,3,0]],hurt:[[1707,405,217,244,-16,0]]}},
  clover:{scale:0.438,left:-39,sheet:'assets/rare_clover.webp?v=2',walk:[[6,36,176,146,0,0],[188,34,164,148,0,0],[358,35,166,147,-6,0]],attack:[[530,6,207,176,11,0],[743,34,177,148,5,0],[926,38,281,144,149,0],[1213,35,139,147,-2,0]],hurt:[[1358,17,214,165,-10,0]],evolved:{sheet:'assets/rare_clover.webp?v=2',scale:0.336,left:-27,walk:[[6,209,164,229,1,0],[176,210,162,228,4,0],[344,207,164,231,6,0]],attack:[[514,188,195,250,11,0],[715,209,181,229,3,0],[902,222,335,216,191,0],[1243,205,137,233,5,-1]],hurt:[[1386,193,217,245,8,0]]}},
  indigo:{scale:0.393,left:-35,sheet:'assets/rare_indigo.webp?v=2',walk:[[6,44,177,163,0,0],[189,44,156,163,-5,0],[351,43,165,164,-3,0],[522,43,165,164,-7,0]],attack:[[693,6,210,201,-8,0],[909,43,342,164,187,0],[1257,44,152,163,-4,0]],hurt:[[1415,37,209,170,-10,0]],evolved:{sheet:'assets/rare_indigo.webp?v=2',scale:0.348,left:-27,walk:[[6,251,157,222,0,0],[169,252,152,221,-2,0],[327,253,155,220,1,0],[488,253,162,220,6,0]],attack:[[656,213,195,260,13,0],[857,265,383,208,209,0],[1246,261,142,212,3,0]],hurt:[[1394,249,194,224,-2,0]]}},
@@ -1828,7 +1828,7 @@ const PIGGE_CROWN={'4,1':[42,-21],'4,79':[42,-20],'4,157':[42,-20],'115,5':[42,-
 const GLOW_FLASH=new Set(['metalhippo']);
 function animateAtlas(u){
  const baseAtlas=NEW_ATLASES[u.type];
- const atlas=(u.stats?.evolved&&baseAtlas.evolved)?baseAtlas.evolved:baseAtlas;
+ const atlas=(u.stats?.trueForm&&baseAtlas.true)?baseAtlas.true:(u.stats?.evolved&&baseAtlas.evolved)?baseAtlas.evolved:baseAtlas;
  const state=u.hurtTime>0?'hurt':u.attackTime>0?'attack':'walk';
  // Gory's raised-fists sprite is its actual hitback pose; Peng uses an upright pose.
  const visualState=state==='hurt'&&u.type==='gory'?'attack':state==='hurt'&&(['peng'].includes(u.type)||!atlas.hurt)?'walk':state;
@@ -1840,7 +1840,7 @@ function animateAtlas(u){
   // Play all seven attack drawings across the complete animation. Damage still lands at windup.
   const elapsed=Math.max(0,duration-u.attackTime);
   index=Math.min(frames.length-1,Math.floor(elapsed/duration*frames.length));
- }else if(visualState==='attack'&&data.units[u.type].windup){const elapsed=duration-u.attackTime,windup=data.units[u.type].windup,strike={gory:2,baa:2,seal:4,croco:3,rabbit:3,squirrel:2,mooth:3,rhino:2,nyandam:3,...RARE_STRIKE}[u.type];if(strike!==undefined)index=elapsed<windup?Math.min(strike-1,Math.floor(elapsed/windup*strike)):Math.min(frames.length-1,strike+Math.floor((elapsed-windup)/Math.max(.01,duration-windup)*(frames.length-strike)));}
+ }else if(visualState==='attack'&&data.units[u.type].windup){const elapsed=duration-u.attackTime,windup=data.units[u.type].windup,strike=atlas.strike??{gory:2,baa:2,seal:4,croco:3,rabbit:3,squirrel:2,mooth:3,rhino:2,nyandam:3,...RARE_STRIKE}[u.type];if(strike!==undefined)index=elapsed<windup?Math.min(strike-1,Math.floor(elapsed/windup*strike)):Math.min(frames.length-1,strike+Math.floor((elapsed-windup)/Math.max(.01,duration-windup)*(frames.length-strike)));}
  if(visualState==='attack'&&data.units[u.type].hits){const elapsed=duration-u.attackTime;index=Math.min(frames.length-1,Math.max(0,data.units[u.type].hits.filter(h=>h.at<=elapsed).length-1))}
  if(state==='hurt'&&u.type==='gory')index=0;
  // Game-timed attack: [frame (1/30s) since the swing began, frame index] keys from the original animation.
@@ -2374,7 +2374,7 @@ addEventListener('pagehide',saveAll);
 document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')saveAll()});
 
 // Order is rough difficulty progression from Korea to the Moon; used only for codex browsing.
-const ENEMY_ORDER=['dog','snache','guys','hippo','pigge','peng','gory','baa','croco','rabbit','squirrel','seal','leboin','kangaroo','mooth','rhino','bear','face','nyandam','bunbun','darkdog','metalhippo','stpigge','duche','celeboodle','dagshund','otta','mastera','sloth','metalcyborg','metalseal','ostrich','hienergy','daddy','wolfururun','gonzales','kurosawah','bunbunblack','peasquirrel','ironboar','peathief','walldoge','metaldoge','supermetalhippo','pigeon','hiyokoel','sleipnir','blackleboin','lilnyandam','sunfish','redsnache','strayguy','blackotta','scissorman','cyberx','madampoodle','galaxynyandam','valkyrie','magpie','assassinbear','owlbrow','bore','camelle','kory','raind','jkbunbun','shyboy','gorydark','shadowboxer','heavenlyhippoe','shibalien','kroxo','hyppoh','sael','maawth','lemurr','krabbe','liz56','ursamajor','phace','nimoy','clione'];
+const ENEMY_ORDER=['dog','snache','guys','hippo','pigge','peng','gory','baa','croco','rabbit','squirrel','seal','leboin','kangaroo','mooth','rhino','bear','face','nyandam','bunbun','darkdog','metalhippo','stpigge','duche','celeboodle','dagshund','otta','mastera','sloth','metalcyborg','metalseal','ostrich','hienergy','daddy','wolfururun','gonzales','kurosawah','bunbunblack','peasquirrel','ironboar','peathief','walldoge','metaldoge','supermetalhippo','pigeon','hiyokoel','sleipnir','blackleboin','lilnyandam','sunfish','redsnache','strayguy','blackotta','scissorman','cyberx','madampoodle','galaxynyandam','valkyrie','gabriel','magpie','assassinbear','owlbrow','bore','camelle','kory','raind','jkbunbun','shyboy','gorydark','shadowboxer','heavenlyhippoe','shibalien','kroxo','hyppoh','sael','maawth','lemurr','krabbe','liz56','ursamajor','phace','nimoy','clione'];
 const ENEMY_TEXT={
  walldoge:'벽처럼 생긴 멍뭉이. 아주 단단하고 느리며, 앞을 막아선다. (레전드 스토리)',
  lilnyandam:'어린 시절의 야옹마. 아주 먼 곳까지 닿는 강력한 한 방을 날린다. 빨간 적. (레전드 스토리 보스)',
@@ -2482,7 +2482,7 @@ function codexTraitBadges(d){const b=[attackTypeOf(d)+' 공격'];for(const t of 
  if(d.multiHit)b.push(`${d.multiHit}연타`);
  if(d.statusVs){const tg=d.statusVs.length>=5&&!d.statusVs.includes('metal')?'메탈을 뺀 모든 적':d.statusVs.map(t=>TRAIT_TARGET[t]).join('·'),m=[d.slowChance&&`둔화(${freqWord(d.slowChance)})`,d.freezeChance&&`정지(${freqWord(d.freezeChance)})`,d.atkDownPct&&`약화(${freqWord(d.atkDownChance??1)})`,d.intervalUpChance&&`공격 주기 증가(${freqWord(d.intervalUpChance)})`].filter(Boolean).join('·');if(m)b.push(`${tg}에게 ${m}`)}return b}
 let codexTab='ally',codexType='red',codexEvolved=false,codexUnit=null,codexRAF=0,codexLast=0,codexAutoPaused=false;
-function codexEntries(){return codexTab==='ally'?ALLIES.filter(t=>allyUnlocked(t)&&gradeMatch(t)):ENEMY_ORDER}
+function codexEntries(){return codexTab==='ally'?ALLIES.filter(t=>allyUnlocked(t)&&gradeMatch(t)):codexTab==='stage'?codexStageEntries():ENEMY_ORDER}
 const _renderTraining=renderTraining;
 renderTraining=function(){_renderTraining();renderGradeTabs();const g=$('#trainingGrid');if(!g.children.length){const p=document.createElement('p');p.className='grade-empty';p.textContent='이 등급에서 얻은 캐릭터가 아직 없어요.';g.append(p)}};
 function buildCodexPreviewUnit(type,ally,evolved){
@@ -2510,8 +2510,9 @@ function fitCodexUnit(){
  unit.style.transform=`translateX(-50%) scale(${scale}) translateX(${xShiftPerScale}px)`;
 }
 function renderCodexPreview(){
+ if(codexTab==='stage'){renderCodexStagePreview();return}
  const ally=codexTab==='ally';
- $('#codexPreviewStage').innerHTML='';
+ $('#codexPreviewStage').innerHTML='';$('#codexPreviewStage').style.background='';$('#codexExtra').innerHTML='';
  codexUnit=buildCodexPreviewUnit(codexType,ally,ally&&codexEvolved);
  $('#codexPreviewStage').append(codexUnit.el);
  fitCodexUnit();
@@ -2522,9 +2523,11 @@ function renderCodexPreview(){
  $('#codexRole').textContent=ally?ROLES[codexType]+' · '+attackType(codexType)+' 공격':codexTraitBadges(d).join(' · ');
  $('#codexDesc').innerHTML=ally?(codexEvolved?PROFILE_TEXT_EVOLVED[codexType]+`<br><strong>2진 효과: ${EVOLUTION_TEXT[codexType]} · 사거리 20% 증가</strong>`:PROFILE_TEXT[codexType]):ENEMY_TEXT[codexType];
  $('#codexStats').innerHTML=`<dt>체력</dt><dd>${s.hp}</dd><dt>공격력</dt><dd>${s.atk}</dd><dt>사거리</dt><dd>${Math.round(s.range)}</dd><dt>공격 주기</dt><dd>${s.interval.toFixed(2)}초</dd><dt>이동 속도</dt><dd>${s.speed}</dd>`+(ally&&attackType(codexType)==='원거리'?`<dt>사각지대</dt><dd>${Math.round(s.range*DEAD_ZONE_RATIO)} 이내</dd>`:'')+(ally?`<dt>비용</dt><dd>${s.cost}원</dd>`:'');
+ renderCodexExtra(ally);
 }
 function renderCodexGrid(){
- const grid=$('#codexGrid');grid.innerHTML='';
+ if(codexTab==='stage'){renderCodexStageGrid();return}
+ const grid=$('#codexGrid');grid.innerHTML='';grid.classList.remove('stage-mode');
  for(const type of codexEntries()){
   const btn=document.createElement('button');btn.className='codex-card'+(type===codexType?' active':'');btn.textContent=UNIT_NAMES[type];
   btn.onclick=()=>{codexType=type;codexEvolved=false;renderCodexGrid();renderCodexPreview()};
@@ -2543,9 +2546,11 @@ function tickCodexPreview(t){
 }
 function openCodex(tab){
  renderGradeTabs();
- codexTab=tab;codexType=tab==='ally'?'red':'dog';codexEvolved=false;
- $('#codexAllyTab').classList.toggle('active',tab==='ally');
- $('#codexEnemyTab').classList.toggle('active',tab==='enemy');
+ codexTab=tab;codexEvolved=false;
+ if(tab==='stage'){if(!codexStageCat)codexStageCat='ch1';codexType=codexStageEntries()[0]}else codexType=tab==='ally'?'red':'dog';
+ for(const [id,t] of [['#codexAllyTab','ally'],['#codexEnemyTab','enemy'],['#codexStageTab','stage']])$(id).classList.toggle('active',tab===t);
+ $('#codexGradeTabs').classList.toggle('hidden',tab!=='ally');$('#codexStageGroups').classList.toggle('hidden',tab!=='stage');
+ if(tab==='stage')renderCodexStageGroups();
  if(game&&game.running&&!game.ended&&!game.paused){codexAutoPaused=true;game.paused=true;render()}
  renderCodexGrid();renderCodexPreview();
  $('#codexMenu').classList.remove('hidden');
@@ -2560,6 +2565,75 @@ $('#codexAllyTab').onclick=()=>openCodex('ally');
 $('#codexEnemyTab').onclick=()=>openCodex('enemy');
 $('#codexEvolveToggle').onclick=()=>{codexEvolved=!codexEvolved;renderCodexPreview()};
 $('#codexCloseBtn').onclick=closeCodex;
+
+// ---- 도감 위키: 스테이지 탭 · 적 등장 스테이지 · 아군 획득 방법 ----
+const CODEX_STAGE_CATS=[['ch1','세계편 1장'],['ch2','세계편 2장'],['ch3','세계편 3장'],['legend','레전드 스토리'],['f1','미래편 1장'],['f2','미래편 2장'],['special','스페셜·강림']];
+let codexStageCat='',codexLegendSub=0;
+function codexCatOf(i){const c=chapterOf(i);return c===1?'ch1':c===2?'ch2':c===3?'ch3':c===4?'legend':c===5?'f1':c===6?'f2':'special'}
+function codexStageEntries(){
+ const out=[];for(let i=0;i<STAGES.length;i++){if(codexCatOf(i)!==codexStageCat)continue;if(codexStageCat==='legend'&&legendSubOf(STAGES[i].legend.k)!==codexLegendSub)continue;out.push(i)}
+ if(codexStageCat==='legend')out.sort((a,b)=>STAGES[a].legend.k-STAGES[b].legend.k);
+ return out}
+function codexStageLabel(i){const st=STAGES[i];return `${st.flag||''} ${st.name}`.trim()}
+function isStageCleared(i){const k=STAGES[i].legend?.k;return k!==undefined?(typeof legendProgress!=='undefined'&&Object.values(legendProgress).some(a=>a.includes(k)))||cleared.includes(i):cleared.includes(i)}
+function renderCodexStageGroups(){
+ const box=$('#codexStageGroups');box.innerHTML='';
+ for(const [k,label] of CODEX_STAGE_CATS){const b=document.createElement('button');b.type='button';b.className='codex-tab'+(codexStageCat===k?' active':'');b.textContent=label;
+  b.onclick=()=>{codexStageCat=k;codexLegendSub=0;renderCodexStageGroups();codexType=codexStageEntries()[0];renderCodexGrid();renderCodexPreview()};box.append(b)}
+ if(codexStageCat==='legend'){const sel=document.createElement('select');sel.className='codex-sub-select';sel.setAttribute('aria-label','레전드 스토리 장 선택');
+  LEGEND_SUBS.forEach((sc,j)=>{const o=document.createElement('option');o.value=j;o.textContent=`${j+1}. ${sc.name}`;if(j===codexLegendSub)o.selected=true;sel.append(o)});
+  sel.onchange=()=>{codexLegendSub=+sel.value;codexType=codexStageEntries()[0];renderCodexGrid();renderCodexPreview()};box.append(sel)}
+}
+function renderCodexStageGrid(){
+ const grid=$('#codexGrid');grid.innerHTML='';grid.classList.add('stage-mode');
+ for(const i of codexStageEntries()){const btn=document.createElement('button');btn.className='codex-card'+(i===codexType?' active':'')+(isStageCleared(i)?' cleared':'');btn.textContent=codexStageLabel(i)+(isStageCleared(i)?' ✓':'');
+  btn.onclick=()=>{codexType=i;renderCodexGrid();renderCodexPreview()};grid.append(btn)}
+}
+function stageEnemyRows(i){
+ const m=new Map(),g=chapterOf(i)===2?1.5:chapterOf(i)===3?4:1;
+ for(const r of STAGE_SPAWNS[i]||[]){if(!data.units[r.type])continue;const e=m.get(r.type)||{type:r.type,mag:0,count:0,inf:false,boss:false};e.mag=Math.max(e.mag,Math.round((r.mag||100)*g));if(r.count===undefined)e.inf=true;else e.count+=r.count;if(r.boss)e.boss=true;m.set(r.type,e)}
+ return [...m.values()].sort((a,b)=>b.boss-a.boss||data.units[b.type].hp*b.mag-data.units[a.type].hp*a.mag)}
+function codexJump(tab,type){openCodex(tab);codexType=type;renderCodexGrid();renderCodexPreview();$('#codexMenu').scrollTop=0}
+function renderCodexStagePreview(){
+ const i=codexType,st=STAGES[i],ps=$('#codexPreviewStage');if(!st)return;
+ ps.innerHTML='';ps.style.background=`linear-gradient(${st.sky||'#84cef3'} 0 60%,${st.land||'#8fca52'} 60% 100%)`;
+ const rows=stageEnemyRows(i),rep=rows.find(r=>r.boss)||rows[0];
+ codexUnit=null;if(rep){codexUnit=buildCodexPreviewUnit(rep.type,false,false);ps.append(codexUnit.el);fitCodexUnit()}
+ const flag=document.createElement('span');flag.className='codex-stage-flag';flag.textContent=st.flag||'';ps.append(flag);
+ if(rep){const cap=document.createElement('span');cap.className='codex-stage-cap';cap.textContent=(rep.boss?'보스 · ':'대표 적 · ')+UNIT_NAMES[rep.type];ps.append(cap)}
+ $('#codexEvolveToggle').classList.add('hidden');
+ const stars=stageStars(i),cat=CODEX_STAGE_CATS.find(c=>c[0]===codexCatOf(i))[1],sub=st.legend?` · ${LEGEND_SUBS[legendSubOf(st.legend.k)].name}`:'';
+ $('#codexName').textContent=codexStageLabel(i);
+ $('#codexRole').textContent=cat+sub+(stars?` · 난이도 ${'★'.repeat(stars)}`:'');
+ $('#codexDesc').textContent=(st.en?st.en+' · ':'')+(st.desc||'');
+ const xp=st.xp??stageXP(i),rowsHtml=[['적 성 체력',st.hp.toLocaleString()],['동시 출현 상한',st.maxEnemies?st.maxEnemies+'마리':'제한 없음'],['클리어 보상',xp.toLocaleString()+' XP'],['진행',isStageCleared(i)?'클리어 ✓':'미클리어']];
+ if(st.special)rowsHtml.push(['특별 보상',`${st.special.item==='nyancom'?'야옹컴':'배속권'} ${st.special.count}개 (${Math.round(st.special.chance*100)}%)`]);
+ if(st.drop?.speed)rowsHtml.push(['드랍',`배속권 ${Math.round(st.drop.speed*100)}%`]);
+ $('#codexStats').innerHTML=rowsHtml.map(([k,v])=>`<dt>${k}</dt><dd>${v}</dd>`).join('');
+ const ex=$('#codexExtra');ex.innerHTML='<h3>등장 적</h3>';
+ const wrap=document.createElement('div');wrap.className='codex-chips';
+ for(const r of rows){const b=document.createElement('button');b.type='button';b.className='codex-chip'+(r.boss?' boss':'');b.textContent=`${r.boss?'👑 ':''}${UNIT_NAMES[r.type]} ${r.mag}%${r.inf?'':' ×'+r.count}`;b.title='적 도감으로 이동';b.onclick=()=>codexJump('enemy',r.type);wrap.append(b)}
+ if(!rows.length)wrap.textContent='등장 적 정보 없음';ex.append(wrap);
+}
+let enemyStageIndex=null;
+function stagesOfEnemy(type){
+ if(!enemyStageIndex){enemyStageIndex={};for(const k of Object.keys(STAGE_SPAWNS)){const seen=new Set();for(const r of STAGE_SPAWNS[k]||[])seen.add(r.type);for(const t of seen)(enemyStageIndex[t]=enemyStageIndex[t]||[]).push(+k)}}
+ return enemyStageIndex[type]||[]}
+function allyHowToGet(t){
+ if(ALWAYS_UNLOCKED.has(t))return '처음부터 사용 가능';
+ const u=UNLOCK_AT[t];if(u!==undefined&&u>=0&&STAGES[u])return `${STAGES[u].name}${chapterTag(u)} 클리어 시 합류`;
+ if(typeof GACHA_SR!=='undefined'&&[...GACHA_SR,...GACHA_RARE,...GACHA_UBER].some(g=>g.id===t))return '뽑기에서 획득';
+ return null}
+function renderCodexExtra(ally){
+ const ex=$('#codexExtra');ex.innerHTML='';
+ if(ally){const how=allyHowToGet(codexType);if(how)ex.innerHTML=`<h3>획득 방법</h3><p class="codex-how">${how}</p>`;return}
+ const list=stagesOfEnemy(codexType);ex.innerHTML=`<h3>등장 스테이지 <small>${list.length}곳</small></h3>`;
+ const wrap=document.createElement('div');wrap.className='codex-chips';
+ for(const k of list.slice(0,24)){const b=document.createElement('button');b.type='button';b.className='codex-chip';b.textContent=`${codexStageLabel(k)} · ${CODEX_STAGE_CATS.find(c=>c[0]===codexCatOf(k))[1]}`;b.title='스테이지 도감으로 이동';
+  b.onclick=()=>{codexStageCat=codexCatOf(k);if(codexStageCat==='legend')codexLegendSub=legendSubOf(STAGES[k].legend.k);codexJump('stage',k)};wrap.append(b)}
+ if(list.length>24){const m=document.createElement('span');m.className='codex-more';m.textContent=`외 ${list.length-24}곳`;wrap.append(m)}
+ if(!list.length)wrap.textContent='등장하는 스테이지 정보 없음';ex.append(wrap)}
+$('#codexStageTab').onclick=()=>openCodex('stage');
 
 reset();openStages();requestAnimationFrame(loop);
 
