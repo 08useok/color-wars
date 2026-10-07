@@ -1,9 +1,9 @@
-// Game version and the in-game update notice. GAME_VERSION is our own (MAJOR.MINOR.PATCH: new chapters/systems bump MINOR,
-// fixes bump PATCH); ORIGINAL_VERSION is the 냥코 대전쟁 (일본판) release our content matches. A new GAME_VERSION shows the
-// notice once on load; the 공지 button on the stage screen reopens it.
-const GAME_VERSION='1.0.0',ORIGINAL_VERSION='4.2';
-const NOTICE={version:GAME_VERSION,date:'2026-10-07',title:`v${GAME_VERSION} 업데이트 · 원작 Ver.${ORIGINAL_VERSION} 대응`,html:`
-<p class="notice-lead">원작(냥코 대전쟁 일본판) <b>Ver.4.2(2015년 8월)</b> 시점의 이야기를 모두 담았습니다: 세계편 1~3장 · 미래편 1~2장 · 레전드 스토리 1~25장. 다음은 미래편 3장입니다.</p>
+// Game version and the in-game update notice. v1.0.0 = the first push to GitHub Pages (2026-09-24); every push since then
+// counts: a push with a new feature bumps MINOR, a push with only fixes/balance bumps PATCH (v1.37.0 = 2026-10-07).
+// A new NOTICE.version shows the notice once on load; the 공지 button on the stage screen reopens it.
+const GAME_VERSION='1.37.1';
+const NOTICE={version:GAME_VERSION,date:'2026-10-07',title:`v${GAME_VERSION} 업데이트`,html:`
+<p class="notice-lead">지금까지 <b>세계편 1~3장 · 미래편 1~2장 · 레전드 스토리 1~25장</b>을 담았습니다. 다음은 미래편 3장입니다.</p>
 <h3>⚠️ 레벨 초기화 문제 사과</h3>
 <p>10월 6일 밤 업데이트 뒤 캐릭터 레벨이 Lv.1로 돌아가는 문제가 있었습니다. 수정되었고, 피해를 입은 저장은 얻은 캐릭터 전부를 <b>Lv.30(2진)</b>으로 한 번 복구했습니다. 불편을 드려 죄송합니다.</p>
 <h3>🆕 새 스테이지</h3>
@@ -29,7 +29,7 @@ function showNotice(){
  document.body.append(o)}
 (function initVersion(){
  const badge=document.querySelector('.game-version');
- if(badge){badge.textContent=`v${GAME_VERSION} · 원작 ${ORIGINAL_VERSION}`;badge.title=`게임 버전 v${GAME_VERSION} · 원작 냥코 대전쟁 일본판 Ver.${ORIGINAL_VERSION} 대응: 세계편 1~3장 · 미래편 1~2장 · 레전드 스토리 1~25장`}
+ if(badge){badge.textContent=`v${GAME_VERSION}`;badge.title=`게임 버전 v${GAME_VERSION}`}
  const actions=document.querySelector('.stage-heading-actions');
  if(actions&&!document.getElementById('noticeBtn')){const b=document.createElement('button');b.id='noticeBtn';b.textContent='공지';b.onclick=showNotice;actions.prepend(b)}
  let seen=null;try{seen=localStorage.getItem('red-battle-notice-v1')}catch{}
