@@ -1,7 +1,8 @@
-// Game version and the in-game update notice. v1.0.0 = the first push to GitHub Pages (2026-09-24); every push since then
-// counts: a push with a new feature bumps MINOR, a push with only fixes/balance bumps PATCH (v1.37.0 = 2026-10-07).
+// Game version and the in-game update notice. Like the original, MAJOR goes up when a big story opens:
+// v1 세계편 (first push, 2026-09-24) · v2 레전드 스토리 (09-30) · v3 미래편 1장 (10-03) · v4 미래편 2장 + 3진 (10-06).
+// Between those, every push counts: a new feature bumps MINOR, fixes/balance only bump PATCH.
 // A new NOTICE.version shows the notice once on load; the 공지 button on the stage screen reopens it.
-const GAME_VERSION='1.37.1';
+const GAME_VERSION='4.3.1';
 const NOTICE={version:GAME_VERSION,date:'2026-10-07',title:`v${GAME_VERSION} 업데이트`,html:`
 <p class="notice-lead">지금까지 <b>세계편 1~3장 · 미래편 1~2장 · 레전드 스토리 1~25장</b>을 담았습니다. 다음은 미래편 3장입니다.</p>
 <h3>⚠️ 레벨 초기화 문제 사과</h3>
