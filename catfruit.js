@@ -56,7 +56,7 @@ renderTraining=function(){
   const t=card.dataset.type;
   if(!t||data.units[t].noEvolve)continue;
   const evolved=(training.levels[t]||1)>=LV_EVOLVE&&training.forms[t]!==1;
-  if(hasTrueForm(t)&&evolved){const h=card.querySelector('h3');if(h.firstChild?.nodeType===3)h.firstChild.textContent=h.firstChild.textContent.replace(' 2진',' 3진');card.classList.add('true-form-card')}
+  if(hasTrueForm(t)&&evolved){const h=card.querySelector('h3');if(h.firstChild?.nodeType===3)h.firstChild.textContent=unitDisplayName(t,true);card.classList.add('true-form-card')}
   if(trueFormOpen()&&!trueForms.includes(t)){const b=document.createElement('button');b.className='true-btn';const ok=canTrueForm(t);
    b.textContent=(training.levels[t]||1)<LV_MAX?`3진: Lv.${LV_MAX} 필요`:`3진 진화 · ${costText(t)}`;b.disabled=!ok;b.title=costText(t);b.onclick=()=>evolveTrueForm(t);card.append(b)}}
 };
