@@ -5,7 +5,7 @@ const GACHA_KEY='red-battle-gacha-v1';
 const GACHA_SR=[['plum','플럼'],['forest','포레스트'],['canary','카나리'],['cherry','체리'],['charcoal','차콜'],['mustard','머스터드'],['mauve','모브'],['khaki','카키'],['tangerine','탠저린'],['burgundy','버건디'],['sky','스카이'],['denim','데님'],['cornflower','길리먼 블루'],['verdigris','베르디그리'],['teal','틸'],['bittersweet','그레이프프루트 펄프'],['claret','아틀라스 레드']].map(([id,name])=>({id,name}));
 const GACHA_RARE=[['fusioncream','퓨전 크림'],['silver','실버'],['lava','라바'],['babypink','베이비 핑크'],['magenta','마젠타']].map(([id,name])=>({id,name}));// 뽑기 전용 레어 5명 (시즌 2)
 const GACHA_PRISM={id:'prism',name:'프리즘'};
-const GACHA_UBER=[GACHA_PRISM,{id:'rainbow',name:'레인보우'},{id:'orchid',name:'오키드'}];// 울트라 슈퍼 레어 두 명이 같은 확률 칸을 나눠 가짐
+const GACHA_UBER=[GACHA_PRISM,{id:'rainbow',name:'레인보우'},{id:'orchid',name:'오키드'},{id:'iron',name:'아이언'},{id:'grey',name:'그레이'},{id:'carmine',name:'카민'}];// 울트라 슈퍼 레어 두 명이 같은 확률 칸을 나눠 가짐
 const GACHA_CFG={
  prism:.03,sr:.11,rare:.3,// of every pull: 울슈레 3% (프리즘·레인보우), SR 11% (16명 균등), 레어 30% (5명 균등); the other 56% is the misc table below
  pity:100,// 프리즘 guaranteed within this many pulls

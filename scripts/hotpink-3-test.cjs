@@ -1,0 +1,7 @@
+const assert=require('assert/strict'),e=require('./battle-harness.cjs')({optimized:false,withCatfruit:true});
+e.reset();const base=e.unitStats('hotpink',30,2);e.setTrueForms(['hotpink']);const tf=e.unitStats('hotpink',30,2),first=e.unitStats('hotpink',30,1);
+assert.equal(tf.hp,Math.round(base.hp*1.5));assert.equal(tf.atk,Math.round(base.atk*1.5));assert.equal(tf.range,30);assert.equal(tf.zoneMax,40);assert.equal(tf.area,true);assert.equal(tf.atkDownDuration,5);assert.equal(tf.atkDownChance,.65);assert.equal(tf.cost,base.cost);assert.equal(tf.interval,base.interval);assert.equal(first.trueForm,undefined);assert.equal(first.area,undefined);
+const g=e.getGame();g.units=[];g.running=true;g.tutorial=6;g.money=99999;e.addUnit('hotpink');const ally=g.units[0];ally.x=60;ally.emerging=false;
+for(const x of [30,22,19]){e.addUnit('capy');const v=g.units.at(-1);v.x=x;v.hp=v.max=1e7;v.emerging=false;}e.resolveAttack(ally,g.units[1]);assert(g.units[1].hp<1e7);assert(g.units[2].hp<1e7);assert.equal(g.units[3].hp,1e7);assert.equal(e.deadZone(ally),0);
+const atlas=e.atlases.hotpink.true;assert.equal(atlas.walk.length,24);assert.equal(atlas.attack.length,28);assert.equal(atlas.hurt.length,1);assert(!/undefined|NaN/.test(e.profileMarkup('hotpink',true)));
+console.log('PASS: Hot Pink 3jin grows HP/ATK by 50%, extends range and weakening duration, hits multiple enemies through 800 but misses beyond, keeps 1jin/cost/cadence, and uses dedicated walk/attack/hurt art.');console.log(JSON.stringify({two:base,three:tf}));

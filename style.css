@@ -371,3 +371,5 @@ body { overflow:auto; }
 
 /* Independent transforms preserve sprite-sheet scaling and mirroring. */
 .unit.ally-art :is(.dog-sprite,.ally-sprite,.evolved-sprite,.evolved-item){translate:var(--ranged-body-x,0px) var(--ranged-body-y,0px);rotate:var(--ranged-body-angle,0deg)}
+
+.codex-review{margin-top:20px;border-top:1px solid #ffffff24;padding-top:12px}.codex-review small{color:#aabbd0}.codex-review p{line-height:1.8;word-break:keep-all;overflow-wrap:anywhere}.codex-review b{color:#ffe4a0}

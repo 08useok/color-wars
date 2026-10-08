@@ -6,8 +6,9 @@ const FRUIT_COLORS=['purple','red','blue','green','yellow'];
 const FRUIT_NAME={purple:'보라',red:'빨강',blue:'파랑',green:'초록',yellow:'노랑'};
 const FRUIT_ICON={purple:'🟣',red:'🔴',blue:'🔵',green:'🟢',yellow:'🟡'};
 const TRUE_FORM_MULT=1.2;
-const TRUE_FORM_ATK_MULT={cream:1.8};
-const TRUE_FORM_BONUS={cream:{range:16,area:true,attackClass:'범위',slowChance:.65,slowDuration:3}};
+const TRUE_FORM_ATK_MULT={cream:1.8,hotpink:1.5};
+const TRUE_FORM_HP_MULT={hotpink:1.5};
+const TRUE_FORM_BONUS={cream:{range:16,area:true,attackClass:'범위',slowChance:.65,slowDuration:3},hotpink:{range:30,zoneMin:0,zoneMax:40,area:true,attackClass:'범위',atkDownDuration:5,attackDuration:1.4,windup:.7}};
 const TRUE_FORM_COST={basic:{fruit:1,seed:3,epic:0,xp:30000},rare:{fruit:2,seed:4,epic:0,xp:60000},sr:{fruit:3,seed:5,epic:0,xp:100000},
  ex:{fruit:3,seed:5,epic:1,xp:150000},uber:{fruit:5,seed:8,epic:2,xp:250000}};
 let catfruit={seed:{},fruit:{},epic:0},trueForms=[];
@@ -42,7 +43,7 @@ function catfruitText(kind,col,n){return kind==='epic'?`에픽 개다래 ${n}개
 const _unitStatsCF=unitStats;
 unitStats=function(type,level,form){
  const s=_unitStatsCF.apply(this,arguments);
- if(s.evolved&&hasTrueForm(type)){const atkMult=TRUE_FORM_ATK_MULT[type]||TRUE_FORM_MULT;s.trueForm=true;s.hp=Math.round(s.hp*TRUE_FORM_MULT);s.atk=Math.round(s.atk*atkMult);if(s.damageTiers)s.damageTiers=s.damageTiers.map(t=>({...t,dmg:Math.round(t.dmg*atkMult)}));Object.assign(s,TRUE_FORM_BONUS[type])}
+ if(s.evolved&&hasTrueForm(type)){const atkMult=TRUE_FORM_ATK_MULT[type]||TRUE_FORM_MULT;s.trueForm=true;s.hp=Math.round(s.hp*(TRUE_FORM_HP_MULT[type]||TRUE_FORM_MULT));s.atk=Math.round(s.atk*atkMult);if(s.damageTiers)s.damageTiers=s.damageTiers.map(t=>({...t,dmg:Math.round(t.dmg*atkMult)}));Object.assign(s,TRUE_FORM_BONUS[type])}
  return s};
 // Battle: 3진 units glow gold.
 const _addUnitCF=addUnit;
