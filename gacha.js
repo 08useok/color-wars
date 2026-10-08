@@ -95,7 +95,7 @@ function gachaClaimDaily(){
 }
 function gachaStageReward(i){// 세계편·미래편 첫 클리어: 각 장의 달 = 10회권, 2·3장·미래편 일반 스테이지 = 1회권
  const ch=STAGES[i].chapter||1;
- if(i===CHAPTER1_LEN-1||i===CHAPTER1_LEN*2-1||i===MAIN_STAGE_COUNT-1||i===FUTURE_END-1||i===FUTURE2_END-1)return {t1:0,t10:1};
+ if(i===CHAPTER1_LEN-1||i===CHAPTER1_LEN*2-1||i===MAIN_STAGE_COUNT-1||i===FUTURE_END-1||i===FUTURE2_END-1||i===FUTURE3_END-1)return {t1:0,t10:1};
  if(ch>=2)return {t1:1,t10:0};
  return {t1:0,t10:0};
 }
