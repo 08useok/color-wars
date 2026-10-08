@@ -1,11 +1,13 @@
 // 3진 (true form) and 개다래 열매 (catfruit), modelled on the original: clearing 미래편 2장 opens true forms, and each
 // true form costs catfruit of the unit's colour (보라·빨강·파랑·초록·노랑 열매/씨앗, plus 에픽 개다래 for EX·울슈레) and XP.
-// 3진 uses a dedicated atlas where available (cream), otherwise 2진 art with a gold glow; HP/ATK x1.2.
+// 3진 uses a dedicated atlas where available (cream), otherwise 2진 art with a gold glow.
 // Catfruit comes from 미래편 stages and the daily '개다래 축제' special stage (the day decides the colour).
 const FRUIT_COLORS=['purple','red','blue','green','yellow'];
 const FRUIT_NAME={purple:'보라',red:'빨강',blue:'파랑',green:'초록',yellow:'노랑'};
 const FRUIT_ICON={purple:'🟣',red:'🔴',blue:'🔵',green:'🟢',yellow:'🟡'};
 const TRUE_FORM_MULT=1.2;
+const TRUE_FORM_ATK_MULT={cream:1.8};
+const TRUE_FORM_BONUS={cream:{range:16,area:true,attackClass:'범위',slowChance:.65,slowDuration:3}};
 const TRUE_FORM_COST={basic:{fruit:1,seed:3,epic:0,xp:30000},rare:{fruit:2,seed:4,epic:0,xp:60000},sr:{fruit:3,seed:5,epic:0,xp:100000},
  ex:{fruit:3,seed:5,epic:1,xp:150000},uber:{fruit:5,seed:8,epic:2,xp:250000}};
 let catfruit={seed:{},fruit:{},epic:0},trueForms=[];
@@ -36,11 +38,11 @@ function catfruitSummary(){return FRUIT_COLORS.map(c=>`${FRUIT_ICON[c]}${catfrui
 function addCatfruit(kind,col,n=1){if(kind==='epic')catfruit.epic+=n;else catfruit[kind][col]+=n;saveCatfruit()}
 function catfruitText(kind,col,n){return kind==='epic'?`에픽 개다래 ${n}개`:`${FRUIT_NAME[col]} 개다래 ${kind==='fruit'?'열매':'씨앗'} ${n}개`}
 
-// Stats: a 3진 is the 2진 with HP/ATK x1.2.
+// Stats: HP x1.2; Waffle Cream gets its own attack bonus.
 const _unitStatsCF=unitStats;
 unitStats=function(type,level,form){
  const s=_unitStatsCF.apply(this,arguments);
- if(s.evolved&&hasTrueForm(type)){s.trueForm=true;s.hp=Math.round(s.hp*TRUE_FORM_MULT);s.atk=Math.round(s.atk*TRUE_FORM_MULT);if(s.damageTiers)s.damageTiers=s.damageTiers.map(t=>({...t,dmg:Math.round(t.dmg*TRUE_FORM_MULT)}))}
+ if(s.evolved&&hasTrueForm(type)){const atkMult=TRUE_FORM_ATK_MULT[type]||TRUE_FORM_MULT;s.trueForm=true;s.hp=Math.round(s.hp*TRUE_FORM_MULT);s.atk=Math.round(s.atk*atkMult);if(s.damageTiers)s.damageTiers=s.damageTiers.map(t=>({...t,dmg:Math.round(t.dmg*atkMult)}));Object.assign(s,TRUE_FORM_BONUS[type])}
  return s};
 // Battle: 3진 units glow gold.
 const _addUnitCF=addUnit;
