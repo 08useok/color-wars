@@ -368,3 +368,6 @@ body { overflow:auto; }
 #deckEditor.hidden{display:none}
 
 #deckEditorCombos{margin:16px 0}#deckEditorCombos h2{font-size:18px;margin:0 0 8px}#deckEditorCombos p{font-size:13px;color:#cbd5e1}.deck-combo{display:flex;flex-wrap:wrap;gap:10px;padding:12px;border:1px solid #64748b;border-radius:10px}.deck-combo small{width:100%;color:#cbd5e1}.deck-combo.active{border-color:#ffd75a;background:#ffd75a18}.deck-combo.active small{color:#ffd75a}
+
+/* Independent transforms preserve sprite-sheet scaling and mirroring. */
+.unit.ally-art :is(.dog-sprite,.ally-sprite,.evolved-sprite,.evolved-item){translate:var(--ranged-body-x,0px) var(--ranged-body-y,0px);rotate:var(--ranged-body-angle,0deg)}
