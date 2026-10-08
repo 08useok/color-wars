@@ -2,9 +2,11 @@
 // v1 세계편 (first push, 2026-09-24) · v2 레전드 스토리 (09-30) · v3 미래편 1장 (10-03) · v4 미래편 2장 + 3진 (10-06).
 // Between those, every push counts: a new feature bumps MINOR, fixes/balance only bump PATCH.
 // A new NOTICE.version shows the notice once on load; the 공지 button on the stage screen reopens it.
-const GAME_VERSION='4.6.1';
+const GAME_VERSION='4.6.2';
 const NOTICE={version:GAME_VERSION,date:'2026-10-08',title:`v${GAME_VERSION} 업데이트`,html:`
 <p class="notice-lead">지금까지 <b>세계편 1~3장 · 미래편 1~2장 · 레전드 스토리 1~25장</b>을 담았습니다. 다음은 미래편 3장입니다.</p>
+<h3>🍰 v4.6.2 와플 크림 강화·적 수치 수정</h3>
+<ul><li>와플 크림(3진)의 공격력이 기존보다 50% 증가하고, 사거리 16·범위 공격·검은 적 둔화 65%/3초가 적용됩니다.</li><li>스승의 공격 간격을 0.8초로 수정했습니다.</li><li>홍당무왕의 수치를 원작 기준으로 환산하고 넉백 자세를 수정했습니다.</li></ul>
 <h3>🔧 v4.6.1 모션·그림 로딩 수정</h3>
 <ul><li>원거리 아군이 공격 준비, 발사·투척, 반동, 복귀 동작을 연속으로 보여 줍니다.</li><li>전투에 필요한 아군·적·공격 그림을 미리 불러옵니다. 준비 중에는 전투 시간이 흐르지 않으며, 불러온 그림은 재사용합니다.</li><li>그림 로딩에 실패하면 다시 시도할 수 있습니다.</li></ul>
 <h3>🍰 와플 크림 · +레벨 · 캣츠아이</h3>
