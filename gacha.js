@@ -15,7 +15,7 @@ const GACHA_CFG={
  dailyStreakBonus:7,// 7일 연속 출석마다 10회권
  repeatLegend:.05// 이미 클리어한 전설 스테이지 반복 시 1회권 확률
 };
-const GACHA_MISC=[{w:40,kind:'xp',n:1000,label:'XP 1,000'},{w:24,kind:'xp',n:3000,label:'XP 3,000'},{w:16,kind:'speed',n:1,label:'배속권 1개'},{w:8,kind:'cpu',n:1,label:'야옹컴 1개'}];
+const GACHA_MISC=[{w:32,kind:'xp',n:1000,label:'XP 1,000'},{w:8,kind:'basic',label:'기본 캐릭터'},{w:24,kind:'xp',n:3000,label:'XP 3,000'},{w:16,kind:'speed',n:1,label:'배속권 1개'},{w:8,kind:'cpu',n:1,label:'야옹컴 1개'}];
 let gacha={t1:0,t10:0,pity:0,pulls:0,owned:[],lastDaily:'',streak:0};
 try{
  const s=JSON.parse(localStorage.getItem(GACHA_KEY)||'{}'),n=v=>Number.isInteger(v)&&v>=0?v:0;
@@ -67,6 +67,7 @@ function gachaRoll(guaranteed=false){
   res.name=m.label;res.misc=m.kind;
   if(m.kind==='xp'){training.xp+=m.n;saveTraining()}
   else if(m.kind==='speed'){speedTickets+=m.n;saveSpeedTickets();renderSpeedButton()}
+  else if(m.kind==='basic'){const pool=['red','yellow','purple','orange','blue','green','cyan','pink'].filter(t=>allyUnlocked(t));const id=pool[Math.floor(Math.random()*pool.length)];res.id=id;res.name=UNIT_NAMES[id];res.dup=true;res.xp=2000;training.xp+=res.xp;saveTraining()}
   else{nyancom+=m.n;saveNyancom();renderNyancomButton()}
  }
  return res;
@@ -135,8 +136,8 @@ const _legendFinish2=legendFinish;
 legendFinish=function(win){
  const k=STAGES[selectedStage].legend.k,c=legendCrown;
  _legendFinish2(win);
- if(win&&k===LEGEND_SUBS[0].len-1&&legendSubDone(0,c)&&!gachaOwns('garnet')&&Math.random()<GARNET_DROP){
-  gacha.owned.push('garnet');saveGacha();gachaAppendDetail('EX 가넷 획득!');renderNewButtons();
+ if(win&&k===LEGEND_SUBS[0].len-1&&legendSubDone(0,c)&&Math.random()<GARNET_DROP){
+  grantEx('garnet');
  }
 };
 const _allyUnlocked=allyUnlocked;
@@ -170,6 +171,7 @@ function gachaCard(r){
  let body;
  if(r.kind==='misc')body=`<strong>${r.name}</strong>`;
  else if(r.pending)body=`<strong>${r.kind==='prism'?'울슈레':r.kind==='rare'?'레어':'SR'}</strong><small>준비 중 → XP +${r.xp.toLocaleString()}</small>`;
+ else if(r.plus)body=`<strong>${r.name}</strong><small>중복 → +레벨 ${r.plus} / +10</small>`;
  else if(r.dup)body=`<strong>${r.name}</strong><small>중복 → XP +${r.xp.toLocaleString()}</small>`;
  else body=`<strong>${r.name}</strong><small class="new">NEW!</small>`;
  c.innerHTML=(r.kind==='prism'?'<b>★ 울트라 슈퍼 레어</b>':r.kind==='sr'?'<b>슈퍼 레어</b>':r.kind==='rare'?'<b>레어</b>':'<b>보상</b>')+body+tag;
@@ -184,7 +186,7 @@ function renderGacha(results){
  $('#gachaPull10').textContent=bonus?'10+1 뽑기 (10회권 1장)':'10회 뽑기 (10회권 1장)';$('#gachaPull10').disabled=gacha.t10<1;
  $('#gachaPity').textContent=`울슈레 천장 ${gacha.pity} / ${GACHA_CFG.pity} · 누적 ${gacha.pulls}회`;
  const ready=gachaPoolSR().length;
- $('#gachaRates').textContent=`확률: 울트라 슈퍼 레어(프리즘·레인보우·오키드) ${GACHA_CFG.prism*100}% · SR ${GACHA_CFG.sr*100}% (${GACHA_SR.length}명 균등) · 레어 ${GACHA_CFG.rare*100}% (5명 균등) · 나머지는 XP·배속권·야옹컴. 울트라 슈퍼 레어는 ${GACHA_CFG.pity}회 안에 확정. 중복은 XP로 환산(SR ${GACHA_CFG.dupXp.toLocaleString()}, 레어 ${GACHA_CFG.dupXpRare.toLocaleString()}, 울슈레 ${GACHA_CFG.dupXpPrism.toLocaleString()}).`+(ready<GACHA_SR.length?` 아직 추가되지 않은 SR(${GACHA_SR.length-ready}명)이 나오면 XP로 대체돼요.`:'');
+ $('#gachaRates').textContent=`확률: 울트라 슈퍼 레어(프리즘·레인보우·오키드) ${GACHA_CFG.prism*100}% · SR ${GACHA_CFG.sr*100}% (${GACHA_SR.length}명 균등) · 레어 ${GACHA_CFG.rare*100}% (5명 균등) · 나머지는 기본 캐릭터·XP·배속권·야옹컴. 울트라 슈퍼 레어는 ${GACHA_CFG.pity}회 안에 확정. 중복은 +레벨 +1(최대 +10), 이후 XP로 환산(SR ${GACHA_CFG.dupXp.toLocaleString()}, 레어 ${GACHA_CFG.dupXpRare.toLocaleString()}, 울슈레 ${GACHA_CFG.dupXpPrism.toLocaleString()}).`+(ready<GACHA_SR.length?` 아직 추가되지 않은 SR(${GACHA_SR.length-ready}명)이 나오면 XP로 대체돼요.`:'');
  if(results){const box=$('#gachaResults');box.innerHTML='';results.forEach(r=>box.append(gachaCard(r)))}
  const own=$('#gachaOwned');own.innerHTML='';
  for(const s of [...GACHA_SR,...GACHA_RARE,...GACHA_UBER]){const d=document.createElement('div');d.className='gacha-slot'+(gachaOwns(s.id)?' owned':'')+(GACHA_UBER.includes(s)?' prism':'');d.textContent=gachaOwns(s.id)?s.name:data.units[s.id]?'？？？':'준비 중';own.append(d)}

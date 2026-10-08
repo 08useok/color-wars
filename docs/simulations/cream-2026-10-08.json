@@ -1,0 +1,230 @@
+{
+  "level": 30,
+  "dt": 0.03333333333333333,
+  "limitSeconds": 120,
+  "scenario": "One ally versus one enemy, no deployment, support, items or stage waves",
+  "stats": {
+    "크림 2진": {
+      "hp": 40933,
+      "atk": 2923,
+      "interval": 2,
+      "speed": 5,
+      "range": 9.6,
+      "cost": 505,
+      "cooldown": 10,
+      "knockbacks": 3,
+      "slowChance": 0.55,
+      "slowDuration": 2.5,
+      "statusVs": [
+        "black"
+      ],
+      "attackDuration": 0.6,
+      "windup": 0.2,
+      "evolved": true
+    },
+    "와플 크림 3진": {
+      "hp": 49120,
+      "atk": 3508,
+      "interval": 2,
+      "speed": 5,
+      "range": 9.6,
+      "cost": 505,
+      "cooldown": 10,
+      "knockbacks": 3,
+      "slowChance": 0.55,
+      "slowDuration": 2.5,
+      "statusVs": [
+        "black"
+      ],
+      "attackDuration": 0.6,
+      "windup": 0.2,
+      "evolved": true,
+      "trueForm": true
+    },
+    "민들레 2진": {
+      "hp": 19320,
+      "atk": 3977,
+      "interval": 2.7,
+      "speed": 4.5,
+      "range": 17.4,
+      "cost": 340,
+      "cooldown": 6,
+      "knockbacks": 3,
+      "slowChance": 0.44999999999999996,
+      "slowDuration": 2.5,
+      "statusVs": [
+        "black"
+      ],
+      "attackDuration": 0.8,
+      "windup": 0.35,
+      "evolved": true
+    }
+  },
+  "rows": [
+    {
+      "ally": "크림 2진",
+      "enemy": "darkdog",
+      "magnification": 4,
+      "trials": 200,
+      "winPercent": 100,
+      "timeoutPercent": 0,
+      "meanSeconds": 13.5,
+      "meanDamage": 20000,
+      "slowUptimePercent": 62.5
+    },
+    {
+      "ally": "크림 2진",
+      "enemy": "gorydark",
+      "magnification": 4,
+      "trials": 200,
+      "winPercent": 1,
+      "timeoutPercent": 0,
+      "meanSeconds": 23.33,
+      "meanDamage": 32019.2,
+      "slowUptimePercent": 60.2
+    },
+    {
+      "ally": "크림 2진",
+      "enemy": "shadowboxer",
+      "magnification": 4,
+      "trials": 200,
+      "winPercent": 0,
+      "timeoutPercent": 0,
+      "meanSeconds": 20.06,
+      "meanDamage": 29668.5,
+      "slowUptimePercent": 62.4
+    },
+    {
+      "ally": "크림 2진",
+      "enemy": "blackotta",
+      "magnification": 1,
+      "trials": 200,
+      "winPercent": 0,
+      "timeoutPercent": 0,
+      "meanSeconds": 17.01,
+      "meanDamage": 21221,
+      "slowUptimePercent": 57.8
+    },
+    {
+      "ally": "크림 2진",
+      "enemy": "assassinbear",
+      "magnification": 10,
+      "trials": 200,
+      "winPercent": 0,
+      "timeoutPercent": 0,
+      "meanSeconds": 1.27,
+      "meanDamage": 0,
+      "slowUptimePercent": 0
+    },
+    {
+      "ally": "와플 크림 3진",
+      "enemy": "darkdog",
+      "magnification": 4,
+      "trials": 200,
+      "winPercent": 100,
+      "timeoutPercent": 0,
+      "meanSeconds": 11.5,
+      "meanDamage": 20000,
+      "slowUptimePercent": 62.3
+    },
+    {
+      "ally": "와플 크림 3진",
+      "enemy": "gorydark",
+      "magnification": 4,
+      "trials": 200,
+      "winPercent": 24,
+      "timeoutPercent": 0,
+      "meanSeconds": 24.81,
+      "meanDamage": 41776.5,
+      "slowUptimePercent": 61.2
+    },
+    {
+      "ally": "와플 크림 3진",
+      "enemy": "shadowboxer",
+      "magnification": 4,
+      "trials": 200,
+      "winPercent": 0,
+      "timeoutPercent": 0,
+      "meanSeconds": 23.31,
+      "meanDamage": 41078.7,
+      "slowUptimePercent": 62.2
+    },
+    {
+      "ally": "와플 크림 3진",
+      "enemy": "blackotta",
+      "magnification": 1,
+      "trials": 200,
+      "winPercent": 0,
+      "timeoutPercent": 0,
+      "meanSeconds": 17.87,
+      "meanDamage": 27660.6,
+      "slowUptimePercent": 58.8
+    },
+    {
+      "ally": "와플 크림 3진",
+      "enemy": "assassinbear",
+      "magnification": 10,
+      "trials": 200,
+      "winPercent": 0,
+      "timeoutPercent": 0,
+      "meanSeconds": 1.27,
+      "meanDamage": 0,
+      "slowUptimePercent": 0
+    },
+    {
+      "ally": "민들레 2진",
+      "enemy": "darkdog",
+      "magnification": 4,
+      "trials": 200,
+      "winPercent": 95.5,
+      "timeoutPercent": 0,
+      "meanSeconds": 15.39,
+      "meanDamage": 19994.8,
+      "slowUptimePercent": 49.4
+    },
+    {
+      "ally": "민들레 2진",
+      "enemy": "gorydark",
+      "magnification": 4,
+      "trials": 200,
+      "winPercent": 0,
+      "timeoutPercent": 0,
+      "meanSeconds": 15.29,
+      "meanDamage": 21555.3,
+      "slowUptimePercent": 49.2
+    },
+    {
+      "ally": "민들레 2진",
+      "enemy": "shadowboxer",
+      "magnification": 4,
+      "trials": 200,
+      "winPercent": 0,
+      "timeoutPercent": 0,
+      "meanSeconds": 13.74,
+      "meanDamage": 23245.6,
+      "slowUptimePercent": 53.3
+    },
+    {
+      "ally": "민들레 2진",
+      "enemy": "blackotta",
+      "magnification": 1,
+      "trials": 200,
+      "winPercent": 0,
+      "timeoutPercent": 0,
+      "meanSeconds": 14.95,
+      "meanDamage": 23126.3,
+      "slowUptimePercent": 52.4
+    },
+    {
+      "ally": "민들레 2진",
+      "enemy": "assassinbear",
+      "magnification": 10,
+      "trials": 200,
+      "winPercent": 0,
+      "timeoutPercent": 0,
+      "meanSeconds": 0.33,
+      "meanDamage": 0,
+      "slowUptimePercent": 0
+    }
+  ]
+}

@@ -57,15 +57,15 @@ STAGES.forEach((st,i)=>Object.assign(st,STAGE_BG[EOC_BG[i]]));
 // Empire of Cats Chapter 2: same Korea-to-Hawaii roster replayed with the wiki-sourced
 // 150% enemy strength magnification. Moon (the chapter-1 finale) is not repeated.
 const CHAPTER1_LEN=STAGES.length;
-for(let i=0;i<CHAPTER1_LEN-1;i++){const base=STAGES[i];STAGES.push({...base,chapter:2,hp:Math.round(base.hp*2),desc:'세계편 2장 재도전 · 모든 적 능력치 150% 강화'});}
+for(let i=0;i<CHAPTER1_LEN-1;i++){const base=STAGES[i];STAGES.push({...base,chapter:2,hp:Math.round(base.hp*2),desc:'세계편 2장 · 모든 적 체력 공격력이 올라갑니다'});}
 // Chapter 2 ends on its own Moon (wiki "Moon (Empire of Cats)", Ch.2): boss 악의제왕 야옹마 (Dark Emperor Nyandam).
-STAGES.push({...STAGES[CHAPTER1_LEN-1],...STAGE_BG[2],chapter:2,hp:200000,maxEnemies:12,desc:'세계편 2장 최종 보스 악의제왕 야옹마'});// chapter-2 Moon is the night background
+STAGES.push({...STAGES[CHAPTER1_LEN-1],...STAGE_BG[2],chapter:2,hp:200000,maxEnemies:12,desc:'세계편 2장 · 모든 적 체력 공격력이 올라갑니다'});// chapter-2 Moon is the night background
 const CH2_HAWAII=CHAPTER1_LEN*2-2;// last pre-Moon chapter-2 stage: keeps the Lv.20 / Tuesday top-tier unlocks where they were
 // Empire of Cats Chapter 3: the same Korea-to-Hawaii roster again at 400% (wiki: Ch.3 = x4 enemy magnification).
 const CH3_START=STAGES.length;
-for(let i=0;i<CHAPTER1_LEN-1;i++){const base=STAGES[i];STAGES.push({...base,chapter:3,hp:Math.round(base.hp*3),desc:'세계편 3장 재도전 · 모든 적 능력치 400% 강화'});}
+for(let i=0;i<CHAPTER1_LEN-1;i++){const base=STAGES[i];STAGES.push({...base,chapter:3,hp:Math.round(base.hp*3),desc:'세계편 3장 · 모든 적 체력 공격력이 올라갑니다'});}
 // Chapter 3 Moon (wiki "Moon (Empire of Cats)", Ch.3): base 900,000 · max 8 · boss 맴매 선생 (Teacher Bun Bun) at 70%.
-STAGES.push({...STAGES[CHAPTER1_LEN-1],chapter:3,hp:900000,maxEnemies:8,desc:'세계편 3장 최종 보스 맴매 선생'});
+STAGES.push({...STAGES[CHAPTER1_LEN-1],chapter:3,hp:900000,maxEnemies:8,desc:'세계편 3장 · 모든 적 체력 공격력이 올라갑니다'});
 const MAIN_STAGE_COUNT=STAGES.length;// chapters 1-3; everything after this index is a special stage
 // Tuesday special stage "광속 전사": pre-15.4 Speed Up source (drop chance 20/50/100/100% (x2 on the hardest)).
 const TUESDAY_STAGES=[
@@ -101,7 +101,7 @@ const LEGEND_STAGES=[
 const LEGEND_START=STAGES.length,LEGEND_CROWN_MULT=[1,1.5,2,3],LEGEND_XP_SCALE=4;
 // Original crown multipliers change from 파르테논 신전 on (sub index -> x1/x2/x3/x4 crown).
 const LEGEND_SUB_CROWN={14:[1,1.5,2,2],15:[1,1.5,2,2],16:[1,1.5,2,2],17:[1,1.5,1.7,1.5],18:[1,1.5,1.7,1.4],19:[1,1.4,1.6,1.4],20:[1,1.3,1.5,1.3],21:[1,1.2,1.4,1.3],22:[1,1.2,1.4,1.2],23:[1,1.2,1.4,1.2],24:[1,1.2,1.4,1.1]};
-function legendCrownMult(c,sub){return (LEGEND_SUB_CROWN[sub]||LEGEND_CROWN_MULT)[c-1]}
+function legendCrownMult(c,sub){return (LEGEND_SUB_CROWN[sub]||LEGEND_CROWN_MULT)[(c===4?3:c)-1]}
 LEGEND_STAGES.forEach((t,k)=>STAGES.push({...t,gap:4,wave:0,chapter:4,legend:{k},maxEnemies:t.max}));
 // Into the Future Chapter 1 (미래편 1장): 48 stages Japan -> Moon, opened by the chapter-3 Moon like the original.
 // Stage data per battlecats-db (未来編 第1章: base HP, max enemies, XP; XP x4 like the Legend Story), spawn rules
@@ -523,7 +523,7 @@ data.units.mooth={trait:"floating",hp:5000,atk:300,interval:88/30,speed:3.2,rang
 data.units.pink={hp:624,atk:150,interval:1.9,speed:6,range:23,engageRange:4.5,cost:1500,flatCost:true,cooldown:7,knockbacks:3,attackDuration:.7,windup:.3,area:true};
 data.units.rhino={hp:5200,atk:420,interval:2.1,speed:5.5,range:5.2,reward:900,knockbacks:2,attackDuration:.9,windup:.45,area:true};
 data.units.bear={hp:6500,atk:520,interval:2.4,speed:4.5,range:8.5,reward:1050,knockbacks:10,attackDuration:1,windup:.5,area:true};
-data.units.face={trait:"floating",hp:18000,atk:850,interval:3.4,speed:1.8,range:14,reward:2500,knockbacks:3,attackDuration:1.2,windup:.65,area:true};
+data.units.face={trait:"floating",hp:18000,atk:850,interval:3.4,speed:1.8,range:14,reward:2500,knockbacks:3,attackDuration:44/30,windup:34/30,area:true};
 // Legend Story enemies, drawn from the variant sheets kept alongside the Doge / Snache art.
 // Metal Hippoe (wiki): same art/frames as Hippoe; the metal trait takes 1 damage from non-critical hits.
 data.units.metalhippo={trait:'metal',hp:128,atk:300,interval:.6,speed:2.8,range:5,reward:200,knockbacks:2,attackDuration:.5,area:true};
@@ -531,9 +531,9 @@ data.units.metalhippo={trait:'metal',hp:128,atk:300,interval:.6,speed:2.8,range:
 data.units.stpigge={trait:'red',hp:64000,atk:600,interval:22/30,speed:5.6,range:5,reward:300,knockbacks:4,attackDuration:22/30,windup:14/30,area:true};
 // 맴매 선생 / Teacher Bun Bun (wiki: HP 99,999 · atk 2,250 · 31f · range 200 area · speed 23 · 10 KB · floating).
 // Art is assembled from the part sheet 024_e.png into bunbun_frames.png (fitted to E_024.png).
-data.units.bunbun={trait:'floating',hp:99999,atk:2250,interval:31/30,speed:11.5,range:6.5,reward:3000,knockbacks:10,attackDuration:.8,windup:.4,area:true};
+data.units.bunbun={trait:'floating',hp:99999,atk:2250,interval:31/30,speed:11.5,range:6.5,reward:3000,knockbacks:10,attackDuration:31/30,windup:20/30,area:true};
 // 악의제왕 야옹마 / Dark Emperor Nyandam (wiki). Art is assembled from the part sheet 023_e.png into nyandam_frames.png.
-data.units.nyandam={trait:'red',hp:160000,atk:2700,interval:463/30,speed:1.4,range:15.6,reward:3000,knockbacks:3,attackDuration:1.2,windup:.7,area:true};
+data.units.nyandam={trait:'red',hp:160000,atk:2700,interval:463/30,speed:1.4,range:15.6,reward:3000,knockbacks:3,attackDuration:133/30,windup:104/30,area:true};
 // 살의의 멍뭉이 / Doge Dark (wiki): Black enemy, single attack with a long 41-frame foreswing, 8 knockbacks. Range 110/20; speed is a rough rescale of the wiki's 30.
 data.units.darkdog={trait:'black',notBoss:true,hp:5000,atk:2000,interval:1.5,speed:12,range:5.5,reward:400,knockbacks:8,attackDuration:1.5,windup:41/30};
 data.units.gabriel={trait:'angel',hp:600,atk:70,interval:1.2,speed:12,range:4,reward:130,knockbacks:3};
@@ -756,18 +756,25 @@ function yellowUnlocked(){return cleared.some(i=>i>=5)}
 function greenUnlocked(){return cleared.some(i=>i>=6)}
 function cooldownKey(type){return type==='red'?'spawnCd':type+'Cd'}
 function unitCooldown(type){return game[cooldownKey(type)]||0}
-function reset(){syncBasePositions();last=0;game={money:0,level:0,units:[],defeated:[],spawnCd:0,orangeCd:0,yellowCd:0,greenCd:0,cyanCd:0,blueCd:0,purpleCd:0,pinkCd:0,boomerangs:[],projectiles:[],shots:[],effects:[],running:false,ended:false,tutorial:0,paused:false,elapsed:0,speedMultiplier:1,speedUnlocked:false,auto:false,autoUnlocked:false};game.spawnRules=(STAGE_SPAWNS[selectedStage]||[]).map(r=>({...r,triggered:false,clock:0,spawned:0}));data.bases.ally.hp=data.bases.ally.max=baseHpFor();data.bases.ally.attackLock=null;data.bases.enemy.hp=data.bases.enemy.max=stageBaseHp(selectedStage);data.bases.enemy.attackLock=null;game.tutorial=selectedStage===0?0:6;$('#field').style.background=`linear-gradient(${STAGES[selectedStage].sky} 0 32%,${STAGES[selectedStage].land} 32% 100%)`;$('#field').setAttribute('aria-label',STAGES[selectedStage].name+' 전장');$('#stageMenu').classList.add('hidden');unitsEl.innerHTML='';$('#result').classList.add('hidden');tutorial();render()}
+function reset(){syncBasePositions();last=0;game={money:0,level:0,units:[],defeated:[],spawnCd:0,orangeCd:0,yellowCd:0,greenCd:0,cyanCd:0,blueCd:0,purpleCd:0,pinkCd:0,boomerangs:[],projectiles:[],shots:[],effects:[],running:false,ended:false,tutorial:0,paused:false,elapsed:0,speedMultiplier:1,speedUnlocked:false,auto:false,autoUnlocked:false};game.allyCombos=activeAllyCombos();game.spawnRules=(STAGE_SPAWNS[selectedStage]||[]).map(r=>({...r,triggered:false,clock:0,spawned:0}));data.bases.ally.hp=data.bases.ally.max=baseHpFor();data.bases.ally.attackLock=null;data.bases.enemy.hp=data.bases.enemy.max=stageBaseHp(selectedStage);data.bases.enemy.attackLock=null;game.tutorial=selectedStage===0?0:6;$('#field').style.background=`linear-gradient(${STAGES[selectedStage].sky} 0 32%,${STAGES[selectedStage].land} 32% 100%)`;$('#field').setAttribute('aria-label',STAGES[selectedStage].name+' 전장');$('#stageMenu').classList.add('hidden');unitsEl.innerHTML='';$('#result').classList.add('hidden');tutorial();render()}
 const ENGAGE_SYNC_WINDOW=.12;// how close (sec) two attackers' swing-starts must be to count as "the same motion" and land together
 function canEngage(target){const lock=target.attackLock;return!lock||game.elapsed>=lock.until||game.elapsed<lock.joinBy}
 function lockEngage(target,duration){if(!target.attackLock||game.elapsed>=target.attackLock.until)target.attackLock={until:game.elapsed+duration,joinBy:game.elapsed+ENGAGE_SYNC_WINDOW}}
 const ALLY_DEPLOY_LIMIT=50;// Battle Cats' default Cat Deploy Limit (special restriction stages there lower or raise it); caps how many allies can be on the field at once so cheap units can't stack infinitely.
 function allyDeployCount(){return game.units.filter(u=>u.ally&&u.hp>0).length}
 function allyDeployFull(){return allyDeployCount()>=ALLY_DEPLOY_LIMIT}
+function legendFourStar(i=selectedStage){return !!STAGES[i]?.legend&&legendCrown===4}
+function allyStageAllowed(t,i=selectedStage){return !legendFourStar(i)||['ex','rare'].includes(gradeOf(t))}
+const ALLY_COMBOS=[{id:'great-match',name:'멋진 한 판',members:['red','crimson','maroon'],attackBonus:.1,effect:'공격력 업 소 (+10%)'}];
+function activeAllyCombos(lineup=deck,stage=selectedStage){const firstRow=new Set(lineup.slice(0,5).filter(t=>allyUnlocked(t)&&allyStageAllowed(t,stage)));return ALLY_COMBOS.filter(c=>c.members.every(t=>firstRow.has(t)))}
+function comboAttackMultiplier(combos){return 1+combos.reduce((sum,c)=>sum+(c.attackBonus||0),0)}
+function applyAllyComboStats(stats,combos){const mult=comboAttackMultiplier(combos);return {...stats,atk:Math.round(stats.atk*mult),...(stats.damageTiers?{damageTiers:stats.damageTiers.map(t=>({...t,dmg:Math.round(t.dmg*mult)}))}:{})}}
 function addUnit(type,boss=false,mag=1){
  if(game.ended)return;
  const d=data.units[type],ally=ALLIES.includes(type);
+ if(ally&&!allyStageAllowed(type))return;
  if(ally&&(!(game.running||(type==='red'&&game.tutorial===2))||game.paused||unitCooldown(type)>0||game.money<unitCost(type)||!allyUnlocked(type)||allyDeployFull()))return;
- const stats=unitStats(type);if(!ally&&mag!==1){stats.hp=Math.round(stats.hp*mag);stats.atk=Math.round(stats.atk*mag)}const u={type,ally,boss,stats,hp:stats.hp,max:stats.hp,x:ally?data.bases.ally.x:data.bases.enemy.x,emerging:true,atkCd:0,kb:0,animTime:0,attackTime:0,hurtTime:0,kbTime:0,flashTime:0};
+ const stats=ally?applyAllyComboStats(unitStats(type),game.allyCombos||[]):unitStats(type);if(!ally&&mag!==1){stats.hp=Math.round(stats.hp*mag);stats.atk=Math.round(stats.atk*mag)}const u={type,ally,boss,stats,hp:stats.hp,max:stats.hp,x:ally?data.bases.ally.x:data.bases.enemy.x,emerging:true,atkCd:0,kb:0,animTime:0,attackTime:0,hurtTime:0,kbTime:0,flashTime:0};
  game.units.push(u);drawUnit(u);u.el.style.left=`calc(${u.x}% - 21px)`;
  if(ally){game.money-=unitCost(type);game[cooldownKey(type)]=stats.cooldown;if(game.tutorial===2){game.tutorial=3;tutorial()}}render();
 }
@@ -781,7 +788,7 @@ Object.assign(EVO_BODY_H,{lapis:105,selenite:85,topaz:96,ribbonorange:98,obsidia
 EVO_BODY_H.rainbow=104;
 Object.assign(EVO_BODY_H,{cornflower:82,bittersweet:90,claret:76,verdigris:93});
 Object.assign(EVO_BODY_H,{plum:95,forest:77,canary:81,cherry:88,mauve:85,khaki:86,tangerine:92,burgundy:83,mustard:80,sky:87,denim:91,charcoal:86});
-function drawUnit(u){let e=document.createElement('div'),evolved=u.ally&&u.stats?.evolved,legacyAlly=u.ally&&!NEW_ATLASES[u.type];e.className='unit '+u.type+(u.ally?' ally-art':'')+(evolved?' evolved':'');e.style.setProperty('--unit-color',COLORS?.[u.type]||'#fff');e.innerHTML='<div class="bar"><i style="width:100%"></i></div><span class="status-badges"><span class="freeze-icon st-freeze"></span><span class="slow-icon st-slow"></span><span class="weaken-icon st-weaken"></span><span class="crit-icon st-crit"></span><span class="pull-icon st-pull"></span><span class="survive-icon st-survive"></span></span>'+(legacyAlly?'<span class="ally-shadow"></span><span class="ally-sprite"></span>'+(evolved?'<span class="evolved-sprite"></span>'+(EVOLVED_HELD_ITEM[u.type]?'<span class="evolved-item"></span>':''):'')+(u.type==='pink'&&!evolved?'<span class="pink-ribbon"><i></i></span>':''):'<span class="dog-shadow"></span><span class="dog-sprite"></span>'+(u.type==='leboin'||u.type==='bear'?'<span class="dog-sprite-legs"></span>':'')+(u.type==='leboin'?'<span class="dog-sprite-body"></span>':'')+(u.type==='stpigge'?'<span class="pigge-crown"></span>':''));e.setAttribute('aria-label',unitDisplayName(u.type,u.stats?.trueForm,evolved));u.el=e;if(evolved&&EVO_BODY_H[u.type])e.querySelector('.bar').style.top=(33-EVO_BODY_H[u.type])+'px';if(!u.ally&&ENEMY_SIZE[u.type])e.style.setProperty('--enemy-size',ENEMY_SIZE[u.type]);unitsEl.append(e);const newAtlas=NEW_ATLASES[u.type];const sheet={rabbit:ELITE_RABBIT_SHEET,kangaroo:KANG_ROO_SHEET,mooth:MOOTH_SHEET,rhino:RHINO_SHEET,bear:BEAR_SHEET,face:FACE_SHEET}[u.type]||(u.stats?.trueForm&&newAtlas?.true?newAtlas.true.sheet:evolved&&newAtlas?.evolved?newAtlas.evolved.sheet:newAtlas?.sheet);if(sheet)e.querySelector('.dog-sprite').style.backgroundImage=`url(${sheet})`;if(legacyAlly)animateAlly(u);else animateDog(u);fitShadow(u);fitBar(u)}
+function drawUnit(u){let e=document.createElement('div'),evolved=u.ally&&u.stats?.evolved,legacyAlly=u.ally&&!NEW_ATLASES[u.type];e.className='unit '+u.type+(u.ally?' ally-art':'')+(evolved?' evolved':'');e.style.setProperty('--unit-color',COLORS?.[u.type]||'#fff');e.innerHTML='<div class="bar"><i style="width:100%"></i></div><span class="status-badges"><span class="freeze-icon st-freeze"></span><span class="slow-icon st-slow"></span><span class="weaken-icon st-weaken"></span><span class="crit-icon st-crit"></span><span class="pull-icon st-pull"></span><span class="survive-icon st-survive"></span></span>'+(legacyAlly?'<span class="ally-shadow"></span><span class="ally-sprite"></span>'+(evolved?'<span class="evolved-sprite"></span>'+(EVOLVED_HELD_ITEM[u.type]?'<span class="evolved-item"></span>':''):'')+(u.type==='pink'&&!evolved?'<span class="pink-ribbon"><i></i></span>':''):'<span class="dog-shadow"></span><span class="dog-sprite"></span>'+(u.type==='leboin'||u.type==='bear'?'<span class="dog-sprite-legs"></span>':'')+(u.type==='leboin'?'<span class="dog-sprite-body"></span>':'')+(u.type==='stpigge'?'<span class="pigge-crown"></span>':''));e.setAttribute('aria-label',unitDisplayName(u.type,u.stats?.trueForm,evolved));u.el=e;if(evolved&&EVO_BODY_H[u.type])e.querySelector('.bar').style.top=(33-EVO_BODY_H[u.type])+'px';if(!u.ally&&ENEMY_SIZE[u.type])e.style.setProperty('--enemy-size',ENEMY_SIZE[u.type]);unitsEl.append(e);const newAtlas=NEW_ATLASES[u.type];if(newAtlas?.attackAtlas){u.attackImage=new Image();u.attackImage.src=newAtlas.attackAtlas.sheet}const sheet={rabbit:ELITE_RABBIT_SHEET,kangaroo:KANG_ROO_SHEET,mooth:MOOTH_SHEET,rhino:RHINO_SHEET,bear:BEAR_SHEET,face:FACE_SHEET}[u.type]||(u.stats?.trueForm&&newAtlas?.true?newAtlas.true.sheet:evolved&&newAtlas?.evolved?newAtlas.evolved.sheet:newAtlas?.sheet);if(sheet)e.querySelector('.dog-sprite').style.backgroundImage=`url(${sheet})`;if(legacyAlly)animateAlly(u);else animateDog(u);fitShadow(u);fitBar(u)}
 // Ground shadow sized to the body. The base .dog-shadow is the Doge's own 41px sheet shadow, so every atlas character
 // without a sheet shadow of its own (SHEET_SHADOW, plus the bosses whose frames already draw one) gets a soft ellipse
 // as wide as ~80% of its first walk frame instead.
@@ -945,7 +952,7 @@ const SHOT_SPEED=80;// field % per second
 // 야옹컴 (Nyanko Computer): while it runs, the CPU upgrades the worker cat (income) and keeps deploying the deck, most expensive first.
 function autoDeploy(){
  const l=data.income[game.level];if(l.cost!==null&&game.money>=l.cost){game.money-=l.cost;game.level++}
- const order=deck.filter(allyUnlocked).sort((a,b)=>unitCost(b)-unitCost(a)),rate=incomeRate(),full=game.money>=walletMax()*.97;
+ const order=deck.filter(t=>allyUnlocked(t)&&allyStageAllowed(t)).sort((a,b)=>unitCost(b)-unitCost(a)),rate=incomeRate(),full=game.money>=walletMax()*.97;
  for(const type of order){
   if(unitCooldown(type)>0)continue;
   const c=unitCost(type);
@@ -1024,7 +1031,7 @@ function updateWaveFx(dt){
 // zoneMax (prism leaves its dead zone faint) and a burst on every target it hits.
 // The Face family screams a sonic shout (tinted per body colour), Mooth flaps a wind gust.
 const BEAM_FX={rainbow:{beam:'rainbow-beam',hit:'rainbow-hit'},prism:{beam:'prism-beam',hit:'prism-hit'},
- face:{beam:'shout-beam',hit:'shout-hit',color:'#ffffff'},phace:{beam:'shout-beam',hit:'shout-hit',color:'#9ff7ef'},shyboy:{beam:'shout-beam',hit:'shout-hit',color:'#ff8a4d'},
+ phace:{beam:'shout-beam',hit:'shout-hit',color:'#9ff7ef'},shyboy:{beam:'shout-beam',hit:'shout-hit',color:'#ff8a4d'},
  mooth:{beam:'gust-beam',hit:'gust-hit'}};
 function beamFx(u,d){
  const fx=BEAM_FX[u.type],dir=u.ally?-1:1,near=u.x+dir,far=u.x+dir*(d.zoneMax??d.range),lo=Math.min(near,far),hi=Math.max(near,far);
@@ -1810,6 +1817,10 @@ croco:{scale:0.72,left:-10,walk:[[2,29,85,39,0],[89,29,86,39,1],[177,28,86,40,1]
  hippo:{scale:.9,left:-26,walk:[[1,24,105,78],[113,24,105,78],[226,24,104,78]],attack:[[337,4,99,98],[1,104,99,101],[113,118,110,87],[225,140,109,65],[338,127,104,78]]},
  metalhippo:{sheet:'assets/metal_hippo_sheet.png',scale:.9,left:-26,walk:[[1,24,105,78],[113,24,105,78],[226,24,104,78]],attack:[[337,4,99,98],[1,104,99,101],[113,118,110,87],[225,140,109,65],[338,127,104,78]]}
 };
+// Attack frames exported from the wiki animation viewer; one original frame per 1/30 second.
+NEW_ATLASES.bunbun.attackAtlas={"sheet": "assets/boss_bunbun_attack.webp", "scale": 0.5, "left": -35.5, "lift": 0.0, "attackStep": 1, "attack": [[0, 0, 229, 243, 0.0, 0.0], [231, 0, 244, 247, 4.54, 0.0], [477, 0, 263, 248, 7.57, 0.0], [742, 0, 276, 250, 10.6, 0.0], [1020, 0, 286, 251, 13.63, 0.0], [1308, 0, 275, 266, 57.53, 0.0], [1585, 0, 276, 269, 59.8, 0.0], [1863, 0, 273, 270, 58.29, 0.0], [2138, 0, 272, 270, 56.78, 0.0], [2412, 0, 270, 271, 56.78, 0.0], [2684, 0, 268, 271, 55.26, 0.0], [2954, 0, 266, 272, 53.75, 0.0], [3222, 0, 266, 273, 52.99, 0.0], [3490, 0, 264, 273, 51.48, 0.0], [3756, 0, 263, 273, 51.48, 0.0], [0, 275, 263, 275, 51.48, 0.0], [265, 275, 261, 275, 50.72, 0.0], [528, 275, 261, 274, 49.21, 0.0], [791, 275, 261, 272, 46.93, 0.0], [1054, 275, 260, 266, 40.88, 0.0], [1316, 275, 326, 340, 21.95, -56.02], [1644, 275, 367, 445, 22.71, -109.01], [2013, 275, 383, 509, 23.47, -120.36], [2398, 275, 395, 520, 24.22, -124.15], [2795, 275, 403, 528, 24.22, -124.15], [3200, 275, 410, 241, 24.98, -4.54], [3612, 275, 414, 241, 25.74, -3.03], [0, 805, 416, 239, 26.5, -0.76], [418, 805, 418, 240, 27.25, 0.0], [838, 805, 416, 242, 24.98, 0.0], [1256, 805, 229, 243, 0.0, 0.0]]};
+NEW_ATLASES.face.attackAtlas={"sheet": "assets/boss_face_attack.webp", "scale": 0.5, "left": -25, "lift": 42.16, "attackStep": 1, "attack": [[0, 0, 142, 179, 13.42, 1.06], [144, 0, 142, 179, 13.42, 1.06], [288, 0, 144, 185, 14.83, -3.18], [434, 0, 144, 185, 14.83, -3.18], [580, 0, 144, 186, 16.95, -1.06], [726, 0, 144, 186, 16.95, -1.06], [872, 0, 144, 186, 20.48, 2.47], [1018, 0, 144, 186, 20.48, 2.47], [1164, 0, 144, 186, 20.48, 2.47], [1310, 0, 144, 186, 20.48, 2.47], [1456, 0, 144, 186, 20.48, 2.47], [1602, 0, 144, 186, 20.48, 2.47], [1748, 0, 144, 186, 20.48, 2.47], [1894, 0, 144, 186, 20.48, 2.47], [2040, 0, 144, 186, 20.48, 2.47], [2186, 0, 144, 186, 20.48, 2.47], [2332, 0, 144, 186, 20.48, 2.47], [2478, 0, 144, 186, 20.48, 2.47], [2624, 0, 144, 186, 20.48, 2.47], [2770, 0, 144, 186, 20.48, 2.47], [2916, 0, 144, 186, 20.48, 2.47], [3062, 0, 144, 186, 20.48, 2.47], [3208, 0, 144, 186, 20.48, 2.47], [3354, 0, 144, 186, 20.48, 2.47], [3500, 0, 144, 186, 20.48, 2.47], [3646, 0, 144, 186, 20.48, 2.47], [3792, 0, 144, 186, 20.48, 2.47], [3938, 0, 144, 186, 20.48, 2.47], [0, 188, 144, 186, 20.48, 2.47], [146, 188, 144, 186, 20.48, 2.47], [292, 188, 143, 179, 14.83, 3.53], [437, 188, 143, 179, 14.83, 3.53], [582, 188, 138, 177, 2.12, -12.71], [722, 188, 138, 177, 2.12, -12.71], [862, 188, 133, 157, 0.0, 0.0], [997, 188, 133, 157, 0.0, 0.0], [1132, 188, 133, 157, -1.41, -1.06], [1267, 188, 133, 157, -1.41, -1.06], [1402, 188, 133, 157, -1.41, -1.06], [1537, 188, 133, 157, -1.41, -1.06], [1672, 188, 133, 157, -1.41, -1.06], [1807, 188, 133, 157, -1.41, -1.06], [1942, 188, 133, 157, 0.0, 0.0], [2077, 188, 133, 157, 0.0, 0.0]]};
+NEW_ATLASES.nyandam.attackAtlas={"sheet": "assets/boss_nyandam_attack.webp", "scale": 0.5, "left": -70, "lift": 0.0, "attackStep": 1, "attack": [[0, 0, 298, 209, 0.0, 0.0], [300, 0, 320, 209, 0.0, 0.0], [622, 0, 305, 209, 0.0, 0.0], [929, 0, 298, 209, 0.0, 0.0], [1229, 0, 298, 209, 0.0, 0.0], [1529, 0, 298, 209, 0.0, 0.0], [1829, 0, 298, 209, 0.0, 0.0], [2129, 0, 298, 209, 0.0, 0.0], [2429, 0, 298, 209, 0.0, 0.0], [2729, 0, 298, 209, 0.0, 0.0], [3029, 0, 298, 209, 0.0, 0.0], [3329, 0, 298, 209, 0.0, 0.0], [3629, 0, 298, 209, 0.0, 0.0], [0, 211, 298, 209, 0.0, 0.0], [300, 211, 298, 209, 0.0, 0.0], [600, 211, 298, 209, 0.0, 0.0], [900, 211, 298, 209, 0.0, 0.0], [1200, 211, 298, 209, 0.0, 0.0], [1500, 211, 298, 209, 0.0, 0.0], [1800, 211, 298, 209, 0.0, 0.0], [2100, 211, 298, 209, 0.0, 0.0], [2400, 211, 298, 209, 0.0, 0.0], [2700, 211, 298, 209, 0.0, 0.0], [3000, 211, 298, 209, 0.0, 0.0], [3300, 211, 298, 209, 0.0, 0.0], [3600, 211, 298, 209, 0.0, 0.0], [0, 422, 298, 209, 0.0, 0.0], [300, 422, 298, 209, 0.0, 0.0], [600, 422, 298, 209, 0.0, 0.0], [900, 422, 298, 209, 0.0, 0.0], [1200, 422, 298, 209, 0.0, 0.0], [1500, 422, 298, 209, 0.0, 0.0], [1800, 422, 298, 209, 0.0, 0.0], [2100, 422, 298, 209, 0.0, 0.0], [2400, 422, 298, 209, 0.0, 0.0], [2700, 422, 298, 209, 0.0, 0.0], [3000, 422, 298, 209, 0.0, 0.0], [3300, 422, 298, 209, 0.0, 0.0], [3600, 422, 298, 209, 0.0, 0.0], [0, 633, 298, 209, 0.0, 0.0], [300, 633, 298, 209, 0.0, 0.0], [600, 633, 298, 209, 0.0, 0.0], [900, 633, 298, 209, 0.0, 0.0], [1200, 633, 298, 209, 0.0, 0.0], [1500, 633, 298, 209, 0.0, 0.0], [1800, 633, 298, 209, 0.0, 0.0], [2100, 633, 298, 209, 0.0, 0.0], [2400, 633, 298, 209, 0.0, 0.0], [2700, 633, 298, 209, 0.0, 0.0], [3000, 633, 298, 209, 0.0, 0.0], [3300, 633, 298, 209, 0.0, 0.0], [3600, 633, 298, 209, 0.0, 0.0], [0, 844, 298, 209, 0.0, 0.0], [300, 844, 298, 209, 0.0, 0.0], [600, 844, 298, 209, 0.0, 0.0], [900, 844, 298, 209, 0.0, 0.0], [1200, 844, 298, 209, 0.0, 0.0], [1500, 844, 298, 209, 0.0, 0.0], [1800, 844, 298, 209, 0.0, 0.0], [2100, 844, 298, 209, 0.0, 0.0], [2400, 844, 298, 209, 0.0, 0.0], [2700, 844, 298, 209, 0.0, 0.0], [3000, 844, 298, 209, 0.0, 0.0], [3300, 844, 298, 209, 0.0, 0.0], [3600, 844, 298, 209, 0.0, 0.0], [0, 1055, 298, 209, 0.0, 0.0], [300, 1055, 298, 209, 0.0, 0.0], [600, 1055, 298, 209, 0.0, 0.0], [900, 1055, 298, 209, 0.0, 0.0], [1200, 1055, 298, 209, 0.0, 0.0], [1500, 1055, 298, 209, 0.0, 0.0], [1800, 1055, 298, 209, 0.0, 0.0], [2100, 1055, 298, 209, 0.0, 0.0], [2400, 1055, 298, 209, 0.0, 0.0], [2700, 1055, 298, 209, 0.0, 0.0], [3000, 1055, 298, 209, 0.0, 0.0], [3300, 1055, 298, 209, 0.0, 0.0], [3600, 1055, 298, 209, 0.0, 0.0], [0, 1266, 298, 209, 0.0, 0.0], [300, 1266, 298, 209, 0.0, 0.0], [600, 1266, 298, 209, 0.0, 0.0], [900, 1266, 298, 209, 0.0, 0.0], [1200, 1266, 298, 209, 0.0, 0.0], [1500, 1266, 298, 209, 0.0, 0.0], [1800, 1266, 298, 209, 0.0, 0.0], [2100, 1266, 298, 209, 0.0, 0.0], [2400, 1266, 298, 209, 0.0, 0.0], [2700, 1266, 298, 209, 0.0, 0.0], [3000, 1266, 298, 209, 0.0, 0.0], [3300, 1266, 298, 209, 0.0, 0.0], [3600, 1266, 298, 209, 0.0, 0.0], [0, 1477, 298, 209, 0.0, 0.0], [300, 1477, 298, 209, 0.0, 0.0], [600, 1477, 298, 209, 0.0, 0.0], [900, 1477, 298, 209, 0.0, 0.0], [1200, 1477, 298, 209, 0.0, 0.0], [1500, 1477, 298, 209, 0.0, 0.0], [1800, 1477, 298, 209, 0.0, 0.0], [2100, 1477, 298, 209, 0.0, 0.0], [2400, 1477, 298, 209, 0.0, 0.0], [2700, 1477, 298, 209, 0.0, 0.0], [3000, 1477, 298, 209, 0.0, 0.0], [3300, 1477, 298, 209, 0.0, 0.0], [3600, 1477, 394, 238, 0.0, 0.0], [0, 1717, 497, 233, 0.0, 0.0], [499, 1717, 482, 244, 0.0, 0.0], [983, 1717, 460, 258, 0.0, -1.65], [1445, 1717, 465, 261, 0.0, -3.31], [1912, 1717, 469, 260, 0.0, -2.76], [2383, 1717, 469, 264, 0.0, -4.41], [2854, 1717, 469, 263, 0.0, -4.41], [3325, 1717, 465, 265, 0.0, -4.96], [0, 1984, 460, 219, 0.0, 0.0], [462, 1984, 457, 218, 0.0, 0.0], [921, 1984, 457, 219, 0.0, 0.0], [1380, 1984, 456, 219, 0.0, 0.0], [1838, 1984, 453, 219, 0.0, 0.0], [2293, 1984, 450, 218, 0.0, 0.0], [2745, 1984, 451, 219, 0.0, 0.0], [3198, 1984, 452, 219, 0.0, 0.0], [0, 2205, 451, 219, 0.0, 0.0], [453, 2205, 450, 218, 0.0, 0.0], [905, 2205, 451, 219, 0.0, 0.0], [1358, 2205, 452, 219, 0.0, 0.0], [1812, 2205, 451, 219, 0.0, 0.0], [2265, 2205, 450, 218, 0.0, 0.0], [2717, 2205, 450, 218, 0.0, 0.0], [3169, 2205, 450, 218, 0.0, 0.0], [3621, 2205, 298, 209, 0.0, 0.0], [0, 2426, 298, 209, 0.0, 0.0], [300, 2426, 298, 209, 0.0, 0.0], [600, 2426, 298, 209, 0.0, 0.0], [900, 2426, 298, 209, 0.0, 0.0]]};
 // The first column is locomotion; the second is windup; the third is impact/recovery.
 // Keep the body anchored and show impact at the same 14f threshold as damage.
 function animatePigge(u){
@@ -1833,8 +1844,9 @@ const PIGGE_CROWN={'4,1':[42,-21],'4,79':[42,-20],'4,157':[42,-20],'115,5':[42,-
 const GLOW_FLASH=new Set(['metalhippo']);
 function animateAtlas(u){
  const baseAtlas=NEW_ATLASES[u.type];
- const atlas=(u.stats?.trueForm&&baseAtlas.true)?baseAtlas.true:(u.stats?.evolved&&baseAtlas.evolved)?baseAtlas.evolved:baseAtlas;
+ let atlas=(u.stats?.trueForm&&baseAtlas.true)?baseAtlas.true:(u.stats?.evolved&&baseAtlas.evolved)?baseAtlas.evolved:baseAtlas;
  const state=u.hurtTime>0?'hurt':u.attackTime>0?'attack':'walk';
+ if(state==='attack'&&atlas.attackAtlas)atlas={...atlas,...atlas.attackAtlas};
  // Gory's raised-fists sprite is its actual hitback pose; Peng uses an upright pose.
  const visualState=state==='hurt'&&u.type==='gory'?'attack':state==='hurt'&&(['peng'].includes(u.type)||!atlas.hurt)?'walk':state;
  let frames=atlas[visualState];
@@ -1855,6 +1867,7 @@ function animateAtlas(u){
  // compared to walk frame 0, so wide impact crops don't shove the body backwards.
  const [x,y,w,h,ox=0,oy=0,rot=0,fl=0]=frames[index];const sprite=u.el.querySelector('.dog-sprite');
  const scale=atlas.scale??baseAtlas.scale,left=(atlas.left??baseAtlas.left)-ox*scale;
+ if(baseAtlas.attackAtlas)sprite.style.backgroundImage=`url(${atlas.sheet||(u.type==='face'?FACE_SHEET:baseAtlas.sheet)})`;
  sprite.style.backgroundPosition=`-${x}px -${y}px`;
  sprite.style.width=w+'px';sprite.style.height=h+'px';sprite.style.left=left+'px';
  // Optional 6th value / atlas.lift (sheet px): vertical re-anchoring, e.g. the face keeps its
@@ -1884,7 +1897,7 @@ function renderStageMenu(){renderTraining();renderBaseUpgrade();renderSpecialSta
  $('#chapter2Tab').classList.toggle('active',stageChapterView===2);
  $('#chapter3Tab').classList.toggle('active',stageChapterView===3);
  $('#futureTab').classList.toggle('active',stageChapterView===5);$('#future2Tab')?.classList.toggle('active',stageChapterView===6);
- $('#chapterNote').textContent=stageChapterView===5?`일본 ~ 달 · 에이리언(외계 생물) 적 등장 · 적마다 강화 배율이 따로 붙어요 · 에이리언 배율 ${alienMagnification(5)*100}% (억제기 ${alienSuppressed(5)}/${ALIEN_SUPPRESSORS.length}: 심해의 소용돌이·달을 클리어하면 각각 −100%)`+(cleared.includes(MAIN_STAGE_COUNT-1)?'':' · 세계편 3장 달을 클리어하면 열립니다'):stageChapterView===6?`일본 ~ 달 재도전 · 원작 미래편 2장 배치 · 1장 에이리언은 250%, 2장 신규 에이리언 5종은 100%에 에이리언 배율이 따로 붙어요 · 에이리언 배율 ${alienMagnification(6)*100}% (2장 억제기 ${alienSuppressed(6)}/${ALIEN_SUPPRESSORS2.length}: 심해의 소용돌이·달)`+(cleared.includes(FUTURE_END-1)?'':' · 미래편 1장 달을 클리어하면 열립니다'):stageChapterView===2?'한국 ~ 달 재도전 · 모든 적 체력·공격력 150% 강화 · 달의 보스는 악의제왕 야옹마':stageChapterView===3?'한국 ~ 달 재도전 · 모든 적 체력·공격력 400% 강화 · 달의 보스는 맴매 선생 · 2장 달을 클리어하면 열립니다':'';
+ $('#chapterNote').textContent=stageChapterView===5?`일본 ~ 달 · 에이리언(외계 생물) 적 등장 · 적마다 강화 배율이 따로 붙어요 · 에이리언 배율 ${alienMagnification(5)*100}% (억제기 ${alienSuppressed(5)}/${ALIEN_SUPPRESSORS.length}: 심해의 소용돌이·달을 클리어하면 각각 −100%)`+(cleared.includes(MAIN_STAGE_COUNT-1)?'':' · 세계편 3장 달을 클리어하면 열립니다'):stageChapterView===6?`일본 ~ 달 재도전 · 원작 미래편 2장 배치 · 1장 에이리언은 250%, 2장 신규 에이리언 5종은 100%에 에이리언 배율이 따로 붙어요 · 에이리언 배율 ${alienMagnification(6)*100}% (2장 억제기 ${alienSuppressed(6)}/${ALIEN_SUPPRESSORS2.length}: 심해의 소용돌이·달)`+(cleared.includes(FUTURE_END-1)?'':' · 미래편 1장 달을 클리어하면 열립니다'):stageChapterView===2?'한국 ~ 달 · 모든 적 체력 공격력이 올라갑니다':stageChapterView===3?'한국 ~ 달 · 모든 적 체력 공격력이 올라갑니다 · 2장 달을 클리어하면 열립니다':'';
  $('#progressText').textContent=`${viewStages.filter(o=>cleared.includes(o.i)).length} / ${viewStages.length} 스테이지 클리어 · ${stageChapterView===5?'미래편 1장':stageChapterView===6?'미래편 2장':'세계편 '+stageChapterView+'장'}`;
 }
 const SPEED_PACK={count:9,xp:1000};// pre-15.4: bought in packs of 9 (50 cat food in the original) - paid in XP here
@@ -1956,7 +1969,7 @@ function renderLegend(){
  $('#progressText').textContent=sc?`레전드 스토리 · ${sc.name} ★${legendCrown} · ${legendSubCount(sub,legendCrown)} / ${sc.len}`:'레전드 스토리';
  $('#chapterNote').textContent=!open?'세계편 1장 마지막 스테이지(달)를 클리어하면 열립니다.':legendSub?'':'서브챕터를 선택하세요. 앞 서브챕터를 ★1로 모두 클리어하면 다음 서브챕터가 열립니다.';
  tabs.classList.toggle('hidden',!legendSub);
- $('#legendNote').textContent=legendSub?`왕관 난이도 ★${legendCrown}: 적 능력치 ${Math.round(legendCrownMult(legendCrown,sub)*100)}% · ${sc.len}개 스테이지를 모두 클리어하면 다음 왕관이 열립니다.`:'';
+ $('#legendNote').textContent=legendSub?`왕관 난이도 ★${legendCrown}: 적 능력치 ${Math.round(legendCrownMult(legendCrown,sub)*100)}%${legendCrown===4?' · EX·레어만 출전 가능 · 적 배율은 ★3과 동일':''} · ${sc.len}개 스테이지를 모두 클리어하면 다음 왕관이 열립니다.`:'';
  if(!legendSub){
   LEGEND_SUBS.forEach((it,n)=>{const ok=legendSubOpen(n),b=document.createElement('button');b.className='stage-card legend-sub'+(legendSubDone(n,1)?' cleared':'');b.disabled=!ok;
    const sr=LEGEND_STAR_RANGES[n];b.innerHTML=`<strong>${it.name}</strong><span class="stage-stars" title="난이도 ★${sr[0]}${sr[1]>sr[0]?'~'+sr[1]:''} / 12">${'★'.repeat(sr[1])}</span><small>${ok?`👑1 ${legendSubCount(n,1)} / ${it.len}`:'잠김'}</small>`;
@@ -2246,7 +2259,7 @@ function toggleDeck(t){
  else if(deck.length<DECK_SIZE)deck.push(t);
  saveDeck();renderTraining();render();
 }
-function renderDeckButtons(){const tutorialActive=game&&game.tutorial<6;for(const t of ALLIES)$(t==='red'?'#spawnBtn':'#'+t+'Btn').hidden=!allyUnlocked(t)||!deck.includes(t)&&!(t==='red'&&tutorialActive)}
+function renderDeckButtons(){const tutorialActive=game&&game.tutorial<6;for(const t of ALLIES)$(t==='red'?'#spawnBtn':'#'+t+'Btn').hidden=!allyUnlocked(t)||!allyStageAllowed(t)||!deck.includes(t)&&!(t==='red'&&tutorialActive)}
 let speedTickets=0;
 try{const raw=localStorage.getItem('red-battle-speed-v1');const n=parseInt(raw,10);if(Number.isInteger(n)&&n>=0)speedTickets=n}catch{}
 function saveSpeedTickets(){try{localStorage.setItem('red-battle-speed-v1',String(speedTickets))}catch{}}
@@ -2368,7 +2381,7 @@ function renderGradeTabs(){
 }
 function renderTraining(){
  $('#xpText').textContent=training.xp+' XP';$('#trainingGrid').innerHTML='';
- $('#deckText').textContent=`출전 덱 ${deck.length} / ${DECK_SIZE} · 전투에는 덱에 넣은 아군만 나옵니다`;
+ $('#deckText').textContent=`출전 덱 ${deck.length} / ${DECK_SIZE} · 전투에는 덱에 넣은 아군만 나옵니다${legendFourStar()?' · ★4: EX·레어만 출전 가능':''}`;
  for(const t of ALLIES){const cap=levelCapOf(t),l=training.levels[t],d=unitStats(t),next=unitStats(t,Math.min(cap,l+1)),unlocked=allyUnlocked(t),inDeck=deck.includes(t),evolved=l>=LV_EVOLVE&&training.forms[t]!==1&&!d.noEvolve;if(!unlocked||!gradeMatch(t))continue;const card=document.createElement('article');card.className='training-card';card.dataset.type=t;card.innerHTML=`${profileMarkup(t,evolved)}<h3 style="color:${COLORS[t]}">${UNIT_NAMES[t]}${evolved?' 2진':''} <small>Lv.${l} / ${cap}</small>${ABILITY_ICONS[t]?`<span class="${ABILITY_ICONS[t][0]}-icon title-icon" aria-label="${ABILITY_ICONS[t][1]}" title="${ABILITY_ICONS[t][1]}"></span>`:''}</h3><p class="profile-copy"><strong>${ROLES[t]}</strong> · ${attackType(t)} 공격<br>${evolved?PROFILE_TEXT_EVOLVED[t]:PROFILE_TEXT[t]}${trainingAbilityLine(t)}</p>`;const b=document.createElement('button');b.textContent=!unlocked?STAGES[UNLOCK_AT[t]].name+(chapterTag(UNLOCK_AT[t]))+' 클리어로 해금':l>=cap?(cap<LV_MAX?'최대 Lv.10 · 2장 클리어 시 Lv.20':'최대 레벨'):upgradeCost(t)+' XP · 강화';b.disabled=!unlocked||l>=cap||training.xp<upgradeCost(t);b.onclick=()=>upgradeCharacter(t);card.append(b);
   if(unlocked){const db=document.createElement('button');db.className='deck-btn';db.textContent=inDeck?'덱에서 제외':deck.length>=DECK_SIZE?'덱 가득참':'덱에 추가';db.disabled=!inDeck&&deck.length>=DECK_SIZE;db.classList.toggle('active',inDeck);db.onclick=()=>toggleDeck(t);card.append(db)}
   if(unlocked&&l>=LV_EVOLVE&&!d.noEvolve){const fb=document.createElement('button');fb.className='form-btn';fb.textContent=evolved?'1진으로 변경 (약함)':'2진으로 변경';fb.onclick=()=>setForm(t,evolved?1:2);card.append(fb)}
