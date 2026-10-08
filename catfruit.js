@@ -118,3 +118,29 @@ renderSpecialStages=function(){
 
 // Preserve saved levels: chapter progress and unused Lv.1 allies cannot identify a damaged save.
 // The training loader in game.js already fixes the BASE_MAX initialization order.
+
+// 핫 핑크 3진 is the 미래편 3장 reward: it opens only when the 3장 Moon is cleared, costs nothing, and the first clear
+// evolves an owned 핫 핑크 on the spot. A 핫 핑크 already evolved under the old rule keeps its 3진. Wraps the general rules above so the rest of the 3진 system stays unchanged.
+const HOTPINK_TRUE_STAGE=FUTURE3_END-1;
+function hotpinkTrueOpen(){return cleared.includes(HOTPINK_TRUE_STAGE)}
+const _trueFormOpenHP=trueFormOpen,_hasTrueFormHP=hasTrueForm,_canTrueFormHP=canTrueForm,_trueFormCostHP=trueFormCost,_costTextHP=costText;
+trueFormOpen=function(t){return t==='hotpink'?hotpinkTrueOpen():_trueFormOpenHP.apply(this,arguments)};
+hasTrueForm=function(t){return t==='hotpink'?trueForms.includes(t):_hasTrueFormHP.apply(this,arguments)};
+canTrueForm=function(t){return t==='hotpink'?hotpinkTrueOpen()&&!trueForms.includes(t)&&allyUnlocked(t):_canTrueFormHP.apply(this,arguments)};
+trueFormCost=function(t){return t==='hotpink'?{fruit:0,seed:0,epic:0,xp:0}:_trueFormCostHP.apply(this,arguments)};
+costText=function(t){return t==='hotpink'?'미래편 3장 달 클리어 보상 · 재료·XP 소모 없음':_costTextHP.apply(this,arguments)};
+const _renderTrainingHP=renderTraining;
+renderTraining=function(){
+ _renderTrainingHP.apply(this,arguments);
+ const card=[...$('#trainingGrid').children].find(c=>c.dataset.type==='hotpink');if(!card)return;
+ let b=card.querySelector('.true-btn');
+ if(trueForms.includes('hotpink')){b?.remove();return}
+ if(!b){b=document.createElement('button');b.className='true-btn';card.append(b)}
+ b.textContent=hotpinkTrueOpen()?'3진 진화 · 무료':'3진: 미래편 3장 달 클리어 보상';b.title=costText('hotpink');b.disabled=!canTrueForm('hotpink');b.onclick=()=>evolveTrueForm('hotpink')};
+const _finishHP=finish;
+finish=function(win){
+ const fresh=!game.ended,was=cleared.includes(HOTPINK_TRUE_STAGE),idx=selectedStage;
+ _finishHP.apply(this,arguments);
+ if(!fresh||!win||idx!==HOTPINK_TRUE_STAGE||was)return;
+ if(allyUnlocked('hotpink')&&!trueForms.includes('hotpink')){trueForms.push('hotpink');delete training.forms.hotpink;saveTrueForms();saveTraining()}
+ if(typeof gachaAppendDetail==='function')gachaAppendDetail(trueForms.includes('hotpink')?'핫 핑크 3진 획득! 핫 핑크가 3진으로 진화했어요':'핫 핑크 3진 해금! 핫 핑크를 얻으면 캐릭터 강화에서 무료로 진화할 수 있어요')};
