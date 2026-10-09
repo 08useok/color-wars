@@ -1,6 +1,6 @@
-// 3진 (true form) and 개다래 열매 (catfruit), modelled on the original: clearing 미래편 2장 opens true forms, and each
+// General true forms open after 세계편 3장; 크림·핫 핑크 open after 미래편 2장 and evolve for free.
 // true form costs catfruit of the unit's colour (보라·빨강·파랑·초록·노랑 열매/씨앗, plus 에픽 개다래 for EX·울슈레) and XP.
-// 3진 uses a dedicated atlas where available (cream), otherwise 2진 art with a gold glow.
+// 3진 uses a dedicated atlas where available, otherwise 2진 art with a gold glow.
 // Catfruit comes from 미래편 stages and the daily '개다래 축제' special stage (the day decides the colour).
 const FRUIT_COLORS=['purple','red','blue','green','yellow'];
 const FRUIT_NAME={purple:'보라',red:'빨강',blue:'파랑',green:'초록',yellow:'노랑'};
@@ -16,17 +16,19 @@ try{const v=JSON.parse(localStorage.getItem('red-battle-catfruit-v1')||'{}');for
 try{const v=JSON.parse(localStorage.getItem('red-battle-trueform-v1')||'[]');if(Array.isArray(v))trueForms=v.filter(t=>ALLIES.includes(t))}catch{}
 function saveCatfruit(){try{localStorage.setItem('red-battle-catfruit-v1',JSON.stringify(catfruit))}catch{}}
 function saveTrueForms(){try{localStorage.setItem('red-battle-trueform-v1',JSON.stringify(trueForms))}catch{}}
-function trueFormOpen(){return cleared.includes(FUTURE2_END-1)}
-function hasTrueForm(t){return trueFormOpen()&&trueForms.includes(t)}
+function specialTrueForm(t){return t==='cream'||t==='hotpink'}
+function trueFormOpen(t){return cleared.includes(specialTrueForm(t)?FUTURE2_END-1:CHAPTER1_LEN*3-1)}
+function hasTrueForm(t){return trueFormOpen(t)&&trueForms.includes(t)}
 // The unit's colour decides its catfruit: hue of its UI colour; greys (black, white, silver…) take purple.
 function fruitColorOf(t){
  const hex=(COLORS[t]||'#888888').replace('#',''),[r,g,b]=[0,2,4].map(i=>parseInt(hex.slice(i,i+2),16)/255),mx=Math.max(r,g,b),mn=Math.min(r,g,b),d=mx-mn;
  if(mx===0||d/mx<.18)return 'purple';
  let h=mx===r?((g-b)/d)%6:mx===g?(b-r)/d+2:(r-g)/d+4;h=(h*60+360)%360;
  return h<20||h>=330?'red':h<70?'yellow':h<170?'green':h<265?'blue':'purple'}
-function trueFormCost(t){return TRUE_FORM_COST[gradeOf(t)]||TRUE_FORM_COST.basic}
+function trueFormCost(t){return specialTrueForm(t)?{fruit:0,seed:0,epic:0,xp:0}:TRUE_FORM_COST[gradeOf(t)]||TRUE_FORM_COST.basic}
 function canTrueForm(t){
- if(!trueFormOpen()||trueForms.includes(t)||!allyUnlocked(t)||data.units[t].noEvolve||(training.levels[t]||1)<LV_MAX)return false;
+ if(!trueFormOpen(t)||trueForms.includes(t)||!allyUnlocked(t)||data.units[t].noEvolve||(!specialTrueForm(t)&&(training.levels[t]||1)<LV_MAX))return false;
+ if(specialTrueForm(t))return true;
  const c=trueFormCost(t),col=fruitColorOf(t);
  return catfruit.fruit[col]>=c.fruit&&catfruit.seed[col]>=c.seed&&catfruit.epic>=c.epic&&training.xp>=c.xp}
 function evolveTrueForm(t){
@@ -34,7 +36,7 @@ function evolveTrueForm(t){
  const c=trueFormCost(t),col=fruitColorOf(t);
  catfruit.fruit[col]-=c.fruit;catfruit.seed[col]-=c.seed;catfruit.epic-=c.epic;training.xp-=c.xp;
  trueForms.push(t);delete training.forms[t];saveCatfruit();saveTrueForms();saveTraining();renderTraining();render();return true}
-function costText(t){const c=trueFormCost(t),col=fruitColorOf(t);return `${FRUIT_ICON[col]}${FRUIT_NAME[col]} 열매 ${c.fruit} · 씨앗 ${c.seed}${c.epic?` · ✨에픽 ${c.epic}`:''} · ${c.xp.toLocaleString()} XP`}
+function costText(t){if(specialTrueForm(t))return '미래편 2장 달 클리어 · 재료·XP 소모 없음';const c=trueFormCost(t),col=fruitColorOf(t);return `${FRUIT_ICON[col]}${FRUIT_NAME[col]} 열매 ${c.fruit} · 씨앗 ${c.seed}${c.epic?` · ✨에픽 ${c.epic}`:''} · ${c.xp.toLocaleString()} XP`}
 function catfruitSummary(){return FRUIT_COLORS.map(c=>`${FRUIT_ICON[c]}${catfruit.fruit[c]}/${catfruit.seed[c]}`).join(' ')+` ✨${catfruit.epic}`}
 function addCatfruit(kind,col,n=1){if(kind==='epic')catfruit.epic+=n;else catfruit[kind][col]+=n;saveCatfruit()}
 function catfruitText(kind,col,n){return kind==='epic'?`에픽 개다래 ${n}개`:`${FRUIT_NAME[col]} 개다래 ${kind==='fruit'?'열매':'씨앗'} ${n}개`}
@@ -43,7 +45,7 @@ function catfruitText(kind,col,n){return kind==='epic'?`에픽 개다래 ${n}개
 const _unitStatsCF=unitStats;
 unitStats=function(type,level,form){
  const s=_unitStatsCF.apply(this,arguments);
- if(s.evolved&&hasTrueForm(type)){const atkMult=TRUE_FORM_ATK_MULT[type]||TRUE_FORM_MULT;s.trueForm=true;s.hp=Math.round(s.hp*(TRUE_FORM_HP_MULT[type]||TRUE_FORM_MULT));s.atk=Math.round(s.atk*atkMult);if(s.damageTiers)s.damageTiers=s.damageTiers.map(t=>({...t,dmg:Math.round(t.dmg*atkMult)}));Object.assign(s,TRUE_FORM_BONUS[type])}
+ if((s.evolved||specialTrueForm(type)&&form!==1&&training.forms[type]!==1)&&hasTrueForm(type)){const atkMult=TRUE_FORM_ATK_MULT[type]||TRUE_FORM_MULT;s.evolved=true;s.trueForm=true;s.hp=Math.round(s.hp*(TRUE_FORM_HP_MULT[type]||TRUE_FORM_MULT));s.atk=Math.round(s.atk*atkMult);if(s.damageTiers)s.damageTiers=s.damageTiers.map(t=>({...t,dmg:Math.round(t.dmg*atkMult)}));Object.assign(s,TRUE_FORM_BONUS[type])}
  return s};
 // Battle: 3진 units glow gold.
 const _addUnitCF=addUnit;
@@ -54,21 +56,21 @@ const _renderTrainingCF=renderTraining;
 renderTraining=function(){
  _renderTrainingCF.apply(this,arguments);
  let line=$('#catfruitText');if(!line){line=document.createElement('p');line.id='catfruitText';line.className='catfruit-line';$('#deckText').after(line)}
- line.textContent=trueFormOpen()?`개다래 열매/씨앗 ${catfruitSummary()} · 3진: Lv.${LV_MAX} 이상 2진 캐릭터에게 개다래 열매로 진화`:`개다래 ${catfruitSummary()} · 3진은 미래편 2장 달을 클리어하면 열립니다`;
+ line.textContent=`개다래 ${catfruitSummary()} · 일반 3진: 세계편 3장 달 클리어 후 Lv.${LV_MAX}·개다래로 진화 · 크림: 미래편 2장 달 · 핫 핑크: 미래편 3장 달 클리어 후 무료 진화`;
  for(const card of $('#trainingGrid').children){
   const t=card.dataset.type;
   if(!t||data.units[t].noEvolve)continue;
-  const evolved=(training.levels[t]||1)>=LV_EVOLVE&&training.forms[t]!==1;
+  const evolved=((training.levels[t]||1)>=LV_EVOLVE||specialTrueForm(t)&&hasTrueForm(t))&&training.forms[t]!==1;
   if(hasTrueForm(t)&&evolved){const h=card.querySelector('h3');if(h.firstChild?.nodeType===3)h.firstChild.textContent=unitDisplayName(t,true);card.classList.add('true-form-card')}
-  if(trueFormOpen()&&!trueForms.includes(t)){const b=document.createElement('button');b.className='true-btn';const ok=canTrueForm(t);
-   b.textContent=(training.levels[t]||1)<LV_MAX?`3진: Lv.${LV_MAX} 필요`:`3진 진화 · ${costText(t)}`;b.disabled=!ok;b.title=costText(t);b.onclick=()=>evolveTrueForm(t);card.append(b)}}
+  if(!trueForms.includes(t)){const b=document.createElement('button');b.className='true-btn';const ok=canTrueForm(t);
+   b.textContent=!trueFormOpen(t)?`3진: ${specialTrueForm(t)?'미래편 2장':'세계편 3장'} 달 클리어 필요`:specialTrueForm(t)?'3진 진화':(training.levels[t]||1)<LV_MAX?`3진: Lv.${LV_MAX} 필요`:`3진 진화 · ${costText(t)}`;b.disabled=!ok;b.title=costText(t);b.onclick=()=>evolveTrueForm(t);card.append(b)}}
 };
 
 // Drops: 미래편 stages give seeds (1장) or seeds/fruit (2장) of the stage's colour; the first 2장 Moon clear gives an epic catfruit.
 const CATFRUIT_FUTURE={5:{seed:.25,fruit:0},6:{seed:.35,fruit:.15},7:{seed:.4,fruit:.25}};
 const _finishCF=finish;
 finish=function(win){
- const fresh=!game.ended,idx=selectedStage,st=STAGES[idx],was=cleared.includes(idx),trueWas=trueFormOpen();
+ const fresh=!game.ended,idx=selectedStage,st=STAGES[idx],was=cleared.includes(idx),trueWas=trueFormOpen('cream');
  _finishCF.apply(this,arguments);
  if(!fresh||!win||!st||!st.future)return;
  const ch=st.chapter,base=ch===7?FUTURE3_START:ch===6?FUTURE2_START:FUTURE_START,col=FRUIT_COLORS[(idx-base)%5],p=CATFRUIT_FUTURE[ch]||{seed:0,fruit:0},got=[];
@@ -76,7 +78,7 @@ finish=function(win){
  if(Math.random()<p.fruit){addCatfruit('fruit',col);got.push(catfruitText('fruit',col,1))}
  if((idx===FUTURE2_END-1||idx===FUTURE3_END-1)&&!was){addCatfruit('epic',null,1);got.push(catfruitText('epic',null,1))}
  if(got.length&&typeof gachaAppendDetail==='function')gachaAppendDetail(got.join(' · ')+' 획득!');
- if(!trueWas&&trueFormOpen()&&typeof gachaAppendDetail==='function')gachaAppendDetail('3진이 열렸어요! 캐릭터 강화에서 개다래 열매로 진화할 수 있어요');
+ if(!trueWas&&trueFormOpen('cream')&&typeof gachaAppendDetail==='function')gachaAppendDetail('크림 3진 해금! 캐릭터 강화에서 진화 버튼을 누르면 무료로 진화합니다');
 };
 
 // 개다래 축제: a daily special stage whose catfruit colour follows the weekday (월 보라 · 화 빨강 · 수 파랑 · 목 초록 · 금 노랑 ·
