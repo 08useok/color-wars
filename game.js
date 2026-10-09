@@ -1218,7 +1218,13 @@ function launchWave(u,d){
  for(let k=0;k<n;k++){const el=document.createElement('span');el.className='wave-seg '+(u.ally?'wave-cat':'wave-enemy');el.style.left=(u.x+dir*step*(k+.5))+'%';el.style.display='none';unitsEl.append(el);
   (game.waveFx=game.waveFx||[]).push({el,t:-k*.1})}
  for(const v of [...game.units])if(v.hp>0&&v.kbTime<=0&&v.ally!==u.ally&&v.x>=lo&&v.x<=hi&&!(block&&v.x>=block.x))damage(v,d.atk*(d.wave.mult||1),u);
- if(block)block.pullFxUntil=game.elapsed+STATUS_FX_TIME;
+ if(block)waveBlockFx(block);
+}
+// 파동 스토퍼 이펙트: 막은 자리에 푸른 보호막이 펼쳐지고 파동이 부딪혀 터지며, 막은 아군이 잠깐 빛남
+function waveBlockFx(b){
+ const el=document.createElement('span');el.className='wave-block-fx';el.style.left=b.x+'%';unitsEl.append(el);
+ setTimeout(()=>el.remove(),700);
+ if(b.el){b.el.classList.add('wave-blocked');setTimeout(()=>b.el?.classList.remove('wave-blocked'),450)}
 }
 function updateWaveFx(dt){
  if(!game.waveFx)return;

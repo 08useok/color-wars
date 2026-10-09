@@ -377,3 +377,9 @@ body { overflow:auto; }
 
 .codex-review{margin-top:20px;border-top:1px solid #ffffff24;padding-top:12px}.codex-review small{color:#aabbd0}.codex-review p{line-height:1.8;word-break:keep-all;overflow-wrap:anywhere}.codex-review b{color:#ffe4a0}
 .unit.barrier-on{filter:drop-shadow(0 0 3px #7fe8ff) drop-shadow(0 0 7px #39c6ff)}
+/* 파동 스토퍼: 적 파동을 막을 때의 보호막 이펙트 */
+.wave-block-fx{position:absolute;bottom:10%;width:66px;height:88px;margin-left:-33px;z-index:6;pointer-events:none;border-radius:50% 50% 46% 46%/58% 58% 42% 42%;border:3px solid #d8f8ff;background:radial-gradient(closest-side,#ffffff00 52%,#6fdcff55 74%,#6fdcffcc 100%);box-shadow:0 0 14px #5fd4ff,inset 0 0 16px #9fe9ff;transform-origin:50% 100%;animation:waveBlockShield .65s ease-out forwards}
+.wave-block-fx::after{content:"";position:absolute;left:50%;top:48%;width:34px;height:34px;margin:-17px 0 0 -17px;border:3px solid #fff;border-radius:50%;box-shadow:0 0 10px #8fe6ff;animation:waveBlockRing .5s ease-out forwards}
+@keyframes waveBlockShield{0%{opacity:0;transform:scale(.35)}18%{opacity:1;transform:scale(1.08)}60%{opacity:.9;transform:scale(1)}100%{opacity:0;transform:scale(1.3)}}
+@keyframes waveBlockRing{0%{opacity:1;transform:scale(.4)}100%{opacity:0;transform:scale(2.6)}}
+.unit.wave-blocked{filter:drop-shadow(0 0 4px #d8f8ff) drop-shadow(0 0 10px #39c6ff)}
