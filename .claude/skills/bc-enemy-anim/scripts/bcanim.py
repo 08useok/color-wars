@@ -123,7 +123,7 @@ class Model:
         elif key in ('sx', 'sy', 'opacity', 'fx', 'fy'): v = s[key] * self._tot(S, s['parent'], key, cache)
         c[key] = v; return v
 
-    def render(self, S, skip=lambda s, cutname: False, ss=1.0):
+    def render(self, S, skip=lambda s, cutname, cut: False, ss=1.0):
         """draw a state; returns (RGBA image, origin_x, origin_y) where origin = model (0,0) = the ground point"""
         cache = [dict() for _ in S]
         # positions (y-up), replicating updateSprites
@@ -149,7 +149,7 @@ class Model:
             i = s['id']; op = self._tot(S, i, 'opacity', cache)
             if s['hidden'] or op <= 0 or s['cut'] < 0 or s['cut'] >= len(self.cuts): continue
             cut = self.cuts[s['cut']]; cname = cut[4] if len(cut) > 4 else ''
-            if cut[2] <= 0 or cut[3] <= 0 or skip(s, cname): continue
+            if cut[2] <= 0 or cut[3] <= 0 or skip(s, cname, cut): continue
             ang = math.radians(self._tot(S, i, 'angle', cache))
             sx = self._tot(S, i, 'sx', cache) * self._tot(S, i, 'fx', cache); sy = self._tot(S, i, 'sy', cache) * self._tot(S, i, 'fy', cache)
             c, sn = math.cos(ang), math.sin(ang)

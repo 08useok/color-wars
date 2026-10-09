@@ -22,8 +22,9 @@ def opt(name, default):
     return type(default)(sys.argv[sys.argv.index(name) + 1]) if name in sys.argv else default
 
 
-def is_shadow(s, cname):
-    return any(k in str(cname) + str(s['name']) for k in ('影', 'かげ'))
+def is_shadow(s, cname, cut):
+    # named a shadow AND drawn as a thin strip: some models label real body parts '影' (169 Hyppoh's body)
+    return any(k in str(cname) + str(s['name']) for k in ('影', 'かげ')) and cut[3] <= max(8, cut[2] / 4)
 
 
 def main():
