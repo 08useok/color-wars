@@ -939,13 +939,14 @@ function legendFourStar(i=selectedStage){return !!STAGES[i]?.legend&&legendCrown
 function allyStageAllowed(t,i=selectedStage){return !legendFourStar(i)||['ex','rare'].includes(gradeOf(t))}
 const ALLY_COMBOS=[{id:'great-match',name:'멋진 한 판',members:['red','crimson','maroon'],attackBonus:.1,effect:'공격력 업 소 (+10%)'},
  {id:'violet-night',name:'보랏빛 한밤',members:['midnight','mauve'],cooldownCut:2.63,effect:'재사용 대기시간 감소 대 (-2.6초)'},
- {id:'ice-cream-shop',name:'아이스크림 가게',members:['ivory','mint','cream'],cooldownCut:1.73,effect:'재사용 대기시간 감소 중 (-1.7초)'},
- {id:'construction-site',name:'공사 현장',members:['maple','brick'],cooldownCut:.87,effect:'재사용 대기시간 감소 소 (-0.9초)'}];
+ {id:'ice-cream-shop',name:'아이스크림 가게',members:['ivory','mint','cream'],freezeDurationBonus:.2,effect:'정지 시간 업 중 (+20%)'},
+ {id:'construction-site',name:'공사 현장',members:['maple','brick'],hpBonus:.1,effect:'체력 업 소 (+10%)'}];
 function activeAllyCombos(lineup=deck,stage=selectedStage){const firstRow=new Set(lineup.slice(0,5).filter(t=>allyUnlocked(t)&&allyStageAllowed(t,stage)));return ALLY_COMBOS.filter(c=>c.members.every(t=>firstRow.has(t)))}
 function comboAttackMultiplier(combos){return 1+combos.reduce((sum,c)=>sum+(c.attackBonus||0),0)}
 // 원작 '연구력' 콤보처럼 비율이 아니라 초 단위로 깎고(소 0.87초 · 중 1.73초 · 대 2.63초 · 극대 4.4초), 같은 종류는 더해지며 최소 2초
 function comboCooldownCut(combos){return combos.reduce((sum,c)=>sum+(c.cooldownCut||0),0)}
-function applyAllyComboStats(stats,combos){const mult=comboAttackMultiplier(combos),cut=comboCooldownCut(combos);return {...stats,atk:Math.round(stats.atk*mult),cooldown:cut>0?Math.round(Math.max(Math.min(2,stats.cooldown),stats.cooldown-cut)*10)/10:stats.cooldown,...(stats.damageTiers?{damageTiers:stats.damageTiers.map(t=>({...t,dmg:Math.round(t.dmg*mult)}))}:{})}}
+function comboSum(combos,key){return combos.reduce((sum,c)=>sum+(c[key]||0),0)}// 같은 종류의 콤보 효과는 더해짐 (원작처럼): 체력 업 소 +10% · 중 +20% · 대 +30%, 정지 시간 업 소 +10% · 중 +20% · 대 +30%
+function applyAllyComboStats(stats,combos){const mult=comboAttackMultiplier(combos),cut=comboCooldownCut(combos),hpUp=comboSum(combos,'hpBonus'),frz=comboSum(combos,'freezeDurationBonus');return {...stats,atk:Math.round(stats.atk*mult),...(hpUp?{hp:Math.round(stats.hp*(1+hpUp))}:{}),...(frz&&stats.freezeDuration?{freezeDuration:Math.round(stats.freezeDuration*(1+frz)*100)/100}:{}),cooldown:cut>0?Math.round(Math.max(Math.min(2,stats.cooldown),stats.cooldown-cut)*10)/10:stats.cooldown,...(stats.damageTiers?{damageTiers:stats.damageTiers.map(t=>({...t,dmg:Math.round(t.dmg*mult)}))}:{})}}
 function addUnit(type,boss=false,mag=1){
  if(game.ended||game.assetsLoading)return;
  const d=data.units[type],ally=ALLIES.includes(type);
