@@ -1210,11 +1210,15 @@ function updateSurges(dt){
 // 2 frames per cell, fading out over 12 frames. A step is the game's 200 units, about 6.7% of the field here.
 const WAVE_CELLS=[[1,1],[59,1],[117,1],[1,83],[59,83],[117,83]],WAVE_STEP=6.7;
 function launchWave(u,d){
- const dir=u.ally?-1:1,far=u.x+dir*d.wave.reach,lo=Math.min(u.x,far),hi=Math.max(u.x,far);
- const n=Math.max(1,Math.round(d.wave.reach/WAVE_STEP)),step=d.wave.reach/n;
+ // 파동 스토퍼(원작 Wave Blocker): 적의 파동이 가장 가까운 파동 스토퍼 아군에 닿으면 거기서 끊기고, 그 아군과 뒤쪽 아군은 파동 피해를 받지 않는다
+ const dir=u.ally?-1:1;let reach=d.wave.reach,block=null;
+ if(!u.ally){const lim=u.x+reach;for(const b of game.units)if(b.ally&&b.hp>0&&b.kbTime<=0&&b.stats?.waveBlock&&b.x>=u.x&&b.x<=lim&&(!block||b.x<block.x))block=b;if(block)reach=Math.max(WAVE_STEP/2,block.x-u.x)}
+ const far=u.x+dir*reach,lo=Math.min(u.x,far),hi=Math.max(u.x,far);
+ const n=Math.max(1,Math.round(reach/WAVE_STEP)),step=reach/n;
  for(let k=0;k<n;k++){const el=document.createElement('span');el.className='wave-seg '+(u.ally?'wave-cat':'wave-enemy');el.style.left=(u.x+dir*step*(k+.5))+'%';el.style.display='none';unitsEl.append(el);
   (game.waveFx=game.waveFx||[]).push({el,t:-k*.1})}
- for(const v of [...game.units])if(v.hp>0&&v.kbTime<=0&&v.ally!==u.ally&&v.x>=lo&&v.x<=hi)damage(v,d.atk*(d.wave.mult||1),u);
+ for(const v of [...game.units])if(v.hp>0&&v.kbTime<=0&&v.ally!==u.ally&&v.x>=lo&&v.x<=hi&&!(block&&v.x>=block.x))damage(v,d.atk*(d.wave.mult||1),u);
+ if(block)block.pullFxUntil=game.elapsed+STATUS_FX_TIME;
 }
 function updateWaveFx(dt){
  if(!game.waveFx)return;
@@ -2879,6 +2883,7 @@ function codexTraitBadges(d){const b=[attackTypeOf(d)+' 공격'];for(const t of 
   if(d.atkDownPct)b.push(`공격력 ${Math.round((1-d.atkDownPct)*100)}%로 감소(${freqWord(d.atkDownChance??1)} · ${d.atkDownDuration}초)`);
  }
  if(d.wave)b.push(`파동 공격(${freqWord(d.wave.chance)})`);
+ if(d.waveBlock)b.push('파동 스토퍼');
  if(d.backRange)b.push('뒤쪽까지 공격');
  if(d.rage)b.push(`마지막 히트백 시 공격력 +${Math.round(d.rage*100)}%`);
  if(d.surge)b.push('서지 공격');
