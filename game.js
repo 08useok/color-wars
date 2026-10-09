@@ -759,7 +759,7 @@ data.units.plum={hp:511,atk:341,interval:4.4,speed:5,range:38,cost:550,cooldown:
 data.units.forest={hp:1498,atk:649,interval:2.2,speed:5,range:5,cost:450,cooldown:15,knockbacks:3,strongVs:['angel'],attackDuration:.8,windup:.35};
 data.units.canary={hp:600,atk:480,interval:3.4,speed:5,range:14,cost:575,cooldown:18,knockbacks:3,area:true,freezeChance:.3,freezeDuration:1.5,statusVs:['angel'],attackDuration:.8,windup:.35};
 data.units.cherry={hp:787,atk:731,interval:2,speed:5,range:6,cost:500,cooldown:14,knockbacks:3,extremeVs:['angel'],attackDuration:.8,windup:.35};
-data.units.mauve={hp:703,atk:486,interval:3.6,speed:5,range:24,cost:550,cooldown:18,knockbacks:3,freezeChance:.3,freezeDuration:1.5,statusVs:['floating'],attackDuration:.8,windup:.35};
+data.units.mauve={hp:703,atk:705,interval:3.6,speed:5,range:24,cost:550,cooldown:18,knockbacks:3,freezeChance:.3,freezeDuration:1.5,statusVs:['floating'],attackDuration:.8,windup:.35};
 data.units.khaki={hp:420,atk:520,interval:3,speed:5,range:28,cost:500,cooldown:16,knockbacks:3,massiveVs:['floating'],attackDuration:.8,windup:.35};
 data.units.tangerine={hp:900,atk:380,interval:3,speed:5,range:12,cost:635,cooldown:17,knockbacks:3,area:true,slowChance:.5,slowDuration:3,statusVs:['red'],attackDuration:.8,windup:.35};
 data.units.burgundy={hp:1212,atk:617,interval:2,speed:5,range:5,cost:450,cooldown:15,knockbacks:3,strongVs:['red'],attackDuration:.8,windup:.35};
@@ -806,7 +806,7 @@ data.units.babyblue={hp:210,atk:81,interval:1.5,speed:4.0,range:13.5,cost:295,co
 data.units.mintcyan={hp:240,atk:142,interval:1.63,speed:5.0,range:7.5,cost:110,cooldown:4,knockbacks:3,survive:.5,attackDuration:0.8,windup:0.35};
 data.units.peach={hp:460,atk:102,interval:0.33,speed:4.0,range:6.0,cost:135,cooldown:8,knockbacks:1,resistVs:['angel'],attackDuration:0.3,windup:0.12};
 data.units.lightcream={hp:410,atk:157,interval:1.03,speed:6.0,range:7.5,cost:250,cooldown:12,knockbacks:3,critChance:.05,critMult:2,attackDuration:0.8,windup:0.35};
-data.units.midnight={hp:129,atk:89,interval:2.7,speed:4.0,range:17.0,cost:300,cooldown:12,knockbacks:3,freezeChance:.2,freezeDuration:2,statusVs:['alien'],attackDuration:0.8,windup:0.35};
+data.units.midnight={hp:129,atk:285,interval:2.7,speed:4.0,range:17.0,cost:300,cooldown:12,knockbacks:3,freezeChance:.2,freezeDuration:2,statusVs:['alien'],attackDuration:0.8,windup:0.35};
 data.units.darklilac={hp:280,atk:329,interval:4.03,speed:4.0,range:15.5,cost:250,cooldown:15,knockbacks:3,atkDownPct:.5,atkDownChance:.5,atkDownDuration:6.67,statusVs:['alien'],attackDuration:0.8,windup:0.35};
 data.units.fusioncream={hp:610,atk:132,interval:0.3,speed:6.0,range:9.0,cost:400,cooldown:25,knockbacks:1,massiveVs:['alien'],attackDuration:0.27,windup:0.1};
 data.units.silver={hp:490,atk:756,interval:15,speed:5.0,range:17.5,cost:470,cooldown:30,knockbacks:3,area:true,attackClass:'범위',backRange:15,critChance:1,critMult:2,attackDuration:0.8,windup:0.35};// 원본 치어리더 캣(20.3초)을 15초로 줄이고 범위 · 전방 사거리 ~ 뒤쪽 -300(15)까지 타격
@@ -869,10 +869,12 @@ function allyDeployCount(){return game.units.filter(u=>u.ally&&u.hp>0).length}
 function allyDeployFull(){return allyDeployCount()>=ALLY_DEPLOY_LIMIT}
 function legendFourStar(i=selectedStage){return !!STAGES[i]?.legend&&legendCrown===4}
 function allyStageAllowed(t,i=selectedStage){return !legendFourStar(i)||['ex','rare'].includes(gradeOf(t))}
-const ALLY_COMBOS=[{id:'great-match',name:'멋진 한 판',members:['red','crimson','maroon'],attackBonus:.1,effect:'공격력 업 소 (+10%)'}];
+const ALLY_COMBOS=[{id:'great-match',name:'멋진 한 판',members:['red','crimson','maroon'],attackBonus:.1,effect:'공격력 업 소 (+10%)'},
+ {id:'violet-night',name:'보랏빛 한밤',members:['midnight','mauve'],cooldownCut:.2,effect:'재사용 대기시간 감소 대 (-20%)'}];
 function activeAllyCombos(lineup=deck,stage=selectedStage){const firstRow=new Set(lineup.slice(0,5).filter(t=>allyUnlocked(t)&&allyStageAllowed(t,stage)));return ALLY_COMBOS.filter(c=>c.members.every(t=>firstRow.has(t)))}
 function comboAttackMultiplier(combos){return 1+combos.reduce((sum,c)=>sum+(c.attackBonus||0),0)}
-function applyAllyComboStats(stats,combos){const mult=comboAttackMultiplier(combos);return {...stats,atk:Math.round(stats.atk*mult),...(stats.damageTiers?{damageTiers:stats.damageTiers.map(t=>({...t,dmg:Math.round(t.dmg*mult)}))}:{})}}
+function comboCooldownMultiplier(combos){return 1-Math.min(.8,combos.reduce((sum,c)=>sum+(c.cooldownCut||0),0))}
+function applyAllyComboStats(stats,combos){const mult=comboAttackMultiplier(combos),cd=comboCooldownMultiplier(combos);return {...stats,atk:Math.round(stats.atk*mult),cooldown:cd<1?Math.round(stats.cooldown*cd*10)/10:stats.cooldown,...(stats.damageTiers?{damageTiers:stats.damageTiers.map(t=>({...t,dmg:Math.round(t.dmg*mult)}))}:{})}}
 function addUnit(type,boss=false,mag=1){
  if(game.ended||game.assetsLoading)return;
  const d=data.units[type],ally=ALLIES.includes(type);
@@ -2397,10 +2399,10 @@ const LV20_TARGET={iron:{hp:50000,atk:14000},grey:{hp:30000,atk:16000},carmine:{
  black:{hp:28493,atk:2226},white:{hp:12000,atk:850},maroon:{hp:16963,atk:2474},brown:{hp:28990,atk:1226},tan:{hp:17600,atk:1800},beige:{hp:22400,atk:3150},cream:{hp:25424,atk:1816},olive:{hp:19200,atk:1700},clover:{hp:18157,atk:2594},indigo:{hp:17936,atk:2578},lilac:{hp:17600,atk:1900},hotpink:{hp:15782,atk:2302},ruby:{hp:19200,atk:2750},hacienda:{hp:18112,atk:2151},
  garnet:{hp:123400,atk:19744},prism:{hp:26000,atk:37600},rainbow:{hp:30000,atk:16000},// 프리즘 Lv.20 공격력 = 레드 2진 DPS(800)의 10배 ÷ 공격 주기 5.4초 ÷ 2진 +15%
  
- plum:{hp:16358,atk:3408},forest:{hp:47424,atk:5242},canary:{hp:19200,atk:3800},cherry:{hp:25178,atk:4496},mauve:{hp:22493,atk:4601},khaki:{hp:13400,atk:5500},tangerine:{hp:28800,atk:3800},burgundy:{hp:38570,atk:5290},mustard:{hp:32000,atk:5200},sky:{hp:19680,atk:4674},denim:{hp:31667,atk:5690},charcoal:{hp:15400,atk:4000},
+ plum:{hp:16358,atk:3408},forest:{hp:47424,atk:5242},canary:{hp:19200,atk:3800},cherry:{hp:25178,atk:4496},mauve:{hp:22493,atk:6671},khaki:{hp:13400,atk:5500},tangerine:{hp:28800,atk:3800},burgundy:{hp:38570,atk:5290},mustard:{hp:32000,atk:5200},sky:{hp:19680,atk:4674},denim:{hp:31667,atk:5690},charcoal:{hp:15400,atk:4000},
  cornflower:{hp:16000,atk:5500},bittersweet:{hp:22400,atk:4400},claret:{hp:14800,atk:3200},verdigris:{hp:32000,atk:4200},
  ribbonorange:{hp:22000,atk:4000},ribbonchart:{hp:20000,atk:1500},obsidian:{hp:14000,atk:3000},lapis:{hp:34800,atk:3712},selenite:{hp:23180,atk:5216},topaz:{hp:20128,atk:4780},maple:{hp:28262,atk:3696},brick:{hp:15300,atk:4250},korn:{hp:12000,atk:3300},teal:{hp:16290,atk:4996},violet:{hp:12000,atk:1300},orchid:{hp:30000,atk:9000},
- cobalt:{hp:13600,atk:4250},flame:{hp:11050,atk:1870},scarlet:{hp:13005,atk:1530},moss:{hp:25380,atk:3958},coral:{hp:4949,atk:2020},aqua:{hp:8550,atk:914},cooper:{hp:11390,atk:1410},navy:{hp:13600,atk:5440},dandelion:{hp:12000,atk:2470},babyblue:{hp:5950,atk:730},mintcyan:{hp:6800,atk:1275},peach:{hp:12750,atk:917},lightcream:{hp:11390,atk:1410},midnight:{hp:3599,atk:800},darklilac:{hp:7799,atk:2965},fusioncream:{hp:17000,atk:1190},silver:{hp:13600,atk:6800},lava:{hp:26350,atk:12155},babypink:{hp:12240,atk:6800},magenta:{hp:30600,atk:12240}
+ cobalt:{hp:13600,atk:4250},flame:{hp:11050,atk:1870},scarlet:{hp:13005,atk:1530},moss:{hp:25380,atk:3958},coral:{hp:4949,atk:2020},aqua:{hp:8550,atk:914},cooper:{hp:11390,atk:1410},navy:{hp:13600,atk:5440},dandelion:{hp:12000,atk:2470},babyblue:{hp:5950,atk:730},mintcyan:{hp:6800,atk:1275},peach:{hp:12750,atk:917},lightcream:{hp:11390,atk:1410},midnight:{hp:3599,atk:2560},darklilac:{hp:7799,atk:2965},fusioncream:{hp:17000,atk:1190},silver:{hp:13600,atk:6800},lava:{hp:26350,atk:12155},babypink:{hp:12240,atk:6800},magenta:{hp:30600,atk:12240}
 };
 function levelMult(base,target,level,curve=1,m10Hp=null,slope=.1){
  const lv=Math.min(level,LV_MAX),m10=m10Hp||1+slope*(LV_EVOLVE-1);
