@@ -938,7 +938,9 @@ function allyDeployFull(){return allyDeployCount()>=ALLY_DEPLOY_LIMIT}
 function legendFourStar(i=selectedStage){return !!STAGES[i]?.legend&&legendCrown===4}
 function allyStageAllowed(t,i=selectedStage){return !legendFourStar(i)||['ex','rare'].includes(gradeOf(t))}
 const ALLY_COMBOS=[{id:'great-match',name:'멋진 한 판',members:['red','crimson','maroon'],attackBonus:.1,effect:'공격력 업 소 (+10%)'},
- {id:'violet-night',name:'보랏빛 한밤',members:['midnight','mauve'],cooldownCut:2.63,effect:'재사용 대기시간 감소 대 (-2.6초)'}];
+ {id:'violet-night',name:'보랏빛 한밤',members:['midnight','mauve'],cooldownCut:2.63,effect:'재사용 대기시간 감소 대 (-2.6초)'},
+ {id:'ice-cream-shop',name:'아이스크림 가게',members:['ivory','mint','cream'],cooldownCut:1.73,effect:'재사용 대기시간 감소 중 (-1.7초)'},
+ {id:'construction-site',name:'공사 현장',members:['maple','brick'],cooldownCut:.87,effect:'재사용 대기시간 감소 소 (-0.9초)'}];
 function activeAllyCombos(lineup=deck,stage=selectedStage){const firstRow=new Set(lineup.slice(0,5).filter(t=>allyUnlocked(t)&&allyStageAllowed(t,stage)));return ALLY_COMBOS.filter(c=>c.members.every(t=>firstRow.has(t)))}
 function comboAttackMultiplier(combos){return 1+combos.reduce((sum,c)=>sum+(c.attackBonus||0),0)}
 // 원작 '연구력' 콤보처럼 비율이 아니라 초 단위로 깎고(소 0.87초 · 중 1.73초 · 대 2.63초 · 극대 4.4초), 같은 종류는 더해지며 최소 2초
