@@ -67,16 +67,16 @@ renderTraining=function(){
 };
 
 // Drops: 미래편 stages give seeds (1장) or seeds/fruit (2장) of the stage's colour; the first 2장 Moon clear gives an epic catfruit.
-const CATFRUIT_FUTURE={5:{seed:.25,fruit:0},6:{seed:.35,fruit:.15},7:{seed:.4,fruit:.25}};
+const CATFRUIT_FUTURE={5:{seed:.25,fruit:0},6:{seed:.35,fruit:.15},7:{seed:.4,fruit:.25},8:{seed:.45,fruit:.3}};
 const _finishCF=finish;
 finish=function(win){
  const fresh=!game.ended,idx=selectedStage,st=STAGES[idx],was=cleared.includes(idx),trueWas=trueFormOpen('cream');
  _finishCF.apply(this,arguments);
  if(!fresh||!win||!st||!st.future)return;
- const ch=st.chapter,base=ch===7?FUTURE3_START:ch===6?FUTURE2_START:FUTURE_START,col=FRUIT_COLORS[(idx-base)%5],p=CATFRUIT_FUTURE[ch]||{seed:0,fruit:0},got=[];
+ const ch=st.chapter,base=ch===8?COSMOS_START:ch===7?FUTURE3_START:ch===6?FUTURE2_START:FUTURE_START,col=FRUIT_COLORS[(idx-base)%5],p=CATFRUIT_FUTURE[ch]||{seed:0,fruit:0},got=[];
  if(Math.random()<p.seed){addCatfruit('seed',col);got.push(catfruitText('seed',col,1))}
  if(Math.random()<p.fruit){addCatfruit('fruit',col);got.push(catfruitText('fruit',col,1))}
- if((idx===FUTURE2_END-1||idx===FUTURE3_END-1)&&!was){addCatfruit('epic',null,1);got.push(catfruitText('epic',null,1))}
+ if((idx===FUTURE2_END-1||idx===FUTURE3_END-1||idx===COSMOS_END-1)&&!was){addCatfruit('epic',null,1);got.push(catfruitText('epic',null,1))}
  if(got.length&&typeof gachaAppendDetail==='function')gachaAppendDetail(got.join(' · ')+' 획득!');
  if(!trueWas&&trueFormOpen('cream')&&typeof gachaAppendDetail==='function')gachaAppendDetail('크림 3진 해금! 캐릭터 강화에서 진화 버튼을 누르면 무료로 진화합니다');
 };

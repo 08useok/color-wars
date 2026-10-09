@@ -1,10 +1,12 @@
 // Game version and the in-game update notice. Like the original, MAJOR goes up when a big story opens:
-// v1 세계편 (first push, 2026-09-24) · v2 레전드 스토리 (09-30) · v3 미래편 1장 (10-03) · v4 미래편 2장 + 3진 (10-06) · v5 미래편 3장 (10-08).
+// v1 세계편 (first push, 2026-09-24) · v2 레전드 스토리 (09-30) · v3 미래편 1장 (10-03) · v4 미래편 2장 + 3진 (10-06) · v5 미래편 3장 (10-08) · v6 우주편 1장 (10-09).
 // Between those, every push counts: a new feature bumps MINOR, fixes/balance only bump PATCH.
 // A new NOTICE.version shows the notice once on load; the 공지 button on the stage screen reopens it.
-const GAME_VERSION='5.0.1';
+const GAME_VERSION='6.0.0';
 const NOTICE={version:GAME_VERSION,date:'2026-10-09',title:`v${GAME_VERSION} 업데이트`,html:`
-<p class="notice-lead">지금까지 <b>세계편 1~3장 · 미래편 1~3장 · 레전드 스토리 1~27장</b>을 담았습니다.</p>
+<p class="notice-lead">지금까지 <b>세계편 1~3장 · 미래편 1~3장 · 우주편 1장 · 레전드 스토리 1~27장</b>을 담았습니다.</p>
+<h3>🌌 v6.0.0 우주편 1장</h3>
+<ul><li>미래편 3장 달을 클리어하면 열립니다. 지구 ~ 빅뱅 48개 스테이지를 원작 우주편 1장 적 구성 그대로 담았습니다.</li><li>새 적 <b>별 에이리언</b> 7종: 엘리트 에이리뭉·스타 펭·그레고리 장군·엄마빠옹·화백·캡틴 모구·스페이스맨 보그. 원작 이동·공격·넉백 모션을 넣었습니다.</li><li><b>바리어</b>: 파랗게 빛나는 적은 바리어 수치 이하의 공격을 막습니다. 한 방에 그보다 큰 피해를 주면 깨집니다.</li><li><b>워프</b>: 일부 별 에이리언은 맞은 아군을 멀리 뒤로 보냅니다.</li><li>최종 보스 <b>신님</b>: 체력 140만, 사거리 1000의 떠 있는 적. 3연속 공격으로 넓은 범위를 쓸어 버립니다.</li><li>우주편 전용 억제기 2개(과자 행성·빅뱅). 개다래 씨앗 45%·열매 30% 드롭, 빅뱅 첫 클리어 때 에픽 개다래와 10회 뽑기권.</li></ul>
 <h3>🛸 v5.0.0 미래편 3장</h3>
 <ul><li>미래편 2장 달을 클리어하면 열립니다. 일본 ~ 달 48개 스테이지를 원작 3장 적 구성 그대로 담았습니다.</li><li>3장 전용 억제기 2개(심해의 소용돌이·달), 클리어 시 에이리언 배율 −100%씩.</li><li>최종 보스 <b>폭주의 냥코무트</b>: 체력 122만·공격력 4.4만의 떠 있는 에이리언. 아주 빠르게 날아와 범위 공격을 합니다. 원작 이동·공격·넉백 모션을 넣었습니다.</li><li>에일리언 맴매·찡찡어·알파카·거장도 3장 스테이지에 등장합니다.</li><li>3장 스테이지는 개다래 씨앗 40%·열매 25% 확률로 드롭하고, 달 첫 클리어 때 에픽 개다래와 10회 뽑기권을 줍니다.</li></ul>
 <h3>🫧 핫 핑크 3진</h3>
