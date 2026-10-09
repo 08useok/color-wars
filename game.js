@@ -633,6 +633,16 @@ data.units.ursamajor={trait:'alien',hp:80000,atk:3000,interval:2.4,speed:4.5,ran
 data.units.clione={trait:'alien',hp:600000,atk:8000,interval:4.833,speed:3,range:10,reward:6000,knockbacks:3,attackDuration:4.833,windup:2.367,area:true};
 data.units.nimoy={trait:'alien',hp:500000,atk:5000,interval:3,speed:4,range:7,reward:5000,knockbacks:3,attackDuration:0.367,windup:0.267,area:true};
 data.units.liz56={trait:'alien',hp:150000,atk:2000,interval:1.5,speed:5.6,range:5,reward:3000,knockbacks:4,attackDuration:.8,windup:.45,area:true};
+// Original enemy abilities: durations use seconds; wave reach follows the enemy art scale.
+Object.assign(data.units.sael,{slowChance:.2,slowDuration:2});
+Object.assign(data.units.maawth,{freezeChance:.3,freezeDuration:2});
+Object.assign(data.units.lemurr,{atkDownChance:.25,atkDownPct:.8,atkDownDuration:10});
+Object.assign(data.units.krabbe,{survive:1,surviveOnce:true});
+Object.assign(data.units.phace,{freezeChance:.3,freezeDuration:2});
+Object.assign(data.units.ursamajor,{strengthen:{at:.5,mult:2}});
+Object.assign(data.units.clione,{atkDownChance:.2,atkDownPct:.9,atkDownDuration:10});
+Object.assign(data.units.nimoy,{blowChance:.5,blowDistance:14});
+Object.assign(data.units.liz56,{wave:{chance:1,reach:29.5}});
 // Shy Boy: original 100% stats; movement x0.536 and range x0.034 for this battlefield.
 data.units.shyboy={traits:['red','floating'],hp:35000,atk:500,interval:22/30,speed:21.44,range:5.1,reward:1500,knockbacks:2,attackDuration:22/30,windup:12/30,area:true};
 data.units.gorydark={trait:'black',hp:12000,atk:600,interval:16/30,speed:8,range:5,reward:500,knockbacks:3,attackDuration:.5,windup:.27,area:true};
@@ -1144,11 +1154,17 @@ function updateWaveFx(dt){
 // The Face family screams a sonic shout (tinted per body colour), Mooth flaps a wind gust.
 const BEAM_FX={rainbow:{beam:'rainbow-beam',hit:'rainbow-hit'},prism:{beam:'prism-beam',hit:'prism-hit'},
  phace:{beam:'shout-beam',hit:'shout-hit',color:'#9ff7ef'},shyboy:{beam:'shout-beam',hit:'shout-hit',color:'#ff8a4d'},
- mooth:{beam:'gust-beam',hit:'gust-hit'}};
+ mooth:{beam:'gust-beam',hit:'gust-hit'},alpacky:{beam:'spit-beam',hit:'spit-hit',color:'#93e9d5',mouth:true},camelle:{beam:'spit-beam',hit:'spit-hit',color:'#ead6a5',mouth:true}};
 function beamFx(u,d){
  const fx=BEAM_FX[u.type],dir=u.ally?-1:1,near=u.x+dir,far=u.x+dir*(d.zoneMax??d.range),lo=Math.min(near,far),hi=Math.max(near,far);
  const el=document.createElement('span');el.className='beam-fx '+fx.beam+(u.ally?'':' beam-right');el.style.left=lo+'%';el.style.width=(hi-lo)+'%';
  if(fx.color)el.style.setProperty('--fx',fx.color);
+ if(fx.mouth){const sprite=u.el.querySelector('.dog-sprite'),scale=NEW_ATLASES[u.type].scale,fieldWidth=unitsEl.getBoundingClientRect().width;
+  const mouthX=u.x+(parseFloat(sprite.style.left)+parseFloat(sprite.style.width)*scale-21)/fieldWidth*100;
+  const mouthHeight=parseFloat(sprite.style.bottom)+parseFloat(sprite.style.height)*scale*.72,dx=(far-mouthX)/100*fieldWidth,dy=mouthHeight-20;
+  el.style.left=mouthX+'%';el.style.width=Math.hypot(dx,dy)+'px';
+  el.style.bottom=`calc(15% + ${mouthHeight-5}px)`;el.style.setProperty('--spit-angle',Math.atan2(dy,dx)+'rad');
+ }
  if(d.zoneMin)el.style.setProperty('--dead',Math.min(100,(d.zoneMin-1)/(hi-lo)*100)+'%');
  unitsEl.append(el);game.effects.push({el,time:.5});
 }
@@ -2046,13 +2062,17 @@ NEW_ATLASES.alienbunbun={"sheet":"assets/anim_alienbunbun.webp","scale":0.833,"w
 NEW_ATLASES.mrmole={"sheet":"assets/anim_mrmole.webp","scale":0.833,"walkStep":0.06666666666666667,"attackStep":2,"left":-67.298,"walk":[[0,0,102,36,0,0],[104,0,108,37,3,0],[214,0,115,35,7,1],[331,0,121,36,11,0],[454,0,122,37,14,-1],[578,0,123,37,17,-1],[703,0,126,36,21,0],[831,0,100,36,-2,0],[933,0,106,36,2,0],[1041,0,111,35,5,1],[1154,0,118,34,9,1],[1274,0,122,36,12,-1],[1398,0,124,37,16,-1],[1524,0,126,36,20,0],[1652,0,126,36,22,0],[1780,0,88,36,-14,0],[1870,0,96,37,-9,0],[1968,0,104,35,-4,1],[2074,0,110,36,0,0],[2186,0,114,37,6,-1],[2302,0,117,36,10,0],[2421,0,120,36,15,0],[2543,0,121,36,18,0]],"attack":[[2666,0,104,77,-1,-1],[2772,0,104,78,-1,-1],[2878,0,104,78,-1,-1],[2984,0,104,79,-1,-1],[3090,0,103,79,-1,-1],[3195,0,103,80,-1,-1],[3300,0,103,80,-1,-1],[3405,0,103,80,-1,-1],[3510,0,103,80,-1,-1],[3615,0,103,81,-1,-1],[3720,0,103,81,-1,-1],[3825,0,104,81,0,-1],[3931,0,105,81,1,-1],[0,83,99,81,-6,-1],[101,83,84,49,-12,-2],[187,83,68,31,-15,0],[257,83,63,21,-18,2],[322,83,41,14,-30,3],[365,83,36,13,-34,3],[403,83,37,13,-33,3],[442,83,37,13,-33,3],[481,83,37,13,-33,3],[520,83,37,13,-33,3],[559,83,37,13,-33,3],[598,83,37,13,-33,3],[637,83,37,13,-33,3],[676,83,37,13,-33,3],[715,83,37,13,-33,3],[754,83,37,13,-33,3],[793,83,37,13,-33,3],[832,83,225,33,-33,-1],[1059,83,284,255,-33,-1],[1345,83,295,344,-33,-2],[1642,83,308,385,-33,-2],[1952,83,317,397,-33,-2],[2271,83,337,409,-33,-2],[2610,83,275,401,-33,-2],[2887,83,240,335,-33,-2],[3129,83,238,302,-33,-2],[3369,83,237,243,-33,-2],[3608,83,221,58,-33,-2],[3831,83,222,42,-33,-2],[0,494,223,40,-33,-3],[225,494,224,44,-33,-4],[451,494,226,37,-33,-2],[679,494,229,19,-33,2],[910,494,223,17,-35,2],[1135,494,49,17,-24,2],[1186,494,70,33,-19,2],[1258,494,70,40,-19,1],[1330,494,70,41,-19,1],[1402,494,70,41,-19,1],[1474,494,70,41,-19,1]],"hurt":[[1546,494,84,149,9,-1]]};
 LEGEND_STAGES6.forEach((t,j)=>{t.desc=stageEnemies(LEGEND6_START+j).map(n=>UNIT_NAMES[n]).join(' · ');STAGES[LEGEND6_START+j].desc=t.desc});
 NEW_ATLASES.hotpink.true={"sheet":"assets/hotpink_3.webp?v=1","walkStep":0.07,"strike":14,"walk":[[0,0,229,240,0,0],[233,0,216,242,28,0],[453,0,216,245,31,0],[673,0,211,244,32,0],[888,0,214,244,30,0],[1106,0,206,243,35,0],[1316,0,218,245,-11,0],[1538,0,209,246,27,0],[1751,0,214,245,33,0],[1969,0,218,245,31,0],[2191,0,215,244,31,0],[2410,0,206,245,33,0],[2620,0,225,241,-4,0],[2849,0,214,242,27,0],[3067,0,213,239,29,0],[3284,0,215,242,32,0],[3503,0,217,239,32,0],[3724,0,202,246,35,0],[0,250,217,243,-8,0],[221,250,213,246,26,0],[438,250,212,244,33,0],[654,250,217,246,31,0],[875,250,214,242,30,0],[1093,250,207,246,34,0]],"scale":0.375,"left":-21.94,"attack":[[1304,250,199,240,23,0],[1507,250,168,241,52,0],[1679,250,213,241,62,0],[1896,250,198,237,55,0],[2098,250,202,241,55,0],[2304,250,192,241,56,0],[2500,250,173,245,23,0],[2677,250,201,245,55,0],[2882,250,203,244,57,0],[3089,250,197,243,53,0],[3290,250,201,244,56,0],[3495,250,196,243,57,0],[3695,250,198,244,43,0],[0,500,207,244,61,0],[211,500,348,245,60,0],[563,500,232,229,51,0],[799,500,202,226,42,0],[1005,500,185,231,52,0],[1194,500,190,230,42,0],[1388,500,201,244,25,0],[1593,500,215,243,56,0],[1812,500,170,245,60,0],[1986,500,171,243,41,0],[2161,500,169,243,38,0],[2334,500,173,245,46,0],[2511,500,204,243,24,0],[2719,500,198,250,55,0],[2921,500,196,250,55,0]],"hurt":[[3121,500,240,240,0,0]]};
+// Keep the original body pivot fixed when enlarging the spit attackers.
+for(const type of ['alpacky','camelle']){
+ const atlas=NEW_ATLASES[type];atlas.left=21+(atlas.left-21)/atlas.scale*1.2;atlas.scale=1.2;
+}
 function animateAtlas(u){
  const baseAtlas=NEW_ATLASES[u.type];
  let atlas=(u.stats?.trueForm&&baseAtlas.true)?baseAtlas.true:(u.stats?.evolved&&baseAtlas.evolved)?baseAtlas.evolved:baseAtlas;
  const state=u.hurtTime>0?'hurt':u.attackTime>0?'attack':'walk';
  if(state==='attack'&&atlas.attackAtlas)atlas={...atlas,...atlas.attackAtlas};
- // Gory's raised-fists sprite is its actual hitback pose; Peng uses an upright pose.
- const visualState=state==='hurt'&&u.type==='gory'?'attack':state==='hurt'&&(['peng'].includes(u.type)||!atlas.hurt)?'walk':state;
+ // Gory uses its raised-fists pose; other enemies use their hurt drawing when available.
+ const visualState=state==='hurt'&&u.type==='gory'?'attack':state==='hurt'&&!atlas.hurt?'walk':state;
  let frames=atlas[visualState];
  if(visualState==='walk'&&atlas.dash){const foe=target(u),d0=u.stats||data.units[u.type];if(foe&&Math.abs(foe.x-u.x)<=(d0.range||10)*2)frames=atlas.dash}
  const duration=u.stats?.attackDuration||data.units[u.type].attackDuration||.56;
@@ -2343,7 +2363,7 @@ const LEVEL_HARD_MAX=40;// 랭크 보상으로 늘어날 수 있는 레벨 상�
 function overMult(level){return 1+.04*Math.max(0,level-LV_MAX)}// Lv.21 이상: 레벨당 체력·공격력 +4%
 function levelCapOf(t){const c=levelCap();return c<LV_MAX?c:Math.max(c,typeof rankCapOf==='function'?rankCapOf(gradeOf(t)):c)+(t==='ribbonorange'&&ribbonSave.cap?5:0)}// 등급별 상한: 기본 20 + 랭크 보상(rank.js)
 function levelCap(){return cleared.includes(CHAPTER1_LEN*2-1)?LV_MAX:LV_EVOLVE}// Lv.11~20 unlocks after clearing the last chapter-2 stage
-const ECON_COST=[1000,2000,4000,8000,16000,32000,43000,58000,78000,105000,142000,192000,259000,350000,473000,639000,863000,1165000,1573000,2124000],WALLET_STEP=400,PROD_STEP=.15,STUDY_STEP=.08,ACC_STEP=.12;// permanent XP upgrades (max Lv.20; costs double up to Lv.6, then grow x1.35 per level; 성 체력 stays Lv.10): wallet cap +400/level, money rate +15%/level, 공부력 (clear XP) +8%/level, 회계력 (money per kill) +12%/level
+const ECON_COST=[1000,2000,4000,8000,16000,32000,43000,58000,78000,105000,142000,192000,259000,350000,473000,639000,863000,1165000,1573000,2124000],WALLET_STEP=400,PROD_STEP=.125,STUDY_STEP=.08,ACC_STEP=.12;// permanent XP upgrades (max Lv.20; costs double up to Lv.6, then grow x1.35 per level; 성 체력 stays Lv.10): wallet cap +400/level, money rate +12.5%/level (max +250%), 공부력 (clear XP) +8%/level, 회계력 (money per kill) +12%/level
 let training={xp:0,baseLevel:1,levels:Object.fromEntries(ALLIES.map(t=>[t,1])),forms:{},walletLevel:0,prodLevel:0,studyLevel:0,accLevel:0},trainingSaveFailed=false;
 function stageXP(i){return STAGES[i]?.future?STAGES[i].xp:(200+i*50)*2}
 try{
@@ -2435,6 +2455,8 @@ function ch1Cost(c){return selectedStage>=0&&selectedStage<CHAPTER1_LEN?Math.rou
 function scaledCost(type,c){const d=data.units[type];return ch1Cost(type==='red'||d?.flatCost?c:Math.round(c*COST_SCALE/5)*5)}
 function evoCost(type,base){const fixed=data.units[type]?.evoCost;if(fixed)return ch1Cost(fixed);// evoCost: 2진 가격을 직접 지정 (레드 75, 블루 500)
  if(data.units[type]?.flatCost)return base;return Math.round(base*EVO_COST_MULT[gradeOf(type)]/5)*5}// flatCost: 울슈레는 1·2진 같은 가격
+// Double ally reproduction waits before applying evolution and combo modifiers.
+for(const type of ALLIES)if(data.units[type].cooldown!==undefined)data.units[type].cooldown*=2;
 function unitStats(type,level=training.levels[type]||1,form=training.forms?.[type]===1?1:2){const d=data.units[type],T=LV20_TARGET[type],hpM=levelMult(d.hp,T?.hp,level,HP_CURVE,d.noEvolve?null:HP_LV10_MULT)*overMult(level),atkM=levelMult(d.atk,T?.atk,level,1,null,ATK_SLOPE[type])*overMult(level),mag=ALLIES.includes(type)?1:enemyMagnification()*(hasTrait(d,'alien')?alienMagnification():1),stats={...d,hp:Math.round(d.hp*hpM*mag),atk:Math.round(d.atk*atkM*mag)};if(ALLIES.includes(type))stats.cost=scaledCost(type,d.cost);if(d.damageTiers)stats.damageTiers=d.damageTiers.map(t=>({...t,dmg:Math.round(t.dmg*atkM)}));if(level<LV_EVOLVE||form===1||d.noEvolve)return stats;stats.evolved=true;stats.cost=evoCost(type,scaledCost(type,d.cost));stats.hp=Math.round(stats.hp*(type==='yellow'?1.2:1.15));if(!EVO_ATK_BONUS[type]){const k=1.15;stats.atk=Math.round(stats.atk*k);if(stats.damageTiers)stats.damageTiers=stats.damageTiers.map(t=>({...t,dmg:Math.round(t.dmg*k)}))}stats.range=type==='raspberry'?d.range*1.1:d.noRangeGrow?d.range:d.range*1.2;if(d.engageRange)stats.engageRange=d.engageRange*1.2;if(type==='red')stats.atk=Math.round(stats.atk*1.2);if(type==='orange')stats.splash=d.splash*1.35;if(type==='green')stats.returnMult=1.35;if(type==='cyan')stats.splash=d.splash*1.3;if(type==='blue')stats.interval=d.interval*.8;if(type==='purple'){stats.redDamage=1.8;stats.redResist=.4}if(type==='pink')stats.atk=Math.round(stats.atk*1.15);
  if(type==='crimson')stats.atk=Math.round(stats.atk*1.2);
  if(['black','hacienda','forest','burgundy','denim','khaki','mustard','cherry','claret','verdigris','rainbow','cobalt','flame','scarlet','coral','navy','lava','fusioncream'].includes(type))stats.atk=Math.round(stats.atk*1.2);
@@ -2564,7 +2586,7 @@ function renderBaseUpgrade(){
  const b=document.createElement('button');b.textContent=l>=BASE_MAX?'최대 레벨':l>=cap?`세계편 ${cap===10?2:3}장 클리어 시 Lv.${cap===10?20:30}`:baseHpCost().toLocaleString()+' XP · 강화';b.disabled=l>=cap||training.xp<baseHpCost();b.onclick=()=>upgradeBase();card.append(b);
  grid.append(card);
  {const n=chapterBonusCount(),c=document.createElement('article');c.className='training-card';c.innerHTML=`<h3>장 클리어 보너스 <small>${n} / 3장</small></h3><p>1·2·3장의 달을 처음 깨면 영구 적용<br>지갑 +${(CHAPTER_BONUS.wallet*n).toLocaleString()}원 · 생산 +${Math.round(CHAPTER_BONUS.rate*n*100)}% · 처치 시 돈 +${Math.round(CHAPTER_BONUS.gold*n*100)}%<br><small>장마다 지갑 +${CHAPTER_BONUS.wallet.toLocaleString()} · 생산 +${Math.round(CHAPTER_BONUS.rate*100)}% · 처치 시 돈 +${Math.round(CHAPTER_BONUS.gold*100)}%</small></p>`;grid.append(c)}
- for(const[k,title,desc,fmt]of[['walletLevel','지갑 상한','전투 중 보유할 수 있는 돈의 상한',n=>'+'+WALLET_STEP*n+'원'],['prodLevel','돈 생산력','시간당 돈이 모이는 속도',n=>'+'+Math.round(PROD_STEP*n*100)+'%'],['studyLevel','공부력','스테이지 클리어 보상 XP 증가',n=>'+'+Math.round(STUDY_STEP*n*100)+'%'],['accLevel','회계력','적을 쓰러뜨릴 때 받는 돈 증가',n=>'+'+Math.round(ACC_STEP*n*100)+'%']]){const lv=training[k],max=ECON_COST.length,c=document.createElement('article');c.className='training-card';c.innerHTML=`<h3>${title} <small>Lv.${lv} / ${max}</small></h3><p>${desc}<br>${fmt(lv)}${lv<max?' → '+fmt(lv+1):''}</p>`;const eb=document.createElement('button');eb.textContent=lv>=max?'최대 레벨':ECON_COST[lv]+' XP · 강화';eb.disabled=lv>=max||training.xp<ECON_COST[lv];eb.onclick=()=>upgradeEcon(k);c.append(eb);grid.append(c)}
+ for(const[k,title,desc,fmt]of[['walletLevel','지갑 상한','전투 중 보유할 수 있는 돈의 상한',n=>'+'+WALLET_STEP*n+'원'],['prodLevel','돈 생산력','시간당 돈이 모이는 속도',n=>'+'+Math.round(PROD_STEP*n*1000)/10+'%'],['studyLevel','공부력','스테이지 클리어 보상 XP 증가',n=>'+'+Math.round(STUDY_STEP*n*100)+'%'],['accLevel','회계력','적을 쓰러뜨릴 때 받는 돈 증가',n=>'+'+Math.round(ACC_STEP*n*100)+'%']]){const lv=training[k],max=ECON_COST.length,c=document.createElement('article');c.className='training-card';c.innerHTML=`<h3>${title} <small>Lv.${lv} / ${max}</small></h3><p>${desc}<br>${fmt(lv)}${lv<max?' → '+fmt(lv+1):''}</p>`;const eb=document.createElement('button');eb.textContent=lv>=max?'최대 레벨':ECON_COST[lv]+' XP · 강화';eb.disabled=lv>=max||training.xp<ECON_COST[lv];eb.onclick=()=>upgradeEcon(k);c.append(eb);grid.append(c)}
 }
 function awardXP(){const reward=studyXP(cleared.includes(selectedStage)?Math.floor(stageXP(selectedStage)/2):stageXP(selectedStage))*(boostActive('doctor')?2:1);training.xp+=reward;saveTraining();return reward}
 function renderUnitLevels(){for(const t of ALLIES){const b=$(t==='red'?'#spawnBtn':'#'+t+'Btn'),d=unitStats(t),e=d.evolved;if(t==='red')b.querySelector('small').textContent=d.cost+'원';b.querySelector('strong').firstChild.nodeValue=unitDisplayName(t,d.trueForm,e)+' Lv.'+training.levels[t];b.title=`${ROLES[t]} · 체력 ${d.hp} · 공격력 ${d.atk} · 사거리 ${Math.round(d.range)} · 공격 주기 ${d.interval.toFixed(2)}초 · 이동 ${d.speed} · ${d.cost}원${t==='purple'?' · 빨간 적에게 강함':''}${t==='cyan'||t==='crystal'?' · 떠다니는 적에게 강함':''}${RARE_TYPES.includes(t)||EX_TYPES.includes(t)||SR_TYPES.includes(t)?' · '+codexTraitBadges(data.units[t]).slice(1).join(' · '):''}${e?' · 스틱맨 2진':''}`}}
@@ -2600,6 +2622,7 @@ document.addEventListener('visibilitychange',()=>{if(document.visibilityState===
 
 // Order is rough difficulty progression from Korea to the Moon; used only for codex browsing.
 const ENEMY_ORDER=["capy","berserkory","brollow","calamary","alpacky","eldersloth","alienbunbun","mrmole",'dog','snache','guys','hippo','pigge','peng','gory','baa','croco','rabbit','squirrel','seal','leboin','kangaroo','mooth','rhino','bear','face','nyandam','bunbun','darkdog','metalhippo','stpigge','duche','celeboodle','dagshund','otta','mastera','sloth','metalcyborg','metalseal','ostrich','hienergy','daddy','wolfururun','gonzales','kurosawah','bunbunblack','peasquirrel','ironboar','peathief','ragingcat','walldoge','metaldoge','supermetalhippo','pigeon','hiyokoel','sleipnir','blackleboin','lilnyandam','sunfish','redsnache','strayguy','blackotta','scissorman','cyberx','madampoodle','galaxynyandam','valkyrie','gabriel','magpie','assassinbear','owlbrow','bore','camelle','kory','raind','jkbunbun','shyboy','gorydark','shadowboxer','heavenlyhippoe','shibalien','kroxo','hyppoh','sael','maawth','lemurr','krabbe','liz56','ursamajor','phace','nimoy','clione'];
+ENEMY_ORDER.push('ectosnache');
 const ENEMY_TEXT={
  ragingcat:'봉인된 탈을 벗어던지고 다시 세상을 멸하려 날아오른 냥코무트. 스스로도 힘을 다스리지 못해 엄청난 속도로 돌진하며 넓은 범위를 연속으로 할퀸다. 떠 있는 적·에이리언. (미래편 3장 최종 보스)',
  capy:'빨간 적. 긴 사거리의 강력한 개체 공격을 하며, 15% 확률로 치명타를 낸다. 고방을 끊김 없이 보내는 것이 중요하다. (레전드 26장)',
@@ -2676,7 +2699,7 @@ const ENEMY_TEXT={
  bunbun:'강철 건틀릿을 낀 뿔 달린 거구의 선생. 떠다니며 빠르게 다가와 1초마다 광역 펀치를 날리고, 웬만한 공격에는 끄떡없이 버틴다. (세계편 3장 달)',
  nyandam:'그림자 부하들이 떠받친 옥좌에 앉아 와인잔을 기울이는 악의 제왕. 느리지만 체력이 엄청나고, 그림자 손 떼로 먼 거리까지 휩쓴다. (세계편 2장 달)',
  darkdog:'고수익 암살 알바에 뛰어든 검은 멍뭉이. 체력은 낮지만 한 방이 무겁고, 맞아도 쉽게 물러나지 않는다. 검은 적. (레전드 스토리)',
- ectosnache:'유령이 된 낼름이. 낼름이보다 강한 혀 공격을 쉬지 않고 날린다. (레전드 스토리)',
+ ectosnache:'유령이 된 낼름이. 낼름이보다 강한 혀 공격을 쉬지 않고 날린다. 현재 등장 스테이지는 없다.',
  gabriel:'천사의 날개를 단 멍뭉이. 체력은 낮지만 눈 깜짝할 사이에 전선까지 돌격한다. (레전드 스토리)',
  guys:'세 마리가 함께 몰려다니며 공격력이 제법 매섭다. 다만 한 방이면 크게 휘청인다.',
  hippo:'두툼한 몸집으로 범위 공격을 가하는 초반 보스급 적. 은근히 단단하다.',
@@ -2705,7 +2728,13 @@ function trainingAbilityLine(t){const a=[t==='purple'&&'빨간 적에게 강함'
 function codexTraitBadges(d){const b=[attackTypeOf(d)+' 공격'];for(const t of traitsOf(d))if(TRAIT_NAMES[t])b.push(TRAIT_NAMES[t]);
  for(const k in TRAIT_NOTE){const ts=d[k]||[];if(Object.keys(TRAIT_TARGET).every(t=>ts.includes(t))){b.push(`모든 속성에게 ${TRAIT_NOTE[k]}`);continue}for(const t of ts)b.push(`${TRAIT_TARGET[t]}에게 ${TRAIT_NOTE[k]}`)}
  if(d.hiddenAbility&&!futureOpen()&&!codexWiki){b.length=0;b.push(attackTypeOf(d)+' 공격','???');return b}// 미래편 전용: 미래편이 열리기 전까지 능력을 가림
- if(d.survive)b.push(`살아남는다(${freqWord(d.survive)})`);
+ if(d.survive)b.push(`${d.surviveOnce?'한 번 ':''}살아남는다(${freqWord(d.survive)})`);
+ if(d.strengthen)b.push(`체력 ${Math.round(d.strengthen.at*100)}% 이하에서 공격력 ${d.strengthen.mult}배`);
+ if(!d.statusVs){
+  if(d.slowChance)b.push(`둔화(${freqWord(d.slowChance)} · ${d.slowDuration}초)`);
+  if(d.freezeChance)b.push(`정지(${freqWord(d.freezeChance)} · ${d.freezeDuration}초)`);
+  if(d.atkDownPct)b.push(`공격력 ${Math.round((1-d.atkDownPct)*100)}%로 감소(${freqWord(d.atkDownChance??1)} · ${d.atkDownDuration}초)`);
+ }
  if(d.wave)b.push(`파동 공격(${freqWord(d.wave.chance)})`);
  if(d.backRange)b.push('뒤쪽까지 공격');
  if(d.rage)b.push(`마지막 히트백 시 공격력 +${Math.round(d.rage*100)}%`);

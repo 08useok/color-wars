@@ -328,6 +328,9 @@ body { overflow:auto; }
 .beam-fx.beam-right{z-index:4}
 .shout-hit{border:4px solid var(--fx,#fff);box-shadow:0 0 0 2px #0006,inset 0 0 0 2px #0006}
 .gust-hit{background:radial-gradient(circle,#fff 0 25%,#ffffffaa 40%,transparent 65%);filter:drop-shadow(0 0 2px #0008)}
+.spit-beam{height:10px;background:radial-gradient(ellipse,var(--fx) 0 35%,transparent 65%) 0 0/22px 10px repeat-x;filter:drop-shadow(0 0 1px #126856);animation:spit-grow .18s ease-out both}
+@keyframes spit-grow{from{transform:rotate(var(--spit-angle)) scaleX(0)}to{transform:rotate(var(--spit-angle)) scaleX(1)}}
+.spit-hit{background:radial-gradient(circle,var(--fx) 0 18%,transparent 24%),repeating-conic-gradient(from 10deg,transparent 0 20deg,var(--fx) 22deg 30deg,transparent 32deg 60deg);filter:drop-shadow(0 0 1px #126856)}
 /* 원작 파동(skill004 고양이·분홍 / skill005 적·파랑): 56×80 칸, 바닥 가운데 기준 */
 .wave-seg{position:absolute;bottom:15%;width:56px;height:80px;margin-left:-28px;z-index:4;pointer-events:none;background-repeat:no-repeat;image-rendering:pixelated;transform-origin:50% 100%;transform:scale(1.25)}
 .wave-cat{background-image:url("assets/wave_skill004.png")}.wave-enemy{background-image:url("assets/wave_skill005.png")}
