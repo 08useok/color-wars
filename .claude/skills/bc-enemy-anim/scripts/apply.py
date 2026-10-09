@@ -12,6 +12,9 @@ usage: python apply.py NAME WORK_DIR [--match width|height|part|standard] [--anc
     --match part             today's frames are raw crops of NNN_e.png: scale = old scale / partScale
     --match standard         the usual baked-enemy setup (scale .833, left 21, lift 0), ignore today's box
   --anchor picks which edge of the box stays put (default center).
+- --box L,W,B: today's walk box measured in the browser instead (unit-local px before ENEMY_SIZE: left edge,
+  width, ground). Needed for enemies drawn by their own code with no NEW_ATLASES entry; then a new
+  `NEW_ATLASES.NAME={...};` line is added after the last whole-entry NEW_ATLASES assignment.
 - --fore/--back: original Foreswing / Backswing frames -> data.units.NAME windup = F/30,
   attackDuration = (F+B)/30, so damage lands on the frame the original hits.
 - dry run by default; --write saves assets/anim_NAME.webp and edits game.js.
@@ -47,13 +50,20 @@ def main():
     form = 'assign'
     if not m:
         m = re.search(r'(?m)^[ \t]*' + name + r':(\{.*\}),?[ \t]*$', src); form = 'literal'
-    if not m: sys.exit(f'no single-line NEW_ATLASES entry for {name} in game.js')
-    old = js_eval(m.group(1))
+    box = opt('--box', None)
+    if not m and not box: sys.exit(f'no single-line NEW_ATLASES entry for {name} in game.js (measure it and pass --box)')
+    old = js_eval(m.group(1)) if m else {}
     if old.get('evolved') or old.get('true'): sys.exit('entry has evolved/true forms: this script is for enemies only')
 
     w0n = new['walk'][0]
     if match == 'standard':
         s, left, lift = 0.833, 21.0, 0.0
+    elif box:
+        L, W, B = map(float, box.split(','))
+        s = opt('--scale', None, float) or W / w0n[2]; Wn = w0n[2] * s
+        edge = {'left': L, 'center': L + (W - Wn) / 2, 'right': L + W - Wn}[anchor]
+        left, lift = edge + w0n[4] * s, B / s - w0n[5]
+        print(f'today (measured): walk0 box left {L:.1f}px  width {W:.1f}px  ground {B:.1f}px')
     else:
         so, lo, lifto = old['scale'], old['left'], old.get('lift', 0)
         w0 = old['walk'][0]; oxo, oyo = (w0[4] if len(w0) > 4 else 0), (w0[5] if len(w0) > 5 else 0)
@@ -76,9 +86,11 @@ def main():
     f = lambda L: json.dumps(L, separators=(',', ':'))
     body = (f"{{scale:{num(s)},left:{num(left)},{'lift:' + num(lift) + ',' if abs(lift) > .05 else ''}sheet:'{url}',"
             f"walkStep:2/30,attackStep:2,walk:{f(new['walk'])},attack:{f(new['attack'])},hurt:{f(new['hurt'])}}}")
-    line = m.group(0)
-    repl = line.replace(m.group(1), body, 1)
-    out = src.replace(line, repl, 1)
+    if m:
+        line = m.group(0); repl = line.replace(m.group(1), body, 1); out = src.replace(line, repl, 1)
+    else:
+        last = list(re.finditer(r'(?m)^NEW_ATLASES\.\w+=\{.*\};[ \t]*$', src))[-1]
+        repl = f'NEW_ATLASES.{name}={body};'; out = src[:last.end()] + '\n' + repl + src[last.end():]
 
     fore, back = opt('--fore', None, int), opt('--back', None, int)
     if fore is not None:

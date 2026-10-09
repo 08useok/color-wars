@@ -13,6 +13,7 @@ when atlas.left is the ground point. Ground shadows (影 / かげ cuts or parts)
 the game draws its own shadow.
 """
 import json, os, sys
+import numpy as np
 from PIL import Image
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from bcanim import Model
@@ -27,10 +28,44 @@ def is_shadow(s, cname, cut):
     return any(k in str(cname) + str(s['name']) for k in ('影', 'かげ')) and cut[3] <= max(8, cut[2] / 4)
 
 
+def strip_baked_shadows(m, max_rows=5, dark=90):
+    """Old sheets (000-048) draw the ground shadow into the pose itself, under the feet: an opaque dark strip wider
+    than the feet (002 Those Guys), see-through black (008 Sir Seal) or a separate ellipse under a jump (014).
+    Reference = the lowest row with body fill (bright pixels). Below it (at most max_rows rows) clear dark pixels
+    outside the reference row's span and see-through dark pixels; a strip cut off from the body by an empty row
+    is cleared whole. Cuts without bright fill near the bottom (all-black enemies) are left alone."""
+    a = np.array(m.sheet); hit = 0
+    for cut in m.cuts:
+        x, y, w, h = cut[:4]
+        if w < 8 or h < 8: continue
+        c = a[y:y + h, x:x + w]; op = c[:, :, 3] > 20
+        isdark = op & (c[:, :, :3].max(2) < dark); bright = (c[:, :, 3] > 128) & (c[:, :, :3].max(2) >= 200)
+        bottom = h - 1
+        while bottom >= 0 and not op[bottom].any(): bottom -= 1
+        top = bottom
+        while top > 0 and op[top - 1].any(): top -= 1
+        if 0 < bottom - top + 1 <= max_rows and op[:top].any() and not (op[top:bottom + 1] & ~isdark[top:bottom + 1]).any():
+            c[top:bottom + 1, :, 3] = 0; hit += 1; continue                  # detached ellipse under a jump
+        ref = bottom
+        while ref >= 0 and ref > bottom - max_rows - 3 and bright[ref].sum() < 3: ref -= 1
+        if ref < 0 or bright[ref].sum() < 3 or ref == bottom: continue
+        below = list(range(ref + 1, bottom + 1))
+        if len(below) > max_rows: continue
+        cols = np.where(op[ref])[0]; inside = np.zeros(w, bool); inside[max(0, cols.min() - 1):cols.max() + 2] = True
+        changed = False
+        for q in below:
+            clear = isdark[q] & (~inside | (c[q, :, 3] < 200))
+            if clear.any(): c[q, clear, 3] = 0; changed = True
+        hit += changed
+    m.sheet = Image.fromarray(a)
+    return hit
+
+
 def main():
     name, work, n = sys.argv[1], sys.argv[2], sys.argv[3].zfill(3)
     step, ss, hurt_f = opt('--step', 2), opt('--ss', 0.6), opt('--hurt-frame', 0)
     m = Model(f'{work}/{n}_e.json', f'{work}/{n}_e.png')
+    if '--keep-baked-shadows' not in sys.argv: print('baked shadows stripped from', strip_baked_shadows(m), 'cuts')
     Lw, La = m.length('Walk'), m.length('Attack')
     print('anims', list(m.anims), 'walk', Lw, 'attack', La)
     seq = [('walk', 'Walk', f) for f in range(0, max(Lw, 1), step)] + \
