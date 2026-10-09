@@ -53,7 +53,10 @@ def main():
         y += h + 2
     sheet.save(f'{work}/anim_{name}.png', optimize=True)
     # px of the original sheet per baked px: the biggest visible part scale x ss (bodies are often drawn at 1.79x)
-    part = max((abs(s['sx']) for s in m.state('Walk', 0) if not s['hidden'] and s['opacity'] > 0 and s['cut'] > 0), default=1)
+    S0 = m.state('Walk', 0)
+    def total(i):  # scale including every parent (a dummy root often carries the 1.79x)
+        return abs(S0[i]['sx']) * (total(S0[i]['parent']) if S0[i]['parent'] != -1 else 1)
+    part = max((total(s['id']) for s in S0 if not s['hidden'] and s['opacity'] > 0 and s['cut'] > 0), default=1)
     json.dump(dict(ent, walkLen=Lw, attackLen=La, partScale=part * ss, size=sheet.size), open(f'{work}/{name}.atlas.json', 'w'))
     bg = Image.new('RGBA', sheet.size, (200, 220, 200, 255)); bg.alpha_composite(sheet); bg.save(f'{work}/{name}.preview.png')
     print(f'{len(frames)} frames, sheet {sheet.size}, walk0 {ent["walk"][0]}, partScale {part * ss:.3f}')
