@@ -60,7 +60,7 @@ body { overflow:auto; }
 #battleNotice{position:absolute;top:12%;left:50%;transform:translateX(-50%);padding:12px 24px;border:2px solid #ffd68b;border-radius:12px;background:#7f2931ec;color:#fff3d6;font-weight:900;z-index:6;white-space:nowrap;}
 
 .unit.knocked-back{transition:none;}
-.unit.knocked-back .dog-sprite{rotate:-8deg;}.unit.knocked-back.bear .dog-sprite,.unit.knocked-back.leboin .dog-sprite{rotate:none}
+.unit.knocked-back .dog-sprite{rotate:-8deg;}
 .unit.knocked-back .ally-sprite{rotate:28deg;transform-origin:50% 85%;}.unit.damage-flash{filter:brightness(1.6);}.unit.defeated{pointer-events:none;}.unit.defeated .bar{display:none;}
 
 .unit.pigge{background:none;border:0;border-radius:0;}
