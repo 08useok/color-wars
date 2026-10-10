@@ -2392,9 +2392,13 @@ const NEW_PROFILE_CALIB={
  raspberry:{size:696,x:-561,y:-397}
 };
 // Characters that came with their own portrait drawing (1진, 2진): shown as-is instead of a crop of the battle sheet.
-const PROFILE_ART={obsidian:['assets/obsidian_profile.webp','assets/obsidian_profile_2.webp']};
+const PROFILE_ART={obsidian:['assets/obsidian_profile.webp','assets/obsidian_profile_2.webp'],
+ mixedwhite:['assets/profile_mixedwhite.webp','assets/profile_mixedwhite_2.webp'],earphonered:['assets/profile_earphonered.webp','assets/profile_earphonered_2.webp'],shotguntan:['assets/profile_shotguntan.webp','assets/profile_shotguntan_2.webp']};
+// 3진 portraits (콘셉트 그림에서 잘라 쓴 초상): salmon·gold·beige·clover. Others fall back to the 3진 walk frame.
+const PROFILE_ART_TRUE={salmon:'assets/profile_salmon_3.webp',gold:'assets/profile_gold_3.webp',beige:'assets/profile_beige_3.webp',clover:'assets/profile_clover_3.webp'};
 function profileMarkup(type,evolved){
  const trueArt=evolved&&typeof hasTrueForm==='function'&&hasTrueForm(type)&&NEW_ATLASES[type]?.true;
+ if(trueArt&&PROFILE_ART_TRUE[type])return `<div class="generated-profile" role="img" aria-label="${unitDisplayName(type,true)} 프로필" style="background-image:url(${PROFILE_ART_TRUE[type]});background-size:cover;background-position:center"></div>`;
  if(trueArt){const [x,y,w,h]=trueArt.walk[0],k=+(112/Math.max(w,h)).toFixed(4);return `<div class="generated-profile" role="img" aria-label="${unitDisplayName(type,true)} 프로필" style="position:relative;overflow:hidden"><span style="position:absolute;left:${((126-w*k)/2).toFixed(1)}px;top:${((126-h*k)/2).toFixed(1)}px;width:${w}px;height:${h}px;background:url(${trueArt.sheet}) -${x}px -${y}px no-repeat;transform:scale(${k});transform-origin:0 0"></span></div>`}
  const idx=NEW_PROFILE_ORDER.indexOf(type);
  if(PROFILE_ART[type])return `<div class="generated-profile" role="img" aria-label="${UNIT_NAMES[type]}${evolved?' 2진':''} 프로필" style="background-image:url(${PROFILE_ART[type][evolved?1:0]});background-size:contain;background-position:center"></div>`;
@@ -2494,7 +2498,7 @@ const EVO_EXTRA={iron:()=>({}),grey:d=>({wave:{...d.wave,reach:46}}),carmine:d=>
 };
 const EVO_ATK_BONUS={red:1.2,pink:1.15,crimson:1.2,gold:1.2,chartreuse:1.2,azure:1.2,onyx:1.2,black:1.2,hacienda:1.2,forest:1.2,burgundy:1.2,denim:1.2,khaki:1.2,mustard:1.2,cherry:1.2,claret:1.2,verdigris:1.2,rainbow:1.2,cobalt:1.2,flame:1.2,scarlet:1.2,coral:1.2,navy:1.2,lava:1.2,fusioncream:1.2};// 2진 with a dedicated atk bonus; everyone else gets the generic +15% (hp is always +15%, yellow +20%)
 const TRUE_NAME={cream:'와플 크림',salmon:'어부 살몬',gold:'부자 골드',beige:'바느질 베이지',clover:'럭키 클로버'};
-function unitDisplayName(type,trueForm=false,evolved=false){return (trueForm&&TRUE_NAME[type]?TRUE_NAME[type]:UNIT_NAMES[type])+(trueForm?' 3진':evolved?' 2진':'')}
+function unitDisplayName(type,trueForm=false,evolved=false){return (trueForm&&TRUE_NAME[type]?TRUE_NAME[type]:UNIT_NAMES[type])+(trueForm?'':evolved?' 2진':'')}
 function unitCost(t){return ALLIES.includes(t)?unitStats(t).cost:data.units[t].cost}
 // 2진 비용 배율: 기본 ×2, 레어 ×1.3, 슈퍼 레어 ×1.4, EX·울슈레 ×1.5 (5원 단위로 반올림)
 const EVO_COST_MULT={basic:2,rare:1.3,sr:1.4,ex:1.5,uber:1.5};
