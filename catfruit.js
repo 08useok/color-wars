@@ -8,7 +8,7 @@ const FRUIT_ICON={purple:'🟣',red:'🔴',blue:'🔵',green:'🟢',yellow:'🟡
 const TRUE_FORM_MULT=1.2;
 const TRUE_FORM_ATK_MULT={cream:1.8,hotpink:1.5,salmon:1.5,gold:1.5,beige:1.4,clover:1.5};
 const TRUE_FORM_HP_MULT={hotpink:1.5,salmon:1.3,gold:1.3,beige:1.3,clover:1.3};
-const TRUE_FORM_BONUS={gold:{multiHit:5,killGold:1.5},beige:{range:14,freezeChance:.6,freezeDuration:3,pierce:2},clover:{multiHit:3,critChance:.25,critMult:2,atkDownChance:.8},salmon:{range:34,pullDistance:8,freezeChance:.35,freezeDuration:1.5,waveBlock:true},cream:{range:16,area:true,attackClass:'범위',slowChance:.65,slowDuration:3},hotpink:{range:30,zoneMin:0,zoneMax:40,area:true,attackClass:'범위',atkDownDuration:5,attackDuration:1.4,windup:.7}};
+const TRUE_FORM_BONUS={gold:{multiHit:5,killGold:1.5},beige:{range:14,freezeChance:.6,freezeDuration:3},clover:{multiHit:3,critChance:.25,critMult:2,atkDownChance:.8},salmon:{range:34,pullDistance:8,freezeChance:.35,freezeDuration:1.5,waveBlock:true},cream:{range:16,area:true,attackClass:'범위',slowChance:.65,slowDuration:3},hotpink:{range:30,zoneMin:0,zoneMax:40,area:true,attackClass:'범위',atkDownDuration:5,attackDuration:1.4,windup:.7}};
 const TRUE_FORM_COST={basic:{fruit:1,seed:3,epic:0,xp:30000},rare:{fruit:2,seed:4,epic:0,xp:60000},sr:{fruit:3,seed:5,epic:0,xp:100000},
  ex:{fruit:3,seed:5,epic:1,xp:150000},uber:{fruit:5,seed:8,epic:2,xp:250000}};
 let catfruit={seed:{},fruit:{},epic:0},trueForms=[];
