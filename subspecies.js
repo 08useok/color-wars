@@ -29,10 +29,13 @@ renderTraining=function(){_subTraining();for(const card of $('#trainingGrid').ch
 let subspeciesClears=[];
 try{const v=JSON.parse(localStorage.getItem('red-battle-subspecies-v1')||'[]');if(Array.isArray(v))subspeciesClears=v.filter(k=>typeof k==='string'&&Object.keys(SUBSPECIES).some(id=>k===id+':0'||k===id+':1'))}catch{}
 const SUBSPECIES_START=STAGES.length;
+// 강림 적 배율(극난도, 초극난도): 자동 출격 시험으로 '좋은 덱만 이기는' 선을 잡았다.
+// 화이트는 보스(맴매 선생)가 빨라서 조금만 올려도 못 깨고, 레드는 느린 보스라 높게 올려도 깰 수 있다.
+const ADVENT_MULT={mixedwhite:[1.3,1.1],earphonered:[10,10],shotguntan:[6,3]};
 for(const [id,s] of Object.entries(SUBSPECIES))for(let tier=0;tier<2;tier++){
  const i=STAGES.length,hard=tier===1,boss={mixedwhite:'bunbun',earphonered:'nyandam',shotguntan:'shyboy'}[id];
  STAGES.push({name:s.event+' '+(hard?'초극난도':'극난도'),flag:'⚔️',hp:hard?500000:200000,gap:4,wave:0,sky:'#dfdbea',land:s.color,chapter:'special',maxEnemies:hard?15:12,subspecies:{id,tier},special:{item:id,itemName:s.name,count:1,chance:hard?1:.3,xp:hard?20000:10000},desc:`${s.name} ${hard?'100':'30'}% 획득 · 보스 ${UNIT_NAMES[boss]||boss}`});
- STAGE_SPAWNS[i]=[{type:'dog',at:{t:0},delay:[4,8],mag:hard?300:200},{type:'hippo',at:{t:8},delay:[12,20],mag:hard?300:200},{type:boss,at:{hp:90},count:hard?3:1,delay:[6,10],boss:true,mag:hard?600:400}];
+ const am=ADVENT_MULT[id][tier];STAGE_SPAWNS[i]=[{type:'dog',at:{t:0},delay:[4,8],mag:Math.round((hard?300:200)*am)},{type:'hippo',at:{t:8},delay:[12,20],mag:Math.round((hard?300:200)*am)},{type:boss,at:{hp:90},count:hard?3:1,delay:[6,10],boss:true,mag:Math.round((hard?600:400)*am)}];
 }
 function subspeciesTierOpen(id,tier){return tier===0?cleared.includes(CHAPTER1_LEN*2-1):subspeciesClears.includes(id+':0')}
 const _subDrop=specialDropOpen,_subGive=giveSpecialItem,_subItem=specialItemText;
