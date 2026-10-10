@@ -2486,7 +2486,7 @@ const EVO_EXTRA={iron:()=>({}),grey:d=>({wave:{...d.wave,reach:46}}),carmine:d=>
  ribbonchart:d=>({multiHit:d.multiHit+1}),obsidian:d=>({blowChance:Math.min(1,d.blowChance+.1),cooldown:d.cooldown*.85}),ribbonorange:d=>({freezeChance:Math.min(1,d.freezeChance+.15),freezeDuration:d.freezeDuration+.5}),lapis:d=>({critChance:Math.min(1,d.critChance+.15),speed:d.speed*1.2}),selenite:d=>({wave:{...d.wave,chance:Math.min(1,d.wave.chance+.15),reach:d.wave.reach+6}}),topaz:d=>({killGold:1.5,cooldown:d.cooldown*.85}),verdigris:d=>({blowChance:Math.min(1,d.blowChance+.15),blowDistance:d.blowDistance+4})
 };
 const EVO_ATK_BONUS={red:1.2,pink:1.15,crimson:1.2,gold:1.2,chartreuse:1.2,azure:1.2,onyx:1.2,black:1.2,hacienda:1.2,forest:1.2,burgundy:1.2,denim:1.2,khaki:1.2,mustard:1.2,cherry:1.2,claret:1.2,verdigris:1.2,rainbow:1.2,cobalt:1.2,flame:1.2,scarlet:1.2,coral:1.2,navy:1.2,lava:1.2,fusioncream:1.2};// 2진 with a dedicated atk bonus; everyone else gets the generic +15% (hp is always +15%, yellow +20%)
-const TRUE_NAME={cream:'와플 크림',salmon:'낚시꾼 살몬'};
+const TRUE_NAME={cream:'와플 크림',salmon:'어부 살몬'};
 function unitDisplayName(type,trueForm=false,evolved=false){return (trueForm&&TRUE_NAME[type]?TRUE_NAME[type]:UNIT_NAMES[type])+(trueForm?' 3진':evolved?' 2진':'')}
 function unitCost(t){return ALLIES.includes(t)?unitStats(t).cost:data.units[t].cost}
 // 2진 비용 배율: 기본 ×2, 레어 ×1.3, 슈퍼 레어 ×1.4, EX·울슈레 ×1.5 (5원 단위로 반올림)
