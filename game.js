@@ -1899,7 +1899,7 @@ function renderNewButtons(){for(const type of GENERIC_CD_TYPES){
  const b=$('#'+type+'Btn'),d=data.units[type],unlocked=allyUnlocked(type),cd=unitCooldown(type);
  b.disabled=!unlocked||!game.running||game.paused||game.ended||game.money<unitCost(type)||cd>0||allyDeployFull();
  b.querySelector('small').textContent=!unlocked?(UNLOCK_AT[type]==null?(ACQUIRE_TEXT[type]||'뽑기로 획득'):STAGES[UNLOCK_AT[type]].name+(chapterTag(UNLOCK_AT[type]))+' 클리어 시 해금'):allyDeployFull()?'출격 인원 가득참':`${unitCost(type)}원`;
- b.querySelector('em').style.display=cd?'block':'none';b.querySelector('em').style.transform=`scaleY(${cd/unitStats(type).cooldown})`;
+ b.querySelector('em').style.display=cd?'block':'none';b.querySelector('em').style.transform=`scaleY(${cd/Math.max(.01,unitStats(type).cooldown)})`;
 }}
 
 const RARE_STRIKE={ribbonchart:2,peasquirrel:1,ironboar:1,ribbonorange:2,maple:2,brick:2,korn:2,teal:2,violet:2,orchid:2,cobalt:2,flame:2,scarlet:2,moss:2,coral:2,aqua:2,cooper:2,navy:2,dandelion:2,babyblue:2,mintcyan:2,peach:2,lightcream:2,midnight:2,darklilac:2,fusioncream:2,silver:2,lava:2,babypink:2,magenta:2,rainbow:2,lapis:2,selenite:2,topaz:2,cornflower:2,bittersweet:2,claret:2,verdigris:2,plum:2,forest:2,canary:2,cherry:2,mauve:2,khaki:2,tangerine:2,burgundy:2,mustard:2,sky:2,denim:2,charcoal:2,garnet:2,prism:2,black:1,white:1,maroon:1,brown:1,tan:1,beige:1,cream:1,olive:1,clover:2,indigo:1,lilac:1,hotpink:1,ruby:1,hacienda:2};// attack-frame index where the hit lands (frames before it are the windup)
