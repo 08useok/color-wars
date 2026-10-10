@@ -29,26 +29,26 @@ renderTraining=function(){_subTraining();for(const card of $('#trainingGrid').ch
 let subspeciesClears=[];
 try{const v=JSON.parse(localStorage.getItem('red-battle-subspecies-v1')||'[]');if(Array.isArray(v))subspeciesClears=v.filter(k=>typeof k==='string'&&Object.keys(SUBSPECIES).some(id=>k===id+':0'||k===id+':1'))}catch{}
 const SUBSPECIES_START=STAGES.length;
-// 강림 적 배율(극난도, 초극난도): 자동 출격 시험으로 '좋은 덱만 이기는' 선을 잡았다(중형 몹이 들어와 돈이 더 들어오므로 처음 값보다 높음).
+// 강림 적 배율(상급, 고난도): 자동 출격 시험으로 '좋은 덱만 이기는' 선을 잡았다(중형 몹이 들어와 돈이 더 들어오므로 처음 값보다 높음).
 // 화이트는 보스(맴매 선생)가 빨라서 낮게, 레드는 느린 보스라 높게 올려도 깰 수 있다.
 const ADVENT_MULT={mixedwhite:[2.2,1.8],earphonered:[18,18],shotguntan:[10,5]};
-// 중형 몹(배율 300~500%): 강림마다 테마에 맞는 중간 크기 적이 시간·보스 체력에 따라 나눠 나온다. [극난도, 초극난도]
+// 중형 몹(배율 300~500%): 강림마다 테마에 맞는 중간 크기 적이 시간·보스 체력에 따라 나눠 나온다. [상급, 고난도]
 const ADVENT_MID={
- // 화이트(실험): 공중 + 광역 — 나나나난나방·투뿔소·빠옹, 초극난도는 곰선생이 후반에 합류
+ // 화이트(실험): 공중 + 광역 — 나나나난나방·투뿔소·빠옹, 고난도는 곰선생이 후반에 합류
  mixedwhite:[
   [{type:'mooth',at:{t:25},delay:[18,26],mag:300},{type:'rhino',at:{t:40},delay:[22,32],mag:300},{type:'leboin',at:{hp:80},count:2,delay:[4,8],mag:400}],
   [{type:'mooth',at:{t:20},delay:[14,20],mag:400},{type:'rhino',at:{t:30},delay:[16,24],mag:400},{type:'leboin',at:{hp:80},count:3,delay:[3,6],mag:500},{type:'bear',at:{hp:55},count:1,mag:500}]],
- // 레드(소리): 빨간 적 — 돼지새끼·바다레오파드 + 빠른 캥거류, 초극난도는 투뿔소·곰선생까지
+ // 레드(소리): 빨간 적 — 돼지새끼·바다레오파드 + 빠른 캥거류, 고난도는 투뿔소·곰선생까지
  earphonered:[
   [{type:'pigge',at:{t:15},delay:[10,16],mag:300},{type:'seal',at:{t:35},delay:[18,26],mag:300},{type:'kangaroo',at:{hp:75},count:2,delay:[2,4],mag:400}],
   [{type:'pigge',at:{t:12},delay:[8,14],mag:400},{type:'seal',at:{t:25},delay:[14,20],mag:400},{type:'rhino',at:{t:40},delay:[20,30],mag:400},{type:'kangaroo',at:{hp:70},count:3,delay:[2,4],mag:500},{type:'bear',at:{hp:50},count:1,mag:500}]],
- // 탄(사냥): 천사 — 빠른 가브리엘 떼와 천사 하마양(천사 초데미지가 빛나는 곳) + 캥거류, 초극난도는 곰선생
+ // 탄(사냥): 천사 — 빠른 가브리엘 떼와 천사 하마양(천사 초데미지가 빛나는 곳) + 캥거류, 고난도는 곰선생
  shotguntan:[
   [{type:'gabriel',at:{t:10},delay:[3,6],mag:300},{type:'heavenlyhippoe',at:{t:30},delay:[20,28],mag:300},{type:'kangaroo',at:{hp:70},count:2,delay:[2,4],mag:400}],
   [{type:'gabriel',at:{t:8},delay:[2,5],mag:400},{type:'heavenlyhippoe',at:{t:25},delay:[14,20],mag:400},{type:'kangaroo',at:{hp:55},count:3,delay:[2,4],mag:500},{type:'bear',at:{hp:75},count:1,mag:500}]]};
 for(const [id,s] of Object.entries(SUBSPECIES))for(let tier=0;tier<2;tier++){
  const i=STAGES.length,hard=tier===1,boss={mixedwhite:'bunbun',earphonered:'nyandam',shotguntan:'shyboy'}[id];
- STAGES.push({name:s.event+' '+(hard?'초극난도':'극난도'),flag:'⚔️',hp:hard?500000:200000,gap:4,wave:0,sky:'#dfdbea',land:s.color,chapter:'special',maxEnemies:hard?15:12,subspecies:{id,tier},special:{item:id,itemName:s.name,count:1,chance:hard?1:.3,xp:hard?20000:10000},desc:`${s.name} ${hard?'100':'30'}% 획득 · 보스 ${UNIT_NAMES[boss]||boss}`});
+ STAGES.push({name:s.event+' '+(hard?'고난도':'상급'),flag:'⚔️',hp:hard?500000:200000,gap:4,wave:0,sky:'#dfdbea',land:s.color,chapter:'special',maxEnemies:hard?15:12,subspecies:{id,tier},special:{item:id,itemName:s.name,count:1,chance:hard?1:.3,xp:hard?20000:10000},desc:`${s.name} ${hard?'100':'30'}% 획득 · 보스 ${UNIT_NAMES[boss]||boss}`});
  const am=ADVENT_MULT[id][tier];STAGE_SPAWNS[i]=[{type:'dog',at:{t:0},delay:[4,8],mag:Math.round((hard?300:200)*am)},{type:'hippo',at:{t:8},delay:[12,20],mag:Math.round((hard?300:200)*am)},{type:boss,at:{hp:90},count:hard?3:1,delay:[6,10],boss:true,mag:Math.round((hard?600:400)*am)},...ADVENT_MID[id][tier].map(r=>({...r}))];
 }
 function subspeciesTierOpen(id,tier){return tier===0?cleared.includes(CHAPTER1_LEN*2-1):subspeciesClears.includes(id+':0')}
@@ -61,6 +61,6 @@ finish=function(win){const fresh=!game.ended,sp=STAGES[selectedStage].subspecies
 const _subReset=reset;
 reset=function(){const sp=STAGES[selectedStage].subspecies;if(sp&&!subspeciesTierOpen(sp.id,sp.tier)){openStages();return}_subReset()};
 const _subSpecial=renderSpecialStages;
-renderSpecialStages=function(){_subSpecial();for(const [n,[id,s]] of Object.entries(Object.entries(SUBSPECIES))){const row=document.createElement('div');row.className='special-row today';row.innerHTML='<div class="special-label"><b class="day">매일</b><strong>⚔️ '+s.event+'</strong><small>'+s.name+'</small></div>';for(let tier=0;tier<2;tier++){const i=SUBSPECIES_START+Number(n)*2+tier,b=document.createElement('button'),open=subspeciesTierOpen(id,tier);b.className='stage-card ribbon';b.disabled=!open;b.innerHTML='<strong>'+(tier?'초극난도':'극난도')+'</strong><small>'+(!open?(tier?'극난도 클리어 필요':'세계편 2장 클리어 필요'):gachaOwns(id)?'획득 완료':tier?'100%':'30%')+'</small>';b.title=STAGES[i].desc;b.onclick=()=>{selectedStage=i;reset()};row.append(b)}$('#specialGrid').append(row)}};
+renderSpecialStages=function(){_subSpecial();for(const [n,[id,s]] of Object.entries(Object.entries(SUBSPECIES))){const row=document.createElement('div');row.className='special-row today';row.innerHTML='<div class="special-label"><b class="day">매일</b><strong>⚔️ '+s.event+'</strong><small>'+s.name+'</small></div>';for(let tier=0;tier<2;tier++){const i=SUBSPECIES_START+Number(n)*2+tier,b=document.createElement('button'),open=subspeciesTierOpen(id,tier);b.className='stage-card ribbon';b.disabled=!open;b.innerHTML='<strong>'+(tier?'고난도':'상급')+'</strong><small>'+(!open?(tier?'상급 클리어 필요':'세계편 2장 클리어 필요'):gachaOwns(id)?'획득 완료':tier?'100%':'30%')+'</small>';b.title=STAGES[i].desc;b.onclick=()=>{selectedStage=i;reset()};row.append(b)}$('#specialGrid').append(row)}};
 const markStyle=document.createElement('style');markStyle.textContent='.unit.marked .bar{outline:2px solid #ff5252}.unit.marked .status-badges::after{content:"표식 +30%";color:#ff5252;background:#fff;font-size:10px;white-space:nowrap}';document.head.append(markStyle);
 renderNewButtons();renderDeckButtons();renderTraining();renderSpecialStages();
