@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>7종 모션 미리보기</title>
+<style>body{margin:24px;background:#172438;color:#fff;font:16px system-ui}h1{font-size:24px}main{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}article{background:#26374a;border-radius:12px;padding:16px}canvas{width:100%;height:170px;background:repeating-conic-gradient(#3c4c60 0 25%,#354459 0 50%) 0/24px 24px}select,button{font:inherit;padding:6px}small{display:block;line-height:1.6;color:#cbd5e1}</style>
+<h1>럭키 클로버 · 화이트/레드/탄 아종 모션</h1><p>기존 원본 21장으로 구성한 걷기 24 · 공격 37 · 피격 1컷을 재생합니다.</p>
+<p>화이트·레드·탄 아종은 별도 캐릭터로 등록했습니다. 아래는 기존 원본 픽셀을 사용한 모션 미리보기입니다.</p><main id="cards"></main>
+<script src="clover-variant-atlases.js?v=1"></script><script>
+const names={clover3:'럭키 클로버 3진',mixedwhite:'뒤죽박죽 화이트',samplewhite:'샘플 화이트',earphonered:'이어폰 레드',headsetred:'헤드셋 레드',shotguntan:'샷건 탄',tak47:'T . ak47'};
+const cards=[];
+for(const [id,a] of Object.entries(CLOVER_VARIANT_ATLASES)){
+ const article=document.createElement('article');article.innerHTML=`<h2>${names[id]}</h2><canvas width="560" height="340"></canvas><select aria-label="${names[id]} 모션"><option value="walk">걷기</option><option value="attack">공격</option><option value="hurt">피격</option></select> <button>일시정지</button><small></small>`;document.querySelector('#cards').append(article);
+ const im=new Image();im.src=a.sheet;const card={id,a,im,canvas:article.querySelector('canvas'),select:article.querySelector('select'),info:article.querySelector('small'),paused:false,time:0};
+ article.querySelector('button').onclick=e=>{card.paused=!card.paused;e.target.textContent=card.paused?'재생':'일시정지'};card.select.onchange=()=>card.time=0;cards.push(card);
+}
+let last=0;
+function loop(now){const dt=Math.min(.1,(now-last)/1000);last=now;for(const c of cards){if(!c.paused)c.time+=dt;const state=c.select.value,fs=c.a[state],i=Math.floor(c.time/.07)%fs.length,[x,y,w,h,ox]=fs[i],s=(state==='attack'&&i>=c.a.extraStart?c.a.extraScale:c.a.scaleByState[state])*2,ctx=c.canvas.getContext('2d');ctx.clearRect(0,0,560,340);ctx.strokeStyle='#86a7c2';ctx.beginPath();ctx.moveTo(0,300);ctx.lineTo(560,300);ctx.stroke();if(c.im.complete&&c.im.naturalWidth)ctx.drawImage(c.im,x,y,w,h,280-ox*s,300-h*s,w*s,h*s);c.info.textContent=`${i+1} / ${fs.length}컷 · ${w}×${h}px · 원본 픽셀 유지`;}requestAnimationFrame(loop)}requestAnimationFrame(loop);
+</script></html>

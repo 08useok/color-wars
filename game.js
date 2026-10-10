@@ -1080,6 +1080,7 @@ function damage(v,amount,from){
  if(from?.atkDownUntil>game.elapsed)amount*=from.atkDownMult;
  if(from?.rageOn&&from.stats?.rage)amount*=1+from.stats.rage;
  if(from?.stats?.strengthen&&from.hp<=from.max*from.stats.strengthen.at)amount*=from.stats.strengthen.mult;// 공격력 업: 체력이 일정 비율 아래면 공격력 배수// 분노: after the final live hitback (right before death) attack +rage
+ if(v.markUntil>game.elapsed)amount*=v.markMult||1;
  let crit=false;if(from?.stats?.critChance&&Math.random()<from.stats.critChance){crit=true;amount*=from.stats.critMult||2;v.critFxUntil=game.elapsed+STATUS_FX_TIME;critBurst(v)}
  const isBoss=v.boss||(!data.units[v.type].notBoss&&data.units[v.type].hp>=BOSS_HP_THRESHOLD);// base HP, so Chapter 2's x1.5 doesn't change who counts as a boss
  if(from?.stats?.pull&&isBoss)amount*=1.3;
@@ -1097,6 +1098,7 @@ function damage(v,amount,from){
   startHitback(v);v.el.classList.add('defeated');game.defeated.push(v);return;
  }
  const lands=statusLands(from,v);
+ if(lands&&from?.stats?.markChance&&Math.random()<from.stats.markChance){v.markUntil=Math.max(v.markUntil||0,game.elapsed+from.stats.markDuration);v.markMult=Math.max(v.markMult||1,from.stats.markMult||1.3)}
  if(lands&&from?.stats?.slowChance&&Math.random()<from.stats.slowChance)v.slowUntil=game.elapsed+from.stats.slowDuration;
  if(lands&&from?.stats?.freezeChance&&Math.random()<from.stats.freezeChance)v.freezeUntil=Math.max(v.freezeUntil||0,game.elapsed+from.stats.freezeDuration);
  if(lands&&from?.stats?.atkDownPct&&Math.random()<(from.stats.atkDownChance??1)){v.atkDownUntil=game.elapsed+from.stats.atkDownDuration;v.atkDownMult=1-from.stats.atkDownPct}
@@ -1155,8 +1157,8 @@ function fire(u,t,share=1){
  const st=u.ally&&SHOT_STYLE[u.type];
  if(!st){resolveAttack(u,t,share);return}
  const tt=t&&t.hp>0?t:targetValid(u),end=tt?tt.x:data.bases.enemy.frontX,fireX=u.x,dur=Math.max(.14,Math.min(.55,Math.abs(end-fireX)/SHOT_SPEED));
- const group={left:st.n,u,t:tt,share,fireX};
- for(let i=0;i<st.n;i++){const el=document.createElement('span');el.className='shot '+u.type+'-bolt';unitsEl.append(el);const shot={start:fireX,end,time:-i*.06,duration:dur,arc:st.arc,el,group};game.shots.push(shot);placeShot(shot)}
+ const count=u.type==='gold'&&u.stats?.trueForm?5:st.n,group={left:count,u,t:tt,share,fireX};
+ for(let i=0;i<count;i++){const el=document.createElement('span');el.className='shot '+u.type+'-bolt';unitsEl.append(el);const shot={start:fireX,end,time:-i*.06,duration:dur,arc:st.arc,el,group};game.shots.push(shot);placeShot(shot)}
 }
 function placeShot(p){const k=Math.max(0,p.time)/p.duration;p.el.style.visibility=p.time<0?'hidden':'visible';p.el.style.left=(p.start+(p.end-p.start)*k)+'%';p.el.style.translate=`-50% ${-30-(p.arc?Math.sin(k*Math.PI)*26:0)}px`}
 function updateShots(dt){
@@ -1301,7 +1303,7 @@ function update(dt){
 game.spawnCd=Math.max(0,game.spawnCd-dt);game.orangeCd=Math.max(0,game.orangeCd-dt);game.yellowCd=Math.max(0,game.yellowCd-dt);game.greenCd=Math.max(0,game.greenCd-dt);for(const t of GENERIC_CD_TYPES)game[cooldownKey(t)]=Math.max(0,unitCooldown(t)-dt);
  for(const u of [...game.units]){
   if(game.ended)break;if(u.hp<=0)continue;
-  u.flashTime=Math.max(0,u.flashTime-dt);u.el.classList.toggle('damage-flash',u.flashTime>0);u.el.classList.toggle('frozen',u.freezeUntil>game.elapsed);u.el.classList.toggle('slowed',u.slowUntil>game.elapsed);u.el.classList.toggle('weakened',u.atkDownUntil>game.elapsed);u.el.classList.toggle('crit-hit',u.critFxUntil>game.elapsed);u.el.classList.toggle('pulled',u.pullFxUntil>game.elapsed);u.el.classList.toggle('surviving',u.surviveFxUntil>game.elapsed);u.el.classList.toggle('slow-cycle',u.intervalUntil>game.elapsed);
+  u.flashTime=Math.max(0,u.flashTime-dt);u.el.classList.toggle('damage-flash',u.flashTime>0);u.el.classList.toggle('frozen',u.freezeUntil>game.elapsed);u.el.classList.toggle('slowed',u.slowUntil>game.elapsed);u.el.classList.toggle('weakened',u.atkDownUntil>game.elapsed);u.el.classList.toggle('marked',u.markUntil>game.elapsed);u.el.classList.toggle('crit-hit',u.critFxUntil>game.elapsed);u.el.classList.toggle('pulled',u.pullFxUntil>game.elapsed);u.el.classList.toggle('surviving',u.surviveFxUntil>game.elapsed);u.el.classList.toggle('slow-cycle',u.intervalUntil>game.elapsed);
   if(u.bossKbTime>0){tickBossKnockback(u,dt);continue}
   if(u.kbTime>0){tickHitback(u,dt);continue}
   if(u.freezeUntil>game.elapsed){animateUnit(u);continue}
@@ -2104,6 +2106,11 @@ NEW_ATLASES.bear={scale:0.5368,left:-22,lift:41,sheet:'assets/anim_bear.webp',wa
 NEW_ATLASES.stpigge={scale:0.5282,left:-22.1128,lift:114,sheet:'assets/anim_stpigge.webp',walkStep:2/30,attackStep:2,walk:[[0,79,156,143,-4,-114],[158,79,156,143,-4,-114],[316,81,156,141,-4,-114],[474,81,156,141,-4,-114],[632,79,156,143,-4,-114],[790,79,156,143,-4,-114],[948,81,156,141,-4,-114],[1106,81,156,141,-4,-114]],attack:[[1264,84,156,138,-4,-114],[1422,89,164,133,0,-114],[1588,82,156,140,-4,-57],[1746,68,156,154,-4,-56],[1904,65,156,157,-4,-56],[2062,61,156,161,-4,-57],[2220,0,186,222,11,-115],[2408,4,187,218,14,-114],[2597,101,193,121,17,-114],[2792,103,188,119,16,-114],[2982,100,156,122,-4,-114]],hurt:[[3140,65,159,157,4,-111]]};
 LEGEND_STAGES6.forEach((t,j)=>{t.desc=stageEnemies(LEGEND6_START+j).map(n=>UNIT_NAMES[n]).join(' · ');STAGES[LEGEND6_START+j].desc=t.desc});
 NEW_ATLASES.hotpink.true={"sheet":"assets/hotpink_3.webp?v=1","walkStep":0.07,"strike":14,"walk":[[0,0,229,240,0,0],[233,0,216,242,28,0],[453,0,216,245,31,0],[673,0,211,244,32,0],[888,0,214,244,30,0],[1106,0,206,243,35,0],[1316,0,218,245,-11,0],[1538,0,209,246,27,0],[1751,0,214,245,33,0],[1969,0,218,245,31,0],[2191,0,215,244,31,0],[2410,0,206,245,33,0],[2620,0,225,241,-4,0],[2849,0,214,242,27,0],[3067,0,213,239,29,0],[3284,0,215,242,32,0],[3503,0,217,239,32,0],[3724,0,202,246,35,0],[0,250,217,243,-8,0],[221,250,213,246,26,0],[438,250,212,244,33,0],[654,250,217,246,31,0],[875,250,214,242,30,0],[1093,250,207,246,34,0]],"scale":0.375,"left":-21.94,"attack":[[1304,250,199,240,23,0],[1507,250,168,241,52,0],[1679,250,213,241,62,0],[1896,250,198,237,55,0],[2098,250,202,241,55,0],[2304,250,192,241,56,0],[2500,250,173,245,23,0],[2677,250,201,245,55,0],[2882,250,203,244,57,0],[3089,250,197,243,53,0],[3290,250,201,244,56,0],[3495,250,196,243,57,0],[3695,250,198,244,43,0],[0,500,207,244,61,0],[211,500,348,245,60,0],[563,500,232,229,51,0],[799,500,202,226,42,0],[1005,500,185,231,52,0],[1194,500,190,230,42,0],[1388,500,201,244,25,0],[1593,500,215,243,56,0],[1812,500,170,245,60,0],[1986,500,171,243,41,0],[2161,500,169,243,38,0],[2334,500,173,245,46,0],[2511,500,204,243,24,0],[2719,500,198,250,55,0],[2921,500,196,250,55,0]],"hurt":[[3121,500,240,240,0,0]]};
+// These sheets have no dedicated hitback drawing: keep the standing body
+// instead of using the flattened headbutt recovery as a hurt pose.
+for(const type of ['hippo','metalhippo','hyppoh','heavenlyhippoe']){
+ NEW_ATLASES[type].hurt=[NEW_ATLASES[type].walk[0].slice()];
+}
 // Keep the original body pivot fixed when enlarging the spit attackers.
 for(const type of ['alpacky','camelle']){
  const atlas=NEW_ATLASES[type];atlas.left=21+(atlas.left-21)/atlas.scale*1.2;atlas.scale=1.2;
@@ -2124,7 +2131,7 @@ function animateAtlas(u){
   const elapsed=Math.max(0,duration-u.attackTime);
   index=Math.min(frames.length-1,Math.floor(elapsed/duration*frames.length));
  }else if(visualState==='attack'&&(u.stats?.windup||data.units[u.type].windup)){const elapsed=duration-u.attackTime,windup=u.stats?.windup||data.units[u.type].windup,strike=atlas.strike??{gory:2,baa:2,seal:4,croco:3,rabbit:3,squirrel:2,mooth:3,rhino:2,nyandam:3,...RARE_STRIKE}[u.type];if(strike!==undefined)index=elapsed<windup?Math.min(strike-1,Math.floor(elapsed/windup*strike)):Math.min(frames.length-1,strike+Math.floor((elapsed-windup)/Math.max(.01,duration-windup)*(frames.length-strike)));}
- if(visualState==='attack'&&data.units[u.type].hits){const elapsed=duration-u.attackTime;index=Math.min(frames.length-1,Math.max(0,data.units[u.type].hits.filter(h=>h.at<=elapsed).length-1))}
+ if(visualState==='attack'&&data.units[u.type].hits&&!atlas.continuousAttack){const elapsed=duration-u.attackTime;index=Math.min(frames.length-1,Math.max(0,data.units[u.type].hits.filter(h=>h.at<=elapsed).length-1))}
  if(state==='hurt'&&u.type==='gory')index=0;
  // Game-timed attack: [frame (1/30s) since the swing began, frame index] keys from the original animation.
  if(visualState==='attack'&&atlas.attackStep)index=Math.min(frames.length-1,Math.floor(((duration-u.attackTime)*30+1e-6)/atlas.attackStep));
@@ -2132,7 +2139,7 @@ function animateAtlas(u){
  // Optional 5th value: how far (sheet px) the body sits right of the crop's left edge
  // compared to walk frame 0, so wide impact crops don't shove the body backwards.
  const [x,y,w,h,ox=0,oy=0,rot=0,fl=0]=frames[index];const sprite=u.el.querySelector('.dog-sprite');
- const scale=atlas.scale??baseAtlas.scale,left=(atlas.left??baseAtlas.left)-ox*scale;
+ const scale=(visualState==='attack'&&index>=atlas.extraStart?atlas.extraScale:atlas.scaleByState?.[visualState])??atlas.scale??baseAtlas.scale,left=(atlas.left??baseAtlas.left)-ox*scale;
  if(baseAtlas.attackAtlas)sprite.style.backgroundImage=`url(${atlas.sheet||(u.type==='face'?FACE_SHEET:baseAtlas.sheet)})`;
  sprite.style.backgroundPosition=`-${x}px -${y}px`;
  sprite.style.width=w+'px';sprite.style.height=h+'px';sprite.style.left=left+'px';
@@ -2486,7 +2493,7 @@ const EVO_EXTRA={iron:()=>({}),grey:d=>({wave:{...d.wave,reach:46}}),carmine:d=>
  ribbonchart:d=>({multiHit:d.multiHit+1}),obsidian:d=>({blowChance:Math.min(1,d.blowChance+.1),cooldown:d.cooldown*.85}),ribbonorange:d=>({freezeChance:Math.min(1,d.freezeChance+.15),freezeDuration:d.freezeDuration+.5}),lapis:d=>({critChance:Math.min(1,d.critChance+.15),speed:d.speed*1.2}),selenite:d=>({wave:{...d.wave,chance:Math.min(1,d.wave.chance+.15),reach:d.wave.reach+6}}),topaz:d=>({killGold:1.5,cooldown:d.cooldown*.85}),verdigris:d=>({blowChance:Math.min(1,d.blowChance+.15),blowDistance:d.blowDistance+4})
 };
 const EVO_ATK_BONUS={red:1.2,pink:1.15,crimson:1.2,gold:1.2,chartreuse:1.2,azure:1.2,onyx:1.2,black:1.2,hacienda:1.2,forest:1.2,burgundy:1.2,denim:1.2,khaki:1.2,mustard:1.2,cherry:1.2,claret:1.2,verdigris:1.2,rainbow:1.2,cobalt:1.2,flame:1.2,scarlet:1.2,coral:1.2,navy:1.2,lava:1.2,fusioncream:1.2};// 2진 with a dedicated atk bonus; everyone else gets the generic +15% (hp is always +15%, yellow +20%)
-const TRUE_NAME={cream:'와플 크림',salmon:'어부 살몬'};
+const TRUE_NAME={cream:'와플 크림',salmon:'어부 살몬',gold:'부자 골드',beige:'바느질 베이지',clover:'럭키 클로버'};
 function unitDisplayName(type,trueForm=false,evolved=false){return (trueForm&&TRUE_NAME[type]?TRUE_NAME[type]:UNIT_NAMES[type])+(trueForm?' 3진':evolved?' 2진':'')}
 function unitCost(t){return ALLIES.includes(t)?unitStats(t).cost:data.units[t].cost}
 // 2진 비용 배율: 기본 ×2, 레어 ×1.3, 슈퍼 레어 ×1.4, EX·울슈레 ×1.5 (5원 단위로 반올림)
