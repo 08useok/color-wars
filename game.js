@@ -289,9 +289,9 @@ const LEGEND3_START=STAGES.length;
 LEGEND_STAGES3.forEach((t,j)=>STAGES.push({...t,gap:4,wave:0,chapter:4,legend:{k:38+j},maxEnemies:t.max}));
 LEGEND_STAGES.push(...LEGEND_STAGES3);
 // 리본 오렌지 강림, shaped like the original Advent stages (첫 강림: 2016-02-17 JP v4.7, a single stage with a 30-40% drop):
-// 극난도 (세계편 2장 후) drops the EX 리본 오렌지 (오렌지 아종) at 30%; clearing it opens 초극난도, which always drops it
+// 상급 (세계편 2장 후; was 극난도) drops the EX 리본 오렌지 (오렌지 아종) at 30%; clearing it opens 고난도 (was 초극난도), which always drops it
 // (like the original's tier-2 advent). Boss 까치 도둑 (magpie). Clears are kept in red-battle-ribbon-v1.
-const RIBBON_TIERS=[{n:'극난도',hp:200000,chance:.3,xp:10000,mag:200,bossMag:400},{n:'초극난도',hp:500000,chance:1,xp:20000,mag:300,bossMag:600,hard:true}];
+const RIBBON_TIERS=[{n:'상급',hp:200000,chance:.3,xp:10000,mag:200,bossMag:400},{n:'고난도',hp:500000,chance:1,xp:20000,mag:300,bossMag:600,hard:true}];
 const RIBBON_START=STAGES.length;
 RIBBON_TIERS.forEach((t,k)=>STAGES.push({name:'리본 오렌지 강림 '+t.n,flag:'🎀',hp:t.hp,gap:4,wave:0,sky:'#ffe2c2',land:'#e89a4f',
  desc:`보스 까치 도둑 ${t.bossMag}%${t.hard?' ×3':''} · 리본 오렌지 ${Math.round(t.chance*100)}% · XP ${t.xp}`,
@@ -301,7 +301,7 @@ let ribbonSave={clear:[],cap:false};
 try{const v=JSON.parse(localStorage.getItem('red-battle-ribbon-v1')||'{}');if(v.v===2&&Array.isArray(v.clear))ribbonSave.clear=v.clear.filter(Number.isInteger);ribbonSave.cap=v.cap===true}catch{}
 function saveRibbon(){try{localStorage.setItem('red-battle-ribbon-v1',JSON.stringify({v:2,...ribbonSave}))}catch{}}
 function ribbonTierOpen(k){return k===0?cleared.includes(CH2_HAWAII):ribbonSave.clear.includes(0)}
-function ribbonLockText(k){return k===0?'세계편 2장 클리어 시 열림':'극난도 클리어 시 열림'}
+function ribbonLockText(k){return k===0?'세계편 2장 클리어 시 열림':'상급 클리어 시 열림'}
 // Legend Story subchapters 13-19 (초밥 아일랜드 … 카포네의 감옥; names per 나무위키, data per battlecats-db), legend stage k 92..139.
 const LEGEND_STAGES4=[
   {name:'참치 평야',flag:'🍣',hp:95000,max:4,xp:1710,sky:'#bfe3f2',land:'#6a9fb5',desc:'하마양·다람G·스승 (최대 1200%)',drop:{speed:0.01}},
@@ -412,9 +412,9 @@ const FUTURE2_START=STAGES.length;
 FUTURE2_STAGES.forEach((t,k)=>STAGES.push({name:FUTURE_STAGES[k].name,flag:FUTURE_STAGES[k].flag,hp:t.hp,gap:4,wave:0,...FUTURE_BG[t.bg],desc:t.desc,chapter:6,future:true,maxEnemies:t.max,xp:t.xp*FUTURE_XP_SCALE}));
 const FUTURE2_END=STAGES.length;
 const ALIEN_SUPPRESSORS2=[FUTURE2_START+ALIEN_SUPPRESSORS[0]-FUTURE_START,FUTURE2_END-1];
-// 리본 샤트 강림: 원작 강림처럼 극난도(세계편 2장 후, 30%) → 클리어 시 초극난도(100%). Boss 콩 도둑 너구리.
+// 리본 샤트 강림: 원작 강림처럼 상급(세계편 2장 후, 30%) → 클리어 시 고난도(100%). Boss 콩 도둑 너구리.
 // Magnifications tuned by battle simulation (Lv.20 2진): 기본 8명 덱은 극난도에서 성을 못 깎고, 울슈레·EX 섞은 덱은 5분 안팎에 깬다.
-const CHART_TIERS=[{n:'극난도',hp:200000,chance:.3,xp:10000,mag:1400,sq:800,boar:300,bossMag:900},{n:'초극난도',hp:500000,chance:1,xp:20000,mag:1600,sq:900,boar:300,bossMag:1000,hard:true}];
+const CHART_TIERS=[{n:'상급',hp:200000,chance:.3,xp:10000,mag:1400,sq:800,boar:300,bossMag:900},{n:'고난도',hp:500000,chance:1,xp:20000,mag:1600,sq:900,boar:300,bossMag:1000,hard:true}];
 const CHART_START=STAGES.length;
 CHART_TIERS.forEach((t,k)=>STAGES.push({name:'리본 샤트 강림 '+t.n,flag:'🫛',hp:t.hp,gap:4,wave:0,sky:'#eaf7c8',land:'#8fbf3a',
  desc:`보스 콩 도둑 너구리 ${t.bossMag}%${t.hard?' ×2':''} · 리본 샤트 ${Math.round(t.chance*100)}% · XP ${t.xp}`,
@@ -2225,7 +2225,7 @@ function renderSpecialStages(){
  grid.append(row(ribbon));
  const chartOwned=typeof gachaOwns==='function'&&gachaOwns('ribbonchart');
  grid.append(row({days:null,flag:'🫛',title:'리본 샤트 강림',reward:'리본 샤트',cls:'ribbon',today:true,
-  tiers:CHART_TIERS.map((t,k)=>({i:CHART_START+k,n:t.n,lock:!chartTierOpen(k),sub:!chartTierOpen(k)?(k===0?'세계편 2장 클리어 시 열림':'극난도 클리어 시 열림'):chartOwned?'획득 완료':Math.round(t.chance*100)+'%',tip:STAGES[CHART_START+k].desc+' · 적 성 체력 '+STAGES[CHART_START+k].hp}))}));
+  tiers:CHART_TIERS.map((t,k)=>({i:CHART_START+k,n:t.n,lock:!chartTierOpen(k),sub:!chartTierOpen(k)?(k===0?'세계편 2장 클리어 시 열림':'상급 클리어 시 열림'):chartOwned?'획득 완료':Math.round(t.chance*100)+'%',tip:STAGES[CHART_START+k].desc+' · 적 성 체력 '+STAGES[CHART_START+k].hp}))}));
  const others=events.filter(e=>!e.today);
  if(others.length){const det=document.createElement('details');det.className='special-other';det.innerHTML=`<summary>다른 요일 스테이지 ${others.length}개</summary>`;for(const ev of others)det.append(row(ev));grid.append(det)}
  const shop=document.createElement('div');shop.className='special-shop';shop.append(label('XP','🛒','아이템 구매',`보유 ${training.xp} XP`));
