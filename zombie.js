@@ -1,9 +1,11 @@
-// 좀비 발생 (v6.2.0): 좀비 적 7종 + 전용 강림형 스테이지 3개 — 아이언즈(좀비 저격 시리즈)의 사냥터.
-// 좀비는 쓰러져도 몇 초 뒤 체력 일부로 되살아난다. 좀비 킬러(아이언·그레이)가 마무리하면 부활하지 못한다(엔진의 기존 부활 규칙).
-// 그림은 임시(기본 적 그림 + 초록빛). 새 메인 장은 6.9.x 전까지 금지라서 강림·광란형으로 만든다.
-// 원작 좀비 발생(위키): 일반 적이 좀비 짝으로 바뀐다 — Zoge(멍뭉이)·Znache(낼름이)·Zomboe(놈놈놈)·Zigge(돼지새끼)·Zackie Peng(재키펭)·
-// Zory(고릴라저씨)·Zir Zeal(바다레오파드)·Zang Roo(캥거류)·Zroco(아거)·Cadaver Bear(곰선생). 원작 좀비는 원래 적보다 훨씬 단단하고
-// 넉백이 적으며 한 번 50% 체력으로 부활한다(땅굴 이동은 아직 없음).
+// 좀비 발생 (v6.2.0, 원작 위키의 침공 스테이지 'Zombie Outbreak'를 따른다).
+// - 클리어한 장(세계편 1~3장 · 미래편 1~3장 · 우주편 1장)의 스테이지마다 좀비 침공판이 열린다. 보라색 Z 표시.
+// - 일반 적이 좀비 짝으로 바뀌고(멍뭉이→좀비 멍뭉이 …), 원래 속성 적과 보스는 그대로 남는다.
+// - 좀비는 쓰러져도 한 번 되살아난다(곰선생은 두 번). 좀비 킬러(아이언·그레이)가 마무리하면 되살아나지 못한다. 땅굴 이동은 아직 없다.
+// - 보상: 처음 깰 때 XP와 Z 메달, 메달 12개마다 뽑기권(1회), 한 장의 침공을 전부 깨면 뽑기권(10회). 장의 마지막 스테이지는 나머지를 다 깨야 열린다.
+// 그림은 임시(기본 적 그림 + 초록빛).
+// 원작 좀비 짝: Zoge(멍뭉이)·Znache(낼름이)·Zomboe(놈놈놈)·Zigge(돼지새끼)·Zackie Peng(재키펭)·Zory(고릴라저씨)·Zir Zeal(바다레오파드)·
+// Zang Roo(캥거류)·Zroco(아거)·Cadaver Bear(곰선생). 원작 좀비는 원래 적보다 훨씬 단단하고 넉백이 적다.
 const ZOMBIES={
  zdog:{base:'dog',name:'좀비 멍뭉이',hp:490,atk:60,interval:1.6,speed:4.5,range:4,reward:60,knockbacks:2,reviveDelay:3},
  znache:{base:'snache',name:'좀비 낼름이',hp:620,atk:100,interval:1.2,speed:6,range:4,reward:90,knockbacks:2,reviveDelay:3},
@@ -16,73 +18,113 @@ const ZOMBIES={
  zkangaroo:{base:'kangaroo',name:'좀비 캥거류',hp:6300,atk:280,interval:1.2,speed:9,range:5.5,reward:900,knockbacks:1,reviveDelay:3},
  zbear:{base:'bear',name:'좀비 곰선생',hp:11200,atk:800,interval:3.5,speed:4.5,range:8.5,reward:1800,knockbacks:4,area:true,reviveCount:2,reviveDelay:4,reviveHp:.6}
 };
+const ZOMBIE_MAP={};
 for(const [id,z] of Object.entries(ZOMBIES)){
  const {base,name,...stats}=z;
  data.units[id]={trait:'zombie',reviveCount:1,reviveHp:.5,attackDuration:Math.min(.9,stats.interval),windup:.3,...stats};
- UNIT_NAMES[id]=name;
+ UNIT_NAMES[id]=name;ZOMBIE_MAP[base]=id;
  if(NEW_ATLASES[base])NEW_ATLASES[id]={...NEW_ATLASES[base]};
  if(ENEMY_SIZE[base])ENEMY_SIZE[id]=ENEMY_SIZE[base];
 }
 {
  const st=document.createElement('style');
- st.textContent=Object.keys(ZOMBIES).map(id=>`.unit.${id} .dog-sprite{filter:hue-rotate(70deg) saturate(.75) brightness(.82)}`).join('');
+ st.textContent=Object.keys(ZOMBIES).map(id=>`.unit.${id} .dog-sprite{filter:hue-rotate(70deg) saturate(.75) brightness(.82)}`).join('')+
+  '.stage-card.outbreak{position:relative;box-shadow:inset 0 0 0 2px #9b4dff}.zombie-chip{position:absolute;top:3px;right:3px;min-width:22px;height:22px;padding:0 5px;border-radius:11px;background:#7b2fbe;border:1px solid #d3b0ff;color:#fff;font:700 12px/20px system-ui,sans-serif;text-align:center;cursor:pointer;z-index:2}.zombie-chip:hover{background:#9448e0}.zombie-chip.done{background:#3f2a5c;border-color:#8a6fb5;color:#cbb6e8}.zombie-chip.locked{background:#2a2438;border-color:#5b4a78;color:#8d7fa5;cursor:not-allowed}';
  document.head.append(st);
 }
 // 그레이도 좀비 킬러 (좀비 엄강은 아이언만)
 data.units.grey.zombieKiller=true;
 ROLES.grey='범위 · 파동 딜러 · 좀비 킬러';
 PROFILE_TEXT.grey='커다란 망치로 지면을 내려쳐 파동을 일으키는 전투원. 일어서는 좀비도 파동으로 눌러 다시는 못 일어나게 한다.';
-// ---- 스테이지 3개 (상위 단계는 아래 단계를 깨야 열린다)
-const ZOMBIE_KEY='red-battle-zombie-v1';
-let zombieClears=[];
-try{const v=JSON.parse(localStorage.getItem(ZOMBIE_KEY)||'[]');if(Array.isArray(v))zombieClears=v.filter(n=>Number.isInteger(n)&&n>=0&&n<3)}catch{}
-const ZOMBIE_TIERS=[
- {name:'좀비 발생: 변두리',hp:80000,max:10,xp:8000,chance:.3,count:1,m:{s:70,m:90,h:110,b:160},bears:1},
- {name:'좀비 발생: 시가지',hp:200000,max:12,xp:16000,chance:.5,count:1,m:{s:200,m:260,h:330,b:450},bears:1},
- {name:'좀비 발생: 감염 중심',hp:400000,max:14,xp:30000,chance:1,count:2,m:{s:500,m:650,h:800,b:1100},bears:2}
-];
-const ZOMBIE_START=STAGES.length;
-ZOMBIE_TIERS.forEach((t,k)=>{
- const i=STAGES.length,m=t.m;
- STAGES.push({name:t.name,flag:'🧟',hp:t.hp,gap:4,wave:0,sky:'#cfd8c0',land:'#6f7f5a',chapter:'special',maxEnemies:t.max,zombie:{k},special:{item:'ticket',itemName:'뽑기권(1회)',count:t.count,chance:t.chance,xp:t.xp},desc:'좀비는 쓰러져도 되살아난다 · 좀비 킬러로 마무리 · 뽑기권(1회) '+Math.round(t.chance*100)+'%'+(t.count>1?' ×'+t.count:'')});
- STAGE_SPAWNS[i]=[
-  {type:'zdog',at:{t:0},delay:[3,6],mag:m.s},
-  {type:'zcroco',at:{t:5},delay:[2,5],mag:m.s},
-  {type:'znache',at:{t:8},delay:[5,10],mag:m.s},
-  {type:'zguys',at:{t:14},delay:[8,14],mag:m.m},
-  {type:'zgory',at:{t:20},delay:[10,15],mag:m.m},
-  {type:'zpeng',at:{t:26},delay:[9,14],mag:m.m},
-  {type:'zpigge',at:{t:32},delay:[14,20],mag:m.h},
-  {type:'zseal',at:{hp:85},delay:[10,15],mag:m.h},
-  {type:'zkangaroo',at:{hp:65},delay:[12,18],mag:m.h},
-  {type:'zbear',at:{hp:90},count:t.bears,delay:[8,12],boss:true,mag:m.b}
- ];
-});
-function zombieTierOpen(k){return k===0?cleared.includes(CHAPTER1_LEN*2-1):zombieClears.includes(k-1)}
-// 보상: 뽑기권(1회)
-const _zbDrop=specialDropOpen,_zbGive=giveSpecialItem,_zbText=specialItemText;
-specialDropOpen=function(sp){return sp.item==='ticket'?true:_zbDrop(sp)};
-giveSpecialItem=function(item,n){if(item==='ticket'){gachaGive(n,0);return}_zbGive(item,n)};
-specialItemText=function(item,n){return item==='ticket'?`뽑기권(1회) ${n}장 획득!`:_zbText(item,n)};
+// ---- 침공 스테이지
+const ZOMBIE_KEY='red-battle-zombie-v2';
+let zombieSave={clear:[],bonus:[],tickets:0};
+try{
+ const v=JSON.parse(localStorage.getItem(ZOMBIE_KEY)||'{}');
+ if(Array.isArray(v.clear))zombieSave.clear=[...new Set(v.clear.filter(n=>Number.isInteger(n)&&n>=0))];
+ if(Array.isArray(v.bonus))zombieSave.bonus=v.bonus.filter(n=>Number.isInteger(n));
+ if(Number.isInteger(v.tickets)&&v.tickets>=0)zombieSave.tickets=v.tickets;
+}catch{}
+function saveZombie(){try{localStorage.setItem(ZOMBIE_KEY,JSON.stringify(zombieSave))}catch{}}
+// 장 번호(chapterOf)별: 마지막 스테이지, 좀비 세기(원작: 세계편은 약화, 미래편·우주편은 강화). 장 배율은 enemyMagnification이 따로 곱하므로 나눠서 맞춘다.
+const ZOMBIE_CHAPTERS={
+ 1:{final:CHAPTER_FINALS[0],strength:.5,chapMag:1,label:'세계편 1장'},
+ 2:{final:CHAPTER_FINALS[1],strength:.7,chapMag:1.5,label:'세계편 2장'},
+ 3:{final:CHAPTER_FINALS[2],strength:1,chapMag:4,label:'세계편 3장'},
+ 5:{final:FUTURE_END-1,strength:1,chapMag:1,label:'미래편 1장'},
+ 6:{final:FUTURE2_END-1,strength:1.2,chapMag:1,label:'미래편 2장'},
+ 7:{final:FUTURE3_END-1,strength:1.5,chapMag:1,label:'미래편 3장'},
+ 8:{final:COSMOS_END-1,strength:1.6,chapMag:1,label:'우주편 1장'}
+};
+function zombieRulesOf(i){
+ const ch=ZOMBIE_CHAPTERS[chapterOf(i)];if(!ch||!isStoryStage(i))return null;
+ const f=ch.strength/ch.chapMag;let any=false;
+ const rules=(STAGE_SPAWNS[i]||[]).map(r=>{const z=ZOMBIE_MAP[r.type];if(!z)return {...r};any=true;return {...r,type:z,mag:Math.max(25,Math.round((r.mag||100)*f))}});
+ return any?rules:null;
+}
+function zombieStagesOf(c){return STAGES.map((s,i)=>i).filter(i=>chapterOf(i)===c&&isStoryStage(i)&&zombieRulesOf(i))}
+function zombieAvailable(i){
+ const c=chapterOf(i),ch=ZOMBIE_CHAPTERS[c];
+ if(!ch||!cleared.includes(ch.final)||!zombieRulesOf(i))return false;
+ if(i===ch.final)return zombieStagesOf(c).filter(j=>j!==i).every(j=>zombieSave.clear.includes(j));// 마지막 스테이지는 나머지를 다 깨야 열린다
+ return true;
+}
+const ZOMBIE_SLOT=STAGES.length;
+STAGES.push({name:'좀비 침공',flag:'🧟',hp:100000,gap:4,wave:0,sky:'#cfd8c0',land:'#6f7f5a',chapter:'special',maxEnemies:10,zombieOf:-1,special:{item:'zmedal',itemName:'Z 메달',count:0,chance:0},desc:'좀비 침공 스테이지'});
+STAGE_SPAWNS[ZOMBIE_SLOT]=[];
+function startOutbreak(i){
+ if(!zombieAvailable(i))return;
+ const b=STAGES[i],z=STAGES[ZOMBIE_SLOT],first=!zombieSave.clear.includes(i);
+ z.name=b.name+' 좀비 침공';z.hp=b.hp;z.maxEnemies=b.maxEnemies;z.sky=b.sky;z.land=b.land;z.chapter=chapterOf(i);z.zombieOf=i;
+ z.special={item:'zmedal',itemName:'Z 메달',count:0,chance:0,xp:first?Math.round(stageXP(i)*.5):0};
+ STAGE_SPAWNS[ZOMBIE_SLOT]=zombieRulesOf(i);
+ selectedStage=ZOMBIE_SLOT;reset();
+}
+function zombieSlotRestore(){const z=STAGES[ZOMBIE_SLOT];z.chapter='special';z.name='좀비 침공'}// 전투 중에만 원래 장 번호를 써서 장 배율·에이리언 배율이 맞게 붙는다
+// 보상
+const _zbDrop=specialDropOpen;
+specialDropOpen=function(sp){return sp.item==='zmedal'?false:_zbDrop(sp)};
 const _zbFinish=finish;
 finish=function(win){
- const fresh=!game.ended,z=STAGES[selectedStage].zombie;
+ const fresh=!game.ended,onSlot=selectedStage===ZOMBIE_SLOT,i=STAGES[ZOMBIE_SLOT].zombieOf;
+ const wasClear=onSlot&&zombieSave.clear.includes(i);
  _zbFinish(win);
- if(fresh&&win&&z&&!zombieClears.includes(z.k)){zombieClears.push(z.k);try{localStorage.setItem(ZOMBIE_KEY,JSON.stringify(zombieClears))}catch{}}
+ if(!(fresh&&win&&onSlot&&i>=0))return;
+ const notes=[];
+ if(!wasClear){
+  zombieSave.clear.push(i);
+  notes.push('Z 메달 +1 ('+zombieSave.clear.length+'개)');
+  const owedTickets=Math.floor(zombieSave.clear.length/12)-zombieSave.tickets;
+  if(owedTickets>0){zombieSave.tickets+=owedTickets;gachaGive(owedTickets,0);notes.push('메달 12개마다 뽑기권(1회) '+owedTickets+'장!')}
+  const c=chapterOf(i),all=zombieStagesOf(c);
+  if(!zombieSave.bonus.includes(c)&&all.every(j=>zombieSave.clear.includes(j))){zombieSave.bonus.push(c);gachaGive(0,1);notes.push(ZOMBIE_CHAPTERS[c].label+' 침공 전부 클리어! 뽑기권(10회) 1장')}
+  saveZombie();
+ }else notes.push('이미 깬 침공이라 추가 보상은 없어요');
+ const d=$('#resultDetail');d.textContent=(d.textContent?d.textContent+' · ':'')+notes.join(' · ');
 };
-const _zbReset=reset;
-reset=function(){const z=STAGES[selectedStage].zombie;if(z&&!zombieTierOpen(z.k)){openStages();return}_zbReset()};
-const _zbSpecial=renderSpecialStages;
-renderSpecialStages=function(){
- _zbSpecial();
- const row=document.createElement('div');row.className='special-row today';
- row.innerHTML='<div class="special-label"><b class="day">매일</b><strong>🧟 좀비 발생</strong><small>아이언즈의 사냥터</small></div>';
- for(let k=0;k<ZOMBIE_TIERS.length;k++){
-  const i=ZOMBIE_START+k,open=zombieTierOpen(k),b=document.createElement('button');
-  b.className='stage-card ribbon';b.disabled=!open;
-  b.innerHTML='<strong>'+['변두리','시가지','감염 중심'][k]+'</strong>'+(typeof starHTML==='function'?starHTML(stageStars(i)):'')+'<small>'+(!open?(k?'앞 단계 클리어 필요':'세계편 2장 클리어 필요'):'뽑기권 '+Math.round(ZOMBIE_TIERS[k].chance*100)+'%'+(ZOMBIE_TIERS[k].count>1?' ×'+ZOMBIE_TIERS[k].count:''))+'</small>';
-  b.title=STAGES[i].desc;b.onclick=()=>{selectedStage=i;reset()};row.append(b);
- }
- $('#specialGrid').append(row);
+const _zbOpen=openStages;
+openStages=function(){zombieSlotRestore();return _zbOpen.apply(this,arguments)};
+// 스테이지 목록: 클리어한 장의 스테이지 카드에 보라색 Z 표시(눌러서 침공판 시작)
+const _zbMenu=renderStageMenu;
+renderStageMenu=function(){
+ if(!game||!game.running||game.ended)zombieSlotRestore();
+ _zbMenu.apply(this,arguments);
+ const c=stageChapterView,ch=ZOMBIE_CHAPTERS[c];
+ if(!ch||typeof c!=='number')return;
+ const open=cleared.includes(ch.final),idx=STAGES.map((s,i)=>i).filter(i=>chapterOf(i)===c);
+ const cards=[...$('#stageGrid').children];
+ if(!open||cards.length!==idx.length)return;
+ cards.forEach((card,k)=>{
+  const i=idx[k];if(!isStoryStage(i)||!zombieRulesOf(i))return;
+  const avail=zombieAvailable(i),done=zombieSave.clear.includes(i);
+  card.classList.add('outbreak');
+  const chip=document.createElement('span');chip.className='zombie-chip'+(done?' done':'')+(avail?'':' locked');
+  chip.textContent=done?'Z✓':'Z';
+  chip.title=avail?`좀비 침공판: 일반 적이 좀비로 바뀝니다${done?' (클리어함)':' · 처음 깨면 XP와 Z 메달'}`:'이 장의 다른 침공을 모두 깨면 열립니다';
+  chip.onclick=e=>{e.stopPropagation();e.preventDefault();if(!sweepMode&&avail)startOutbreak(i)};
+  card.append(chip);
+ });
+ const note=$('#chapterNote');
+ if(note&&!note.textContent.includes('보라색 Z'))note.textContent+=(note.textContent?' · ':'')+`보라색 Z = 좀비 침공(Z 메달 ${zombieSave.clear.length}개)`;
 };
-renderSpecialStages();
+renderStageMenu();
