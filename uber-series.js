@@ -4,12 +4,13 @@ const UBER_SERIES={
  prism:'글라스 군단',amber:'글라스 군단',
  rainbow:'LGBT',
  orchid:'인스톨 연합',
- iron:'아이언즈',grey:'아이언즈',bronze:'아이언즈',
+ iron:'아이언즈',grey:'아이언즈',// 아이언즈 = 좀비 저격 시리즈 (좀비 발생 스테이지가 사냥터)
+ bronze:'인스톨 연합',
  carmine:'복싱즈',
  banana:'스위츠',butter:'스위츠',vanilla:'스위츠'
 };
 // 프로필 글에 시리즈가 아직 안 적힌 캐릭터만 앞에 붙인다.
-const UBER_SERIES_PROFILE={grey:'아이언즈의 금속 가공 기술자. ',amber:'글라스 군단의 레진 공예가. ',bronze:'아이언즈의 ',banana:'스위츠의 ',butter:'스위츠의 ',vanilla:'스위츠의 '};// 브론즈~바닐라의 본문은 직업으로 시작하므로 시리즈만 붙인다
+const UBER_SERIES_PROFILE={grey:'아이언즈의 금속 가공 기술자. ',amber:'글라스 군단의 레진 공예가. ',bronze:'인스톨 연합의 ',banana:'스위츠의 ',butter:'스위츠의 ',vanilla:'스위츠의 '};// 브론즈~바닐라의 본문은 직업으로 시작하므로 시리즈만 붙인다
 for(const [id,series] of Object.entries(UBER_SERIES)){
  if(!ALLIES.includes(id))continue;
  ACQUIRE_TEXT[id]=series+' · 뽑기로 획득';
