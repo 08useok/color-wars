@@ -2,7 +2,7 @@
 // 라임·에메는 남성형, 애시드·스프링은 여성형. 능력은 원작에서 가져왔다:
 // 라임 = 폭발(Explosion, v13.7), 에메 = 메탈 킬러(Metal Killer, v13.3) + 크리티컬,
 // 애시드 = 좀비 킬러 + 영혼 일격(Soulstrike), 스프링 = 소열파(Mini-Surge, v12.3).
-// 그림은 아직 전용 모션이 없어 기존 캐릭터 모션 + 색 변경(임시). 전용 모션이 오면 NEW_ATLASES[id]만 바꾸고 아래 색 규칙을 지운다.
+// 전용 모션은 new-colors-motion-atlases.js에서 연결한다. 미연결 캐릭터만 임시 색 규칙을 쓴다.
 const GREEN_UBERS={
  lime:{name:'라임',color:'#bfff00',job:'주스 가게 직원',base:'korn',tint:'hue-rotate(15deg) saturate(1.5) brightness(1.05)',
   hp:38000,atk:13000,interval:3.2,speed:5,range:14,cost:3200,cooldown:38,knockbacks:3,
@@ -51,7 +51,7 @@ for(const [id,s] of Object.entries(GREEN_UBERS)){
 }
 {
  const st=document.createElement('style');
- st.textContent=Object.entries(GREEN_UBERS).map(([id,s])=>`.unit.${id} .dog-sprite{filter:${s.tint}}`).join('');
+ st.textContent=Object.entries(GREEN_UBERS).map(([id,s])=>['lime','emerald','acid','spring','aquamarine','sapphire','royalblue','rose'].includes(id)?'':`.unit.${id} .dog-sprite{filter:${s.tint}}`).join('');
  document.head.append(st);
 }
 const _guGrade=gradeOf;

@@ -17,6 +17,13 @@ const server=http.createServer((req,res)=>{const f=path.resolve(root,'.'+decodeU
   const button=document.getElementById(type+'Btn');check(!button.disabled,type+' deploy button');button.click();
   const u=game.units.find(v=>v.type===type);check(u,type+' failed summon');check(!!u.stats.evolved===evolved,'summoned form');
   const atlas=evolved?NEW_ATLASES[type].evolved:NEW_ATLASES[type],sprite=u.el.querySelector('.dog-sprite');await loadBattleImage(atlas.sheet);
+  if(type!=='amber'){
+   check(atlas.scale===.5,'normalized source scale');
+   const shadow=u.el.querySelector('.dog-shadow'),bar=u.el.querySelector('.bar');
+   check(Math.abs(parseFloat(shadow.style.left)+parseFloat(shadow.style.width)/2-21)<.6,'shadow foot alignment');
+   check(Math.abs(parseFloat(bar.style.left)+22-21)<.6,'HP bar body alignment');
+  }
+
   const walk=new Set(),attackFrames=new Set();
   for(let i=0;i<24;i++){u.animTime=(i+.01)*atlas.walkStep;u.attackTime=0;animateUnit(u);walk.add(sprite.style.backgroundPosition)}
   for(let i=0;i<1000;i++){u.attackTime=u.stats.attackDuration*(1-(i+.5)/1000);animateUnit(u);attackFrames.add(sprite.style.backgroundPosition);const rect=sprite.getBoundingClientRect();check(rect.width>0&&rect.height>0&&Number.isFinite(rect.left),'invalid sprite bounds')}

@@ -973,7 +973,7 @@ function fitShadow(u){
  const sh=u.el.querySelector('.dog-shadow'),base=NEW_ATLASES[u.type];if(!sh||!base||SHEET_SHADOW.has(u.type))return;
  const atlas=(u.stats?.trueForm&&base.true)?base.true:(u.stats?.evolved&&base.evolved)?base.evolved:base,f=atlas.walk?.[0];if(!f)return;
  // the frame's own ox re-anchor shifts the sprite (baked animation frames are wide), so the shadow follows it too
- const scale=atlas.scale??base.scale,left=(atlas.left??base.left)-(f[4]||0)*scale,body=f[2]*scale,w=Math.round(body*.8);
+ const scale=atlas.scale??base.scale,body=atlas.groundAnchor?atlas.bodyWidth:f[2]*scale,left=atlas.groundAnchor?(atlas.left??base.left)-body/2:(atlas.left??base.left)-(f[4]||0)*scale,w=Math.round(body*.8);
  Object.assign(sh.style,{backgroundImage:'radial-gradient(closest-side,#000a,#0000)',backgroundColor:'transparent',borderRadius:'50%',width:w+'px',height:'8px',left:Math.round(left+(body-w)/2)+'px',bottom:'-3px',opacity:'1',transform:'none'});
 }
 // HP bar above the sprite's head, centred on it: the base .bar sits just over the 42px unit box, which puts it in the
@@ -985,7 +985,7 @@ function fitBar(u){
  const atlas=(u.stats?.trueForm&&base.true)?base.true:(u.stats?.evolved&&base.evolved)?base.evolved:base,scale=atlas.scale??base.scale,left=atlas.left??base.left,lift=atlas.lift??base.lift??0;
  let top=0,cx=0;
  for(const [,,w,h,ox=0,oy=0] of atlas.walk){top=Math.max(top,(lift+oy+h)*scale);cx+=left-ox*scale+w*scale/2}
- cx/=atlas.walk.length;bar.style.top=Math.round(42-top-8)+'px';bar.style.left=Math.round(cx-22)+'px';
+ cx=atlas.groundAnchor?left:cx/atlas.walk.length;bar.style.top=Math.round(42-top-8)+'px';bar.style.left=Math.round(cx-22)+'px';
 }
 // 원거리 사각지대: an ally that attacks from far away (attackType '원거리') cannot hit anything closer than
 // DEAD_ZONE_RATIO of its range. It still stops for such an enemy, it just has to wait for a target in the window.
@@ -2411,7 +2411,7 @@ function profileMarkup(type,evolved){
  if((idx>=0||type==='onyx')&&evolved&&evoArt?.walk){// 2진: crop the idle walk pose out of the 2진 body sheet instead of the shared portrait sheet
   const [x,y,w,h]=evoArt.walk[0],k=+(112/Math.max(w,h)).toFixed(4);
   return `<div class="generated-profile" role="img" aria-label="${UNIT_NAMES[type]} 2진 프로필" style="position:relative;overflow:hidden"><span style="position:absolute;left:${((126-w*k)/2).toFixed(1)}px;top:${((126-h*k)/2).toFixed(1)}px;width:${w}px;height:${h}px;background:url(${evoArt.sheet}) -${x}px -${y}px no-repeat;transform:scale(${k});transform-origin:0 0"></span></div>`}
- if(RARE_TYPES.includes(type)||EX_TYPES.includes(type)||SR_TYPES.includes(type)){const a=NEW_ATLASES[type],art=evolved&&a.evolved?a.evolved:a,[x,y,w,h]=art.walk[0],k=+(112/Math.max(w,h)).toFixed(4);
+ if(RARE_TYPES.includes(type)||EX_TYPES.includes(type)||SR_TYPES.includes(type)){const a=NEW_ATLASES[type],art=evolved&&a?.evolved?a.evolved:a;if(!art?.walk?.length)return `<div class="generated-profile" role="img" aria-label="${UNIT_NAMES[type]||type} 프로필" style="background:${COLORS[type]||'#ddd'}"></div>`;const [x,y,w,h]=art.walk[0],k=+(112/Math.max(w,h)).toFixed(4);
   return `<div class="generated-profile" role="img" aria-label="${UNIT_NAMES[type]}${evolved?' 2진':''} 프로필" style="position:relative;overflow:hidden"><span style="position:absolute;left:${((126-w*k)/2).toFixed(1)}px;top:${((126-h*k)/2).toFixed(1)}px;width:${w}px;height:${h}px;background:url(${art.sheet}) -${x}px -${y}px no-repeat;transform:scale(${k});transform-origin:0 0"></span></div>`}
  if(idx>=0){const c=NEW_PROFILE_CALIB[type];return `<div class="generated-profile" role="img" aria-label="${UNIT_NAMES[type]}${evolved?' 2진':''} 프로필" style="background-image:url(${NEW_PROFILE_SHEET});background-size:${c.size}px ${c.size}px;background-position:${c.x}px ${c.y}px"></div>`}
  const c=PROFILE_CALIB[type][evolved?'evolved':'base'];return `<div class="generated-profile" role="img" aria-label="${UNIT_NAMES[type]}${evolved?' 2진':''} 프로필" style="background-image:url(${PROFILE_SHEET});background-size:${c.size}px ${c.size}px;background-position:${c.x}px ${c.y}px"></div>`}

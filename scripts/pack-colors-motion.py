@@ -53,7 +53,9 @@ for row, name in enumerate(['amber', 'bronze', 'banana', 'butter', 'vanilla']):
                     preview.paste(tile, (form*400-320+(state=='attack')*190,row*130+20),tile)
             spec[state] = frames
             if state == 'walk':
-                spec['scale'] = 90 / sorted(heights)[len(heights)//2]
+                # The supplied frames already normalize heads and feet; do not shrink evolved bodies.
+                spec['scale'] = .5 if name != 'amber' else 90 / sorted(heights)[len(heights)//2]
+                if name != 'amber': spec.update(groundAnchor=True, bodyWidth=64)
                 spec['walkStep'] = 1 / anim['fps']
         spec['strike'] = round(len(spec['attack']) * .45)
         # The source has no hurt animation: retain the game's walk-frame hit flash.

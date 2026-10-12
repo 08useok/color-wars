@@ -1,7 +1,7 @@
 // 울슈레 72~77: 아쿠마 · 사파 · 로블 · 나이트 · 퓨샤 · 로즈 (v6.2.0). 모두 울트라 슈퍼 레어(뽑기), 1진·2진 가격 동일.
 // 사파·아쿠마·퓨샤·로즈는 여성형, 로블·나이트는 남성형. 능력은 원작 6.3 시점에 있던 것만 썼다:
 // 파동 무효·약화/정지/둔화 무효(클레이G 3형태, 6.3), 회심의 일격, 공격력 업, 살아남는다, 원거리·좀비 킬러·크리티컬, 파동, 약화·둔화·정지.
-// 그림은 아직 전용 모션이 없어 기존 캐릭터 모션 + 색 변경(임시). 전용 모션이 오면 NEW_ATLASES[id]만 바꾸고 아래 색 규칙을 지운다.
+// 전용 모션은 new-colors-motion-atlases.js에서 연결한다. 미연결 캐릭터만 임시 색 규칙을 쓴다.
 const BLUE_UBERS={
  aquamarine:{name:'아쿠마',color:'#7fffd4',job:'래프팅 가이드',base:'aqua',tint:'hue-rotate(-30deg) saturate(1.4) brightness(1.4)',
   hp:50000,atk:11000,interval:2.6,speed:14,range:8,cost:3300,cooldown:40,knockbacks:3,
@@ -64,7 +64,7 @@ for(const [id,s] of Object.entries(BLUE_UBERS)){
 }
 {
  const st=document.createElement('style');
- st.textContent=Object.entries(BLUE_UBERS).map(([id,s])=>`.unit.${id} .dog-sprite{filter:${s.tint}}`).join('');
+ st.textContent=Object.entries(BLUE_UBERS).map(([id,s])=>['lime','emerald','acid','spring','aquamarine','sapphire','royalblue','rose','night','fuchsia'].includes(id)?'':`.unit.${id} .dog-sprite{filter:${s.tint}}`).join('');
  document.head.append(st);
 }
 const _buGrade=gradeOf;
