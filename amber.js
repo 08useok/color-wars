@@ -1,7 +1,7 @@
 // 앰버 (울트라 슈퍼 레어, 뽑기): 고문실의 블랙쿠마·홍당무왕을 노리는 초고속 근접 범위 딜러.
 // 원작 '비약의 무신 그리폰'(초환수 바사라즈)처럼 이동이 매우 빠르고, 한 방이 크고, 히트백(넉백) 횟수가 많다.
-// 울슈레 규칙: 1진·2진 가격 동일(flatCost). 그림은 아직 오키드 모션을 색만 바꿔 쓰는 임시 그림이다.
-// 그림이 오면 NEW_ATLASES.amber(걷기·공격·넉백, 2진은 .evolved)만 바꾸고 아래 임시 색 규칙을 지운다.
+// 울슈레 규칙: 1진·2진 가격 동일(flatCost). 전용 그림은 colors-motion-atlases.js에서 연결한다.
+// 전용 걷기·공격 모션은 1진·2진 별도 시트를 사용한다.
 const AMBER={
  id:'amber',name:'앰버',color:'#ffbf00',
  hp:48000,atk:31000,interval:4.4,speed:30,range:6,cost:3500,cooldown:40,knockbacks:5,
@@ -19,11 +19,9 @@ EVOLUTION_TEXT[AMBER.id]='체력·공격력 +15%';ACQUIRE_TEXT[AMBER.id]='뽑기
  training.levels[AMBER.id]=Number.isInteger(saved)?Math.max(1,Math.min(LEVEL_HARD_MAX,saved)):1;
  if(SUBSPECIES_SAVED_TRAINING?.forms?.[AMBER.id]===1)training.forms[AMBER.id]=1;
 }
-// 임시 모션: 오키드 시트를 그대로 쓴다(공격 프레임 위치도 같음).
-NEW_ATLASES[AMBER.id]={...NEW_ATLASES.orchid};RARE_STRIKE[AMBER.id]=RARE_STRIKE.orchid||2;EVO_BODY_H[AMBER.id]=EVO_BODY_H.orchid||104;
 {
  const s=document.createElement('style');
- s.textContent='.unit.amber .dog-sprite{filter:hue-rotate(160deg) saturate(1.5) brightness(1.15)}.amber-btn i{background:#ffbf00}';
+ s.textContent='.amber-btn i{background:#ffbf00}';
  document.head.append(s);
 }
 // 울트라 슈퍼 레어 칸: 프리즘·레인보우·오키드·아이언·그레이·카민과 같은 확률 칸을 나눠 갖는다.
