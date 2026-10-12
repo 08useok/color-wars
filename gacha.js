@@ -202,4 +202,5 @@ $('#gachaPull10').onclick=()=>gachaDoPull(10);
 renderGachaBadge();
 // game.js drew the first screen before this file loaded, so characters owned through the gacha/rewards were still locked: redraw now.
 {const menuOpen=!$('#stageMenu').classList.contains('hidden');if(menuOpen)renderStageMenu();renderNewButtons();renderDeckButtons();render()}
-{const d=gachaUnlocked()?gachaClaimDaily():null;if(d){renderGachaBadge();gachaToast(`일일 보상! ${gachaTicketText(d.t1,d.t10)} (${d.streak}일 연속 출석)`)}}
+// 일일 보상은 모든 스크립트가 로드된 뒤(보관함·확정권 로직이 붙은 뒤)에 받는다.
+window.addEventListener('DOMContentLoaded',()=>{const d=gachaUnlocked()?gachaClaimDaily():null;if(d){renderGachaBadge();gachaToast(`일일 보상! ${gachaTicketText(d.t1,d.t10)}${d.rare?' · 레어 확정권 1장':''} → 보관함 (${d.streak}일 연속 출석)`)}});
