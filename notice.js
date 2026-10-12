@@ -2,9 +2,11 @@
 // v1 세계편 (first push, 2026-09-24) · v2 레전드 스토리 (09-30) · v3 미래편 1장 (10-03) · v4 미래편 2장 + 3진 (10-06) · v5 미래편 3장 (10-08) · v6 우주편 1장 (10-09).
 // Between those, every push counts: a new feature bumps MINOR, fixes/balance only bump PATCH.
 // A new NOTICE.version shows the notice once on load; the 공지 button on the stage screen reopens it.
-const GAME_VERSION='6.2.0';
+const GAME_VERSION='6.2.1';
 const NOTICE={version:GAME_VERSION,date:'2026-10-12',title:`v${GAME_VERSION} 업데이트`,html:`
 <p class="notice-lead">지금까지 <b>세계편 1~3장 · 미래편 1~3장 · 우주편 1장 · 레전드 스토리 1~27장</b>을 담았습니다.</p>
+<h3>🎨 v6.2.1 울슈레 전용 모션·정렬 수정</h3>
+<ul><li>라임·에메·애시드·스프링·아쿠마·사파·로블·나이트·퓨샤·로즈의 1·2진 전용 걷기·공격 그림을 적용했습니다.</li><li>브론즈부터 로즈까지 14명의 2진 크기와 그림자·체력바 정렬을 수정했습니다.</li><li>시작할 때 아직 그림이 등록되지 않은 캐릭터의 프로필을 표시하다 발생하던 오류를 수정했습니다.</li></ul>
 <h3>💥 v6.2.0 냥코 대포</h3>
 <ul><li>아군 성에서 쏘는 <b>냥코 대포</b>가 생겼습니다. 해금 없이 처음부터 쓸 수 있습니다. 전투가 시작되면 충전되고, 가득 차면 아래쪽 <b>냥코 대포</b> 버튼으로 발사합니다.</li><li>성 앞 넓은 범위의 모든 적에게 <b>고정 피해</b>(스테이지 배율과 무관)를 주고 뒤로 밀어냅니다. 기본 피해 6,000 · 충전 30초.</li><li>기지 강화에서 <b>대포 위력</b>(최대 Lv.10, 피해 33,000)과 <b>대포 충전</b>(최대 Lv.10, 충전 12초)을 올릴 수 있습니다.</li><li>야옹컴(자동 출격)이 켜져 있으면 적이 성 가까이 몰렸을 때 알아서 쏩니다.</li></ul>
 <h3>🔁 v6.2.0 환전소</h3>
