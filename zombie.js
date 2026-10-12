@@ -97,7 +97,7 @@ finish=function(win){
   const owedTickets=Math.floor(zombieSave.clear.length/12)-zombieSave.tickets;
   if(owedTickets>0){zombieSave.tickets+=owedTickets;gachaGive(owedTickets,0);notes.push('메달 12개마다 뽑기권(1회) '+owedTickets+'장!')}
   const c=chapterOf(i),all=zombieStagesOf(c);
-  if(!zombieSave.bonus.includes(c)&&all.every(j=>zombieSave.clear.includes(j))){zombieSave.bonus.push(c);gachaGive(0,1);if(typeof gachaGiveG==='function')gachaGiveG('sr',1);notes.push(ZOMBIE_CHAPTERS[c].label+' 침공 전부 클리어! 뽑기권(10회) 1장 + 슈퍼 레어 확정권 1장 (보관함)')}
+  if(!zombieSave.bonus.includes(c)&&all.every(j=>zombieSave.clear.includes(j))){zombieSave.bonus.push(c);gachaGive(0,1);if(typeof gachaGiveG==='function')gachaGiveG('fix',1);notes.push(ZOMBIE_CHAPTERS[c].label+' 침공 전부 클리어! 뽑기권(10회) 1장 + 확정권 1장 (보관함)')}
   saveZombie();
  }else notes.push('이미 깬 침공이라 추가 보상은 없어요');
  const d=$('#resultDetail');d.textContent=(d.textContent?d.textContent+' · ':'')+notes.join(' · ');
