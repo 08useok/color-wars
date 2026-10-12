@@ -16,13 +16,22 @@ const ZOMBIES={
  zseal:{base:'seal',name:'좀비 바다레오파드',hp:3500,atk:160,interval:.77,speed:5,range:5.7,reward:500,knockbacks:1,area:true,reviveDelay:3},
  zpigge:{base:'pigge',name:'좀비 돼지새끼',hp:4550,atk:200,interval:2.4,speed:2.5,range:5,reward:600,knockbacks:2,area:true,reviveDelay:3},
  zkangaroo:{base:'kangaroo',name:'좀비 캥거류',hp:6300,atk:280,interval:1.2,speed:9,range:5.5,reward:900,knockbacks:1,reviveDelay:3},
- zbear:{base:'bear',name:'좀비 곰선생',hp:11200,atk:800,interval:3.5,speed:4.5,range:8.5,reward:1800,knockbacks:4,area:true,reviveCount:2,reviveDelay:4,reviveHp:.6}
+ zbear:{base:'bear',name:'좀비 곰선생',hp:11200,atk:800,interval:3.5,speed:4.5,range:8.5,reward:1800,knockbacks:4,area:true,reviveCount:2,reviveDelay:4,reviveHp:.6},
+ // 위키 좀비 33종 중 이 게임에 짝 적이 있는 것 (수치는 위키 100% 기준, 속도·사거리는 짝 적의 이 게임 값에 맞춤)
+ zbore:{base:'bore',name:'좀비 샤이 보어',hp:400000,atk:4500,interval:.367,speed:11,range:4.4,reward:1800,knockbacks:2,area:true,reviveDelay:5},// Dread Bore: 샤이 보어보다 훨씬 빠르다
+ zcapy:{base:'capy',name:'좀비 까르삔초',hp:390000,atk:38000,interval:1.1,speed:3.5,range:16.75,reward:550,knockbacks:2,reviveDelay:6.67},// Zapy
+ zbrollow:{base:'brollow',name:'좀비 제비족',traits:['zombie','floating'],hp:4500,atk:10000,interval:4.57,speed:49.5,range:7.5,reward:150,knockbacks:1,area:true,reviveHp:1,reviveDelay:6.67},// Zollow: 100% 체력으로 부활
+ zcamelle:{base:'camelle',name:'좀비 혹부리 낙타',hp:120000,atk:5937,interval:3,speed:4.29,range:18.7,reward:1500,knockbacks:1,area:true,reviveCount:99,reviveHp:1,reviveDelay:8},// Zamelle: 무한 부활
+ zostrich:{base:'ostrich',name:'좀비 타조동호회',hp:1600000,atk:23000,interval:.57,speed:8.58,range:8.8,reward:1080,knockbacks:4,area:true,reviveCount:99,reviveDelay:6},// Oldstrich: 무한 부활
+ zdagshund:{base:'dagshund',name:'좀비 핫도그',hp:800000,atk:30000,interval:6.4,speed:4,range:14.7,reward:800,knockbacks:1,area:true,freezeChance:1,freezeDuration:2,reviveHp:1,reviveDelay:8},// Deathshund: 정지 100%
+ zduche:{base:'duche',name:'좀비 오리룰루',hp:17500,atk:17000,interval:.87,speed:8,range:4,reward:300,knockbacks:1,area:true,reviveHp:1,reviveDelay:20},// Zuche: 20초 뒤 100%로 부활
+ zthrillerz:{base:'guys',name:'스릴러즈',hp:10000,atk:6500,interval:1.27,speed:6,range:3.7,reward:110,knockbacks:1,reviveHp:1,reviveDelay:8}// The Thrillerz: 놈놈놈의 좀비(미래편 2·3장)
 };
 const ZOMBIE_MAP={};
 for(const [id,z] of Object.entries(ZOMBIES)){
  const {base,name,...stats}=z;
  data.units[id]={trait:'zombie',reviveCount:1,reviveHp:.5,attackDuration:Math.min(.9,stats.interval),windup:.3,...stats};
- UNIT_NAMES[id]=name;ZOMBIE_MAP[base]=id;
+ UNIT_NAMES[id]=name;if(!ZOMBIE_MAP[base])ZOMBIE_MAP[base]=id;
  if(NEW_ATLASES[base])NEW_ATLASES[id]={...NEW_ATLASES[base]};
  if(ENEMY_SIZE[base])ENEMY_SIZE[id]=ENEMY_SIZE[base];
 }
@@ -56,10 +65,12 @@ const ZOMBIE_CHAPTERS={
  7:{final:FUTURE3_END-1,strength:1.5,chapMag:1,label:'미래편 3장'},
  8:{final:COSMOS_END-1,strength:1.6,chapMag:1,label:'우주편 1장'}
 };
+const ZOMBIE_CHAPTER_OVERRIDE={6:{guys:'zthrillerz'},7:{guys:'zthrillerz'}};// 원작 미래편 2·3장의 놈놈놈 좀비는 The Thrillerz
 function zombieRulesOf(i){
  const ch=ZOMBIE_CHAPTERS[chapterOf(i)];if(!ch||!isStoryStage(i))return null;
  const f=ch.strength/ch.chapMag;let any=false;
- const rules=(STAGE_SPAWNS[i]||[]).map(r=>{const z=ZOMBIE_MAP[r.type];if(!z)return {...r};any=true;return {...r,type:z,mag:Math.max(25,Math.round((r.mag||100)*f))}});
+ const ov=ZOMBIE_CHAPTER_OVERRIDE[chapterOf(i)]||{};
+ const rules=(STAGE_SPAWNS[i]||[]).map(r=>{const z=ov[r.type]||ZOMBIE_MAP[r.type];if(!z)return {...r};any=true;return {...r,type:z,mag:Math.max(25,Math.round((r.mag||100)*f))}});
  return any?rules:null;
 }
 function zombieStagesOf(c){return STAGES.map((s,i)=>i).filter(i=>chapterOf(i)===c&&isStoryStage(i)&&zombieRulesOf(i))}
