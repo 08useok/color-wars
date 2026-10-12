@@ -2,9 +2,11 @@
 // v1 세계편 (first push, 2026-09-24) · v2 레전드 스토리 (09-30) · v3 미래편 1장 (10-03) · v4 미래편 2장 + 3진 (10-06) · v5 미래편 3장 (10-08) · v6 우주편 1장 (10-09).
 // Between those, every push counts: a new feature bumps MINOR, fixes/balance only bump PATCH.
 // A new NOTICE.version shows the notice once on load; the 공지 button on the stage screen reopens it.
-const GAME_VERSION='6.2.0';
-const NOTICE={version:GAME_VERSION,date:'2026-10-11',title:`v${GAME_VERSION} 업데이트`,html:`
+const GAME_VERSION='6.2.1';
+const NOTICE={version:GAME_VERSION,date:'2026-10-12',title:`v${GAME_VERSION} 업데이트`,html:`
 <p class="notice-lead">지금까지 <b>세계편 1~3장 · 미래편 1~3장 · 우주편 1장 · 레전드 스토리 1~27장</b>을 담았습니다.</p>
+<h3>🍀 v6.2.1 3진 모션 정리</h3>
+<ul><li><b>럭키 클로버</b> 3진: 걷기·공격 그림에 옆 그림 조각이 섞이고 일부 공격 장면이 잘려 보이던 것을 원본 그림에서 다시 잘라 고쳤습니다. 공격할 때 몸이 들썩이거나 커지던 것도 걷기와 같은 크기·위치로 맞췄습니다.</li><li>핫 핑크 3진의 이름이 <b>버블 핫 핑크</b>가 되었습니다. 걸을 때 몇 걸음마다 덜컥이던 것과, 비눗방울을 쏘는 순간 몸이 뒤로 튀던 것을 고쳤습니다.</li><li><b>부자 골드·바느질 베이지·와플 크림·어부 살몬</b>: 공격·넉백 때 몸이 앞뒤로 튀던 장면의 위치를 맞췄습니다.</li><li><b>와플 크림·버블 핫 핑크</b>에 3진 전용 초상화가 생겼습니다.</li></ul>
 <h3>💥 v6.2.0 냥코 대포</h3>
 <ul><li>아군 성에서 쏘는 <b>냥코 대포</b>가 생겼습니다. 해금 없이 처음부터 쓸 수 있습니다. 전투가 시작되면 충전되고, 가득 차면 아래쪽 <b>냥코 대포</b> 버튼으로 발사합니다.</li><li>성 앞 넓은 범위의 모든 적에게 <b>고정 피해</b>(스테이지 배율과 무관)를 주고 뒤로 밀어냅니다. 기본 피해 6,000 · 충전 30초.</li><li>기지 강화에서 <b>대포 위력</b>(최대 Lv.10, 피해 33,000)과 <b>대포 충전</b>(최대 Lv.10, 충전 12초)을 올릴 수 있습니다.</li><li>야옹컴(자동 출격)이 켜져 있으면 적이 성 가까이 몰렸을 때 알아서 쏩니다.</li></ul>
 <h3>🧟 v6.2.0 좀비 침공 (원작 좀비 발생)</h3>
