@@ -34,7 +34,7 @@ const BLUE_UBERS={
   text:'특수 장비 테스트 엔지니어. 시제품 장비로 먼 곳의 좀비를 정확히 저격하고, 다시는 일어나지 못하게 마무리한다.',
   textEvo:'조준 장치가 개량되어 치명타가 자주 터진다.',evoText:'체력·공격력 +15% · 치명타 40%'},
  rose:{name:'로즈',color:'#ff007f',job:'플로리스트(꽃 장식 전문가)',base:'moss',tint:'hue-rotate(150deg) saturate(1.8) brightness(1.1)',
-  hp:45000,atk:9000,interval:3,speed:5,range:12,cost:3000,cooldown:36,knockbacks:3,
+  hp:45000,atk:9000,interval:3,speed:5,range:12,cost:4500,cooldown:36,knockbacks:3,
   extra:{attackClass:'범위',area:true,atkDownPct:.5,atkDownChance:1,atkDownDuration:5,slowChance:.5,slowDuration:3},
   role:'범위 · 약화 100% · 둔화',
   text:'플로리스트. 꽃다발에서 흩날린 꽃가루가 적의 공격 의욕을 꺾고, 가시 돋친 줄기가 걸음을 늦춘다.',
