@@ -23,7 +23,7 @@ const GREEN_UBERS={
   text:'산업 폐기물 처리 기술자. 부식성 폐기물을 뿌려 좀비의 힘을 빼고, 쓰러져 되살아나려는 좀비까지 찾아내 영영 일어나지 못하게 만든다.',
   textEvo:'폐기물의 농도가 짙어져 좀비가 거의 항상 약해진다.',evoText:'체력·공격력 +15% · 좀비 약화 100%'},
  spring:{name:'스프링',color:'#00ff7f',job:'묘목원 직원',base:'maple',tint:'hue-rotate(115deg) saturate(1.8) brightness(1.15)',
-  hp:36000,atk:12000,interval:3.4,speed:5,range:16,cost:4500,cooldown:36,knockbacks:3,
+  hp:36000,atk:12000,interval:3.4,speed:5,range:16,cost:4500,cooldown:75,knockbacks:3,
   extra:{attackClass:'범위',area:true,surge:{start:3,end:13,dur:1.8,tick:.45,mult:.4},slowChance:.5,slowDuration:3},
   role:'범위 · 소열파 · 둔화',
   text:'묘목원 직원. 휘두른 삽 끝에서 어린 덩굴이 솟아 짧은 열파를 일으키고, 휘감긴 적의 걸음을 붙잡는다.',
