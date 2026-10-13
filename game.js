@@ -100,7 +100,7 @@ const LEGEND_STAGES=[
 ];
 const LEGEND_START=STAGES.length,LEGEND_CROWN_MULT=[1,1.5,2,3],LEGEND_XP_SCALE=4;
 // Original crown multipliers change from 파르테논 신전 on (sub index -> x1/x2/x3/x4 crown).
-const LEGEND_SUB_CROWN={14:[1,1.5,2,2],15:[1,1.5,2,2],16:[1,1.5,2,2],17:[1,1.5,1.7,1.5],18:[1,1.5,1.7,1.4],19:[1,1.4,1.6,1.4],20:[1,1.3,1.5,1.3],21:[1,1.2,1.4,1.3],22:[1,1.2,1.4,1.2],23:[1,1.2,1.4,1.2],24:[1,1.2,1.4,1.1],25:[1,1.2,1.4,1.4],26:[1,1.2,1.4,1.4],27:[1,1.2,1.4,1.4],28:[1,1.2,1.4,1.4],29:[1,1.2,1.4,1.4],30:[1,1.2,1.4,1.4],31:[1,1.2,1.4,1.4],32:[1,1.2,1.4,1.4],33:[1,1.2,1.4,1.4],34:[1,1.2,1.4,1.4],35:[1,1.2,1.4,1.4]};
+const LEGEND_SUB_CROWN={14:[1,1.5,2,2],15:[1,1.5,2,2],16:[1,1.5,2,2],17:[1,1.5,1.7,1.5],18:[1,1.5,1.7,1.4],19:[1,1.4,1.6,1.4],20:[1,1.3,1.5,1.3],21:[1,1.2,1.4,1.3],22:[1,1.2,1.4,1.2],23:[1,1.2,1.4,1.2],24:[1,1.2,1.4,1.1],25:[1,1.2,1.4,1.4],26:[1,1.2,1.4,1.4],27:[1,1.2,1.4,1],28:[1,1.2,1.4,1],29:[1,1.2,1.4,1],30:[1,1.2,1.4,1],31:[1,1.2,1.4,1],32:[1,1.2,1.4,1],33:[1,1.2,1.4,1],34:[1,1.2,1.4,1],35:[1,1.2,1.3,1]};// 28~35장 1.2/1.4, 마우스랜드 1.2/1.3 (위키 Crown Difficulty)
 function legendCrownMult(c,sub){return (LEGEND_SUB_CROWN[sub]||LEGEND_CROWN_MULT)[(c===4?3:c)-1]}
 LEGEND_STAGES.forEach((t,k)=>STAGES.push({...t,gap:4,wave:0,chapter:4,legend:{k},maxEnemies:t.max}));
 // Into the Future Chapter 1 (미래편 1장): 48 stages Japan -> Moon, opened by the chapter-3 Moon like the original.
@@ -696,7 +696,7 @@ function chapterOf(i){return STAGES[i]?.chapter||1}
 // 전설의 시작 ★1~3 … 생선의 요새 ★6); a ranged map is spread over its stages from the low end to the high end, and the
 // rating ignores crowns, as in the original. Other stages: score = log10 of the toughest spawn's sqrt(HP x DPS) scaled by
 // stage magnification x chapter multiplier, mapped linearly onto the same scale (fitted to the legend ratings).
-const LEGEND_STAR_RANGES=[[1,3],[3,3],[3,4],[4,4],[4,4],[4,5],[5,5],[5,5],[5,5],[5,6],[6,6],[6,6],[6,6],[6,6],[6,6],[6,6],[6,6],[6,7],[7,7],[7,7],[8,8],[8,8],[8,8],[8,8],[8,8],[8,8],[8,8],[8,8],[8,8],[8,8],[8,9],[8,9],[9,9],[9,9],[9,9],[9,9]];
+const LEGEND_STAR_RANGES=[[1,3],[3,3],[3,4],[4,4],[4,4],[4,5],[5,5],[5,5],[5,5],[5,6],[6,6],[6,6],[6,6],[6,6],[6,6],[6,6],[6,6],[6,7],[7,7],[7,7],[8,8],[8,8],[8,8],[8,8],[8,8],[8,8],[8,8],[8,8],[8,8],[8,8],[9,9],[9,9],[9,9],[9,9],[9,9],[9,9]];// 28~30장 ★8, 31~36장 ★9 (위키 {{Stars}})
 const STAR_FIT={a:2,b:-3};// score 2.0 (세계편 1장 한국) → ★1, 4.5 (볼케이노 화산 끝) → ★6; a straight regression on the legend stages (r .6) put 세계편 1장 above 전설의 시작
 function stageScore(i,crown=legendCrown){const st=STAGES[i],c=st.chapter,g=c===2?1.5:c===3?4:c===4?legendCrownMult(crown,legendSubOf(st.legend.k)):1;let best=1;
  for(const r of STAGE_SPAWNS[i]||[]){const d=data.units[r.type];if(!d)continue;const m=(r.mag||100)/100*g;best=Math.max(best,m*Math.sqrt(d.hp*d.atk*(d.multiHit||1)/Math.max(.3,d.interval||1)))}
