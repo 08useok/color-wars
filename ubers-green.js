@@ -1,6 +1,6 @@
-// 울슈레 68~71 초록 계열: 라임 · 에메 · 애시드 · 스프링 (v6.2.0). 모두 울트라 슈퍼 레어(뽑기), 1진·2진 가격 동일.
+// 울슈레 68~71 초록 계열: 라임 · 에메랄드 · 애시드 · 스프링 (v6.2.0). 모두 울트라 슈퍼 레어(뽑기), 1진·2진 가격 동일.
 // 라임·에메는 남성형, 애시드·스프링은 여성형. 능력은 원작에서 가져왔다:
-// 라임 = 폭발(Explosion, v13.7), 에메 = 메탈 킬러(Metal Killer, v13.3) + 크리티컬,
+// 라임 = 폭발(Explosion, v13.7), 에메랄드 = 메탈 킬러(Metal Killer, v13.3) + 크리티컬,
 // 애시드 = 좀비 킬러 + 영혼 일격(Soulstrike), 스프링 = 소열파(Mini-Surge, v12.3).
 // 전용 모션은 new-colors-motion-atlases.js에서 연결한다. 미연결 캐릭터만 임시 색 규칙을 쓴다.
 const GREEN_UBERS={
@@ -10,7 +10,7 @@ const GREEN_UBERS={
   role:'범위 · 폭발 · 약화',
   text:'주스 가게 직원. 짜낸 과즙이 터지면 주변 적까지 함께 쓸리고, 눈이 따가운 적은 힘이 빠진다.',
   textEvo:'과즙이 더 세게 터져 더 넓게 번진다.',evoText:'체력·공격력 +15% · 폭발 범위 +30% · 약화 70%'},
- emerald:{name:'에메',color:'#50c878',job:'보석 세공사',base:'brick',tint:'hue-rotate(95deg) saturate(1.1) brightness(1.2)',
+ emerald:{name:'에메랄드',color:'#50c878',job:'보석 세공사',base:'brick',tint:'hue-rotate(95deg) saturate(1.1) brightness(1.2)',
   hp:40000,atk:24000,interval:4,speed:5,range:16,cost:3800,cooldown:42,knockbacks:3,
   extra:{attackClass:'개체',metalKiller:.25,critChance:.3,critMult:2},
   role:'정밀 단일 · 메탈 킬러 · 크리티컬',
@@ -91,7 +91,7 @@ resolveAttack=function(u,t,share){
  }
  return r;
 };
-// 새 능력 ③ 메탈 킬러(에메): 메탈 적에게 현재 체력의 일부를 한 번에 깎는다(원래는 메탈에 1 피해).
+// 새 능력 ③ 메탈 킬러(에메랄드): 메탈 적에게 현재 체력의 일부를 한 번에 깎는다(원래는 메탈에 1 피해).
 const _guDamage=damage;
 damage=function(v,amount,from){
  const mk=from?.stats?.metalKiller;

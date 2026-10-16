@@ -1,21 +1,21 @@
-// 울슈레 72~77: 아쿠마 · 사파 · 로블 · 나이트 · 퓨샤 · 로즈 (v6.2.0). 모두 울트라 슈퍼 레어(뽑기), 1진·2진 가격 동일.
-// 사파·아쿠마·퓨샤·로즈는 여성형, 로블·나이트는 남성형. 능력은 원작 6.3 시점에 있던 것만 썼다:
+// 울슈레 72~77: 아쿠아마린 · 사파이어 · 로열 블루 · 나이트 · 퓨샤 · 로즈 (v6.2.0). 모두 울트라 슈퍼 레어(뽑기), 1진·2진 가격 동일.
+// 사파이어·아쿠아마린·퓨샤·로즈는 여성형, 로열 블루·나이트는 남성형. 능력은 원작 6.3 시점에 있던 것만 썼다:
 // 파동 무효·약화/정지/둔화 무효(클레이G 3형태, 6.3), 회심의 일격, 공격력 업, 살아남는다, 원거리·좀비 킬러·크리티컬, 파동, 약화·둔화·정지.
 // 전용 모션은 new-colors-motion-atlases.js에서 연결한다. 미연결 캐릭터만 임시 색 규칙을 쓴다.
 const BLUE_UBERS={
- aquamarine:{name:'아쿠마',color:'#7fffd4',job:'래프팅 가이드',base:'aqua',tint:'hue-rotate(-30deg) saturate(1.4) brightness(1.4)',
+ aquamarine:{name:'아쿠아마린',color:'#7fffd4',job:'래프팅 가이드',base:'aqua',tint:'hue-rotate(-30deg) saturate(1.4) brightness(1.4)',
   hp:50000,atk:11000,interval:2.6,speed:14,range:8,cost:3300,cooldown:40,knockbacks:3,
   extra:{attackClass:'범위',area:true,waveImmune:true,blowChance:.3,blowDistance:8},
   role:'파동 무효 · 빠른 범위 · 밀치기',
   text:'래프팅 가이드. 거센 물살과 적의 파동에도 휩쓸리지 않고 달려들어, 노로 적을 밀쳐 낸다.',
   textEvo:'물살을 완전히 읽어 노질이 더 자주 적을 밀어낸다.',evoText:'체력·공격력 +15% · 밀치기 45%'},
- sapphire:{name:'사파',color:'#0f52ba',job:'프로 당구 선수',base:'violet',tint:'hue-rotate(-70deg) saturate(1.5) brightness(1.05)',
+ sapphire:{name:'사파이어',color:'#0f52ba',job:'프로 당구 선수',base:'violet',tint:'hue-rotate(-70deg) saturate(1.5) brightness(1.05)',
   hp:30000,atk:22000,interval:3.6,speed:5,range:30,cost:3600,cooldown:42,knockbacks:3,
   extra:{attackClass:'원거리',savageChance:.3,savageMult:3.5,blowChance:.35,blowDistance:12},
   role:'원거리 단일 · 회심의 일격 · 밀어치기',
   text:'프로 당구 선수. 큐로 정확히 찍은 한 점이 가끔 회심의 일격으로 터지고, 맞은 적은 멀리 굴러간다.',
   textEvo:'샷이 더 정확해져 회심의 일격이 자주 터진다.',evoText:'체력·공격력 +15% · 회심의 일격 45%'},
- royalblue:{name:'로블',color:'#4169e1',job:'해운회사 운영 책임자',base:'brick',tint:'hue-rotate(215deg) saturate(1.2) brightness(1.15)',
+ royalblue:{name:'로열 블루',color:'#4169e1',job:'해운회사 운영 책임자',base:'brick',tint:'hue-rotate(215deg) saturate(1.2) brightness(1.15)',
   hp:70000,atk:8000,interval:3.4,speed:5,range:10,cost:3800,cooldown:50,knockbacks:3,
   extra:{attackClass:'범위',area:true,survive:1,surviveOnce:true,strengthen:{at:.5,mult:2},immune:{freeze:true,slow:true,weaken:true}},
   role:'한 번 버팀 · 체력이 반 이하면 공격력 업 · 정지·둔화·약화 무효',
@@ -74,11 +74,11 @@ canTrueForm=function(t){return !BLUE_UBERS[t]&&_buCanTrue(t)};
 hasTrueForm=function(t){return !BLUE_UBERS[t]&&_buHasTrue(t)};
 const _buTraining=renderTraining;
 renderTraining=function(){_buTraining();for(const card of $('#trainingGrid').children)if(BLUE_UBERS[card.dataset.type])card.querySelector('.true-btn')?.remove()};
-// 새 능력 ① 파동 무효(아쿠마): 적 파동 피해를 받지 않는다. launchWave 안에서만 켜지는 표시를 쓴다.
+// 새 능력 ① 파동 무효(아쿠아마린): 적 파동 피해를 받지 않는다. launchWave 안에서만 켜지는 표시를 쓴다.
 const _buWave=launchWave;
 launchWave=function(u,d){game.inWave=true;try{return _buWave.apply(this,arguments)}finally{game.inWave=false}};
-// 새 능력 ② 회심의 일격(사파): 확률로 피해가 크게 늘지만 크리티컬과 달리 메탈은 못 뚫는다.
-// 새 능력 ③ 정지·둔화·약화 무효(로블): 걸린 상태이상을 바로 지운다(원작 클레이G 3형태, 6.3).
+// 새 능력 ② 회심의 일격(사파이어): 확률로 피해가 크게 늘지만 크리티컬과 달리 메탈은 못 뚫는다.
+// 새 능력 ③ 정지·둔화·약화 무효(로열 블루): 걸린 상태이상을 바로 지운다(원작 클레이G 3형태, 6.3).
 const _buDamage=damage;
 damage=function(v,amount,from){
  if(v&&v.ally&&game.inWave&&v.stats?.waveImmune)return;

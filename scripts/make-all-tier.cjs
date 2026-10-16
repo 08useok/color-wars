@@ -3,6 +3,7 @@ const fs=require('fs'),path=require('path');
 const root=path.resolve(__dirname,'..');
 const e=require('./full-harness.cjs')();
 const D=JSON.parse(fs.readFileSync(path.join(root,'docs/simulations/all-ally-tier-2026-10-16.json'),'utf8'));
+for(const c of Object.keys(D.res))if(e.names[c])D.res[c].name=e.names[c];// 이름은 항상 현재 게임 값을 쓴다
 const old=JSON.parse(fs.readFileSync(path.join(root,'docs/simulations/tier-scores-2026-10-13.json'),'utf8'));
 const GR={basic:'기본',rare:'레어',sr:'슈퍼 레어',ex:'EX',uber:'울슈레'};
 const NEW=new Set(['amber','bronze','banana','butter','vanilla','lime','emerald','acid','spring','aquamarine','sapphire','royalblue','night','fuchsia','rose','mixedwhite','earphonered','shotguntan']);
