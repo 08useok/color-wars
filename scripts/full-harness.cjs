@@ -4,7 +4,7 @@
 const fs=require('fs'),path=require('path');
 const ROOT=path.join(__dirname,'..');
 const DEFAULT_ADDONS=['clover-variant-atlases.js','clover-variant-integration.js','rank.js','catfruit.js','gold-beige-3.js','subspecies.js','stage-tuning.js','zombie.js','zombie-burrow.js','amber.js','ubers-yellow.js','colors-motion-atlases.js','ubers-green.js','ubers-blue.js','ubers-turquoise.js','uber-series.js','cannon.js'];
-module.exports=function createFullEngine({addons=DEFAULT_ADDONS,savedLegend={},level=30,base=10,wallet=20,prod=20,acc=20,extraSetup=''}={}){
+module.exports=function createFullEngine({fresh=false,addons=DEFAULT_ADDONS,savedLegend={},level=30,base=10,wallet=20,prod=20,acc=20,extraSetup=''}={}){
  // gacha.js 대신: 추가 파일이 읽는 뽑기 전역만 흉내 낸다
  const PRELUDE=`\nconst EX_NAME={};const GACHA_UBER=[];const gacha={owned:[],t1:0,t10:0,fix:0,pulls:0};function gachaOwns(){return true}function saveGacha(){}function renderGachaBadge(){}function gachaToast(){}\n`;
  const sources=['game.js',...addons].map((f,i)=>`\n// ---- ${f}\n`+fs.readFileSync(path.join(ROOT,f),'utf8').replace('reset();openStages();requestAnimationFrame(loop);','reset();')+(i===0?PRELUDE:''));
@@ -22,15 +22,17 @@ module.exports=function createFullEngine({addons=DEFAULT_ADDONS,savedLegend={},l
  const env={addEventListener:noop,console,Math:Object.create(Math),Date,URLSearchParams,location:{search:'',hash:''},document,
   localStorage:{getItem:k=>k==='red-battle-legend-v1'?JSON.stringify(savedLegend):(store[k]??null),setItem:(k,v)=>{store[k]=String(v)},removeItem:noop},
   requestAnimationFrame:noop,setTimeout:noop,setInterval:noop,Image:class{},window:{addEventListener:noop},performance:{now:()=>0},navigator:{userAgent:''},alert:noop,confirm:()=>true};
+ const initCode=fresh
+  ?'cleared.length=0;for(const t of ALLIES)training.levels[t]=1;training.baseLevel=1;training.walletLevel=0;training.prodLevel=0;training.accLevel=0;training.studyLevel=0;training.xp=0;'
+  :'cleared=STAGES.map((_,i)=>i);for(const t of ALLIES)training.levels[t]='+level+';training.baseLevel='+base+';training.walletLevel='+wallet+';training.prodLevel='+prod+';training.accLevel='+acc+';allyUnlocked=()=>true;';
  const setup=`
  render=()=>{};tutorial=()=>{};animateUnit=()=>{};animateDog=()=>{};critBurst=()=>{};beamFx=()=>{};beamHit=()=>{};
  drawUnit=u=>{u.el=document.createElement('div');};
  syncBasePositions=()=>{data.bases.enemy.x=10;data.bases.enemy.frontX=12;data.bases.ally.x=90;data.bases.ally.frontX=88;};
  finish=win=>{game.ended=true;game.running=false;game.won=win;};
- cleared=STAGES.map((_,i)=>i);for(const t of ALLIES)training.levels[t]=${level};
- training.baseLevel=${base};training.walletLevel=${wallet};training.prodLevel=${prod};training.accLevel=${acc};allyUnlocked=()=>true;
+ ${initCode}
  target=u=>{let nearest=null,best=Infinity,dir=u.ally?-1:1;for(const v of game.units){if(v.hp<=0||v.kbTime>0||v.emerging||v.ally===u.ally||dir*(v.x-u.x)<-1)continue;const dist=Math.abs(v.x-u.x);if(dist<best){best=dist;nearest=v;}}return nearest;};
- chapterBonusCount=()=>3;
+ ${fresh?'':'chapterBonusCount=()=>3;'}
  const originalAddUnit=addUnit;let deploymentCounts={};
  addUnit=(...args)=>{const before=game.units.length;originalAddUnit(...args);if(game.units.length>before&&ALLIES.includes(args[0]))deploymentCounts[args[0]]=(deploymentCounts[args[0]]||0)+1;};
  const _autoDeployBase=autoDeploy;let policy='auto';
@@ -62,7 +64,9 @@ module.exports=function createFullEngine({addons=DEFAULT_ADDONS,savedLegend={},l
   return {win:game.won===true,timeout:!game.ended,seconds:+game.elapsed.toFixed(2),allyHp:data.bases.ally.hp,enemyHp:data.bases.enemy.hp,frames,deployments:{...deploymentCounts}};
   }finally{STAGE_SPAWNS[index]=orig}
  }
- function setProfile(p={}){const L=p.level??${level};for(const t of ALLIES)training.levels[t]=L;training.baseLevel=p.base??${base};training.walletLevel=p.wallet??${wallet};training.prodLevel=p.prod??${prod};training.accLevel=p.acc??${acc};if(p.noSuppress!==undefined){const SUPP=[...ALIEN_SUPPRESSORS,...ALIEN_SUPPRESSORS2,...ALIEN_SUPPRESSORS3,...ALIEN_SUPPRESSORS4];cleared.length=0;cleared.push(...STAGES.map((_,i)=>i).filter(i=>!(p.noSuppress&&SUPP.includes(i))));}trueForms.length=0;if(p.trueForms)trueForms.push(...p.trueForms);if(p.trueFormsAll)for(const t of ALLIES)if(trueFormOpen(t)&&!data.units[t].noEvolve&&!trueForms.includes(t))trueForms.push(t);}
+ function setProfile(p={}){
+  if(p.state){const st=p.state;cleared.length=0;cleared.push(...(st.cleared||[]));for(const t of ALLIES)training.levels[t]=(st.levels&&st.levels[t])||1;training.baseLevel=st.baseLevel||1;training.walletLevel=st.walletLevel||0;training.prodLevel=st.prodLevel||0;training.accLevel=st.accLevel||0;training.studyLevel=st.studyLevel||0;trueForms.length=0;return;}const L=p.level??${level};for(const t of ALLIES)training.levels[t]=L;training.baseLevel=p.base??${base};training.walletLevel=p.wallet??${wallet};training.prodLevel=p.prod??${prod};training.accLevel=p.acc??${acc};if(p.suppressN!==undefined){const SUPP6=[...ALIEN_SUPPRESSORS,...ALIEN_SUPPRESSORS2,...ALIEN_SUPPRESSORS3];const SUPP=[...SUPP6,...ALIEN_SUPPRESSORS4];cleared.length=0;cleared.push(...STAGES.map((_,i)=>i).filter(i=>!SUPP.includes(i)||SUPP6.indexOf(i)>=0&&SUPP6.indexOf(i)<p.suppressN));}
+ if(p.noSuppress!==undefined){const SUPP=[...ALIEN_SUPPRESSORS,...ALIEN_SUPPRESSORS2,...ALIEN_SUPPRESSORS3,...ALIEN_SUPPRESSORS4];cleared.length=0;cleared.push(...STAGES.map((_,i)=>i).filter(i=>!(p.noSuppress&&SUPP.includes(i))));}trueForms.length=0;if(p.trueForms)trueForms.push(...p.trueForms);if(p.trueFormsAll)for(const t of ALLIES)if(trueFormOpen(t)&&!data.units[t].noEvolve&&!trueForms.includes(t))trueForms.push(t);}
  return {damage,setProfile,lv20:LV20_TARGET,roles:ROLES,alienMagnification,itfSuppressed,alienSuppressed,setCleared:l=>{cleared.length=0;cleared.push(...l)},stageList:STAGES,roster:ALLIES,spawnList:STAGE_SPAWNS,units:data.units,names:UNIT_NAMES,gradeOf,simulate,unitStats,training,addUnit,update,reset,getGame:()=>game,legendIdx,legendSubOf,legendSubs:LEGEND_SUBS,chapterOf,legendCrownMult,enemyMagnification,DECK_SIZE};`;
  return new Function(...Object.keys(env),sources.join('\n')+setup)(...Object.values(env));
 };

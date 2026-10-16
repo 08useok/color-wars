@@ -11,8 +11,11 @@ const ONLY=process.env.ONLY?process.env.ONLY.split(','):null;
 const MAX_ROUNDS=+(process.env.ROUNDS||6);
 (async()=>{
  const e=mk();
- const scores=fs.existsSync(path.join(root,'docs/simulations/tier-scores-2026-10-13.json'))?JSON.parse(fs.readFileSync(path.join(root,'docs/simulations/tier-scores-2026-10-13.json'),'utf8')):{};
- const val=t=>scores[t]?.score??0;
+ // 갈아 끼울 칸을 고르는 점수: 10-16 기준 맵 5곳 합산(없는 캐릭터는 시험해 둔 값). 점수가 낮은 칸부터 바꾼다.
+ const tierFile=path.join(root,'docs/simulations/all-ally-tier-2026-10-16.json');
+ const tierData=fs.existsSync(tierFile)?JSON.parse(fs.readFileSync(tierFile,'utf8')).res:{};
+ const EXTRA_VAL={turquoise:.746};
+ const val=t=>tierData[t]?.comp??EXTRA_VAL[t]??0;
  const grade=t=>e.gradeOf(t);
  const allowed=(t,crown)=>crown===4?['ex','rare'].includes(grade(t)):true;
  const seeds={
@@ -31,7 +34,13 @@ const MAX_ROUNDS=+(process.env.ROUNDS||6);
   const idx=rng(sc.start,sc.start+sc.len-1).map(k=>e.legendIdx(k));
   for(const c of [1,2,3,4])sets.push({key:`L${n+1}-${c}`,label:`레전드 ${n+1}장 ${sc.name} ★${c}`,crown:c,idx});
  });
- const todo=ONLY?sets.filter(s=>ONLY.includes(s.key)||ONLY.includes(s.key.split('-')[0])):sets;
+ const outFile=path.join(root,'docs/simulations/chapter-settings-2026-10-13.json');
+ // 이어서 돌리기: RESUME=1이면 기존 결과를 읽어 끝낸 묶음은 건너뛴다. RERUN_STALE=1이면 스프링·로즈(조정 전 값으로 찾은) 덱이 든 묶음은 다시 돌린다.
+ let out=[];
+ if(process.env.RESUME&&fs.existsSync(outFile)){out=JSON.parse(fs.readFileSync(outFile,'utf8'));if(process.env.RERUN_STALE)out=out.filter(r=>!(r.deck.includes('spring')||r.deck.includes('rose')));console.log('이어서: 기존 결과',out.length,'개 유지');}
+ const doneKeys=new Set(out.map(r=>r.key));
+ const todo=(ONLY?sets.filter(s=>ONLY.includes(s.key)||ONLY.includes(s.key.split('-')[0])):sets).filter(s=>!(process.env.RESUME&&doneKeys.has(s.key)));
+ console.log('돌릴 묶음',todo.length,'개');
  const enemyMax=i=>e.stageList[i].hp;
  const evalDeck=async(deck,set,idxList,level=30,adv=false)=>{
   const profile=adv?{level,trueFormsAll:true}:{level};
@@ -42,8 +51,6 @@ const MAX_ROUNDS=+(process.env.ROUNDS||6);
   return per;
  };
  const summarize=per=>{const v=Object.values(per);return {cleared:v.filter(x=>x.clear).length,total:v.length,progress:v.reduce((a,x)=>a+x.progress,0)}};
- const out=[];
- const outFile=path.join(root,'docs/simulations/chapter-settings-2026-10-13.json');
  for(const set of todo){
   const t0=Date.now();
   const log=[];
