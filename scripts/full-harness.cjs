@@ -3,7 +3,7 @@
 // addons: 읽을 추가 파일 이름 목록. 기본은 전투 관련 전부. levels: 아군 레벨(기본 30). trueForms: 3진 전환할 유닛 목록.
 const fs=require('fs'),path=require('path');
 const ROOT=path.join(__dirname,'..');
-const DEFAULT_ADDONS=['clover-variant-atlases.js','clover-variant-integration.js','rank.js','catfruit.js','gold-beige-3.js','subspecies.js','stage-tuning.js','zombie.js','zombie-burrow.js','amber.js','ubers-yellow.js','colors-motion-atlases.js','ubers-green.js','ubers-blue.js','uber-series.js','cannon.js'];
+const DEFAULT_ADDONS=['clover-variant-atlases.js','clover-variant-integration.js','rank.js','catfruit.js','gold-beige-3.js','subspecies.js','stage-tuning.js','zombie.js','zombie-burrow.js','amber.js','ubers-yellow.js','colors-motion-atlases.js','ubers-green.js','ubers-blue.js','ubers-turquoise.js','uber-series.js','cannon.js'];
 module.exports=function createFullEngine({addons=DEFAULT_ADDONS,savedLegend={},level=30,base=10,wallet=20,prod=20,acc=20,extraSetup=''}={}){
  // gacha.js 대신: 추가 파일이 읽는 뽑기 전역만 흉내 낸다
  const PRELUDE=`\nconst EX_NAME={};const GACHA_UBER=[];const gacha={owned:[],t1:0,t10:0,fix:0,pulls:0};function gachaOwns(){return true}function saveGacha(){}function renderGachaBadge(){}function gachaToast(){}\n`;
@@ -63,6 +63,6 @@ module.exports=function createFullEngine({addons=DEFAULT_ADDONS,savedLegend={},l
   }finally{STAGE_SPAWNS[index]=orig}
  }
  function setProfile(p={}){const L=p.level??${level};for(const t of ALLIES)training.levels[t]=L;training.baseLevel=p.base??${base};training.walletLevel=p.wallet??${wallet};training.prodLevel=p.prod??${prod};training.accLevel=p.acc??${acc};if(p.noSuppress!==undefined){const SUPP=[...ALIEN_SUPPRESSORS,...ALIEN_SUPPRESSORS2,...ALIEN_SUPPRESSORS3,...ALIEN_SUPPRESSORS4];cleared.length=0;cleared.push(...STAGES.map((_,i)=>i).filter(i=>!(p.noSuppress&&SUPP.includes(i))));}trueForms.length=0;if(p.trueForms)trueForms.push(...p.trueForms);if(p.trueFormsAll)for(const t of ALLIES)if(trueFormOpen(t)&&!data.units[t].noEvolve&&!trueForms.includes(t))trueForms.push(t);}
- return {setProfile,lv20:LV20_TARGET,roles:ROLES,alienMagnification,itfSuppressed,alienSuppressed,setCleared:l=>{cleared.length=0;cleared.push(...l)},stageList:STAGES,roster:ALLIES,spawnList:STAGE_SPAWNS,units:data.units,names:UNIT_NAMES,gradeOf,simulate,unitStats,training,addUnit,update,reset,getGame:()=>game,legendIdx,legendSubOf,legendSubs:LEGEND_SUBS,chapterOf,legendCrownMult,enemyMagnification,DECK_SIZE};`;
+ return {damage,setProfile,lv20:LV20_TARGET,roles:ROLES,alienMagnification,itfSuppressed,alienSuppressed,setCleared:l=>{cleared.length=0;cleared.push(...l)},stageList:STAGES,roster:ALLIES,spawnList:STAGE_SPAWNS,units:data.units,names:UNIT_NAMES,gradeOf,simulate,unitStats,training,addUnit,update,reset,getGame:()=>game,legendIdx,legendSubOf,legendSubs:LEGEND_SUBS,chapterOf,legendCrownMult,enemyMagnification,DECK_SIZE};`;
  return new Function(...Object.keys(env),sources.join('\n')+setup)(...Object.values(env));
 };
