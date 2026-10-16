@@ -1,5 +1,5 @@
 // 울슈레 63~67 노랑·갈색 계열 중 앰버(amber.js)를 뺀 4명: 브론즈 · 바나나 · 버터 · 바닐라 (v6.2.0).
-// 직업 연결과 능력은 원작 능력(성 파괴자·대상 한정·머니 업·연타·넉백 무효·둔화·바리어 브레이커·엄강)에서 가져왔다.
+// 직업 연결과 능력은 원작 능력(성 파괴자·대상 한정·머니 업·연속 공격·날려버린다 무효·움직임을 느리게 한다·베리어 브레이커·엄강)에서 가져왔다.
 // 울슈레 규칙: 1진·2진 가격 동일(flatCost), 3,000~5,000원. 뽑기 울슈레 칸을 나눠 갖는다.
 // 전용 걷기·공격·넉백 모션은 colors-motion-atlases.js가 NEW_ATLASES에 연결한다.
 const YELLOW_UBERS={
@@ -11,26 +11,26 @@ const YELLOW_UBERS={
   textEvo:'더 단단해진 몸으로 성을 무너뜨린다. 한 방의 무게는 그대로, 버티는 힘이 늘었다.',
   evoText:'체력·공격력 +15%'},
  banana:{name:'바나나',color:'#ffe135',job:'스무디 가게 사장',
-  hp:35000,atk:10000,interval:3.5,speed:5,range:16,cost:3000,cooldown:45,knockbacks:3,// 범위 공격은 연타마다 atk 전부를 주므로 atk는 한 번 몫(3연타 합 3만)
+  hp:35000,atk:10000,interval:3.5,speed:5,range:16,cost:3000,cooldown:45,knockbacks:3,// 범위 공격은 연타마다 atk 전부를 주므로 atk는 한 번 몫(3회 연속 공격 합 3만)
   extra:{attackClass:'범위',area:true,killGold:1,hits:Array.from({length:3},(_,i)=>({at:.35+i*.18,share:1/3}))},
-  role:'범위 3연타 · 처치 시 돈 2배',
+  role:'범위 3회 연속 공격 · 격파시 머니 UP ×2',
   text:'스무디 가게 사장. 믹서기를 세 번 연달아 돌려 주변을 휩쓸고, 쓰러뜨린 적에게서 돈을 두 배로 번다.',
   textEvo:'믹서기가 더 세졌다. 가끔 적을 밀쳐 낸다.',
-  evoText:'체력·공격력 +15% · 밀치기 25%'},
+  evoText:'체력·공격력 +15% · 날려버린다 25%'},
  butter:{name:'버터',color:'#fff3a0',job:'유제품 가공사',
   hp:60000,atk:8000,interval:3.2,speed:5,range:10,cost:3000,cooldown:40,knockbacks:3,
   extra:{attackClass:'범위',area:true,knockbackImmune:true,slowChance:.6,slowDuration:4},
-  role:'넉백 무효 · 범위 둔화 탱커',
+  role:'날려버린다 무효 · 범위 움직임을 느리게 하는 탱커',
   text:'유제품 가공사. 흔들리지 않고 자리를 지키며, 끈적한 반죽을 튀겨 맞은 적의 걸음을 느리게 만든다.',
   textEvo:'더 두툼해진 몸. 끈적임도 한결 오래 간다.',
   evoText:'체력·공격력 +15%'},
  vanilla:{name:'바닐라',color:'#f3e5ab',job:'식품 향료 개발자',
   hp:30000,atk:14000,interval:4,speed:5,range:20,cost:3500,cooldown:43,knockbacks:3,
   extra:{attackClass:'범위',area:true,strongVs:['alien'],barrierBreak:1,statusVs:['alien'],freezeChance:.5,freezeDuration:2},
-  role:'에이리언 엄강 · 바리어 브레이커 · 정지',
-  text:'식품 향료 개발자. 향으로 에이리언을 홀려 잠깐 멈추게 하고, 단단한 바리어도 한 번에 녹여 버린다.',
+  role:'에이리언 엄강 · 베리어 브레이커 · 움직임을 멈춘다',
+  text:'식품 향료 개발자. 향으로 에이리언을 홀려 잠깐 멈추게 하고, 단단한 베리어도 한 번에 녹여 버린다.',
   textEvo:'향이 한층 짙어져 에이리언이 거의 항상 멈춘다.',
-  evoText:'체력·공격력 +15% · 정지 100%'}
+  evoText:'체력·공격력 +15% · 움직임을 멈춘다 100%'}
 };
 const YELLOW_EVO_EXTRA={banana:()=>({blowChance:.25,blowDistance:10}),vanilla:()=>({freezeChance:1})};
 for(const [id,s] of Object.entries(YELLOW_UBERS)){
@@ -62,7 +62,7 @@ target=function(u){
  const dir=-1;
  return game.units.filter(v=>v.hp>0&&v.kbTime<=0&&!v.emerging&&v.ally!==u.ally&&traitsOf(data.units[v.type]).length===0&&dir*(v.x-u.x)>=-1).sort((a,b)=>Math.abs(a.x-u.x)-Math.abs(b.x-u.x))[0];
 };
-// 새 능력 ② 바리어 브레이커(바닐라): 확률로 바리어를 즉시 깨고 그대로 피해를 준다.
+// 새 능력 ② 베리어 브레이커(바닐라): 확률로 베리어를 즉시 깨고 그대로 피해를 준다.
 const _yuDamage=damage;
 damage=function(v,amount,from){
  const p=from?.stats?.barrierBreak;
@@ -75,8 +75,8 @@ codexTraitBadges=function(d){
  const b=_yuBadges(d);
  if(d.onlyTraitless)b.push('무속성 적과 성만 공격');
  if(d.castleMult>1)b.push(`성 파괴자 (적 성에 ×${d.castleMult})`);
- if(d.barrierBreak)b.push('바리어 브레이커');
- if(d.knockbackImmune)b.push('넉백 무효');
+ if(d.barrierBreak)b.push('베리어 브레이커');
+ if(d.knockbackImmune)b.push('날려버린다 무효');
  return b;
 };
 renderNewButtons();renderDeckButtons();renderTraining();

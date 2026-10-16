@@ -1,12 +1,12 @@
-// 울슈레 터콰이즈 (v6.3.x, 워터즈): 서핑 강사. 새 능력 '회피'(Dodge) — 공격을 받으면 확률로 잠깐 모든 피해를 무효로 한다(원작 회피 공격).
+// 울슈레 터콰이즈 (v6.3.x, 워터즈): 서핑 강사. 새 능력 '공격 무효'(Dodge) — 공격을 받으면 확률로 잠깐 모든 피해를 무효로 한다(원작 공격 무효).
 // 1진·2진 같은 가격(울슈레 규칙). 그림은 임시(코랄 + 색 규칙). 성별은 임시로 여성.
 const TURQUOISE={
  turquoise:{name:'터콰이즈',color:'#40e0d0',job:'서핑 강사',base:'coral',tint:'hue-rotate(-20deg) saturate(1.5) brightness(1.2)',
   hp:36000,atk:7000,interval:2.8,speed:8,range:7,cost:3800,cooldown:50,knockbacks:3,
   extra:{attackClass:'범위',area:true,blowChance:.25,blowDistance:8,dodge:{chance:.3,duration:2.5},waveImmune:true,surgeImmune:true},
-  role:'회피 · 파동·열파 무효 · 범위 · 밀치기',
+  role:'공격 무효 · 파동·열파 데미지 무효 · 범위 · 날려버린다',
   text:'서핑 강사. 밀려오는 파도를 타듯 적의 공격을 스치며 흘려보내고, 거대한 파동이나 열파 위에서도 균형을 잃지 않는다. 보드로 후려쳐 적을 멀리 밀어낸다.',
-  textEvo:'파도의 결을 완전히 읽어 공격이 닿기도 전에 몸을 돌린다.',evoText:'체력·공격력 +15% · 회피 40%'}
+  textEvo:'파도의 결을 완전히 읽어 공격이 닿기도 전에 몸을 돌린다.',evoText:'체력·공격력 +15% · 공격 무효 40%'}
 };
 const TURQUOISE_EVO_EXTRA={turquoise:d=>({dodge:{...d.dodge,chance:.4}})};
 for(const [id,s] of Object.entries(TURQUOISE)){
@@ -35,8 +35,8 @@ canTrueForm=function(t){return !TURQUOISE[t]&&_tqCanTrue(t)};
 hasTrueForm=function(t){return !TURQUOISE[t]&&_tqHasTrue(t)};
 const _tqTraining=renderTraining;
 renderTraining=function(){_tqTraining();for(const card of $('#trainingGrid').children)if(TURQUOISE[card.dataset.type])card.querySelector('.true-btn')?.remove()};
-// 새 능력 회피: 공격(파동·열파 포함)을 받는 순간 확률로 일정 시간 모든 피해를 무효로 한다. 무효가 된 공격은 넉백도 없다.
-// 새 능력 열파 무효: 적 열파 피해를 받지 않는다. updateSurges 안에서만 켜지는 표시를 쓴다(파동 무효는 ubers-blue.js의 launchWave 표시를 재사용).
+// 새 능력 공격 무효: 공격(파동·열파 포함)을 받는 순간 확률로 일정 시간 모든 피해를 무효로 한다. 무효가 된 공격은 넉백도 없다.
+// 새 능력 열파 데미지 무효: 적 열파 피해를 받지 않는다. updateSurges 안에서만 켜지는 표시를 쓴다(파동 데미지 무효는 ubers-blue.js의 launchWave 표시를 재사용).
 const _tqSurges=updateSurges;
 updateSurges=function(dt){game.inSurge=true;try{return _tqSurges.apply(this,arguments)}finally{game.inSurge=false}};
 const _tqDamage=damage;
@@ -61,8 +61,8 @@ update=function(dt){
 const _tqBadges=codexTraitBadges;
 codexTraitBadges=function(d){
  const b=_tqBadges(d);
- if(d.surgeImmune)b.push('열파 무효');
- if(d.dodge)b.push(`회피 ${Math.round(d.dodge.chance*100)}% (공격을 받으면 ${d.dodge.duration}초간 모든 피해 무효)`);
+ if(d.surgeImmune)b.push('열파 데미지 무효');
+ if(d.dodge)b.push(`공격 무효 ${Math.round(d.dodge.chance*100)}% (공격을 받으면 ${d.dodge.duration}초간 모든 피해 무효)`);
  return b;
 };
 renderNewButtons();renderDeckButtons();renderTraining();

@@ -5,13 +5,13 @@
 const AMBER={
  id:'amber',name:'앰버',color:'#ffbf00',
  hp:48000,atk:31000,interval:4.4,speed:30,range:6,cost:3500,cooldown:40,knockbacks:5,
- role:'초고속 범위 · 검은 적·떠 있는 적 초데미지'
+ role:'초고속 범위 · 검은 적·떠있는 적 초데미지'
 };
 for(const list of [EX_TYPES,EX_GRADE,ALLIES,NEW_ALLY_TYPES,GENERIC_CD_TYPES])if(!list.includes(AMBER.id))list.push(AMBER.id);
 data.units[AMBER.id]={hp:Math.round(AMBER.hp/28),atk:Math.round(AMBER.atk/9),interval:AMBER.interval,speed:AMBER.speed,range:AMBER.range,cost:AMBER.cost,cooldown:AMBER.cooldown,knockbacks:AMBER.knockbacks,flatCost:true,noRangeGrow:true,area:true,attackClass:'범위',attackDuration:.8,windup:.4,massiveVs:['black','floating']};
 LV20_TARGET[AMBER.id]={hp:AMBER.hp,atk:AMBER.atk};
 UNIT_NAMES[AMBER.id]=EX_NAME[AMBER.id]=AMBER.name;COLORS[AMBER.id]=AMBER.color;ROLES[AMBER.id]=AMBER.role;
-PROFILE_TEXT[AMBER.id]='뽑기에서 만나는 울트라 슈퍼 레어. 눈 깜짝할 새 달려들어 한 방에 검은 적과 떠 있는 적을 쓸어버린다. 고문실의 블랙쿠마와 홍당무왕이 노리는 상대.';
+PROFILE_TEXT[AMBER.id]='뽑기에서 만나는 울트라 슈퍼 레어. 눈 깜짝할 새 달려들어 한 방에 검은 적과 떠있는 적을 쓸어버린다. 고문실의 블랙쿠마와 홍당무왕이 노리는 상대.';
 PROFILE_TEXT_EVOLVED[AMBER.id]='더 단단해진 몸으로 달려든다. 한 방의 무게는 그대로, 버티는 힘이 늘었다.';
 EVOLUTION_TEXT[AMBER.id]='체력·공격력 +15%';ACQUIRE_TEXT[AMBER.id]='뽑기에서 획득';
 {

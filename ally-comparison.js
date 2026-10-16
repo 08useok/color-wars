@@ -26,9 +26,9 @@ function allyComparisonText(s){
  const m=allyComparisonMetrics(s),n=v=>Math.round(v).toLocaleString('ko-KR');
  let text=`무속성 적 한 마리에게 모든 공격이 적중할 때 이론 DPS는 <b>${n(m.maximumDps)}</b>이다. `;
  if(s.boomerang)text+=`편도만 맞으면 ${n(m.directDps)}이며, 돌아오는 공격까지 맞혀야 위 화력을 낸다. `;
- if(s.damageTiers)text+=`거리별 직접 DPS는 ${n(m.minimumTierDps)}~${n(m.directDps)}로 달라지며, 위 수치는 가장 유리한 거리와 치명타 기대값을 반영한다. `;
+ if(s.damageTiers)text+=`거리별 직접 DPS는 ${n(m.minimumTierDps)}~${n(m.directDps)}로 달라지며, 위 수치는 가장 유리한 거리와 크리티컬 기대값을 반영한다. `;
  if(s.wave||s.surge)text+='위 수치는 직접 공격과 추가 공격을 모두 맞히는 상한이며, 넉백이나 위치 이탈로 실제 피해가 줄어들 수 있다. ';
- else if(s.critChance)text+='치명타는 확률에 따른 평균값으로 반영했다. ';
+ else if(s.critChance)text+='크리티컬은 확률에 따른 평균값으로 반영했다. ';
  const best=Object.entries(m.traits).sort((a,b)=>b[1].dps-a[1].dps)[0];
  if(best&&best[1].dps>m.maximumDps*1.01)text+=`${TRAIT_TARGET[best[0]]||best[0]}에게는 약 ${n(best[1].dps)} DPS를 기대할 수 있다. `;
  if(s.pull)text+='보스에게 끌어오기는 통하지 않지만 피해는 30% 증가한다. ';

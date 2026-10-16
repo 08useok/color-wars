@@ -23,7 +23,7 @@ const ZOMBIES={
  zbrollow:{base:'brollow',name:'좀비 제비족',traits:['zombie','floating'],hp:4500,atk:10000,interval:4.57,speed:49.5,range:7.5,reward:150,knockbacks:1,area:true,reviveHp:1,reviveDelay:6.67},// Zollow: 100% 체력으로 부활
  zcamelle:{base:'camelle',name:'좀비 혹부리 낙타',hp:120000,atk:5937,interval:3,speed:4.29,range:18.7,reward:1500,knockbacks:1,area:true,reviveCount:99,reviveHp:1,reviveDelay:8},// Zamelle: 무한 부활
  zostrich:{base:'ostrich',name:'좀비 타조동호회',hp:1600000,atk:23000,interval:.57,speed:8.58,range:8.8,reward:1080,knockbacks:4,area:true,reviveCount:99,reviveDelay:6},// Oldstrich: 무한 부활
- zdagshund:{base:'dagshund',name:'좀비 핫도그',hp:800000,atk:30000,interval:6.4,speed:4,range:14.7,reward:800,knockbacks:1,area:true,freezeChance:1,freezeDuration:2,reviveHp:1,reviveDelay:8},// Deathshund: 정지 100%
+ zdagshund:{base:'dagshund',name:'좀비 핫도그',hp:800000,atk:30000,interval:6.4,speed:4,range:14.7,reward:800,knockbacks:1,area:true,freezeChance:1,freezeDuration:2,reviveHp:1,reviveDelay:8},// Deathshund: 움직임을 멈춘다 100%
  zduche:{base:'duche',name:'좀비 오리룰루',hp:17500,atk:17000,interval:.87,speed:8,range:4,reward:300,knockbacks:1,area:true,reviveHp:1,reviveDelay:20},// Zuche: 20초 뒤 100%로 부활
  zthrillerz:{base:'guys',name:'스릴러즈',hp:10000,atk:6500,interval:1.27,speed:6,range:3.7,reward:110,knockbacks:1,reviveHp:1,reviveDelay:8}// The Thrillerz: 놈놈놈의 좀비(미래편 2·3장)
 };

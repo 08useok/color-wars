@@ -1,8 +1,8 @@
 // Independent advent allies. Targets below are Lv.20, evolved, without combos.
 const SUBSPECIES={
- mixedwhite:{name:'뒤죽박죽 화이트',evolved:'샘플 화이트',event:'실패작의 반란',stage:'만들지 못한 자',color:'#eee',hp:23000,dps:1300,interval:4,cost:1000,cooldown:28,range:18,role:'실험 약화·둔화 지원',extra:{area:true,attackClass:'범위',atkDownPct:.5,atkDownChance:.5,atkDownDuration:4,slowChance:.3,slowDuration:3}},
+ mixedwhite:{name:'뒤죽박죽 화이트',evolved:'샘플 화이트',event:'실패작의 반란',stage:'만들지 못한 자',color:'#eee',hp:23000,dps:1300,interval:4,cost:1000,cooldown:28,range:18,role:'실험 공격력 다운·움직임을 느리게 하는 지원',extra:{area:true,attackClass:'범위',atkDownPct:.5,atkDownChance:.5,atkDownDuration:4,slowChance:.3,slowDuration:3}},
  earphonered:{name:'이어폰 레드',evolved:'헤드셋 레드',event:'붉은 신호의 폭주',stage:'듣지 못한 자',color:'#ed4545',hp:26000,dps:1000,interval:5,cost:1100,cooldown:32,range:22,role:'표식으로 팀 피해 증가',extra:{area:true,attackClass:'범위',markChance:.6,markDuration:5,markMult:1.3}},
- shotguntan:{name:'샷건 탄',evolved:'T . ak47',event:'고비 사막',stage:'고비 사막',color:'#d2b48c',hp:21000,dps:2400,interval:6,cost:1250,cooldown:36,range:14,role:'6연사 · 천사 초데미지 · 치명타',extra:{massiveVs:['angel'],critChance:.2,critMult:2,blowChance:.2,blowDistance:8,hits:Array.from({length:6},(_,i)=>({at:.4+i*.16,share:1/6}))}}
+ shotguntan:{name:'샷건 탄',evolved:'T . ak47',event:'고비 사막',stage:'고비 사막',color:'#d2b48c',hp:21000,dps:2400,interval:6,cost:1250,cooldown:36,range:14,role:'6회 연속 공격 · 천사 초데미지 · 크리티컬',extra:{massiveVs:['angel'],critChance:.2,critMult:2,blowChance:.2,blowDistance:8,hits:Array.from({length:6},(_,i)=>({at:.4+i*.16,share:1/6}))}}
 };
 for(const [id,s] of Object.entries(SUBSPECIES)){
  for(const list of [EX_TYPES,EX_GRADE,ALLIES,NEW_ALLY_TYPES,GENERIC_CD_TYPES])if(!list.includes(id))list.push(id);
@@ -23,7 +23,7 @@ const _subCanTrue=canTrueForm,_subHasTrue=hasTrueForm;
 canTrueForm=function(t){return !SUBSPECIES[t]&&_subCanTrue(t)};
 hasTrueForm=function(t){return !SUBSPECIES[t]&&_subHasTrue(t)};
 const _subBadges=codexTraitBadges;
-codexTraitBadges=function(d){const b=_subBadges(d);if(d.markChance)b.push(`표식 ${Math.round(d.markChance*100)}% · ${d.markDuration}초 · 받는 피해 +${Math.round((d.markMult-1)*100)}%`);if(d.hits?.length===6)b.push('6연사');return b};
+codexTraitBadges=function(d){const b=_subBadges(d);if(d.markChance)b.push(`표식 ${Math.round(d.markChance*100)}% · ${d.markDuration}초 · 받는 피해 +${Math.round((d.markMult-1)*100)}%`);if(d.hits?.length===6)b.push('6회 연속 공격');return b};
 const _subTraining=renderTraining;
 renderTraining=function(){_subTraining();for(const card of $('#trainingGrid').children){const t=card.dataset.type;if(!SUBSPECIES[t])continue;card.querySelector('.true-btn')?.remove();const h=card.querySelector('h3');if(h?.firstChild?.nodeType===3)h.firstChild.textContent=unitDisplayName(t,false,unitStats(t).evolved)+' '}};
 let subspeciesClears=[];
