@@ -7,7 +7,7 @@ const BLUE_UBERS={
   hp:50000,atk:11000,interval:2.6,speed:14,range:8,cost:3300,cooldown:40,knockbacks:3,
   extra:{attackClass:'범위',area:true,waveImmune:true,blowChance:.3,blowDistance:8},
   role:'파동 데미지 무효 · 빠른 범위 · 날려버린다',
-  text:'래프팅 가이드. 거센 물살과 적의 파동에도 휩쓸리지 않고 달려들어, 노로 적을 밀쳐 낸다.',
+  text:'래프팅 가이드. 거센 물살과 적의 파동에도 휩쓸리지 않고 달려들어, 노로 적을 날려버린다.',
   textEvo:'물살을 완전히 읽어 노질이 더 자주 적을 밀어낸다.',evoText:'체력·공격력 +15% · 날려버린다 45%'},
  sapphire:{name:'사파이어',color:'#0f52ba',job:'프로 당구 선수',base:'violet',tint:'hue-rotate(-70deg) saturate(1.5) brightness(1.05)',
   hp:30000,atk:22000,interval:3.6,speed:5,range:30,cost:3600,cooldown:42,knockbacks:3,
@@ -37,7 +37,7 @@ const BLUE_UBERS={
   hp:45000,atk:9000,interval:3,speed:5,range:12,cost:4500,cooldown:60,knockbacks:3,
   extra:{attackClass:'범위',area:true,atkDownPct:.5,atkDownChance:1,atkDownDuration:5,slowChance:.5,slowDuration:3},
   role:'범위 · 공격력 다운 100% · 움직임을 느리게 한다',
-  text:'플로리스트. 꽃다발에서 흩날린 꽃가루가 적의 공격 의욕을 꺾고, 가시 돋친 줄기가 걸음을 늦춘다.',
+  text:'플로리스트. 꽃다발에서 흩날린 꽃가루가 적의 공격 의욕을 꺾고, 가시 돋친 줄기가 움직임을 느리게 한다.',
   textEvo:'꽃가루가 더 짙어 적이 거의 항상 느려진다.',evoText:'체력·공격력 +15% · 움직임을 느리게 한다 80%'}
 };
 const BLUE_EVO_EXTRA={
