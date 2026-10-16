@@ -32,6 +32,26 @@ const RANK_REWARDS=[
  {at:2600,text:'야옹컴 10개 · 배속권 10개',cpu:10,speed:10},
  {at:2700,text:'뽑기권(10회) 5장 · XP 1,000,000',t10:5,xp:1000000}
 ].sort((a,b)=>a.at-b.at);
+// 랭크 2,800 ~ 30,000 (아군이 늘어 2,700 위로 보상이 없던 것): 5,000까지 100마다, 10,000까지 250, 20,000까지 500, 30,000까지 1,000마다.
+// 보상은 확정권 → XP → 캣츠아이 → 야옹컴·배속권 순으로 돌고, 5,000마다 큰 묶음. 확정권 이름은 랭크 10 보상의 표기를 그대로 따른다.
+(()=>{
+ const t1Name=RANK_REWARDS.find(x=>x.at===10).text.replace(/\s*\d+장.*$/,''),eyeName={ex:'EX',sr:'슈퍼 레어',uber:'울슈레'},grades=['sr','ex','uber'];
+ const ats=[];for(let r=2800;r<=5000;r+=100)ats.push(r);for(let r=5250;r<=10000;r+=250)ats.push(r);for(let r=10500;r<=20000;r+=500)ats.push(r);for(let r=21000;r<=30000;r+=1000)ats.push(r);
+ const xpText=n=>`XP ${n.toLocaleString()}`;
+ ats.forEach((at,i)=>{
+  const k=Math.max(1,Math.round(at/1000)),t1=Math.max(10,Math.round(at/200)),xp=Math.round(at*400/10000)*10000;
+  let x;
+  if(at%5000===0)x={at,t1:t1*2,xp:xp*2,eyes:{ex:k,sr:k,uber:k},text:`${t1Name} ${t1*2}장 · ${xpText(xp*2)} · 캣츠아이 EX·슈퍼 레어·울슈레 각 ${k}개`};
+  else switch(i%4){
+   case 0:x={at,t1,text:`${t1Name} ${t1}장`};break;
+   case 1:x={at,xp,text:xpText(xp)};break;
+   case 2:{const g=grades[(i>>2)%3];x={at,eyes:{[g]:k+1},text:`캣츠아이 ${eyeName[g]} ${k+1}개`};break}
+   default:x={at,cpu:Math.max(5,Math.round(at/600)),speed:Math.max(5,Math.round(at/600)),text:`야옹컴 ${Math.max(5,Math.round(at/600))}개 · 배속권 ${Math.max(5,Math.round(at/600))}개`};
+  }
+  RANK_REWARDS.push(x);
+ });
+ RANK_REWARDS.sort((a,b)=>a.at-b.at);
+})();
 let rankClaimed=[];
 try{const s=JSON.parse(localStorage.getItem(RANK_KEY)||'{}');if(Array.isArray(s.claimed))rankClaimed=s.claimed.filter(n=>Number.isInteger(n))}catch{}
 function saveRank(){try{localStorage.setItem(RANK_KEY,JSON.stringify({claimed:rankClaimed}))}catch{}}
