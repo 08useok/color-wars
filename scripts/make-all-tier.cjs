@@ -6,13 +6,22 @@ const D=JSON.parse(fs.readFileSync(path.join(root,'docs/simulations/all-ally-tie
 const old=JSON.parse(fs.readFileSync(path.join(root,'docs/simulations/tier-scores-2026-10-13.json'),'utf8'));
 const GR={basic:'기본',rare:'레어',sr:'슈퍼 레어',ex:'EX',uber:'울슈레'};
 const NEW=new Set(['amber','bronze','banana','butter','vanilla','lime','emerald','acid','spring','aquamarine','sapphire','royalblue','night','fuchsia','rose','mixedwhite','earphonered','shotguntan']);
-const tierOf=s=>s>=.78?'S':s>=.62?'A':s>=.50?'B':s>=.35?'C':'D';
-const cut={S:'0.78 이상',A:'0.62 ~ 0.78',B:'0.50 ~ 0.62',C:'0.35 ~ 0.50',D:'0.35 미만'};
+// 합산 점수 구간: OP는 2등과 0.11 벌어진 단독 최상위, 나머지는 SSS~D. 각 구간 안에서 순위 기준 위 1/3 = +, 아래 1/3 = -.
+const BANDS=[['OP',.90],['SSS',.79],['SS',.72],['S',.60],['A',.50],['B',.40],['C',.30],['D',-1]];
+const cut={OP:'0.90 이상',SSS:'0.79 ~ 0.90',SS:'0.72 ~ 0.79',S:'0.60 ~ 0.72',A:'0.50 ~ 0.60',B:'0.40 ~ 0.50',C:'0.30 ~ 0.40',D:'0.30 미만'};
+const bandOf=x=>BANDS.find(([n,t])=>x>=t)[0];
 const maps=D.maps;
 const mapInfo={'498:1':'알래스카 ★1','326:3':'짱뚱어 파크 ★3','442:3':'경계선 탈환 작전 ★3','433:1':'지옥의 숙적 ★1','541:1':'멜토즈 ★1'};
 const arr=Object.entries(D.res).sort((a,b)=>b[1].comp-a[1].comp);
 const rankOld=Object.entries(old).sort((a,b)=>b[1].score-a[1].score).map(x=>x[0]);
-const by={S:[],A:[],B:[],C:[],D:[]};arr.forEach(([c,o],i)=>by[tierOf(o.comp)].push([c,o,i+1]));
+const by={};for(const [n] of BANDS)by[n]=[];
+arr.forEach(([c,o],i)=>by[bandOf(o.comp)].push([c,o,i+1]));
+const tierLabel={};// 캐릭터 → 'SSS+' 같은 이름
+for(const [n] of BANDS){
+ const list=by[n],k=list.length,plus=n==='OP'?0:Math.round(k/3),minus=n==='OP'?0:Math.round(k/3);
+ list.forEach(([c],idx)=>{tierLabel[c]=n+(idx<plus?'+':idx>=k-minus?'-':'')});
+}
+const tierOf=x=>bandOf(x);
 const L=[];
 L.push('# 모든 아군 티어표 (기준 맵 5곳) — 2026-10-16','');
 L.push(`아군 ${arr.length}종 전체. 지난 10-13 티어표(조건 약 120개 혼합)를 대체하는 기준 맵 방식이다.`,'');
@@ -33,21 +42,30 @@ L.push('## 한계','');
 L.push('- 이 순위는 **중상급 이상 스테이지** 기준이다. 세계편 1~3장·미래편 1~2장 같은 쉬운 맵은 기준 덱이 100% 이겨 순위를 가를 수 없어 뺐다. 그런 구간에서 싼 탱커(레드·옐로우·블루 등)가 하는 일은 이 표에서 과소평가된다.');
 L.push('- 5개 중 3개가 레전드 맵이다. 맵 하나 안에서도 시드에 따라 승패가 갈려 점수가 흔들리므로, **백분위 0.1 안팎 차이는 같은 급**으로 봐야 한다. 같은 캐릭터가 맵마다 0.1과 0.9로 갈리는 경우도 있다(맵별 열 참조).');
 L.push('- 3진·+레벨·아이템은 반영하지 않았다. 스프링·로즈는 가격 4,500원·재사용 75초/60초로 조정된 값으로 시험했다.','');
-for(const t of ['S','A','B','C','D']){
- L.push(`## ${t}티어 (${cut[t]}) — ${by[t].length}명`,'');
- L.push(`|순위|캐릭터|등급|합산|${maps.map(m=>mapInfo[m]).join('|')}|10-13 티어표|비고|`,`|---:|---|---|---:|${maps.map(()=>'---:').join('|')}|---:|---|`);
+L.push('## 티어 한눈에','');
+L.push('각 티어 안의 +는 위쪽 1/3, -는 아래쪽 1/3(합산 점수 순), 부호가 없는 것이 가운데다.','');
+L.push('|티어|이름|','|---|---|');
+for(const [n] of BANDS){
+ const labels=n==='OP'?['OP']:[n+'+',n,n+'-'];
+ for(const lb of labels){const names=arr.filter(([c])=>tierLabel[c]===lb).map(([c,o])=>o.name);if(names.length)L.push(`|**${lb}**|${names.join(' · ')}|`)}
+}
+L.push('');
+for(const [t] of BANDS){
+ if(!by[t].length)continue;
+ L.push(`## ${t} (${cut[t]}) — ${by[t].length}명`,'');
+ L.push(`|티어|순위|캐릭터|등급|합산|${maps.map(m=>mapInfo[m]).join('|')}|10-13 티어표|비고|`,`|---|---:|---|---|---:|${maps.map(()=>'---:').join('|')}|---:|---|`);
  for(const [c,o,rk] of by[t]){
   const ro=rankOld.indexOf(c)+1;
   const note=[NEW.has(c)?'신규':'',o.core?'기준 덱':''].filter(Boolean).join(' · ');
-  L.push(`|${rk}|${o.name}|${GR[o.grade]}|${o.comp.toFixed(2)}|${maps.map(m=>o.pct[m].toFixed(2)).join('|')}|${ro||'-'}위|${note}|`);
+  L.push(`|${tierLabel[c]}|${rk}|${o.name}|${GR[o.grade]}|${o.comp.toFixed(2)}|${maps.map(m=>o.pct[m].toFixed(2)).join('|')}|${ro||'-'}위|${note}|`);
  }
  L.push('');
 }
 // 신규 캐릭터
 L.push('## 신규 캐릭터 위치','');
 L.push('|캐릭터|티어|순위|합산|맵별 백분위(알래스카·짱뚱어·경계선·지옥의 숙적·멜토즈)|역할|','|---|---|---:|---:|---|---|');
-for(const c of [...NEW]){const o=D.res[c];if(!o)continue;const rk=arr.findIndex(x=>x[0]===c)+1;L.push(`|${o.name}|${tierOf(o.comp)}|${rk}|${o.comp.toFixed(2)}|${maps.map(m=>o.pct[m].toFixed(2)).join(' · ')}|${e.roles[c]||''}|`)}
+for(const c of [...NEW]){const o=D.res[c];if(!o)continue;const rk=arr.findIndex(x=>x[0]===c)+1;L.push(`|${o.name}|${tierLabel[c]}|${rk}|${o.comp.toFixed(2)}|${maps.map(m=>o.pct[m].toFixed(2)).join(' · ')}|${e.roles[c]||''}|`)}
 L.push('');
 fs.writeFileSync(path.join(root,'docs/모든-아군-티어표-2026-10-16.md'),L.join('\n'));
-console.log('written',by.S.length,by.A.length,by.B.length,by.C.length,by.D.length);
+console.log('written',BANDS.map(([n])=>n+':'+by[n].length).join(' '));
 process.exit(0);
