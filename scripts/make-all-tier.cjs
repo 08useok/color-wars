@@ -5,24 +5,19 @@ const e=require('./full-harness.cjs')();
 const D=JSON.parse(fs.readFileSync(path.join(root,'docs/simulations/all-ally-tier-2026-10-16.json'),'utf8'));
 for(const c of Object.keys(D.res))if(e.names[c])D.res[c].name=e.names[c];// 이름은 항상 현재 게임 값을 쓴다
 const old=JSON.parse(fs.readFileSync(path.join(root,'docs/simulations/tier-scores-2026-10-13.json'),'utf8'));
+const auditFile=path.join(root,'docs/simulations/underrated-2026-10-16/analysis.json');
+const audit=fs.existsSync(auditFile)?JSON.parse(fs.readFileSync(auditFile,'utf8')):null;
 const GR={basic:'기본',rare:'레어',sr:'슈퍼 레어',ex:'EX',uber:'울슈레'};
 const NEW=new Set(['amber','bronze','banana','butter','vanilla','lime','emerald','acid','spring','aquamarine','sapphire','royalblue','night','fuchsia','rose','mixedwhite','earphonered','shotguntan']);
-// 합산 점수 구간: OP는 2등과 0.11 벌어진 단독 최상위, 나머지는 SSS~D. 각 구간 안에서 순위 기준 위 1/3 = +, 아래 1/3 = -.
-const BANDS=[['OP',.90],['SSS',.79],['SS',.72],['S',.60],['A',.50],['B',.40],['C',.30],['D',-1]];
-const cut={OP:'0.90 이상',SSS:'0.79 ~ 0.90',SS:'0.72 ~ 0.79',S:'0.60 ~ 0.72',A:'0.50 ~ 0.60',B:'0.40 ~ 0.50',C:'0.30 ~ 0.40',D:'0.30 미만'};
-const bandOf=x=>BANDS.find(([n,t])=>x>=t)[0];
+const {BANDS,bandOf,labels}=require('./tier-bands.cjs');
+const cut={OP:'0.90 이상',SSS:'0.79 ~ 0.90 미만',SS:'0.72 ~ 0.79 미만',S:'0.60 ~ 0.72 미만',A:'0.50 ~ 0.60 미만',B:'0.40 ~ 0.50 미만',C:'0.30 ~ 0.40 미만',D:'0.22 ~ 0.30 미만',E:'0.15 ~ 0.22 미만',F:'0.15 미만 (X 입증 전 포함)',X:'0.08 미만 + 특화·3진 쓸모 없음 입증'};
 const maps=D.maps;
 const mapInfo={'498:1':'알래스카 ★1','326:3':'짱뚱어 파크 ★3','442:3':'경계선 탈환 작전 ★3','433:1':'지옥의 숙적 ★1','541:1':'멜토즈 ★1'};
-const arr=Object.entries(D.res).sort((a,b)=>b[1].comp-a[1].comp);
+const arr=Object.entries(D.res).sort((a,b)=>b[1].comp-a[1].comp||a[0].localeCompare(b[0]));
 const rankOld=Object.entries(old).sort((a,b)=>b[1].score-a[1].score).map(x=>x[0]);
 const by={};for(const [n] of BANDS)by[n]=[];
-arr.forEach(([c,o],i)=>by[bandOf(o.comp)].push([c,o,i+1]));
-const tierLabel={};// 캐릭터 → 'SSS+' 같은 이름
-for(const [n] of BANDS){
- const list=by[n],k=list.length,plus=n==='OP'?0:Math.round(k/3),minus=n==='OP'?0:Math.round(k/3);
- list.forEach(([c],idx)=>{tierLabel[c]=n+(idx<plus?'+':idx>=k-minus?'-':'')});
-}
-const tierOf=x=>bandOf(x);
+arr.forEach(([c,o],i)=>by[bandOf(o.comp,c)].push([c,o,i+1]));
+const tierLabel=labels(D.res);
 const L=[];
 L.push('# 모든 아군 티어표 (기준 맵 5곳) — 2026-10-16','');
 L.push(`아군 ${arr.length}종 전체. 지난 10-13 티어표(조건 약 120개 혼합)를 대체하는 기준 맵 방식이다.`,'');
@@ -44,11 +39,15 @@ L.push('- 이 순위는 **중상급 이상 스테이지** 기준이다. 세계�
 L.push('- 5개 중 3개가 레전드 맵이다. 맵 하나 안에서도 시드에 따라 승패가 갈려 점수가 흔들리므로, **백분위 0.1 안팎 차이는 같은 급**으로 봐야 한다. 같은 캐릭터가 맵마다 0.1과 0.9로 갈리는 경우도 있다(맵별 열 참조).');
 L.push('- 3진·+레벨·아이템은 반영하지 않았다. 스프링·로즈는 가격 4,500원·재사용 75초/60초로 조정된 값으로 시험했다.','');
 L.push('## 티어 한눈에','');
-L.push('각 티어 안의 +는 위쪽 1/3, -는 아래쪽 1/3(합산 점수 순), 부호가 없는 것이 가운데다.','');
+L.push('OP·X 외 모든 등급은 합산 순위 위 1/3이 +, 아래 1/3이 −(인원수/3 반올림), 가운데는 무표다.','');
+L.push('경계: 상위 구간은 유지하고, 하위의 0.128→0.163 및 0.215→0.271 사이 빈틈에 0.15·0.22를 놓아 D 4명·E 11명·F 3명으로 나눴다. X는 0.08 미만이면서 특화·3진 무용이 입증된 경우만이며 현재 확정자는 없다.','');
+L.push('X: **없음**. 최하위 라즈베리(0.046)도 3진·메탈 대응 가능성을 검증하므로 F에 유보한다. [저평가·3진·측정 편향 검증](저평가-캐릭터-2026-10-16.md)을 함께 볼 것.','');
+if(audit)L.push('비고의 저평가 표시는 별도 재측정 결과다. 현재 순위·티어는 2진 기준이며, 3진 합산 증가 0.1 미만은 경계 상승으로 구분한다. 특화 잠정은 조건 부족, 덱 민감은 별도 기준 덱에서 평가가 크게 오른 경우다.','');
 L.push('|티어|이름|','|---|---|');
 for(const [n] of BANDS){
- const labels=n==='OP'?['OP']:[n+'+',n,n+'-'];
+ const labels=['OP','X'].includes(n)?[n]:[n+'+',n,n+'-'];
  for(const lb of labels){const names=arr.filter(([c])=>tierLabel[c]===lb).map(([c,o])=>o.name);if(names.length)L.push(`|**${lb}**|${names.join(' · ')}|`)}
+ if(n==='X'&&!by.X.length)L.push('|**X**|없음 — 특화·3진 무용이 입증된 캐릭터 없음|');
 }
 L.push('');
 for(const [t] of BANDS){
@@ -57,11 +56,12 @@ for(const [t] of BANDS){
  L.push(`|티어|순위|캐릭터|등급|합산|${maps.map(m=>mapInfo[m]).join('|')}|10-13 티어표|비고|`,`|---|---:|---|---|---:|${maps.map(()=>'---:').join('|')}|---:|---|`);
  for(const [c,o,rk] of by[t]){
   const ro=rankOld.indexOf(c)+1;
-  const note=[NEW.has(c)?'신규':'',o.core?'기준 덱':''].filter(Boolean).join(' · ');
+  const note=[NEW.has(c)?'신규':'',o.core?'기준 덱':'',audit?.promoted.includes(c)?'3진 저평가'+(audit.trueResults[c].delta<.1?'(경계)':'')+(audit.trueResults[c].winDelta<0?'·승률↓':''):'',audit?.supportedCandidates.includes(c)?'특화 후보':audit?.candidates.includes(c)&&Object.values(audit.special).some(g=>g.res[c]?.pct>=.9&&g.res[c].gain>.004)?'특화 잠정':'',audit?.biasCandidates.includes(c)?'덱 민감':''].filter(Boolean).join(' · ');
   L.push(`|${tierLabel[c]}|${rk}|${o.name}|${GR[o.grade]}|${o.comp.toFixed(2)}|${maps.map(m=>o.pct[m].toFixed(2)).join('|')}|${ro||'-'}위|${note}|`);
  }
  L.push('');
 }
+if(!by.X.length)L.push(`## X (${cut.X}) — 0명`,'','없음. 0.08 미만이어도 특화·3진 무용이 입증되지 않으면 F에 유보한다.','');
 // 신규 캐릭터
 L.push('## 신규 캐릭터 위치','');
 L.push('|캐릭터|티어|순위|합산|맵별 백분위(알래스카·짱뚱어·경계선·지옥의 숙적·멜토즈)|역할|','|---|---|---:|---:|---|---|');
