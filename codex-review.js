@@ -39,7 +39,7 @@ function allyReview(type,evolved){
   if(s.atkDownPct)notes.push(`${target}의 공격력을 낮춰 앞줄 아군의 생존을 돕는다`);
   if(s.critChance)notes.push(`${pct(s.critChance)}% 확률의 치명타로 메탈에 대응할 수 있다`);
   if(s.wave)notes.push(`파동으로 직접 사거리 밖의 적까지 공격할 수 있다`);
-  if(s.surge)notes.push(`서지를 이용해 뒤쪽 적에게도 피해를 누적시킨다`);
+  if(s.surge)notes.push(`열파를 이용해 뒤쪽 적에게도 피해를 누적시킨다`);
   if(s.multiHit&&!s.area&&!s.pierce&&!s.dash)notes.push(`${s.multiHit}연타로 피해를 누적하지만 넉백·대상 이탈로 모든 타격이 맞지 않을 수 있다`);
   if(s.blowChance||s.push||s.pull)notes.push(`적의 위치를 바꾸는 능력으로 전선을 조절하지만 아군의 공격 타이밍과 맞춰 쓰는 것이 좋다`);
   if(s.killGold)notes.push(`처치 보상금을 늘려 전투 중 자금 확보에도 도움이 된다`);

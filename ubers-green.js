@@ -111,7 +111,7 @@ codexTraitBadges=function(d){
  if(d.soulstrike)b.push('영혼 일격 (되살아나려는 좀비도 처치)');
  if(d.explosion)b.push('폭발 (맞은 자리 주변 적에게 번짐)');
  if(d.metalKiller)b.push(`메탈 킬러 (메탈 적 현재 체력의 ${Math.round(d.metalKiller*100)}%)`);
- if(d.surge&&d.surge.end-d.surge.start<=12)b.push('소열파');
+ if(d.surge&&d.surge.end-d.surge.start<=12){const k=b.indexOf('열파');if(k>=0)b[k]='소열파';else b.push('소열파')}
  return b;
 };
 renderNewButtons();renderDeckButtons();renderTraining();
