@@ -21,7 +21,7 @@ function renderDeckEditor(){
  preset.type='button';preset.textContent='달·레전드 공통 덱 적용';preset.disabled=missing.length>0||ENDGAME_DECK.some(t=>!allyStageAllowed(t));preset.onclick=applyEndgameDeck;info.append(document.createElement('br'),preset);
  const hint=document.createElement('small');hint.textContent=missing.length?' · 미보유: '+missing.map(t=>UNIT_NAMES[t]).join(' · '):legendFourStar()?' · ★1 및 세계편·미래편용 덱입니다':' · 현재 덱을 교체합니다. 권장: 기본·레어 30+10, EX·슈퍼 레어·울슈레 40, 가능한 진화 완료';info.append(hint);
  const active=activeAllyCombos();
- $('#deckEditorCombos').innerHTML='<h2>아군 콤보</h2><p>1열(1~5번 슬롯)에 필요한 아군을 모두 배치하면 전투 시작 시 모든 아군에게 적용됩니다. 순서·진화 형태는 자유입니다.</p>'+ALLY_COMBOS.map(c=>'<div class="deck-combo '+(active.includes(c)?'active':'')+'"><strong>'+c.name+'</strong><span>'+c.members.map(t=>UNIT_NAMES[t]).join(' · ')+'</span><b>'+c.effect+'</b><small>'+(active.includes(c)?'발동 준비 완료':'미발동 · 1열에 필요한 아군을 배치하세요')+'</small></div>').join('');
+ $('#deckEditorCombos').innerHTML='<h2>아군 콤보</h2><p>1열(1~5번 슬롯)에 필요한 아군을 모두 배치하면 전투 시작 시 모든 아군에게 적용됩니다. 순서는 자유이며, 3진 전용 콤보는 필요한 아군이 모두 3진이어야 합니다.</p>'+ALLY_COMBOS.map(c=>'<div class="deck-combo '+(active.includes(c)?'active':'')+'"><strong>'+c.name+'</strong><span>'+c.members.map(t=>UNIT_NAMES[t]+(c.trueFormsOnly?' 3진':'')).join(' · ')+'</span><b>'+c.effect+'</b><small>'+(active.includes(c)?'발동 준비 완료':(c.trueFormsOnly?'미발동 · 두 아군을 3진으로 1열에 배치하세요':'미발동 · 1열에 필요한 아군을 배치하세요'))+'</small></div>').join('');
  const slots=$('#deckEditorSlots');slots.innerHTML='';
  for(let i=0;i<DECK_SIZE;i++){const t=deck[i],slot=document.createElement('article');slot.className='deck-editor-slot';
   if(!t){slot.innerHTML=`<small>${i<5?'1열':'2열'} · ${i+1}</small><span class="deck-empty">빈 슬롯</span>`;slots.append(slot);continue}

@@ -1,0 +1,6 @@
+Generation method: built-in image_gen. These are reconstructed design notes; the exact original prompt text was not preserved.
+Shared design: transparent cartoon sprite sheet, existing COLORS proportions and black outlines, female characters; 8 walking poses, 7 attack poses and 1 hurt pose.
+Crystal: jewel appraiser, cyan faceted head, teal waistcoat, white gloves, loupe and diamond. Inspect a jewel then release crystal shards.
+Indigo: playwright, indigo hair, feather beret, cravat, purple coat, manuscript and quill. Attack with purple ink and paper.
+Raspberry: sniper, raspberry hair and beret, green cape and long scoped rifle. Aim, fire, recoil and recover.
+Sources were cut along transparent gutters, uniformly scaled per character, and packed by scripts/pack-three-professions-3.py. Portraits use the first walking pose.

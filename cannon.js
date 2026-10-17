@@ -10,8 +10,8 @@ const CANNON={
  beamSpeed:140,// 파동이 퍼지는 속도(필드 %/초)
  upgradeCost:[1000,2000,4000,8000,16000,32000,43000,58000,78000]// XP, Lv.1→2 … Lv.9→10
 };
-function cannonPower(l=training.cannonPower){return CANNON.powerBase+CANNON.powerStep*(l-1)}
-function cannonChargeTime(l=training.cannonCharge){return CANNON.chargeBase-CANNON.chargeStep*(l-1)}
+function cannonPower(l=training.cannonPower){return CANNON.powerBase+CANNON.powerStep*(l-1)+CHAPTER_BONUS.cannonPower*(chapterBonusCount()+futureTreasureCount())}
+function cannonChargeTime(l=training.cannonCharge){return Math.max(1,CANNON.chargeBase-CANNON.chargeStep*(l-1)-CHAPTER_BONUS.cannonCharge*chapterBonusCount()-10*futureTreasureCount())}
 for(const k of ['cannonPower','cannonCharge']){
  const v=SUBSPECIES_SAVED_TRAINING?.[k];// 저장된 강화 단계 복원 (game.js가 모르는 키라 따로 읽는다)
  training[k]=Number.isInteger(v)?Math.max(1,Math.min(CANNON.maxLevel,v)):1;
