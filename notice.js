@@ -2,9 +2,11 @@
 // v1 세계편 (first push, 2026-09-24) · v2 레전드 스토리 (09-30) · v3 미래편 1장 (10-03) · v4 미래편 2장 + 3진 (10-06) · v5 미래편 3장 (10-08) · v6 우주편 1장 (10-09).
 // Between those, every push counts: a new feature bumps MINOR, fixes/balance only bump PATCH.
 // A new NOTICE.version shows the notice once on load; the 공지 button on the stage screen reopens it.
-const GAME_VERSION='6.4.0';
-const NOTICE={version:GAME_VERSION,date:'2026-10-16',title:`v${GAME_VERSION} 업데이트`,html:`
-<p class="notice-lead">지금까지 <b>세계편 1~3장 · 미래편 1~3장 · 우주편 1장 · 레전드 스토리 1~36장</b>을 담았습니다.</p>
+const GAME_VERSION='6.5.0';
+const NOTICE={version:GAME_VERSION,date:'2026-10-17',title:`v${GAME_VERSION} 업데이트`,html:`
+<p class="notice-lead">지금까지 <b>세계편 1~3장 · 미래편 1~3장 · 우주편 1장 · 레전드 스토리 1~39장</b>을 담았습니다.</p>
+<h3>🎬 v6.5.0 레전드 스토리 37~39장</h3>
+<ul><li>원작 레전드 37장 할리우드 제국 · 38장 말미잘 해변 · 39장 운니 온천향, 18개 스테이지를 원작 배치대로 추가했습니다. 36장 마우스랜드를 ★1로 깨면 열립니다. 난이도 ★9.</li><li>새 적 4종(원작 모션): <b>견무사 무사시</b>(좀비 보스, 체력 25%로 부활), <b>멍뭉이 성</b>(움직이지 않고 전장 끝까지 닿는 거대한 파동), <b>돌고래 아가씨</b>(빠른 원거리 범위), <b>천사 오징어</b>(3연속 10만 피해).</li></ul>
 <h3>🏅 v6.4.0 유저 랭크 보상 30,000까지</h3>
 <ul><li>아군이 늘어 랭크 2,700 위로 보상이 없던 것을 고쳐, 보상을 <b>랭크 30,000</b>까지 늘렸습니다(총 100단계). 5,000까지는 100마다, 그 위로는 250·500·1,000마다 받습니다.</li><li>확정권 → XP → 캣츠아이 → 야옹컴·배속권 순서로 돌아가며, <b>5,000마다</b> 확정권·XP 두 배와 캣츠아이 세 등급 묶음을 받습니다.</li></ul>
 <h3>🎞️ v6.4.0 모션 정리</h3>
