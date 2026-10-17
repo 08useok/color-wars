@@ -5,6 +5,7 @@ const root=path.resolve(__dirname,'..');
 const rd=f=>JSON.parse(fs.readFileSync(path.join(root,f),'utf8'));
 const A=rd('docs/simulations/char-analysis-2026-10-17.json'),F=rd('docs/simulations/bench20-final-2026-10-17.json'),F2=rd('docs/simulations/bench20-ref2-2026-10-17.json'),TF=rd('docs/simulations/trueform-map-2026-10-17.json'),BT=rd('docs/simulations/tier-bootstrap-2026-10-17.json'),S=rd('docs/simulations/map-screen20-2026-10-17.json');
 const e=mk();e.setProfile({level:30});
+const HAS3=[...new Set(fs.readdirSync(path.join(root,'assets')).filter(f=>/^(profile_)?[a-z]+_3\.webp$/.test(f)).map(f=>f.replace(/^profile_/,'').replace('_3.webp','')))].filter(c=>TF.out[c]);// 전용 3진 그림(시트 또는 프로필)이 있는 캐릭터만 3진 분석 대상
 const MAP=A.map,allies=Object.keys(A.gain),n=allies.length,names=c=>e.names[c];
 const GR={basic:'기본',rare:'레어',sr:'슈퍼 레어',ex:'EX',uber:'울슈레'};
 const mean=a=>a.reduce((x,y)=>x+y,0)/a.length;
@@ -53,6 +54,7 @@ function cause(c){
 const sortedGain=allies.map(c=>A.gain[c]).sort((a,b)=>b-a);
 const rankOfGain=g=>sortedGain.filter(x=>x>g).length+1;
 function trueVerdict(c){
+ if(!HAS3.includes(c))return {v:'3진 제외(전용 그림 없음)',d:null};
  const t=TF.out[c];if(!t)return {v:'3진 없음',d:null};
  const g3=A.gain[c]+t.delta,r2=A.rank[c],r3=rankOfGain(g3),sig=Math.abs(t.delta)>2*t.se;
  let v;
@@ -68,12 +70,12 @@ const R2=A.r2;
 L.push('# 캐릭터 성능 · 원인 · 3진 보고서 — 2026-10-17','');
 L.push('## 한눈에','');
 const top=A.order.slice(0,12),bot=A.order.slice(-12);
-const solved=allies.filter(c=>trueVerdict(c).v.startsWith('**해결')),improved=allies.filter(c=>/^개선/.test(trueVerdict(c).v)),noeff=allies.filter(c=>trueVerdict(c).v==='차이 없음'),none=allies.filter(c=>trueVerdict(c).v==='3진 없음');
+const solved=allies.filter(c=>trueVerdict(c).v.startsWith('**해결')),improved=allies.filter(c=>/^개선/.test(trueVerdict(c).v)),noeff=allies.filter(c=>trueVerdict(c).v==='차이 없음'),none=allies.filter(c=>trueVerdict(c).v!=='3진 없음'&&!HAS3.includes(c)).concat(allies.filter(c=>trueVerdict(c).v==='3진 없음'));
 L.push('- **조건**: 보물 전부 완성 · 전원 Lv.30 · 2진 · 테스트 맵 **황제의 야옹이 ★3(레전드 20장)**. 레드·옐로우·블루·퍼플 4명에 아군 1명을 더했을 때(그 캐릭터가 기준 덱 멤버면 빼고 보정) 클리어가 얼마나 빨라지는지로 쟀다.');
 L.push(`- **좋은 캐릭터**: ${top.slice(0,8).map(names).join(' · ')} … 이 맵에서 기준 덱에 더하면 클리어가 1위 ${fmtSec(A.gain[top[0]])} ~ 8위 ${fmtSec(A.gain[top[7]])}된다.`);
 L.push(`- **나쁜 캐릭터**: ${bot.slice(-8).reverse().map(names).join(' · ')} … 더해도 클리어가 거의 안 빨라지거나 오히려 느려진다.`);
 L.push(`- **원인**: 초당 피해·사거리·재사용(짧을수록 좋음)·범위 여부 같은 능력치만으로 이득 변동의 **${Math.round(R2*100)}%**가 설명된다. 나머지는 능력 효과와 상성이다.`);
-L.push(`- **3진으로 해결되는 캐릭터**: 하위 절반에서 상위 절반으로 올라오는 **${solved.length}명**, 15계단 이상 개선 **${improved.length}명**. 3진이 가능한 ${TF.eligible.length}명 중 ${noeff.length}명은 이 맵에서 효과가 오차 안이다. 울슈레 등은 3진이 없다(${none.length}명).`);
+L.push(`- **3진으로 해결되는 캐릭터**: 하위 절반에서 상위 절반으로 올라오는 **${solved.length}명**(${solved.map(names).join('·')||'없음'}), 15계단 이상 개선 **${improved.length}명**(${improved.map(names).join('·')||'없음'}). **3진 전용 그림이 있는 ${HAS3.length}명(${HAS3.map(names).join('·')})만** 분석했다. 그림이 없는 캐릭터는 3진에서 제외했다.`);
 L.push('- **중요한 한계**: (1) 맵 한 곳이다. 이 맵의 적은 **무속성 98%**라 좀비 킬러·메탈 킬러·에이리언 엄강 같은 특화 능력은 평가되지 않는다. (2) 시드 흔들림 때문에 순위 ±수 계단은 같은 급이다(아래 "신뢰도"). (3) 이전에 발표한 티어표의 +/− 세분은 측정 오차보다 촘촘하다(부록 A).');
 L.push('');
 L.push('## 1. 시험 조건','');
@@ -124,16 +126,13 @@ L.push('## 5. 나쁜 캐릭터 하위 20 — 원인과 3진','');
 L.push('|순위(95% 구간)|캐릭터|등급|클리어 단축|원인|3진|');L.push('|---:|---|---|---:|---|---|');
 for(const c of A.order.slice(-20).reverse()){const tv=trueVerdict(c);L.push(`|${A.rank[c]} (${rankCI[c][0]}~${rankCI[c][1]})|${names(c)}|${GR[e.gradeOf(c)]}|${fmtSec(A.gain[c])}|${cause(c)}|${tv.v}${tv.d!==null?` (Δ${tv.d>=0?'+':''}${tv.d.toFixed(3)}, ${fmtSec(tv.d)})`:''}|`)}
 L.push('');
-L.push('## 6. 3진 효과 전체','');
-L.push(`3진이 가능한 ${TF.eligible.length}명을 같은 덱·시드·방식으로 **그 캐릭터만 3진 vs 2진** 비교했다(Δ = 3진이 더한 성능, +0.1 = 30초 단축). 효과가 표준오차의 2배 이내면 "차이 없음".`);
+L.push('## 6. 3진 효과 (전용 3진 그림이 있는 캐릭터만)','');
+L.push(`전용 3진 그림이 있는 **${HAS3.length}명**만 같은 덱·시드·방식으로 **그 캐릭터만 3진 vs 2진** 비교했다(Δ = 3진이 더한 성능, +0.1 = 30초 단축). 효과가 표준오차의 2배 이내면 "차이 없음". 그림이 없는 나머지 캐릭터는 3진 분석에서 뺐다.`);
 L.push('');
-const byV={};for(const c of TF.eligible){const tv=trueVerdict(c);const k=tv.v.replace(/\*\*/g,'').replace(/\(.*\)/,'');(byV[k]=byV[k]||[]).push(c)}
-L.push('|판정|인원|캐릭터(Δ)|');L.push('|---|---:|---|');
-for(const [k,list] of Object.entries(byV).sort((a,b)=>b[1].length-a[1].length))L.push(`|${k}|${list.length}|${list.sort((a,b)=>TF.out[b].delta-TF.out[a].delta).map(c=>names(c)+'('+(TF.out[c].delta>=0?'+':'')+TF.out[c].delta.toFixed(2)+')').join(' · ')}|`);
+L.push('|캐릭터|2진 순위|3진 Δ(오차)|3진 후 순위(2진 분포 기준)|판정|');L.push('|---|---:|---:|---:|---|');
+for(const c of HAS3.slice().sort((a,b)=>TF.out[b].delta-TF.out[a].delta)){const tv=trueVerdict(c),t=TF.out[c];L.push(`|${names(c)}|${A.rank[c]}|${t.delta>=0?'+':''}${t.delta.toFixed(3)} ±${t.se.toFixed(3)} (${fmtSec(t.delta)})|${tv.r3}|${tv.v}|`)}
 L.push('');
-L.push('**주의**: 현재 코드에는 라즈베리·크리스탈·인디고의 새 3진 능력이 아직 없다(3진 그림 파일만 추가된 상태). 이 셋은 **일반 3진(체력·공격 ×1.2)** 효과만 측정됐으므로, 새 3진이 반영되면 다시 재야 한다. 라즈베리 +0.016·크리스탈 +0.036이 "3진으로도 안 된다"는 결론은 아니다.','');
-L.push('**3진 효과가 큰 순 상위 12**','');L.push('|캐릭터|2진 순위|3진 Δ|3진 후 순위(2진 분포 기준)|판정|');L.push('|---|---:|---:|---:|---|');
-for(const c of TF.eligible.slice().sort((a,b)=>TF.out[b].delta-TF.out[a].delta).slice(0,12)){const tv=trueVerdict(c);L.push(`|${names(c)}|${A.rank[c]}|${TF.out[c].delta>=0?'+':''}${TF.out[c].delta.toFixed(3)} (${fmtSec(TF.out[c].delta)})|${tv.r3}|${tv.v}|`)}
+L.push('**주의**: 현재 코드에는 라즈베리·크리스탈·인디고의 새 3진 능력이 아직 없다(3진 그림 파일만 추가된 상태). 이 셋은 **일반 3진(체력·공격 ×1.2)** 효과만 측정됐으므로, 새 3진이 반영되면 다시 재야 한다. 라즈베리 +0.016·크리스탈 +0.036이 "3진으로도 안 된다"는 결론은 아니다.');
 L.push('');
 L.push('## 7. 이 맵에서 낮지만 특화 능력이 있는 캐릭터','');
 L.push('이 맵은 무속성 적이 98%라 아래 캐릭터의 능력은 쓰일 곳이 없었다. **낮은 순위는 "나쁘다"가 아니라 "이 맵에서는 평가되지 않았다"**로 읽어야 한다. 특화 맵 시험이 필요하다(이전 점검의 특화 시험은 메탈 1조건·파동 7조건으로 부족했다).');
@@ -163,7 +162,7 @@ L.push('- **결론**: 티어표의 +/− 세분과 OP~F 구분은 측정이 뒷�
 L.push('');
 L.push('## 부록 B. 전체 106명 표','');
 L.push('|순위(95% 구간)|캐릭터|등급|클리어 단축|±표준오차(초)|초당 피해|체력|사거리|재사용|3진 Δ(초)|');L.push('|---:|---|---|---:|---:|---:|---:|---:|---:|---:|');
-for(const c of A.order){const f=A.feat[c],t=TF.out[c];L.push(`|${A.rank[c]} (${rankCI[c][0]}~${rankCI[c][1]})|${names(c)}${A.adjusted[c]?' †':''}|${GR[e.gradeOf(c)]}|${fmtSec(A.gain[c])}|${Math.round(A.se[c]*300)}|${Math.round(f.dps).toLocaleString()}|${Math.round(f.hp).toLocaleString()}|${Math.round(f.range*10)/10}|${f.cd}|${t?fmtSec(t.delta):'-'}|`)}
+for(const c of A.order){const f=A.feat[c],t=TF.out[c];L.push(`|${A.rank[c]} (${rankCI[c][0]}~${rankCI[c][1]})|${names(c)}${A.adjusted[c]?' †':''}|${GR[e.gradeOf(c)]}|${fmtSec(A.gain[c])}|${Math.round(A.se[c]*300)}|${Math.round(f.dps).toLocaleString()}|${Math.round(f.hp).toLocaleString()}|${Math.round(f.range*10)/10}|${f.cd}|${HAS3.includes(c)&&t?fmtSec(t.delta):'-'}|`)}
 L.push('','† 기준 덱 멤버(레드·옐로우·블루·퍼플): 두 번째 기준 덱에서 보정한 값.','');
 fs.writeFileSync(path.join(root,'docs/캐릭터-성능-원인-보고서-2026-10-17.md'),L.join('\n'));
 console.log('written',L.length,'lines');
