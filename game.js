@@ -1353,7 +1353,8 @@ function resolveAttack(u,t,share=1){
   for(const v of [...game.units])if(v.hp>0&&v.kbTime<=0&&v.ally!==u.ally&&v.x>=lo&&v.x<=hi)damage(v,d.atk,u);
  }else if(d.pierce){
   const targets=game.units.filter(inRange).sort((a,b)=>Math.abs(a.x-u.x)-Math.abs(b.x-u.x)).slice(0,d.pierce);
-  for(const v of targets)damage(v,d.atk,u);
+  // pierceGrowth: 뒤로 관통할수록(가까운 대상부터 k번째) 피해가 pierceGrowth^k배. damageTiers가 있으면 대상 거리로 피해를 정한다. pierceGrowthCap(선택)=성장이 멈추는 k. pierce:Infinity = 범위 안 모든 적.
+  targets.forEach((v,k)=>damage(v,(d.damageTiers?tierDamage(d.damageTiers,Math.abs(v.x-u.x)):d.atk)*Math.pow(d.pierceGrowth||1,Math.min(k,d.pierceGrowthCap??Infinity)),u));
  }else if(d.area){const fx=BEAM_FX[u.type];if(fx)beamFx(u,d);for(const v of [...game.units])if(inRange(v)){damage(v,d.atk,u);if(fx)beamHit(v.x,u.type)}}
  else if(d.multiHit){
   let remaining=d.multiHit,victim=inRange(t)?t:targetValid(u);
