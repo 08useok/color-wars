@@ -11,12 +11,12 @@ if(!isMainThread&&workerData?.simPool){
    const key=JSON.stringify(job.profile||{});
    if(key!==profileKey){engine.setProfile(job.profile||{});profileKey=key;}
    const saved=[];
-   if(job.unitMods)for(const [t,m] of Object.entries(job.unitMods))for(const [k,v] of Object.entries(m)){if(k.startsWith('lv20.')){const f=k.slice(5);saved.push([t,k,engine.lv20[t][f]]);engine.lv20[t][f]=v}else{saved.push([t,k,engine.units[t][k]]);engine.units[t][k]=v}}
+   if(job.unitMods)for(const [t,m] of Object.entries(job.unitMods))for(const [k,v] of Object.entries(m)){if(k.startsWith('tfb.')){const f=k.slice(4);saved.push([t,k,engine.trueBonus[t][f]]);if(v===null)delete engine.trueBonus[t][f];else engine.trueBonus[t][f]=v}else if(k.startsWith('lv20.')){const f=k.slice(5);saved.push([t,k,engine.lv20[t][f]]);engine.lv20[t][f]=v}else{saved.push([t,k,engine.units[t][k]]);engine.units[t][k]=v}}
    try{
     const r=engine.simulate(job.i,job.crown,job.deck,job.seed??1,job.limit??300,job.policy??'smart2',job.mods||null);
     out.push({id:job.id,win:r.win,timeout:r.timeout,seconds:r.seconds,allyHp:r.allyHp,enemyHp:r.enemyHp});
    }catch(e){out.push({id:job.id,error:String(e.stack||e).split('\n').slice(0,3).join(' | ')})}
-   finally{for(const [t,k,v] of saved){if(k.startsWith('lv20.'))engine.lv20[t][k.slice(5)]=v;else engine.units[t][k]=v}}
+   finally{for(const [t,k,v] of saved){if(k.startsWith('tfb.')){if(v===undefined)delete engine.trueBonus[t][k.slice(4)];else engine.trueBonus[t][k.slice(4)]=v}else if(k.startsWith('lv20.'))engine.lv20[t][k.slice(5)]=v;else engine.units[t][k]=v}}
   }
   parentPort.postMessage({batchId:batch.batchId,results:out});
  });

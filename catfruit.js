@@ -6,9 +6,9 @@ const FRUIT_COLORS=['purple','red','blue','green','yellow'];
 const FRUIT_NAME={purple:'보라',red:'빨강',blue:'파랑',green:'초록',yellow:'노랑'};
 const FRUIT_ICON={purple:'🟣',red:'🔴',blue:'🔵',green:'🟢',yellow:'🟡'};
 const TRUE_FORM_MULT=1.2;
-const TRUE_FORM_ATK_MULT={cream:1.8,hotpink:1.5,salmon:1.5,gold:1.5,beige:1.4,clover:1.5};
-const TRUE_FORM_HP_MULT={hotpink:1.5,salmon:1.3,gold:1.3,beige:1.3,clover:1.3};
-const TRUE_FORM_BONUS={gold:{multiHit:5,killGold:1.5},beige:{range:14,freezeChance:.6,freezeDuration:3},clover:{multiHit:3,critChance:.25,critMult:2,interval:1.7},salmon:{range:34,pullDistance:8,freezeChance:.35,freezeDuration:1.5,waveBlock:true},cream:{range:16,area:true,attackClass:'범위',slowChance:.65,slowDuration:3},hotpink:{range:30,zoneMin:0,zoneMax:40,area:true,attackClass:'범위',atkDownDuration:5,attackDuration:1.4,windup:.7}};
+const TRUE_FORM_ATK_MULT={cream:1.8,hotpink:1.5,salmon:1.5,gold:1.5,beige:1.4,clover:1.5,raspberry:1.5};
+const TRUE_FORM_HP_MULT={hotpink:1.5,salmon:1.3,gold:1.3,beige:1.3,clover:1.3,raspberry:1.5};
+const TRUE_FORM_BONUS={raspberry:{interval:3,range:39,massiveVs:['alien'],barrierBreak:.25,pierce:Infinity,pierceGrowth:1.21,pierceGrowthCap:20},gold:{multiHit:5,killGold:1.5},beige:{range:14,freezeChance:.6,freezeDuration:3},clover:{multiHit:3,critChance:.25,critMult:2,interval:1.7},salmon:{range:34,pullDistance:8,freezeChance:.35,freezeDuration:1.5,waveBlock:true},cream:{range:16,area:true,attackClass:'범위',slowChance:.65,slowDuration:3},hotpink:{range:30,zoneMin:0,zoneMax:40,area:true,attackClass:'범위',atkDownDuration:5,attackDuration:1.4,windup:.7}};
 const TRUE_FORM_COST={basic:{fruit:1,seed:3,epic:0,xp:30000},rare:{fruit:2,seed:4,epic:0,xp:60000},sr:{fruit:3,seed:5,epic:0,xp:100000},
  ex:{fruit:3,seed:5,epic:1,xp:150000},uber:{fruit:5,seed:8,epic:2,xp:250000}};
 let catfruit={seed:{},fruit:{},epic:0},trueForms=[];
@@ -146,3 +146,7 @@ finish=function(win){
  if(!fresh||!win||idx!==HOTPINK_TRUE_STAGE||was)return;
  if(allyUnlocked('hotpink')&&!trueForms.includes('hotpink')){trueForms.push('hotpink');delete training.forms.hotpink;saveTrueForms();saveTraining()}
  if(typeof gachaAppendDetail==='function')gachaAppendDetail(trueForms.includes('hotpink')?'핫 핑크 3진 획득! 핫 핑크가 3진으로 진화했어요':'핫 핑크 3진 해금! 핫 핑크를 얻으면 캐릭터 강화에서 무료로 진화할 수 있어요')};
+
+// 관통 배지(라즈베리 3진 등): 몇 명까지, 뒤로 갈수록 피해가 어떻게 느는지
+const _cfBadges=codexTraitBadges;
+codexTraitBadges=function(d){const b=_cfBadges.apply(this,arguments);if(d.pierce&&d.pierceGrowth)b.push(`관통 ${d.pierce===Infinity?'(범위 안 모든 적)':d.pierce+'명'} · 뒤로 갈수록 피해 ×${d.pierceGrowth}배씩${d.pierceGrowthCap!==undefined?` (${d.pierceGrowthCap}번째까지)`:''}`);return b};
