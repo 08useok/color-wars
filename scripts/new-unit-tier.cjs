@@ -34,11 +34,17 @@ const bandOf=g=>{for(let b=0;b<EDGES.length;b++)if(g>=EDGES[b])return BANDS[b];r
  const others=Object.entries(A.gain).filter(([c])=>c!==UNIT).map(([c,v])=>[c,v*300]);
  const rankAt=x=>others.filter(([,v])=>v>x).length+1;
  const nearest=[...others].sort((a,b)=>Math.abs(a[1]-g)-Math.abs(b[1]-g)).slice(0,3).map(([c,v])=>e.names[c]+' '+Math.round(v)+'초');
- console.log(`${e.names[UNIT]||UNIT}${TRUE?' (3진)':''}${MODS?' [수정 적용]':''} — 시드 ${SEEDS} × 출격 방식 ${policies.length}, 테스트 맵 ${MAP}`);
- console.log(`이득 ${g.toFixed(1)}초 ± ${gse.toFixed(1)} (95% 구간 ${(g-1.96*gse).toFixed(1)} ~ ${(g+1.96*gse).toFixed(1)}초)`);
- console.log(`티어 ${bandOf(g)}  (95% 구간 ${bandOf(g+1.96*gse)} ~ ${bandOf(g-1.96*gse)})`);
- console.log(`순위 ${rankAt(g)}위 / ${others.length+1}명  (95% 구간 ${rankAt(g+1.96*gse)} ~ ${rankAt(g-1.96*gse)}위)`);
+ const band=x=>bandOf(x),rng=B=>{const i=BANDS.indexOf(B);return i===0?'70초 이상':i===BANDS.length-1?'6초 미만':EDGES[i]+'~'+EDGES[i-1]+'초'};
+ const near=EDGES.some(ed=>Math.abs(g-ed)<Math.max(2,gse));// 티어표의 ▲: 구간 경계에서 표준오차 이내
+ const mapName=e.stageList[mi].name+' ★'+mc,T=band(g);
+ console.log(`${e.names[UNIT]||UNIT}${TRUE?' (3진)':''}${MODS?' [수정 적용]':''} — 티어 ${T}${near?'▲':''} (${rng(T)})`);
+ console.log(`클리어 단축 ${Math.round(g)}초±${Math.round(gse)}  (95% 구간 ${(g-1.96*gse).toFixed(0)}~${(g+1.96*gse).toFixed(0)}초 → 티어 ${band(g+1.96*gse)}~${band(g-1.96*gse)})`);
+ console.log(`순위 ${rankAt(g)} (95% 구간 ${rankAt(g+1.96*gse)}~${rankAt(g-1.96*gse)}) / ${others.length+1}명`);
  console.log('가까운 기존 캐릭터: '+nearest.join(', '));
+ console.log(`
+읽는 법 — 이득(초)은 기준 덱(레드·옐로우·블루·퍼플)에 이 캐릭터를 더했을 때 테스트 맵 ${mapName}(보물 전부 완성·전원 Lv.30)의 클리어가 몇 초 빨라지는가다. 시드 ${SEEDS} × 출격 방식 ${policies.length}(야옹컴 / 위기 때 싼 유닛부터 중 나은 쪽)로 쟀다.`);
+ console.log('구간은 8초 간격: OP 70초 이상 · SSS 62~70 · SS 54~62 · S 46~54 · A 38~46 · B 30~38 · C 22~30 · D 14~22 · E 10~14 · F 6~10 · X 6 미만. ▲는 점수가 구간 경계에서 표준오차 이내라 이웃 구간과 구분되지 않는다는 표시다. 순위의 95% 구간이 겹치는 이웃 티어와는 사실상 같은 급이다.');
+ if(TRUE)console.log('3진은 그 캐릭터만 3진으로, 나머지 덱은 2진 그대로 둔 상태의 이득이다(티어표의 3진 표와 같은 방식). 이 맵은 무속성 적이 98%라 에일·떠 있는 적 등 특화 능력의 몫은 반영되지 않는다.');
  if(A.gain[ANCHOR]!=null){const ga=mean(diffs(ANCHOR,F.seeds))*300,ex=A.gain[ANCHOR]*300;
   console.log(Math.abs(ga-ex)<=1.5?`(검증: 기존 ${e.names[ANCHOR]}(${ANCHOR}) 다시 재니 ${ga.toFixed(1)}초 — 티어표 ${ex.toFixed(1)}초와 일치, 비교 유효)`:`⚠ 검증 실패: 기존 ${e.names[ANCHOR]}(${ANCHOR}) 다시 재니 ${ga.toFixed(1)}초인데 티어표는 ${ex.toFixed(1)}초다. 전투 규칙이 분포를 잰 뒤 바뀐 것 같아 순위·티어가 어긋난다. bench20 분포부터 다시 재야 한다.`)}
  process.exit(0);
