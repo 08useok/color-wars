@@ -11,6 +11,8 @@ const MAP=process.env.MAP||'405:3',BASE=(process.env.BASE||'red,yellow,blue,purp
  const eligible=[];
  for(const c of e.roster){e.setProfile({level:30,trueForms:[c]});const s=e.unitStats(c);if(s.trueForm)eligible.push(c)}
  e.setProfile({level:30});
+const ONLY=process.env.ONLY?process.env.ONLY.split(','):null;
+ if(ONLY){for(let k=eligible.length-1;k>=0;k--)if(!ONLY.includes(eligible[k]))eligible.splice(k,1)}
  console.log('3진 가능',eligible.length,'/',e.roster.length);
  const jobs=[],meta=[];
  for(const c of eligible){const deck=BASE.includes(c)?BASE:[...BASE,c];
@@ -24,7 +26,7 @@ const MAP=process.env.MAP||'405:3',BASE=(process.env.BASE||'red,yellow,blue,purp
  res.forEach((r,k)=>{if(r.error)throw Error(r.error);const m=meta[k];const key=[m.c,m.seed,m.f].join('|');const v=perf(r,hp);best.set(key,Math.max(best.get(key)??-1,v))});
  const out={};
  for(const c of eligible){const d=[];for(let s=1;s<=NS;s++)d.push(best.get([c,s,3].join('|'))-best.get([c,s,2].join('|')));const m=d.reduce((a,b)=>a+b,0)/d.length,sd=Math.sqrt(d.reduce((a,b)=>a+(b-m)**2,0)/Math.max(1,d.length-1));out[c]={name:e.names[c],delta:m,se:sd/Math.sqrt(d.length),perSeed:d}}
- fs.writeFileSync(path.join(root,'docs/simulations/trueform-map-2026-10-17.json'),JSON.stringify({map:MAP,base:BASE,seeds:NS,eligible,out}));
+ fs.writeFileSync(path.join(root,'docs/simulations/'+(process.env.OUT||'trueform-map-2026-10-17')+'.json'),JSON.stringify({map:MAP,base:BASE,seeds:NS,eligible,out}));
  const arr=Object.entries(out).sort((a,b)=>b[1].delta-a[1].delta);
  console.log(arr.slice(0,10).map(([c,o])=>o.name+' +'+o.delta.toFixed(3)).join(' | '));
  console.log(arr.slice(-8).map(([c,o])=>o.name+' '+o.delta.toFixed(3)).join(' | '));
