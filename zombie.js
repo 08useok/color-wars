@@ -27,17 +27,22 @@ const ZOMBIES={
  zduche:{base:'duche',name:'좀비 오리룰루',hp:17500,atk:17000,interval:.87,speed:8,range:4,reward:300,knockbacks:1,area:true,reviveHp:1,reviveDelay:20},// Zuche: 20초 뒤 100%로 부활
  zthrillerz:{base:'guys',name:'스릴러즈',hp:10000,atk:6500,interval:1.27,speed:6,range:3.7,reward:110,knockbacks:1,reviveHp:1,reviveDelay:8}// The Thrillerz: 놈놈놈의 좀비(미래편 2·3장)
 };
+// 원작 좀비 그림: 좀비멍(Zoge)·뼈낼름이(Znache)·좀비하마(Zomboe=놈놈놈 짝)·해골돼지(Zigge)·재키펭 Z·좀비 고릴라(Zory)·얼룩 바다레오파드(Zir Zeal)·스컬 복서(Zang Roo)·뼈악어(Zroco)
+const ZOMBIE_ART={zdog:'zoge',znache:'nyororon',zguys:'zomboe',zpigge:'zigge',zpeng:'zackiepeng',zgory:'zory',zseal:'zirzeal',zkangaroo:'zangroo',zcroco:'zroco'};
+const ZOMBIE_TINT='hue-rotate(70deg) saturate(.75) brightness(.82)';
 const ZOMBIE_MAP={};
 for(const [id,z] of Object.entries(ZOMBIES)){
  const {base,name,...stats}=z;
  data.units[id]={trait:'zombie',reviveCount:1,reviveHp:.5,attackDuration:Math.min(.9,stats.interval),windup:.3,...stats};
  UNIT_NAMES[id]=name;if(!ZOMBIE_MAP[base])ZOMBIE_MAP[base]=id;
- if(NEW_ATLASES[base])NEW_ATLASES[id]={...NEW_ATLASES[base]};
- if(ENEMY_SIZE[base])ENEMY_SIZE[id]=ENEMY_SIZE[base];
+ // 원작 좀비 그림이 있으면(레전드 34~36장용으로 구운 원작 모션) 그대로 쓰고, 없으면 짝 적 그림에 초록 색조를 입힌다.
+ const art=ZOMBIE_ART[id];
+ if(art&&NEW_ATLASES[art])NEW_ATLASES[id]={...NEW_ATLASES[art]};
+ else{if(NEW_ATLASES[base])NEW_ATLASES[id]={...NEW_ATLASES[base],tint:ZOMBIE_TINT};if(ENEMY_SIZE[base])ENEMY_SIZE[id]=ENEMY_SIZE[base]}
 }
 {
  const st=document.createElement('style');
- st.textContent=Object.keys(ZOMBIES).map(id=>`.unit.${id} .dog-sprite{filter:hue-rotate(70deg) saturate(.75) brightness(.82)}`).join('')+
+ st.textContent=Object.keys(ZOMBIES).filter(id=>!ZOMBIE_ART[id]).map(id=>`.unit.${id} .dog-sprite{filter:${ZOMBIE_TINT}}`).join('')+
   '.stage-card.outbreak{position:relative;box-shadow:inset 0 0 0 2px #9b4dff}.zombie-chip{position:absolute;top:3px;right:3px;min-width:22px;height:22px;padding:0 5px;border-radius:11px;background:#7b2fbe;border:1px solid #d3b0ff;color:#fff;font:700 12px/20px system-ui,sans-serif;text-align:center;cursor:pointer;z-index:2}.zombie-chip:hover{background:#9448e0}.zombie-chip.done{background:#3f2a5c;border-color:#8a6fb5;color:#cbb6e8}.zombie-chip.locked{background:#2a2438;border-color:#5b4a78;color:#8d7fa5;cursor:not-allowed}';
  document.head.append(st);
 }
@@ -80,13 +85,16 @@ function zombieAvailable(i){
  if(i===ch.final)return zombieStagesOf(c).filter(j=>j!==i).every(j=>zombieSave.clear.includes(j));// 마지막 스테이지는 나머지를 다 깨야 열린다
  return true;
 }
+// 침공판 적 성 체력: 원작 Zombie Outbreak 값(위키, 스테이지 순서 0~47). 위키에 빠진 4곳(세계편 2장 필리핀·멕시코, 3장 남아프리카·멕시코)은 앞뒤 스테이지 평균.
+const ZOMBIE_CASTLE_HP={1:[10000,10000,10000,10000,15000,15000,16000,16000,16000,17000,20000,20000,22000,22000,23000,23000,23000,24000,25000,25000,28000,29000,30000,30000,30000,30000,30000,30000,36000,36000,16000,36000,36000,36000,40000,40000,40000,40000,40000,40000,40000,40000,40000,50000,40000,50000,60000,99999],2:[30000,30000,30000,30000,35000,35000,35000,50000,50000,50000,60000,60000,60000,70000,70000,70000,80000,80000,90000,90000,100000,100000,100000,100000,110000,110000,110000,110000,110000,110000,120000,120000,120000,120000,130000,130000,130000,130000,130000,140000,140000,140000,140000,140000,150000,150000,150000,200000],3:[45000,45000,45000,45000,60000,60000,60000,75000,75000,75000,90000,90000,90000,100000,100000,100000,110000,120000,120000,130000,150000,150000,150000,150000,160000,160000,160000,160000,160000,160000,180000,180000,180000,180000,200000,200000,200000,200000,200000,220000,220000,220000,220000,220000,250000,250000,250000,400000],5:[80000,80000,120000,160000,120000,150000,120000,100000,160000,180000,176000,200000,192000,210000,180000,200000,250000,225000,270000,240000,260000,320000,300000,500000,300000,360000,270000,250000,300000,270000,320000,300000,350000,320000,330000,300000,350000,400000,360000,400000,390000,440000,500000,510000,530000,480000,750000,450000],6:[96000,96000,144000,192000,144000,180000,144000,120000,192000,216000,211200,240000,230400,252000,216000,240000,300000,270000,324000,288000,312000,384000,360000,600000,360000,432000,324000,300000,360000,324000,384000,360000,420000,384000,396000,360000,420000,480000,432000,480000,468000,528000,600000,612000,636000,576000,750000,540000],7:[112000,112000,168000,224000,168000,210000,168000,140000,224000,252000,246400,280000,268800,294000,252000,280000,350000,315000,378000,336000,364000,448000,420000,700000,420000,504000,378000,350000,420000,378000,448000,420000,490000,448000,462000,420000,490000,560000,504000,560000,546000,616000,700000,714000,742000,672000,750000,630000],8:[120000,140000,140000,160000,200000,180000,200000,200000,240000,180000,220000,240000,210000,187500,217500,195000,225000,262500,187500,225000,270000,240000,300000,262500,246000,270000,240000,264000,288000,330000,288000,360000,336000,300000,360000,390000,385000,352000,396000,330000,363000,440000,352000,396000,385000,440000,450000,600000]};
+function zombieCastleHp(i){const c=chapterOf(i),k=STAGES.map((_,j)=>j).filter(j=>chapterOf(j)===c&&isStoryStage(j)).indexOf(i);return ZOMBIE_CASTLE_HP[c]?.[k]||STAGES[i].hp}
 const ZOMBIE_SLOT=STAGES.length;
 STAGES.push({name:'좀비 침공',flag:'🧟',hp:100000,gap:4,wave:0,sky:'#cfd8c0',land:'#6f7f5a',chapter:'special',maxEnemies:10,zombieOf:-1,special:{item:'zmedal',itemName:'Z 메달',count:0,chance:0},desc:'좀비 침공 스테이지'});
 STAGE_SPAWNS[ZOMBIE_SLOT]=[];
 function startOutbreak(i){
  if(!zombieAvailable(i))return;
  const b=STAGES[i],z=STAGES[ZOMBIE_SLOT],first=!zombieSave.clear.includes(i);
- z.name=b.name+' 좀비 침공';z.hp=b.hp;z.maxEnemies=b.maxEnemies;z.sky=b.sky;z.land=b.land;z.chapter=chapterOf(i);z.zombieOf=i;
+ z.name=b.name+' 좀비 침공';z.hp=zombieCastleHp(i);z.maxEnemies=b.maxEnemies;z.sky=b.sky;z.land=b.land;z.chapter=chapterOf(i);z.zombieOf=i;
  z.special={item:'zmedal',itemName:'Z 메달',count:0,chance:0,xp:first?Math.round(stageXP(i)*.5):0};
  STAGE_SPAWNS[ZOMBIE_SLOT]=zombieRulesOf(i);
  selectedStage=ZOMBIE_SLOT;reset();

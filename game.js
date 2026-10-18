@@ -1152,7 +1152,7 @@ function tickHitback(u,dt){
  if(u.kbTime===0){u.el.classList.remove('knocked-back');u.el.style.translate='0 0'}
 }
 const BOSS_KNOCKBACK_DURATION=.8;
-const BOSS_KNOCKBACK_DISTANCE=2;
+const BOSS_KNOCKBACK_DISTANCE=HITBACK_DISTANCE;// 원작: 보스 충격파는 일반 넉백과 같은 거리
 function triggerBossShockwave(){
  const field=$('#field');field.classList.remove('boss-shake');void field.offsetWidth;field.classList.add('boss-shake');
  const wave=document.createElement('i');wave.className='boss-wave';field.append(wave);if(typeof setTimeout==='function'){setTimeout(()=>wave.remove(),850);setTimeout(()=>field.classList.remove('boss-shake'),450);}
@@ -2386,7 +2386,7 @@ function animateAtlas(u){
  sprite.style.transform=!atlas.flip!==!fl?`translateX(${w*scale}px) scale(${-scale},${scale})`:`scale(${scale})`+(rot?` rotate(${rot}deg)`:'');sprite.style.transformOrigin='left bottom';
  // Hit flash for enemies without a hurt drawing. Metal plates (grey 200) wash out to
  // white under brightening, so those enemies flash with a white glow around the outline instead.
- sprite.style.filter=state==='hurt'&&!atlas.hurt?(GLOW_FLASH.has(u.type)?'drop-shadow(0 0 3px #fff) drop-shadow(0 0 2px #fff)':'brightness(1.8)'):'none';
+ sprite.style.filter=state==='hurt'&&!atlas.hurt?(GLOW_FLASH.has(u.type)?'drop-shadow(0 0 3px #fff) drop-shadow(0 0 2px #fff)':'brightness(1.8)'):(atlas.tint||baseAtlas.tint||'none');// atlas.tint: a colour filter that survives every frame (e.g. tinted zombie twins)
  u.el.dataset.animation=state;
 }
 
