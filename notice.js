@@ -2,9 +2,11 @@
 // v1 세계편 (first push, 2026-09-24) · v2 레전드 스토리 (09-30) · v3 미래편 1장 (10-03) · v4 미래편 2장 + 3진 (10-06) · v5 미래편 3장 (10-08) · v6 우주편 1장 (10-09).
 // Between those, every push counts: a new feature bumps MINOR, fixes/balance only bump PATCH.
 // A new NOTICE.version shows the notice once on load; the 공지 button on the stage screen reopens it.
-const GAME_VERSION='6.7.1';
+const GAME_VERSION='6.7.2';
 const NOTICE={version:GAME_VERSION,date:'2026-10-18',title:`v${GAME_VERSION} 업데이트`,html:`
 <p class="notice-lead">지금까지 <b>세계편 1~3장 · 미래편 1~3장 · 우주편 1장 · 레전드 스토리 1~39장</b>을 담았습니다.</p>
+<h3>🏰 v6.7.2 적 성 뒤로 밀려나던 문제</h3>
+<ul><li>적이 넉백으로 적 성 뒤까지 밀려나던 문제를 고쳤습니다. 적 성 쪽으로 더 밀릴 수 없으면 제자리에 머물며, 밀치기·날려버림은 넉백 모션만, 체력 구간 히트백은 제자리에서 튀어 오르기만 합니다.</li></ul>
 <h3>🧟 v6.7.1 좀비 침공·보스 충격파 수정</h3>
 <ul><li>좀비 침공판에서 좀비가 일반 적과 똑같아 보이던 문제를 고쳤습니다. 좀비 멍뭉이·낼름이·놈놈놈·돼지새끼·재키펭·고릴라저씨·바다레오파드·캥거류·아거는 원작 좀비 모습으로, 나머지 좀비는 초록빛으로 보입니다.</li><li>침공판 적 성이 일반 스테이지 체력 그대로라(예: 필리핀 1,500) 한 방에 부서지던 문제를 고쳤습니다. 원작 좀비 침공판 성 체력을 적용합니다(세계편 1장 10,000~99,999 · 우주편 1장 최대 600,000).</li><li>보스 등장 충격파가 아군을 거의 밀어내지 못하던 문제: 원작처럼 일반 넉백과 같은 거리만큼 밀어냅니다.</li></ul>
 <h3>🌪️ v6.7.0 사이클론 강림·보상 아종</h3>

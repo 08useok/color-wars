@@ -38,7 +38,7 @@ function updateCannon(dt){
    if(v.ally||v.hp<=0||v.emerging||w.hit.has(v)||v.x<w.x)continue;
    w.hit.add(v);
    damage(v,w.power);
-   if(v.hp>0&&!(v.kbTime>0)&&!(v.stats?.knockbackImmune||data.units[v.type].knockbackImmune))startHitback(v,CANNON.push);
+   if(v.hp>0&&!(v.kbTime>0)&&!(v.stats?.knockbackImmune||data.units[v.type].knockbackImmune))startHitback(v,CANNON.push,'push');
   }
   if(w.x<=w.end){w.el.remove();game.cannonWaves.splice(game.cannonWaves.indexOf(w),1)}
  }

@@ -1136,9 +1136,12 @@ function animateRangedBody(u){
  u.el.style.setProperty('--ranged-body-x',pose.x+'px');u.el.style.setProperty('--ranged-body-y',pose.y+'px');u.el.style.setProperty('--ranged-body-angle',pose.angle+'deg');
 }
 function animateUnit(u){if(u.ally&&!NEW_ATLASES[u.type])animateAlly(u);else animateDog(u);animateRangedBody(u)}
-function startHitback(u,dist=HITBACK_DISTANCE){
+// kind: 'hitback' (체력 구간 넉백·쓰러짐) or 'push' (밀치기·날려버림·대포 등 능력으로 밀림).
+// 적이 적 성 뒤로 밀려날 상황이면 위치를 바꾸지 않는다: 밀치기는 넉백 모션만, 히트백은 제자리에서 위로 튀기만 한다.
+function startHitback(u,dist=HITBACK_DISTANCE,kind='hitback'){
  u.kbTime=HITBACK_DURATION;u.hurtTime=HITBACK_DURATION;
- u.kbStart=u.x;u.kbEnd=Math.max(0,Math.min(100,u.x+(u.ally?1:-1)*dist));
+ u.kbStart=u.x;u.kbEnd=Math.max(0,Math.min(100,u.x+(u.ally?1:-1)*dist));u.kbNoHop=false;
+ if(!u.ally&&u.kbEnd<data.bases.enemy.x){u.kbEnd=u.x;u.kbNoHop=kind==='push'}
  u.attackTime=0;u.atkCd=0;u.pendingAttack=null;
  u.el.classList.add('knocked-back');animateUnit(u);
 }
@@ -1147,7 +1150,7 @@ function tickHitback(u,dt){
  const progress=1-u.kbTime/HITBACK_DURATION;
  u.x=u.kbStart+(u.kbEnd-u.kbStart)*(1-(1-progress)**2);
  u.el.style.left=`calc(${u.x}% - 21px)`;
- u.el.style.translate=`0 ${-Math.sin(progress*Math.PI)*18}px`;
+ u.el.style.translate=`0 ${u.kbNoHop?0:-Math.sin(progress*Math.PI)*18}px`;
  animateUnit(u);
  if(u.kbTime===0){u.el.classList.remove('knocked-back');u.el.style.translate='0 0'}
 }
@@ -1230,9 +1233,9 @@ function damage(v,amount,from){
  if(from?.stats?.pull&&!isBoss){const dir=Math.sign(from.x-v.x)||(from.ally?-1:1);v.x=Math.max(0,Math.min(100,v.x+dir*(from.stats.pullDistance||3)));v.el.style.left=`calc(${v.x}% - 21px)`;v.pullFxUntil=game.elapsed+STATUS_FX_TIME}
  if(lands&&from?.stats?.intervalUpChance&&Math.random()<from.stats.intervalUpChance){v.intervalUntil=game.elapsed+from.stats.intervalUpDuration;v.intervalMult=from.stats.intervalUpMult||1.5}// 공격 주기 증가
  const kbImmune=v.stats?.knockbackImmune||data.units[v.type].knockbackImmune;// 날려버린다 무효
- if(from?.stats?.push&&!kbImmune)startHitback(v,from.stats.push*fruitPushMultiplier(from,v));// 날려버린다: always shoves the target back (bosses too) unless knockback-immune
- else if(from?.stats?.forceKnockback&&!isBoss&&!kbImmune){startHitback(v)}
- else if(!kbImmune&&from?.stats?.blowChance&&!from.stats.blowNot?.some(t=>hasTrait(data.units[v.type],t))&&Math.random()<from.stats.blowChance){startHitback(v,(from.stats.blowDistance||14)*fruitPushMultiplier(from,v))}// 날려버린다: a chance to hurl the target far back
+ if(from?.stats?.push&&!kbImmune)startHitback(v,from.stats.push*fruitPushMultiplier(from,v),'push');// 날려버린다: always shoves the target back (bosses too) unless knockback-immune
+ else if(from?.stats?.forceKnockback&&!isBoss&&!kbImmune){startHitback(v,HITBACK_DISTANCE,'push')}
+ else if(!kbImmune&&from?.stats?.blowChance&&!from.stats.blowNot?.some(t=>hasTrait(data.units[v.type],t))&&Math.random()<from.stats.blowChance){startHitback(v,(from.stats.blowDistance||14)*fruitPushMultiplier(from,v),'push')}// 날려버린다: a chance to hurl the target far back
  else if(!kbImmune){
   const total=v.stats?.knockbacks??data.units[v.type].knockbacks;
   // Consume every crossed threshold, but play only one hitback for a single blow.
@@ -2797,7 +2800,7 @@ function useBoost(k){if(!BOOSTS[k]||!game.running||game.ended||game.paused||game
 const SNIPER_INTERVAL=4;
 function tickSniper(dt){if(!boostActive('sniper'))return;game.sniperCd=(game.sniperCd||0)-dt;if(game.sniperCd>0)return;
  const front=game.units.filter(v=>!v.ally&&v.hp>0&&!v.emerging&&!v.boss&&!(v.kbTime>0)).sort((a,b)=>b.x-a.x)[0];
- game.sniperCd=front?SNIPER_INTERVAL:.5;if(front)startHitback(front)}
+ game.sniperCd=front?SNIPER_INTERVAL:.5;if(front)startHitback(front,HITBACK_DISTANCE,'push')}
 function renderBoostButtons(){for(const k in BOOSTS){const b=$('#boost-'+k);if(!b)continue;const on=boostActive(k);b.querySelector('small').textContent=on?'사용 중':boosts[k];b.classList.toggle('active',on);b.disabled=on||boosts[k]<=0||game.ended||!game.running||game.tutorial<6;b.title=`${BOOST_NAME[k]}: ${BOOSTS[k].desc}${on?' (사용 중)':` · 보유 ${boosts[k]}개`}`}}
 for(const k in BOOSTS){const b=$('#boost-'+k);if(b)b.onclick=()=>useBoost(k)}
 function buyBoostPack(k){if(training.xp<BOOST_PACK.xp)return false;training.xp-=BOOST_PACK.xp;boosts[k]+=BOOST_PACK.count;saveTraining();saveBoosts();renderStageMenu();render();return true}
