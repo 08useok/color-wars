@@ -43,7 +43,7 @@ for(const [id,z] of Object.entries(ZOMBIES)){
 {
  const st=document.createElement('style');
  st.textContent=Object.keys(ZOMBIES).filter(id=>!ZOMBIE_ART[id]).map(id=>`.unit.${id} .dog-sprite{filter:${ZOMBIE_TINT}}`).join('')+
-  '.stage-card.outbreak{position:relative;box-shadow:inset 0 0 0 2px #9b4dff}.zombie-chip{position:absolute;top:3px;right:3px;min-width:22px;height:22px;padding:0 5px;border-radius:11px;background:#7b2fbe;border:1px solid #d3b0ff;color:#fff;font:700 12px/20px system-ui,sans-serif;text-align:center;cursor:pointer;z-index:2}.zombie-chip:hover{background:#9448e0}.zombie-chip.done{background:#3f2a5c;border-color:#8a6fb5;color:#cbb6e8}.zombie-chip.locked{background:#2a2438;border-color:#5b4a78;color:#8d7fa5;cursor:not-allowed}';
+  '.unit.zombie-down{filter:grayscale(.7) brightness(.75)}.stage-card.outbreak{position:relative;box-shadow:inset 0 0 0 2px #9b4dff}.zombie-chip{position:absolute;top:3px;right:3px;min-width:22px;height:22px;padding:0 5px;border-radius:11px;background:#7b2fbe;border:1px solid #d3b0ff;color:#fff;font:700 12px/20px system-ui,sans-serif;text-align:center;cursor:pointer;z-index:2}.zombie-chip:hover{background:#9448e0}.zombie-chip.done{background:#3f2a5c;border-color:#8a6fb5;color:#cbb6e8}.zombie-chip.locked{background:#2a2438;border-color:#5b4a78;color:#8d7fa5;cursor:not-allowed}';
  document.head.append(st);
 }
 // 그레이도 좀비 킬러 (좀비 엄강은 아이언만)

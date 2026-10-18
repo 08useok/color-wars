@@ -1420,11 +1420,14 @@ function update(dt){
  tickSniper(dt);
  updateBoomerangs(dt);if(game.ended){render();return}updateJuice(dt);if(game.ended){render();return}updateShots(dt);if(game.ended){render();return}
  for(const v of [...game.defeated]){
-  tickHitback(v,dt);v.el.style.opacity=v.kbTime/HITBACK_DURATION;
+  tickHitback(v,dt);v.el.style.opacity=v.reviveAt!==undefined?Math.max(.45,v.kbTime/HITBACK_DURATION):v.kbTime/HITBACK_DURATION;// 부활할 좀비는 쓰러진 채 흐릿하게 남는다
   if(v.reviveAt!==undefined){
+   v.el.classList.add('zombie-down');
    if(game.elapsed>=v.reviveAt){
-    delete v.reviveAt;v.hp=Math.max(1,Math.round(v.max*(v.stats?.reviveHp??.5)));v.kb=0;v.kbTime=0;v.hurtTime=0;v.attackTime=0;v.attackCd=v.stats.interval;delete v.pendingAttack;
+    delete v.reviveAt;v.el.classList.remove('zombie-down');v.hp=Math.max(1,Math.round(v.max*(v.stats?.reviveHp??.5)));v.kb=0;v.kbTime=0;v.hurtTime=0;v.attackTime=0;v.attackCd=v.stats.interval;delete v.pendingAttack;
     v.el.classList.remove('defeated','knocked-back');v.el.style.opacity='1';v.el.querySelector('i').style.setProperty('width',v.hp/v.max*100+'%');game.defeated.splice(game.defeated.indexOf(v),1);game.units.push(v);
+    // 일어나는 동안(히트백 시간)은 제자리에서 맞지 않는다 (원작: 부활 중 무적)
+    v.kbTime=HITBACK_DURATION;v.hurtTime=HITBACK_DURATION;v.kbStart=v.kbEnd=v.x;v.kbNoHop=true;v.el.classList.add('knocked-back');
    }
   }else if(v.kbTime===0){v.el.remove();game.defeated.splice(game.defeated.indexOf(v),1)}
  }

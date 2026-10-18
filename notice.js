@@ -2,9 +2,11 @@
 // v1 세계편 (first push, 2026-09-24) · v2 레전드 스토리 (09-30) · v3 미래편 1장 (10-03) · v4 미래편 2장 + 3진 (10-06) · v5 미래편 3장 (10-08) · v6 우주편 1장 (10-09).
 // Between those, every push counts: a new feature bumps MINOR, fixes/balance only bump PATCH.
 // A new NOTICE.version shows the notice once on load; the 공지 button on the stage screen reopens it.
-const GAME_VERSION='6.7.2';
+const GAME_VERSION='6.7.3';
 const NOTICE={version:GAME_VERSION,date:'2026-10-18',title:`v${GAME_VERSION} 업데이트`,html:`
 <p class="notice-lead">지금까지 <b>세계편 1~3장 · 미래편 1~3장 · 우주편 1장 · 레전드 스토리 1~39장</b>을 담았습니다.</p>
+<h3>🧟 v6.7.3 좀비 부활 보이게</h3>
+<ul><li>쓰러진 좀비가 곧바로 사라져 부활이 안 보이던 문제: 부활할 좀비는 흐릿하게 쓰러진 채 남아 있다가 일어납니다.</li><li>원작처럼 일어나는 동안(약 0.7초)은 공격받지 않아, 부활하자마자 다시 쓰러지지 않습니다. 좀비 킬러로 마무리하면 부활하지 않습니다.</li></ul>
 <h3>🏰 v6.7.2 적 성 뒤로 밀려나던 문제</h3>
 <ul><li>적이 넉백으로 적 성 뒤까지 밀려나던 문제를 고쳤습니다. 적 성 쪽으로 더 밀릴 수 없으면 제자리에 머물며, 밀치기·날려버림은 넉백 모션만, 체력 구간 히트백은 제자리에서 튀어 오르기만 합니다.</li></ul>
 <h3>🧟 v6.7.1 좀비 침공·보스 충격파 수정</h3>
