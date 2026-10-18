@@ -1,0 +1,2189 @@
+{
+  "date": "2026-10-18",
+  "map": "405:3",
+  "mapName": "황제의 야옹이",
+  "seeds": 6,
+  "policies": [
+    "auto",
+    "smart2"
+  ],
+  "core": [
+    "red",
+    "yellow",
+    "blue",
+    "purple"
+  ],
+  "level": 30,
+  "anchor": {
+    "type": "garnet",
+    "name": "가넷",
+    "form": 2,
+    "rangeBefore": 5,
+    "rangeNow": 5,
+    "oldGain": 45.32500000000001,
+    "gain": 45.32500000000001,
+    "se": 3.4594120406026576,
+    "perSeed": [
+      36.16000000000001,
+      34.77000000000003,
+      43.40000000000002,
+      53.760000000000005,
+      51.06000000000004,
+      52.79999999999998
+    ],
+    "oldTier": "A",
+    "tier": "A",
+    "valid": true
+  },
+  "rows": [
+    {
+      "type": "prism",
+      "name": "프리즘",
+      "form": 2,
+      "rangeBefore": 28,
+      "rangeNow": 25,
+      "oldGain": 77.60833333333333,
+      "gain": 77.11,
+      "se": 2.5276655896960225,
+      "perSeed": [
+        70.89999999999999,
+        71.30000000000001,
+        72.37000000000002,
+        83.90000000000002,
+        81.36000000000003,
+        82.83
+      ],
+      "oldTier": "OP",
+      "tier": "OP"
+    },
+    {
+      "type": "night",
+      "name": "나이트",
+      "form": 2,
+      "rangeBefore": 34,
+      "rangeNow": 30,
+      "oldGain": 62.338333333333345,
+      "gain": 64.08833333333335,
+      "se": 3.017238711876212,
+      "perSeed": [
+        56.230000000000004,
+        57.60000000000005,
+        58.57000000000001,
+        72.69999999999999,
+        68.9,
+        70.53000000000003
+      ],
+      "oldTier": "SSS",
+      "tier": "SSS"
+    },
+    {
+      "type": "rainbow",
+      "name": "레인보우",
+      "form": 2,
+      "rangeBefore": 50,
+      "rangeNow": 30,
+      "oldGain": 60.961666666666666,
+      "gain": 56.50833333333333,
+      "se": 2.6500659320938516,
+      "perSeed": [
+        48.52999999999999,
+        50.030000000000015,
+        54.47,
+        60.960000000000015,
+        60.46,
+        64.60000000000001
+      ],
+      "oldTier": "SS",
+      "tier": "SS"
+    },
+    {
+      "type": "fuchsia",
+      "name": "퓨샤",
+      "form": 2,
+      "rangeBefore": 32,
+      "rangeNow": 30,
+      "oldGain": 51.72666666666667,
+      "gain": 59.73500000000001,
+      "se": 3.170586433663862,
+      "perSeed": [
+        51.59999999999998,
+        60.230000000000025,
+        48.83000000000002,
+        66.05999999999999,
+        64.96000000000004,
+        66.72999999999998
+      ],
+      "oldTier": "S",
+      "tier": "SS"
+    },
+    {
+      "type": "khaki",
+      "name": "카키",
+      "form": 2,
+      "rangeBefore": 28,
+      "rangeNow": 25,
+      "oldGain": 47.79833333333333,
+      "gain": 39.57333333333334,
+      "se": 2.925682446503342,
+      "perSeed": [
+        32.32999999999997,
+        29.930000000000035,
+        39.23000000000001,
+        47.25999999999999,
+        46.160000000000046,
+        42.52999999999998
+      ],
+      "oldTier": "S",
+      "tier": "A"
+    },
+    {
+      "type": "plum",
+      "name": "플럼",
+      "form": 2,
+      "rangeBefore": 38,
+      "rangeNow": 25,
+      "oldGain": 33.97166666666668,
+      "gain": 22.705000000000016,
+      "se": 2.5053432898507073,
+      "perSeed": [
+        24.429999999999975,
+        15.27000000000005,
+        14.730000000000043,
+        25.800000000000022,
+        28.630000000000045,
+        27.369999999999983
+      ],
+      "oldTier": "B",
+      "tier": "C"
+    },
+    {
+      "type": "cyan",
+      "name": "시안",
+      "form": 2,
+      "rangeBefore": 30,
+      "rangeNow": 25,
+      "oldGain": 32.19833333333335,
+      "gain": 23.693333333333346,
+      "se": 3.386754263958994,
+      "perSeed": [
+        16.860000000000007,
+        20.80000000000004,
+        12.570000000000014,
+        34.30000000000002,
+        28.400000000000002,
+        29.22999999999998
+      ],
+      "oldTier": "B",
+      "tier": "C"
+    },
+    {
+      "type": "sky",
+      "name": "스카이",
+      "form": 2,
+      "rangeBefore": 26,
+      "rangeNow": 25,
+      "oldGain": 32.07000000000002,
+      "gain": 33.98500000000001,
+      "se": 3.386585054790936,
+      "perSeed": [
+        23.129999999999985,
+        30.23,
+        26.730000000000054,
+        41.56000000000002,
+        41.22999999999999,
+        41.03000000000001
+      ],
+      "oldTier": "B",
+      "tier": "B"
+    },
+    {
+      "type": "salmon",
+      "name": "살몬",
+      "form": 2,
+      "rangeBefore": 26,
+      "rangeNow": 25,
+      "oldGain": 14.98666666666666,
+      "gain": 12.448333333333338,
+      "se": 2.2548635090498137,
+      "perSeed": [
+        8.529999999999994,
+        5.270000000000019,
+        9.630000000000006,
+        16.759999999999952,
+        14.700000000000045,
+        19.80000000000002
+      ],
+      "oldTier": "D",
+      "tier": "E"
+    }
+  ],
+  "salmonTrue": {
+    "type": "salmon",
+    "name": "살몬",
+    "form": 3,
+    "rangeBefore": 26,
+    "rangeNow": 25,
+    "oldGain": 14.98666666666666,
+    "gain": 32.31166666666667,
+    "se": 3.6091637227725952,
+    "perSeed": [
+      17.599999999999994,
+      32.100000000000065,
+      28.370000000000005,
+      43.39999999999995,
+      34.53000000000006,
+      37.86999999999996
+    ],
+    "oldTier": "D",
+    "tier": "B",
+    "delta": 0.06621111111111111,
+    "deltaSe": 0.008932519310618264,
+    "deltaPerSeed": [
+      0.030233333333333334,
+      0.08943333333333349,
+      0.06246666666666666,
+      0.08879999999999999,
+      0.06610000000000005,
+      0.060233333333333146
+    ]
+  },
+  "baseline": [
+    {
+      "id": 0,
+      "win": true,
+      "timeout": false,
+      "seconds": 101.13,
+      "allyHp": 60000,
+      "enemyHp": 0,
+      "perf": 1.6629,
+      "policy": "auto"
+    },
+    {
+      "id": 2,
+      "win": true,
+      "timeout": false,
+      "seconds": 102.6,
+      "allyHp": 60000,
+      "enemyHp": 0,
+      "perf": 1.658,
+      "policy": "auto"
+    },
+    {
+      "id": 4,
+      "win": true,
+      "timeout": false,
+      "seconds": 102.6,
+      "allyHp": 60000,
+      "enemyHp": 0,
+      "perf": 1.658,
+      "policy": "auto"
+    },
+    {
+      "id": 6,
+      "win": true,
+      "timeout": false,
+      "seconds": 113.83,
+      "allyHp": 60000,
+      "enemyHp": 0,
+      "perf": 1.6205666666666667,
+      "policy": "auto"
+    },
+    {
+      "id": 8,
+      "win": true,
+      "timeout": false,
+      "seconds": 112.33,
+      "allyHp": 60000,
+      "enemyHp": 0,
+      "perf": 1.6255666666666666,
+      "policy": "auto"
+    },
+    {
+      "id": 10,
+      "win": true,
+      "timeout": false,
+      "seconds": 113.1,
+      "allyHp": 60000,
+      "enemyHp": 0,
+      "perf": 1.623,
+      "policy": "auto"
+    }
+  ],
+  "raw": [
+    {
+      "id": 0,
+      "win": true,
+      "timeout": false,
+      "seconds": 101.13,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 1,
+      "win": true,
+      "timeout": false,
+      "seconds": 101.13,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 2,
+      "win": true,
+      "timeout": false,
+      "seconds": 102.6,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 3,
+      "win": true,
+      "timeout": false,
+      "seconds": 102.6,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 4,
+      "win": true,
+      "timeout": false,
+      "seconds": 102.6,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 5,
+      "win": true,
+      "timeout": false,
+      "seconds": 102.6,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 6,
+      "win": true,
+      "timeout": false,
+      "seconds": 113.83,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 7,
+      "win": true,
+      "timeout": false,
+      "seconds": 113.83,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 8,
+      "win": true,
+      "timeout": false,
+      "seconds": 112.33,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 9,
+      "win": true,
+      "timeout": false,
+      "seconds": 112.33,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 10,
+      "win": true,
+      "timeout": false,
+      "seconds": 113.1,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 11,
+      "win": true,
+      "timeout": false,
+      "seconds": 113.1,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 12,
+      "win": true,
+      "timeout": false,
+      "seconds": 30.23,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 13,
+      "win": true,
+      "timeout": false,
+      "seconds": 30.23,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 14,
+      "win": true,
+      "timeout": false,
+      "seconds": 31.3,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 15,
+      "win": true,
+      "timeout": false,
+      "seconds": 31.3,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 16,
+      "win": true,
+      "timeout": false,
+      "seconds": 30.23,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 17,
+      "win": true,
+      "timeout": false,
+      "seconds": 30.23,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 18,
+      "win": true,
+      "timeout": false,
+      "seconds": 29.93,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 19,
+      "win": true,
+      "timeout": false,
+      "seconds": 29.93,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 20,
+      "win": true,
+      "timeout": false,
+      "seconds": 30.97,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 21,
+      "win": true,
+      "timeout": false,
+      "seconds": 30.97,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 22,
+      "win": true,
+      "timeout": false,
+      "seconds": 30.27,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 23,
+      "win": true,
+      "timeout": false,
+      "seconds": 30.27,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 24,
+      "win": true,
+      "timeout": false,
+      "seconds": 44.9,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 25,
+      "win": true,
+      "timeout": false,
+      "seconds": 44.9,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 26,
+      "win": true,
+      "timeout": false,
+      "seconds": 45,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 27,
+      "win": true,
+      "timeout": false,
+      "seconds": 45,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 28,
+      "win": true,
+      "timeout": false,
+      "seconds": 44.03,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 29,
+      "win": true,
+      "timeout": false,
+      "seconds": 44.03,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 30,
+      "win": true,
+      "timeout": false,
+      "seconds": 41.13,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 31,
+      "win": true,
+      "timeout": false,
+      "seconds": 41.13,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 32,
+      "win": true,
+      "timeout": false,
+      "seconds": 43.43,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 33,
+      "win": true,
+      "timeout": false,
+      "seconds": 43.43,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 34,
+      "win": true,
+      "timeout": false,
+      "seconds": 42.57,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 35,
+      "win": true,
+      "timeout": false,
+      "seconds": 42.57,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 36,
+      "win": true,
+      "timeout": false,
+      "seconds": 52.6,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 37,
+      "win": true,
+      "timeout": false,
+      "seconds": 52.6,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 38,
+      "win": true,
+      "timeout": false,
+      "seconds": 52.57,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 39,
+      "win": true,
+      "timeout": false,
+      "seconds": 52.57,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 40,
+      "win": true,
+      "timeout": false,
+      "seconds": 48.13,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 41,
+      "win": true,
+      "timeout": false,
+      "seconds": 48.13,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 42,
+      "win": true,
+      "timeout": false,
+      "seconds": 52.87,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 43,
+      "win": true,
+      "timeout": false,
+      "seconds": 52.87,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 44,
+      "win": true,
+      "timeout": false,
+      "seconds": 51.87,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 45,
+      "win": true,
+      "timeout": false,
+      "seconds": 51.87,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 46,
+      "win": true,
+      "timeout": false,
+      "seconds": 48.5,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 47,
+      "win": true,
+      "timeout": false,
+      "seconds": 48.5,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 48,
+      "win": true,
+      "timeout": false,
+      "seconds": 49.53,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 49,
+      "win": true,
+      "timeout": false,
+      "seconds": 49.53,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 50,
+      "win": true,
+      "timeout": false,
+      "seconds": 42.37,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 51,
+      "win": true,
+      "timeout": false,
+      "seconds": 42.37,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 52,
+      "win": true,
+      "timeout": false,
+      "seconds": 53.77,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 53,
+      "win": true,
+      "timeout": false,
+      "seconds": 53.77,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 54,
+      "win": true,
+      "timeout": false,
+      "seconds": 47.77,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 55,
+      "win": true,
+      "timeout": false,
+      "seconds": 47.77,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 56,
+      "win": true,
+      "timeout": false,
+      "seconds": 47.37,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 57,
+      "win": true,
+      "timeout": false,
+      "seconds": 47.37,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 58,
+      "win": true,
+      "timeout": false,
+      "seconds": 46.37,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 59,
+      "win": true,
+      "timeout": false,
+      "seconds": 46.37,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 60,
+      "win": true,
+      "timeout": false,
+      "seconds": 68.8,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 61,
+      "win": true,
+      "timeout": false,
+      "seconds": 68.8,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 62,
+      "win": true,
+      "timeout": false,
+      "seconds": 72.67,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 63,
+      "win": true,
+      "timeout": false,
+      "seconds": 72.67,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 64,
+      "win": true,
+      "timeout": false,
+      "seconds": 63.37,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 65,
+      "win": true,
+      "timeout": false,
+      "seconds": 63.37,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 66,
+      "win": true,
+      "timeout": false,
+      "seconds": 66.57,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 67,
+      "win": true,
+      "timeout": false,
+      "seconds": 66.57,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 68,
+      "win": true,
+      "timeout": false,
+      "seconds": 66.17,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 69,
+      "win": true,
+      "timeout": false,
+      "seconds": 66.17,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 70,
+      "win": true,
+      "timeout": false,
+      "seconds": 70.57,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 71,
+      "win": true,
+      "timeout": false,
+      "seconds": 70.57,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 72,
+      "win": true,
+      "timeout": false,
+      "seconds": 76.7,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 73,
+      "win": true,
+      "timeout": false,
+      "seconds": 76.7,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 74,
+      "win": true,
+      "timeout": false,
+      "seconds": 87.33,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 75,
+      "win": true,
+      "timeout": false,
+      "seconds": 87.33,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 76,
+      "win": true,
+      "timeout": false,
+      "seconds": 87.87,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 77,
+      "win": true,
+      "timeout": false,
+      "seconds": 87.87,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 78,
+      "win": true,
+      "timeout": false,
+      "seconds": 88.03,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 79,
+      "win": true,
+      "timeout": false,
+      "seconds": 88.03,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 80,
+      "win": true,
+      "timeout": false,
+      "seconds": 83.7,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 81,
+      "win": true,
+      "timeout": false,
+      "seconds": 83.7,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 82,
+      "win": true,
+      "timeout": false,
+      "seconds": 85.73,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 83,
+      "win": true,
+      "timeout": false,
+      "seconds": 85.73,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 84,
+      "win": true,
+      "timeout": false,
+      "seconds": 84.27,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 85,
+      "win": true,
+      "timeout": false,
+      "seconds": 84.27,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 86,
+      "win": true,
+      "timeout": false,
+      "seconds": 81.8,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 87,
+      "win": true,
+      "timeout": false,
+      "seconds": 81.8,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 88,
+      "win": true,
+      "timeout": false,
+      "seconds": 90.03,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 89,
+      "win": true,
+      "timeout": false,
+      "seconds": 90.03,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 90,
+      "win": true,
+      "timeout": false,
+      "seconds": 79.53,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 91,
+      "win": true,
+      "timeout": false,
+      "seconds": 79.53,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 92,
+      "win": true,
+      "timeout": false,
+      "seconds": 83.93,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 93,
+      "win": true,
+      "timeout": false,
+      "seconds": 83.93,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 94,
+      "win": true,
+      "timeout": false,
+      "seconds": 83.87,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 95,
+      "win": true,
+      "timeout": false,
+      "seconds": 83.87,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 96,
+      "win": true,
+      "timeout": false,
+      "seconds": 78,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 97,
+      "win": true,
+      "timeout": false,
+      "seconds": 78,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 98,
+      "win": true,
+      "timeout": false,
+      "seconds": 72.37,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 99,
+      "win": true,
+      "timeout": false,
+      "seconds": 72.37,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 100,
+      "win": true,
+      "timeout": false,
+      "seconds": 75.87,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 101,
+      "win": true,
+      "timeout": false,
+      "seconds": 75.87,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 102,
+      "win": true,
+      "timeout": false,
+      "seconds": 72.27,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 103,
+      "win": true,
+      "timeout": false,
+      "seconds": 72.27,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 104,
+      "win": true,
+      "timeout": false,
+      "seconds": 71.1,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 105,
+      "win": true,
+      "timeout": false,
+      "seconds": 71.1,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 106,
+      "win": true,
+      "timeout": false,
+      "seconds": 72.07,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 107,
+      "win": true,
+      "timeout": false,
+      "seconds": 72.07,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 108,
+      "win": true,
+      "timeout": false,
+      "seconds": 92.6,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 109,
+      "win": true,
+      "timeout": false,
+      "seconds": 92.6,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 110,
+      "win": true,
+      "timeout": false,
+      "seconds": 97.33,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 111,
+      "win": true,
+      "timeout": false,
+      "seconds": 97.33,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 112,
+      "win": true,
+      "timeout": false,
+      "seconds": 92.97,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 113,
+      "win": true,
+      "timeout": false,
+      "seconds": 92.97,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 114,
+      "win": true,
+      "timeout": false,
+      "seconds": 97.07,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 115,
+      "win": true,
+      "timeout": false,
+      "seconds": 97.07,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 116,
+      "win": true,
+      "timeout": false,
+      "seconds": 97.63,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 117,
+      "win": true,
+      "timeout": false,
+      "seconds": 97.63,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 118,
+      "win": true,
+      "timeout": false,
+      "seconds": 93.3,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 119,
+      "win": true,
+      "timeout": false,
+      "seconds": 93.3,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 120,
+      "win": true,
+      "timeout": false,
+      "seconds": 64.97,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 121,
+      "win": true,
+      "timeout": false,
+      "seconds": 64.97,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 122,
+      "win": true,
+      "timeout": false,
+      "seconds": 67.83,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 123,
+      "win": true,
+      "timeout": false,
+      "seconds": 67.83,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 124,
+      "win": true,
+      "timeout": false,
+      "seconds": 59.2,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 125,
+      "win": true,
+      "timeout": false,
+      "seconds": 59.2,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 126,
+      "win": true,
+      "timeout": false,
+      "seconds": 60.07,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 127,
+      "win": true,
+      "timeout": false,
+      "seconds": 60.07,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 128,
+      "win": true,
+      "timeout": false,
+      "seconds": 61.27,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 129,
+      "win": true,
+      "timeout": false,
+      "seconds": 61.27,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 130,
+      "win": true,
+      "timeout": false,
+      "seconds": 60.3,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 131,
+      "win": true,
+      "timeout": false,
+      "seconds": 60.3,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 132,
+      "win": true,
+      "timeout": false,
+      "seconds": 83.53,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 133,
+      "win": true,
+      "timeout": false,
+      "seconds": 83.53,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 134,
+      "win": true,
+      "timeout": false,
+      "seconds": 70.5,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 135,
+      "win": true,
+      "timeout": false,
+      "seconds": 70.5,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 136,
+      "win": true,
+      "timeout": false,
+      "seconds": 74.23,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 137,
+      "win": true,
+      "timeout": false,
+      "seconds": 74.23,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 138,
+      "win": true,
+      "timeout": false,
+      "seconds": 70.43,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 139,
+      "win": true,
+      "timeout": false,
+      "seconds": 70.43,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 140,
+      "win": true,
+      "timeout": false,
+      "seconds": 77.8,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 141,
+      "win": true,
+      "timeout": false,
+      "seconds": 77.8,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 142,
+      "win": true,
+      "timeout": false,
+      "seconds": 75.23,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 143,
+      "win": true,
+      "timeout": false,
+      "seconds": 75.23,
+      "allyHp": 60000,
+      "enemyHp": 0
+    }
+  ],
+  "meta": [
+    {
+      "key": "__ref",
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "key": "__ref",
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "key": "__ref",
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "key": "__ref",
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "key": "__ref",
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "key": "__ref",
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "key": "__ref",
+      "seed": 4,
+      "policy": "auto"
+    },
+    {
+      "key": "__ref",
+      "seed": 4,
+      "policy": "smart2"
+    },
+    {
+      "key": "__ref",
+      "seed": 5,
+      "policy": "auto"
+    },
+    {
+      "key": "__ref",
+      "seed": 5,
+      "policy": "smart2"
+    },
+    {
+      "key": "__ref",
+      "seed": 6,
+      "policy": "auto"
+    },
+    {
+      "key": "__ref",
+      "seed": 6,
+      "policy": "smart2"
+    },
+    {
+      "key": "prism",
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "key": "prism",
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "key": "prism",
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "key": "prism",
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "key": "prism",
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "key": "prism",
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "key": "prism",
+      "seed": 4,
+      "policy": "auto"
+    },
+    {
+      "key": "prism",
+      "seed": 4,
+      "policy": "smart2"
+    },
+    {
+      "key": "prism",
+      "seed": 5,
+      "policy": "auto"
+    },
+    {
+      "key": "prism",
+      "seed": 5,
+      "policy": "smart2"
+    },
+    {
+      "key": "prism",
+      "seed": 6,
+      "policy": "auto"
+    },
+    {
+      "key": "prism",
+      "seed": 6,
+      "policy": "smart2"
+    },
+    {
+      "key": "night",
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "key": "night",
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "key": "night",
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "key": "night",
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "key": "night",
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "key": "night",
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "key": "night",
+      "seed": 4,
+      "policy": "auto"
+    },
+    {
+      "key": "night",
+      "seed": 4,
+      "policy": "smart2"
+    },
+    {
+      "key": "night",
+      "seed": 5,
+      "policy": "auto"
+    },
+    {
+      "key": "night",
+      "seed": 5,
+      "policy": "smart2"
+    },
+    {
+      "key": "night",
+      "seed": 6,
+      "policy": "auto"
+    },
+    {
+      "key": "night",
+      "seed": 6,
+      "policy": "smart2"
+    },
+    {
+      "key": "rainbow",
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "key": "rainbow",
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "key": "rainbow",
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "key": "rainbow",
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "key": "rainbow",
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "key": "rainbow",
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "key": "rainbow",
+      "seed": 4,
+      "policy": "auto"
+    },
+    {
+      "key": "rainbow",
+      "seed": 4,
+      "policy": "smart2"
+    },
+    {
+      "key": "rainbow",
+      "seed": 5,
+      "policy": "auto"
+    },
+    {
+      "key": "rainbow",
+      "seed": 5,
+      "policy": "smart2"
+    },
+    {
+      "key": "rainbow",
+      "seed": 6,
+      "policy": "auto"
+    },
+    {
+      "key": "rainbow",
+      "seed": 6,
+      "policy": "smart2"
+    },
+    {
+      "key": "fuchsia",
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "key": "fuchsia",
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "key": "fuchsia",
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "key": "fuchsia",
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "key": "fuchsia",
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "key": "fuchsia",
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "key": "fuchsia",
+      "seed": 4,
+      "policy": "auto"
+    },
+    {
+      "key": "fuchsia",
+      "seed": 4,
+      "policy": "smart2"
+    },
+    {
+      "key": "fuchsia",
+      "seed": 5,
+      "policy": "auto"
+    },
+    {
+      "key": "fuchsia",
+      "seed": 5,
+      "policy": "smart2"
+    },
+    {
+      "key": "fuchsia",
+      "seed": 6,
+      "policy": "auto"
+    },
+    {
+      "key": "fuchsia",
+      "seed": 6,
+      "policy": "smart2"
+    },
+    {
+      "key": "khaki",
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "key": "khaki",
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "key": "khaki",
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "key": "khaki",
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "key": "khaki",
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "key": "khaki",
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "key": "khaki",
+      "seed": 4,
+      "policy": "auto"
+    },
+    {
+      "key": "khaki",
+      "seed": 4,
+      "policy": "smart2"
+    },
+    {
+      "key": "khaki",
+      "seed": 5,
+      "policy": "auto"
+    },
+    {
+      "key": "khaki",
+      "seed": 5,
+      "policy": "smart2"
+    },
+    {
+      "key": "khaki",
+      "seed": 6,
+      "policy": "auto"
+    },
+    {
+      "key": "khaki",
+      "seed": 6,
+      "policy": "smart2"
+    },
+    {
+      "key": "plum",
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "key": "plum",
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "key": "plum",
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "key": "plum",
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "key": "plum",
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "key": "plum",
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "key": "plum",
+      "seed": 4,
+      "policy": "auto"
+    },
+    {
+      "key": "plum",
+      "seed": 4,
+      "policy": "smart2"
+    },
+    {
+      "key": "plum",
+      "seed": 5,
+      "policy": "auto"
+    },
+    {
+      "key": "plum",
+      "seed": 5,
+      "policy": "smart2"
+    },
+    {
+      "key": "plum",
+      "seed": 6,
+      "policy": "auto"
+    },
+    {
+      "key": "plum",
+      "seed": 6,
+      "policy": "smart2"
+    },
+    {
+      "key": "cyan",
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "key": "cyan",
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "key": "cyan",
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "key": "cyan",
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "key": "cyan",
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "key": "cyan",
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "key": "cyan",
+      "seed": 4,
+      "policy": "auto"
+    },
+    {
+      "key": "cyan",
+      "seed": 4,
+      "policy": "smart2"
+    },
+    {
+      "key": "cyan",
+      "seed": 5,
+      "policy": "auto"
+    },
+    {
+      "key": "cyan",
+      "seed": 5,
+      "policy": "smart2"
+    },
+    {
+      "key": "cyan",
+      "seed": 6,
+      "policy": "auto"
+    },
+    {
+      "key": "cyan",
+      "seed": 6,
+      "policy": "smart2"
+    },
+    {
+      "key": "sky",
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "key": "sky",
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "key": "sky",
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "key": "sky",
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "key": "sky",
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "key": "sky",
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "key": "sky",
+      "seed": 4,
+      "policy": "auto"
+    },
+    {
+      "key": "sky",
+      "seed": 4,
+      "policy": "smart2"
+    },
+    {
+      "key": "sky",
+      "seed": 5,
+      "policy": "auto"
+    },
+    {
+      "key": "sky",
+      "seed": 5,
+      "policy": "smart2"
+    },
+    {
+      "key": "sky",
+      "seed": 6,
+      "policy": "auto"
+    },
+    {
+      "key": "sky",
+      "seed": 6,
+      "policy": "smart2"
+    },
+    {
+      "key": "salmon",
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "key": "salmon",
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "key": "salmon",
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "key": "salmon",
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "key": "salmon",
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "key": "salmon",
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "key": "salmon",
+      "seed": 4,
+      "policy": "auto"
+    },
+    {
+      "key": "salmon",
+      "seed": 4,
+      "policy": "smart2"
+    },
+    {
+      "key": "salmon",
+      "seed": 5,
+      "policy": "auto"
+    },
+    {
+      "key": "salmon",
+      "seed": 5,
+      "policy": "smart2"
+    },
+    {
+      "key": "salmon",
+      "seed": 6,
+      "policy": "auto"
+    },
+    {
+      "key": "salmon",
+      "seed": 6,
+      "policy": "smart2"
+    },
+    {
+      "key": "garnet",
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "key": "garnet",
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "key": "garnet",
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "key": "garnet",
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "key": "garnet",
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "key": "garnet",
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "key": "garnet",
+      "seed": 4,
+      "policy": "auto"
+    },
+    {
+      "key": "garnet",
+      "seed": 4,
+      "policy": "smart2"
+    },
+    {
+      "key": "garnet",
+      "seed": 5,
+      "policy": "auto"
+    },
+    {
+      "key": "garnet",
+      "seed": 5,
+      "policy": "smart2"
+    },
+    {
+      "key": "garnet",
+      "seed": 6,
+      "policy": "auto"
+    },
+    {
+      "key": "garnet",
+      "seed": 6,
+      "policy": "smart2"
+    },
+    {
+      "key": "salmon:3",
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "key": "salmon:3",
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "key": "salmon:3",
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "key": "salmon:3",
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "key": "salmon:3",
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "key": "salmon:3",
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "key": "salmon:3",
+      "seed": 4,
+      "policy": "auto"
+    },
+    {
+      "key": "salmon:3",
+      "seed": 4,
+      "policy": "smart2"
+    },
+    {
+      "key": "salmon:3",
+      "seed": 5,
+      "policy": "auto"
+    },
+    {
+      "key": "salmon:3",
+      "seed": 5,
+      "policy": "smart2"
+    },
+    {
+      "key": "salmon:3",
+      "seed": 6,
+      "policy": "auto"
+    },
+    {
+      "key": "salmon:3",
+      "seed": 6,
+      "policy": "smart2"
+    }
+  ],
+  "codeHash": "8a43004eabb9488635fc39df18550030fdf36513d1a0e44fcabf448a5e63ca96"
+}

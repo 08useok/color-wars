@@ -1,0 +1,12 @@
+// Cyan also belongs to the independent calibration deck. Refresh that deck so core-member scores remain comparable.
+const fs=require('fs'),path=require('path'),{runJobs}=require('./sim-pool.cjs'),make=require('./full-harness.cjs');
+const root=path.resolve(__dirname,'..'),rd=f=>JSON.parse(fs.readFileSync(path.join(root,'docs/simulations',f),'utf8'));
+const A=rd('char-analysis-2026-10-17.json'),F=rd('bench20-final-2026-10-17.json'),R=rd('range-tier-refresh-2026-10-18.json'),e=make(),R1=F.core9,R2=['cyan','pink','orange','green'],[i,crown]=A.map.split(':').map(Number),seeds=F.seeds,policies=F.policies;
+const mean=a=>a.reduce((s,x)=>s+x,0)/a.length,primary={...A.gain};for(const r of R.rows)primary[r.type]=r.gain/300;
+const units=A.order.filter(t=>!R2.includes(t)),jobs=[],meta=[];
+for(const t of ['__ref',...units])for(let seed=1;seed<=seeds;seed++)for(const policy of policies){jobs.push({i,crown,deck:t==='__ref'?R2:[...R2,t],seed,policy,profile:{level:30,trueForms:[]}});meta.push({t,seed,policy})}
+(async()=>{let last=0;const raw=await runJobs(jobs,{chunk:12,onProgress:(n,total)=>{if(n-last>=120||n===total){last=n;console.log(n+'/'+total)}}}),best={};raw.forEach((r,k)=>{if(r.error)throw Error(r.error);const m=meta[k],key=m.t+'|'+m.seed,perf=r.win?2-Math.min(300,r.seconds)/300:Math.max(0,Math.min(.95,1-r.enemyHp/e.stageList[i].hp));if(!best[key]||best[key].perf<perf)best[key]={...r,perf}});
+const seedGains=Object.fromEntries(units.map(t=>[t,Array.from({length:seeds},(_,k)=>best[t+'|'+(k+1)].perf-best['__ref|'+(k+1)].perf)]));
+const bridge=units.filter(t=>!R1.includes(t)),x=bridge.map(t=>mean(seedGains[t])),y=bridge.map(t=>primary[t]),mx=mean(x),my=mean(y),cov=x.reduce((s,v,k)=>s+(v-mx)*(y[k]-my),0),vx=x.reduce((s,v)=>s+(v-mx)**2,0),vy=y.reduce((s,v)=>s+(v-my)**2,0),slope=cov/vx,icpt=my-slope*mx,corr=cov/Math.sqrt(vx*vy);
+const rows=R1.map(t=>{const g=mean(seedGains[t]),sd=Math.sqrt(seedGains[t].reduce((s,v)=>s+(v-g)**2,0)/(seeds-1));return{type:t,name:e.names[t],oldGain:A.gain[t]*300,gain:(icpt+slope*g)*300,se:sd/Math.sqrt(seeds)*Math.abs(slope)*300}});
+fs.writeFileSync(path.join(root,'docs/simulations/range-tier-calibration-2026-10-18.json'),JSON.stringify({map:A.map,seeds,policies,core:R2,bridge:{n:bridge.length,slope,icpt,corr},seedGains,rows,raw,meta},null,2));console.log(JSON.stringify({bridge:{slope,icpt,corr},rows}));process.exit(0)})().catch(e=>{console.error(e);process.exit(1)});

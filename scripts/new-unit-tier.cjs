@@ -14,6 +14,12 @@ const BANDS=['OP','SSS','SS','S','A','B','C','D','E','F','X'],EDGES=[70,62,54,46
 const bandOf=g=>{for(let b=0;b<EDGES.length;b++)if(g>=EDGES[b])return BANDS[b];return 'X'};
 (async()=>{
  const A=rd('docs/simulations/char-analysis-2026-10-17.json'),F=rd('docs/simulations/bench20-final-2026-10-17.json');
+ // Follow the same supplemental measurements as make-tier-v3.cjs rather than comparing against stale ranges.
+ for(const file of ['subspecies-tier-2026-10-18.json','range-tier-refresh-2026-10-18.json','range-tier-calibration-2026-10-18.json']){
+  const p=path.join(root,'docs/simulations',file);if(!fs.existsSync(p))continue;
+  const supplement=JSON.parse(fs.readFileSync(p,'utf8'));if(supplement.map!==A.map)throw Error('비교 맵 불일치: '+file);
+  for(const r of supplement.rows){A.gain[r.type]=r.gain/300;A.se[r.type]=r.se/300}
+ }
  const MAP=A.map,[mi,mc]=MAP.split(':').map(Number),core=F.core9,policies=F.policies;
  const e=mk();
  if(!UNIT||!e.roster.includes(UNIT)){console.error('UNIT=<id> 필요. 없는 id:',UNIT);process.exit(1)}

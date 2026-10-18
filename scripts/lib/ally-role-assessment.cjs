@@ -4,7 +4,10 @@ function allyRoleAssessment(type,s,review=''){
  const first=(plain.match(/[^.!?]*다[.!?]/)||[plain.slice(0,160)])[0];
  const melee=s.range<=12,control=!!(s.freezeChance||s.slowChance||s.atkDownPct||s.pull||s.push||s.blowChance);
  let role;
- if(type==='red'||type==='yellow'||/기본 고방|고방 용도/.test(first))role='고방';
+ if(type==='herbmint'||type==='rhythmpink')role='메탈 메즈 지원';
+ else if(type==='kendonavy')role='메탈 대항 근접 딜러';
+ else if(type==='alchemypurple')role='메탈 대항 범위 딜러';
+ else if(type==='red'||type==='yellow'||/기본 고방|고방 용도/.test(first))role='고방';
  else if(type==='peach')role='천사 대항 딜탱';
  else if(type==='iron'||type==='garnet'||/딜탱/.test(first))role='딜탱';
  else if(type==='brown'||type==='brick'||/탱커|탱킹/.test(first)||(s.resistVs&&melee))role='탱커';

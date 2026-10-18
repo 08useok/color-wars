@@ -1,0 +1,1130 @@
+{
+  "date": "2026-10-18",
+  "map": "405:3",
+  "mapName": "황제의 야옹이",
+  "crown": 3,
+  "level": 30,
+  "seeds": 6,
+  "core": [
+    "red",
+    "yellow",
+    "blue",
+    "purple"
+  ],
+  "policies": [
+    "auto",
+    "smart2"
+  ],
+  "baseline": [
+    {
+      "id": 0,
+      "win": true,
+      "timeout": false,
+      "seconds": 101.13,
+      "allyHp": 60000,
+      "enemyHp": 0,
+      "perf": 1.6629,
+      "policy": "auto"
+    },
+    {
+      "id": 2,
+      "win": true,
+      "timeout": false,
+      "seconds": 102.6,
+      "allyHp": 60000,
+      "enemyHp": 0,
+      "perf": 1.658,
+      "policy": "auto"
+    },
+    {
+      "id": 4,
+      "win": true,
+      "timeout": false,
+      "seconds": 102.6,
+      "allyHp": 60000,
+      "enemyHp": 0,
+      "perf": 1.658,
+      "policy": "auto"
+    },
+    {
+      "id": 6,
+      "win": true,
+      "timeout": false,
+      "seconds": 113.83,
+      "allyHp": 60000,
+      "enemyHp": 0,
+      "perf": 1.6205666666666667,
+      "policy": "auto"
+    },
+    {
+      "id": 8,
+      "win": true,
+      "timeout": false,
+      "seconds": 112.33,
+      "allyHp": 60000,
+      "enemyHp": 0,
+      "perf": 1.6255666666666666,
+      "policy": "auto"
+    },
+    {
+      "id": 10,
+      "win": true,
+      "timeout": false,
+      "seconds": 113.1,
+      "allyHp": 60000,
+      "enemyHp": 0,
+      "perf": 1.623,
+      "policy": "auto"
+    }
+  ],
+  "anchor": {
+    "type": "garnet",
+    "name": "가넷",
+    "gain": 45.32500000000001,
+    "se": 3.459412040602658,
+    "perSeed": [
+      36.16000000000001,
+      34.77000000000003,
+      43.40000000000002,
+      53.760000000000005,
+      51.06000000000004,
+      52.79999999999998
+    ],
+    "tier": "A",
+    "near": true,
+    "ci": [
+      38.5445524004188,
+      52.10544759958122
+    ],
+    "wins": 6,
+    "previousGain": 45.32500000000001,
+    "valid": true
+  },
+  "rows": [
+    {
+      "type": "herbmint",
+      "name": "허브 민트",
+      "gain": 21.42166666666667,
+      "se": 2.4165656300718212,
+      "perSeed": [
+        19.399999999999995,
+        15.670000000000005,
+        15.27000000000005,
+        23.53000000000001,
+        30.929999999999993,
+        23.729999999999983
+      ],
+      "tier": "D",
+      "near": true,
+      "ci": [
+        16.6851980317259,
+        26.15813530160744
+      ],
+      "wins": 6
+    },
+    {
+      "type": "alchemypurple",
+      "name": "연금 퍼플",
+      "gain": 14.066666666666672,
+      "se": 3.0282290387470816,
+      "perSeed": [
+        16.33,
+        7.50000000000004,
+        3.500000000000014,
+        23.69999999999999,
+        14.59999999999999,
+        18.769999999999996
+      ],
+      "tier": "D",
+      "near": true,
+      "ci": [
+        8.131337750722391,
+        20.001995582610952
+      ],
+      "wins": 6
+    },
+    {
+      "type": "rhythmpink",
+      "name": "리듬 핑크",
+      "gain": 13.065000000000003,
+      "se": 2.3373571257583454,
+      "perSeed": [
+        10.499999999999975,
+        8.230000000000025,
+        10.899999999999999,
+        24.35999999999998,
+        11.900000000000022,
+        12.500000000000021
+      ],
+      "tier": "E",
+      "near": true,
+      "ci": [
+        8.483780033513646,
+        17.64621996648636
+      ],
+      "wins": 6
+    },
+    {
+      "type": "kendonavy",
+      "name": "검도 네이비",
+      "gain": 12.493333333333345,
+      "se": 1.1454974659266837,
+      "perSeed": [
+        9.729999999999993,
+        16.73000000000002,
+        10.170000000000012,
+        10.999999999999988,
+        12.360000000000039,
+        14.970000000000017
+      ],
+      "tier": "E",
+      "near": true,
+      "ci": [
+        10.248158300117044,
+        14.738508366549645
+      ],
+      "wins": 6
+    }
+  ],
+  "meta": [
+    {
+      "t": "__ref",
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "t": "__ref",
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "t": "__ref",
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "t": "__ref",
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "t": "__ref",
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "t": "__ref",
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "t": "__ref",
+      "seed": 4,
+      "policy": "auto"
+    },
+    {
+      "t": "__ref",
+      "seed": 4,
+      "policy": "smart2"
+    },
+    {
+      "t": "__ref",
+      "seed": 5,
+      "policy": "auto"
+    },
+    {
+      "t": "__ref",
+      "seed": 5,
+      "policy": "smart2"
+    },
+    {
+      "t": "__ref",
+      "seed": 6,
+      "policy": "auto"
+    },
+    {
+      "t": "__ref",
+      "seed": 6,
+      "policy": "smart2"
+    },
+    {
+      "t": "herbmint",
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "t": "herbmint",
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "t": "herbmint",
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "t": "herbmint",
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "t": "herbmint",
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "t": "herbmint",
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "t": "herbmint",
+      "seed": 4,
+      "policy": "auto"
+    },
+    {
+      "t": "herbmint",
+      "seed": 4,
+      "policy": "smart2"
+    },
+    {
+      "t": "herbmint",
+      "seed": 5,
+      "policy": "auto"
+    },
+    {
+      "t": "herbmint",
+      "seed": 5,
+      "policy": "smart2"
+    },
+    {
+      "t": "herbmint",
+      "seed": 6,
+      "policy": "auto"
+    },
+    {
+      "t": "herbmint",
+      "seed": 6,
+      "policy": "smart2"
+    },
+    {
+      "t": "kendonavy",
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "t": "kendonavy",
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "t": "kendonavy",
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "t": "kendonavy",
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "t": "kendonavy",
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "t": "kendonavy",
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "t": "kendonavy",
+      "seed": 4,
+      "policy": "auto"
+    },
+    {
+      "t": "kendonavy",
+      "seed": 4,
+      "policy": "smart2"
+    },
+    {
+      "t": "kendonavy",
+      "seed": 5,
+      "policy": "auto"
+    },
+    {
+      "t": "kendonavy",
+      "seed": 5,
+      "policy": "smart2"
+    },
+    {
+      "t": "kendonavy",
+      "seed": 6,
+      "policy": "auto"
+    },
+    {
+      "t": "kendonavy",
+      "seed": 6,
+      "policy": "smart2"
+    },
+    {
+      "t": "alchemypurple",
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "t": "alchemypurple",
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "t": "alchemypurple",
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "t": "alchemypurple",
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "t": "alchemypurple",
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "t": "alchemypurple",
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "t": "alchemypurple",
+      "seed": 4,
+      "policy": "auto"
+    },
+    {
+      "t": "alchemypurple",
+      "seed": 4,
+      "policy": "smart2"
+    },
+    {
+      "t": "alchemypurple",
+      "seed": 5,
+      "policy": "auto"
+    },
+    {
+      "t": "alchemypurple",
+      "seed": 5,
+      "policy": "smart2"
+    },
+    {
+      "t": "alchemypurple",
+      "seed": 6,
+      "policy": "auto"
+    },
+    {
+      "t": "alchemypurple",
+      "seed": 6,
+      "policy": "smart2"
+    },
+    {
+      "t": "rhythmpink",
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "t": "rhythmpink",
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "t": "rhythmpink",
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "t": "rhythmpink",
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "t": "rhythmpink",
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "t": "rhythmpink",
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "t": "rhythmpink",
+      "seed": 4,
+      "policy": "auto"
+    },
+    {
+      "t": "rhythmpink",
+      "seed": 4,
+      "policy": "smart2"
+    },
+    {
+      "t": "rhythmpink",
+      "seed": 5,
+      "policy": "auto"
+    },
+    {
+      "t": "rhythmpink",
+      "seed": 5,
+      "policy": "smart2"
+    },
+    {
+      "t": "rhythmpink",
+      "seed": 6,
+      "policy": "auto"
+    },
+    {
+      "t": "rhythmpink",
+      "seed": 6,
+      "policy": "smart2"
+    },
+    {
+      "t": "garnet",
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "t": "garnet",
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "t": "garnet",
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "t": "garnet",
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "t": "garnet",
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "t": "garnet",
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "t": "garnet",
+      "seed": 4,
+      "policy": "auto"
+    },
+    {
+      "t": "garnet",
+      "seed": 4,
+      "policy": "smart2"
+    },
+    {
+      "t": "garnet",
+      "seed": 5,
+      "policy": "auto"
+    },
+    {
+      "t": "garnet",
+      "seed": 5,
+      "policy": "smart2"
+    },
+    {
+      "t": "garnet",
+      "seed": 6,
+      "policy": "auto"
+    },
+    {
+      "t": "garnet",
+      "seed": 6,
+      "policy": "smart2"
+    }
+  ],
+  "raw": [
+    {
+      "id": 0,
+      "win": true,
+      "timeout": false,
+      "seconds": 101.13,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 1,
+      "win": true,
+      "timeout": false,
+      "seconds": 101.13,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 2,
+      "win": true,
+      "timeout": false,
+      "seconds": 102.6,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 3,
+      "win": true,
+      "timeout": false,
+      "seconds": 102.6,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 4,
+      "win": true,
+      "timeout": false,
+      "seconds": 102.6,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 5,
+      "win": true,
+      "timeout": false,
+      "seconds": 102.6,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 6,
+      "win": true,
+      "timeout": false,
+      "seconds": 113.83,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 7,
+      "win": true,
+      "timeout": false,
+      "seconds": 113.83,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 8,
+      "win": true,
+      "timeout": false,
+      "seconds": 112.33,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 9,
+      "win": true,
+      "timeout": false,
+      "seconds": 112.33,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 10,
+      "win": true,
+      "timeout": false,
+      "seconds": 113.1,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 11,
+      "win": true,
+      "timeout": false,
+      "seconds": 113.1,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 12,
+      "win": true,
+      "timeout": false,
+      "seconds": 81.73,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 13,
+      "win": true,
+      "timeout": false,
+      "seconds": 81.73,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 14,
+      "win": true,
+      "timeout": false,
+      "seconds": 86.93,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 15,
+      "win": true,
+      "timeout": false,
+      "seconds": 86.93,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 16,
+      "win": true,
+      "timeout": false,
+      "seconds": 87.33,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 17,
+      "win": true,
+      "timeout": false,
+      "seconds": 87.33,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 18,
+      "win": true,
+      "timeout": false,
+      "seconds": 90.3,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 19,
+      "win": true,
+      "timeout": false,
+      "seconds": 90.3,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 20,
+      "win": true,
+      "timeout": false,
+      "seconds": 81.4,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 21,
+      "win": true,
+      "timeout": false,
+      "seconds": 81.4,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 22,
+      "win": true,
+      "timeout": false,
+      "seconds": 89.37,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 23,
+      "win": true,
+      "timeout": false,
+      "seconds": 89.37,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 24,
+      "win": true,
+      "timeout": false,
+      "seconds": 91.4,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 25,
+      "win": true,
+      "timeout": false,
+      "seconds": 91.4,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 26,
+      "win": true,
+      "timeout": false,
+      "seconds": 85.87,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 27,
+      "win": true,
+      "timeout": false,
+      "seconds": 85.87,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 28,
+      "win": true,
+      "timeout": false,
+      "seconds": 92.43,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 29,
+      "win": true,
+      "timeout": false,
+      "seconds": 92.43,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 30,
+      "win": true,
+      "timeout": false,
+      "seconds": 102.83,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 31,
+      "win": true,
+      "timeout": false,
+      "seconds": 102.83,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 32,
+      "win": true,
+      "timeout": false,
+      "seconds": 99.97,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 33,
+      "win": true,
+      "timeout": false,
+      "seconds": 99.97,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 34,
+      "win": true,
+      "timeout": false,
+      "seconds": 98.13,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 35,
+      "win": true,
+      "timeout": false,
+      "seconds": 98.13,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 36,
+      "win": true,
+      "timeout": false,
+      "seconds": 84.8,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 37,
+      "win": true,
+      "timeout": false,
+      "seconds": 84.8,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 38,
+      "win": true,
+      "timeout": false,
+      "seconds": 95.1,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 39,
+      "win": true,
+      "timeout": false,
+      "seconds": 95.1,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 40,
+      "win": true,
+      "timeout": false,
+      "seconds": 99.1,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 41,
+      "win": true,
+      "timeout": false,
+      "seconds": 99.1,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 42,
+      "win": true,
+      "timeout": false,
+      "seconds": 90.13,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 43,
+      "win": true,
+      "timeout": false,
+      "seconds": 90.13,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 44,
+      "win": true,
+      "timeout": false,
+      "seconds": 97.73,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 45,
+      "win": true,
+      "timeout": false,
+      "seconds": 97.73,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 46,
+      "win": true,
+      "timeout": false,
+      "seconds": 94.33,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 47,
+      "win": true,
+      "timeout": false,
+      "seconds": 94.33,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 48,
+      "win": true,
+      "timeout": false,
+      "seconds": 90.63,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 49,
+      "win": true,
+      "timeout": false,
+      "seconds": 90.63,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 50,
+      "win": true,
+      "timeout": false,
+      "seconds": 94.37,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 51,
+      "win": true,
+      "timeout": false,
+      "seconds": 94.37,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 52,
+      "win": true,
+      "timeout": false,
+      "seconds": 91.7,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 53,
+      "win": true,
+      "timeout": false,
+      "seconds": 91.7,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 54,
+      "win": true,
+      "timeout": false,
+      "seconds": 89.47,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 55,
+      "win": true,
+      "timeout": false,
+      "seconds": 89.47,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 56,
+      "win": true,
+      "timeout": false,
+      "seconds": 100.43,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 57,
+      "win": true,
+      "timeout": false,
+      "seconds": 100.43,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 58,
+      "win": true,
+      "timeout": false,
+      "seconds": 100.6,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 59,
+      "win": true,
+      "timeout": false,
+      "seconds": 100.6,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 60,
+      "win": true,
+      "timeout": false,
+      "seconds": 64.97,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 61,
+      "win": true,
+      "timeout": false,
+      "seconds": 64.97,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 62,
+      "win": true,
+      "timeout": false,
+      "seconds": 67.83,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 63,
+      "win": true,
+      "timeout": false,
+      "seconds": 67.83,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 64,
+      "win": true,
+      "timeout": false,
+      "seconds": 59.2,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 65,
+      "win": true,
+      "timeout": false,
+      "seconds": 59.2,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 66,
+      "win": true,
+      "timeout": false,
+      "seconds": 60.07,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 67,
+      "win": true,
+      "timeout": false,
+      "seconds": 60.07,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 68,
+      "win": true,
+      "timeout": false,
+      "seconds": 61.27,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 69,
+      "win": true,
+      "timeout": false,
+      "seconds": 61.27,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 70,
+      "win": true,
+      "timeout": false,
+      "seconds": 60.3,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 71,
+      "win": true,
+      "timeout": false,
+      "seconds": 60.3,
+      "allyHp": 60000,
+      "enemyHp": 0
+    }
+  ],
+  "codeHash": "2cc104a8eeb66a0d93744fde953d02b22d1a8a003b37f5596f80b2093844fa68"
+}
