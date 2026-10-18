@@ -1,10 +1,12 @@
 // Game version and the in-game update notice. Like the original, MAJOR goes up when a big story opens:
 // v1 세계편 (first push, 2026-09-24) · v2 레전드 스토리 (09-30) · v3 미래편 1장 (10-03) · v4 미래편 2장 + 3진 (10-06) · v5 미래편 3장 (10-08) · v6 우주편 1장 (10-09).
-// Between those, every push counts: a new feature bumps MINOR, fixes/balance only bump PATCH.
+// User release rule (2026-10-18): bump PATCH for every commit-and-push release unless an explicit version is requested; do not bump twice when already prepared.
 // A new NOTICE.version shows the notice once on load; the 공지 button on the stage screen reopens it.
-const GAME_VERSION='6.7.3';
+const GAME_VERSION='6.7.4';
 const NOTICE={version:GAME_VERSION,date:'2026-10-18',title:`v${GAME_VERSION} 업데이트`,html:`
 <p class="notice-lead">지금까지 <b>세계편 1~3장 · 미래편 1~3장 · 우주편 1장 · 레전드 스토리 1~39장</b>을 담았습니다.</p>
+<h3>📖 v6.7.4 도감 총평·진화 보기 개선</h3>
+<ul><li>평가 옆에 레어도별 1등·꼴찌를 표시하고, 속성 특화 캐릭터의 무속성·특화 속성 상대 DPS를 비교합니다.</li><li>1·2·3진을 에셋 썸네일로 선택합니다. 미획득·출시 예정 3진은 잠금 표시됩니다.</li><li>3진 총평을 도감 설명에 추가하고, 체력·데미지 100만 초과 및 DPS 10만 초과 수치를 빨간색 굵게 표시합니다. 타입별 특화 수치도 포함합니다.</li></ul>
 <h3>🧟 v6.7.3 좀비 부활을 원작처럼</h3>
 <ul><li>쓰러진 좀비가 곧바로 사라져 부활이 안 보이던 문제를 고쳤습니다. 원작처럼 부활할 좀비는 쓰러진 자리에서 <b>원작 효과 그대로</b> 해골이 녹아내려 뼈와 해골이 든 보라색 웅덩이가 됩니다. 웅덩이는 공격할 수 없지만 적 출현 수 제한에는 포함됩니다.</li><li>부활 시간이 되면 웅덩이에서 원작 부활 효과(보라 거품)와 함께 <b>원작 출현 모션</b>으로 땅을 헤치고 올라옵니다(좀비 멍뭉이 등 원작 그림이 있는 11종). 올라오는 동안(약 1.3초)은 땅속처럼 공격받지 않습니다.</li><li>좀비 킬러로 마무리하면 파란 섬광과 함께 부활하지 않습니다. 걸린 상태이상은 부활 뒤에도 이어지고, 돈은 마지막으로 쓰러질 때만 들어옵니다.</li></ul>
 <h3>🏰 v6.7.2 적 성 뒤로 밀려나던 문제</h3>

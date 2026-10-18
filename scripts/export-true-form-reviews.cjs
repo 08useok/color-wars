@@ -1,6 +1,6 @@
 const fs=require('fs'),path=require('path'),make=require('./full-harness.cjs');
 const root=path.resolve(__dirname,'..');
-const setup=['codex-review.js','true-form-reviews.js'].map(f=>fs.readFileSync(path.join(root,f),'utf8')).join('\n')+`
+const setup=['ally-comparison.js','codex-review.js','true-form-reviews.js'].map(f=>fs.readFileSync(path.join(root,f),'utf8')).join('\n')+`
 globalThis.__exportTrueReviews=()=>Object.keys(TRUE_FORM_REVIEW_RELEASE).map(t=>{trueForms=[t];const before=JSON.stringify(trueForms),html=allyReview(t,true);if(JSON.stringify(trueForms)!==before)throw Error('save mutated '+t);return{type:t,name:unitDisplayName(t,true,true),version:TRUE_FORM_REVIEW_RELEASE[t],html}});
 `;
 make({extraSetup:setup});const rows=globalThis.__exportTrueReviews();delete globalThis.__exportTrueReviews;

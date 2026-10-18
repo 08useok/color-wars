@@ -17,7 +17,7 @@ function trueFormReview(type,s){
   raspberry:{effect:`공격 간격이 ${dec(base.interval)}초에서 ${dec(s.interval)}초로 줄고 사거리는 ${dec(base.range)}에서 ${dec(s.range)}로 늘었다. 에이리언 초데미지와 ${pct(s.barrierBreak)}% 베리어 브레이커, 무제한 관통·뒤쪽 대상 피해 증가가 추가되었다.`,fix:'3진은 사각지대가 없어 바로 앞의 적도 타격한다. 긴 공격 간격과 관통 대상 수 제한을 보완해 적이 겹친 전선에서 공격을 이어 가기 좋아졌다.',strength:'앞의 적부터 뒤쪽 적까지 관통하며 뒤로 갈수록 피해가 커지는 관통 딜러로, 에이리언 전선과 보스 뒤에 겹친 적을 함께 상대할 때 장점이 커진다.',weak:`선딜 ${dec(s.windup)}초와 생산 대기시간은 남아 있어 공격 전에 밀리거나 쓰러질 수 있다. 베리어 파괴도 확률이며 메탈 대응을 크리티컬에만 맡기면 불안정하다.`}
  };
  const n=notes[type],art=['crystal','indigo','raspberry'].includes(type)?' 전용 3진 모션은 6.6.0 버전에 추가되었다.':type==='cream'?' 이후 4.6.2 버전에서 공격력·범위·느리게 효과가 강화되었다.':'';
- return `<section class="codex-review"><h3>총평</h3><small>합산 Lv.30 · 3진 · 세계편 2·3장 가격 기준 · 수치는 현재 보물 효과 반영</small><p>${TRUE_FORM_REVIEW_RELEASE[type]} 버전에 3진이 추가되었다.${art}</p><p>체력과 공격력이 각각 <b>${num(s.hp)}</b>, <b>${num(s.atk)}</b>로 늘었고, 2진 대비 각각 ${inc(s.hp,base.hp)}%·${inc(s.atk,base.atk)}% 증가했다. ${n.effect}</p><p>${n.fix} ${n.strength}</p><p>다만 ${n.weak}</p></section>`;
+ return `<section class="codex-review"><h3>총평</h3><small>합산 Lv.30 · 3진 · 세계편 2·3장 가격 기준 · 수치는 현재 보물 효과 반영</small><p>${TRUE_FORM_REVIEW_RELEASE[type]} 버전에 3진이 추가되었다.${art}</p><p>체력과 공격력이 각각 <b>${num(s.hp)}</b>, <b>${num(s.atk)}</b>로 늘었고, 2진 대비 각각 ${inc(s.hp,base.hp)}%·${inc(s.atk,base.atk)}% 증가했다. ${n.effect}</p><p>${n.fix} ${n.strength}</p><p>다만 ${n.weak}</p><p>${allyComparisonText(s)}</p></section>`;
 }
 const trueFormReviewBefore=allyReview;
 allyReview=function(type,evolved){const s=codexReviewStats(type,evolved);return trueFormReview(type,s)||trueFormReviewBefore(type,evolved)};

@@ -119,6 +119,6 @@ const CODEX_RARITY_EXTREMES={
   const form=codexReviewStats(type,evolved).trueForm?3:2,r=CODEX_RARITY_EXTREMES[type]?.[form];
   if(!r)return html;
   const text=r.grade+' '+form+'진 '+r.count+'명 중 '+r.position+'. 황제의 야옹이 ★3 · Lv.30 · 보물 완성 기준, 클리어 단축 '+r.seconds+'초. 다른 맵과 특화 성능에서는 순위가 달라질 수 있다.';
-  return html.replace(/<\/section>\s*$/,'<p class="codex-rarity-standing"><b>'+r.grade+' 내 '+r.position+'</b> — '+text+'</p></section>');
+  return html.replace(/(<p class="codex-verdict"><b>[^<]*평가:)/,'$1 <span class="codex-rarity-standing">'+r.grade+' 캐릭터 중 '+r.position+'</span> ·').replace(/<\/section>\s*$/,'<p class="codex-rarity-context">'+text+'</p></section>');
  };
 })();
