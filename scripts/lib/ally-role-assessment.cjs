@@ -1,0 +1,45 @@
+// Shared by codex verdicts and simulation summaries. No score-to-grade conversion.
+function allyRoleAssessment(type,s,review=''){
+ const plain=review.replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim();
+ const first=(plain.match(/[^.!?]*다[.!?]/)||[plain.slice(0,160)])[0];
+ const melee=s.range<=12,control=!!(s.freezeChance||s.slowChance||s.atkDownPct||s.pull||s.push||s.blowChance);
+ let role;
+ if(type==='red'||type==='yellow'||/기본 고방|고방 용도/.test(first))role='고방';
+ else if(type==='peach')role='천사 대항 딜탱';
+ else if(type==='iron'||type==='garnet'||/딜탱/.test(first))role='딜탱';
+ else if(type==='brown'||type==='brick'||/탱커|탱킹/.test(first)||(s.resistVs&&melee))role='탱커';
+ else if(type==='salmon'||/전술형 메즈/.test(first))role='전선 조절 메즈';
+ else if(type==='indigo'||type==='cream'||type==='hotpink'||/지원|보조|멈추게 하는 요원|공격력 다운/.test(first)&&control)role='메즈 지원';
+ else if(type==='crystal')role='메탈 대항 관통 딜러';
+ else if(s.range>=25&&s.pierce)role='장거리 관통 딜러';
+ else if(s.range>=25)role='장거리 딜러';
+ else if(control&&!/딜러|공격수/.test(first))role='메즈 지원';
+ else if(s.range<=10)role='근접 딜러';
+ else role=s.area||s.splash||s.pierce||s.dash||s.boomerang?'범위 딜러':'중거리 딜러';
+ let strength,caution,use;
+ if(role==='고방'){
+  strength=type==='yellow'?'가격 대비 체력으로 적의 접근을 받아내는 고방이다.':'가격과 빠른 재출격을 이용해 앞줄을 계속 채우는 고방이다.';
+  caution='강한 범위 공격에는 여러 마리가 함께 쓰러질 수 있어 고방만으로 적을 처리하기는 어렵다.';
+  use='뒤쪽 딜러와 메즈가 공격할 시간을 확보하는 용도로 쓴다.';
+ }else if(role.includes('탱커')||role.includes('딜탱')){
+  strength=role.includes('딜탱')?'전선에서 버티면서 피해도 보태는 딜탱이다.':'적의 공격을 받아내며 전선을 유지하는 탱커다.';
+  if(s.resistVs||s.strongVs)strength+=' 피해 감소가 적용되는 속성을 상대로 활용하는 편이 좋다.';
+  caution='상대의 사거리와 속성이 맞지 않으면 접근 중 피해가 커질 수 있다.';
+  use='저렴한 고방과 후방 딜러를 함께 편성해 부담을 나눈다.';
+ }else if(role.includes('메즈')){
+  strength=s.pull?'적을 당겨 아군의 공격 범위로 옮기는 전선 조절 메즈다.':s.freezeChance?'적을 멈춰 아군의 공격 시간을 확보하는 메즈 지원이다.':s.atkDownPct?'적의 공격력을 낮춰 앞줄의 생존을 돕는 메즈 지원이다.':'적의 접근과 위치를 조절해 전선을 돕는 메즈 지원이다.';
+  caution=s.pull?'적을 후방 딜러 쪽으로 끌어올 수도 있어 전선 위치를 보고 사용해야 한다.':'지원 효과만으로 적을 처치하거나 전선을 혼자 지키기는 어렵다.';
+  use='고방 뒤에서 딜러와 함께 쓰고, 효과가 적용되는 적의 속성을 확인한다.';
+ }else{
+  strength=role.includes('관통')?'앞뒤로 겹친 적을 관통해 함께 처리하는 딜러다.':s.area||s.splash||s.dash||s.boomerang?'여러 적에게 피해를 보태는 범위 딜러다.':'한 대상에게 공격을 집중하는 딜러다.';
+  if(s.critChance&&role.includes('메탈'))strength+=' 크리티컬로 메탈 대응을 맡을 수 있다.';
+  const blind=s.zoneMin??(s.engageRange?0:s.range>=20?s.range*.25:0);
+  caution=blind>0?'사각 안으로 파고드는 적은 따로 막아야 한다.':s.cooldown>=20?'재생산이 느려 쓰러진 뒤 전선에 공백이 생길 수 있다.':'접근한 적에게 공격이 끊기지 않도록 전선을 유지해야 한다.';
+  use=s.range>=20?'고방과 메즈 뒤에서 공격 시간을 확보하는 편성이 어울린다.':'고방이나 다른 딜러와 번갈아 투입해 접근 부담을 줄인다.';
+ }
+ const weakness=plain.match(/(?:다만|하지만|반대로)\s[^.!?]*다[.!?]/)?.[0];
+ if(weakness&&!/등급|티어|최고|최악|초당 피해|DPS/.test(weakness)&&!(s.zoneMin===0&&/사각/.test(weakness)))caution=weakness;
+ if(s.statusVs?.length&&role.includes('메즈'))use='효과 대상인 적을 상대할 때 고방·딜러와 함께 편성한다. 다른 속성에는 같은 지원 효과를 기대하기 어렵다.';
+ return {role,strength,caution,use};
+}
+module.exports=allyRoleAssessment;

@@ -1,6 +1,6 @@
 // General true forms open after 세계편 3장; 크림·핫 핑크 open after 미래편 2장 and evolve for free.
 // true form costs catfruit of the unit's colour (보라·빨강·파랑·초록·노랑 열매/씨앗, plus 에픽 개다래 for EX·울슈레) and XP.
-// 3진 uses a dedicated atlas where available, otherwise 2진 art with a gold glow.
+// Third forms require a dedicated motion atlas; unreleased forms stay locked without deleting saved ownership.
 // Catfruit comes from 미래편 stages and the daily '개다래 축제' special stage (the day decides the colour).
 const FRUIT_COLORS=['purple','red','blue','green','yellow'];
 const FRUIT_NAME={purple:'보라',red:'빨강',blue:'파랑',green:'초록',yellow:'노랑'};
@@ -18,7 +18,8 @@ function saveCatfruit(){try{localStorage.setItem('red-battle-catfruit-v1',JSON.s
 function saveTrueForms(){try{localStorage.setItem('red-battle-trueform-v1',JSON.stringify(trueForms))}catch{}}
 function specialTrueForm(t){return t==='cream'||t==='hotpink'}
 function trueFormOpen(t){return cleared.includes(specialTrueForm(t)?FUTURE2_END-1:CHAPTER1_LEN*3-1)}
-function hasTrueForm(t){return trueFormOpen(t)&&trueForms.includes(t)}
+function trueFormAssetReady(t){const atlas=NEW_ATLASES[t]?.true;return !!atlas&&typeof atlas.sheet==='string'&&atlas.sheet.length>0&&['walk','attack','hurt'].every(k=>Array.isArray(atlas[k])&&atlas[k].length>0&&atlas[k].every(f=>Array.isArray(f)&&f.length>=4&&f.slice(0,4).every(Number.isFinite)&&f[2]>0&&f[3]>0))}
+function hasTrueForm(t){return trueFormAssetReady(t)&&trueFormOpen(t)&&trueForms.includes(t)}
 // The unit's colour decides its catfruit: hue of its UI colour; greys (black, white, silver…) take purple.
 function fruitColorOf(t){
  const hex=(COLORS[t]||'#888888').replace('#',''),[r,g,b]=[0,2,4].map(i=>parseInt(hex.slice(i,i+2),16)/255),mx=Math.max(r,g,b),mn=Math.min(r,g,b),d=mx-mn;
@@ -27,7 +28,7 @@ function fruitColorOf(t){
  return h<20||h>=330?'red':h<70?'yellow':h<170?'green':h<265?'blue':'purple'}
 function trueFormCost(t){return specialTrueForm(t)?{fruit:0,seed:0,epic:0,xp:0}:TRUE_FORM_COST[gradeOf(t)]||TRUE_FORM_COST.basic}
 function canTrueForm(t){
- if(!trueFormOpen(t)||trueForms.includes(t)||!allyUnlocked(t)||data.units[t].noEvolve||(!specialTrueForm(t)&&(training.levels[t]||1)<LV_MAX))return false;
+ if(!trueFormAssetReady(t)||!trueFormOpen(t)||trueForms.includes(t)||!allyUnlocked(t)||data.units[t].noEvolve||(!specialTrueForm(t)&&(training.levels[t]||1)<LV_MAX))return false;
  if(specialTrueForm(t))return true;
  const c=trueFormCost(t),col=fruitColorOf(t);
  return catfruit.fruit[col]>=c.fruit&&catfruit.seed[col]>=c.seed&&catfruit.epic>=c.epic&&training.xp>=c.xp}
@@ -36,7 +37,7 @@ function evolveTrueForm(t){
  const c=trueFormCost(t),col=fruitColorOf(t);
  catfruit.fruit[col]-=c.fruit;catfruit.seed[col]-=c.seed;catfruit.epic-=c.epic;training.xp-=c.xp;
  trueForms.push(t);delete training.forms[t];saveCatfruit();saveTrueForms();saveTraining();renderTraining();render();return true}
-function costText(t){if(specialTrueForm(t))return '미래편 2장 달 클리어 · 재료·XP 소모 없음';const c=trueFormCost(t),col=fruitColorOf(t);return `${FRUIT_ICON[col]}${FRUIT_NAME[col]} 열매 ${c.fruit} · 씨앗 ${c.seed}${c.epic?` · ✨에픽 ${c.epic}`:''} · ${c.xp.toLocaleString()} XP`}
+function costText(t){if(!trueFormAssetReady(t))return '곧 출시 예정';if(specialTrueForm(t))return '미래편 2장 달 클리어 · 재료·XP 소모 없음';const c=trueFormCost(t),col=fruitColorOf(t);return `${FRUIT_ICON[col]}${FRUIT_NAME[col]} 열매 ${c.fruit} · 씨앗 ${c.seed}${c.epic?` · ✨에픽 ${c.epic}`:''} · ${c.xp.toLocaleString()} XP`}
 function catfruitSummary(){return FRUIT_COLORS.map(c=>`${FRUIT_ICON[c]}${catfruit.fruit[c]}/${catfruit.seed[c]}`).join(' ')+` ✨${catfruit.epic}`}
 function addCatfruit(kind,col,n=1){if(kind==='epic')catfruit.epic+=n;else catfruit[kind][col]+=n;saveCatfruit()}
 function catfruitText(kind,col,n){return kind==='epic'?`에픽 개다래 ${n}개`:`${FRUIT_NAME[col]} 개다래 ${kind==='fruit'?'열매':'씨앗'} ${n}개`}
@@ -62,8 +63,8 @@ renderTraining=function(){
   if(!t||data.units[t].noEvolve)continue;
   const evolved=((training.levels[t]||1)>=LV_EVOLVE||specialTrueForm(t)&&hasTrueForm(t))&&training.forms[t]!==1;
   if(hasTrueForm(t)&&evolved){const h=card.querySelector('h3');if(h.firstChild?.nodeType===3)h.firstChild.textContent=unitDisplayName(t,true);card.classList.add('true-form-card')}
-  if(!trueForms.includes(t)){const b=document.createElement('button');b.className='true-btn';const ok=canTrueForm(t);
-   b.textContent=!trueFormOpen(t)?`3진: ${specialTrueForm(t)?'미래편 2장':'세계편 3장'} 달 클리어 필요`:specialTrueForm(t)?'3진 진화':(training.levels[t]||1)<LV_MAX?`3진: Lv.${LV_MAX} 필요`:`3진 진화 · ${costText(t)}`;b.disabled=!ok;b.title=costText(t);b.onclick=()=>evolveTrueForm(t);card.append(b)}}
+  if(!trueForms.includes(t)||!trueFormAssetReady(t)){const b=document.createElement('button');b.className='true-btn';const ok=canTrueForm(t);
+   b.textContent=!trueFormAssetReady(t)?'3진 · 곧 출시 예정':!trueFormOpen(t)?`3진: ${specialTrueForm(t)?'미래편 2장':'세계편 3장'} 달 클리어 필요`:specialTrueForm(t)?'3진 진화':(training.levels[t]||1)<LV_MAX?`3진: Lv.${LV_MAX} 필요`:`3진 진화 · ${costText(t)}`;b.disabled=!ok;b.title=costText(t);b.onclick=()=>evolveTrueForm(t);card.append(b)}}
 };
 
 // Drops: 미래편 stages give seeds (1장) or seeds/fruit (2장) of the stage's colour; the first 2장 Moon clear gives an epic catfruit.
@@ -78,7 +79,7 @@ finish=function(win){
  if(Math.random()<p.fruit){addCatfruit('fruit',col);got.push(catfruitText('fruit',col,1))}
  if((idx===FUTURE2_END-1||idx===FUTURE3_END-1||idx===COSMOS_END-1)&&!was){addCatfruit('epic',null,1);got.push(catfruitText('epic',null,1))}
  if(got.length&&typeof gachaAppendDetail==='function')gachaAppendDetail(got.join(' · ')+' 획득!');
- if(!trueWas&&trueFormOpen('cream')&&typeof gachaAppendDetail==='function')gachaAppendDetail('크림 3진 해금! 캐릭터 강화에서 진화 버튼을 누르면 무료로 진화합니다');
+ if(!trueWas&&trueFormOpen('cream')&&typeof gachaAppendDetail==='function')gachaAppendDetail(trueFormAssetReady('cream')?'크림 3진 해금! 캐릭터 강화에서 진화 버튼을 누르면 무료로 진화합니다':'크림 3진 · 곧 출시 예정');
 };
 
 // 개다래 축제: a daily special stage whose catfruit colour follows the weekday (월 보라 · 화 빨강 · 수 파랑 · 목 초록 · 금 노랑 ·
@@ -127,15 +128,16 @@ const HOTPINK_TRUE_STAGE=FUTURE3_END-1;
 function hotpinkTrueOpen(){return cleared.includes(HOTPINK_TRUE_STAGE)}
 const _trueFormOpenHP=trueFormOpen,_hasTrueFormHP=hasTrueForm,_canTrueFormHP=canTrueForm,_trueFormCostHP=trueFormCost,_costTextHP=costText;
 trueFormOpen=function(t){return t==='hotpink'?hotpinkTrueOpen():_trueFormOpenHP.apply(this,arguments)};
-hasTrueForm=function(t){return t==='hotpink'?trueForms.includes(t):_hasTrueFormHP.apply(this,arguments)};
-canTrueForm=function(t){return t==='hotpink'?hotpinkTrueOpen()&&!trueForms.includes(t)&&allyUnlocked(t):_canTrueFormHP.apply(this,arguments)};
+hasTrueForm=function(t){return t==='hotpink'?trueFormAssetReady(t)&&trueForms.includes(t):_hasTrueFormHP.apply(this,arguments)};
+canTrueForm=function(t){return t==='hotpink'?trueFormAssetReady(t)&&hotpinkTrueOpen()&&!trueForms.includes(t)&&allyUnlocked(t):_canTrueFormHP.apply(this,arguments)};
 trueFormCost=function(t){return t==='hotpink'?{fruit:0,seed:0,epic:0,xp:0}:_trueFormCostHP.apply(this,arguments)};
-costText=function(t){return t==='hotpink'?'미래편 3장 달 클리어 보상 · 재료·XP 소모 없음':_costTextHP.apply(this,arguments)};
+costText=function(t){if(!trueFormAssetReady(t))return '곧 출시 예정';return t==='hotpink'?'미래편 3장 달 클리어 보상 · 재료·XP 소모 없음':_costTextHP.apply(this,arguments)};
 const _renderTrainingHP=renderTraining;
 renderTraining=function(){
  _renderTrainingHP.apply(this,arguments);
  const card=[...$('#trainingGrid').children].find(c=>c.dataset.type==='hotpink');if(!card)return;
  let b=card.querySelector('.true-btn');
+ if(!trueFormAssetReady('hotpink')){if(!b){b=document.createElement('button');b.className='true-btn';card.append(b)}b.textContent='3진 · 곧 출시 예정';b.title='곧 출시 예정';b.disabled=true;b.onclick=null;return}
  if(trueForms.includes('hotpink')){b?.remove();return}
  if(!b){b=document.createElement('button');b.className='true-btn';card.append(b)}
  b.textContent=hotpinkTrueOpen()?'3진 진화 · 무료':'3진: 미래편 3장 달 클리어 보상';b.title=costText('hotpink');b.disabled=!canTrueForm('hotpink');b.onclick=()=>evolveTrueForm('hotpink')};
@@ -144,8 +146,8 @@ finish=function(win){
  const fresh=!game.ended,was=cleared.includes(HOTPINK_TRUE_STAGE),idx=selectedStage;
  _finishHP.apply(this,arguments);
  if(!fresh||!win||idx!==HOTPINK_TRUE_STAGE||was)return;
- if(allyUnlocked('hotpink')&&!trueForms.includes('hotpink')){trueForms.push('hotpink');delete training.forms.hotpink;saveTrueForms();saveTraining()}
- if(typeof gachaAppendDetail==='function')gachaAppendDetail(trueForms.includes('hotpink')?'핫 핑크 3진 획득! 핫 핑크가 3진으로 진화했어요':'핫 핑크 3진 해금! 핫 핑크를 얻으면 캐릭터 강화에서 무료로 진화할 수 있어요')};
+ if(trueFormAssetReady('hotpink')&&allyUnlocked('hotpink')&&!trueForms.includes('hotpink')){trueForms.push('hotpink');delete training.forms.hotpink;saveTrueForms();saveTraining()}
+ if(typeof gachaAppendDetail==='function')gachaAppendDetail(!trueFormAssetReady('hotpink')?'핫 핑크 3진 · 곧 출시 예정':trueForms.includes('hotpink')?'핫 핑크 3진 획득! 핫 핑크가 3진으로 진화했어요':'핫 핑크 3진 해금! 핫 핑크를 얻으면 캐릭터 강화에서 무료로 진화할 수 있어요')};
 
 // 관통 배지(라즈베리 3진 등): 몇 명까지, 뒤로 갈수록 피해가 어떻게 느는지
 const _cfBadges=codexTraitBadges;

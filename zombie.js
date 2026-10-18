@@ -2,7 +2,7 @@
 // - 클리어한 장(세계편 1~3장 · 미래편 1~3장 · 우주편 1장)의 스테이지마다 좀비 침공판이 열린다. 보라색 Z 표시.
 // - 일반 적이 좀비 짝으로 바뀌고(멍뭉이→좀비 멍뭉이 …), 원래 속성 적과 보스는 그대로 남는다.
 // - 좀비는 쓰러져도 한 번 되살아난다(곰선생은 두 번). 좀비 킬러(아이언·그레이)가 마무리하면 되살아나지 못한다. 땅굴 이동은 zombie-burrow.js.
-// - 보상: 처음 깰 때 XP와 Z 메달, 메달 12개마다 뽑기권(1회), 한 장의 침공을 전부 깨면 뽑기권(10회). 장의 마지막 스테이지는 나머지를 다 깨야 열린다.
+// - 보상: 처음 깰 때 XP와 Z 메달, 메달 12개마다 확정권, 한 장의 침공을 전부 깨면 확정권 11장. 장의 마지막 스테이지는 나머지를 다 깨야 열린다.
 // 그림은 임시(기본 적 그림 + 초록빛).
 // 원작 좀비 짝: Zoge(멍뭉이)·Znache(낼름이)·Zomboe(놈놈놈)·Zigge(돼지새끼)·Zackie Peng(재키펭)·Zory(고릴라저씨)·Zir Zeal(바다레오파드)·
 // Zang Roo(캥거류)·Zroco(아거)·Cadaver Bear(곰선생). 원작 좀비는 원래 적보다 훨씬 단단하고 넉백이 적다.
@@ -106,9 +106,9 @@ finish=function(win){
   zombieSave.clear.push(i);
   notes.push('Z 메달 +1 ('+zombieSave.clear.length+'개)');
   const owedTickets=Math.floor(zombieSave.clear.length/12)-zombieSave.tickets;
-  if(owedTickets>0){zombieSave.tickets+=owedTickets;gachaGive(owedTickets,0);notes.push('메달 12개마다 뽑기권(1회) '+owedTickets+'장!')}
+  if(owedTickets>0){zombieSave.tickets+=owedTickets;gachaGive(owedTickets,0);notes.push('메달 12개마다 확정권 '+owedTickets+'장!')}
   const c=chapterOf(i),all=zombieStagesOf(c);
-  if(!zombieSave.bonus.includes(c)&&all.every(j=>zombieSave.clear.includes(j))){zombieSave.bonus.push(c);gachaGive(0,1);if(typeof gachaGiveG==='function')gachaGiveG('fix',1);notes.push(ZOMBIE_CHAPTERS[c].label+' 침공 전부 클리어! 뽑기권(10회) 1장 + 확정권 1장 (보관함)')}
+  if(!zombieSave.bonus.includes(c)&&all.every(j=>zombieSave.clear.includes(j))){zombieSave.bonus.push(c);gachaGive(0,1);if(typeof gachaGiveG==='function')gachaGiveG('fix',1);notes.push(ZOMBIE_CHAPTERS[c].label+' 침공 전부 클리어! 확정권 11장 (보관함)')}
   saveZombie();
  }else notes.push('이미 깬 침공이라 추가 보상은 없어요');
  const d=$('#resultDetail');d.textContent=(d.textContent?d.textContent+' · ':'')+notes.join(' · ');

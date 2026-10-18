@@ -32,6 +32,6 @@ function allyComparisonText(s){
  const best=Object.entries(m.traits).sort((a,b)=>b[1].dps-a[1].dps)[0];
  if(best&&best[1].dps>m.maximumDps*1.01)text+=`${TRAIT_TARGET[best[0]]||best[0]}에게는 약 ${n(best[1].dps)} DPS를 기대할 수 있다. `;
  if(s.pull)text+='보스에게 끌어오기는 통하지 않지만 피해는 30% 증가한다. ';
- if(s.range>=25&&!s.engageRange&&s.attackClass!=='범위')text+='긴 사거리 안쪽의 사각지대는 고방으로 보호해야 한다. ';
+ if(s.range>=25&&!s.engageRange&&s.attackClass!=='범위'&&(s.zoneMin??s.range*.25)>0)text+='긴 사거리 안쪽의 사각지대는 고방으로 보호해야 한다. ';
  return text+'범위 공격의 다수 적 피해와 메즈·획득 시기는 별도로 평가해야 하므로 DPS만으로 전체 순위를 정하지 않는다.';
 }

@@ -1,39 +1,34 @@
-// 시리즈 전용 뽑기 (v6.2.0): 울트라 슈퍼 레어는 이제 일반 뽑기에서 나오지 않고, 소속 시리즈의 전용 뽑기에서만 나온다.
-// - 같은 1회권·10회권을 쓰고, 뽑기 화면 위쪽 탭에서 배너(일반 / 시리즈)를 고른다.
-// - 시리즈 배너: 울슈레 6%(그 시리즈 멤버 균등) · 50회 안에 울슈레 확정 · 나머지는 일반 배너와 같은 SR·레어·보상. 천장은 시리즈별로 따로 센다.
-// - 일반 배너: 울슈레 칸이 없다(SR 11% · 레어 30% · 기본 캐릭터·XP·배속권·야옹컴). 이미 가진 울슈레는 그대로다.
+// 매일 한국 시간 00시에 시리즈 하나씩 교체하는 확정권 뽑기.
+// - 확정권 공용, 한국 시간 00시에 시리즈 하나씩 순서대로 교체한다.
+// - 레어·슈퍼 레어·해당 시리즈 울슈레만 등장하고, 50회 천장은 시리즈별로 유지한다.
+// - 일반 뽑기는 없고, 시리즈별 천장과 보유 캐릭터는 유지한다.
 const SERIES_GACHA={rate:.06,pity:50};
-const SERIES_ORDER=['글라스 군단','LGBT','인스톨 연합','아이언즈','복싱즈','스위츠','가든즈','워터즈'];
+const SERIES_ORDER=['글라스 군단','LGBT','인스톨 연합','아이언즈','복싱즈','스위츠','가든즈','워터즈','울트라 고양이 축제','하이퍼 고양이 축제'];
 const SERIES_MEMBERS={};
 for(const u of GACHA_UBER){const s=UBER_SERIES[u.id];if(s&&data.units[u.id])(SERIES_MEMBERS[s]=SERIES_MEMBERS[s]||[]).push(u)}
+const GACHA_FESTIVALS={'울트라 고양이 축제':.20,'하이퍼 고양이 축제':.20};
+for(const festival of Object.keys(GACHA_FESTIVALS))SERIES_MEMBERS[festival]=GACHA_UBER.filter(u=>data.units[u.id]);
 const SERIES_LIST=SERIES_ORDER.filter(s=>SERIES_MEMBERS[s]?.length).concat(Object.keys(SERIES_MEMBERS).filter(s=>!SERIES_ORDER.includes(s)));
 // 일반 배너에서는 울슈레 칸과 울슈레 천장을 끈다
 GACHA_CFG.prism=0;GACHA_CFG.pity=1e9;
 // 시리즈별 천장 카운터: gacha.js의 불러오기는 모르는 키를 버리므로 저장된 값을 직접 읽는다
 gacha.pityS={};
 try{const raw=JSON.parse(localStorage.getItem(GACHA_KEY)||'{}').pityS;if(raw&&typeof raw==='object')for(const s of SERIES_LIST)if(Number.isInteger(raw[s])&&raw[s]>=0)gacha.pityS[s]=Math.min(SERIES_GACHA.pity-1,raw[s])}catch{}
-for(const [s,list] of Object.entries(SERIES_MEMBERS))for(const u of list)ACQUIRE_TEXT[u.id]=s+' 전용 뽑기에서 획득';
-let gachaBanner='general';
-const _sgRoll=gachaRoll;
-function seriesRoll(series,guaranteed){
- const members=SERIES_MEMBERS[series]||[];
- if(!guaranteed&&members.length){
-  gacha.pityS[series]=(gacha.pityS[series]||0)+1;
-  if(gacha.pityS[series]>=SERIES_GACHA.pity||Math.random()<SERIES_GACHA.rate){
-   gacha.pityS[series]=0;gacha.pulls++;
-   const u=members[Math.floor(Math.random()*members.length)],res={kind:'prism',guaranteed:false,id:u.id,name:u.name};
-   if(gachaOwns(u.id)){
-    res.dup=true;res.xp=GACHA_CFG.dupXpPrism;training.xp+=res.xp;saveTraining();
-    if(typeof addPlusLevel==='function'&&addPlusLevel(u.id)){training.xp-=res.xp;res.plus=plusLevel(u.id);res.xp=0;saveTraining()}
-   }else{gacha.owned.push(u.id);res.isNew=true}
-   return res;
-  }
- }
- return _sgRoll.call(this,guaranteed);
+for(const [s,list] of Object.entries(SERIES_MEMBERS))for(const u of list)if(!GACHA_FESTIVALS[s])ACQUIRE_TEXT[u.id]=s+' 전용 뽑기에서 획득';
+// A shared calendar uses Korean midnight, independent of the device timezone.
+const SERIES_ROTATION_START=Date.UTC(2026,9,12),SERIES_ROTATION_DAY=86400000;
+function seriesRotation(now=Date.now()){
+ const day=Math.floor((now+9*3600000)/SERIES_ROTATION_DAY);
+ const index=((day-Math.floor(SERIES_ROTATION_START/SERIES_ROTATION_DAY))%SERIES_LIST.length+SERIES_LIST.length)%SERIES_LIST.length;
+ return {day,index,series:SERIES_LIST[index],next:SERIES_LIST[(index+1)%SERIES_LIST.length],endsAt:(day+1)*SERIES_ROTATION_DAY-9*3600000};
 }
-gachaRoll=function(guaranteed=false){
- return gachaBanner==='general'?_sgRoll.call(this,guaranteed):seriesRoll(gachaBanner,guaranteed);
-};
+let gachaBanner=seriesRotation().series,gachaRotationDay=seriesRotation().day;
+function syncGachaRotation(now=Date.now()){
+ const r=seriesRotation(now),changed=r.day!==gachaRotationDay;
+ gachaRotationDay=r.day;gachaBanner=r.series;
+ if(changed)$('#gachaResults').innerHTML='';
+ return changed;
+}
 // ---- UI: 배너 탭
 {
  const panel=GACHA_OVERLAY.querySelector('.gacha-panel'),tickets=$('#gachaTickets');
@@ -46,27 +41,24 @@ gachaRoll=function(guaranteed=false){
  void panel;
 }
 function renderGachaBanners(){
+ syncGachaRotation();
  const box=$('#gachaBanners');box.innerHTML='';
- const mk=(key,label,cnt)=>{const b=document.createElement('button');b.type='button';b.className=gachaBanner===key?'active':'';b.innerHTML=label+(cnt?`<span class="cnt">${cnt}</span>`:'');b.onclick=()=>{gachaBanner=key;$('#gachaResults').innerHTML='';renderGacha()};box.append(b)};
- mk('general','일반','');
- for(const s of SERIES_LIST){const m=SERIES_MEMBERS[s];mk(s,s,`${m.filter(u=>gachaOwns(u.id)).length}/${m.length}`)}
+ const members=SERIES_MEMBERS[gachaBanner],badge=document.createElement('b');
+ badge.textContent=`오늘의 시리즈: ${gachaBanner} (${members.filter(u=>gachaOwns(u.id)).length}/${members.length})`;box.append(badge);
+ const next=document.createElement('span');next.className='gacha-note';next.textContent=`한국 시간 매일 00시 교체 · 다음: ${seriesRotation().next}`;box.append(next);
 }
 const _sgRender=renderGacha;
 renderGacha=function(results){
- _sgRender.apply(this,arguments);
- renderGachaBanners();
+ syncGachaRotation();_sgRender.apply(this,arguments);renderGachaBanners();
  const s=gachaBanner,m=SERIES_MEMBERS[s];
- if(s==='general'||!m){
-  $('#gachaBannerInfo').textContent='일반 뽑기: 울트라 슈퍼 레어는 각 시리즈의 전용 뽑기에서만 나와요. 위 탭에서 시리즈를 고르세요.';
-  $('#gachaPity').textContent=`누적 ${gacha.pulls}회`;
-  $('#gachaRates').textContent=`확률: SR ${GACHA_CFG.sr*100}% (${GACHA_SR.length}명 균등) · 레어 ${GACHA_CFG.rare*100}% (5명 균등) · 나머지는 기본 캐릭터·XP·배속권·야옹컴. 중복은 +레벨 +1(최대 +10), 이후 XP로 환산.`;
- }else{
-  $('#gachaBannerInfo').textContent=`${s} 전용 뽑기 — `+m.map(u=>u.name+(gachaOwns(u.id)?' ✓':'')).join(' · ');
-  $('#gachaPity').textContent=`${s} 천장 ${gacha.pityS[s]||0} / ${SERIES_GACHA.pity} (도달하면 울슈레 확정) · 누적 ${gacha.pulls}회`;
-  $('#gachaRates').textContent=`확률: ${s} 울트라 슈퍼 레어 ${SERIES_GACHA.rate*100}% (${m.map(u=>u.name).join('·')} 균등) · SR ${GACHA_CFG.sr*100}% · 레어 ${GACHA_CFG.rare*100}% · 나머지는 기본 캐릭터·XP·배속권·야옹컴. ${SERIES_GACHA.pity}회 안에 울슈레 확정. 중복은 +레벨 +1(최대 +10), 이후 XP로 환산.`;
- }
+ $('#gachaBannerInfo').textContent=`${s}${GACHA_FESTIVALS[s]?' · 울슈레 20% · 기존 울슈레 전체 등장 · 축제 전용 캐릭터 없음':' 전용 뽑기'} — `+m.map(u=>u.name+(gachaOwns(u.id)?' ✓':'')).join(' · ');
+ $('#gachaPity').textContent=`${s} 천장 ${gacha.pityS[s]||0} / ${SERIES_GACHA.pity} · 시리즈가 돌아와도 기록 유지 · 누적 ${gacha.pulls}회`;
 };
 const _sgOpen=openGacha;
-openGacha=function(){_sgOpen.apply(this,arguments)};
+openGacha=function(){syncGachaRotation();_sgOpen.apply(this,arguments)};
+function refreshGachaRotation(){if(syncGachaRotation()&&gachaOpen())renderGacha()}
+setInterval(refreshGachaRotation,1000);
+window.addEventListener('focus',refreshGachaRotation);
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)refreshGachaRotation()});
 if(typeof GACHA_BTN!=='undefined'){GACHA_BTN.onclick=()=>openGacha();$('#gachaLobbyBtn').onclick=()=>openGacha()}
 renderGachaBadge();

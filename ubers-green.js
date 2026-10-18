@@ -92,17 +92,15 @@ resolveAttack=function(u,t,share){
  return r;
 };
 // 새 능력 ③ 메탈 킬러(에메랄드): 메탈 적에게 현재 체력의 일부를 한 번에 깎는다(원래는 메탈에 1 피해).
-const _guDamage=damage;
-damage=function(v,amount,from){
- const mk=from?.stats?.metalKiller;
- if(mk&&v&&v.hp>0&&!v.ally&&hasTrait(data.units[v.type],'metal')){
-  const dd=data.units[v.type],saved={trait:dd.trait,traits:dd.traits};
-  const rest=traitsOf(dd).filter(t=>t!=='metal');
-  delete dd.trait;dd.traits=rest;
-  try{return _guDamage.call(this,v,Math.max(amount,Math.ceil(v.hp*mk)),from)}
-  finally{if(saved.trait!==undefined)dd.trait=saved.trait;else delete dd.trait;if(saved.traits!==undefined)dd.traits=saved.traits;else delete dd.traits}
- }
- return _guDamage.apply(this,arguments);
+// Metal armor and the percentage bonus are combined in the core damage path.
+// Soulstrike must acquire waiting corpses even when no live enemy remains.
+const _guTarget=target;
+target=function(u){
+ const live=_guTarget.apply(this,arguments),d=u.stats||data.units[u.type];
+ if(!u.ally||!d.soulstrike)return live;
+ const corpses=(game.defeated||[]).filter(v=>!v.ally&&v.reviveAt!==undefined&&u.x-v.x>=-1&&Math.abs(v.x-u.x)<=d.range);
+ const corpse=corpses.sort((a,b)=>Math.abs(a.x-u.x)-Math.abs(b.x-u.x))[0];
+ return corpse&&(!live||Math.abs(corpse.x-u.x)<Math.abs(live.x-u.x))?corpse:live;
 };
 // 도감·툴팁 배지
 const _guBadges=codexTraitBadges;

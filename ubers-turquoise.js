@@ -1,12 +1,12 @@
-// 울슈레 터콰이즈 (v6.3.x, 워터즈): 서핑 강사. 새 능력 '공격 무효'(Dodge) — 공격을 받으면 확률로 잠깐 모든 피해를 무효로 한다(원작 공격 무효).
-// 1진·2진 같은 가격(울슈레 규칙). 그림은 임시(코랄 + 색 규칙). 성별은 임시로 여성.
+// 울슈레 터콰이즈 (v6.3.x, 워터즈): 간호사. 새 능력 '공격 무효'(Dodge) — 공격을 받으면 확률로 잠깐 모든 피해를 무효로 한다(원작 공격 무효).
+// 1진·2진 같은 가격(울슈레 규칙). 여성 간호사. 전용 모션은 다음 스크립트에서 등록한다.
 const TURQUOISE={
- turquoise:{name:'터콰이즈',color:'#40e0d0',job:'서핑 강사',base:'coral',tint:'hue-rotate(-20deg) saturate(1.5) brightness(1.2)',
+ turquoise:{name:'터콰이즈',color:'#40e0d0',job:'간호사',base:'coral',tint:'none',
   hp:36000,atk:7000,interval:2.8,speed:8,range:7,cost:3800,cooldown:50,knockbacks:3,
   extra:{attackClass:'범위',area:true,blowChance:.25,blowDistance:8,dodge:{chance:.3,duration:2.5},waveImmune:true,surgeImmune:true},
   role:'공격 무효 · 파동·열파 데미지 무효 · 범위 · 날려버린다',
-  text:'서핑 강사. 밀려오는 파도를 타듯 적의 공격을 스치며 흘려보내고, 거대한 파동이나 열파 위에서도 균형을 잃지 않는다. 보드로 후려쳐 적을 멀리 밀어낸다.',
-  textEvo:'파도의 결을 완전히 읽어 공격이 닿기도 전에 몸을 돌린다.',evoText:'체력·공격력 +15% · 공격 무효 40%'}
+  text:'의료 가방을 들고 전장을 누비는 여성 간호사. 재빠른 몸놀림으로 공격을 피하고, 파동과 열파 속에서도 침착하게 움직인다. 범위 공격으로 적을 밀어낸다.',
+  textEvo:'간호복과 모자를 갖추고 전장에 나선다. 공격이 닿기 전에 몸을 돌리는 솜씨가 더욱 좋아졌다.',evoText:'체력·공격력 +15% · 공격 무효 40%'}
 };
 const TURQUOISE_EVO_EXTRA={turquoise:d=>({dodge:{...d.dodge,chance:.4}})};
 for(const [id,s] of Object.entries(TURQUOISE)){

@@ -4,31 +4,32 @@
 //   등급 안에서는 아직 못 가진 캐릭터를 우선한다.
 // - 보관함: 일일 보상·스테이지·랭크·좀비 침공 등으로 받은 뽑기권과 확정권은 바로 지급되지 않고 보관함에 쌓인다. '모두 받기'로 수령.
 gacha.fix=0;
-gacha.box={t1:0,t10:0,fix:0};
+gacha.box={fix:0};
 try{
  const raw=JSON.parse(localStorage.getItem(GACHA_KEY)||'{}'),n=v=>Number.isInteger(v)&&v>=0?v:0;
- gacha.fix=n(raw.fix);gacha.box.t1=n(raw.box?.t1);gacha.box.t10=n(raw.box?.t10);gacha.box.fix=n(raw.box?.fix);
+ gacha.fix=n(raw.fix)+n(raw.t1)+10*n(raw.t10);gacha.box.fix=n(raw.box?.fix)+n(raw.box?.t1)+10*n(raw.box?.t10);
  // 등급별 확정권 3종 시절 저장 이관: 가진 만큼 확정권으로 합친다
  if(raw.g&&typeof raw.g==='object')gacha.fix+=n(raw.g.rare)+n(raw.g.sr)+n(raw.g.uber);
  if(raw.box)gacha.box.fix+=n(raw.box.rare)+n(raw.box.sr)+n(raw.box.uber);
 }catch{}
-delete gacha.g;
-function gachaBoxCount(){const b=gacha.box;return b.t1+b.t10+b.fix}
+delete gacha.g;delete gacha.t1;delete gacha.t10;
+saveGacha(); // Persist converted balances once; reloads must not convert twice.
+function gachaBoxCount(){const b=gacha.box;return b.fix}
 function gachaStore(t1=0,t10=0,fix=0){
- gacha.box.t1+=t1;gacha.box.t10+=t10;gacha.box.fix+=fix;
+ gacha.box.fix+=t1+10*t10+fix;
  saveGacha();renderGachaBadge();if(gachaOpen())renderGacha();
 }
 // 뽑기권은 이제 모두 보관함으로 들어간다
 gachaGive=function(t1,t10){gachaStore(t1,t10)};
 function gachaGiveG(type,n=1){gachaStore(0,0,n)}// 이전 이름 유지(등급 인자는 무시)
 function gachaBoxText(b=gacha.box){
- return [b.t1&&`1회권 ${b.t1}`,b.t10&&`10회권 ${b.t10}`,b.fix&&`확정권 ${b.fix}`].filter(Boolean).join(' · ');
+ return b.fix?`확정권 ${b.fix}장`:'';
 }
 function gachaClaimBox(){
  const b=gacha.box,text=gachaBoxText(b);
  if(!gachaBoxCount())return false;
- gacha.t1+=b.t1;gacha.t10+=b.t10;gacha.fix+=b.fix;
- gacha.box={t1:0,t10:0,fix:0};
+ gacha.fix+=b.fix;
+ gacha.box={fix:0};
  saveGacha();renderGachaBadge();if(typeof renderTraining==='function')renderTraining();
  if(gachaOpen())renderGacha();
  gachaToast('보관함에서 받음: '+text);
@@ -37,9 +38,8 @@ function gachaClaimBox(){
 // 일일 출석: 보관함으로, 7일 연속 출석에는 확정권 +1
 const _gbDaily=gachaClaimDaily;
 gachaClaimDaily=function(){
- const t1=gacha.t1,t10=gacha.t10,d=_gbDaily.apply(this,arguments);
+ const d=_gbDaily.apply(this,arguments);
  if(!d)return d;
- gacha.t1=t1;gacha.t10=t10;
  const fix=d.streak%GACHA_CFG.dailyStreakBonus===0?1:0;
  gachaStore(d.t1,d.t10,fix);d.fix=fix;d.rare=fix;
  return d;
@@ -57,17 +57,21 @@ function guaranteedPick(list){// 아직 못 가진 캐릭터 우선
  const fresh=list.filter(s=>!gachaOwns(s.id)),pool=fresh.length?fresh:list;
  return pool[Math.floor(Math.random()*pool.length)];
 }
-function gachaFixWeights(){// 지금 배너 기준 [등급, 비율, 후보 목록, 중복 XP]
+function gachaFixWeights(){
+ syncGachaRotation();
+ // 지금 배너 기준 [등급, 비율, 후보 목록, 중복 XP]
  const w=[];
  const rare=gachaPoolRare(),sr=gachaPoolSR();
  if(rare.length)w.push({kind:'rare',w:GACHA_CFG.rare,list:rare,dupXp:GACHA_CFG.dupXpRare});
  if(sr.length)w.push({kind:'sr',w:GACHA_CFG.sr,list:sr,dupXp:GACHA_CFG.dupXp});
- if(gachaBanner!=='general'&&SERIES_MEMBERS[gachaBanner]?.length)w.push({kind:'prism',w:SERIES_GACHA.rate,list:SERIES_MEMBERS[gachaBanner],dupXp:GACHA_CFG.dupXpPrism});
+ if(SERIES_MEMBERS[gachaBanner]?.length){const festival=GACHA_FESTIVALS[gachaBanner],rate=festival?w.reduce((sum,x)=>sum+x.w,0)*festival/(1-festival):SERIES_GACHA.rate;w.push({kind:'prism',w:rate,list:SERIES_MEMBERS[gachaBanner],dupXp:GACHA_CFG.dupXpPrism})}
  return w;
 }
 function gachaUseGuarantee(){
  if(!(gacha.fix>=1))return {error:'확정권이 없어요'};
- const ws=gachaFixWeights();
+ let ws=gachaFixWeights();
+ const series=SERIES_MEMBERS[gachaBanner]?.length;
+ if(series&&(gacha.pityS[gachaBanner]||0)>=SERIES_GACHA.pity-1)ws=ws.filter(x=>x.kind==='prism');
  if(!ws.length)return {error:'뽑을 캐릭터가 없어요'};
  let r=Math.random()*ws.reduce((a,x)=>a+x.w,0),g=ws[0];
  for(const x of ws){if(r<x.w){g=x;break}r-=x.w}
@@ -76,7 +80,7 @@ function gachaUseGuarantee(){
   res.dup=true;res.xp=g.dupXp;training.xp+=res.xp;saveTraining();
   if(typeof addPlusLevel==='function'&&addPlusLevel(s.id)){training.xp-=res.xp;res.plus=plusLevel(s.id);res.xp=0;saveTraining()}
  }else{gacha.owned.push(s.id);res.isNew=true}
- if(g.kind==='prism'&&gacha.pityS)gacha.pityS[gachaBanner]=0;// 울슈레가 나오면 그 시리즈 천장은 처음부터
+ if(series)gacha.pityS[gachaBanner]=g.kind==='prism'?0:(gacha.pityS[gachaBanner]||0)+1;// 울슈레가 나오면 그 시리즈 천장은 처음부터
  gacha.fix--;gacha.pulls++;saveGacha();
  if(typeof renderTraining==='function')renderTraining();
  renderGachaBadge();renderNewButtons();renderDeckButtons();
@@ -109,18 +113,9 @@ renderGacha=function(results){
  const guar=$('#gachaGuar');guar.innerHTML='';
  const ws=gachaFixWeights(),tot=ws.reduce((a,x)=>a+x.w,0)||1;
  const label={rare:'레어',sr:'슈퍼 레어',prism:'울트라 슈퍼 레어'};
- const b=document.createElement('button');b.type='button';
- b.textContent=`확정 뽑기 (확정권 ${gacha.fix}장)`;b.disabled=gacha.fix<1||!ws.length;
- b.onclick=()=>{
-  const o=gachaUseGuarantee();
-  if(o.error){gachaToast(o.error);return}
-  renderGacha([o.res]);
-  document.querySelectorAll('#gachaResults .gacha-card').forEach(c=>c.classList.add('fix'));
- };
- guar.append(b);
  const info=document.createElement('span');info.className='gacha-note';
- info.textContent='확정 뽑기: '+ws.map(x=>`${label[x.kind]} ${Math.round(x.w/tot*100)}%`).join(' · ')+' 중 하나 확정 (못 가진 캐릭터 우선)'+(gachaBanner==='general'?' · 울슈레는 시리즈 탭에서':'');
+ info.textContent='확정 뽑기: '+ws.map(x=>`${label[x.kind]} ${Math.round(x.w/tot*100)}%`).join(' · ')+' 중 하나 확정 (못 가진 캐릭터 우선)';
  guar.append(info);
- $('#gachaTickets').innerHTML+=`<span>확정권 <b>${gacha.fix}</b></span>`;
+ $('#gachaRates').textContent=info.textContent+' · 중복은 +레벨 +1(최대 +10), 이후 XP로 환산';
 };
 renderGachaBadge();

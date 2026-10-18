@@ -1,16 +1,15 @@
 // 환전소 (v6.2.0): 뽑기 화면에서 남는 티켓을 XP나 +레벨로 바꾼다.
-// - 1회권 1장 → XP 3,000, 10회권 1장 → XP 35,000 (10회 뽑기 1번의 평균 기대 XP보다 약간 후하게)
+// - 확정권 1장 → XP 3,000
 // - 확정권 1장 → 고른 캐릭터 +레벨 +1 (캐릭터당 최대 +10, 가진 캐릭터만)
 // 보관함에 든 티켓은 먼저 '모두 받기'로 수령한 뒤에만 바꿀 수 있다.
-const EXCHANGE={t1Xp:3000,t10Xp:35000,fixPlus:1};
+const EXCHANGE={fixXp:3000,fixPlus:1};
 function exchangeTargets(){
  const gr={uber:0,ex:1,sr:2,rare:3,basic:4};
  return ALLIES.filter(t=>allyUnlocked(t)&&plusLevel(t)<PLUS_MAX)
   .sort((a,b)=>(gr[gradeOf(a)]-gr[gradeOf(b)])||(plusLevel(a)-plusLevel(b))||UNIT_NAMES[a].localeCompare(UNIT_NAMES[b],'ko'));
 }
 function gachaExchange(kind,target){
- if(kind==='t1'){if(gacha.t1<1)return {error:'1회권이 없어요'};gacha.t1--;training.xp+=EXCHANGE.t1Xp;saveGacha();saveTraining();return {text:`1회권 1장 → XP +${EXCHANGE.t1Xp.toLocaleString()}`}}
- if(kind==='t10'){if(gacha.t10<1)return {error:'10회권이 없어요'};gacha.t10--;training.xp+=EXCHANGE.t10Xp;saveGacha();saveTraining();return {text:`10회권 1장 → XP +${EXCHANGE.t10Xp.toLocaleString()}`}}
+ if(kind==='xp'){if(gacha.fix<1)return {error:'확정권이 없어요'};gacha.fix--;training.xp+=EXCHANGE.fixXp;saveGacha();saveTraining();return {text:`확정권 1장 → XP +${EXCHANGE.fixXp.toLocaleString()}`}}
  if(kind==='fix'){
   if(gacha.fix<1)return {error:'확정권이 없어요'};
   if(!target||!ALLIES.includes(target))return {error:'+레벨을 올릴 캐릭터를 고르세요'};
@@ -38,8 +37,7 @@ renderGacha=function(results){
  const mk=(label,dis,fn)=>{const b=document.createElement('button');b.type='button';b.textContent=label;b.disabled=dis;b.onclick=fn;return b};
  const done=r=>{if(r.error){gachaToast(r.error);return}gachaToast(r.text);renderGacha();if(typeof renderTraining==='function')renderTraining()};
  const r1=document.createElement('div');r1.className='row';
- r1.append(mk(`1회권 1장 → XP ${EXCHANGE.t1Xp.toLocaleString()}`,gacha.t1<1,()=>done(gachaExchange('t1'))),
-           mk(`10회권 1장 → XP ${EXCHANGE.t10Xp.toLocaleString()}`,gacha.t10<1,()=>done(gachaExchange('t10'))));
+ r1.append(mk(`확정권 1장 → XP ${EXCHANGE.fixXp.toLocaleString()}`,gacha.fix<1,()=>done(gachaExchange('xp'))));
  p.append(r1);
  const r2=document.createElement('div');r2.className='row';
  const sel=document.createElement('select');

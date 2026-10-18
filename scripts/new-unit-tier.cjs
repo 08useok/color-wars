@@ -47,17 +47,13 @@ const bandOf=g=>{for(let b=0;b<EDGES.length;b++)if(g>=EDGES[b])return BANDS[b];r
  if(TRUE)console.log('3진은 그 캐릭터만 3진으로, 나머지 덱은 2진 그대로 둔 상태의 이득이다(티어표의 3진 표와 같은 방식). 이 맵은 무속성 적이 98%라 에일·떠 있는 적 등 특화 능력의 몫은 반영되지 않는다.');
  if(A.gain[ANCHOR]!=null){const ga=mean(diffs(ANCHOR,F.seeds))*300,ex=A.gain[ANCHOR]*300;
   console.log(Math.abs(ga-ex)<=1.5?`(검증: 기존 ${e.names[ANCHOR]}(${ANCHOR}) 다시 재니 ${ga.toFixed(1)}초 — 티어표 ${ex.toFixed(1)}초와 일치, 비교 유효)`:`⚠ 검증 실패: 기존 ${e.names[ANCHOR]}(${ANCHOR}) 다시 재니 ${ga.toFixed(1)}초인데 티어표는 ${ex.toFixed(1)}초다. 전투 규칙이 분포를 잰 뒤 바뀐 것 같아 순위·티어가 어긋난다. bench20 분포부터 다시 재야 한다.`)}
- // ---- 총평: 티어표의 읽는 법에 맞춘 자동 요약
- const lo=band(g-1.96*gse),hi=band(g+1.96*gse),wide=BANDS.indexOf(lo)-BANDS.indexOf(hi)>=2;
- const NICHE={strongVs:'특정 속성에 강함',massiveVs:'특정 속성에 초강함',extremeVs:'특정 속성에 극강함',statusVs:'상태이상 특화',metalKiller:'메탈 킬러',zombieKiller:'좀비 킬러',soulstrike:'좀비 영혼 공격',barrierBreak:'베리어 브레이커',waveImmune:'파동 무효',surgeImmune:'열파 무효',onlyTraitless:'무속성 전용',floatStrong:'떠 있는 적에 강함',redStrong:'빨간 적에 강함'};
- const du={...e.units[UNIT],...(TRUE?e.trueBonus[UNIT]:{})},niche=Object.keys(NICHE).filter(k=>du[k]).map(k=>NICHE[k]);
- const tot=[];
- tot.push(`이 맵에서 클리어를 ${Math.round(g)}초 단축해 ${T}${near?'▲':''} 티어, 106명 중 ${rankAt(g)}위(95% 구간 ${rankAt(g+1.96*gse)}~${rankAt(g-1.96*gse)}위)다. 비슷한 캐릭터는 ${nearest.map(x=>x.split(' ')[0]).join('·')}.`);
- if(near){const ed=EDGES.findIndex(x=>Math.abs(g-x)<Math.max(2,gse)),nb=BANDS[g>=EDGES[ed]?ed:ed+1];tot.push(`점수가 구간 경계에서 표준오차 이내라 ${nb===T?BANDS[ed]:nb} 구간과 구분되지 않는다.`)}
- else if(wide)tot.push(`오차가 커서 ${hi}~${lo} 어디든 가능하다. SEEDS를 늘려(예: SEEDS=20) 다시 재면 좁혀진다.`);
- else tot.push(`오차를 감안해도 ${hi===lo?hi+' 티어가 확실하다':hi+'~'+lo+' 범위다'}.`);
- if(A.gain[UNIT]!=null&&(TRUE||MODS)){const base=A.gain[UNIT]*300,dl=g-base,sig=Math.abs(dl)>2*gse&&Math.abs(dl)>=3;tot.push(`티어표의 현재 값(${Math.round(base)}초, ${band(base)})과 비교하면 ${dl>=0?'+':'−'}${Math.abs(Math.round(dl))}초로 ${sig?'오차의 2배를 넘는 의미 있는 변화다':'오차 안이라 변화를 인정하지 않는다'}.`)}
- if(niche.length)tot.push(`이 캐릭터의 특화 능력(${niche.join('·')})은 무속성 적 98%인 이 맵에서 평가되지 않는다. 그 몫은 특화 맵 시험으로 따로 확인한다.`);
- console.log(`\n총평 — ${e.names[UNIT]||UNIT}${TRUE?'(3진)':''}: `+tot.join(' '));
+ // Role-based assessment; keep the numerical research output above separate.
+ const assess=require('./lib/ally-role-assessment.cjs');
+ e.setProfile({level:30,trueForms:TRUE?[UNIT]:[]});
+ const role=assess(UNIT,e.unitStats(UNIT),e.roles[UNIT]||'');
+ const tot=[role.strength,role.caution,role.use];
+ tot.push(`이번 시험에서는 기준 덱에 추가했을 때 약 ${Math.round(g)}초의 클리어 단축 효과를 보였다. 한 맵 결과이므로 다른 전선에서도 같은 효과를 보장하지는 않는다.`);
+ if(A.gain[UNIT]!=null&&(TRUE||MODS)){const base=A.gain[UNIT]*300,dl=g-base,sig=Math.abs(dl)>2*gse&&Math.abs(dl)>=3;tot.push(`이전 측정 대비 ${dl>=0?'+':'−'}${Math.abs(Math.round(dl))}초이며 ${sig?'측정 오차보다 큰 변화다':'측정 오차 안의 차이다'}.`)}
+ console.log(`\n총평 — ${e.names[UNIT]||UNIT}${TRUE?'(3진)':''} · ${role.role}: `+tot.join(' '));
  process.exit(0);
 })();
