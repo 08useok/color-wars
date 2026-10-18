@@ -202,8 +202,8 @@ body { overflow:auto; }
 /* Legend Story enemies + menu */
 .unit.darkdog,.unit.gabriel,.unit.ectosnache{background:none;border:0;border-radius:0;width:42px;height:42px}
 .unit.darkdog::before,.unit.darkdog::after,.unit.gabriel::before,.unit.gabriel::after,.unit.ectosnache::before,.unit.ectosnache::after{content:none}
-.unit.darkdog .bar,.unit.gabriel .bar{top:-25px}.unit.ectosnache .bar{top:-34px}
-.ectosnache .dog-shadow{background-image:url("assets/snache_dog-sprite.png");background-position:-5px -191px;width:43px;height:4px}
+.unit.darkdog .bar,.unit.gabriel .bar{top:-25px}
+
 .legend-grid{grid-template-columns:repeat(4,1fr)}.legend-crowns{margin:0 0 10px}.legend-crowns .codex-tab{color:#ffd35a;letter-spacing:1px}
 @media(max-width:700px){.legend-grid{grid-template-columns:repeat(2,1fr)}}
 .stage-note.credits{margin-top:6px;font-size:11px}.stage-note.credits a{color:#b8cbe6}
