@@ -1152,9 +1152,14 @@ function tickHitback(u,dt){
  u.el.style.left=`calc(${u.x}% - 21px)`;
  u.el.style.translate=`0 ${u.kbNoHop?0:-Math.sin(progress*Math.PI)*18}px`;
  animateUnit(u);
- if(u.kbTime===0){u.el.classList.remove('knocked-back');u.el.style.translate='0 0';u.surfacing=false}
+ if(u.surfacing&&u.reviveFxEl){u.reviveFxT=(u.reviveFxT||0)+dt;zombieFx(u.reviveFxEl,'revive',Math.floor(u.reviveFxT*15))}
+ if(u.kbTime===0){u.el.classList.remove('knocked-back');u.el.style.translate='0 0';if(u.reviveFxEl){u.reviveFxEl.remove();u.reviveFxEl=null}u.surfacing=false}
 }
-const SURFACE_DURATION=30/30;// 원작 좀비 Surface 애니메이션 29프레임
+// 원작 좀비 쓰러짐·부활 효과 (set_enemy001_zombie: down 16프레임, revive 40프레임). 쓰러지면 down을 재생하고 마지막 장면(웅덩이)을 유지,
+// 부활할 때 revive(보라 거품)를 재생하는 동안 좀비는 Surface 모션으로 올라온다.
+const SURFACE_DURATION=40/30;
+const ZOMBIE_FX={"down":[[0,13,47,53,31,16],[49,15,45,51,28,1],[96,35,63,31,33,-7],[161,29,65,37,33,-7],[228,23,69,43,34,-7],[299,31,71,35,35,-7],[372,38,83,28,42,-7],[457,38,86,28,45,-7],[545,37,89,29,45,-7],[636,37,89,29,45,-7],[727,38,90,28,45,-7],[819,38,90,28,45,-7],[911,38,90,28,45,-7],[1003,38,90,28,45,-7],[1095,38,90,28,45,-7],[1187,38,90,28,45,-7],[1279,38,90,28,45,-7]],"revive":[[1371,38,90,28,45,-7],[1463,35,90,31,45,-6],[1555,32,90,34,45,-6],[1647,28,90,38,45,-7],[1739,25,90,41,45,-6],[1831,22,90,44,45,-6],[1923,19,89,47,44,-6],[2014,16,88,50,44,-6],[2104,12,86,54,43,-7],[2192,9,84,57,42,-7],[2278,6,81,60,41,-6],[2361,3,75,63,38,-7],[2438,0,66,66,33,-6],[2506,26,43,40,27,22],[2551,26,42,40,26,24],[2595,28,42,38,26,28],[2639,28,41,38,25,31],[2682,29,41,37,25,34],[2725,29,40,37,24,37],[2767,45,39,21,24,40],[2808,65,1,1,27,7]]};
+function zombieFx(el,state,i){const fr=ZOMBIE_FX[state],f=fr[Math.max(0,Math.min(fr.length-1,i|0))];el.style.backgroundPosition=`-${f[0]}px -${f[1]}px`;el.style.width=f[2]+'px';el.style.height=f[3]+'px';el.style.left=(21-f[4]*.833)+'px';el.style.bottom=(f[5]*.833)+'px'}
 const BOSS_KNOCKBACK_DURATION=.8;
 const BOSS_KNOCKBACK_DISTANCE=HITBACK_DISTANCE;// 원작: 보스 충격파는 일반 넉백과 같은 거리
 function triggerBossShockwave(){
@@ -1424,15 +1429,16 @@ function update(dt){
  for(const v of [...game.defeated]){
   tickHitback(v,dt);
   // 원작: 부활할 좀비는 쓰러지는 모션 뒤 뼈·해골이 든 보라색 웅덩이를 남긴다(공격 불가, 적 수 제한에는 포함).
-  if(v.reviveAt!==undefined&&v.kbTime===0){v.el.style.opacity='1';if(!v.el.classList.contains('zombie-corpse')){v.el.classList.add('zombie-corpse');const p=document.createElement('b');p.className='zombie-puddle';v.el.append(p)}}
+  if(v.reviveAt!==undefined&&v.kbTime===0){v.el.style.opacity='1';if(!v.puddleEl){v.el.classList.add('zombie-corpse');v.puddleEl=document.createElement('b');v.puddleEl.className='zombie-puddle';v.el.append(v.puddleEl);v.corpseT=0}v.corpseT+=dt;zombieFx(v.puddleEl,'down',Math.floor(v.corpseT*30))}
   else v.el.style.opacity=v.kbTime/HITBACK_DURATION;
   if(v.reviveAt!==undefined){
    if(game.elapsed>=v.reviveAt){
-    delete v.reviveAt;v.el.classList.remove('zombie-corpse');v.el.querySelector('.zombie-puddle')?.remove();v.hp=Math.max(1,Math.round(v.max*(v.stats?.reviveHp??.5)));v.kb=0;v.kbTime=0;v.hurtTime=0;v.attackTime=0;v.attackCd=v.stats.interval;delete v.pendingAttack;
+    delete v.reviveAt;v.el.classList.remove('zombie-corpse');v.puddleEl?.remove();v.puddleEl=null;v.hp=Math.max(1,Math.round(v.max*(v.stats?.reviveHp??.5)));v.kb=0;v.kbTime=0;v.hurtTime=0;v.attackTime=0;v.attackCd=v.stats.interval;delete v.pendingAttack;
     v.el.classList.remove('defeated','knocked-back');v.el.style.opacity='1';v.el.querySelector('i').style.setProperty('width',v.hp/v.max*100+'%');game.defeated.splice(game.defeated.indexOf(v),1);game.units.push(v);
     // 웅덩이에서 원작 '출현(Surface)' 모션으로 올라온다. 올라오는 동안은 땅속처럼 제자리·무적 (그림 없는 좀비는 히트백 시간만큼)
     const sd=NEW_ATLASES[v.type]?.surface?.length?SURFACE_DURATION:HITBACK_DURATION;
     v.kbTime=sd;v.hurtTime=sd;v.kbStart=v.kbEnd=v.x;v.kbNoHop=true;v.surfacing=true;v.surfaceDur=sd;v.el.classList.add('knocked-back');
+    v.reviveFxEl=document.createElement('b');v.reviveFxEl.className='zombie-revive-fx';v.el.append(v.reviveFxEl);v.reviveFxT=0;zombieFx(v.reviveFxEl,'revive',0);// 원작 부활 효과(보라 거품)
    }
   }else if(v.kbTime===0){v.el.remove();game.defeated.splice(game.defeated.indexOf(v),1)}
  }
