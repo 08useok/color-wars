@@ -7,6 +7,7 @@
 - [신규-레전드-28-36장-클리어-시험-2026-10-13.md](신규-레전드-28-36장-클리어-시험-2026-10-13.md)
 
 ## 설계·구현 기록
+- [우주편-2장-기획-2026-10-18.md](우주편-2장-기획-2026-10-18.md) — 우주편 2장 기획 (착수는 6.9.x 이후)
 - [신규-3진-아종-스펙-2026-10-10.md](신규-3진-아종-스펙-2026-10-10.md), [subspecies-implementation-2026-10-10.md](subspecies-implementation-2026-10-10.md)
 - [boss-attack-animations.md](boss-attack-animations.md), [endgame-deck.md](endgame-deck.md)
 
