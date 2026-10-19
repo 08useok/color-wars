@@ -1,9 +1,9 @@
-// 캐릭터 성능·원인·3진 보고서 생성: docs/캐릭터-성능-원인-보고서-2026-10-17.md
+// 캐릭터 성능·원인·3진 보고서 생성: docs/캐릭터-성능-원인-보고서-2026-10-19.md
 const fs=require('fs'),path=require('path');
 const mk=require('./full-harness.cjs');
 const root=path.resolve(__dirname,'..');
 const rd=f=>JSON.parse(fs.readFileSync(path.join(root,f),'utf8'));
-const A=rd('docs/simulations/char-analysis-2026-10-17.json'),F=rd('docs/simulations/bench20-final-2026-10-17.json'),F2=rd('docs/simulations/bench20-ref2-2026-10-17.json'),TF=rd('docs/simulations/trueform-map-2026-10-17.json'),BT=rd('docs/simulations/tier-bootstrap-2026-10-17.json'),S=rd('docs/simulations/map-screen20-2026-10-17.json');
+const A=rd('docs/simulations/char-analysis-2026-10-19.json'),F=rd('docs/simulations/bench20-final-2026-10-19.json'),FOLD=rd('docs/simulations/bench20-final-2026-10-17.json'),F2=rd('docs/simulations/bench20-ref2-2026-10-19.json'),TF=rd('docs/simulations/trueform-map-2026-10-19.json'),BT=rd('docs/simulations/tier-bootstrap-2026-10-17.json'),S=rd('docs/simulations/map-screen20-2026-10-17.json');
 const e=mk();e.setProfile({level:30});
 const HAS3=[...new Set(fs.readdirSync(path.join(root,'assets')).filter(f=>/^(profile_)?[a-z]+_3\.webp$/.test(f)).map(f=>f.replace(/^profile_/,'').replace('_3.webp','')))].filter(c=>TF.out[c]);// 전용 3진 그림(시트 또는 프로필)이 있는 캐릭터만 3진 분석 대상
 const MAP=A.map,allies=Object.keys(A.gain),n=allies.length,names=c=>e.names[c];
@@ -16,7 +16,7 @@ const R1=F.core9,slope=A.bridge.slope,icpt=A.bridge.icpt;
 let seed=777;const rnd=()=>{seed=(Math.imul(seed,1664525)+1013904223)>>>0;return seed/4294967296};
 const ranksB=Object.fromEntries(allies.map(c=>[c,[]]));
 for(let b=0;b<400;b++){
- const idx=Array.from({length:6},()=>Math.floor(rnd()*6));
+ const idx=Array.from({length:F.seeds},()=>Math.floor(rnd()*F.seeds));
  const g={};for(const c of allies){g[c]=R1.includes(c)?icpt+slope*mean(idx.map(k=>F2.seedGains[c][MAP][k])):mean(idx.map(k=>F.seedGains[c][MAP][k]))}
  const order=allies.slice().sort((a,b)=>g[b]-g[a]);order.forEach((c,i)=>ranksB[c].push(i+1));
 }
@@ -67,7 +67,7 @@ function trueVerdict(c){
 }
 const L=[];
 const R2=A.r2;
-L.push('# 캐릭터 성능 · 원인 · 3진 보고서 — 2026-10-17','');
+L.push('# 캐릭터 성능 · 원인 · 3진 보고서 — 2026-10-19','');
 L.push('## 한눈에','');
 const top=A.order.slice(0,12),bot=A.order.slice(-12);
 const solved=allies.filter(c=>trueVerdict(c).v.startsWith('**해결')),improved=allies.filter(c=>/^개선/.test(trueVerdict(c).v)),noeff=allies.filter(c=>trueVerdict(c).v==='차이 없음'),none=allies.filter(c=>trueVerdict(c).v!=='3진 없음'&&!HAS3.includes(c)).concat(allies.filter(c=>trueVerdict(c).v==='3진 없음'));
@@ -79,24 +79,24 @@ L.push(`- **3진으로 해결되는 캐릭터**: 하위 절반에서 상위 절�
 L.push('- **중요한 한계**: (1) 맵 한 곳이다. 이 맵의 적은 **무속성 98%**라 좀비 킬러·메탈 킬러·에이리언 엄강 같은 특화 능력은 평가되지 않는다. (2) 시드 흔들림 때문에 순위 ±수 계단은 같은 급이다(아래 "신뢰도"). (3) 이전에 발표한 티어표의 +/− 세분은 측정 오차보다 촘촘하다(부록 A).');
 L.push('');
 L.push('## 1. 시험 조건','');
-L.push(`- **규칙**: 작업 폴더의 현재 코드(코드 지문 \`${A.codeHash}\`). 보물 시스템과 3진 정의를 포함한 **미커밋 변경이 들어 있다**. 코드가 바뀌면 숫자가 달라질 수 있다.`);
-L.push('- **상태**: 보물·억제기 전부, 아군 전원 Lv.30(2진), 경제 강화 최대, 3진은 **한 번에 한 캐릭터만** 켜서 비교. 300초 제한, 시드 6개 × 출격 방식 2가지(야옹컴 / 위기 때 싼 유닛부터) 중 나은 쪽.');
-L.push('- **측정 방식**: 기준 덱 **레드·옐로우·블루·퍼플**에 후보 1명을 더한 덱의 성능에서 더하지 않은 덱의 성능을 뺀다. 성능은 승리 시 1 + (1 − 걸린 초/300), 패배 시 적 성 진행도. **이득 0.1 = 클리어 약 30초 단축**이다. 참조 덱의 평균 클리어는 100.8초, 승률 100%.');
+L.push(`- **규칙**: 커밋 42c8ac2(v6.8.0) 코드(코드 지문 ${A.codeHash}). 10-18의 v6.7.2(적이 적 성 뒤로 넉백되지 않음)로 전투 결과가 달라져 **전원을 처음부터 다시 쟀다**. 코드가 또 바뀌면 숫자가 달라질 수 있다.`);
+L.push(`- **상태**: 보물·억제기 전부, 아군 전원 Lv.30(2진), 경제 강화 최대, 3진은 **한 번에 한 캐릭터만** 켜서 비교. 300초 제한, 시드 ${F.seeds}개 × 출격 방식 2가지(야옹컴 / 위기 때 싼 유닛부터) 중 나은 쪽.`);
+L.push('- **측정 방식**: 기준 덱 **레드·옐로우·블루·퍼플**에 후보 1명을 더한 덱의 성능에서 더하지 않은 덱의 성능을 뺀다. 성능은 승리 시 1 + (1 − 걸린 초/300), 패배 시 적 성 진행도. **이득 0.1 = 클리어 약 30초 단축**이다. 참조 덱의 평균 클리어는 '+F.refSummary.meanSec+'초, 승률 '+F.refSummary.winRate+'%.');
 L.push('');
-L.push('### 왜 이 맵인가','');
-L.push('레전드 1~20장 × ★1~★3(444개 조건) 중에서 골랐다.');
+L.push('### 왜 이 맵인가 (10-17 선정 기록 — 선정은 그대로 유지)','');
+L.push('레전드 1~20장 × ★1~★3(444개 조건) 중에서 골랐다. 아래 표는 선정 당시(10-17 코드) 측정이다.');
 L.push('- 보물이 적용되면 **강한 기준 덱(가넷·라피스 등 9종)은 444개 조건을 전부 이기고 최장 68초**라 아군 1명을 더해도 차이가 안 난다. 그래서 약한 4종 덱으로 바꿨다(이 덱이 이 조건들을 50~284초에 이긴다).');
-L.push('- 후보 14곳을 아군 106명 전부로 시험해, 점수 퍼짐·동점 비율·다른 맵과의 순위 일치도를 비교하고 상위 4곳을 시드 6개로 정밀 시험했다.');
+L.push('- 후보 14곳을 아군 106명(당시 전원) 전부로 시험해, 점수 퍼짐·동점 비율·다른 맵과의 순위 일치도를 비교하고 상위 4곳을 시드 6개로 정밀 시험했다.');
 L.push('');
 L.push('|맵|위치|점수 퍼짐 / 평균 표준오차(SNR)|시드 반분 순위 일치|');L.push('|---|---|---:|---:|');
 const rk=o=>{const ks=Object.keys(o).sort((a,b)=>o[b]-o[a]);const r={};ks.forEach((k,i)=>r[k]=i);return r};
-for(const m of F.maps){
+for(const m of FOLD.maps){
  const i=+m.split(':')[0];
- const means=allies.map(c=>mean(F.seedGains[c][m])),mu=mean(means);
+ const means=allies.filter(c=>FOLD.seedGains[c]).map(c=>mean(FOLD.seedGains[c][m])),mu=mean(means);
  const sdv=Math.sqrt(mean(means.map(x=>(x-mu)**2)));
- const se=mean(allies.map(c=>{const g=F.seedGains[c][m];const mm=mean(g);return Math.sqrt(g.reduce((s,x)=>s+(x-mm)**2,0)/5)/Math.sqrt(6)}));
- const h1={},h2={};for(const c of allies){const g=F.seedGains[c][m];h1[c]=(g[0]+g[2]+g[4])/3;h2[c]=(g[1]+g[3]+g[5])/3}
- const ra=rk(h1),rb=rk(h2);let ss=0;for(const k of allies)ss+=(ra[k]-rb[k])**2;const split=1-6*ss/(n*(n*n-1));
+ const se=mean(allies.filter(c=>FOLD.seedGains[c]).map(c=>{const g=FOLD.seedGains[c][m];const mm=mean(g);return Math.sqrt(g.reduce((s,x)=>s+(x-mm)**2,0)/5)/Math.sqrt(6)}));
+ const h1={},h2={};for(const c of allies.filter(c=>FOLD.seedGains[c])){const g=FOLD.seedGains[c][m];h1[c]=(g[0]+g[2]+g[4])/3;h2[c]=(g[1]+g[3]+g[5])/3}
+ const ra=rk(h1),rb=rk(h2),n0=Object.keys(h1).length;let ss=0;for(const k of Object.keys(h1))ss+=(ra[k]-rb[k])**2;const split=1-6*ss/(n0*(n0*n0-1));
  L.push(`|${S.names[i]} ★${m.split(':')[1]}${m===MAP?' **(선정)**':''}|레전드 ${S.subOf[i]}장|${sdv.toFixed(3)} / ${se.toFixed(4)} (${(sdv/se).toFixed(1)})|${split.toFixed(2)}|`);
 }
 L.push('');
@@ -160,10 +160,10 @@ L.push(`- **세분 티어 한 칸 안에 95% 구간이 들어가는 캐릭터: 0
 L.push('- 오차가 작은 캐릭터: 카민·프리즘·스프링·로즈·라즈베리. 큰 캐릭터: 라피스·옵시디언·길리먼 블루·토파즈·가넷(기준 덱 멤버라 "빼서 잰" 값이 시드에 크게 흔들림).');
 L.push('- **결론**: 티어표의 +/− 세분과 OP~F 구분은 측정이 뒷받침하지 못한다. 상·중상·중·중하·하 정도의 **굵은 5단계**가 안전하다.');
 L.push('');
-L.push('## 부록 B. 전체 106명 표','');
+L.push(`## 부록 B. 전체 ${n}명 표`,'');
 L.push('|순위(95% 구간)|캐릭터|등급|클리어 단축|±표준오차(초)|초당 피해|체력|사거리|재사용|3진 Δ(초)|');L.push('|---:|---|---|---:|---:|---:|---:|---:|---:|---:|');
 for(const c of A.order){const f=A.feat[c],t=TF.out[c];L.push(`|${A.rank[c]} (${rankCI[c][0]}~${rankCI[c][1]})|${names(c)}${A.adjusted[c]?' †':''}|${GR[e.gradeOf(c)]}|${fmtSec(A.gain[c])}|${Math.round(A.se[c]*300)}|${Math.round(f.dps).toLocaleString()}|${Math.round(f.hp).toLocaleString()}|${Math.round(f.range*10)/10}|${f.cd}|${HAS3.includes(c)&&t?fmtSec(t.delta):'-'}|`)}
 L.push('','† 기준 덱 멤버(레드·옐로우·블루·퍼플): 두 번째 기준 덱에서 보정한 값.','');
-fs.writeFileSync(path.join(root,'docs/캐릭터-성능-원인-보고서-2026-10-17.md'),L.join('\n'));
+fs.writeFileSync(path.join(root,'docs/캐릭터-성능-원인-보고서-2026-10-19.md'),L.join('\n'));
 console.log('written',L.length,'lines');
 process.exit(0);

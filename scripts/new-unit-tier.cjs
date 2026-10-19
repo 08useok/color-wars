@@ -2,7 +2,7 @@
 // 조건은 티어표와 같다: 보물 전부 완성 · 전원 Lv.30 · 기준 덱 레드·옐로우·블루·퍼플 + 후보 1칸 · 출격 방식 auto/smart2 중 높은 쪽.
 // 사용: UNIT=turquoise [MODS='{"turquoise":{"cost":3800}}'] [SEEDS=10] [TRUE=1] node scripts/new-unit-tier.cjs
 //   MODS = 능력치 수정(unitMods 형식), TRUE=1 = 그 캐릭터를 3진으로 잰다.
-// 비교 분포는 docs/simulations/char-analysis-2026-10-17.json(이득, 초 = 이득×300). 기준 덱 멤버 4명은 자기 자신을 못 재니 UNIT으로 쓸 수 없다.
+// 비교 분포는 docs/simulations/char-analysis-2026-10-19.json(이득, 초 = 이득×300). 기준 덱 멤버 4명은 자기 자신을 못 재니 UNIT으로 쓸 수 없다.
 // 주의: 분포는 그 시점 코드로 쟀다. 그 뒤 전투 규칙이 바뀌었으면 기존 캐릭터(ANCHOR, 기본 가넷)를 같이 다시 재서 티어표 값과 맞는지 검증하고, 어긋나면 경고가 뜬다 → 분포부터 다시 재야 한다.
 const fs=require('fs'),path=require('path');
 const {runJobs}=require('./sim-pool.cjs');
@@ -13,13 +13,7 @@ const UNIT=process.env.UNIT,MODS=process.env.MODS?JSON.parse(process.env.MODS):n
 const BANDS=['OP','SSS','SS','S','A','B','C','D','E','F','X'],EDGES=[70,62,54,46,38,30,22,14,10,6];// 티어표(make-tier-v3.cjs)와 같은 8초 간격
 const bandOf=g=>{for(let b=0;b<EDGES.length;b++)if(g>=EDGES[b])return BANDS[b];return 'X'};
 (async()=>{
- const A=rd('docs/simulations/char-analysis-2026-10-17.json'),F=rd('docs/simulations/bench20-final-2026-10-17.json');
- // Follow the same supplemental measurements as make-tier-v3.cjs rather than comparing against stale ranges.
- for(const file of ['subspecies-tier-2026-10-18.json','range-tier-refresh-2026-10-18.json','range-tier-calibration-2026-10-18.json']){
-  const p=path.join(root,'docs/simulations',file);if(!fs.existsSync(p))continue;
-  const supplement=JSON.parse(fs.readFileSync(p,'utf8'));if(supplement.map!==A.map)throw Error('비교 맵 불일치: '+file);
-  for(const r of supplement.rows){A.gain[r.type]=r.gain/300;A.se[r.type]=r.se/300}
- }
+ const A=rd('docs/simulations/char-analysis-2026-10-19.json'),F=rd('docs/simulations/bench20-final-2026-10-19.json');
  const MAP=A.map,[mi,mc]=MAP.split(':').map(Number),core=F.core9,policies=F.policies;
  const e=mk();
  if(!UNIT||!e.roster.includes(UNIT)){console.error('UNIT=<id> 필요. 없는 id:',UNIT);process.exit(1)}
