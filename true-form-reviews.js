@@ -12,7 +12,8 @@ function trueFormReview(type,s){
 <p>체력과 공격력이 각각 <b>${Math.round(s.hp/base.hp*100)}%</b>, <b>${Math.round(s.atk/base.atk*100)}%</b>로 늘었다. <b>개체 공격에서 범위 2연타</b>로 바뀌었으며, 레드카드와 휘슬 공격에 각각 총공격력의 50%가 배분된다. 떠 있는 적 초데미지는 두 타격 모두 유지한다.</p>
 <p>가격은 ${num(base.cost)}원에서 <b>${num(s.cost)}원</b>으로, 재생산 시간은 ${dec(base.cooldown)}초에서 <b>${dec(s.cooldown)}초</b>로 줄었다. 앞의 잡몹 하나에게 공격이 소모되던 약점을 해결하고, 여러 마리를 쌓아 떠 있는 적 무리를 처리하는 양산 범위 딜러로 쓰기 좋아졌다.</p>
 <p>다만 사거리와 ${dec(s.interval)}초의 공격 주기는 유지된다. 두 타격 사이에 적이 밀려나거나 코랄이 히트백을 당하면 남은 타격을 놓칠 수 있다. 떠 있는 적 이외에는 초데미지가 적용되지 않고, 짧은 사거리 때문에 고방·메즈 지원이 필요하다.</p>
-<p>무속성 기준 DPS는 <b>${num(m.maximumDps)}</b>, 떠 있는 적 상대 DPS는 <b>${num(m.traits.floating.dps)}</b>이다. 이번 상향의 핵심은 2연타 자체의 피해 두 배가 아니라 <b>범위화와 생산성 개선</b>이다.</p></section>`;
+<p>무속성 기준 DPS는 <b>${num(m.maximumDps)}</b>, 떠 있는 적 상대 DPS는 <b>${num(m.traits.floating.dps)}</b>이다. 이번 상향의 핵심은 2연타 자체의 피해 두 배가 아니라 <b>범위화와 생산성 개선</b>이다.</p>
+<p>기준 맵인 황제의 야옹이 ★3에서는 3진 효과로 클리어가 약 <b>8.5초</b> 더 빨라지지만, 현재 측정된 <b>레어 3진 6명 중에서는 마지막</b>이다. 이 맵은 무속성 적이 98%라 코랄의 특화인 떠 있는 적 초데미지가 거의 쓰이지 않으므로, 이 순위는 범위화와 생산성 개선의 몫만 반영한 값이다. 떠 있는 적이 많은 전선에서는 다르게 나올 수 있다.</p></section>`;
  }
  if(type==='hotpink'){
   const m=allyComparisonMetrics(s),taken=1-s.atkDownPct,effective=s.hp/taken;
