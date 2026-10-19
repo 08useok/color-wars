@@ -917,7 +917,7 @@ data.units.mint={hp:650,atk:340,interval:3.4,speed:5,range:17.5,cost:480,cooldow
 data.units.azure={hp:800,atk:520,interval:3.2,speed:6.5,range:9,cost:400,cooldown:14,knockbacks:2,dash:true};
 data.units.crystal={hp:700,atk:460,interval:3.8,speed:5,range:22.5,cost:450,cooldown:16,knockbacks:3,pierce:3,critChance:.15,critMult:2,floatStrong:true};
 data.units.lavender={hp:500,atk:260,interval:4,speed:5,range:23.5,cost:450,cooldown:15,knockbacks:3,area:true,atkDownPct:.5,atkDownChance:.4,atkDownDuration:4};
-data.units.salmon={hp:585,atk:559,interval:4.2,speed:5,range:25,cost:475,cooldown:17,knockbacks:3,pull:true};
+data.units.salmon={hp:585,atk:559,interval:3.4,speed:5,range:25,cost:475,cooldown:14,knockbacks:3,pull:true};
 data.units.raspberry={hp:490,atk:552,interval:4.5,speed:3,range:30,cost:500,cooldown:18,knockbacks:3,windup:.8,critChance:.1,critMult:2,damageTiers:[{max:10,dmg:552},{max:17.5,dmg:920},{max:25,dmg:1471},{max:999,dmg:1962}]};
 data.units.onyx={hp:2784,atk:1624,interval:3.4,speed:4.5,range:8,cost:900,cooldown:30,knockbacks:3,area:true,bossDamage:1.5,attackDuration:.9,windup:.45};
 // 레어 14종 (정식 1): 세계편 3장 스테이지 클리어로 해금. 특성 대응 메즈/엄강/맷집 + 양산형 딜러.

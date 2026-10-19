@@ -22,12 +22,12 @@ const CODEX_RARITY_EXTREMES={
       "seconds": -5.3
     }
   },
-  "gold": {
+  "salmon": {
     "3": {
       "grade": "기본",
       "position": "1등",
       "count": 4,
-      "seconds": 26.9
+      "seconds": 27.4
     }
   },
   "obsidian": {
@@ -114,16 +114,16 @@ const CODEX_RARITY_EXTREMES={
 const CODEX_RARITY_POSITIONS={
   "blue": "상위권 기본 캐릭터",
   "orange": "상위권 기본 캐릭터",
+  "salmon": "상위권 기본 캐릭터",
   "purple": "상위권 기본 캐릭터",
   "chartreuse": "상위권 기본 캐릭터",
-  "cyan": "상위권 기본 캐릭터",
+  "cyan": "중위권 기본 캐릭터",
   "green": "중위권 기본 캐릭터",
   "red": "중위권 기본 캐릭터",
   "yellow": "중위권 기본 캐릭터",
-  "pink": "중위권 기본 캐릭터",
+  "pink": "하위권 기본 캐릭터",
   "crimson": "하위권 기본 캐릭터",
   "ivory": "하위권 기본 캐릭터",
-  "salmon": "하위권 기본 캐릭터",
   "mint": "하위권 기본 캐릭터",
   "azure": "하위권 기본 캐릭터",
   "lavender": "최하위권 기본 캐릭터",
