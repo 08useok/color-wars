@@ -77,6 +77,16 @@ function allyReview(type,evolved){
   else if(type==='lightcream')text+=' <b>메탈 대항 크리티컬 딜러로는 그레이프프루트 펄프에 밀린다.</b> 펄프는 크리티컬 확률과 한 방 피해, 체력이 높다. 다만 라이트 크림은 가격이 저렴하고 공격 간격이 짧으며 사거리도 조금 길어 완전한 하위호환은 아니다. 펄프가 없으면 대체용으로 쓸 수 있다.';
  }
  if(rareBestLine[type])text+=` <b>${rareBestLine[type]}</b>`;
+ let evolution='',weakenHealth='';
+ if(s.evolved&&!s.trueForm&&!data.units[type].noEvolve){
+  const first=codexReviewStats(type,false);
+  evolution=`<p>진화 후 체력과 공격력이 각각 <b>${Math.round(s.hp/first.hp*100)}%</b>, <b>${Math.round(s.atk/first.atk*100)}%</b>가 되었다.</p>`;
+ }
+ if(s.evolved&&!s.trueForm&&s.atkDownPct&&!(s.hiddenAbility&&!codexWiki&&!futureOpen())){
+  const multiplier=1/(1-s.atkDownPct),effective=Math.round(s.hp*multiplier),target=s.statusVs?.length?targets(s.statusVs):'효과 대상인 적';
+  const hpText=typeof codexHighStat==='function'?codexHighStat(effective,'hp'):num(effective);
+  weakenHealth=`<p>${target}에게 공격력 다운이 유지되면 그 적에게 받는 피해를 기준으로 실효 체력은 <b>${Number(multiplier.toFixed(2))}배(${hpText})</b>가 된다. 실제 최대 체력이 늘어나는 것은 아니며, 효과가 걸리지 않은 적에게는 적용되지 않는다.</p>`;
+ }
  const comparison=typeof allyComparisonText==='function'&&!(s.hiddenAbility&&!codexWiki&&!futureOpen())?`<p>${allyComparisonText(s)}</p>`:'';
- return `<section class="codex-review"><h3>총평</h3><small>합산 Lv.30 · ${s.trueForm?'3진':s.evolved?'2진':'1진'} · 세계편 2·3장 가격 기준</small><p>${text}</p>${comparison}</section>`;
+ return `<section class="codex-review"><h3>총평</h3><small>합산 Lv.30 · ${s.trueForm?'3진':s.evolved?'2진':'1진'} · 세계편 2·3장 가격 기준</small>${evolution}<p>${text}</p>${weakenHealth}${allyDamageRecord(type,s)}${comparison}</section>`;
 }

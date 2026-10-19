@@ -40,7 +40,7 @@ for(let b=0;b<400;b++){
 }
 const q=(a,p)=>{const s=[...a].sort((x,y)=>x-y);return s[Math.round(p*(s.length-1))]};
 const rci=Object.fromEntries(allies.map(c=>[c,[q(rk[c],.025),q(rk[c],.975)]]));
-// ---- Base score bands stay unchanged. Split each non-OP/X band into rank thirds.
+// ---- Base score bands stay unchanged. Split each non-OP band into rank thirds.
 const BANDS=['OP','SSS','SS','S','A','B','C','D','E','F','X'];
 const EDGES=[70,62,54,46,38,30,22,14,10,6];// 이 값 이상이 위 구간
 const bandOfSec=g=>{for(let b=0;b<EDGES.length;b++)if(g>=EDGES[b])return b;return BANDS.length-1};
@@ -48,16 +48,18 @@ const label={},bandMembers=BANDS.map(()=>[]);
 for(const c of allies){const b=bandOfSec(gs(c));label[c]=BANDS[b];bandMembers[b].push(c)}
 const SIZE=bandMembers.map(m=>m.length);
 const baseLabel={...label};
-for(let b=1;b<BANDS.length-1;b++){
+for(let b=1;b<BANDS.length;b++){
  const members=bandMembers[b],cut=Math.floor(members.length/3);
  members.forEach((c,i)=>{label[c]=BANDS[b]+(i<cut?'+':cut&&i>=members.length-cut?'-':'')});
 }
-const DISPLAY_BANDS=BANDS.flatMap((b,i)=>i===0||i===BANDS.length-1?[b]:[b+'+',b,b+'-']);
+const DISPLAY_BANDS=BANDS.flatMap((b,i)=>i===0?[b]:[b+'+',b,b+'-']);
 // 경계 근접: 점수가 구간 경계에서 표준오차 이내면 이웃 구간과 구분되지 않는다
 const nearEdge=c=>{const g=gs(c),se=Math.max(2,A.se[c]*300);return EDGES.some(ed=>Math.abs(g-ed)<se)};
 const labelAt=(g)=>BANDS[bandOfSec(g)];
 const rankOf=(g,own)=>allies.filter(c=>c!==own&&gs(c)>g).length+1;
 const HAS3=Object.keys(TF.out);
+const coralReleasePath=path.join(root,'docs/simulations/coral-3-release-2026-10-19.json');
+const coralRelease=fs.existsSync(coralReleasePath)?JSON.parse(fs.readFileSync(coralReleasePath,'utf8')):null;
 const L=[];
 L.push(rangeRefresh?'# 티어표 — 2진 / 3진 따로 (2026-10-18 재측정)':'# 티어표 — 2진 / 3진 따로 (2026-10-17)','');
 L.push('이전 티어표(10-16, 기준 맵 5곳 합산)를 대체한다. **보물 전부 완성 · 전원 Lv.30**, 테스트 맵 **황제의 야옹이 ★3(레전드 20장)**의 이득 순위 기준이다. 자세한 근거·원인은 [캐릭터-성능-원인-보고서](캐릭터-성능-원인-보고서-2026-10-17.md).','');
@@ -65,7 +67,7 @@ L.push('## 읽는 법','');
 L.push('- **이득(초)** = 기준 덱(레드·옐로우·블루·퍼플)에 그 캐릭터를 더했을 때 이 맵의 클리어가 **몇 초 빨라지는가**. 기준 덱 멤버 4명은 겹치지 않는 두 번째 기준 덱으로 보정했다(†).');
 L.push('- **순위 95% 구간**: 시드를 다시 뽑아 400번 계산한 순위 범위. **구간이 겹치는 이웃 티어와는 사실상 같은 급**이다.');
 L.push('- **기본 구간**: 이득 70초 이상 OP · 62~70 SSS · 54~62 SS · 46~54 S · 38~46 A · 30~38 B · 22~30 C · 14~22 D · 10~14 E · 6~10 F · 6 미만 X. 기존 경계와 측정값은 유지한다.');
-L.push('- **+/− 세분화**: OP·X를 제외한 각 기본 등급 안에서 순위 상위 1/3은 +, 하위 1/3은 -, 가운데는 무표다. 예: A+ → A → A- → B+ → B → B-. 각 끝에 배정할 인원은 등급 인원÷3의 내림값이며, 남는 인원은 가운데에 둔다. 3명 미만인 등급은 무표로 둔다.');
+L.push('- **+/− 세분화**: OP를 제외한 각 기본 등급 안에서 순위 상위 1/3은 +, 하위 1/3은 -, 가운데는 무표다. 예: A+ → A → A- → B+ → B → B-. 각 끝에 배정할 인원은 등급 인원÷3의 내림값이며, 남는 인원은 가운데에 둔다. 3명 미만인 등급은 무표로 둔다.');
 L.push('- 기존 세모 표시는 없앴다. **+/−는 같은 등급 안의 순서 표시이며 통계적으로 확정된 성능 차이가 아니다.** 측정 불확실성은 상세 표의 순위 95% 구간과 이득 ±표준오차로 확인한다.');
 L.push(`- **X(절대적 쓰레기)**: 이 맵에서 더해도 클리어가 **6초 미만** 빨라지는 캐릭터(${bandMembers[10].map(names).join('·')}). "이 맵에서 쓸모없다"이지 모든 상황에서 그렇다는 뜻은 아니다(특화·3진은 아래 참조).`);
 L.push('- 이 맵은 **무속성 적 98%**라 좀비·메탈·에이리언·떠 있는 적 특화 능력은 평가되지 않는다. 특화 캐릭터가 낮게 나오면 "특화 맵 시험이 필요"로 읽는다.');
@@ -86,18 +88,23 @@ L.push('### 2진 상세','');
 L.push('|티어|순위 (95% 구간)|캐릭터|등급|클리어 단축|');L.push('|---|---:|---|---|---:|');
 allies.forEach((c,i)=>{L.push(`|${label[c]}|${i+1} (${rci[c][0]}~${rci[c][1]})|${names(c)}${A.adjusted[c]?' †':''}|${GR[e.gradeOf(c)]}|${sec(A.gain[c])>=0?sec(A.gain[c])+'초':'−'+Math.abs(sec(A.gain[c]))+'초(지연)'}±${Math.round(A.se[c]*300)}|`)});
 L.push('','† 기준 덱 멤버(레드·옐로우·블루·퍼플): 두 번째 기준 덱에서 보정한 값이라 순위가 더 불확실하다.','');
-L.push('## 3진 티어표 (전용 3진 그림이 있는 9명)','');
+L.push('## 3진 티어표 (기존 조건 측정 9명'+(coralRelease?' · 코랄 신규 시험 별도':'')+')','');
 L.push('3진 그림이 있는 캐릭터만 대상이다. **그 캐릭터만 3진으로, 나머지는 2진 그대로** 둔 상태에서 같은 맵의 이득을 쟀고, 2진 분포(위 표)와 같은 8초 구간에 넣어 티어를 정했다.');
 L.push('');
-L.push('|3진 티어|3진 순위|캐릭터|2진 티어 → 3진 티어|3진 이득 (2진 이득 + 3진 효과)|3진 정의 상태|');L.push('|---|---:|---|---|---:|---|');
+L.push('|3진 티어|3진 순위|캐릭터|등급|2진 티어 → 3진 티어|3진 이득 (2진 이득 + 3진 효과)|3진 정의 상태|');L.push('|---|---:|---|---|---|---:|---|');
 const state={raspberry:'**새 정의**(체력·공격 ×1.5, 간격 3초, 사거리 39, 에일 초뎀, 베리어 브레이커 25%, 무한 관통·성장 ×1.21·상한 20)',gold:'기존 정의(5연타·처치 돈 ×1.5)',clover:'기존 정의(3연타·크리티컬 25%)',hotpink:'기존 정의(사거리 30 범위)',salmon:'기존 정의(파동 스토퍼 등)',cream:'기존 정의(범위·둔화 65%)',beige:'기존 정의(사거리 14·정지 60%)',crystal:'**새 정의**(크리티컬 20%, 에일 엄강, 베리어 브레이커 50%, 관통 4명 유지, 체력·공격 ×1.2)',indigo:'**새 정의**(체력·공격 ×1.4, 정지 55%·2.5초, 공격력 다운 무효)'};
 const rows3=HAS3.map(c=>{const g3=gs(c)+TF.out[c].delta*300;return {c,g3,lab:labelAt(g3),rank:rankOf(g3,c)}}).sort((a,b)=>b.g3-a.g3);
 // Third forms form their own table and are split into thirds within that table's base bands.
-for(const base of BANDS.slice(1,-1)){
+for(const base of BANDS.slice(1)){
  const members=rows3.filter(r=>r.lab===base),cut=Math.floor(members.length/3);
  members.forEach((r,i)=>{r.lab=base+(i<cut?'+':cut&&i>=members.length-cut?'-':'')});
 }
-for(const r of rows3){const d=TF.out[r.c].delta*300;L.push(`|${r.lab}|${r.rank}|${names(r.c)}|${label[r.c]} → **${r.lab}**|${Math.round(r.g3)}초 (${Math.round(gs(r.c))}초 ${d>=0?'+':'−'} ${Math.abs(Math.round(d))}초)±${Math.round(TF.out[r.c].se*300)}|${state[r.c]}|`)}
+for(const r of rows3){const d=TF.out[r.c].delta*300;L.push(`|${r.lab}|${r.rank}|${names(r.c)}|${GR[e.gradeOf(r.c)]}|${label[r.c]} → **${r.lab}**|${Math.round(r.g3)}초 (${Math.round(gs(r.c))}초 ${d>=0?'+':'−'} ${Math.abs(Math.round(d))}초)±${Math.round(TF.out[r.c].se*300)}|${state[r.c]}|`)}
+if(coralRelease){
+ const r=coralRelease.summary.find(r=>r.i===405&&r.crown===3);
+ L.push(`|미정|—|코랄|레어|${label.coral} → 미정|신규 조건: ${(r.baseline.meanWinSeconds-r.third.meanWinSeconds).toFixed(2)}초 단축|6.8.0 · 범위 2연타(각 50%)·공체 150%/140%·350원·재생산 20초|`);
+ L.push('','코랄은 **시작부터 수입 만렙**으로 새로 측정했다. 같은 조건의 2진은 기준 덱 대비 7.25초, 3진은 14.16초 단축으로 3진 효과는 6.92초다. 기존 2진 분포의 코랄 이득(17.08초)과 달라 기존 티어 구간에 섞지 않고 미정으로 둔다. 세부 결과는 [코랄 3진 시험](코랄-3진-초안-전투시험-2026-10-19.md)과 정식 코드 360판 재검증 자료를 참고한다.');
+}
 L.push('');
 const solid=r=>Math.abs(TF.out[r.c].delta)*300>2*TF.out[r.c].se*300&&TF.out[r.c].delta*300>=3;// 오차의 2배 이상이고 3초 이상 단축될 때만 의미 있는 변화
 const up=rows3.filter(r=>solid(r)&&BANDS.indexOf(r.lab.replace(/[+-]$/,''))<BANDS.indexOf(baseLabel[r.c]));
@@ -116,7 +123,7 @@ fs.writeFileSync(path.join(root,'docs/티어표-2진-3진-2026-10-17.md'),L.join
 console.log('인원',BANDS.map((b,i)=>b+' '+bandMembers[i].length).join(' · '));
 console.log('3진',rows3.map(r=>names(r.c)+' '+label[r.c]+'→'+r.lab+'('+r.rank+'위)').join(', '));
 // Rarity views retain the global labels so the same unit never changes tier merely by filtering.
-const rarityDoc=['# 등급별 아군 티어리스트 (2026-10-18)','','기본 · EX · 레어 · 슈퍼 레어 · 울슈레별로 기존 티어표를 나눴다. **전원 Lv.30 · 보물 완성 · 황제의 야옹이 ★3** 측정 결과이며, 추가 전투 없이 기존 최신 사거리·아종 측정값을 사용했다.','','- 티어와 +/−는 [전체 티어표](티어표-2진-3진-2026-10-17.md)와 동일하다. 레어도마다 티어를 다시 배정하지 않는다.','- 등급 내 순위는 같은 레어도끼리 비교한 순서다. 2진과 3진은 따로 표시한다.','- 이득은 기준 덱 대비 클리어 단축 시간이다. 오차가 겹치는 순위는 확정적인 우열이 아니다.','- 무속성 중심 맵 한 곳 기준이므로 특화 능력은 충분히 반영되지 않는다. X도 이 맵에서 낮게 측정됐다는 뜻이다.','','## 인원 요약','','|등급|2진|3진|','|---|---:|---:|'];
+const rarityDoc=['# 등급별 아군 티어리스트 (2026-10-18)','','기본 · EX · 레어 · 슈퍼 레어 · 울슈레별로 기존 티어표를 나눴다. **전원 Lv.30 · 보물 완성 · 황제의 야옹이 ★3** 측정 결과이며, 추가 전투 없이 기존 최신 사거리·아종 측정값을 사용했다.','','- 티어와 +/−는 [전체 티어표](티어표-2진-3진-2026-10-17.md)와 동일하다. 레어도마다 티어를 다시 배정하지 않는다.','- 등급 내 순위는 같은 레어도끼리 비교한 순서다. 2진과 3진은 따로 표시한다. 2진 평가의 상위권·중위권·하위권·최하위권은 등급 내 순위를 순서대로 약 25%씩 나눈 표현이다.','- 이득은 기준 덱 대비 클리어 단축 시간이다. 오차가 겹치는 순위는 확정적인 우열이 아니다.','- 무속성 중심 맵 한 곳 기준이므로 특화 능력은 충분히 반영되지 않는다. X도 이 맵에서 낮게 측정됐다는 뜻이다.','','## 인원 요약','','|등급|2진|3진|','|---|---:|---:|'];
 const rarityOrder=['basic','ex','rare','sr','uber'];
 for(const grade of rarityOrder)rarityDoc.push(`|${GR[grade]}|${allies.filter(c=>e.gradeOf(c)===grade).length}|${rows3.filter(r=>e.gradeOf(r.c)===grade).length}|`);
 let counted=0,counted3=0;
@@ -133,6 +140,7 @@ for(const grade of rarityOrder){
   rarityDoc.push('|등급 내 순위|캐릭터|2진 → 3진 티어|3진 클리어 단축|3진 효과 ±표준오차|','|---:|---|---|---:|---:|');
   third.forEach((r,i)=>rarityDoc.push(`|${i+1}|${names(r.c)}|${label[r.c]} → ${r.lab}|${r.g3.toFixed(1)}초|${(TF.out[r.c].delta*300).toFixed(1)} ± ${(TF.out[r.c].se*300).toFixed(1)}초|`));
  }
+ if(grade==='rare'&&coralRelease)rarityDoc.push('','**코랄 3진 추가(6.8.0): 티어·등급 내 순위 미정.** 시작 수입 만렙 조건으로 360판 검증했으며, 황제의 야옹이 ★3에서 2진보다 6.92초 빨랐다. 기존 측정 분포와 기준값이 달라 위 순위에 합치지 않았다. 위 인원 요약의 3진 수는 기존 조건으로 순위가 측정된 인원이다.');
 }
 if(counted!==allies.length||counted3!==rows3.length)throw Error('등급별 인원 누락');
 rarityDoc.push('','† 기준 덱 멤버는 두 번째 덱에서 보정한 값이다. 3진 표의 오차는 진화 효과의 표준오차이며 절대 성능 오차와 구분한다.','');
@@ -140,6 +148,7 @@ fs.writeFileSync(path.join(root,'docs/등급별-아군-티어리스트-2026-10-1
 const extremes={};
 for(const grade of rarityOrder){
  for(const form of [2,3]){
+  if(form===3&&grade==='rare'&&coralRelease)continue;// Coral needs compatible recalibration before claiming the best/worst rare third form.
   const candidates=form===2?allies.filter(c=>e.gradeOf(c)===grade).map(c=>({c,score:gs(c)})):rows3.filter(r=>e.gradeOf(r.c)===grade).map(r=>({c:r.c,score:r.g3}));
   if(candidates.length<2)continue;
   for(const [position,score]of [['1등',candidates[0].score],['꼴찌',candidates[candidates.length-1].score]])for(const r of candidates.filter(r=>Math.abs(r.score-score)<1e-9)){
@@ -147,7 +156,12 @@ for(const grade of rarityOrder){
   }
  }
 }
-const rankAddon=`// Generated by scripts/make-tier-v3.cjs from the measured rarity tables.\nconst CODEX_RARITY_EXTREMES=${JSON.stringify(extremes,null,2)};\n(function(){\n const previous=allyReview;\n allyReview=function(type,evolved){\n  const html=previous(type,evolved);\n  if(!evolved||!html.includes('codex-verdict'))return html;\n  const form=codexReviewStats(type,evolved).trueForm?3:2,r=CODEX_RARITY_EXTREMES[type]?.[form];\n  if(!r)return html;\n  const text=r.grade+' '+form+'진 '+r.count+'명 중 '+r.position+'. 황제의 야옹이 ★3 · Lv.30 · 보물 완성 기준, 클리어 단축 '+r.seconds+'초. 다른 맵과 특화 성능에서는 순위가 달라질 수 있다.';\n  return html.replace(/(<p class="codex-verdict"><b>[^<]*평가:)/,'$1 <span class="codex-rarity-standing">'+r.grade+' 캐릭터 중 '+r.position+'</span> ·').replace(/<\\/section>\\s*$/,'<p class="codex-rarity-context">'+text+'</p></section>');\n };\n})();\n`;
+const rarityPositions={};
+for(const grade of rarityOrder){
+ const members=allies.filter(c=>e.gradeOf(c)===grade);
+ members.forEach((c,i)=>{const quartile=Math.min(3,Math.floor(i*4/members.length));rarityPositions[c]=['상위권','중위권','하위권','최하위권'][quartile]+' '+GR[grade]+' 캐릭터'});
+}
+const rankAddon=`// Generated by scripts/make-tier-v3.cjs from the measured rarity tables.\nconst CODEX_RARITY_EXTREMES=${JSON.stringify(extremes,null,2)};\nconst CODEX_RARITY_POSITIONS=${JSON.stringify(rarityPositions,null,2)};\n(function(){\n const previous=allyReview;\n allyReview=function(type,evolved){\n  const html=previous(type,evolved);\n  if(!evolved||!html.includes('codex-verdict'))return html;\n  const form=codexReviewStats(type,evolved).trueForm?3:2,r=CODEX_RARITY_EXTREMES[type]?.[form];\n  const position=form===2?CODEX_RARITY_POSITIONS[type]:null;\n  if(!r&&!position)return html;\n  const badge=(r?'<span class="codex-rarity-standing">'+r.grade+' 캐릭터 중 '+r.position+'</span> · ':'')+(position?'<span class="codex-rarity-position">'+position+'</span> · ':'');\n  return html.replace(/(<p class="codex-verdict"><b>[^<]*평가:)/,'$1 '+badge);\n };\n})();\n`;
 fs.writeFileSync(path.join(root,'codex-rarity-standing.js'),rankAddon);
 console.log('등급별 1등·꼴찌',JSON.stringify(extremes));
 console.log(`등급별 표: 2진 ${counted}명, 3진 ${counted3}명`);

@@ -1,0 +1,96 @@
+{
+  "checks": [
+    "old second form unchanged",
+    "dedicated art ready",
+    "chapter gate",
+    "level gate",
+    "resource gate",
+    "evolution succeeds",
+    "exact evolution charge",
+    "no double charge",
+    "HP/attack multipliers",
+    "price cooldown and unchanged range/interval",
+    "area two half hits",
+    "floating massive retained",
+    "first form retained",
+    "assets/coral_3.webp decodes",
+    "assets/profile_coral_3.webp decodes",
+    "all animation states",
+    "two area hits on two targets",
+    "correct half shares target0",
+    "correct half shares target1",
+    "card/whistle timing",
+    "attack stat restored",
+    "pose timing 2",
+    "pose timing 5",
+    "idle pose used",
+    "single knockback pose used",
+    "ownership saved",
+    "true name",
+    "third review rendered",
+    "third thumbnail active",
+    "second preview preserved",
+    "preview preserves ownership",
+    "release version"
+  ],
+  "hits": [
+    {
+      "at": 0.39999999999999997,
+      "amount": 23758,
+      "id": 0
+    },
+    {
+      "at": 0.39999999999999997,
+      "amount": 23758,
+      "id": 1
+    },
+    {
+      "at": 0.7,
+      "amount": 23758,
+      "id": 0
+    },
+    {
+      "at": 0.7,
+      "amount": 23758,
+      "id": 1
+    }
+  ],
+  "stats": {
+    "hp": 29880,
+    "atk": 11879,
+    "interval": 2.4,
+    "speed": 5,
+    "range": 20.4,
+    "cost": 350,
+    "cooldown": 20,
+    "knockbacks": 3,
+    "massiveVs": [
+      "floating"
+    ],
+    "attackDuration": 0.8,
+    "windup": 0.35,
+    "evolved": true,
+    "treasureEligible": true,
+    "trueForm": true,
+    "area": true,
+    "attackClass": "범위",
+    "hits": [
+      {
+        "at": 0.35,
+        "share": 0.5
+      },
+      {
+        "at": 0.65,
+        "share": 0.5
+      }
+    ]
+  },
+  "cost": {
+    "fruit": 2,
+    "seed": 4,
+    "epic": 0,
+    "xp": 60000
+  },
+  "reloadOwnership": true,
+  "errors": []
+}
