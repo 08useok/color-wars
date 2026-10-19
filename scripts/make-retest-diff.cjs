@@ -61,6 +61,7 @@ L.push('### 사이클론 보상 아종 4명 (2진)','','|캐릭터|이득|티어
 const note={herbmint:'메탈 메즈 지원. 메탈이 없는 이 맵에서는 효과가 거의 쓰이지 않는다.',kendonavy:'메탈 대항 근접 딜러. 이 맵은 메탈이 없다.',alchemypurple:'메탈 대항 범위 딜러. 이 맵은 메탈이 없다.',rhythmpink:'메탈 메즈 지원. 이 맵은 메탈이 없다.'};
 for(const c of NEW)if(N[c])L.push(`|${names(c)}|${N[c].sec}초 ±${Math.round(A.se[c]*300)}|${N[c].tier}|${N[c].rank}|${note[c]}|`);
 L.push('','4명 모두 **메탈 상대 전용 능력**이라 메탈이 없는 이 테스트 맵에서는 낮게 나오는 게 정상이다. 메탈 스테이지에서의 실제 가치는 [신규 아종 전투 테스트](신규-아종-전투-테스트-2026-10-18.md)를 보고, 이 표의 순위는 "범용 성능"으로만 읽는다. 사거리가 짧은 보상 아종이라는 점도 이 맵에서는 불리하다.','');
+if(N.platinum){const pc='platinum';L.push('### 플래티넘 (울슈레, 6.8.1)','');L.push(`- 이득 ${N[pc].sec}초 ±${Math.round(A.se[pc]*300)}, 티어 ${N[pc].tier}, 전체 순위 ${N[pc].rank}위(${chars.length}명). 새 표에는 이 캐릭터까지 포함해 측정했다(옛 표에는 없다).`);L.push('- 좀비·메탈을 느리게 하는 범위 지원 + 좀비 킬러라, **무속성 98%인 이 맵에서는 핵심 능력이 쓰이지 않는다.** 좀비·메탈 스테이지에서의 가치는 별도 시험이 필요하다.','')}
 L.push('### 코랄 3진 (6.8.0)','');
 const co=TF.out.coral,cg2=A.gain.coral*300,cd=co.delta*300;
 L.push(`- 코랄 2진: ${cg2.toFixed(1)}초 (${N.coral.tier}, ${N.coral.rank}위). 3진 효과: ${cd>=0?'+':''}${cd.toFixed(1)}초 ±${(co.se*300).toFixed(1)} → 3진 ${(cg2+cd).toFixed(1)}초.`);
