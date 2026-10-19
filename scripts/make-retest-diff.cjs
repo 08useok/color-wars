@@ -55,20 +55,23 @@ const od=dist('o'),nd=dist('n');
 L.push('### 구간별 인원','','|구간|'+ORDER.join('|')+'|','|---|'+ORDER.map(()=>'---:').join('|')+'|');
 L.push(`|옛 (${Object.keys(O).length}명)|${ORDER.map(b=>od[b]||0).join('|')}|`);
 L.push(`|새 (${chars.length}명)|${ORDER.map(b=>nd[b]||0).join('|')}|`,'');
+L.push('### 등급별 변화','','|등급|인원|평균 이득 옛 → 새|평균 변화|밀치기 보유|가장 크게 내린 캐릭터|','|---|---:|---|---:|---:|---|');
+for(const g of ['basic','ex','rare','sr','uber']){const m=common.filter(c=>e.gradeOf(c)===g);if(!m.length)continue;const w=[...m].sort((a,b)=>drop(a)-drop(b))[0];L.push(`|${GR[g]}|${m.length}|${mean(m.map(c=>O[c].sec)).toFixed(1)}초 → ${mean(m.map(c=>N[c].sec)).toFixed(1)}초|${mean(m.map(drop)).toFixed(1)}초|${m.filter(push2).length}명|${names(w)} (${drop(w).toFixed(0)}초)|`)}
+{const gs=['basic','ex','rare','sr','uber'].map(g=>({g,m:common.filter(c=>e.gradeOf(c)===g)})).filter(x=>x.m.length).map(x=>({...x,d:mean(x.m.map(drop)),p:x.m.filter(push2).length}));const big=[...gs].sort((a,b)=>a.d-b.d)[0],small=[...gs].sort((a,b)=>b.d-a.d)[0],mostPush=[...gs].sort((a,b)=>b.p-a.p)[0];L.push('',`평균 하락폭은 **${GR[big.g]}**(${big.d.toFixed(1)}초)가 가장 크고 **${GR[small.g]}**(${small.d.toFixed(1)}초)가 가장 작다. 밀치기·날려버림 보유자는 ${GR[mostPush.g]}에 가장 많다(${mostPush.p}명). 평균 이득 순서는 옛 ${[...gs].sort((a,b)=>mean(b.m.map(c=>O[c].sec))-mean(a.m.map(c=>O[c].sec))).map(x=>GR[x.g]).join(' > ')} → 새 ${[...gs].sort((a,b)=>mean(b.m.map(c=>N[c].sec))-mean(a.m.map(c=>N[c].sec))).map(x=>GR[x.g]).join(' > ')}이다. 새 캐릭터(플래티넘)는 옛 표에 없어 이 비교에서 빠졌다.`,'')}
 L.push('## 4. 새 캐릭터','');
 const NEW=['herbmint','kendonavy','alchemypurple','rhythmpink'];
-L.push('### 사이클론 보상 아종 4명 (2진)','','|캐릭터|이득|티어|순위 (전체 '+chars.length+'명)|한 줄 평|','|---|---:|---|---:|---|');
+L.push('### 사이클론 보상 아종 4명 (2진)','','|캐릭터|등급|이득|티어|순위 (전체 '+chars.length+'명)|한 줄 평|','|---|---|---:|---|---:|---|');
 const note={herbmint:'메탈 메즈 지원. 메탈이 없는 이 맵에서는 효과가 거의 쓰이지 않는다.',kendonavy:'메탈 대항 근접 딜러. 이 맵은 메탈이 없다.',alchemypurple:'메탈 대항 범위 딜러. 이 맵은 메탈이 없다.',rhythmpink:'메탈 메즈 지원. 이 맵은 메탈이 없다.'};
-for(const c of NEW)if(N[c])L.push(`|${names(c)}|${N[c].sec}초 ±${Math.round(A.se[c]*300)}|${N[c].tier}|${N[c].rank}|${note[c]}|`);
+for(const c of NEW)if(N[c])L.push(`|${names(c)}|${GR[e.gradeOf(c)]}|${N[c].sec}초 ±${Math.round(A.se[c]*300)}|${N[c].tier}|${N[c].rank}|${note[c]}|`);
 L.push('','4명 모두 **메탈 상대 전용 능력**이라 메탈이 없는 이 테스트 맵에서는 낮게 나오는 게 정상이다. 메탈 스테이지에서의 실제 가치는 [신규 아종 전투 테스트](신규-아종-전투-테스트-2026-10-18.md)를 보고, 이 표의 순위는 "범용 성능"으로만 읽는다. 사거리가 짧은 보상 아종이라는 점도 이 맵에서는 불리하다.','');
-if(N.platinum){const pc='platinum';L.push('### 플래티넘 (울슈레, 6.8.1)','');L.push(`- 이득 ${N[pc].sec}초 ±${Math.round(A.se[pc]*300)}, 티어 ${N[pc].tier}, 전체 순위 ${N[pc].rank}위(${chars.length}명). 새 표에는 이 캐릭터까지 포함해 측정했다(옛 표에는 없다).`);L.push('- 좀비·메탈을 느리게 하는 범위 지원 + 좀비 킬러라, **무속성 98%인 이 맵에서는 핵심 능력이 쓰이지 않는다.** 좀비·메탈 스테이지에서의 가치는 별도 시험이 필요하다.','')}
+if(N.platinum){const pc='platinum';L.push('### 플래티넘 (울슈레, 6.8.1)','');L.push(`- 등급 ${GR[e.gradeOf(pc)]}. 이득 ${N[pc].sec}초 ±${Math.round(A.se[pc]*300)}, 티어 ${N[pc].tier}, 전체 순위 ${N[pc].rank}위(${chars.length}명). 새 표에는 이 캐릭터까지 포함해 측정했다(옛 표에는 없다).`);L.push('- 좀비·메탈을 느리게 하는 범위 지원 + 좀비 킬러라, **무속성 98%인 이 맵에서는 핵심 능력이 쓰이지 않는다.** 좀비·메탈 스테이지에서의 가치는 별도 시험이 필요하다.','')}
 L.push('### 코랄 3진 (6.8.0)','');
 const co=TF.out.coral,cg2=A.gain.coral*300,cd=co.delta*300;
-L.push(`- 코랄 2진: ${cg2.toFixed(1)}초 (${N.coral.tier}, ${N.coral.rank}위). 3진 효과: ${cd>=0?'+':''}${cd.toFixed(1)}초 ±${(co.se*300).toFixed(1)} → 3진 ${(cg2+cd).toFixed(1)}초.`);
+L.push(`- 코랄(${GR[e.gradeOf('coral')]}) 2진: ${cg2.toFixed(1)}초 (${N.coral.tier}, ${N.coral.rank}위). 3진 효과: ${cd>=0?'+':''}${cd.toFixed(1)}초 ±${(co.se*300).toFixed(1)} → 3진 ${(cg2+cd).toFixed(1)}초.`);
 if(N3.coral)L.push(`- 3진 표에서의 위치: ${N3.coral.tier}, 3진 이득을 전체 2진 분포에 넣었을 때 ${N3.coral.rank}위.`);
 L.push('- 이전에는 코랄 3진이 "시작부터 수입 만렙" 조건의 별도 시험(2진 대비 6.92초 단축)으로만 측정돼 티어가 "미정"이었다. 이번에는 다른 3진과 **같은 조건(보물 완성, 같은 기준 덱)**으로 재서 같은 표에 들어갔다.','');
-L.push(`## 5. 3진 ${Object.keys(N3).length}명`,'','|캐릭터|옛 → 새 3진 이득|옛 → 새 3진 티어|3진 효과 옛 → 새|','|---|---|---|---|');
-for(const c of Object.keys(N3).sort((a,b)=>N3[a].rank-N3[b].rank)){const d=TF.out[c].delta*300;L.push(`|${names(c)}|${O3[c]?O3[c].g3+'초':'—'} → ${N3[c].g3}초|${O3[c]?O3[c].tier:'—'} → ${N3[c].tier}|${O3[c]&&O[c]?(O3[c].g3-O[c].sec>=0?'+':'')+(O3[c].g3-O[c].sec)+'초':'—'} → ${d>=0?'+':''}${d.toFixed(1)}초 ±${(TF.out[c].se*300).toFixed(1)}|`)}
+L.push(`## 5. 3진 ${Object.keys(N3).length}명`,'','|캐릭터|등급|옛 → 새 3진 이득|옛 → 새 3진 티어|3진 효과 옛 → 새|','|---|---|---|---|---|');
+for(const c of Object.keys(N3).sort((a,b)=>N3[a].rank-N3[b].rank)){const d=TF.out[c].delta*300;L.push(`|${names(c)}|${GR[e.gradeOf(c)]}|${O3[c]?O3[c].g3+'초':'—'} → ${N3[c].g3}초|${O3[c]?O3[c].tier:'—'} → ${N3[c].tier}|${O3[c]&&O[c]?(O3[c].g3-O[c].sec>=0?'+':'')+(O3[c].g3-O[c].sec)+'초':'—'} → ${d>=0?'+':''}${d.toFixed(1)}초 ±${(TF.out[c].se*300).toFixed(1)}|`)}
 L.push('','3진 효과(3진 이득 − 2진 이득)는 옛 값과 새 값을 나란히 적었다. 옛 값은 옛 표 두 줄(3진 이득·2진 이득)의 정수 초 차이라 ±1초 오차가 있다.','');
 L.push('## 6. 한계','');
 L.push('- 맵 한 곳(무속성)이라 특화 능력(좀비·메탈·에이리언·떠 있는 적)은 평가되지 않는다. 신규 아종 4명처럼 특화가 본업인 캐릭터는 낮게 나온다.');
