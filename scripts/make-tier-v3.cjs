@@ -22,9 +22,10 @@ for(let b=0;b<400;b++){
 const q=(a,p)=>{const s=[...a].sort((x,y)=>x-y);return s[Math.round(p*(s.length-1))]};
 const rci=Object.fromEntries(allies.map(c=>[c,[q(rk[c],.025),q(rk[c],.975)]]));
 // ---- Base score bands stay unchanged. Split each non-OP band into rank thirds.
-const BANDS=['OP','SSS','SS','S','A','B','C','D','E','F','X'];
-const EDGES=[70,62,54,46,38,30,22,14,10,6];// 이 값 이상이 위 구간
-const bandOfSec=g=>{for(let b=0;b<EDGES.length;b++)if(g>=EDGES[b])return b;return BANDS.length-1};
+const {makeLadder}=require('./tier-ladder.cjs');
+const LAD=makeLadder(allies.map(c=>A.gain[c]*300),allies.map(c=>A.se[c]*300));
+const BANDS=LAD.BANDS,EDGES=LAD.edges;// 구간 폭·시작점은 이번 측정 분포에서 정한다(tier-ladder.cjs)
+const bandOfSec=LAD.bandIndex;
 const label={},bandMembers=BANDS.map(()=>[]);
 for(const c of allies){const b=bandOfSec(gs(c));label[c]=BANDS[b];bandMembers[b].push(c)}
 const SIZE=bandMembers.map(m=>m.length);
@@ -45,15 +46,15 @@ L.push('이전 티어표(10-17~18)를 대체한다. 10-18의 v6.7.2(적이 적 �
 L.push('## 읽는 법','');
 L.push('- **이득(초)** = 기준 덱(레드·옐로우·블루·퍼플)에 그 캐릭터를 더했을 때 이 맵의 클리어가 **몇 초 빨라지는가**. 기준 덱 멤버 4명은 겹치지 않는 두 번째 기준 덱으로 보정했다(†).');
 L.push('- **순위 95% 구간**: 시드를 다시 뽑아 400번 계산한 순위 범위. **구간이 겹치는 이웃 티어와는 사실상 같은 급**이다.');
-L.push('- **기본 구간**: 이득 70초 이상 OP · 62~70 SSS · 54~62 SS · 46~54 S · 38~46 A · 30~38 B · 22~30 C · 14~22 D · 10~14 E · 6~10 F · 6 미만 X. 기존 경계와 측정값은 유지한다.');
+L.push(`- **기본 구간(이번 측정 분포에 맞게 새로 잡음)**: 한 캐릭터의 측정 오차(표준오차 중앙값 ${LAD.medianSe.toFixed(1)}초)로는 두 캐릭터가 95%로 구분되려면 약 ${(1.96*Math.SQRT2*LAD.medianSe).toFixed(1)}초 차이가 나야 해서 구간 폭을 **${LAD.width}초**로 했다. 가장 높은 구간(OP)은 2위 이득의 내림값(${EDGES[0]}초)부터 시작해 OP에 2명 안팎이 들어가게 했다. ${LAD.summary}.`);
 L.push('- **+/− 세분화**: OP를 제외한 각 기본 등급 안에서 순위 상위 1/3은 +, 하위 1/3은 -, 가운데는 무표다. 예: A+ → A → A- → B+ → B → B-. 각 끝에 배정할 인원은 등급 인원÷3의 내림값이며, 남는 인원은 가운데에 둔다. 3명 미만인 등급은 무표로 둔다.');
 L.push('- 기존 세모 표시는 없앴다. **+/−는 같은 등급 안의 순서 표시이며 통계적으로 확정된 성능 차이가 아니다.** 측정 불확실성은 상세 표의 순위 95% 구간과 이득 ±표준오차로 확인한다.');
-L.push(`- **X(절대적 쓰레기)**: 이 맵에서 더해도 클리어가 **6초 미만** 빨라지는 캐릭터(${bandMembers[10].map(names).join('·')}). "이 맵에서 쓸모없다"이지 모든 상황에서 그렇다는 뜻은 아니다(특화·3진은 아래 참조).`);
+L.push(`- **X(절대적 쓰레기)**: 이 맵에서 더하면 클리어가 **${LAD.rangeText(10)}**인 캐릭터(${bandMembers[10].map(names).join('·')}). ${EDGES[EDGES.length-1]<0?'기준 덱만 쓸 때보다 오히려 느려지는 쪽이다. ':''}"이 맵에서 쓸모없다"이지 모든 상황에서 그렇다는 뜻은 아니다(특화·3진은 아래 참조).`);
 L.push('- 이 맵은 **무속성 적 98%**라 좀비·메탈·에이리언·떠 있는 적 특화 능력은 평가되지 않는다. 특화 캐릭터가 낮게 나오면 "특화 맵 시험이 필요"로 읽는다.');
 L.push('');
 L.push(`## 2진 티어표 (${n}명)`,'');
 L.push('|티어|이득 구간|인원|캐릭터|');L.push('|---|---|---:|---|');
-const rangeTxt=b=>b===0?'70초 이상':b===BANDS.length-1?'6초 미만':`${EDGES[b]}~${EDGES[b-1]}초`;
+const rangeTxt=LAD.rangeText;
 DISPLAY_BANDS.forEach(bn=>{const m=allies.filter(c=>label[c]===bn),base=BANDS.indexOf(bn.replace(/[+-]$/,''));if(m.length)L.push(`|**${bn}**|${rangeTxt(base)}${bn.endsWith('+')?' · 상위 1/3':bn.endsWith('-')?' · 하위 1/3':''}|${m.length}|${m.map(names).join(' · ')}|`)});
 L.push('');
 L.push('### 2진 상세','');
@@ -61,7 +62,7 @@ L.push('|티어|순위 (95% 구간)|캐릭터|등급|클리어 단축|');L.push(
 allies.forEach((c,i)=>{L.push(`|${label[c]}|${i+1} (${rci[c][0]}~${rci[c][1]})|${names(c)}${A.adjusted[c]?' †':''}|${GR[e.gradeOf(c)]}|${sec(A.gain[c])>=0?sec(A.gain[c])+'초':'−'+Math.abs(sec(A.gain[c]))+'초(지연)'}±${Math.round(A.se[c]*300)}|`)});
 L.push('','† 기준 덱 멤버(레드·옐로우·블루·퍼플): 두 번째 기준 덱에서 보정한 값이라 순위가 더 불확실하다.','');
 L.push(`## 3진 티어표 (전용 3진 그림이 있는 ${HAS3.length}명)`,'');
-L.push('3진 그림이 있는 캐릭터만 대상이다. **그 캐릭터만 3진으로, 나머지는 2진 그대로** 둔 상태에서 같은 맵의 이득을 쟀고, 2진 분포(위 표)와 같은 8초 구간에 넣어 티어를 정했다.');
+L.push('3진 그림이 있는 캐릭터만 대상이다. **그 캐릭터만 3진으로, 나머지는 2진 그대로** 둔 상태에서 같은 맵의 이득을 쟀고, 2진 분포(위 표)와 같은 구간에 넣어 티어를 정했다.');
 L.push('');
 L.push('|3진 티어|3진 순위|캐릭터|등급|2진 티어 → 3진 티어|3진 이득 (2진 이득 + 3진 효과)|3진 정의 상태|');L.push('|---|---:|---|---|---|---:|---|');
 const state={raspberry:'**새 정의**(체력·공격 ×1.5, 간격 3초, 사거리 39, 에일 초뎀, 베리어 브레이커 25%, 무한 관통·성장 ×1.21·상한 20)',gold:'기존 정의(5연타·처치 돈 ×1.5)',clover:'기존 정의(3연타·크리티컬 25%)',hotpink:'기존 정의(사거리 30 범위)',salmon:'기존 정의(파동 스토퍼 등)',cream:'기존 정의(범위·둔화 65%)',beige:'기존 정의(사거리 14·정지 60%)',coral:'**6.8.0 정의**(범위 2연타 각 50%·공체 150%/140%·350원·재생산 20초)',crystal:'**새 정의**(크리티컬 20%, 에일 엄강, 베리어 브레이커 50%, 관통 4명 유지, 체력·공격 ×1.2)',indigo:'**새 정의**(체력·공격 ×1.4, 정지 55%·2.5초, 공격력 다운 무효)'};

@@ -5,6 +5,8 @@ const mk=require('./full-harness.cjs');
 const root=path.resolve(__dirname,'..');
 const rd=f=>JSON.parse(fs.readFileSync(path.join(root,f),'utf8'));
 const A=rd('docs/simulations/char-analysis-2026-10-19.json'),F=rd('docs/simulations/bench20-final-2026-10-19.json'),TF=rd('docs/simulations/trueform-map-2026-10-19.json'),OLDF=rd('docs/simulations/bench20-final-2026-10-17.json');
+const {makeLadder}=require('./tier-ladder.cjs');
+const LAD=makeLadder(Object.values(A.gain).map(v=>v*300),Object.values(A.se).map(v=>v*300));
 const e=mk();e.setProfile({level:30});
 const names=c=>e.names[c],inv=Object.fromEntries(e.roster.map(c=>[e.names[c],c]));
 const GR={basic:'기본',rare:'레어',sr:'슈퍼 레어',ex:'EX',uber:'울슈레'};
@@ -31,7 +33,7 @@ L.push('|기준 덱 제외 이득(초)|최대|상위 10%|중앙값|하위 10%|�
 L.push(`|옛 표 (10-17, ${oldVals.length}명)|${q(oldVals,0).toFixed(0)}|${q(oldVals,.1).toFixed(0)}|${q(oldVals,.5).toFixed(0)}|${q(oldVals,.9).toFixed(0)}|${q(oldVals,1).toFixed(0)}|`);
 L.push(`|새 표 (10-19, ${newVals.length}명)|${q(newVals,0).toFixed(0)}|${q(newVals,.1).toFixed(0)}|${q(newVals,.5).toFixed(0)}|${q(newVals,.9).toFixed(0)}|${q(newVals,1).toFixed(0)}|`);
 L.push('',`- 기준 덱 단독 클리어는 ${OLDF.refSummary.meanSec}초 → ${F.refSummary.meanSec}초로 빨라졌다. 기준 덱이 이미 빠르게 이기니 **캐릭터를 더해서 줄일 수 있는 시간 자체가 줄었다.** 순위는 크게 안 바뀌었지만(공통 캐릭터 순위 상관 약 0.87) 초 단위 이득은 대체로 절반 수준이 됐다.`);
-L.push('- 8초 간격 티어 구간은 **그대로** 두었다(이득 70초 이상 OP … 6초 미만 X). 그래서 **OP·SSS·SS가 비고** 중간·아래 구간에 인원이 몰린다. 이 맵에서 단축할 수 있는 시간이 줄어든 결과이며, 캐릭터가 일제히 약해졌다는 뜻은 아니다.');
+L.push(`- **티어 구간을 새 분포에 맞게 다시 잡았다.** 옛 구간(8초 폭, 70초 이상 OP … 6초 미만 X)을 그대로 쓰면 OP·SSS·SS가 비고 20명이 X에 몰렸다. 그래서 폭을 이번 오차에서 다시 계산했다: 표준오차 중앙값 ${LAD.medianSe.toFixed(1)}초 × 1.96 × √2 ≈ ${(1.96*Math.SQRT2*LAD.medianSe).toFixed(1)}초 → **${LAD.width}초 폭**, 2위 이득의 내림값(${LAD.edges[0]}초)부터 시작. 새 구간: ${LAD.summary}.`);
 L.push('- 테스트 맵은 **황제의 야옹이 ★3을 유지**했다. 후보 14곳을 3시드로 다시 쟀을 때 이 맵이 여전히 점수 퍼짐 대비 오차(SNR 5.1)와 시드 반분 순위 일치(0.87)가 좋은 쪽이었고, 다른 맵은 아군 절반이 0초 근처에 몰리거나(라스트 갱·프리즌 파괴) 오차가 컸다(간다라·미녀의 뒤태). 원자료: `docs/simulations/bench20-screen-2026-10-19.json`.','');
 L.push('## 3. 누가 얼마나 달라졌나 — 밀치기 계열이 크게 내렸다','');
 const push2=c=>{const d=e.units[c]||{};return !!(d.push||d.blowChance)},pull=c=>{const d=e.units[c]||{};return !!(d.pull||d.forceKnockback)};
@@ -70,7 +72,7 @@ L.push('','3진 효과(3진 이득 − 2진 이득)는 옛 값과 새 값을 나
 L.push('## 6. 한계','');
 L.push('- 맵 한 곳(무속성)이라 특화 능력(좀비·메탈·에이리언·떠 있는 적)은 평가되지 않는다. 신규 아종 4명처럼 특화가 본업인 캐릭터는 낮게 나온다.');
 L.push('- 기준 덱 멤버(레드·옐로우·블루·퍼플)는 두 번째 기준 덱으로 보정한 값이라 오차가 더 크다. 이번 보정 상관은 0.71(옛 0.79)로 약간 낮았다.');
-L.push('- 새 표는 같은 8초 구간을 쓰므로 **구간 이름을 옛 표와 직접 비교하면 안 된다.** 옛 "D"와 새 "D"는 모두 14~22초지만, 맵이 쉬워져 같은 캐릭터가 더 낮은 구간에 놓인다. 비교는 순위로 한다.');
+L.push('- **구간 이름을 옛 표와 직접 비교하면 안 된다.** 구간 폭과 시작점이 달라서 옛 "D"(14~22초)와 새 "D"는 다른 범위다. 옛/새 비교는 순위로 한다.');
 L.push('');
 fs.writeFileSync(path.join(root,'docs/티어-재측정-변화-2026-10-19.md'),L.join('\n'));
 console.log('written',L.length,'lines; 비교',common.length,'명');
