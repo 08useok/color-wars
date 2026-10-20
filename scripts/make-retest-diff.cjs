@@ -1,4 +1,4 @@
-// 티어 재측정 변화 분석: 옛 티어표(커밋된 10-17 문서)와 새 티어표(10-19 문서)를 비교한다. 출력: docs/티어-재측정-변화-2026-10-19.md
+// 티어 재측정 변화 분석: 옛 티어표(커밋된 10-17 문서)와 새 티어표(10-19 문서)를 비교한다. 출력: docs/티어표/티어-재측정-변화-2026-10-19.md
 // 실행: node scripts/make-retest-diff.cjs   (새 문서·docs/simulations/*-2026-10-19.json이 먼저 있어야 한다)
 const fs=require('fs'),path=require('path'),cp=require('child_process');
 const mk=require('./full-harness.cjs');
@@ -11,7 +11,7 @@ const e=mk();e.setProfile({level:30});
 const names=c=>e.names[c],inv=Object.fromEntries(e.roster.map(c=>[e.names[c],c]));
 const GR={basic:'기본',rare:'레어',sr:'슈퍼 레어',ex:'EX',uber:'울슈레'};
 const oldDoc=cp.execSync('git show 42c8ac2:docs/티어표-2진-3진-2026-10-17.md',{maxBuffer:1e8}).toString('utf8').replace(/\r/g,'');
-const newDoc=fs.readFileSync(path.join(root,'docs/티어표-2진-3진-2026-10-19.md'),'utf8').replace(/\r/g,'');
+const newDoc=fs.readFileSync(path.join(root,'docs/티어표/티어표-2진-3진-2026-10-19.md'),'utf8').replace(/\r/g,'');
 const parseDetail=doc=>{const out={};let on=false;for(const l of doc.split('\n')){if(l.startsWith('### 2진 상세')){on=true;continue}if(on&&l.startsWith('## '))break;if(!on||!l.startsWith('|')||l.startsWith('|---')||l.startsWith('|티어'))continue;const p=l.split('|');const c=inv[p[3].replace(/\s*†/,'').trim()];const m=p[5].match(/(-?\d+)초/);if(!c||!m)continue;const rank=+p[2].trim().split(' ')[0];const sec=(p[5].includes('지연')?-1:1)*(+m[1].replace('−','-'));out[c]={tier:p[1].trim().replace('▲',''),rank,sec}}return out};
 const parse3=doc=>{const out={};let on=false;for(const l of doc.split('\n')){if(l.startsWith('## 3진 티어표')){on=true;continue}if(on&&l.startsWith('## '))break;if(!on||!l.startsWith('|')||l.startsWith('|---')||l.startsWith('|3진'))continue;const p=l.split('|');const nm=p[3].trim();const c=inv[nm];const m=l.match(/\|\s*(-?\d+)초 \(/);if(c&&m)out[c]={tier:p[1].trim(),rank:+p[2],g3:+m[1]}}return out};
 const O=parseDetail(oldDoc),N=parseDetail(newDoc),O3=parse3(oldDoc),N3=parse3(newDoc);
@@ -63,7 +63,7 @@ const NEW=['herbmint','kendonavy','alchemypurple','rhythmpink'];
 L.push('### 사이클론 보상 아종 4명 (2진)','','|캐릭터|등급|이득|티어|순위 (전체 '+chars.length+'명)|한 줄 평|','|---|---|---:|---|---:|---|');
 const note={herbmint:'메탈 메즈 지원. 메탈이 없는 이 맵에서는 효과가 거의 쓰이지 않는다.',kendonavy:'메탈 대항 근접 딜러. 이 맵은 메탈이 없다.',alchemypurple:'메탈 대항 범위 딜러. 이 맵은 메탈이 없다.',rhythmpink:'메탈 메즈 지원. 이 맵은 메탈이 없다.'};
 for(const c of NEW)if(N[c])L.push(`|${names(c)}|${GR[e.gradeOf(c)]}|${N[c].sec}초 ±${Math.round(A.se[c]*300)}|${N[c].tier}|${N[c].rank}|${note[c]}|`);
-L.push('','4명 모두 **메탈 상대 전용 능력**이라 메탈이 없는 이 테스트 맵에서는 낮게 나오는 게 정상이다. 메탈 스테이지에서의 실제 가치는 [신규 아종 전투 테스트](신규-아종-전투-테스트-2026-10-18.md)를 보고, 이 표의 순위는 "범용 성능"으로만 읽는다. 사거리가 짧은 보상 아종이라는 점도 이 맵에서는 불리하다.','');
+L.push('','4명 모두 **메탈 상대 전용 능력**이라 메탈이 없는 이 테스트 맵에서는 낮게 나오는 게 정상이다. 메탈 스테이지에서의 실제 가치는 [신규 아종 전투 테스트](../3진-아종/신규-아종-전투-테스트-2026-10-18.md)를 보고, 이 표의 순위는 "범용 성능"으로만 읽는다. 사거리가 짧은 보상 아종이라는 점도 이 맵에서는 불리하다.','');
 if(N.platinum){const pc='platinum';L.push('### 플래티넘 (울슈레, 6.8.1)','');L.push(`- 등급 ${GR[e.gradeOf(pc)]}. 이득 ${N[pc].sec}초 ±${Math.round(A.se[pc]*300)}, 티어 ${N[pc].tier}, 전체 순위 ${N[pc].rank}위(${chars.length}명). 새 표에는 이 캐릭터까지 포함해 측정했다(옛 표에는 없다).`);L.push('- 좀비·메탈을 느리게 하는 범위 지원 + 좀비 킬러라, **무속성 98%인 이 맵에서는 핵심 능력이 쓰이지 않는다.** 좀비·메탈 스테이지에서의 가치는 별도 시험이 필요하다.','')}
 L.push('### 코랄 3진 (6.8.0)','');
 const co=TF.out.coral,cg2=A.gain.coral*300,cd=co.delta*300;
@@ -82,6 +82,6 @@ L.push('- 맵 한 곳(무속성)이라 특화 능력(좀비·메탈·에이리�
 L.push('- 기준 덱 멤버(레드·옐로우·블루·퍼플)는 두 번째 기준 덱으로 보정한 값이라 오차가 더 크다. 이번 보정 상관은 0.71(옛 0.79)로 약간 낮았다.');
 L.push('- **구간 이름을 옛 표와 직접 비교하면 안 된다.** 구간 폭과 시작점이 달라서 옛 "D"(14~22초)와 새 "D"는 다른 범위다. 옛/새 비교는 순위로 한다.');
 L.push('');
-fs.writeFileSync(path.join(root,'docs/티어-재측정-변화-2026-10-19.md'),L.join('\n'));
+fs.writeFileSync(path.join(root,'docs/티어표/티어-재측정-변화-2026-10-19.md'),L.join('\n'));
 console.log('written',L.length,'lines; 비교',common.length,'명');
 process.exit(0);

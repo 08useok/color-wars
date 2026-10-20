@@ -1,4 +1,4 @@
-// 캐릭터 성능·원인·3진 보고서 생성: docs/캐릭터-성능-원인-보고서-2026-10-19.md
+// 캐릭터 성능·원인·3진 보고서 생성: docs/티어표/캐릭터-성능-원인-보고서-2026-10-19.md
 const fs=require('fs'),path=require('path');
 const mk=require('./full-harness.cjs');
 const root=path.resolve(__dirname,'..');
@@ -164,6 +164,6 @@ L.push(`## 부록 B. 전체 ${n}명 표`,'');
 L.push('|순위(95% 구간)|캐릭터|등급|클리어 단축|±표준오차(초)|초당 피해|체력|사거리|재사용|3진 Δ(초)|');L.push('|---:|---|---|---:|---:|---:|---:|---:|---:|---:|');
 for(const c of A.order){const f=A.feat[c],t=TF.out[c];L.push(`|${A.rank[c]} (${rankCI[c][0]}~${rankCI[c][1]})|${names(c)}${A.adjusted[c]?' †':''}|${GR[e.gradeOf(c)]}|${fmtSec(A.gain[c])}|${Math.round(A.se[c]*300)}|${Math.round(f.dps).toLocaleString()}|${Math.round(f.hp).toLocaleString()}|${Math.round(f.range*10)/10}|${f.cd}|${HAS3.includes(c)&&t?fmtSec(t.delta):'-'}|`)}
 L.push('','† 기준 덱 멤버(레드·옐로우·블루·퍼플): 두 번째 기준 덱에서 보정한 값.','');
-fs.writeFileSync(path.join(root,'docs/캐릭터-성능-원인-보고서-2026-10-19.md'),L.join('\n'));
+fs.writeFileSync(path.join(root,'docs/티어표/캐릭터-성능-원인-보고서-2026-10-19.md'),L.join('\n'));
 console.log('written',L.length,'lines');
 process.exit(0);

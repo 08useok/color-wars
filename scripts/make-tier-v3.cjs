@@ -1,4 +1,4 @@
-// 새 티어표(2진 / 3진 따로): 테스트 맵(황제의 야옹이 ★3) 이득 순위 기준. 출력: docs/티어표-2진-3진-2026-10-19.md
+// 새 티어표(2진 / 3진 따로): 테스트 맵(황제의 야옹이 ★3) 이득 순위 기준. 출력: docs/티어표/티어표-2진-3진-2026-10-19.md
 const fs=require('fs'),path=require('path');
 const mk=require('./full-harness.cjs');
 const root=path.resolve(__dirname,'..');
@@ -87,7 +87,7 @@ L.push('- 맵 한 곳 기준이다. 후보 맵끼리 순위 일치도가 0.49~0.
 L.push('- 출격 방식(야옹컴 / 위기 때 싼 유닛부터) 중 나은 쪽을 골랐다. 실제 야옹컴만 쓰면 비싼 울슈레가 방어 유닛의 돈을 먹어 더 낮게 나온다.');
 L.push('- 시험은 커밋 42c8ac2(v6.8.0) 코드 기준이다. 전투 규칙이 바뀌면(예: v6.7.2 넉백 변경) 이전 티어표와 숫자가 달라진다.');
 L.push('');
-fs.writeFileSync(path.join(root,'docs/티어표-2진-3진-2026-10-19.md'),L.join('\n'));
+fs.writeFileSync(path.join(root,'docs/티어표/티어표-2진-3진-2026-10-19.md'),L.join('\n'));
 console.log('인원',BANDS.map((b,i)=>b+' '+bandMembers[i].length).join(' · '));
 console.log('3진',rows3.map(r=>names(r.c)+' '+label[r.c]+'→'+r.lab+'('+r.rank+'위)').join(', '));
 // Rarity views retain the global labels so the same unit never changes tier merely by filtering.
@@ -111,7 +111,7 @@ for(const grade of rarityOrder){
 }
 if(counted!==allies.length||counted3!==rows3.length)throw Error('등급별 인원 누락');
 rarityDoc.push('','† 기준 덱 멤버는 두 번째 덱에서 보정한 값이다. 3진 표의 오차는 진화 효과의 표준오차이며 절대 성능 오차와 구분한다.','');
-fs.writeFileSync(path.join(root,'docs/등급별-아군-티어리스트-2026-10-19.md'),rarityDoc.join('\n'));
+fs.writeFileSync(path.join(root,'docs/티어표/등급별-아군-티어리스트-2026-10-19.md'),rarityDoc.join('\n'));
 const extremes={};
 for(const grade of rarityOrder){
  for(const form of [2,3]){

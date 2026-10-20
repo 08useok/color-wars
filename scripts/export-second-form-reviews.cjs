@@ -22,6 +22,6 @@ for(const [grade,name]of Object.entries(grades)){
   for(const match of paragraphs)lines.push(plain(match[1]),'');
  }
 }
-fs.writeFileSync(path.join(root,'docs/2진-아군-도감-총평-2026-10-18.md'),lines.join('\n'));
+fs.writeFileSync(path.join(root,'docs/총평/2진-아군-도감-총평-2026-10-18.md'),lines.join('\n'));
 console.log(`Exported ${rows.length} second-form reviews.`);
 process.exit(0);
