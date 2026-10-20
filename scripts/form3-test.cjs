@@ -43,6 +43,6 @@ const UNIT=process.env.UNIT,NICHE=process.env.NICHE||'alien',REMOVE=(process.env
    console.log(' ',V[vi][0].padEnd(20),mean(vals).toFixed(3),'승리',wins+'/'+vals.length);
   }
  }
- fs.writeFileSync(path.join(root,'docs/simulations/form3-'+UNIT+'-2026-10-17.json'),JSON.stringify({unit:UNIT,niche:NICHE,remove:REMOVE,picks:picks.map(p=>({i:p.i,name:e.stageList[p.i].name,crown:p.crown,share:p.share})),out}));
+ fs.writeFileSync(path.join(root,'docs/simulations/form3-'+UNIT+'-2026-10-20.json'),JSON.stringify({unit:UNIT,niche:NICHE,remove:REMOVE,picks:picks.map(p=>({i:p.i,name:e.stageList[p.i].name,crown:p.crown,share:p.share})),out}));
  process.exit(0);
 })();
