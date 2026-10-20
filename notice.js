@@ -2,9 +2,11 @@
 // v1 세계편 (first push, 2026-09-24) · v2 레전드 스토리 (09-30) · v3 미래편 1장 (10-03) · v4 미래편 2장 + 3진 (10-06) · v5 미래편 3장 (10-08) · v6 우주편 1장 (10-09).
 // User release rule (2026-10-18): bump PATCH for every commit-and-push release unless an explicit version is requested; do not bump twice when already prepared.
 // A new NOTICE.version shows the notice once on load; the 공지 button on the stage screen reopens it.
-const GAME_VERSION='6.8.1';
-const NOTICE={version:GAME_VERSION,date:'2026-10-19',title:`v${GAME_VERSION} 업데이트`,html:`
+const GAME_VERSION='6.8.2';
+const NOTICE={version:GAME_VERSION,date:'2026-10-20',title:`v${GAME_VERSION} 업데이트`,html:`
 <p class="notice-lead">지금까지 <b>세계편 1~3장 · 미래편 1~3장 · 우주편 1장 · 레전드 스토리 1~39장</b>을 담았습니다.</p>
+<h3>↩️ v6.8.2 넉백 모션 개선</h3>
+<ul><li>체력 감소로 발생하는 넉백을 크게 한 번, 절반 높이로 한 번 더 튕기는 2회 바운스로 변경했습니다.</li><li>보스 등장 충격파로 밀린 아군도 2회 바운스합니다. 기존 넉백 시간과 이동 거리는 유지됩니다.</li></ul>
 <h3>🪙 v6.8.1 울슈레 플래티넘</h3>
 <ul><li>아이언즈 울슈레 <b>플래티넘</b>(귀금속 도금 기술자)을 추가했습니다. <b>아이언즈 전용 뽑기</b>에서 나옵니다.</li><li><b>범위 공격 · 좀비 킬러</b>에 좀비와 메탈 적을 50% 확률로 3초 <b>느리게</b> 합니다(2진 80%). 체력 75,000·공격력 12,000(Lv.20 기준), 가격 3,600원, 재생산 65초, 사거리 12, 이동 속도 5.</li><li>공격은 <b>선딜 0.8초 → 타격 → 후딜 1.6초</b>를 마치면 곧바로 다음 공격으로 이어집니다(한 번에 2.4초).</li><li>전용 걷기·공격·피격 모션을 연결했습니다.</li></ul>
 <h3>🐟 v6.8.1 살몬 조정</h3>

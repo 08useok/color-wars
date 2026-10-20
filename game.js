@@ -1139,7 +1139,7 @@ function animateUnit(u){if(u.ally&&!NEW_ATLASES[u.type])animateAlly(u);else anim
 // kind: 'hitback' (체력 구간 넉백·쓰러짐) or 'push' (밀치기·날려버림·대포 등 능력으로 밀림).
 // 적이 적 성 뒤로 밀려날 상황이면 위치를 바꾸지 않는다: 밀치기는 넉백 모션만, 히트백은 제자리에서 위로 튀기만 한다.
 function startHitback(u,dist=HITBACK_DISTANCE,kind='hitback'){
- u.kbTime=HITBACK_DURATION;u.hurtTime=HITBACK_DURATION;
+ u.kbTime=HITBACK_DURATION;u.hurtTime=HITBACK_DURATION;u.kbKind=kind;
  u.kbStart=u.x;u.kbEnd=Math.max(0,Math.min(100,u.x+(u.ally?1:-1)*dist));u.kbNoHop=false;
  if(!u.ally&&u.kbEnd<data.bases.enemy.x){u.kbEnd=u.x;u.kbNoHop=kind==='push'}
  u.attackTime=0;u.atkCd=0;u.pendingAttack=null;
@@ -1150,7 +1150,12 @@ function tickHitback(u,dt){
  const progress=1-u.kbTime/HITBACK_DURATION;
  u.x=u.kbStart+(u.kbEnd-u.kbStart)*(1-(1-progress)**2);
  u.el.style.left=`calc(${u.x}% - 21px)`;
- u.el.style.translate=`0 ${u.kbNoHop?0:-Math.sin(progress*Math.PI)*18}px`;
+ // Hitback keyframes: ground → full height → ground → half height → ground.
+ // Keep the existing duration; split it 2:1 between the two hops (BCU kb_hb).
+ const hopProgress=progress<2/3?progress*1.5:(progress-2/3)*3;
+ const hopHeight=progress<2/3?18:9;
+ const hop=u.kbKind==='hitback'?4*hopProgress*(1-hopProgress)*hopHeight:Math.sin(progress*Math.PI)*18;
+ u.el.style.translate=`0 ${u.kbNoHop?0:-hop}px`;
  animateUnit(u);
  if(u.surfacing&&u.reviveFxEl){u.reviveFxT=(u.reviveFxT||0)+dt;zombieFx(u.reviveFxEl,'revive',Math.floor(u.reviveFxT*15))}
  if(u.kbTime===0){u.el.classList.remove('knocked-back');u.el.style.translate='0 0';if(u.reviveFxEl){u.reviveFxEl.remove();u.reviveFxEl=null}u.surfacing=false}
@@ -1169,7 +1174,7 @@ function triggerBossShockwave(){
 }
 function tickBossKnockback(u,dt){
  u.bossKbTime=Math.max(0,u.bossKbTime-dt);const progress=1-u.bossKbTime/BOSS_KNOCKBACK_DURATION;
- u.x=u.bossKbStart+(u.bossKbEnd-u.bossKbStart)*(1-(1-progress)**3);u.el.style.left=`calc(${u.x}% - 21px)`;u.el.style.translate=`0 ${-Math.sin(progress*Math.PI)*12}px`;animateUnit(u);
+ u.x=u.bossKbStart+(u.bossKbEnd-u.bossKbStart)*(1-(1-progress)**3);u.el.style.left=`calc(${u.x}% - 21px)`;const hopProgress=progress<2/3?progress*1.5:(progress-2/3)*3;const hopHeight=progress<2/3?12:6;u.el.style.translate=`0 ${-4*hopProgress*(1-hopProgress)*hopHeight}px`;animateUnit(u);
  if(u.bossKbTime===0){u.el.classList.remove('boss-knocked');u.el.style.translate='0 0'}
 }
 const BOSS_HP_THRESHOLD=2000;
