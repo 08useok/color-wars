@@ -3274,5 +3274,6 @@ $('#codexStageTab').onclick=()=>openCodex('stage');
 // Apply world treasures to all ally forms, including later add-on units. Enemy stats stay unchanged.
 const _unitStatsWorldTreasures=unitStats;
 unitStats=function(type,...args){const stats=_unitStatsWorldTreasures(type,...args);if(!ALLIES.includes(type)){if(type==='kamisama'&&selectedStage>=COSMOS_START&&selectedStage<COSMOS_END&&!cosmosMaskComplete()){stats.hp*=11;stats.atk*=11}return stats;}stats.treasureEligible=true;const n=chapterBonusCount();if(!n)return stats;const hp=1+CHAPTER_BONUS.hp*n,atk=1+CHAPTER_BONUS.atk*n;return {...stats,hp:Math.round(stats.hp*hp),atk:Math.round(stats.atk*atk),cooldown:Math.round(Math.max(Math.min(2,stats.cooldown),stats.cooldown-CHAPTER_BONUS.research*n)*100)/100,...(stats.damageTiers?{damageTiers:stats.damageTiers.map(t=>({...t,dmg:Math.round(t.dmg*atk)}))}:{})}};
-reset();openStages();requestAnimationFrame(loop);
+// 처음 접속한 계정(클리어 기록 없음)은 스테이지 선택 화면을 건너뛰고 바로 한국 튜토리얼 전투로 시작한다.
+reset();if(cleared.length)openStages();requestAnimationFrame(loop);
 

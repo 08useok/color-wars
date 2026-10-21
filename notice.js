@@ -106,5 +106,6 @@ function showNotice(){
  const actions=document.querySelector('.stage-heading-actions');
  if(actions&&!document.getElementById('noticeBtn')){const b=document.createElement('button');b.id='noticeBtn';b.textContent='공지';b.onclick=showNotice;actions.prepend(b)}
  let seen=null;try{seen=localStorage.getItem('red-battle-notice-v1')}catch{}
- if(seen!==NOTICE.version)showNotice();
+ // 처음 접속한 계정(클리어 기록 없음)에게는 업데이트 공지를 띄우지 않고 최신 버전으로 읽은 것으로 처리한다(튜토리얼이 가려지지 않도록). 공지 버튼으로는 계속 볼 수 있다.
+ if(seen!==NOTICE.version){if(cleared.length)showNotice();else{try{localStorage.setItem('red-battle-notice-v1',NOTICE.version)}catch{}}}
 })();
