@@ -1,0 +1,72 @@
+{
+ "seeds": 4,
+ "stages": [
+  206,
+  505,
+  503,
+  498,
+  495,
+  491,
+  399,
+  506
+ ],
+ "decks": {
+  "2장 추천 덱": "red,yellow,orange,chartreuse,raspberry,salmon,gold,ivory,azure,blue",
+  "A 방해형 중심": "red,yellow,orange,ivory,mint,lavender,white,navy,blue,onyx",
+  "B 방해형+기본 딜러": "red,yellow,orange,ivory,mint,lavender,chartreuse,salmon,azure,blue",
+  "C 방해형+레어 특화": "red,yellow,orange,ivory,mint,lavender,white,navy,peach,dandelion",
+  "D 방해형만 추가": "red,yellow,orange,ivory,mint,lavender"
+ },
+ "res": {
+  "2장 추천 덱": [
+   "41s",
+   "157s",
+   "81s",
+   "59s",
+   "60s",
+   "67s",
+   "76s",
+   "62s"
+  ],
+  "A 방해형 중심": [
+   "40s",
+   "100s",
+   "84s",
+   "51s",
+   "55s",
+   "65s",
+   "64s",
+   "62s"
+  ],
+  "B 방해형+기본 딜러": [
+   "41s",
+   "103s",
+   "81s",
+   "58s",
+   "57s",
+   "66s",
+   "69s",
+   "63s"
+  ],
+  "C 방해형+레어 특화": [
+   "40s",
+   "97s",
+   "83s",
+   "46s",
+   "56s",
+   "59s",
+   "65s",
+   "63s"
+  ],
+  "D 방해형만 추가": [
+   "52s",
+   "191s",
+   "93s",
+   "63s",
+   "69s",
+   "74s",
+   "82s",
+   "69s"
+  ]
+ }
+}
