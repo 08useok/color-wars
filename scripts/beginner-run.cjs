@@ -1,5 +1,5 @@
 // 새 계정(fresh)으로 세계편 1장(0~47)을 순서대로 깨 보는 초보자 모델. 어디서 막히는지, 왜 막히는지를 기록한다.
-// 사용: MODEL=chars|econ|none DECK=all|red NOINCOME=1 SEEDS=3 node scripts/beginner-run.cjs   → docs/simulations/beginner-run-<MODEL>-2026-10-21.json
+// 사용: MODEL=chars|econ|full|none DECK=all|red NOINCOME=1 SEEDS=3 node scripts/beginner-run.cjs   → docs/simulations/beginner-run-<MODEL>-2026-10-21.json
 // 사람 모델(근사): 해금된 아군을 덱(최대 10)에 전부 넣고, 출격은 위기 때 싼 유닛부터(smart2)·아니면 비싼 것부터(smart)로 시도한다.
 //   시도 = 시드 1..SEEDS × 출격 방식 3가지(auto·smart2·smart). 하나라도 이기면 클리어. (auto만 쓰면 'POLS=auto')
 //   XP 사용: none = 전혀 안 씀(레벨 1 그대로) / chars = 덱 안 캐릭터를 가장 낮은 레벨부터 올림 / econ = 돈 생산력·지갑을 먼저 2레벨씩 올린 뒤 캐릭터.
@@ -7,21 +7,31 @@
 const fs=require('fs'),path=require('path');
 const mk=require('./full-harness.cjs');
 const root=path.resolve(__dirname,'..');
-const POLS=(process.env.POLS||'auto,smart2,smart').split(',');// auto = 게임의 자동 출격(레드를 계속 뽑고 수입은 적당히). smart 계열은 돈이 생기면 수입부터 올려 초반에 방어가 빌 수 있다
+const POLS=(process.env.POLS||'human,auto,smart2').split(',');// auto = 게임의 자동 출격(레드를 계속 뽑고 수입은 적당히). smart 계열은 돈이 생기면 수입부터 올려 초반에 방어가 빌 수 있다
 const MODEL=process.env.MODEL||'chars',SEEDS=+(process.env.SEEDS||3),MAXGRIND=+(process.env.MAXGRIND||60),LAST=+(process.env.LAST||47);
 const NOINCOME=process.env.NOINCOME==='1';// 전투 중 '수입 업그레이드'를 한 번도 안 누르는 초보자
-const extra=(NOINCOME?`const __ad=autoDeploy;autoDeploy=function(){const l=data.income[game.level],c=l.cost;l.cost=null;try{return __ad.apply(this,arguments)}finally{l.cost=c}};`:'')+`globalThis.__beg={awardXP,upgradeCharacter,upgradeEcon,upgradeBase,cleared,training,allyUnlocked,isUnlocked,STAGES,UNIT_NAMES,ECON_COST,upgradeCost,levelCapOf,baseHpCost,baseLevelCap,ALLIES,STAGE_SPAWNS,data,stageXP,studyXP,gradeOf,unitStats,unitCost,setDeck:d=>{deck=d},saveProgress,DECK_SIZE};`;
+const HUMAN=`const __ad2=autoDeploy;autoDeploy=function(){if(policy!=='human')return __ad2.apply(this,arguments);
+ const foes=game.units.filter(v=>!v.ally&&v.hp>0),mine=game.units.filter(v=>v.ally&&v.hp>0);
+ const front=foes.length?Math.max(...foes.map(v=>v.x)):0,danger=foes.length>0&&(data.bases.ally.frontX-front<30||data.bases.ally.hp<data.bases.ally.max*.8);
+ const list=deck.filter(t=>allyUnlocked(t)&&allyStageAllowed(t)).sort((a,b)=>danger?unitCost(a)-unitCost(b):unitCost(b)-unitCost(a));
+ for(const t of list){if(unitCooldown(t)>0)continue;if(game.money>=unitCost(t))addUnit(t)}
+ const l=data.income[game.level];if(!danger&&mine.length>=3&&l.cost!==null&&game.money>=l.cost){game.money-=l.cost;game.level++}
+};`;
+const extra=HUMAN+(NOINCOME?`const __ad=autoDeploy;autoDeploy=function(){const l=data.income[game.level],c=l.cost;l.cost=null;try{return __ad.apply(this,arguments)}finally{l.cost=c}};`:'')+`globalThis.__beg={awardXP,upgradeCharacter,upgradeEcon,upgradeBase,cleared,training,allyUnlocked,isUnlocked,STAGES,UNIT_NAMES,ECON_COST,upgradeCost,levelCapOf,baseHpCost,baseLevelCap,ALLIES,STAGE_SPAWNS,data,stageXP,studyXP,gradeOf,unitStats,unitCost,setDeck:d=>{deck=d},saveProgress,DECK_SIZE};`;
 const e=mk({fresh:true,extraSetup:extra});const B=globalThis.__beg;
 const name=t=>B.UNIT_NAMES[t]||t;
 const log=[];const say=(...a)=>{log.push(a.join(' '))};
 const unlocked=()=>B.ALLIES.filter(t=>B.allyUnlocked(t));
 const DECKMODE=process.env.DECK||'all';// all = 해금된 아군을 전부 덱에 넣음 / red = 덱 세팅을 안 해서 레드만 씀(게임은 새로 해금된 아군을 덱에 자동으로 넣지 않는다)
-const deckNow=()=>DECKMODE==='red'?['red']:unlocked().slice(0,B.DECK_SIZE);
+const NEWEST=process.env.DECKPICK==='newest';// newest = 가장 최근 해금된 10명(기본은 해금 순서 앞의 10명)
+const deckNow=()=>DECKMODE==='red'?['red']:(()=>{const u=unlocked();return NEWEST?[u[0],...u.slice(1).slice(-(B.DECK_SIZE-1))]:u.slice(0,B.DECK_SIZE)})();
 function spend(){
  if(MODEL==='none')return;// XP를 전혀 쓰지 않는 초보자
  let spent=true;
  const econKeys=['prodLevel','walletLevel'];
+  const capped=()=>deckNow().every(t=>B.training.levels[t]>=B.levelCapOf(t));
  while(spent){spent=false;
+  if(MODEL==='full'&&capped()){for(const k of ['prodLevel','walletLevel']){if(B.upgradeEcon(k))spent=true}if(B.upgradeBase())spent=true;if(spent)continue}
   if(MODEL==='econ')for(const k of econKeys)if(B.training[k]<2&&B.upgradeEcon(k)){spent=true}
   // 캐릭터: 덱 안에서 가장 낮은 레벨, 같으면 싼 것
   const cand=deckNow().filter(t=>B.training.levels[t]<B.levelCapOf(t)&&B.training.xp>=B.upgradeCost(t)).sort((a,b)=>B.training.levels[a]-B.training.levels[b]||B.upgradeCost(a)-B.upgradeCost(b));
@@ -73,6 +83,6 @@ for(let i=0;i<=LAST;i++){
   break;
  }
 }
-fs.writeFileSync(path.join(root,'docs/simulations/beginner-run-'+MODEL+(DECKMODE==='all'?'':'-'+DECKMODE+'deck')+(NOINCOME?'-noincome':'')+'-2026-10-21.json'),JSON.stringify({model:MODEL,seeds:SEEDS,rows,grindTotal},null,1));
+fs.writeFileSync(path.join(root,'docs/simulations/beginner-run-'+MODEL+(NEWEST?'-newest':'')+(LAST>47?'-ch2':'')+(DECKMODE==='all'?'':'-'+DECKMODE+'deck')+(NOINCOME?'-noincome':'')+'-2026-10-21.json'),JSON.stringify({model:MODEL,seeds:SEEDS,rows,grindTotal},null,1));
 console.log(log.join('\n'));console.log('총 반복 횟수',grindTotal);
 process.exit(0);
