@@ -1,0 +1,65 @@
+{
+ "model": "none",
+ "seeds": 3,
+ "rows": [
+  {
+   "i": 0,
+   "name": "한국",
+   "won": true,
+   "tries": 1,
+   "sec": 52.03,
+   "xpGain": 400,
+   "xp": 400,
+   "newUnits": [],
+   "stuck": false,
+   "grind": 0,
+   "levels": {
+    "레드": 1
+   }
+  },
+  {
+   "i": 1,
+   "name": "몽골",
+   "won": true,
+   "tries": 1,
+   "sec": 98.83,
+   "xpGain": 500,
+   "xp": 900,
+   "newUnits": [],
+   "stuck": false,
+   "grind": 0,
+   "levels": {
+    "레드": 1
+   }
+  },
+  {
+   "i": 2,
+   "name": "중국",
+   "won": false,
+   "stuck": true,
+   "grind": 60,
+   "stuckInfo": {
+    "enemyHp": 1000,
+    "spawn": "dog×1, snache×1",
+    "tries": [
+     "smart2#1 패 적성 1000/1000 아군성 0",
+     "smart#1 패 적성 1000/1000 아군성 0",
+     "smart2#2 패 적성 1000/1000 아군성 0",
+     "smart#2 패 적성 1000/1000 아군성 0",
+     "smart2#3 패 적성 1000/1000 아군성 0",
+     "smart#3 패 적성 1000/1000 아군성 0"
+    ],
+    "levels": {
+     "레드": 1
+    },
+    "xp": 900,
+    "base": 1,
+    "grindRuns": 60,
+    "afterLevels": {
+     "레드": 1
+    }
+   }
+  }
+ ],
+ "grindTotal": 60
+}

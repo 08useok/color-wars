@@ -1,0 +1,701 @@
+{
+ "model": "chars",
+ "seeds": 3,
+ "rows": [
+  {
+   "i": 0,
+   "name": "한국",
+   "won": true,
+   "tries": 1,
+   "sec": 52.03,
+   "xpGain": 400,
+   "xp": 400,
+   "newUnits": [],
+   "stuck": false,
+   "grind": 0,
+   "levels": {
+    "레드": 1
+   }
+  },
+  {
+   "i": 1,
+   "name": "몽골",
+   "won": true,
+   "tries": 1,
+   "sec": 41.4,
+   "xpGain": 500,
+   "xp": 570,
+   "newUnits": [],
+   "stuck": false,
+   "grind": 0,
+   "levels": {
+    "레드": 3
+   }
+  },
+  {
+   "i": 2,
+   "name": "중국",
+   "won": true,
+   "tries": 1,
+   "sec": 45.5,
+   "xpGain": 600,
+   "xp": 820,
+   "newUnits": [
+    "오렌지"
+   ],
+   "stuck": false,
+   "grind": 0,
+   "levels": {
+    "레드": 4
+   }
+  },
+  {
+   "i": 3,
+   "name": "태국",
+   "won": true,
+   "tries": 1,
+   "sec": 38,
+   "xpGain": 700,
+   "xp": 1040,
+   "newUnits": [
+    "오렌지"
+   ],
+   "stuck": false,
+   "grind": 0,
+   "levels": {
+    "레드": 5
+   }
+  },
+  {
+   "i": 4,
+   "name": "캄보디아",
+   "won": true,
+   "tries": 1,
+   "sec": 37.2,
+   "xpGain": 800,
+   "xp": 1210,
+   "newUnits": [
+    "오렌지"
+   ],
+   "stuck": false,
+   "grind": 0,
+   "levels": {
+    "레드": 6
+   }
+  },
+  {
+   "i": 5,
+   "name": "필리핀",
+   "won": true,
+   "tries": 1,
+   "sec": 35.9,
+   "xpGain": 900,
+   "xp": 1330,
+   "newUnits": [
+    "오렌지",
+    "옐로우"
+   ],
+   "stuck": false,
+   "grind": 0,
+   "levels": {
+    "레드": 7
+   }
+  },
+  {
+   "i": 6,
+   "name": "일본",
+   "won": true,
+   "tries": 1,
+   "sec": 151.83,
+   "xpGain": 1000,
+   "xp": 1380,
+   "newUnits": [
+    "오렌지",
+    "옐로우",
+    "그린"
+   ],
+   "stuck": false,
+   "grind": 0,
+   "levels": {
+    "레드": 8
+   }
+  },
+  {
+   "i": 7,
+   "name": "호주",
+   "won": true,
+   "tries": 1,
+   "sec": 180.57,
+   "xpGain": 1100,
+   "xp": 1360,
+   "newUnits": [
+    "오렌지",
+    "옐로우",
+    "그린"
+   ],
+   "stuck": false,
+   "grind": 0,
+   "levels": {
+    "레드": 9
+   }
+  },
+  {
+   "i": 8,
+   "name": "싱가포르",
+   "won": true,
+   "tries": 1,
+   "sec": 52.57,
+   "xpGain": 1200,
+   "xp": 1250,
+   "newUnits": [
+    "오렌지",
+    "옐로우",
+    "그린"
+   ],
+   "stuck": false,
+   "grind": 0,
+   "levels": {
+    "레드": 10
+   }
+  },
+  {
+   "i": 9,
+   "name": "몰디브",
+   "won": true,
+   "tries": 1,
+   "sec": 42.23,
+   "xpGain": 1300,
+   "xp": 2550,
+   "newUnits": [
+    "오렌지",
+    "옐로우",
+    "그린"
+   ],
+   "stuck": false,
+   "grind": 0,
+   "levels": {
+    "레드": 10
+   }
+  },
+  {
+   "i": 10,
+   "name": "인도",
+   "won": true,
+   "tries": 1,
+   "sec": 43.43,
+   "xpGain": 1400,
+   "xp": 3950,
+   "newUnits": [
+    "오렌지",
+    "옐로우",
+    "그린"
+   ],
+   "stuck": false,
+   "grind": 0,
+   "levels": {
+    "레드": 10
+   }
+  },
+  {
+   "i": 11,
+   "name": "네팔",
+   "won": true,
+   "tries": 1,
+   "sec": 46.83,
+   "xpGain": 1500,
+   "xp": 5450,
+   "newUnits": [
+    "오렌지",
+    "옐로우",
+    "그린"
+   ],
+   "stuck": false,
+   "grind": 0,
+   "levels": {
+    "레드": 10
+   }
+  },
+  {
+   "i": 12,
+   "name": "두바이",
+   "won": true,
+   "tries": 1,
+   "sec": 46.6,
+   "xpGain": 1600,
+   "xp": 7050,
+   "newUnits": [
+    "오렌지",
+    "옐로우",
+    "그린",
+    "시안"
+   ],
+   "stuck": false,
+   "grind": 0,
+   "levels": {
+    "레드": 10
+   }
+  },
+  {
+   "i": 13,
+   "name": "사우디아라비아",
+   "won": true,
+   "tries": 1,
+   "sec": 47.27,
+   "xpGain": 1700,
+   "xp": 8750,
+   "newUnits": [
+    "오렌지",
+    "옐로우",
+    "그린",
+    "시안"
+   ],
+   "stuck": false,
+   "grind": 0,
+   "levels": {
+    "레드": 10
+   }
+  },
+  {
+   "i": 14,
+   "name": "케냐",
+   "won": true,
+   "tries": 1,
+   "sec": 45.23,
+   "xpGain": 1800,
+   "xp": 10550,
+   "newUnits": [
+    "오렌지",
+    "옐로우",
+    "그린",
+    "시안"
+   ],
+   "stuck": false,
+   "grind": 0,
+   "levels": {
+    "레드": 10
+   }
+  },
+  {
+   "i": 15,
+   "name": "마다가스카르",
+   "won": true,
+   "tries": 1,
+   "sec": 67.2,
+   "xpGain": 1900,
+   "xp": 12450,
+   "newUnits": [
+    "오렌지",
+    "옐로우",
+    "그린",
+    "시안",
+    "블루"
+   ],
+   "stuck": false,
+   "grind": 0,
+   "levels": {
+    "레드": 10
+   }
+  },
+  {
+   "i": 16,
+   "name": "남아프리카",
+   "won": true,
+   "tries": 1,
+   "sec": 49.53,
+   "xpGain": 2000,
+   "xp": 14450,
+   "newUnits": [
+    "오렌지",
+    "옐로우",
+    "그린",
+    "시안",
+    "블루"
+   ],
+   "stuck": false,
+   "grind": 0,
+   "levels": {
+    "레드": 10
+   }
+  },
+  {
+   "i": 17,
+   "name": "가나",
+   "won": true,
+   "tries": 1,
+   "sec": 57.93,
+   "xpGain": 2100,
+   "xp": 16550,
+   "newUnits": [
+    "오렌지",
+    "옐로우",
+    "그린",
+    "시안",
+    "블루"
+   ],
+   "stuck": false,
+   "grind": 0,
+   "levels": {
+    "레드": 10
+   }
+  },
+  {
+   "i": 18,
+   "name": "사하라사막",
+   "won": true,
+   "tries": 1,
+   "sec": 65.7,
+   "xpGain": 2200,
+   "xp": 18750,
+   "newUnits": [
+    "오렌지",
+    "옐로우",
+    "그린",
+    "시안",
+    "블루",
+    "퍼플"
+   ],
+   "stuck": false,
+   "grind": 0,
+   "levels": {
+    "레드": 10
+   }
+  },
+  {
+   "i": 19,
+   "name": "이집트",
+   "won": true,
+   "tries": 1,
+   "sec": 48.63,
+   "xpGain": 2300,
+   "xp": 21050,
+   "newUnits": [
+    "오렌지",
+    "옐로우",
+    "그린",
+    "시안",
+    "블루",
+    "퍼플"
+   ],
+   "stuck": false,
+   "grind": 0,
+   "levels": {
+    "레드": 10
+   }
+  },
+  {
+   "i": 20,
+   "name": "터키",
+   "won": true,
+   "tries": 1,
+   "sec": 53.8,
+   "xpGain": 2400,
+   "xp": 23450,
+   "newUnits": [
+    "오렌지",
+    "옐로우",
+    "그린",
+    "시안",
+    "블루",
+    "퍼플"
+   ],
+   "stuck": false,
+   "grind": 0,
+   "levels": {
+    "레드": 10
+   }
+  },
+  {
+   "i": 21,
+   "name": "러시아",
+   "won": true,
+   "tries": 1,
+   "sec": 89.33,
+   "xpGain": 2500,
+   "xp": 25950,
+   "newUnits": [
+    "오렌지",
+    "옐로우",
+    "그린",
+    "시안",
+    "블루",
+    "퍼플"
+   ],
+   "stuck": false,
+   "grind": 0,
+   "levels": {
+    "레드": 10
+   }
+  },
+  {
+   "i": 22,
+   "name": "그리스",
+   "won": true,
+   "tries": 1,
+   "sec": 148.43,
+   "xpGain": 2600,
+   "xp": 28550,
+   "newUnits": [
+    "오렌지",
+    "옐로우",
+    "그린",
+    "시안",
+    "블루",
+    "퍼플"
+   ],
+   "stuck": false,
+   "grind": 0,
+   "levels": {
+    "레드": 10
+   }
+  },
+  {
+   "i": 23,
+   "name": "이탈리아",
+   "won": true,
+   "tries": 1,
+   "sec": 76.27,
+   "xpGain": 2700,
+   "xp": 31250,
+   "newUnits": [
+    "오렌지",
+    "옐로우",
+    "그린",
+    "시안",
+    "블루",
+    "퍼플"
+   ],
+   "stuck": false,
+   "grind": 0,
+   "levels": {
+    "레드": 10
+   }
+  },
+  {
+   "i": 24,
+   "name": "모나코",
+   "won": true,
+   "tries": 1,
+   "sec": 78.57,
+   "xpGain": 2800,
+   "xp": 34050,
+   "newUnits": [
+    "오렌지",
+    "옐로우",
+    "그린",
+    "시안",
+    "블루",
+    "퍼플"
+   ],
+   "stuck": false,
+   "grind": 0,
+   "levels": {
+    "레드": 10
+   }
+  },
+  {
+   "i": 25,
+   "name": "스페인",
+   "won": true,
+   "tries": 1,
+   "sec": 56.4,
+   "xpGain": 2900,
+   "xp": 36950,
+   "newUnits": [
+    "오렌지",
+    "옐로우",
+    "그린",
+    "시안",
+    "블루",
+    "퍼플"
+   ],
+   "stuck": false,
+   "grind": 0,
+   "levels": {
+    "레드": 10
+   }
+  },
+  {
+   "i": 26,
+   "name": "프랑스",
+   "won": true,
+   "tries": 1,
+   "sec": 51.37,
+   "xpGain": 3000,
+   "xp": 39950,
+   "newUnits": [
+    "오렌지",
+    "옐로우",
+    "그린",
+    "시안",
+    "블루",
+    "퍼플"
+   ],
+   "stuck": false,
+   "grind": 0,
+   "levels": {
+    "레드": 10
+   }
+  },
+  {
+   "i": 27,
+   "name": "독일",
+   "won": true,
+   "tries": 1,
+   "sec": 52.67,
+   "xpGain": 3100,
+   "xp": 43050,
+   "newUnits": [
+    "오렌지",
+    "옐로우",
+    "그린",
+    "시안",
+    "블루",
+    "퍼플"
+   ],
+   "stuck": false,
+   "grind": 0,
+   "levels": {
+    "레드": 10
+   }
+  },
+  {
+   "i": 28,
+   "name": "덴마크",
+   "won": true,
+   "tries": 1,
+   "sec": 344.13,
+   "xpGain": 3200,
+   "xp": 46250,
+   "newUnits": [
+    "오렌지",
+    "옐로우",
+    "그린",
+    "시안",
+    "블루",
+    "퍼플"
+   ],
+   "stuck": false,
+   "grind": 0,
+   "levels": {
+    "레드": 10
+   }
+  },
+  {
+   "i": 29,
+   "name": "노르웨이",
+   "won": true,
+   "tries": 1,
+   "sec": 52.53,
+   "xpGain": 3300,
+   "xp": 49550,
+   "newUnits": [
+    "오렌지",
+    "옐로우",
+    "그린",
+    "시안",
+    "블루",
+    "퍼플"
+   ],
+   "stuck": false,
+   "grind": 0,
+   "levels": {
+    "레드": 10
+   }
+  },
+  {
+   "i": 30,
+   "name": "영국",
+   "won": true,
+   "tries": 1,
+   "sec": 46.9,
+   "xpGain": 3400,
+   "xp": 52950,
+   "newUnits": [
+    "오렌지",
+    "옐로우",
+    "그린",
+    "시안",
+    "블루",
+    "퍼플"
+   ],
+   "stuck": false,
+   "grind": 0,
+   "levels": {
+    "레드": 10
+   }
+  },
+  {
+   "i": 31,
+   "name": "그린란드",
+   "won": true,
+   "tries": 1,
+   "sec": 67.9,
+   "xpGain": 3500,
+   "xp": 56450,
+   "newUnits": [
+    "오렌지",
+    "옐로우",
+    "그린",
+    "시안",
+    "블루",
+    "퍼플"
+   ],
+   "stuck": false,
+   "grind": 0,
+   "levels": {
+    "레드": 10
+   }
+  },
+  {
+   "i": 32,
+   "name": "캐나다",
+   "won": true,
+   "tries": 1,
+   "sec": 65.43,
+   "xpGain": 3600,
+   "xp": 60050,
+   "newUnits": [
+    "오렌지",
+    "옐로우",
+    "그린",
+    "시안",
+    "블루",
+    "퍼플"
+   ],
+   "stuck": false,
+   "grind": 0,
+   "levels": {
+    "레드": 10
+   }
+  },
+  {
+   "i": 33,
+   "name": "뉴욕",
+   "won": false,
+   "stuck": true,
+   "grind": 60,
+   "stuckInfo": {
+    "enemyHp": 18000,
+    "spawn": "snache×1, guys×1, croco×1, baa×1, gory×1, seal×5, peng×1, hippo×1, pigge×2",
+    "tries": [
+     "smart2#1 패 적성 5374/18000 아군성 0",
+     "smart#1 패 적성 5374/18000 아군성 0",
+     "smart2#2 패 적성 8905/18000 아군성 0",
+     "smart#2 패 적성 8905/18000 아군성 0",
+     "smart2#3 패 적성 4946/18000 아군성 0",
+     "smart#3 패 적성 4946/18000 아군성 0"
+    ],
+    "levels": {
+     "레드": 10
+    },
+    "xp": 60050,
+    "base": 1,
+    "grindRuns": 60,
+    "afterLevels": {
+     "레드": 10
+    }
+   }
+  }
+ ],
+ "grindTotal": 60
+}
