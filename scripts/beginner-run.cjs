@@ -1,12 +1,13 @@
 // 새 계정(fresh)으로 세계편 1장(0~47)을 순서대로 깨 보는 초보자 모델. 어디서 막히는지, 왜 막히는지를 기록한다.
 // 사용: MODEL=chars|econ|none DECK=all|red NOINCOME=1 SEEDS=3 node scripts/beginner-run.cjs   → docs/simulations/beginner-run-<MODEL>-2026-10-21.json
 // 사람 모델(근사): 해금된 아군을 덱(최대 10)에 전부 넣고, 출격은 위기 때 싼 유닛부터(smart2)·아니면 비싼 것부터(smart)로 시도한다.
-//   (야옹컴 'auto'는 처음엔 없는 아이템이라 쓰지 않는다.) 시도 = 시드 1..SEEDS × 두 방식. 하나라도 이기면 클리어.
+//   시도 = 시드 1..SEEDS × 출격 방식 3가지(auto·smart2·smart). 하나라도 이기면 클리어. (auto만 쓰면 'POLS=auto')
 //   XP 사용: none = 전혀 안 씀(레벨 1 그대로) / chars = 덱 안 캐릭터를 가장 낮은 레벨부터 올림 / econ = 돈 생산력·지갑을 먼저 2레벨씩 올린 뒤 캐릭터.
 //   막히면(모든 시도 패배) 이미 깬 스테이지를 반복해(반복 보상은 절반) XP를 모아 레벨업 후 다시 도전한다(최대 MAXGRIND회).
 const fs=require('fs'),path=require('path');
 const mk=require('./full-harness.cjs');
 const root=path.resolve(__dirname,'..');
+const POLS=(process.env.POLS||'auto,smart2,smart').split(',');// auto = 게임의 자동 출격(레드를 계속 뽑고 수입은 적당히). smart 계열은 돈이 생기면 수입부터 올려 초반에 방어가 빌 수 있다
 const MODEL=process.env.MODEL||'chars',SEEDS=+(process.env.SEEDS||3),MAXGRIND=+(process.env.MAXGRIND||60),LAST=+(process.env.LAST||47);
 const NOINCOME=process.env.NOINCOME==='1';// 전투 중 '수입 업그레이드'를 한 번도 안 누르는 초보자
 const extra=(NOINCOME?`const __ad=autoDeploy;autoDeploy=function(){const l=data.income[game.level],c=l.cost;l.cost=null;try{return __ad.apply(this,arguments)}finally{l.cost=c}};`:'')+`globalThis.__beg={awardXP,upgradeCharacter,upgradeEcon,upgradeBase,cleared,training,allyUnlocked,isUnlocked,STAGES,UNIT_NAMES,ECON_COST,upgradeCost,levelCapOf,baseHpCost,baseLevelCap,ALLIES,STAGE_SPAWNS,data,stageXP,studyXP,gradeOf,unitStats,unitCost,setDeck:d=>{deck=d},saveProgress,DECK_SIZE};`;
@@ -29,7 +30,7 @@ function spend(){
 }
 function attempt(i,deck){
  const res=[];
- for(let s=1;s<=SEEDS;s++)for(const pol of ['smart2','smart']){
+ for(let s=1;s<=SEEDS;s++)for(const pol of POLS){
   const r=e.simulate(i,1,deck,s,900,pol);
   res.push({s,pol,win:r.win,sec:r.seconds,allyHp:Math.round(r.allyHp),enemyHp:Math.round(r.enemyHp)});
   if(r.win)return {won:true,res,best:r};

@@ -22,7 +22,7 @@
    "name": "몽골",
    "won": true,
    "tries": 1,
-   "sec": 98.83,
+   "sec": 95.33,
    "xpGain": 500,
    "xp": 900,
    "newUnits": [],
@@ -35,28 +35,301 @@
   {
    "i": 2,
    "name": "중국",
+   "won": true,
+   "tries": 1,
+   "sec": 88.8,
+   "xpGain": 600,
+   "xp": 1500,
+   "newUnits": [
+    "오렌지"
+   ],
+   "stuck": false,
+   "grind": 0,
+   "levels": {
+    "레드": 1,
+    "오렌지": 1
+   }
+  },
+  {
+   "i": 3,
+   "name": "태국",
+   "won": true,
+   "tries": 1,
+   "sec": 80.7,
+   "xpGain": 700,
+   "xp": 2200,
+   "newUnits": [],
+   "stuck": false,
+   "grind": 0,
+   "levels": {
+    "레드": 1,
+    "오렌지": 1
+   }
+  },
+  {
+   "i": 4,
+   "name": "캄보디아",
+   "won": true,
+   "tries": 1,
+   "sec": 82.73,
+   "xpGain": 800,
+   "xp": 3000,
+   "newUnits": [],
+   "stuck": false,
+   "grind": 0,
+   "levels": {
+    "레드": 1,
+    "오렌지": 1
+   }
+  },
+  {
+   "i": 5,
+   "name": "필리핀",
+   "won": true,
+   "tries": 1,
+   "sec": 80.53,
+   "xpGain": 900,
+   "xp": 3900,
+   "newUnits": [
+    "옐로우"
+   ],
+   "stuck": false,
+   "grind": 0,
+   "levels": {
+    "레드": 1,
+    "오렌지": 1,
+    "옐로우": 1
+   }
+  },
+  {
+   "i": 6,
+   "name": "일본",
+   "won": true,
+   "tries": 1,
+   "sec": 96.4,
+   "xpGain": 1000,
+   "xp": 4900,
+   "newUnits": [
+    "그린"
+   ],
+   "stuck": false,
+   "grind": 0,
+   "levels": {
+    "레드": 1,
+    "오렌지": 1,
+    "옐로우": 1,
+    "그린": 1
+   }
+  },
+  {
+   "i": 7,
+   "name": "호주",
+   "won": true,
+   "tries": 1,
+   "sec": 75.17,
+   "xpGain": 1100,
+   "xp": 6000,
+   "newUnits": [],
+   "stuck": false,
+   "grind": 0,
+   "levels": {
+    "레드": 1,
+    "오렌지": 1,
+    "옐로우": 1,
+    "그린": 1
+   }
+  },
+  {
+   "i": 8,
+   "name": "싱가포르",
+   "won": true,
+   "tries": 1,
+   "sec": 79.6,
+   "xpGain": 1200,
+   "xp": 7200,
+   "newUnits": [],
+   "stuck": false,
+   "grind": 0,
+   "levels": {
+    "레드": 1,
+    "오렌지": 1,
+    "옐로우": 1,
+    "그린": 1
+   }
+  },
+  {
+   "i": 9,
+   "name": "몰디브",
+   "won": true,
+   "tries": 1,
+   "sec": 98.67,
+   "xpGain": 1300,
+   "xp": 8500,
+   "newUnits": [],
+   "stuck": false,
+   "grind": 0,
+   "levels": {
+    "레드": 1,
+    "오렌지": 1,
+    "옐로우": 1,
+    "그린": 1
+   }
+  },
+  {
+   "i": 10,
+   "name": "인도",
+   "won": true,
+   "tries": 1,
+   "sec": 90,
+   "xpGain": 1400,
+   "xp": 9900,
+   "newUnits": [],
+   "stuck": false,
+   "grind": 0,
+   "levels": {
+    "레드": 1,
+    "오렌지": 1,
+    "옐로우": 1,
+    "그린": 1
+   }
+  },
+  {
+   "i": 11,
+   "name": "네팔",
+   "won": true,
+   "tries": 1,
+   "sec": 106.63,
+   "xpGain": 1500,
+   "xp": 11400,
+   "newUnits": [],
+   "stuck": false,
+   "grind": 0,
+   "levels": {
+    "레드": 1,
+    "오렌지": 1,
+    "옐로우": 1,
+    "그린": 1
+   }
+  },
+  {
+   "i": 12,
+   "name": "두바이",
+   "won": true,
+   "tries": 1,
+   "sec": 100.7,
+   "xpGain": 1600,
+   "xp": 13000,
+   "newUnits": [
+    "시안"
+   ],
+   "stuck": false,
+   "grind": 0,
+   "levels": {
+    "레드": 1,
+    "오렌지": 1,
+    "옐로우": 1,
+    "그린": 1,
+    "시안": 1
+   }
+  },
+  {
+   "i": 13,
+   "name": "사우디아라비아",
+   "won": true,
+   "tries": 1,
+   "sec": 101.2,
+   "xpGain": 1700,
+   "xp": 14700,
+   "newUnits": [],
+   "stuck": false,
+   "grind": 0,
+   "levels": {
+    "레드": 1,
+    "오렌지": 1,
+    "옐로우": 1,
+    "그린": 1,
+    "시안": 1
+   }
+  },
+  {
+   "i": 14,
+   "name": "케냐",
+   "won": true,
+   "tries": 1,
+   "sec": 123.37,
+   "xpGain": 1800,
+   "xp": 16500,
+   "newUnits": [],
+   "stuck": false,
+   "grind": 0,
+   "levels": {
+    "레드": 1,
+    "오렌지": 1,
+    "옐로우": 1,
+    "그린": 1,
+    "시안": 1
+   }
+  },
+  {
+   "i": 15,
+   "name": "마다가스카르",
+   "won": true,
+   "tries": 1,
+   "sec": 110.83,
+   "xpGain": 1900,
+   "xp": 18400,
+   "newUnits": [
+    "블루"
+   ],
+   "stuck": false,
+   "grind": 0,
+   "levels": {
+    "레드": 1,
+    "오렌지": 1,
+    "옐로우": 1,
+    "그린": 1,
+    "시안": 1,
+    "블루": 1
+   }
+  },
+  {
+   "i": 16,
+   "name": "남아프리카",
    "won": false,
    "stuck": true,
    "grind": 60,
    "stuckInfo": {
-    "enemyHp": 1000,
-    "spawn": "dog×1, snache×1",
+    "enemyHp": 7000,
+    "spawn": "dog×1, snache×1, guys×1, peng×4, pigge×1, hippo×1",
     "tries": [
-     "smart2#1 패 적성 1000/1000 아군성 0",
-     "smart#1 패 적성 1000/1000 아군성 0",
-     "smart2#2 패 적성 1000/1000 아군성 0",
-     "smart#2 패 적성 1000/1000 아군성 0",
-     "smart2#3 패 적성 1000/1000 아군성 0",
-     "smart#3 패 적성 1000/1000 아군성 0"
+     "auto#1 패 적성 7000/7000 아군성 0",
+     "smart2#1 패 적성 7000/7000 아군성 0",
+     "smart#1 패 적성 7000/7000 아군성 0",
+     "auto#2 패 적성 7000/7000 아군성 0",
+     "smart2#2 패 적성 7000/7000 아군성 0",
+     "smart#2 패 적성 7000/7000 아군성 0",
+     "auto#3 패 적성 7000/7000 아군성 0",
+     "smart2#3 패 적성 7000/7000 아군성 0",
+     "smart#3 패 적성 7000/7000 아군성 0"
     ],
     "levels": {
-     "레드": 1
+     "레드": 1,
+     "오렌지": 1,
+     "옐로우": 1,
+     "그린": 1,
+     "시안": 1,
+     "블루": 1
     },
-    "xp": 900,
+    "xp": 18400,
     "base": 1,
     "grindRuns": 60,
     "afterLevels": {
-     "레드": 1
+     "레드": 1,
+     "오렌지": 1,
+     "옐로우": 1,
+     "그린": 1,
+     "시안": 1,
+     "블루": 1
     }
    }
   }
