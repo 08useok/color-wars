@@ -1,5 +1,5 @@
 // Released dedicated forms: version history verified in notice.js and the introducing Git commits.
-const TRUE_FORM_REVIEW_RELEASE={coral:'6.8.0',cream:'4.5.0',hotpink:'4.7.0',salmon:'6.0.1',gold:'6.0.1',beige:'6.0.1',clover:'6.1.0',crystal:'6.4.0',indigo:'6.4.0',raspberry:'6.4.0'};
+const TRUE_FORM_REVIEW_RELEASE={lava:'6.9.0',coral:'6.8.0',cream:'4.5.0',hotpink:'4.7.0',salmon:'6.0.1',gold:'6.0.1',beige:'6.0.1',clover:'6.1.0',crystal:'6.4.0',indigo:'6.4.0',raspberry:'6.4.0'};
 function trueFormReview(type,s){
  if(!s.trueForm||!TRUE_FORM_REVIEW_RELEASE[type])return null;
  const saved=trueForms;let base;
@@ -76,6 +76,7 @@ function trueFormReview(type,s){
 <p>무속성 기준 DPS는 <b>${num(m.maximumDps)}</b>이다. 화력으로 적을 처리하는 주력 딜러보다는, 검은 적의 움직임과 공격을 멈춰 아군 딜러가 공격할 시간을 벌어 주는 역할에 어울린다.</p></section>`;
  }
  const notes={
+  lava:{effect:'공격 간격이 4.03초에서 3.2초로 줄고 사거리가 10% 늘었다. 검은 적 공격을 25% 확률로 3.3초 무효화한다.',fix:'늘어난 공체와 짧아진 공격 간격으로 검은 적 무리에게 범위 초데미지를 넣기 좋아졌다.',strength:'빨간 적·검은 적인 <b>투캔 카운터</b>로 활용할 수 있다. 검은 적이 가한 파동도 공격 무효가 발동하면 피한다.',weak:'공격 무효는 확률이며 검은 적에게만 적용된다. 파동 무효 능력은 없고 투캔의 파동에서 뒤쪽 아군까지 보호하지는 못한다. 느린 이동과 긴 재생산 시간 때문에 고방·메즈 지원이 필요하다.'},
   cream:{effect:`공격이 범위로 바뀌고 검은 적 느리게 확률이 ${pct(s.slowChance)}%, 지속 시간이 ${dec(s.slowDuration)}초로 강화되었다.`,fix:`사거리가 ${dec(base.range)}에서 ${dec(s.range)}로 늘어 개체 공격으로 적 무리에 밀리던 약점을 보완했다.`,strength:'고방 뒤에 여러 마리를 쌓아 검은 적의 접근을 늦추는 메즈 지원 능력이 좋아졌다.',weak:'느리게는 적의 공격을 막지 않으며 다른 속성에는 적용되지 않는다. 긴 사거리의 적과 강한 범위 공격은 고방·딜러의 도움이 필요하다.'},
   hotpink:{effect:`범위 공격과 사각지대 없는 전방 ${s.zoneMax}까지의 공격 범위가 적용되고, 빨간 적 공격력 다운의 지속 시간이 ${dec(s.atkDownDuration)}초로 늘었다.`,fix:`사거리가 ${dec(base.range)}에서 ${dec(s.range)}로 늘고 여러 적에게 공격력 다운을 걸 수 있어 짧은 사거리와 개체 공격의 한계를 보완했다.`,strength:'빨간 적 무리의 화력을 함께 낮추면서 피해를 보태는 범위 딜러 겸 메즈 지원으로 활용하기 좋아졌다.',weak:`공격 간격 ${dec(s.interval)}초와 선딜 ${dec(s.windup)}초가 남아 있어 혼자 전선을 지키기 어렵다. 다른 속성에는 공격력 다운이 적용되지 않는다.`},
   salmon:{effect:`사거리 ${dec(s.range)}, 끌어오기 거리 ${dec(s.pullDistance)}, ${pct(s.freezeChance)}% 확률·${dec(s.freezeDuration)}초 정지와 <b>파동 스토퍼</b>가 추가·강화되었다.`,fix:'파동을 본인 위치에서 끊어 뒤쪽 아군까지 보호할 수 있어 파동 적에게 전선이 함께 무너지던 상황을 보완한다.',strength:'긴 사거리에서 적을 끌어오고 잠깐 멈추는 전선 조절 메즈와 후방 보호를 함께 맡을 수 있다.',weak:'끌어오기는 적을 아군 딜러에게 접근시킬 수도 있고, 보스는 끌어오지 못한다. 밀려나 있는 동안에는 파동을 막지 못하므로 고방이 필요하다.'},

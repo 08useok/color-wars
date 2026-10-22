@@ -1,0 +1,20 @@
+const LEGEND40_START=STAGES.length;
+LEGEND_SUBS.push({name:'바람을 기다리는 섬',en:'Windless Island',start:267,len:6});
+LEGEND_SUB_CROWN[39]=[1,1.2,1.3,1];
+LEGEND_STAR_RANGES.push([9,9]);
+for(const [j,{stage,rules}] of LEGEND40_DATA.entries()){
+ const desc=[...new Set(rules.map(r=>UNIT_NAMES[r.type]||r.type))].join(' · ');
+ const t={...stage,desc};LEGEND_STAGES.push(t);
+ STAGES.push({...t,gap:4,wave:0,chapter:4,legend:{k:267+j},maxEnemies:t.max});
+ STAGE_SPAWNS[LEGEND40_START+j]=rules;
+}
+const legendIdxBefore40=legendIdx;
+legendIdx=function(k){return k>=267&&k<273?LEGEND40_START+k-267:legendIdxBefore40(k)};
+// Core initially reads saves before this addon runs. Recover only the appended keys;
+// leave the prior progress untouched, and never write a save during registration.
+try{
+ const saved=JSON.parse(localStorage.getItem('red-battle-legend-v1')||'{}');
+ for(const c of [1,2,3,4])if(Array.isArray(saved[c]))for(const k of saved[c]){
+  if(Number.isInteger(k)&&k>=267&&k<273&&!legendProgress[c].includes(k))legendProgress[c].push(k);
+ }
+}catch{}

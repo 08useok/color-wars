@@ -2,9 +2,11 @@
 // v1 세계편 (first push, 2026-09-24) · v2 레전드 스토리 (09-30) · v3 미래편 1장 (10-03) · v4 미래편 2장 + 3진 (10-06) · v5 미래편 3장 (10-08) · v6 우주편 1장 (10-09).
 // User release rule (2026-10-18): bump PATCH for every commit-and-push release unless an explicit version is requested; do not bump twice when already prepared.
 // A new NOTICE.version shows the notice once on load; the 공지 button on the stage screen reopens it.
-const GAME_VERSION='6.8.2';
-const NOTICE={version:GAME_VERSION,date:'2026-10-20',title:`v${GAME_VERSION} 업데이트`,html:`
-<p class="notice-lead">지금까지 <b>세계편 1~3장 · 미래편 1~3장 · 우주편 1장 · 레전드 스토리 1~39장</b>을 담았습니다.</p>
+const GAME_VERSION='6.9.0';
+const NOTICE={version:GAME_VERSION,date:'2026-10-22',title:`v${GAME_VERSION} 업데이트`,html:`
+<p class="notice-lead">지금까지 <b>세계편 1~3장 · 미래편 1~3장 · 우주편 1장 · 레전드 스토리 1~40장</b>을 담았습니다.</p>
+<h3>🥊 v6.9.0 크리스프 · 대북 라바 · 구레 40장 · 좀비 습격 보완</h3>
+<ul><li>복싱즈 울슈레 <b>크리스프</b>: 빨간 적 맷집 · 범위 2연타 · 각 타격 30% 확률로 3배 혼신의 일격. 1·2진 전용 모션을 적용했습니다.</li><li><b>대북 라바</b> 3진: 체력 150%·공격력 140%, 공격 간격 3.2초, 사거리 10% 증가. 검은 적 공격을 25% 확률로 3.3초 무효화합니다.</li><li><b>레전드 스토리 40장</b>의 스테이지 6개를 추가했습니다. 39장을 ★1로 모두 깨면 열립니다.</li><li>미래편 1~3장·우주편 1장에서 빠졌던 <b>좀비 습격 37곳</b>을 추가해 현재 7개 장 모두 48곳씩, 총 336곳을 갖췄습니다.</li><li>새 좀비 <b>캐더버 베어·치킨랄라·꼬마 언데드 사이클론·좀비 까르삔초</b>에 원작 모션과 부활·땅굴·워프를 적용했습니다.</li></ul>
 <h3>↩️ v6.8.2 넉백 모션 개선</h3>
 <ul><li>체력 감소로 발생하는 넉백을 크게 한 번, 절반 높이로 한 번 더 튕기는 2회 바운스로 변경했습니다.</li><li>보스 등장 충격파로 밀린 아군도 2회 바운스합니다. 기존 넉백 시간과 이동 거리는 유지됩니다.</li></ul>
 <h3>🪙 v6.8.1 울슈레 플래티넘</h3>

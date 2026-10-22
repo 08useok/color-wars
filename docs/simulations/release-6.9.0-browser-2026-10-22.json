@@ -1,0 +1,87 @@
+{
+  "result": {
+    "version": "6.9.0",
+    "images": [
+      "assets/crisp-motion/crisp_1.webp?v=1",
+      "assets/crisp-motion/crisp_2.webp?v=1",
+      "assets/lava-3-motion/lava_3.webp?v=1",
+      "assets/crisp-motion/crisp_1-profile.webp",
+      "assets/crisp-motion/crisp_2-profile.webp",
+      "assets/lava-3-motion/lava_3-profile.webp"
+    ],
+    "crisp": {
+      "hp": 180000,
+      "atk": 12000,
+      "interval": 1.6,
+      "speed": 8,
+      "range": 8,
+      "cost": 2400,
+      "cooldown": 28,
+      "knockbacks": 2,
+      "flatCost": true,
+      "noRangeGrow": true,
+      "area": true,
+      "attackClass": "범위",
+      "resistVs": [
+        "red"
+      ],
+      "savageChance": 0.3,
+      "savageMult": 3,
+      "windup": 0.2,
+      "attackDuration": 0.8,
+      "hits": [
+        {
+          "at": 0.2,
+          "share": 0.5
+        },
+        {
+          "at": 0.5,
+          "share": 0.5
+        }
+      ],
+      "evolved": true,
+      "treasureEligible": true
+    },
+    "lava": {
+      "hp": 159090,
+      "atk": 71470,
+      "interval": 3.2,
+      "speed": 3,
+      "range": 14.52,
+      "cost": 935,
+      "cooldown": 39,
+      "knockbacks": 2,
+      "area": true,
+      "massiveVs": [
+        "black"
+      ],
+      "attackDuration": 0.8,
+      "windup": 0.35,
+      "evolved": true,
+      "treasureEligible": true,
+      "trueForm": true,
+      "dodge": {
+        "chance": 0.25,
+        "duration": 3.3,
+        "vs": [
+          "black"
+        ]
+      }
+    },
+    "series": [
+      {
+        "id": "carmine",
+        "name": "카민"
+      },
+      {
+        "id": "sapphire",
+        "name": "사파이어"
+      },
+      {
+        "id": "crisp",
+        "name": "크리스프"
+      }
+    ]
+  },
+  "errors": []
+}

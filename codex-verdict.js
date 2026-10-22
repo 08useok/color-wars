@@ -9,7 +9,7 @@ function allyRoleAssessment(type,s,review=''){
  else if(type==='alchemypurple')role='메탈 대항 범위 딜러';
  else if(type==='red'||type==='yellow'||/기본 고방|고방 용도/.test(first))role='고방';
  else if(type==='peach')role='천사 대항 딜탱';
- else if(type==='iron'||type==='garnet'||/딜탱/.test(first))role='딜탱';
+ else if(type==='crisp'||type==='iron'||type==='garnet'||/딜탱/.test(first))role='딜탱';
  else if(type==='brown'||type==='brick'||/탱커|탱킹/.test(first)||(s.resistVs&&melee))role='탱커';
  else if(type==='salmon'||/전술형 메즈/.test(first))role='전선 조절 메즈';
  else if(type==='indigo'||type==='cream'||type==='hotpink'||/지원|보조|멈추게 하는 요원|공격력 다운/.test(first)&&control)role='메즈 지원';

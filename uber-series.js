@@ -6,7 +6,7 @@ const UBER_SERIES={
  orchid:'인스톨 연합',
  iron:'아이언즈',grey:'아이언즈',// 아이언즈 = 좀비 저격 시리즈 (좀비 발생 스테이지가 사냥터)
  bronze:'인스톨 연합',
- carmine:'복싱즈',
+ carmine:'복싱즈',crisp:'복싱즈',
  banana:'스위츠',butter:'스위츠',vanilla:'스위츠',
  acid:'아이언즈',spring:'가든즈',
  lime:'스위츠',emerald:'글라스 군단',

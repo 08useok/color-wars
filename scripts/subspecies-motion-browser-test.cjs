@@ -8,6 +8,7 @@ const server=http.createServer((req,res)=>{const f=path.resolve(root,'.'+decodeU
  await page.addInitScript(types=>{if(localStorage.getItem('subspecies-motion-test'))return;localStorage.setItem('subspecies-motion-test','1');localStorage.setItem('red-battle-gacha-v1',JSON.stringify({owned:types,t1:0,t10:0}));localStorage.setItem('red-battle-training-v1',JSON.stringify({xp:100000,levels:Object.fromEntries(types.map(t=>[t,20])),forms:{herbmint:1,kendonavy:1}}));},types);
  const url=`http://127.0.0.1:${server.address().port}/red-battle-doge.html`;
  await page.goto(url);await page.waitForFunction(()=>!game.assetsLoading);
+ await page.evaluate(()=>{const prior=animateAtlas;animateAtlas=function(u){try{return prior(u)}catch(e){throw Error(String(e)+' UNIT '+JSON.stringify({type:u.type,animTime:u.animTime,attackTime:u.attackTime,hurtTime:u.hurtTime,stats:u.stats}))}}});
  const before=await page.evaluate(types=>Object.fromEntries(types.map(t=>[t,{level:training.levels[t],form:training.forms[t]||2}])),types);
  const control=await browser.newPage();await control.route('**/subspecies-motion.js*',route=>route.fulfill({contentType:'text/javascript',body:'// Control: original vector asset registration.'}));await control.goto(url);await control.waitForFunction(()=>!game.assetsLoading);
  const snapshot=types=>({stages:STAGES,spawns:STAGE_SPAWNS,units:data.units,stats:Object.fromEntries(types.map(t=>[t,[1,2].map(f=>unitStats(t,20,f))]))});
@@ -29,7 +30,7 @@ const server=http.createServer((req,res)=>{const f=path.resolve(root,'.'+decodeU
    addUnit('metalhippo');const foe=game.units.find(v=>!v.ally);ok(foe,'test enemy');foe.emerging=false;foe.x=u.x-4;foe.hp=foe.max=1e9;foe.stats.atk=0;foe.stats.speed=0;foe.stats.knockbacks=1;
    const hp=foe.hp,attack=new Set();for(let i=0;i<38;i++){update(1/30);if(u.el.dataset.animation==='attack')attack.add(sheet.style.backgroundPosition)}
    ok(attack.size===6,t+' all six actual attack frames');ok(foe.hp<hp,t+' attack actually lands');
-   u.atkCd=100;foe.atkCd=0;foe.stats.atk=Math.round(u.max*.4);foe.stats.windup=1/30;foe.stats.attackDuration=.2;foe.stats.interval=2;foe.stats.range=10;
+   u.atkCd=100;foe.atkCd=0;foe.attackTime=0;foe.pendingAttack=null;foe.stats.atk=Math.round(u.max*.4);foe.stats.windup=1/30;foe.stats.attackDuration=.2;foe.stats.interval=2;foe.stats.range=10;
    for(let i=0;i<30&&!(u.hurtTime>0);i++)update(1/30);
    ok(u.hurtTime>0&&u.kbTime>0,t+' actual enemy hit triggers recoil');animateAtlas(u);const recoil=sheet.style.backgroundPosition;u.hurtTime=HITBACK_DURATION*.25;animateAtlas(u);ok(sheet.style.backgroundPosition!==recoil,t+' hurt recovery drawing');ok(u.el.dataset.animation==='hurt',t+' hurt state');
    rows.push({type:t,form,walk:walk.size,attack:attack.size,recoil:true,damage:hp-foe.hp,sheet:a.sheet,size:[image.naturalWidth,image.naturalHeight]});

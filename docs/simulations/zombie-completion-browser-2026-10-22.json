@@ -1,0 +1,239 @@
+{
+  "result": {
+    "chapters": 7,
+    "total": 336,
+    "added": [
+      {
+        "i": 183,
+        "name": "마다가스카르",
+        "chapter": 5,
+        "rules": 17
+      },
+      {
+        "i": 193,
+        "name": "콜롬비아",
+        "chapter": 5,
+        "rules": 15
+      },
+      {
+        "i": 206,
+        "name": "달",
+        "chapter": 5,
+        "rules": 8
+      },
+      {
+        "i": 377,
+        "name": "마다가스카르",
+        "chapter": 6,
+        "rules": 18
+      },
+      {
+        "i": 387,
+        "name": "콜롬비아",
+        "chapter": 6,
+        "rules": 15
+      },
+      {
+        "i": 396,
+        "name": "NASA",
+        "chapter": 6,
+        "rules": 7
+      },
+      {
+        "i": 400,
+        "name": "달",
+        "chapter": 6,
+        "rules": 9
+      },
+      {
+        "i": 471,
+        "name": "이탈리아",
+        "chapter": 7,
+        "rules": 11
+      },
+      {
+        "i": 476,
+        "name": "네팔",
+        "chapter": 7,
+        "rules": 9
+      },
+      {
+        "i": 483,
+        "name": "마다가스카르",
+        "chapter": 7,
+        "rules": 19
+      },
+      {
+        "i": 493,
+        "name": "콜롬비아",
+        "chapter": 7,
+        "rules": 13
+      },
+      {
+        "i": 502,
+        "name": "NASA",
+        "chapter": 7,
+        "rules": 10
+      },
+      {
+        "i": 506,
+        "name": "달",
+        "chapter": 7,
+        "rules": 15
+      },
+      {
+        "i": 514,
+        "name": "우라노스",
+        "chapter": 8,
+        "rules": 6
+      },
+      {
+        "i": 515,
+        "name": "넵튠",
+        "chapter": 8,
+        "rules": 3
+      },
+      {
+        "i": 516,
+        "name": "트리톤",
+        "chapter": 8,
+        "rules": 4
+      },
+      {
+        "i": 520,
+        "name": "고양이눈 성운",
+        "chapter": 8,
+        "rules": 7
+      },
+      {
+        "i": 521,
+        "name": "알 성운",
+        "chapter": 8,
+        "rules": 6
+      },
+      {
+        "i": 522,
+        "name": "호리병박 성운",
+        "chapter": 8,
+        "rules": 3
+      },
+      {
+        "i": 525,
+        "name": "카노푸스",
+        "chapter": 8,
+        "rules": 5
+      },
+      {
+        "i": 526,
+        "name": "베가",
+        "chapter": 8,
+        "rules": 6
+      },
+      {
+        "i": 528,
+        "name": "베텔게우스",
+        "chapter": 8,
+        "rules": 10
+      },
+      {
+        "i": 531,
+        "name": "사이타 별",
+        "chapter": 8,
+        "rules": 6
+      },
+      {
+        "i": 532,
+        "name": "괴황성",
+        "chapter": 8,
+        "rules": 3
+      },
+      {
+        "i": 533,
+        "name": "대마젤란 성운",
+        "chapter": 8,
+        "rules": 5
+      },
+      {
+        "i": 534,
+        "name": "부타라 별",
+        "chapter": 8,
+        "rules": 11
+      },
+      {
+        "i": 535,
+        "name": "모스칸다그",
+        "chapter": 8,
+        "rules": 7
+      },
+      {
+        "i": 536,
+        "name": "콜론 별",
+        "chapter": 8,
+        "rules": 15
+      },
+      {
+        "i": 539,
+        "name": "다라라라",
+        "chapter": 8,
+        "rules": 7
+      },
+      {
+        "i": 540,
+        "name": "마이도무리",
+        "chapter": 8,
+        "rules": 7
+      },
+      {
+        "i": 541,
+        "name": "멜토즈",
+        "chapter": 8,
+        "rules": 4
+      },
+      {
+        "i": 542,
+        "name": "우랄루",
+        "chapter": 8,
+        "rules": 4
+      },
+      {
+        "i": 543,
+        "name": "아구하무무",
+        "chapter": 8,
+        "rules": 7
+      },
+      {
+        "i": 545,
+        "name": "아바 부아",
+        "chapter": 8,
+        "rules": 6
+      },
+      {
+        "i": 547,
+        "name": "데스스탄",
+        "chapter": 8,
+        "rules": 7
+      },
+      {
+        "i": 553,
+        "name": "블랙홀",
+        "chapter": 8,
+        "rules": 12
+      },
+      {
+        "i": 554,
+        "name": "빅뱅",
+        "chapter": 8,
+        "rules": 27
+      }
+    ],
+    "newEnemies": [
+      "cadaverbear",
+      "zuche",
+      "lilzyclone",
+      "zapy"
+    ],
+    "saved": 183
+  },
+  "errors": [],
+  "reload": true
+}
