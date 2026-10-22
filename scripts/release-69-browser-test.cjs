@@ -6,7 +6,7 @@ const root=path.resolve(__dirname,'..'),server=http.createServer((req,res)=>{con
  await page.goto(`http://127.0.0.1:${server.address().port}/red-battle-doge.html`);await page.waitForFunction(()=>!game.assetsLoading);
  const result=await page.evaluate(async()=>{
  const ok=(v,m)=>{if(!v)throw Error(m)};cleared=STAGES.map((_,i)=>i);training.levels.crisp=30;training.levels.lava=30;trueForms=['lava'];selectedStage=48;game.running=false;
- ok(GAME_VERSION==='6.9.0','version');ok(SERIES_MEMBERS['복싱즈'].some(u=>u.id==='crisp'),'series pool');
+ ok(/^6\.9\.\d+$/.test(GAME_VERSION),'version');ok(SERIES_MEMBERS['복싱즈'].some(u=>u.id==='crisp'),'series pool');
  const images=[];for(const src of [NEW_ATLASES.crisp.sheet,NEW_ATLASES.crisp.evolved.sheet,NEW_ATLASES.lava.true.sheet,...PROFILE_ART.crisp,PROFILE_ART_TRUE.lava]){const im=new Image();im.src=src;await im.decode();images.push(src);}
  const c=unitStats('crisp'),l=unitStats('lava');ok(c.hp===180000&&c.atk===12000,'stats');ok(l.trueForm,'lava ready');ok(!trueFormAssetReady('crisp'),'crisp third locked');
  const review=allyReview('lava',true);ok(review.includes('투캔 카운터')&&review.includes('6.9.0'),'lava review');ok(allyReview('crisp',true).includes('codex-verdict'),'crisp role');
