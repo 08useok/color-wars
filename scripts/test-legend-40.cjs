@@ -2,7 +2,7 @@ const fs=require('fs'),assert=require('assert/strict'),make=require('./full-harn
 const old=JSON.parse(fs.readFileSync('reference-sheets/legend-40/before.json','utf8'));
 const e=make({savedLegend:{1:[260,261,266,267,268,272,272,273,-1],2:[267,271]},extraSetup:`globalThis.__legend40={legendProgress,legendSubOpen,legendStageUnlocked,updateStageSpawns,bases:data.bases,assets:NEW_ATLASES};`});
 const x=globalThis.__legend40;delete globalThis.__legend40;
-assert.equal(e.stageList.length,old.stages.length+6);assert.equal(e.legendSubs.length,40);
+assert.equal(e.stageList.length,old.stages.length+6+48);// +48: 우주편 2장(cosmos2.js)이 스테이지 목록 맨 끝에 붙는다assert.equal(e.legendSubs.length,40);
 for(let i=0;i<old.stages.length;i++){assert.deepEqual(JSON.parse(JSON.stringify(e.stageList[i])),old.stages[i]);assert.deepEqual(e.spawnList[i]===undefined?undefined:JSON.parse(JSON.stringify(e.spawnList[i])),old.spawns[i]);}
 assert.deepEqual(x.legendProgress[1],[260,261,266,267,268,272]);assert.deepEqual(x.legendProgress[2],[267,271]);
 assert.equal(x.legendSubOpen(39),false);x.legendProgress[1].push(...[262,263,264,265]);assert.equal(x.legendSubOpen(39),true);

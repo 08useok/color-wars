@@ -1,4 +1,4 @@
-// 우주편 2장 데이터 초안 (v7.0.0 준비). 게임에는 아직 연결하지 않았다 — html이 불러오지 않는다.
+// 우주편 2장 데이터 (v7.0.0). cosmos2.js가 스테이지 목록 맨 끝에 붙인다. 이 파일은 scripts/build-cosmos2.cjs가 만든다.
 // 출처: battlecats-db 宇宙編 第2章 s03007-01~48 (15번 알 성운은 miraheze 위키). 시간은 초(30fps 프레임÷30), 배율은 %.
 // 신규 적 4종(ultrabaabaa·kidtappa·ribbo·kamisamaserious)은 임시 id라 스탯 등록 때 확정한다.
 const COSMOS2_DATA=[

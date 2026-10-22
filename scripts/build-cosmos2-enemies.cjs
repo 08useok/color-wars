@@ -21,7 +21,7 @@ const E=[
   hitsF:[[90,999,{blowChance:1,blowDistance:14,slowChance:1,slowDuration:50/30}],[150,999,{blowChance:1,blowDistance:14,slowChance:1,slowDuration:50/30}],[300,65999,null]],
   text:'"나 신님인데. 이번엔 진심이야." 우주편 2장 최종 보스. 3연속 공격 중 1·2타(999)는 날려버림 100%·둔화 50프레임이 붙고 3타(65,999)는 한 방이다. 전방위 원거리 공격(-1000~1000). (우주편 2장 빅뱅)'}
 ];
-const out=[`// 우주편 2장 신규 적 4종 등록 초안 (v7.0.0 준비). 게임에는 아직 연결하지 않았다 — html이 불러오지 않는다.`,
+const out=[`// 우주편 2장 신규 적 4종 등록 (v7.0.0).`,
 `// scripts/build-cosmos2-enemies.cjs 로 만든다. 능력치 변환은 우주편 1장 적과 같은 규칙(사거리 ×0.034, 속도 ×0.5367).`,
 `// 엔진 보강 완료(strike-hits.js): 신님(진심) 1·2타 날려버림·둔화와 3타 한 방(타격별 능력), 전방위 원거리(backRange). 게콕 워프는 날려버림으로 대신한다. 신님 가면(2장)은 아직 없다.`,''];
 const have=[];
