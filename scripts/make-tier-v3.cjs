@@ -65,6 +65,7 @@ L.push(`## 3진 티어표 (전용 3진 그림이 있는 ${HAS3.length}명)`,'');
 L.push('3진 그림이 있는 캐릭터만 대상이다. **그 캐릭터만 3진으로, 나머지는 2진 그대로** 둔 상태에서 같은 맵의 이득을 쟀고, 2진 분포(위 표)와 같은 구간에 넣어 티어를 정했다.');
 L.push('');
 // exit: 2진이 X 티어인데 3진으로 X를 벗어나는(효과가 오차의 2배·3초 이상) 캐릭터
+const EXIT='ᵉˣⁱᵗ';// 지수처럼 작게 붙이는 exit 표시
 const isExit=r=>/^X/.test(label[r.c])&&!/^X/.test(r.lab)&&Math.abs(TF.out[r.c].delta)*300>2*TF.out[r.c].se*300&&TF.out[r.c].delta*300>=3;
 L.push('|3진 티어|3진 순위|캐릭터|등급|2진 티어 → 3진 티어|3진 이득 (2진 이득 + 3진 효과)|3진 정의 상태|');L.push('|---|---:|---|---|---|---:|---|');
 const state={lava:'**새 정의**(체력 ×1.5·공격 ×1.4, 간격 3.2초, 사거리 +10%, 검은 적 공격 25% 확률 3.3초 무효)',raspberry:'**새 정의**(체력·공격 ×1.5, 간격 3초, 사거리 39, 에일 초뎀, 베리어 브레이커 25%, 무한 관통·성장 ×1.21·상한 20)',gold:'기존 정의(5연타·처치 돈 ×1.5)',clover:'기존 정의(3연타·크리티컬 25%)',hotpink:'기존 정의(사거리 30 범위)',salmon:'기존 정의(파동 스토퍼 등)',cream:'기존 정의(범위·둔화 65%)',beige:'기존 정의(사거리 14·정지 60%)',coral:'**6.8.0 정의**(범위 2연타 각 50%·공체 150%/140%·350원·재생산 20초)',crystal:'**새 정의**(크리티컬 20%, 에일 엄강, 베리어 브레이커 50%, 관통 4명 유지, 체력·공격 ×1.2)',indigo:'**새 정의**(체력·공격 ×1.4, 정지 55%·2.5초, 공격력 다운 무효)'};
@@ -74,7 +75,7 @@ for(const base of BANDS.slice(1)){
  const members=rows3.filter(r=>r.lab===base),cut=Math.floor(members.length/3);
  members.forEach((r,i)=>{r.lab=base+(i<cut?'+':cut&&i>=members.length-cut?'-':'')});
 }
-for(const r of rows3){const d=TF.out[r.c].delta*300;L.push(`|${r.lab}|${r.rank}|${names(r.c)}|${GR[e.gradeOf(r.c)]}|${label[r.c]} → **${r.lab}**${isExit(r)?' · **exit**':''}|${Math.round(r.g3)}초 (${Math.round(gs(r.c))}초 ${d>=0?'+':'−'} ${Math.abs(Math.round(d))}초)±${Math.round(TF.out[r.c].se*300)}|${state[r.c]}|`)}
+for(const r of rows3){const d=TF.out[r.c].delta*300;L.push(`|${r.lab}|${r.rank}|${names(r.c)}|${GR[e.gradeOf(r.c)]}|${label[r.c]} → **${r.lab}**${isExit(r)?' '+EXIT:''}|${Math.round(r.g3)}초 (${Math.round(gs(r.c))}초 ${d>=0?'+':'−'} ${Math.abs(Math.round(d))}초)±${Math.round(TF.out[r.c].se*300)}|${state[r.c]}|`)}
 L.push('');
 const solid=r=>Math.abs(TF.out[r.c].delta)*300>2*TF.out[r.c].se*300&&TF.out[r.c].delta*300>=3;// 오차의 2배 이상이고 3초 이상 단축될 때만 의미 있는 변화
 const up=rows3.filter(r=>solid(r)&&BANDS.indexOf(r.lab.replace(/[+-]$/,''))<BANDS.indexOf(baseLabel[r.c]));
@@ -100,17 +101,17 @@ const rarityOrder=['basic','ex','rare','sr','uber'];
 for(const grade of rarityOrder)rarityDoc.push(`|${GR[grade]}|${allies.filter(c=>e.gradeOf(c)===grade).length}|${rows3.filter(r=>e.gradeOf(r.c)===grade).length}|`);
 // ── 한눈에 보기: 등급 × 티어 표(2진), 3진 티어별 표
 const supOf=l=>l.endsWith('+')?'⁺':l.endsWith('-')?'⁻':'',baseOf=l=>l.replace(/[+-]$/,'');
-rarityDoc.push('','## 한눈에 보기','','### 등급 × 티어 (2진 + 3진)','','한 칸 안은 이득이 큰 순서이고, **(3진)**은 그 캐릭터를 3진으로 쟀을 때의 티어다(같은 캐릭터가 2진과 3진 두 곳에 나온다). **exit**는 2진이 X 티어인데 3진으로 X를 벗어난다는 뜻이다(→ 뒤는 3진 티어). 이름 오른쪽 ⁺는 그 티어의 상위 1/3, ⁻는 하위 1/3이고 표시가 없으면 가운데다. † 기준 덱 멤버는 두 번째 덱에서 보정한 값이다.','',`|티어|${rarityOrder.map(g=>GR[g]).join('|')}|합계|`,`|---|${rarityOrder.map(()=>'---').join('|')}|---:|`);
+rarityDoc.push('','## 한눈에 보기','','### 등급 × 티어 (2진 + 3진)','','한 칸 안은 이득이 큰 순서이고, **(3진)**은 그 캐릭터를 3진으로 쟀을 때의 티어다(같은 캐릭터가 2진과 3진 두 곳에 나온다). 표시 ᵉˣⁱᵗ는 2진이 X 티어인데 3진으로 X를 벗어난다는 뜻이다(→ 뒤는 3진 티어). 이름 오른쪽 ⁺는 그 티어의 상위 1/3, ⁻는 하위 1/3이고 표시가 없으면 가운데다. † 기준 덱 멤버는 두 번째 덱에서 보정한 값이다.','',`|티어|${rarityOrder.map(g=>GR[g]).join('|')}|합계|`,`|---|${rarityOrder.map(()=>'---').join('|')}|---:|`);
 // 2진 전원 + 3진 11명(3진 이름 표시)을 한 표에 넣는다. 한 칸 안은 이득 순서.
 const entries=[...allies.map(c=>({c,tf:false,tier:label[c],v:gs(c)})),...rows3.map(r=>({c:r.c,tf:true,tier:r.lab,v:r.g3}))];
 const exitOf=c=>rows3.find(r=>r.c===c&&isExit(r));
-const cellName=x=>(x.tf?names(x.c)+'(3진)':names(x.c))+supOf(x.tier)+(!x.tf&&A.adjusted[x.c]?'†':'')+(!x.tf&&exitOf(x.c)?' **exit**→'+exitOf(x.c).lab:'');
+const cellName=x=>(x.tf?names(x.c)+'(3진)':names(x.c))+supOf(x.tier)+(!x.tf&&A.adjusted[x.c]?'†':'')+(!x.tf&&exitOf(x.c)?EXIT+'→'+exitOf(x.c).lab:'');
 for(const b of BANDS){const inB=entries.filter(x=>baseOf(x.tier)===b).sort((p,q)=>q.v-p.v);if(!inB.length)continue;
  if(b===BANDS[0]){const one=new Set(inB.map(x=>e.gradeOf(x.c))).size===1;rarityDoc.push(`|**${b}**|${one?inB.map(cellName).join(' · ')+' ('+GR[e.gradeOf(inB[0].c)]+')':inB.map(x=>cellName(x)+' ('+GR[e.gradeOf(x.c)]+')').join(' · ')}${rarityOrder.slice(1).map(()=>'|').join('')}|${inB.length}|`);continue}// OP는 등급 칸을 하나로 합쳐 적는다
  rarityDoc.push(`|**${b}**|${rarityOrder.map(g=>{const m=inB.filter(x=>e.gradeOf(x.c)===g);return m.length?m.map(cellName).join(' · '):'·'}).join('|')}|${inB.length}|`)}
 rarityDoc.push(`|**합계**|${rarityOrder.map(g=>{const a=allies.filter(c=>e.gradeOf(c)===g).length,t=rows3.filter(r=>e.gradeOf(r.c)===g).length;return t?a+' (+3진 '+t+')':a}).join('|')}|${allies.length} (+3진 ${rows3.length})|`);
 rarityDoc.push('',`### 3진 (${rows3.length}명)`,'','3진 그림이 있는 캐릭터만 대상이다. **그 캐릭터만 3진으로, 나머지는 2진 그대로** 둔 상태의 이득이고, 티어 구간은 2진 표와 같다. 괄호는 (등급 · 2진 티어 → 3진 티어)다.','','|3진 티어|인원|캐릭터|','|---|---:|---|');
-for(const t of DISPLAY_BANDS){const g=rows3.filter(r=>r.lab===t);if(g.length)rarityDoc.push(`|**${t}**|${g.length}|${g.map(r=>`${names(r.c)} (${GR[e.gradeOf(r.c)]} · ${label[r.c]} → ${r.lab}${isExit(r)?' · exit':''})`).join(' · ')}|`)}
+for(const t of DISPLAY_BANDS){const g=rows3.filter(r=>r.lab===t);if(g.length)rarityDoc.push(`|**${t}**|${g.length}|${g.map(r=>`${names(r.c)} (${GR[e.gradeOf(r.c)]} · ${label[r.c]} → ${r.lab})${isExit(r)?EXIT:''}`).join(' · ')}|`)}
 rarityDoc.push('','**3진으로 티어가 오른 폭이 큰 순서**: '+[...rows3].map(r=>({r,up:BANDS.indexOf(baseOf(label[r.c]))-BANDS.indexOf(baseOf(r.lab))})).sort((x,y)=>y.up-x.up||y.r.g3-x.r.g3).slice(0,5).map(({r,up})=>`${names(r.c)} ${label[r.c]}→${r.lab}${up>0?' (▲'+up+')':up<0?' (▼'+(-up)+')':''}`).join(' · ')+'.');
 let counted=0,counted3=0;
 for(const grade of rarityOrder){
@@ -118,7 +119,7 @@ for(const grade of rarityOrder){
  counted+=members.length;counted3+=third.length;
  rarityDoc.push('',`## ${GR[grade]} (${members.length}명)`);
  rarityDoc.push('','### 상세 (2진 · 3진)','','|등급 내 순위|전체 순위|캐릭터|2진 티어|2진 클리어 단축 ±표준오차|3진 티어|3진 클리어 단축|3진 효과 ±표준오차|','|---:|---:|---|---|---:|---|---:|---:|');
- members.forEach((c,i)=>{const r=third.find(x=>x.c===c);rarityDoc.push(`|${i+1}|${allies.indexOf(c)+1}|${names(c)}${A.adjusted[c]?' †':''}|${label[c]}|${gs(c).toFixed(1)} ± ${(A.se[c]*300).toFixed(1)}초|${r?'**'+r.lab+'**'+(isExit(r)?' (exit)':''):'–'}|${r?r.g3.toFixed(1)+'초':'–'}|${r?(TF.out[r.c].delta*300).toFixed(1)+' ± '+(TF.out[r.c].se*300).toFixed(1)+'초':'–'}|`)});
+ members.forEach((c,i)=>{const r=third.find(x=>x.c===c);rarityDoc.push(`|${i+1}|${allies.indexOf(c)+1}|${names(c)}${A.adjusted[c]?' †':''}|${label[c]}|${gs(c).toFixed(1)} ± ${(A.se[c]*300).toFixed(1)}초|${r?'**'+r.lab+'**'+(isExit(r)?EXIT:''):'–'}|${r?r.g3.toFixed(1)+'초':'–'}|${r?(TF.out[r.c].delta*300).toFixed(1)+' ± '+(TF.out[r.c].se*300).toFixed(1)+'초':'–'}|`)});
 }
 if(counted!==allies.length||counted3!==rows3.length)throw Error('등급별 인원 누락');
 rarityDoc.push('','† 기준 덱 멤버는 두 번째 덱에서 보정한 값이다. 3진 표의 오차는 진화 효과의 표준오차이며 절대 성능 오차와 구분한다.','');
