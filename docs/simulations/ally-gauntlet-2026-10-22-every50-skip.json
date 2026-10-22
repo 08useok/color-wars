@@ -1,0 +1,3016 @@
+{
+ "heal": false,
+ "enemies": 149,
+ "order": [
+  "ghostdog",
+  "croco",
+  "ghostsnache",
+  "dog",
+  "rabbit",
+  "snache",
+  "squirrel",
+  "baa",
+  "gabriel",
+  "guys",
+  "ghostbaa",
+  "hippo",
+  "gory",
+  "peng",
+  "ectosnache",
+  "pigge",
+  "strayguy",
+  "shibalien",
+  "seal",
+  "leboin",
+  "zdog",
+  "mooth",
+  "zcroco",
+  "kroxo",
+  "duche",
+  "znache",
+  "kangaroo",
+  "rhino",
+  "zguys",
+  "peasquirrel",
+  "celeboodle",
+  "heavenlyhippoe",
+  "zpigge",
+  "zpeng",
+  "zgory",
+  "bear",
+  "zseal",
+  "shibalienelite",
+  "face",
+  "painter",
+  "hyppoh",
+  "captainmogu",
+  "maawth",
+  "walldoge",
+  "owlbrow",
+  "dagshund",
+  "zkangaroo",
+  "zbear",
+  "darkdog",
+  "coffinzoge",
+  "gorydark",
+  "madampoodle",
+  "pigeon",
+  "zoge",
+  "otta",
+  "shyboy",
+  "mrangel",
+  "zbrollow",
+  "nyororon",
+  "lilbunbun",
+  "redsnache",
+  "krabbe",
+  "redriding",
+  "zthrillerz",
+  "sael",
+  "magpie",
+  "assassinbear",
+  "tackey",
+  "zomboe",
+  "lemurr",
+  "zroco",
+  "shadowboxer",
+  "mrmole",
+  "zuche",
+  "starpeng",
+  "scissorman",
+  "galaxynyandam",
+  "calamary",
+  "zigge",
+  "nyandam",
+  "stpigge",
+  "peathief",
+  "zduche",
+  "dolphina",
+  "zory",
+  "zackiepeng",
+  "spaceborg",
+  "alpacky",
+  "lilzyclone",
+  "kory",
+  "zirzeal",
+  "brollow",
+  "zangroo",
+  "mastera",
+  "ursamajor",
+  "henry",
+  "bunbun",
+  "cadaverbear",
+  "kurosawah",
+  "bigsal",
+  "zbore",
+  "camelle",
+  "sloth",
+  "gregory",
+  "zcamelle",
+  "raind",
+  "cyberx",
+  "misshaka",
+  "mamaleboin",
+  "zdagshund",
+  "gonzales",
+  "eldersloth",
+  "liz56",
+  "phace",
+  "sunfish",
+  "hienergy",
+  "hiyokoel",
+  "blackcyclone",
+  "lilnyandam",
+  "nimoy",
+  "sleipnir",
+  "razorback",
+  "blackotta",
+  "clione",
+  "twocan",
+  "blackleboin",
+  "jkbunbun",
+  "daddy",
+  "valkyrie",
+  "wolfururun",
+  "gravey",
+  "bore",
+  "bunbunblack",
+  "berserkory",
+  "kamisama",
+  "professor",
+  "inumusha",
+  "alienbunbun",
+  "ostrich",
+  "boraphim",
+  "zapy",
+  "ragingcat",
+  "whitecyclone",
+  "zcapy",
+  "redcyclone",
+  "zostrich",
+  "angelcyclone",
+  "capy",
+  "calamaria"
+ ],
+ "out": [
+  {
+   "skipped": 6,
+   "skippedNames": [
+    "꼬마 언데드 사이클론",
+    "캐더버 베어",
+    "왕도롱뇽",
+    "좀비 샤이 보어",
+    "묘지기 하나코",
+    "좀비 핫도그"
+   ],
+   "id": "bronze",
+   "name": "브론즈",
+   "grade": "uber",
+   "wins": 111,
+   "cleared": false,
+   "stop": {
+    "id": "blackcyclone",
+    "name": "블랙 사이클론",
+    "rank": 32,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.0815193502150024,
+   "sec": 1333
+  },
+  {
+   "skipped": 7,
+   "skippedNames": [
+    "꼬마 언데드 사이클론",
+    "스컬 복서",
+    "캐더버 베어",
+    "왕도롱뇽",
+    "좀비 샤이 보어",
+    "묘지기 하나코",
+    "좀비 핫도그"
+   ],
+   "id": "rainbow",
+   "name": "레인보우",
+   "grade": "uber",
+   "wins": 110,
+   "cleared": false,
+   "stop": {
+    "id": "blackcyclone",
+    "name": "블랙 사이클론",
+    "rank": 32,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.32827329192546584,
+   "sec": 1087
+  },
+  {
+   "skipped": 7,
+   "skippedNames": [
+    "꼬마 언데드 사이클론",
+    "스컬 복서",
+    "캐더버 베어",
+    "왕도롱뇽",
+    "좀비 샤이 보어",
+    "묘지기 하나코",
+    "좀비 핫도그"
+   ],
+   "id": "emerald",
+   "name": "에메랄드",
+   "grade": "uber",
+   "wins": 110,
+   "cleared": false,
+   "stop": {
+    "id": "blackcyclone",
+    "name": "블랙 사이클론",
+    "rank": 32,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.1238447204968944,
+   "sec": 1172
+  },
+  {
+   "skipped": 5,
+   "skippedNames": [
+    "두더더지",
+    "돌고래 아가씨",
+    "캐더버 베어",
+    "묘지기 하나코",
+    "좀비 핫도그"
+   ],
+   "id": "spring",
+   "name": "스프링",
+   "grade": "uber",
+   "wins": 109,
+   "cleared": false,
+   "stop": {
+    "id": "sunfish",
+    "name": "천사 개복치",
+    "rank": 35,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.30888198757763974,
+   "sec": 1198
+  },
+  {
+   "skipped": 5,
+   "skippedNames": [
+    "돌고래 아가씨",
+    "꼬마 언데드 사이클론",
+    "좀비 샤이 보어",
+    "그레고리 장군",
+    "좀비 핫도그"
+   ],
+   "id": "fuchsia",
+   "name": "퓨샤",
+   "grade": "uber",
+   "wins": 109,
+   "cleared": false,
+   "stop": {
+    "id": "sunfish",
+    "name": "천사 개복치",
+    "rank": 35,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.15440263061746437,
+   "sec": 781
+  },
+  {
+   "skipped": 8,
+   "skippedNames": [
+    "꼬마 언데드 사이클론",
+    "얼룩 바다레오파드",
+    "스컬 복서",
+    "캐더버 베어",
+    "왕도롱뇽",
+    "좀비 샤이 보어",
+    "묘지기 하나코",
+    "좀비 핫도그"
+   ],
+   "id": "vanilla",
+   "name": "바닐라",
+   "grade": "uber",
+   "wins": 106,
+   "cleared": false,
+   "stop": {
+    "id": "sunfish",
+    "name": "천사 개복치",
+    "rank": 35,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.4963726708074534,
+   "sec": 1428
+  },
+  {
+   "skipped": 9,
+   "skippedNames": [
+    "두더더지",
+    "꼬마 언데드 사이클론",
+    "얼룩 바다레오파드",
+    "스컬 복서",
+    "캐더버 베어",
+    "왕도롱뇽",
+    "좀비 샤이 보어",
+    "묘지기 하나코",
+    "좀비 핫도그"
+   ],
+   "id": "lime",
+   "name": "라임",
+   "grade": "uber",
+   "wins": 105,
+   "cleared": false,
+   "stop": {
+    "id": "sunfish",
+    "name": "천사 개복치",
+    "rank": 35,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.30689114089571756,
+   "sec": 1539
+  },
+  {
+   "skipped": 9,
+   "skippedNames": [
+    "두더더지",
+    "꼬마 언데드 사이클론",
+    "얼룩 바다레오파드",
+    "스컬 복서",
+    "캐더버 베어",
+    "왕도롱뇽",
+    "좀비 샤이 보어",
+    "묘지기 하나코",
+    "좀비 핫도그"
+   ],
+   "id": "acid",
+   "name": "애시드",
+   "grade": "uber",
+   "wins": 105,
+   "cleared": false,
+   "stop": {
+    "id": "sunfish",
+    "name": "천사 개복치",
+    "rank": 35,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.26791186039633247,
+   "sec": 1438
+  },
+  {
+   "skipped": 6,
+   "skippedNames": [
+    "돌고래 아가씨",
+    "꼬마 언데드 사이클론",
+    "캐더버 베어",
+    "좀비 샤이 보어",
+    "묘지기 하나코",
+    "좀비 핫도그"
+   ],
+   "id": "night",
+   "name": "나이트",
+   "grade": "uber",
+   "wins": 104,
+   "cleared": false,
+   "stop": {
+    "id": "gonzales",
+    "name": "천사 곤잘레스",
+    "rank": 39,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.8432298136645963,
+   "sec": 940
+  },
+  {
+   "skipped": 11,
+   "skippedNames": [
+    "멍뭉두건 미냐",
+    "두더더지",
+    "꼬마 언데드 사이클론",
+    "스컬 복서",
+    "캐더버 베어",
+    "왕도롱뇽",
+    "좀비 샤이 보어",
+    "묘지기 하나코",
+    "엄마빠옹",
+    "좀비 핫도그",
+    "천사 개복치"
+   ],
+   "id": "rose",
+   "name": "로즈",
+   "grade": "uber",
+   "wins": 104,
+   "cleared": false,
+   "stop": {
+    "id": "hienergy",
+    "name": "하이 에너지",
+    "rank": 34,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.07355141476880607,
+   "sec": 1745
+  },
+  {
+   "skipped": 12,
+   "skippedNames": [
+    "좀비 캥거류",
+    "좀비 곰선생",
+    "두더더지",
+    "치킨랄라",
+    "좀비 고릴라",
+    "꼬마 언데드 사이클론",
+    "스컬 복서",
+    "캐더버 베어",
+    "왕도롱뇽",
+    "좀비 샤이 보어",
+    "묘지기 하나코",
+    "좀비 핫도그"
+   ],
+   "id": "platinum",
+   "name": "플래티넘",
+   "grade": "uber",
+   "wins": 104,
+   "cleared": false,
+   "stop": {
+    "id": "hiyokoel",
+    "name": "천사 뼝아리젤",
+    "rank": 33,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.06175734989648033,
+   "sec": 1878
+  },
+  {
+   "skipped": 10,
+   "skippedNames": [
+    "돌고래 아가씨",
+    "꼬마 언데드 사이클론",
+    "스컬 복서",
+    "히카루",
+    "캐더버 베어",
+    "왕도롱뇽",
+    "좀비 샤이 보어",
+    "묘지기 하나코",
+    "엄마빠옹",
+    "좀비 핫도그"
+   ],
+   "id": "orchid",
+   "name": "오키드",
+   "grade": "uber",
+   "wins": 103,
+   "cleared": false,
+   "stop": {
+    "id": "phace",
+    "name": "대머리군",
+    "rank": 36,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.03269565217391304,
+   "sec": 1288
+  },
+  {
+   "skipped": 8,
+   "skippedNames": [
+    "돌고래 아가씨",
+    "꼬마 언데드 사이클론",
+    "얼룩 바다레오파드",
+    "스컬 복서",
+    "캐더버 베어",
+    "좀비 샤이 보어",
+    "묘지기 하나코",
+    "좀비 핫도그"
+   ],
+   "id": "grey",
+   "name": "그레이",
+   "grade": "uber",
+   "wins": 102,
+   "cleared": false,
+   "stop": {
+    "id": "gonzales",
+    "name": "천사 곤잘레스",
+    "rank": 39,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.8433540372670807,
+   "sec": 1187
+  },
+  {
+   "skipped": 12,
+   "skippedNames": [
+    "좀비 곰선생",
+    "블랙쿠마",
+    "두더더지",
+    "치킨랄라",
+    "꼬마 언데드 사이클론",
+    "얼룩 바다레오파드",
+    "스컬 복서",
+    "캐더버 베어",
+    "왕도롱뇽",
+    "좀비 샤이 보어",
+    "묘지기 하나코",
+    "좀비 핫도그"
+   ],
+   "id": "onyx",
+   "name": "오닉스",
+   "grade": "ex",
+   "wins": 102,
+   "cleared": false,
+   "stop": {
+    "id": "sunfish",
+    "name": "천사 개복치",
+    "rank": 35,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.10108610495820722,
+   "sec": 1863
+  },
+  {
+   "skipped": 12,
+   "skippedNames": [
+    "멍뭉두건 미냐",
+    "두더더지",
+    "돌고래 아가씨",
+    "좀비 고릴라",
+    "꼬마 언데드 사이클론",
+    "얼룩 바다레오파드",
+    "스컬 복서",
+    "캐더버 베어",
+    "왕도롱뇽",
+    "좀비 샤이 보어",
+    "묘지기 하나코",
+    "좀비 핫도그"
+   ],
+   "id": "carmine",
+   "name": "카민",
+   "grade": "uber",
+   "wins": 100,
+   "cleared": false,
+   "stop": {
+    "id": "liz56",
+    "name": "엘리자베스 56세",
+    "rank": 37,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.1303105590062112,
+   "sec": 1602
+  },
+  {
+   "skipped": 18,
+   "skippedNames": [
+    "좀비 곰선생",
+    "멍뭉두건 미냐",
+    "좀비하마",
+    "두더더지",
+    "치킨랄라",
+    "해골돼지",
+    "돌고래 아가씨",
+    "좀비 고릴라",
+    "재키펭 Z",
+    "꼬마 언데드 사이클론",
+    "얼룩 바다레오파드",
+    "스컬 복서",
+    "캐더버 베어",
+    "왕도롱뇽",
+    "좀비 샤이 보어",
+    "묘지기 하나코",
+    "엄마빠옹",
+    "좀비 핫도그"
+   ],
+   "id": "royalblue",
+   "name": "로열 블루",
+   "grade": "uber",
+   "wins": 99,
+   "cleared": false,
+   "stop": {
+    "id": "blackcyclone",
+    "name": "블랙 사이클론",
+    "rank": 32,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.0000035492457852706298,
+   "sec": 2312
+  },
+  {
+   "skipped": 14,
+   "skippedNames": [
+    "멍뭉두건 미냐",
+    "두더더지",
+    "해골돼지",
+    "좀비 고릴라",
+    "재키펭 Z",
+    "꼬마 언데드 사이클론",
+    "얼룩 바다레오파드",
+    "스컬 복서",
+    "히카루",
+    "캐더버 베어",
+    "왕도롱뇽",
+    "좀비 샤이 보어",
+    "묘지기 하나코",
+    "좀비 핫도그"
+   ],
+   "id": "banana",
+   "name": "바나나",
+   "grade": "uber",
+   "wins": 97,
+   "cleared": false,
+   "stop": {
+    "id": "eldersloth",
+    "name": "거장",
+    "rank": 38,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.41693700088731145,
+   "sec": 1685
+  },
+  {
+   "skipped": 17,
+   "skippedNames": [
+    "좀비 곰선생",
+    "멍뭉두건 미냐",
+    "좀비하마",
+    "두더더지",
+    "치킨랄라",
+    "돌고래 아가씨",
+    "좀비 고릴라",
+    "꼬마 언데드 사이클론",
+    "얼룩 바다레오파드",
+    "스컬 복서",
+    "히카루",
+    "캐더버 베어",
+    "왕도롱뇽",
+    "좀비 샤이 보어",
+    "묘지기 하나코",
+    "엄마빠옹",
+    "좀비 핫도그"
+   ],
+   "id": "butter",
+   "name": "버터",
+   "grade": "uber",
+   "wins": 97,
+   "cleared": false,
+   "stop": {
+    "id": "sunfish",
+    "name": "천사 개복치",
+    "rank": 35,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.06048861283643892,
+   "sec": 2183
+  },
+  {
+   "skipped": 2,
+   "skippedNames": [
+    "돌고래 아가씨",
+    "꼬마 언데드 사이클론"
+   ],
+   "id": "sapphire",
+   "name": "사파이어",
+   "grade": "uber",
+   "wins": 94,
+   "cleared": false,
+   "stop": {
+    "id": "bunbun",
+    "name": "맴매 선생",
+    "rank": 53,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.8200082815734989,
+   "sec": 436
+  },
+  {
+   "skipped": 6,
+   "skippedNames": [
+    "멍뭉두건 미냐",
+    "두더더지",
+    "치킨랄라",
+    "꼬마 언데드 사이클론",
+    "스컬 복서",
+    "캐더버 베어"
+   ],
+   "id": "iron",
+   "name": "아이언",
+   "grade": "uber",
+   "wins": 92,
+   "cleared": false,
+   "stop": {
+    "id": "kurosawah",
+    "name": "쿠로사와 감독",
+    "rank": 51,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.27243726708074534,
+   "sec": 1083
+  },
+  {
+   "skipped": 6,
+   "skippedNames": [
+    "두더더지",
+    "좀비 고릴라",
+    "꼬마 언데드 사이클론",
+    "얼룩 바다레오파드",
+    "스컬 복서",
+    "캐더버 베어"
+   ],
+   "id": "magenta",
+   "name": "마젠타",
+   "grade": "rare",
+   "wins": 92,
+   "cleared": false,
+   "stop": {
+    "id": "kurosawah",
+    "name": "쿠로사와 감독",
+    "rank": 51,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.0644907238257622,
+   "sec": 1066
+  },
+  {
+   "skipped": 21,
+   "skippedNames": [
+    "좀비 고릴라저씨",
+    "좀비 바다레오파드",
+    "좀비 캥거류",
+    "좀비 곰선생",
+    "멍뭉두건 미냐",
+    "두더더지",
+    "치킨랄라",
+    "찡찡어",
+    "해골돼지",
+    "돌고래 아가씨",
+    "좀비 고릴라",
+    "꼬마 언데드 사이클론",
+    "얼룩 바다레오파드",
+    "스컬 복서",
+    "히카루",
+    "캐더버 베어",
+    "쿠로사와 감독",
+    "왕도롱뇽",
+    "좀비 샤이 보어",
+    "묘지기 하나코",
+    "좀비 핫도그"
+   ],
+   "id": "aquamarine",
+   "name": "아쿠아마린",
+   "grade": "uber",
+   "wins": 92,
+   "cleared": false,
+   "stop": {
+    "id": "phace",
+    "name": "대머리군",
+    "rank": 36,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.026067080745341614,
+   "sec": 2231
+  },
+  {
+   "skipped": 28,
+   "skippedNames": [
+    "좀비 아거",
+    "좀비 낼름이",
+    "좀비 놈놈놈",
+    "좀비 돼지새끼",
+    "좀비 재키펭",
+    "좀비 고릴라저씨",
+    "좀비 바다레오파드",
+    "좀비 캥거류",
+    "좀비 곰선생",
+    "뼈낼름이",
+    "스릴러즈",
+    "좀비하마",
+    "뼈악어",
+    "치킨랄라",
+    "해골돼지",
+    "좀비 오리룰루",
+    "좀비 고릴라",
+    "재키펭 Z",
+    "꼬마 언데드 사이클론",
+    "얼룩 바다레오파드",
+    "스컬 복서",
+    "캐더버 베어",
+    "왕도롱뇽",
+    "좀비 샤이 보어",
+    "묘지기 하나코",
+    "좀비 핫도그",
+    "하이 에너지",
+    "블랙 사이클론"
+   ],
+   "id": "garnet",
+   "name": "가넷",
+   "grade": "ex",
+   "wins": 92,
+   "cleared": false,
+   "stop": {
+    "id": "sleipnir",
+    "name": "엔젤 슬레이프니르",
+    "rank": 29,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.0005597108831553198,
+   "sec": 3263
+  },
+  {
+   "skipped": 25,
+   "skippedNames": [
+    "좀비 아거",
+    "좀비 낼름이",
+    "좀비 재키펭",
+    "좀비 고릴라저씨",
+    "좀비 바다레오파드",
+    "좀비 캥거류",
+    "좀비 곰선생",
+    "좀비하마",
+    "뼈악어",
+    "치킨랄라",
+    "해골돼지",
+    "좀비 오리룰루",
+    "돌고래 아가씨",
+    "좀비 고릴라",
+    "재키펭 Z",
+    "꼬마 언데드 사이클론",
+    "얼룩 바다레오파드",
+    "스컬 복서",
+    "캐더버 베어",
+    "왕도롱뇽",
+    "좀비 샤이 보어",
+    "묘지기 하나코",
+    "엄마빠옹",
+    "좀비 핫도그",
+    "천사 곤잘레스"
+   ],
+   "id": "lapis",
+   "name": "라피스",
+   "grade": "ex",
+   "wins": 87,
+   "cleared": false,
+   "stop": {
+    "id": "liz56",
+    "name": "엘리자베스 56세",
+    "rank": 37,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.010059256086242594,
+   "sec": 2694
+  },
+  {
+   "skipped": 4,
+   "skippedNames": [
+    "멍뭉두건 미냐",
+    "두더더지",
+    "꼬마 언데드 사이클론",
+    "얼룩 바다레오파드"
+   ],
+   "id": "lava",
+   "name": "라바",
+   "grade": "rare",
+   "wins": 87,
+   "cleared": false,
+   "stop": {
+    "id": "brollow",
+    "name": "제비족",
+    "rank": 58,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.00039600226287007354,
+   "sec": 811
+  },
+  {
+   "skipped": 27,
+   "skippedNames": [
+    "좀비 아거",
+    "좀비 재키펭",
+    "좀비 고릴라저씨",
+    "좀비 바다레오파드",
+    "좀비 캥거류",
+    "좀비 곰선생",
+    "멍뭉두건 미냐",
+    "좀비하마",
+    "뼈악어",
+    "두더더지",
+    "치킨랄라",
+    "해골돼지",
+    "좀비 오리룰루",
+    "돌고래 아가씨",
+    "좀비 고릴라",
+    "재키펭 Z",
+    "꼬마 언데드 사이클론",
+    "얼룩 바다레오파드",
+    "스컬 복서",
+    "히카루",
+    "캐더버 베어",
+    "왕도롱뇽",
+    "좀비 샤이 보어",
+    "늘보보",
+    "묘지기 하나코",
+    "엄마빠옹",
+    "좀비 핫도그"
+   ],
+   "id": "turquoise",
+   "name": "터콰이즈",
+   "grade": "uber",
+   "wins": 85,
+   "cleared": false,
+   "stop": {
+    "id": "liz56",
+    "name": "엘리자베스 56세",
+    "rank": 37,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.028274672187715667,
+   "sec": 2966
+  },
+  {
+   "skipped": 4,
+   "skippedNames": [
+    "멍뭉두건 미냐",
+    "해골돼지",
+    "좀비 고릴라",
+    "재키펭 Z"
+   ],
+   "id": "teal",
+   "name": "틸",
+   "grade": "sr",
+   "wins": 83,
+   "cleared": false,
+   "stop": {
+    "id": "alpacky",
+    "name": "알파카",
+    "rank": 62,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.024819103883022834,
+   "sec": 872
+  },
+  {
+   "skipped": 9,
+   "skippedNames": [
+    "좀비 곰선생",
+    "멍뭉두건 미냐",
+    "좀비하마",
+    "치킨랄라",
+    "해골돼지",
+    "좀비 고릴라",
+    "재키펭 Z",
+    "꼬마 언데드 사이클론",
+    "얼룩 바다레오파드"
+   ],
+   "id": "denim",
+   "name": "데님",
+   "grade": "sr",
+   "wins": 82,
+   "cleared": false,
+   "stop": {
+    "id": "brollow",
+    "name": "제비족",
+    "rank": 58,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.06657774988231602,
+   "sec": 1327
+  },
+  {
+   "skipped": 6,
+   "skippedNames": [
+    "좀비 곰선생",
+    "멍뭉두건 미냐",
+    "좀비하마",
+    "해골돼지",
+    "좀비 고릴라",
+    "재키펭 Z"
+   ],
+   "id": "crimson",
+   "name": "크림슨",
+   "grade": "basic",
+   "wins": 81,
+   "cleared": false,
+   "stop": {
+    "id": "alpacky",
+    "name": "알파카",
+    "rank": 62,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.1609811563000868,
+   "sec": 1042
+  },
+  {
+   "skipped": 9,
+   "skippedNames": [
+    "뼈악어",
+    "두더더지",
+    "치킨랄라",
+    "해골돼지",
+    "좀비 오리룰루",
+    "돌고래 아가씨",
+    "좀비 고릴라",
+    "재키펭 Z",
+    "꼬마 언데드 사이클론"
+   ],
+   "id": "fusioncream",
+   "name": "퓨전 크림",
+   "grade": "rare",
+   "wins": 80,
+   "cleared": false,
+   "stop": {
+    "id": "kory",
+    "name": "코알락교",
+    "rank": 60,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.12531969309462915,
+   "sec": 1234
+  },
+  {
+   "skipped": 14,
+   "skippedNames": [
+    "좀비 캥거류",
+    "좀비 곰선생",
+    "멍뭉두건 미냐",
+    "좀비하마",
+    "뼈악어",
+    "두더더지",
+    "해골돼지",
+    "좀비 오리룰루",
+    "돌고래 아가씨",
+    "좀비 고릴라",
+    "재키펭 Z",
+    "꼬마 언데드 사이클론",
+    "얼룩 바다레오파드",
+    "스컬 복서"
+   ],
+   "id": "crisp",
+   "name": "크리스프",
+   "grade": "uber",
+   "wins": 80,
+   "cleared": false,
+   "stop": {
+    "id": "ursamajor",
+    "name": "쿠만츄",
+    "rank": 55,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.11628895559557956,
+   "sec": 1632
+  },
+  {
+   "skipped": 7,
+   "skippedNames": [
+    "멍뭉두건 미냐",
+    "좀비하마",
+    "두더더지",
+    "해골돼지",
+    "돌고래 아가씨",
+    "좀비 고릴라",
+    "재키펭 Z"
+   ],
+   "id": "navy",
+   "name": "네이비",
+   "grade": "rare",
+   "wins": 80,
+   "cleared": false,
+   "stop": {
+    "id": "alpacky",
+    "name": "알파카",
+    "rank": 62,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.03886879807826238,
+   "sec": 990
+  },
+  {
+   "skipped": 1,
+   "skippedNames": [
+    "멍뭉두건 미냐"
+   ],
+   "id": "khaki",
+   "name": "카키",
+   "grade": "sr",
+   "wins": 79,
+   "cleared": false,
+   "stop": {
+    "id": "stpigge",
+    "name": "엘리자베스 2세",
+    "rank": 69,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.47529433577454344,
+   "sec": 382
+  },
+  {
+   "skipped": 8,
+   "skippedNames": [
+    "좀비 캥거류",
+    "좀비 곰선생",
+    "멍뭉두건 미냐",
+    "좀비하마",
+    "치킨랄라",
+    "해골돼지",
+    "좀비 고릴라",
+    "재키펭 Z"
+   ],
+   "id": "bittersweet",
+   "name": "그레이프프루트 펄프",
+   "grade": "sr",
+   "wins": 79,
+   "cleared": false,
+   "stop": {
+    "id": "alpacky",
+    "name": "알파카",
+    "rank": 62,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.2577714951952538,
+   "sec": 1180
+  },
+  {
+   "skipped": 12,
+   "skippedNames": [
+    "좀비 바다레오파드",
+    "좀비 캥거류",
+    "좀비 곰선생",
+    "멍뭉두건 미냐",
+    "좀비하마",
+    "치킨랄라",
+    "해골돼지",
+    "좀비 오리룰루",
+    "좀비 고릴라",
+    "재키펭 Z",
+    "꼬마 언데드 사이클론",
+    "얼룩 바다레오파드"
+   ],
+   "id": "brick",
+   "name": "브릭",
+   "grade": "rare",
+   "wins": 79,
+   "cleared": false,
+   "stop": {
+    "id": "brollow",
+    "name": "제비족",
+    "rank": 58,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.08447542341230535,
+   "sec": 1659
+  },
+  {
+   "skipped": 10,
+   "skippedNames": [
+    "좀비 고릴라저씨",
+    "좀비 바다레오파드",
+    "좀비 캥거류",
+    "좀비 곰선생",
+    "멍뭉두건 미냐",
+    "좀비하마",
+    "치킨랄라",
+    "해골돼지",
+    "좀비 고릴라",
+    "꼬마 언데드 사이클론"
+   ],
+   "id": "verdigris",
+   "name": "베르디그리",
+   "grade": "sr",
+   "wins": 79,
+   "cleared": false,
+   "stop": {
+    "id": "kory",
+    "name": "코알락교",
+    "rank": 60,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.0476217236553112,
+   "sec": 1489
+  },
+  {
+   "skipped": 8,
+   "skippedNames": [
+    "멍뭉두건 미냐",
+    "좀비하마",
+    "두더더지",
+    "치킨랄라",
+    "해골돼지",
+    "돌고래 아가씨",
+    "좀비 고릴라",
+    "재키펭 Z"
+   ],
+   "id": "azure",
+   "name": "애저",
+   "grade": "basic",
+   "wins": 79,
+   "cleared": false,
+   "stop": {
+    "id": "alpacky",
+    "name": "알파카",
+    "rank": 62,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.024918594324861505,
+   "sec": 1084
+  },
+  {
+   "skipped": 3,
+   "skippedNames": [
+    "멍뭉두건 미냐",
+    "두더더지",
+    "해골돼지"
+   ],
+   "id": "ribbonorange",
+   "name": "리본 오렌지",
+   "grade": "ex",
+   "wins": 78,
+   "cleared": false,
+   "stop": {
+    "id": "peathief",
+    "name": "콩 도둑 너구리",
+    "rank": 68,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.015674895620602158,
+   "sec": 618
+  },
+  {
+   "skipped": 47,
+   "skippedNames": [
+    "좀비 멍뭉이",
+    "좀비 아거",
+    "좀비 낼름이",
+    "좀비 놈놈놈",
+    "좀비 돼지새끼",
+    "좀비 재키펭",
+    "좀비 고릴라저씨",
+    "좀비 바다레오파드",
+    "좀비 캥거류",
+    "좀비 곰선생",
+    "뼈낼름이",
+    "소라게게",
+    "스릴러즈",
+    "좀비하마",
+    "뼈악어",
+    "두더더지",
+    "치킨랄라",
+    "갤럭시 야옹마",
+    "해골돼지",
+    "악의제왕 야옹마",
+    "좀비 오리룰루",
+    "돌고래 아가씨",
+    "좀비 고릴라",
+    "재키펭 Z",
+    "알파카",
+    "꼬마 언데드 사이클론",
+    "얼룩 바다레오파드",
+    "스컬 복서",
+    "히카루",
+    "캐더버 베어",
+    "왕도롱뇽",
+    "좀비 샤이 보어",
+    "늘보보",
+    "묘지기 하나코",
+    "좀비 핫도그",
+    "거장",
+    "엘리자베스 56세",
+    "대머리군",
+    "천사 개복치",
+    "하이 에너지",
+    "천사 뼝아리젤",
+    "블랙 사이클론",
+    "꼬맹이 야옹마",
+    "불칸 보어",
+    "엔젤 슬레이프니르",
+    "이노와르",
+    "파괴생물 쿠오리넨"
+   ],
+   "id": "amber",
+   "name": "앰버",
+   "grade": "uber",
+   "wins": 78,
+   "cleared": false,
+   "stop": {
+    "id": "blackleboin",
+    "name": "블랙 빠옹",
+    "rank": 24,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.00713768115942029,
+   "sec": 4409
+  },
+  {
+   "skipped": 10,
+   "skippedNames": [
+    "좀비 캥거류",
+    "좀비 곰선생",
+    "멍뭉두건 미냐",
+    "좀비하마",
+    "두더더지",
+    "치킨랄라",
+    "해골돼지",
+    "돌고래 아가씨",
+    "좀비 고릴라",
+    "재키펭 Z"
+   ],
+   "id": "mustard",
+   "name": "머스터드",
+   "grade": "sr",
+   "wins": 77,
+   "cleared": false,
+   "stop": {
+    "id": "alpacky",
+    "name": "알파카",
+    "rank": 62,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.3672102329720814,
+   "sec": 1311
+  },
+  {
+   "skipped": 10,
+   "skippedNames": [
+    "뼈낼름이",
+    "멍뭉두건 미냐",
+    "좀비하마",
+    "두더더지",
+    "치킨랄라",
+    "해골돼지",
+    "좀비 오리룰루",
+    "돌고래 아가씨",
+    "좀비 고릴라",
+    "재키펭 Z"
+   ],
+   "id": "tangerine",
+   "name": "탠저린",
+   "grade": "sr",
+   "wins": 77,
+   "cleared": false,
+   "stop": {
+    "id": "alpacky",
+    "name": "알파카",
+    "rank": 62,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.12675716023126643,
+   "sec": 1365
+  },
+  {
+   "skipped": 10,
+   "skippedNames": [
+    "좀비 고릴라저씨",
+    "좀비 바다레오파드",
+    "좀비 캥거류",
+    "좀비 곰선생",
+    "멍뭉두건 미냐",
+    "좀비하마",
+    "치킨랄라",
+    "해골돼지",
+    "좀비 고릴라",
+    "재키펭 Z"
+   ],
+   "id": "cherry",
+   "name": "체리",
+   "grade": "sr",
+   "wins": 77,
+   "cleared": false,
+   "stop": {
+    "id": "alpacky",
+    "name": "알파카",
+    "rank": 62,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.09798379718575176,
+   "sec": 1411
+  },
+  {
+   "skipped": 11,
+   "skippedNames": [
+    "좀비 캥거류",
+    "좀비 곰선생",
+    "뼈낼름이",
+    "멍뭉두건 미냐",
+    "좀비하마",
+    "뼈악어",
+    "치킨랄라",
+    "해골돼지",
+    "좀비 오리룰루",
+    "좀비 고릴라",
+    "재키펭 Z"
+   ],
+   "id": "maple",
+   "name": "메이플",
+   "grade": "rare",
+   "wins": 76,
+   "cleared": false,
+   "stop": {
+    "id": "alpacky",
+    "name": "알파카",
+    "rank": 62,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.23517804058550465,
+   "sec": 1517
+  },
+  {
+   "skipped": 10,
+   "skippedNames": [
+    "좀비 곰선생",
+    "멍뭉두건 미냐",
+    "스릴러즈",
+    "좀비하마",
+    "뼈악어",
+    "치킨랄라",
+    "해골돼지",
+    "좀비 오리룰루",
+    "좀비 고릴라",
+    "재키펭 Z"
+   ],
+   "id": "black",
+   "name": "블랙",
+   "grade": "rare",
+   "wins": 76,
+   "cleared": false,
+   "stop": {
+    "id": "spaceborg",
+    "name": "스페이스맨 보그",
+    "rank": 63,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.03296575844098254,
+   "sec": 1558
+  },
+  {
+   "skipped": 20,
+   "skippedNames": [
+    "좀비 아거",
+    "좀비 낼름이",
+    "좀비 재키펭",
+    "좀비 고릴라저씨",
+    "좀비 바다레오파드",
+    "좀비 캥거류",
+    "좀비 곰선생",
+    "멍뭉두건 미냐",
+    "스릴러즈",
+    "블랙쿠마",
+    "좀비하마",
+    "뼈악어",
+    "치킨랄라",
+    "해골돼지",
+    "좀비 오리룰루",
+    "좀비 고릴라",
+    "재키펭 Z",
+    "꼬마 언데드 사이클론",
+    "얼룩 바다레오파드",
+    "스컬 복서"
+   ],
+   "id": "forest",
+   "name": "포레스트",
+   "grade": "sr",
+   "wins": 74,
+   "cleared": false,
+   "stop": {
+    "id": "ursamajor",
+    "name": "쿠만츄",
+    "rank": 55,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.00953126267718008,
+   "sec": 2319
+  },
+  {
+   "skipped": 20,
+   "skippedNames": [
+    "좀비 아거",
+    "좀비 낼름이",
+    "좀비 재키펭",
+    "좀비 고릴라저씨",
+    "좀비 바다레오파드",
+    "좀비 캥거류",
+    "좀비 곰선생",
+    "멍뭉두건 미냐",
+    "스릴러즈",
+    "블랙쿠마",
+    "좀비하마",
+    "뼈악어",
+    "치킨랄라",
+    "해골돼지",
+    "좀비 오리룰루",
+    "좀비 고릴라",
+    "재키펭 Z",
+    "꼬마 언데드 사이클론",
+    "얼룩 바다레오파드",
+    "스컬 복서"
+   ],
+   "id": "burgundy",
+   "name": "버건디",
+   "grade": "sr",
+   "wins": 73,
+   "cleared": false,
+   "stop": {
+    "id": "mastera",
+    "name": "스승",
+    "rank": 56,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.037484981890612674,
+   "sec": 2292
+  },
+  {
+   "skipped": 5,
+   "skippedNames": [
+    "뼈낼름이",
+    "멍뭉두건 미냐",
+    "좀비하마",
+    "두더더지",
+    "치킨랄라"
+   ],
+   "id": "canary",
+   "name": "카나리",
+   "grade": "sr",
+   "wins": 72,
+   "cleared": false,
+   "stop": {
+    "id": "calamary",
+    "name": "찡찡어",
+    "rank": 72,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.3088597050569886,
+   "sec": 813
+  },
+  {
+   "skipped": 5,
+   "skippedNames": [
+    "좀비 곰선생",
+    "멍뭉두건 미냐",
+    "뼈악어",
+    "두더더지",
+    "치킨랄라"
+   ],
+   "id": "shotguntan",
+   "name": "샷건 탄",
+   "grade": "ex",
+   "wins": 72,
+   "cleared": false,
+   "stop": {
+    "id": "calamary",
+    "name": "찡찡어",
+    "rank": 72,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.17927469406814153,
+   "sec": 892
+  },
+  {
+   "skipped": 4,
+   "skippedNames": [
+    "멍뭉두건 미냐",
+    "뼈악어",
+    "두더더지",
+    "치킨랄라"
+   ],
+   "id": "mint",
+   "name": "민트",
+   "grade": "basic",
+   "wins": 72,
+   "cleared": false,
+   "stop": {
+    "id": "galaxynyandam",
+    "name": "갤럭시 야옹마",
+    "rank": 73,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.02933813591056335,
+   "sec": 648
+  },
+  {
+   "skipped": 1,
+   "skippedNames": [
+    "멍뭉두건 미냐"
+   ],
+   "id": "moss",
+   "name": "모스",
+   "grade": "rare",
+   "wins": 71,
+   "cleared": false,
+   "stop": {
+    "id": "mrmole",
+    "name": "두더더지",
+    "rank": 77,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.6782504821771238,
+   "sec": 471
+  },
+  {
+   "skipped": 1,
+   "skippedNames": [
+    "멍뭉두건 미냐"
+   ],
+   "id": "babypink",
+   "name": "베이비 핑크",
+   "grade": "rare",
+   "wins": 71,
+   "cleared": false,
+   "stop": {
+    "id": "mrmole",
+    "name": "두더더지",
+    "rank": 77,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.5630098042586843,
+   "sec": 355
+  },
+  {
+   "skipped": 1,
+   "skippedNames": [
+    "멍뭉두건 미냐"
+   ],
+   "id": "silver",
+   "name": "실버",
+   "grade": "rare",
+   "wins": 71,
+   "cleared": false,
+   "stop": {
+    "id": "mrmole",
+    "name": "두더더지",
+    "rank": 77,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.5341614906832298,
+   "sec": 365
+  },
+  {
+   "skipped": 1,
+   "skippedNames": [
+    "멍뭉두건 미냐"
+   ],
+   "id": "chartreuse",
+   "name": "샤르트뢰즈",
+   "grade": "basic",
+   "wins": 71,
+   "cleared": false,
+   "stop": {
+    "id": "mrmole",
+    "name": "두더더지",
+    "rank": 77,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.464693124259269,
+   "sec": 454
+  },
+  {
+   "skipped": 5,
+   "skippedNames": [
+    "좀비 곰선생",
+    "멍뭉두건 미냐",
+    "좀비하마",
+    "두더더지",
+    "치킨랄라"
+   ],
+   "id": "green",
+   "name": "그린",
+   "grade": "basic",
+   "wins": 71,
+   "cleared": false,
+   "stop": {
+    "id": "galaxynyandam",
+    "name": "갤럭시 야옹마",
+    "rank": 73,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.1347905372733567,
+   "sec": 779
+  },
+  {
+   "skipped": 2,
+   "skippedNames": [
+    "멍뭉두건 미냐",
+    "좀비하마"
+   ],
+   "id": "mixedwhite",
+   "name": "뒤죽박죽 화이트",
+   "grade": "ex",
+   "wins": 70,
+   "cleared": false,
+   "stop": {
+    "id": "mrmole",
+    "name": "두더더지",
+    "rank": 77,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.5104245715130942,
+   "sec": 538
+  },
+  {
+   "skipped": 2,
+   "skippedNames": [
+    "멍뭉두건 미냐",
+    "좀비하마"
+   ],
+   "id": "earphonered",
+   "name": "이어폰 레드",
+   "grade": "ex",
+   "wins": 70,
+   "cleared": false,
+   "stop": {
+    "id": "mrmole",
+    "name": "두더더지",
+    "rank": 77,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.4389085495253196,
+   "sec": 523
+  },
+  {
+   "skipped": 7,
+   "skippedNames": [
+    "좀비 곰선생",
+    "멍뭉두건 미냐",
+    "스릴러즈",
+    "좀비하마",
+    "뼈악어",
+    "두더더지",
+    "치킨랄라"
+   ],
+   "id": "hacienda",
+   "name": "하시엔다",
+   "grade": "rare",
+   "wins": 70,
+   "cleared": false,
+   "stop": {
+    "id": "calamary",
+    "name": "찡찡어",
+    "rank": 72,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.10298174295713595,
+   "sec": 1037
+  },
+  {
+   "skipped": 7,
+   "skippedNames": [
+    "좀비 곰선생",
+    "뼈낼름이",
+    "멍뭉두건 미냐",
+    "좀비하마",
+    "뼈악어",
+    "두더더지",
+    "치킨랄라"
+   ],
+   "id": "ruby",
+   "name": "루비",
+   "grade": "rare",
+   "wins": 70,
+   "cleared": false,
+   "stop": {
+    "id": "calamary",
+    "name": "찡찡어",
+    "rank": 72,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.09547994324545035,
+   "sec": 1031
+  },
+  {
+   "skipped": 6,
+   "skippedNames": [
+    "멍뭉두건 미냐",
+    "스릴러즈",
+    "좀비하마",
+    "뼈악어",
+    "두더더지",
+    "치킨랄라"
+   ],
+   "id": "dandelion",
+   "name": "민들레",
+   "grade": "rare",
+   "wins": 70,
+   "cleared": false,
+   "stop": {
+    "id": "galaxynyandam",
+    "name": "갤럭시 야옹마",
+    "rank": 73,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.024010145217565327,
+   "sec": 903
+  },
+  {
+   "skipped": 2,
+   "skippedNames": [
+    "홍당무왕",
+    "멍뭉두건 미냐"
+   ],
+   "id": "crystal",
+   "name": "크리스탈",
+   "grade": "basic",
+   "wins": 69,
+   "cleared": false,
+   "stop": {
+    "id": "shadowboxer",
+    "name": "쉐도우 복서",
+    "rank": 78,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.7046128481961921,
+   "sec": 432
+  },
+  {
+   "skipped": 8,
+   "skippedNames": [
+    "좀비 곰선생",
+    "뼈낼름이",
+    "멍뭉두건 미냐",
+    "스릴러즈",
+    "좀비하마",
+    "뼈악어",
+    "두더더지",
+    "치킨랄라"
+   ],
+   "id": "scarlet",
+   "name": "스칼렛",
+   "grade": "rare",
+   "wins": 69,
+   "cleared": false,
+   "stop": {
+    "id": "calamary",
+    "name": "찡찡어",
+    "rank": 72,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.18245681576488154,
+   "sec": 1079
+  },
+  {
+   "skipped": 8,
+   "skippedNames": [
+    "좀비 곰선생",
+    "뼈낼름이",
+    "멍뭉두건 미냐",
+    "스릴러즈",
+    "좀비하마",
+    "뼈악어",
+    "두더더지",
+    "치킨랄라"
+   ],
+   "id": "flame",
+   "name": "플레임",
+   "grade": "rare",
+   "wins": 69,
+   "cleared": false,
+   "stop": {
+    "id": "calamary",
+    "name": "찡찡어",
+    "rank": 72,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.07600813917011565,
+   "sec": 1051
+  },
+  {
+   "skipped": 8,
+   "skippedNames": [
+    "좀비 캥거류",
+    "좀비 곰선생",
+    "좀비멍",
+    "멍뭉두건 미냐",
+    "좀비하마",
+    "뼈악어",
+    "두더더지",
+    "치킨랄라"
+   ],
+   "id": "lightcream",
+   "name": "라이트 크림",
+   "grade": "rare",
+   "wins": 68,
+   "cleared": false,
+   "stop": {
+    "id": "galaxynyandam",
+    "name": "갤럭시 야옹마",
+    "rank": 73,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.23018165572699492,
+   "sec": 1061
+  },
+  {
+   "skipped": 9,
+   "skippedNames": [
+    "좀비 곰선생",
+    "좀비멍",
+    "뼈낼름이",
+    "멍뭉두건 미냐",
+    "스릴러즈",
+    "좀비하마",
+    "뼈악어",
+    "두더더지",
+    "치킨랄라"
+   ],
+   "id": "cream",
+   "name": "크림",
+   "grade": "rare",
+   "wins": 68,
+   "cleared": false,
+   "stop": {
+    "id": "calamary",
+    "name": "찡찡어",
+    "rank": 72,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.21932981547305447,
+   "sec": 1268
+  },
+  {
+   "skipped": 9,
+   "skippedNames": [
+    "좀비 캥거류",
+    "좀비 곰선생",
+    "좀비멍",
+    "뼈낼름이",
+    "멍뭉두건 미냐",
+    "좀비하마",
+    "뼈악어",
+    "두더더지",
+    "치킨랄라"
+   ],
+   "id": "beige",
+   "name": "베이지",
+   "grade": "rare",
+   "wins": 68,
+   "cleared": false,
+   "stop": {
+    "id": "calamary",
+    "name": "찡찡어",
+    "rank": 72,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.20587129562564513,
+   "sec": 1258
+  },
+  {
+   "skipped": 8,
+   "skippedNames": [
+    "좀비 곰선생",
+    "뼈낼름이",
+    "멍뭉두건 미냐",
+    "스릴러즈",
+    "좀비하마",
+    "뼈악어",
+    "두더더지",
+    "치킨랄라"
+   ],
+   "id": "lilac",
+   "name": "라일락",
+   "grade": "rare",
+   "wins": 68,
+   "cleared": false,
+   "stop": {
+    "id": "galaxynyandam",
+    "name": "갤럭시 야옹마",
+    "rank": 73,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.20051321306617964,
+   "sec": 1132
+  },
+  {
+   "skipped": 4,
+   "skippedNames": [
+    "멍뭉두건 미냐",
+    "스릴러즈",
+    "좀비하마",
+    "뼈악어"
+   ],
+   "id": "orange",
+   "name": "오렌지",
+   "grade": "basic",
+   "wins": 68,
+   "cleared": false,
+   "stop": {
+    "id": "mrmole",
+    "name": "두더더지",
+    "rank": 77,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.17307717446202714,
+   "sec": 691
+  },
+  {
+   "skipped": 3,
+   "skippedNames": [
+    "멍뭉두건 미냐",
+    "좀비하마",
+    "뼈악어"
+   ],
+   "id": "coral",
+   "name": "코랄",
+   "grade": "rare",
+   "wins": 68,
+   "cleared": false,
+   "stop": {
+    "id": "shadowboxer",
+    "name": "쉐도우 복서",
+    "rank": 78,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.14031124497991967,
+   "sec": 551
+  },
+  {
+   "skipped": 9,
+   "skippedNames": [
+    "좀비 곰선생",
+    "좀비멍",
+    "뼈낼름이",
+    "멍뭉두건 미냐",
+    "스릴러즈",
+    "좀비하마",
+    "뼈악어",
+    "두더더지",
+    "치킨랄라"
+   ],
+   "id": "olive",
+   "name": "올리브",
+   "grade": "rare",
+   "wins": 67,
+   "cleared": false,
+   "stop": {
+    "id": "galaxynyandam",
+    "name": "갤럭시 야옹마",
+    "rank": 73,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.20491332843184168,
+   "sec": 1245
+  },
+  {
+   "skipped": 10,
+   "skippedNames": [
+    "좀비 고릴라저씨",
+    "좀비 바다레오파드",
+    "좀비 캥거류",
+    "좀비 곰선생",
+    "뼈낼름이",
+    "멍뭉두건 미냐",
+    "좀비하마",
+    "뼈악어",
+    "두더더지",
+    "치킨랄라"
+   ],
+   "id": "purple",
+   "name": "퍼플",
+   "grade": "basic",
+   "wins": 67,
+   "cleared": false,
+   "stop": {
+    "id": "calamary",
+    "name": "찡찡어",
+    "rank": 72,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.07869192755800206,
+   "sec": 1257
+  },
+  {
+   "skipped": 9,
+   "skippedNames": [
+    "좀비 곰선생",
+    "좀비멍",
+    "뼈낼름이",
+    "멍뭉두건 미냐",
+    "스릴러즈",
+    "좀비하마",
+    "뼈악어",
+    "두더더지",
+    "치킨랄라"
+   ],
+   "id": "tan",
+   "name": "탄",
+   "grade": "rare",
+   "wins": 66,
+   "cleared": false,
+   "stop": {
+    "id": "scissorman",
+    "name": "캥가위 맨",
+    "rank": 74,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.08764367598537666,
+   "sec": 1223
+  },
+  {
+   "skipped": 7,
+   "skippedNames": [
+    "좀비 캥거류",
+    "좀비멍",
+    "뼈낼름이",
+    "멍뭉두건 미냐",
+    "스릴러즈",
+    "좀비하마",
+    "뼈악어"
+   ],
+   "id": "ribbonchart",
+   "name": "리본 샤트",
+   "grade": "ex",
+   "wins": 65,
+   "cleared": false,
+   "stop": {
+    "id": "mrmole",
+    "name": "두더더지",
+    "rank": 77,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.03276663389337951,
+   "sec": 1035
+  },
+  {
+   "skipped": 6,
+   "skippedNames": [
+    "좀비 고릴라저씨",
+    "좀비 바다레오파드",
+    "좀비 캥거류",
+    "좀비 곰선생",
+    "멍뭉두건 미냐",
+    "좀비하마"
+   ],
+   "id": "cobalt",
+   "name": "코발트",
+   "grade": "rare",
+   "wins": 65,
+   "cleared": false,
+   "stop": {
+    "id": "shadowboxer",
+    "name": "쉐도우 복서",
+    "rank": 78,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.008951406649616368,
+   "sec": 853
+  },
+  {
+   "skipped": 2,
+   "skippedNames": [
+    "뼈낼름이",
+    "멍뭉두건 미냐"
+   ],
+   "id": "darklilac",
+   "name": "다크 라일락",
+   "grade": "rare",
+   "wins": 63,
+   "cleared": false,
+   "stop": {
+    "id": "magpie",
+    "name": "까치 도둑",
+    "rank": 84,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.22912751250278723,
+   "sec": 474
+  },
+  {
+   "skipped": 6,
+   "skippedNames": [
+    "좀비 캥거류",
+    "좀비멍",
+    "뼈낼름이",
+    "멍뭉두건 미냐",
+    "스릴러즈",
+    "좀비하마"
+   ],
+   "id": "aqua",
+   "name": "아쿠아",
+   "grade": "rare",
+   "wins": 63,
+   "cleared": false,
+   "stop": {
+    "id": "lemurr",
+    "name": "빅글래숭이",
+    "rank": 80,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.0258042019004446,
+   "sec": 907
+  },
+  {
+   "skipped": 14,
+   "skippedNames": [
+    "좀비 돼지새끼",
+    "좀비 재키펭",
+    "좀비 고릴라저씨",
+    "좀비 바다레오파드",
+    "좀비 캥거류",
+    "좀비 곰선생",
+    "좀비멍",
+    "뼈낼름이",
+    "멍뭉두건 미냐",
+    "스릴러즈",
+    "좀비하마",
+    "뼈악어",
+    "두더더지",
+    "치킨랄라"
+   ],
+   "id": "yellow",
+   "name": "옐로우",
+   "grade": "basic",
+   "wins": 62,
+   "cleared": false,
+   "stop": {
+    "id": "galaxynyandam",
+    "name": "갤럭시 야옹마",
+    "rank": 73,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.06643681000535072,
+   "sec": 1699
+  },
+  {
+   "skipped": 5,
+   "skippedNames": [
+    "좀비 캥거류",
+    "좀비 곰선생",
+    "뼈낼름이",
+    "멍뭉두건 미냐",
+    "스릴러즈"
+   ],
+   "id": "peach",
+   "name": "피치",
+   "grade": "rare",
+   "wins": 61,
+   "cleared": false,
+   "stop": {
+    "id": "assassinbear",
+    "name": "블랙쿠마",
+    "rank": 83,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.5459859703819174,
+   "sec": 759
+  },
+  {
+   "skipped": 0,
+   "skippedNames": [],
+   "id": "midnight",
+   "name": "미드나잇",
+   "grade": "rare",
+   "wins": 61,
+   "cleared": false,
+   "stop": {
+    "id": "krabbe",
+    "name": "소라게게",
+    "rank": 88,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.06474323578133628,
+   "sec": 226
+  },
+  {
+   "skipped": 5,
+   "skippedNames": [
+    "좀비 곰선생",
+    "좀비멍",
+    "뼈낼름이",
+    "멍뭉두건 미냐",
+    "스릴러즈"
+   ],
+   "id": "herbmint",
+   "name": "허브 민트",
+   "grade": "rare",
+   "wins": 60,
+   "cleared": false,
+   "stop": {
+    "id": "magpie",
+    "name": "까치 도둑",
+    "rank": 84,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.05084033613445378,
+   "sec": 839
+  },
+  {
+   "skipped": 1,
+   "skippedNames": [
+    "홍당무왕"
+   ],
+   "id": "cyan",
+   "name": "시안",
+   "grade": "basic",
+   "wins": 58,
+   "cleared": false,
+   "stop": {
+    "id": "lilbunbun",
+    "name": "꼬맹이 맴매",
+    "rank": 90,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.4574012375059495,
+   "sec": 267
+  },
+  {
+   "skipped": 8,
+   "skippedNames": [
+    "좀비 아거",
+    "좀비 낼름이",
+    "좀비 재키펭",
+    "좀비 고릴라저씨",
+    "좀비 바다레오파드",
+    "좀비 캥거류",
+    "좀비 곰선생",
+    "멍뭉두건 미냐"
+   ],
+   "id": "alchemypurple",
+   "name": "연금 퍼플",
+   "grade": "rare",
+   "wins": 58,
+   "cleared": false,
+   "stop": {
+    "id": "assassinbear",
+    "name": "블랙쿠마",
+    "rank": 83,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.42142857142857143,
+   "sec": 1008
+  },
+  {
+   "skipped": 1,
+   "skippedNames": [
+    "홍당무왕"
+   ],
+   "id": "selenite",
+   "name": "셀레나이트",
+   "grade": "ex",
+   "wins": 58,
+   "cleared": false,
+   "stop": {
+    "id": "lilbunbun",
+    "name": "꼬맹이 맴매",
+    "rank": 90,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.3890675241157556,
+   "sec": 251
+  },
+  {
+   "skipped": 1,
+   "skippedNames": [
+    "홍당무왕"
+   ],
+   "id": "mauve",
+   "name": "모브",
+   "grade": "sr",
+   "wins": 58,
+   "cleared": false,
+   "stop": {
+    "id": "lilbunbun",
+    "name": "꼬맹이 맴매",
+    "rank": 90,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.3704092339979014,
+   "sec": 219
+  },
+  {
+   "skipped": 1,
+   "skippedNames": [
+    "홍당무왕"
+   ],
+   "id": "ivory",
+   "name": "아이보리",
+   "grade": "basic",
+   "wins": 58,
+   "cleared": false,
+   "stop": {
+    "id": "lilbunbun",
+    "name": "꼬맹이 맴매",
+    "rank": 90,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.358082807317856,
+   "sec": 252
+  },
+  {
+   "skipped": 1,
+   "skippedNames": [
+    "홍당무왕"
+   ],
+   "id": "salmon",
+   "name": "살몬",
+   "grade": "basic",
+   "wins": 58,
+   "cleared": false,
+   "stop": {
+    "id": "lilbunbun",
+    "name": "꼬맹이 맴매",
+    "rank": 90,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.3100332161000391,
+   "sec": 206
+  },
+  {
+   "skipped": 1,
+   "skippedNames": [
+    "홍당무왕"
+   ],
+   "id": "topaz",
+   "name": "토파즈",
+   "grade": "ex",
+   "wins": 58,
+   "cleared": false,
+   "stop": {
+    "id": "lilbunbun",
+    "name": "꼬맹이 맴매",
+    "rank": 90,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.30259828426834534,
+   "sec": 213
+  },
+  {
+   "skipped": 1,
+   "skippedNames": [
+    "홍당무왕"
+   ],
+   "id": "sky",
+   "name": "스카이",
+   "grade": "sr",
+   "wins": 58,
+   "cleared": false,
+   "stop": {
+    "id": "lilbunbun",
+    "name": "꼬맹이 맴매",
+    "rank": 90,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.2867332382310984,
+   "sec": 209
+  },
+  {
+   "skipped": 7,
+   "skippedNames": [
+    "좀비 바다레오파드",
+    "좀비 캥거류",
+    "좀비 곰선생",
+    "좀비멍",
+    "뼈낼름이",
+    "멍뭉두건 미냐",
+    "스릴러즈"
+   ],
+   "id": "white",
+   "name": "화이트",
+   "grade": "rare",
+   "wins": 58,
+   "cleared": false,
+   "stop": {
+    "id": "magpie",
+    "name": "까치 도둑",
+    "rank": 84,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.18012422360248448,
+   "sec": 954
+  },
+  {
+   "skipped": 1,
+   "skippedNames": [
+    "홍당무왕"
+   ],
+   "id": "plum",
+   "name": "플럼",
+   "grade": "sr",
+   "wins": 58,
+   "cleared": false,
+   "stop": {
+    "id": "lilbunbun",
+    "name": "꼬맹이 맴매",
+    "rank": 90,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.13426488456865127,
+   "sec": 232
+  },
+  {
+   "skipped": 18,
+   "skippedNames": [
+    "좀비 멍뭉이",
+    "좀비 아거",
+    "좀비 낼름이",
+    "좀비 놈놈놈",
+    "좀비 돼지새끼",
+    "좀비 재키펭",
+    "좀비 고릴라저씨",
+    "좀비 바다레오파드",
+    "좀비 캥거류",
+    "좀비 곰선생",
+    "좀비멍",
+    "뼈낼름이",
+    "멍뭉두건 미냐",
+    "스릴러즈",
+    "좀비하마",
+    "뼈악어",
+    "두더더지",
+    "치킨랄라"
+   ],
+   "id": "pink",
+   "name": "핑크",
+   "grade": "basic",
+   "wins": 58,
+   "cleared": false,
+   "stop": {
+    "id": "galaxynyandam",
+    "name": "갤럭시 야옹마",
+    "rank": 73,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.1275817856764771,
+   "sec": 1944
+  },
+  {
+   "skipped": 1,
+   "skippedNames": [
+    "홍당무왕"
+   ],
+   "id": "cornflower",
+   "name": "길리먼 블루",
+   "grade": "sr",
+   "wins": 58,
+   "cleared": false,
+   "stop": {
+    "id": "lilbunbun",
+    "name": "꼬맹이 맴매",
+    "rank": 90,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.12267080745341614,
+   "sec": 208
+  },
+  {
+   "skipped": 1,
+   "skippedNames": [
+    "홍당무왕"
+   ],
+   "id": "charcoal",
+   "name": "차콜",
+   "grade": "sr",
+   "wins": 58,
+   "cleared": false,
+   "stop": {
+    "id": "lilbunbun",
+    "name": "꼬맹이 맴매",
+    "rank": 90,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.08042268290715496,
+   "sec": 214
+  },
+  {
+   "skipped": 0,
+   "skippedNames": [],
+   "id": "prism",
+   "name": "프리즘",
+   "grade": "uber",
+   "wins": 57,
+   "cleared": false,
+   "stop": {
+    "id": "zbrollow",
+    "name": "좀비 제비족",
+    "rank": 92,
+    "hpLeft": 0
+   },
+   "hpLeft": 1,
+   "sec": 145
+  },
+  {
+   "skipped": 4,
+   "skippedNames": [
+    "좀비 캥거류",
+    "좀비 곰선생",
+    "좀비멍",
+    "뼈낼름이"
+   ],
+   "id": "cooper",
+   "name": "쿠퍼",
+   "grade": "rare",
+   "wins": 57,
+   "cleared": false,
+   "stop": {
+    "id": "krabbe",
+    "name": "소라게게",
+    "rank": 88,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.10731813720143964,
+   "sec": 694
+  },
+  {
+   "skipped": 17,
+   "skippedNames": [
+    "좀비 아거",
+    "좀비 낼름이",
+    "좀비 놈놈놈",
+    "좀비 돼지새끼",
+    "좀비 재키펭",
+    "좀비 고릴라저씨",
+    "좀비 바다레오파드",
+    "좀비 캥거류",
+    "좀비 곰선생",
+    "좀비멍",
+    "뼈낼름이",
+    "멍뭉두건 미냐",
+    "스릴러즈",
+    "좀비하마",
+    "뼈악어",
+    "두더더지",
+    "치킨랄라"
+   ],
+   "id": "kendonavy",
+   "name": "검도 네이비",
+   "grade": "rare",
+   "wins": 57,
+   "cleared": false,
+   "stop": {
+    "id": "starpeng",
+    "name": "스타 펭",
+    "rank": 75,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.022770119214385782,
+   "sec": 1881
+  },
+  {
+   "skipped": 4,
+   "skippedNames": [
+    "좀비 캥거류",
+    "좀비 곰선생",
+    "좀비멍",
+    "뼈낼름이"
+   ],
+   "id": "violet",
+   "name": "바이올",
+   "grade": "rare",
+   "wins": 56,
+   "cleared": false,
+   "stop": {
+    "id": "redsnache",
+    "name": "빨간 털의 낼름이",
+    "rank": 89,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.11645962732919254,
+   "sec": 667
+  },
+  {
+   "skipped": 18,
+   "skippedNames": [
+    "좀비 멍뭉이",
+    "좀비 아거",
+    "좀비 낼름이",
+    "좀비 놈놈놈",
+    "좀비 돼지새끼",
+    "좀비 재키펭",
+    "좀비 고릴라저씨",
+    "좀비 바다레오파드",
+    "좀비 캥거류",
+    "좀비 곰선생",
+    "좀비멍",
+    "뼈낼름이",
+    "멍뭉두건 미냐",
+    "스릴러즈",
+    "좀비하마",
+    "뼈악어",
+    "두더더지",
+    "치킨랄라"
+   ],
+   "id": "brown",
+   "name": "브라운",
+   "grade": "rare",
+   "wins": 56,
+   "cleared": false,
+   "stop": {
+    "id": "starpeng",
+    "name": "스타 펭",
+    "rank": 75,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.07509410818535514,
+   "sec": 2050
+  },
+  {
+   "skipped": 0,
+   "skippedNames": [],
+   "id": "korn",
+   "name": "콘",
+   "grade": "rare",
+   "wins": 55,
+   "cleared": false,
+   "stop": {
+    "id": "shyboy",
+    "name": "홍당무왕",
+    "rank": 94,
+    "hpLeft": 0
+   },
+   "hpLeft": 1,
+   "sec": 202
+  },
+  {
+   "skipped": 0,
+   "skippedNames": [],
+   "id": "obsidian",
+   "name": "옵시디언",
+   "grade": "ex",
+   "wins": 55,
+   "cleared": false,
+   "stop": {
+    "id": "shyboy",
+    "name": "홍당무왕",
+    "rank": 94,
+    "hpLeft": 0
+   },
+   "hpLeft": 1,
+   "sec": 198
+  },
+  {
+   "skipped": 1,
+   "skippedNames": [
+    "홍당무왕"
+   ],
+   "id": "raspberry",
+   "name": "라즈베리",
+   "grade": "basic",
+   "wins": 55,
+   "cleared": false,
+   "stop": {
+    "id": "mrangel",
+    "name": "미스터 엔젤",
+    "rank": 93,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.21953089699177084,
+   "sec": 229
+  },
+  {
+   "skipped": 2,
+   "skippedNames": [
+    "좀비 캥거류",
+    "좀비멍"
+   ],
+   "id": "babyblue",
+   "name": "베이비 블루",
+   "grade": "rare",
+   "wins": 55,
+   "cleared": false,
+   "stop": {
+    "id": "zbrollow",
+    "name": "좀비 제비족",
+    "rank": 92,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.16910229645093947,
+   "sec": 523
+  },
+  {
+   "skipped": 1,
+   "skippedNames": [
+    "홍당무왕"
+   ],
+   "id": "claret",
+   "name": "아틀라스 레드",
+   "grade": "sr",
+   "wins": 55,
+   "cleared": false,
+   "stop": {
+    "id": "mrangel",
+    "name": "미스터 엔젤",
+    "rank": 93,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.05153600805774719,
+   "sec": 209
+  },
+  {
+   "skipped": 9,
+   "skippedNames": [
+    "좀비 재키펭",
+    "좀비 고릴라저씨",
+    "좀비 바다레오파드",
+    "좀비 캥거류",
+    "좀비 곰선생",
+    "좀비멍",
+    "뼈낼름이",
+    "멍뭉두건 미냐",
+    "스릴러즈"
+   ],
+   "id": "rhythmpink",
+   "name": "리듬 핑크",
+   "grade": "rare",
+   "wins": 55,
+   "cleared": false,
+   "stop": {
+    "id": "sael",
+    "name": "스타레오파드",
+    "rank": 85,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.039068844175764686,
+   "sec": 1237
+  },
+  {
+   "skipped": 4,
+   "skippedNames": [
+    "좀비 캥거류",
+    "좀비 곰선생",
+    "좀비멍",
+    "뼈낼름이"
+   ],
+   "id": "mintcyan",
+   "name": "민트시안",
+   "grade": "rare",
+   "wins": 55,
+   "cleared": false,
+   "stop": {
+    "id": "lilbunbun",
+    "name": "꼬맹이 맴매",
+    "rank": 90,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.00003653635367190354,
+   "sec": 628
+  },
+  {
+   "skipped": 2,
+   "skippedNames": [
+    "관짝 멍뭉이",
+    "홍당무왕"
+   ],
+   "id": "lavender",
+   "name": "라벤더",
+   "grade": "basic",
+   "wins": 54,
+   "cleared": false,
+   "stop": {
+    "id": "mrangel",
+    "name": "미스터 엔젤",
+    "rank": 93,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.2111087313486114,
+   "sec": 309
+  },
+  {
+   "skipped": 1,
+   "skippedNames": [
+    "블랙 고릴라저씨"
+   ],
+   "id": "gold",
+   "name": "골드",
+   "grade": "basic",
+   "wins": 53,
+   "cleared": false,
+   "stop": {
+    "id": "otta",
+    "name": "두드리",
+    "rank": 95,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.021185887675642754,
+   "sec": 327
+  },
+  {
+   "skipped": 5,
+   "skippedNames": [
+    "좀비 돼지새끼",
+    "좀비 바다레오파드",
+    "좀비 캥거류",
+    "좀비 곰선생",
+    "좀비멍"
+   ],
+   "id": "red",
+   "name": "레드",
+   "grade": "basic",
+   "wins": 52,
+   "cleared": false,
+   "stop": {
+    "id": "zbrollow",
+    "name": "좀비 제비족",
+    "rank": 92,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.26570048309178745,
+   "sec": 733
+  },
+  {
+   "skipped": 0,
+   "skippedNames": [],
+   "id": "maroon",
+   "name": "마룬",
+   "grade": "rare",
+   "wins": 50,
+   "cleared": false,
+   "stop": {
+    "id": "gorydark",
+    "name": "블랙 고릴라저씨",
+    "rank": 99,
+    "hpLeft": 0
+   },
+   "hpLeft": 1,
+   "sec": 329
+  },
+  {
+   "skipped": 0,
+   "skippedNames": [],
+   "id": "clover",
+   "name": "클로버",
+   "grade": "rare",
+   "wins": 50,
+   "cleared": false,
+   "stop": {
+    "id": "gorydark",
+    "name": "블랙 고릴라저씨",
+    "rank": 99,
+    "hpLeft": 0
+   },
+   "hpLeft": 1,
+   "sec": 273
+  },
+  {
+   "skipped": 0,
+   "skippedNames": [],
+   "id": "indigo",
+   "name": "인디고",
+   "grade": "rare",
+   "wins": 50,
+   "cleared": false,
+   "stop": {
+    "id": "gorydark",
+    "name": "블랙 고릴라저씨",
+    "rank": 99,
+    "hpLeft": 0
+   },
+   "hpLeft": 1,
+   "sec": 272
+  },
+  {
+   "skipped": 0,
+   "skippedNames": [],
+   "id": "hotpink",
+   "name": "핫 핑크",
+   "grade": "rare",
+   "wins": 50,
+   "cleared": false,
+   "stop": {
+    "id": "gorydark",
+    "name": "블랙 고릴라저씨",
+    "rank": 99,
+    "hpLeft": 0
+   },
+   "hpLeft": 1,
+   "sec": 322
+  },
+  {
+   "skipped": 37,
+   "skippedNames": [
+    "좀비 돼지새끼",
+    "좀비 재키펭",
+    "좀비 고릴라저씨",
+    "좀비 바다레오파드",
+    "대갈이군",
+    "화백",
+    "캡틴 모구",
+    "날랄라라라방",
+    "좀비 캥거류",
+    "좀비 곰선생",
+    "블랙 고릴라저씨",
+    "좀비멍",
+    "두드리",
+    "미스터 엔젤",
+    "뼈낼름이",
+    "꼬맹이 맴매",
+    "빨간 털의 낼름이",
+    "멍뭉두건 미냐",
+    "스릴러즈",
+    "까치 도둑",
+    "좀비하마",
+    "빅글래숭이",
+    "뼈악어",
+    "쉐도우 복서",
+    "두더더지",
+    "치킨랄라",
+    "캥가위 맨",
+    "갤럭시 야옹마",
+    "해골돼지",
+    "악의제왕 야옹마",
+    "엘리자베스 2세",
+    "콩 도둑 너구리",
+    "좀비 오리룰루",
+    "돌고래 아가씨",
+    "좀비 고릴라",
+    "재키펭 Z",
+    "스페이스맨 보그"
+   ],
+   "id": "blue",
+   "name": "블루",
+   "grade": "basic",
+   "wins": 50,
+   "cleared": false,
+   "stop": {
+    "id": "alpacky",
+    "name": "알파카",
+    "rank": 62,
+    "hpLeft": 0
+   },
+   "hpLeft": 0.24648064506847242,
+   "sec": 3484
+  }
+ ]
+}
