@@ -11,10 +11,11 @@ const UBER_SERIES={
  acid:'아이언즈',spring:'가든즈',
  lime:'스위츠',emerald:'글라스 군단',
  aquamarine:'워터즈',royalblue:'워터즈',turquoise:'워터즈',sapphire:'복싱즈',night:'인스톨 연합',fuchsia:'아이언즈',rose:'가든즈',
- platinum:'아이언즈'
+ platinum:'아이언즈',
+ vermilion:'인스톨 연합'
 };
 // 프로필 글에 시리즈가 아직 안 적힌 캐릭터만 앞에 붙인다.
-const UBER_SERIES_PROFILE={grey:'아이언즈의 금속 가공 기술자. ',amber:'글라스 군단의 레진 공예가. ',bronze:'인스톨 연합의 ',banana:'스위츠의 ',butter:'스위츠의 ',vanilla:'스위츠의 ',acid:'아이언즈의 ',spring:'가든즈의 ',lime:'스위츠의 ',emerald:'글라스 군단의 ',aquamarine:'워터즈의 ',royalblue:'워터즈의 ',sapphire:'복싱즈의 ',night:'인스톨 연합의 ',fuchsia:'아이언즈의 ',rose:'가든즈의 ',platinum:'아이언즈의 '};// 브론즈~바닐라의 본문은 직업으로 시작하므로 시리즈만 붙인다
+const UBER_SERIES_PROFILE={grey:'아이언즈의 금속 가공 기술자. ',amber:'글라스 군단의 레진 공예가. ',bronze:'인스톨 연합의 ',vermilion:'인스톨 연합의 ',banana:'스위츠의 ',butter:'스위츠의 ',vanilla:'스위츠의 ',acid:'아이언즈의 ',spring:'가든즈의 ',lime:'스위츠의 ',emerald:'글라스 군단의 ',aquamarine:'워터즈의 ',royalblue:'워터즈의 ',sapphire:'복싱즈의 ',night:'인스톨 연합의 ',fuchsia:'아이언즈의 ',rose:'가든즈의 ',platinum:'아이언즈의 '};// 브론즈~바닐라의 본문은 직업으로 시작하므로 시리즈만 붙인다
 for(const [id,series] of Object.entries(UBER_SERIES)){
  if(!ALLIES.includes(id))continue;
  ACQUIRE_TEXT[id]=series+' · 뽑기로 획득';

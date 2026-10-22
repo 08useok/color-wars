@@ -38,7 +38,14 @@ const BLUE_UBERS={
   extra:{attackClass:'범위',area:true,atkDownPct:.5,atkDownChance:1,atkDownDuration:5,slowChance:.5,slowDuration:3},
   role:'범위 · 공격력 다운 100% · 움직임을 느리게 한다',
   text:'플로리스트. 꽃다발에서 흩날린 꽃가루가 적의 공격 의욕을 꺾고, 가시 돋친 줄기가 움직임을 느리게 한다.',
-  textEvo:'꽃가루가 더 짙어 적이 거의 항상 느려진다.',evoText:'체력·공격력 +15% · 움직임을 느리게 한다 80%'}
+  textEvo:'꽃가루가 더 짙어 적이 거의 항상 느려진다.',evoText:'체력·공격력 +15% · 움직임을 느리게 한다 80%'},
+ // 7.1 신캐: 인스톨 연합의 간판 도장공. 빨간 적·에이리언 적을 8초 멈춘다(공격 간격 5.3초). 그림은 플레임을 색만 바꾼 임시 그림이다.
+ vermilion:{name:'버밀리언',color:'#e34234',job:'간판 도장공',base:'flame',tint:'hue-rotate(8deg) saturate(1.6) brightness(1.05)',
+  hp:40000,atk:6000,interval:5.3,speed:5,range:14,cost:3600,cooldown:45,knockbacks:3,
+  extra:{attackClass:'개체',statusVs:['red','alien'],freezeChance:1,freezeDuration:8},
+  role:'개체 · 빨간 적·에이리언 적 움직임을 멈춘다',
+  text:'간판 도장공. 주홍 안료를 듬뿍 묻힌 붓으로 빨간 적과 에이리언의 몸을 칠해 8초 동안 굳혀 버린다.',
+  textEvo:'붓놀림이 한층 단단해져 칠이 더 오래 버틴다.',evoText:'체력·공격력 +15%'}
 };
 const BLUE_EVO_EXTRA={
  aquamarine:()=>({blowChance:.45}),
@@ -46,7 +53,8 @@ const BLUE_EVO_EXTRA={
  royalblue:d=>({strengthen:{...d.strengthen,mult:2.5}}),
  night:d=>({freezeChance:.5,wave:{...d.wave,reach:d.wave.reach+10}}),
  fuchsia:()=>({critChance:.4}),
- rose:()=>({slowChance:.8})
+ rose:()=>({slowChance:.8}),
+ vermilion:()=>({})
 };
 for(const [id,s] of Object.entries(BLUE_UBERS)){
  for(const list of [EX_TYPES,EX_GRADE,ALLIES,NEW_ALLY_TYPES,GENERIC_CD_TYPES])if(!list.includes(id))list.push(id);

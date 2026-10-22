@@ -1,7 +1,7 @@
 // 우주편 2장 등록 시험: 스테이지 위치(맨 끝)·잠금·억제기·배율·출현표·실제 전투를 확인한다.
 const assert=require('assert/strict');
 const make=require('./full-harness.cjs');
-const e=make({extraSetup:`globalThis.__c2={isUnlocked,isChainEnd,isStoryStage,chapterOf,alienMagnification,alienSuppressed,alienSuppressorsOf,get S(){return COSMOS2_START},get E(){return COSMOS2_END},COSMOS_END,STAGE_SPAWNS,codexCatOf,chapterTag,stageEnemies,stageXP,FUTURE_XP_SCALE,UNIT_NAMES,data,setCleared:l=>{cleared.length=0;cleared.push(...l)}};`});
+const e=make({extraSetup:`globalThis.__c2={isUnlocked,isChainEnd,isStoryStage,chapterOf,alienMagnification,alienSuppressed,alienSuppressorsOf,get S(){return COSMOS2_START},get E(){return COSMOS2_END},COSMOS_END,STAGE_SPAWNS,codexCatOf,chapterTag,stageEnemies,stageXP,FUTURE_XP_SCALE,UNIT_NAMES,data,setCleared:l=>{cleared.length=0;cleared.push(...l)},setStage:i=>{selectedStage=i},mask:cosmos2MaskComplete,unitStats};`});
 const t=globalThis.__c2;delete globalThis.__c2;
 const S=t.S,E=t.E,list=e.stageList;
 assert.equal(E-S,48);assert.equal(list.length,E+2,'우주편 2장 뒤에는 7.1 사이클론 강림 2개(cyclone-advents2.js)만 온다');
@@ -17,6 +17,13 @@ assert.deepEqual(t.alienSuppressorsOf(9),[S+23,E-1]);
 t.setCleared([]);assert.equal(t.alienMagnification(9,true),16);
 t.setCleared([S+23]);assert.equal(t.alienMagnification(9,true),15);
 t.setCleared([S+23,E-1]);assert.equal(t.alienMagnification(9,true),11);
+t.setCleared([]);
+// 신님 가면(2장): 43·45·47번째를 깨기 전에는 신님(진심)이 11배, 깨면 보통
+// 신님 가면(2장): 43·45·47번째를 깨기 전에는 신님(진심)이 11배, 깨면 보통
+t.setStage(E-1);t.setCleared([]);assert(!t.mask());assert.equal(t.unitStats('kamisamaserious').atk,67997*11);assert.equal(t.unitStats('kamisamaserious').hp,1499999*11);
+t.setCleared([S+42,S+44,S+46]);assert(t.mask());assert.equal(t.unitStats('kamisamaserious').atk,67997);
+t.setCleared([S+42,S+44]);assert(!t.mask());t.setCleared([E-1]);assert(t.mask());
+t.setStage(0);t.setCleared([]);assert.equal(t.unitStats('kamisamaserious').atk,67997,'우주편 2장 밖에서는 그대로');
 t.setCleared([]);
 // 출현표·보상
 assert(t.STAGE_SPAWNS[S].some(r=>r.type==='ultrabaabaa'&&r.boss),'지구 보스');
