@@ -107,11 +107,11 @@ const entries=[...allies.map(c=>({c,tf:false,tier:label[c],v:gs(c)})),...rows3.m
 const exitOf=c=>rows3.find(r=>r.c===c&&isExit(r));
 const cellName=x=>(x.tf?names(x.c)+'(3진)':names(x.c))+supOf(x.tier)+(!x.tf&&A.adjusted[x.c]?'†':'')+(!x.tf&&exitOf(x.c)?EXIT+'→'+exitOf(x.c).lab:'');
 for(const b of BANDS){const inB=entries.filter(x=>baseOf(x.tier)===b).sort((p,q)=>q.v-p.v);if(!inB.length)continue;
- if(b===BANDS[0]){const one=new Set(inB.map(x=>e.gradeOf(x.c))).size===1;rarityDoc.push(`|**${b}**|${one?inB.map(cellName).join(' · ')+' ('+GR[e.gradeOf(inB[0].c)]+')':inB.map(x=>cellName(x)+' ('+GR[e.gradeOf(x.c)]+')').join(' · ')}${rarityOrder.slice(1).map(()=>'|').join('')}|${inB.length}|`);continue}// OP는 등급 칸을 하나로 합쳐 적는다
+ if(b===BANDS[0]){rarityDoc.push(`|**${b}**|${inB.map(cellName).join(' · ')}${rarityOrder.slice(1).map(()=>'|').join('')}|${inB.length}|`);continue}// OP는 등급 칸을 하나로 합쳐 적는다
  rarityDoc.push(`|**${b}**|${rarityOrder.map(g=>{const m=inB.filter(x=>e.gradeOf(x.c)===g);return m.length?m.map(cellName).join(' · '):'·'}).join('|')}|${inB.length}|`)}
 rarityDoc.push(`|**합계**|${rarityOrder.map(g=>{const a=allies.filter(c=>e.gradeOf(c)===g).length,t=rows3.filter(r=>e.gradeOf(r.c)===g).length;return t?a+' (+3진 '+t+')':a}).join('|')}|${allies.length} (+3진 ${rows3.length})|`);
-rarityDoc.push('',`### 3진 (${rows3.length}명)`,'','3진 그림이 있는 캐릭터만 대상이다. **그 캐릭터만 3진으로, 나머지는 2진 그대로** 둔 상태의 이득이고, 티어 구간은 2진 표와 같다. 괄호는 (등급 · 2진 티어 → 3진 티어)다.','','|3진 티어|인원|캐릭터|','|---|---:|---|');
-for(const t of DISPLAY_BANDS){const g=rows3.filter(r=>r.lab===t);if(g.length)rarityDoc.push(`|**${t}**|${g.length}|${g.map(r=>`${names(r.c)} (${GR[e.gradeOf(r.c)]} · ${label[r.c]} → ${r.lab})${isExit(r)?EXIT:''}`).join(' · ')}|`)}
+rarityDoc.push('',`### 3진 (${rows3.length}명)`,'','3진 그림이 있는 캐릭터만 대상이다. **그 캐릭터만 3진으로, 나머지는 2진 그대로** 둔 상태의 이득이고, 티어 구간은 2진 표와 같다. 괄호는 (2진 티어 → 3진 티어)다.','','|3진 티어|인원|캐릭터|','|---|---:|---|');
+for(const t of DISPLAY_BANDS){const g=rows3.filter(r=>r.lab===t);if(g.length)rarityDoc.push(`|**${t}**|${g.length}|${g.map(r=>`${names(r.c)} (${label[r.c]} → ${r.lab})${isExit(r)?EXIT:''}`).join(' · ')}|`)}
 rarityDoc.push('','**3진으로 티어가 오른 폭이 큰 순서**: '+[...rows3].map(r=>({r,up:BANDS.indexOf(baseOf(label[r.c]))-BANDS.indexOf(baseOf(r.lab))})).sort((x,y)=>y.up-x.up||y.r.g3-x.r.g3).slice(0,5).map(({r,up})=>`${names(r.c)} ${label[r.c]}→${r.lab}${up>0?' (▲'+up+')':up<0?' (▼'+(-up)+')':''}`).join(' · ')+'.');
 let counted=0,counted3=0;
 for(const grade of rarityOrder){
