@@ -16,19 +16,23 @@ const E=[
   stats:{trait:'alien',starred:true,hp:700,atk:100,reward:150,knockbacks:4,area:true,barrier:65000,zone:[400,550],blowChance:1,blowDistance:250},
   text:'별 에이리언. 먼 거리(400~550)에서 범위 공격하며, 맞은 아군은 100% 확률로 250 뒤로 워프(날려버림)한다. 바리어가 65,000이다. (우주편 2장)'},
  {id:'kamisamaserious',db:421,name:'신님(진심)',fore:90,back:101,tba:401,speed:3,range:300,step:6,ss:0.45,// 프레임이 아주 커서 6프레임 간격·렌더 0.45배로 구웠다(기본은 2프레임·0.6배). 화면 크기는 scale로 맞춘다.
-  stats:{hp:1499999,atk:999+999+65999,reward:6000,knockbacks:5,area:true,zone:[-1000,1000]},
+  stats:{hp:1499999,atk:999+999+65999,reward:6000,knockbacks:5,area:true,zone:[0,1000],back:1000},// 전방위 원거리(-1000~1000): 앞 0~1000, 뒤 1000까지(backRange)
+  // 3연타 999·999·65,999 (90F·150F·300F). 1·2타만 날려버림 100%·둔화 50F가 붙는다(strike-hits.js가 타격별로 적용).
+  hitsF:[[90,999,{blowChance:1,blowDistance:14,slowChance:1,slowDuration:50/30}],[150,999,{blowChance:1,blowDistance:14,slowChance:1,slowDuration:50/30}],[300,65999,null]],
   text:'"나 신님인데. 이번엔 진심이야." 우주편 2장 최종 보스. 3연속 공격 중 1·2타(999)는 날려버림 100%·둔화 50프레임이 붙고 3타(65,999)는 한 방이다. 전방위 원거리 공격(-1000~1000). (우주편 2장 빅뱅)'}
 ];
 const out=[`// 우주편 2장 신규 적 4종 등록 초안 (v7.0.0 준비). 게임에는 아직 연결하지 않았다 — html이 불러오지 않는다.`,
 `// scripts/build-cosmos2-enemies.cjs 로 만든다. 능력치 변환은 우주편 1장 적과 같은 규칙(사거리 ×0.034, 속도 ×0.5367).`,
-`// 아직 엔진에 없는 것(등록만 해 두고 동작은 다음 단계): 신님(진심) 1·2타 날려버림·둔화와 3타 한 방(타격별 능력), 전방위 원거리(zoneMin/zoneMax 음수), 게콕 워프(날려버림으로 대신), 신님 가면(2장).`,''];
+`// 엔진 보강 완료(strike-hits.js): 신님(진심) 1·2타 날려버림·둔화와 3타 한 방(타격별 능력), 전방위 원거리(backRange). 게콕 워프는 날려버림으로 대신한다. 신님 가면(2장)은 아직 없다.`,''];
 const have=[];
 for(const e of E){
  const af=path.join(root,'reference-sheets/cosmos-2/enemy-atlas',e.id+'.atlas.json');
- const u={...e.stats,interval:round(e.tba/30),speed:round(e.speed*V,2),range:round(e.range*R,2),attackDuration:round((e.fore+e.back)/30),windup:round(e.fore/30)};
+ const u={...e.stats,interval:round(e.tba/30),speed:round(e.speed*V,2),range:round(e.range*R,2),attackDuration:round((e.hitsF?e.tba:e.fore+e.back)/30),windup:round(e.fore/30)};
+ if(e.hitsF){const total=e.hitsF.reduce((a,h)=>a+h[1],0);u.hits=e.hitsF.map(([f,atk,ab])=>({at:round(f/30),share:round(atk/total,5),...(ab?{abilities:{...ab,slowDuration:ab.slowDuration&&round(ab.slowDuration,2)}}:{})}))}
+ if(u.back){u.backRange=round(u.back*R,2);delete u.back}
  if(u.zone){u.zoneMin=round(u.zone[0]*R,2);u.zoneMax=round(u.zone[1]*R,2);delete u.zone}
  if(u.blowDistance)u.blowDistance=round(u.blowDistance*R,2);
- const order=['trait','starred','hp','atk','interval','speed','range','zoneMin','zoneMax','reward','knockbacks','area','barrier','blowChance','blowDistance','attackDuration','windup'];
+ const order=['trait','starred','hp','atk','interval','speed','range','zoneMin','zoneMax','backRange','reward','knockbacks','area','barrier','blowChance','blowDistance','attackDuration','windup','hits'];
  const ordered={};for(const k of order)if(u[k]!==undefined)ordered[k]=u[k];
  out.push(`data.units.${e.id}=${JSON.stringify(ordered)};`);
  out.push(`UNIT_NAMES.${e.id}=${JSON.stringify(e.name)};`);

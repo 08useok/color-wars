@@ -1455,7 +1455,7 @@ game.spawnCd=Math.max(0,game.spawnCd-dt);game.orangeCd=Math.max(0,game.orangeCd-
   if(u.bossKbTime>0){tickBossKnockback(u,dt);continue}
   if(u.kbTime>0){tickHitback(u,dt);continue}
   if(u.freezeUntil>game.elapsed){animateUnit(u);continue}
-  if(u.pendingAttack){u.pendingAttack.remaining-=dt;if(u.pendingAttack.remaining<=0){const p=u.pendingAttack,hits=(u.stats||data.units[u.type]).hits,h=hits?.[p.hit];u.pendingAttack=null;fire(u,undefined,h?h.share:1);if(game.ended)break;if(h&&hits[p.hit+1])u.pendingAttack={remaining:hits[p.hit+1].at-h.at+p.remaining,hit:p.hit+1}}}
+  if(u.pendingAttack){u.pendingAttack.remaining-=dt;if(u.pendingAttack.remaining<=0){const p=u.pendingAttack,hits=(u.stats||data.units[u.type]).hits,h=hits?.[p.hit];u.pendingAttack=null;u.currentHit=h||null;fire(u,undefined,h?h.share:1);u.currentHit=null;if(game.ended)break;if(h&&hits[p.hit+1])u.pendingAttack={remaining:hits[p.hit+1].at-h.at+p.remaining,hit:p.hit+1}}}
   u.atkCd-=dt;u.animTime+=dt;u.attackTime=Math.max(0,u.attackTime-dt);u.hurtTime=Math.max(0,u.hurtTime-dt);
   let d=u.stats||data.units[u.type];
   const spd=u.slowUntil>game.elapsed?Math.min(d.speed,SLOW_SPEED):d.speed;
