@@ -1,0 +1,59 @@
+{
+ "n": 15,
+ "source": "miraheze: Egg Nebula (Cats of the Cosmos), Chapter 2 (battlecats-db 페이지가 깨져 있음)",
+ "name": "卵星雲",
+ "castleHp": 385000,
+ "max": 10,
+ "xp": 5200,
+ "width": 4200,
+ "enemiesWiki": [
+  {
+   "name": "Ursamajor",
+   "count": 1,
+   "boss": true,
+   "firstF": 800,
+   "delayF": null,
+   "mag": "800%"
+  },
+  {
+   "name": "UltraBaaBaa",
+   "count": 5,
+   "boss": false,
+   "firstF": 300,
+   "delayF": [
+    400,
+    500
+   ],
+   "mag": "100%"
+  },
+  {
+   "name": "Kroxo",
+   "count": 5,
+   "boss": false,
+   "firstF": 500,
+   "delayF": [
+    500
+   ],
+   "mag": "1,200%"
+  },
+  {
+   "name": "Squire Rel",
+   "count": 8,
+   "boss": false,
+   "firstF": 600,
+   "delayF": [
+    400,
+    500
+   ],
+   "mag": "3,000%"
+  },
+  {
+   "name": "Star Peng",
+   "count": 1,
+   "boss": false,
+   "firstF": 2400,
+   "delayF": null,
+   "mag": "200%"
+  }
+ ]
+}
