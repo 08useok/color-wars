@@ -5,7 +5,7 @@ const CODEX_RARITY_EXTREMES={
       "grade": "기본",
       "position": "1등",
       "count": 18,
-      "seconds": 20.2
+      "seconds": 20.3
     }
   },
   "crystal": {
@@ -66,7 +66,7 @@ const CODEX_RARITY_EXTREMES={
     "3": {
       "grade": "레어",
       "position": "1등",
-      "count": 6,
+      "count": 7,
       "seconds": 44.5
     }
   },
@@ -74,7 +74,7 @@ const CODEX_RARITY_EXTREMES={
     "3": {
       "grade": "레어",
       "position": "꼴찌",
-      "count": 6,
+      "count": 7,
       "seconds": 17.1
     }
   },
@@ -98,7 +98,7 @@ const CODEX_RARITY_EXTREMES={
     "2": {
       "grade": "울슈레",
       "position": "1등",
-      "count": 23,
+      "count": 24,
       "seconds": 51.9
     }
   },
@@ -106,7 +106,7 @@ const CODEX_RARITY_EXTREMES={
     "2": {
       "grade": "울슈레",
       "position": "꼴찌",
-      "count": 23,
+      "count": 24,
       "seconds": 15.2
     }
   }
@@ -217,7 +217,8 @@ const CODEX_RARITY_POSITIONS={
   "rose": "하위권 울슈레 캐릭터",
   "vanilla": "하위권 울슈레 캐릭터",
   "acid": "하위권 울슈레 캐릭터",
-  "carmine": "하위권 울슈레 캐릭터",
+  "crisp": "하위권 울슈레 캐릭터",
+  "carmine": "최하위권 울슈레 캐릭터",
   "royalblue": "최하위권 울슈레 캐릭터",
   "platinum": "최하위권 울슈레 캐릭터",
   "butter": "최하위권 울슈레 캐릭터",
