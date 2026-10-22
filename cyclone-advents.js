@@ -5,7 +5,7 @@ const CYCLONE_ALLIES={
  alchemypurple:{name:'연금 퍼플',evolved:'현자의 연금 퍼플',color:'#a97de0',hp:16000,atk:6000,interval:5,range:6,cost:1000,cooldown:18,role:'중거리 범위 크리티컬 딜러',extra:{area:true,attackClass:'범위',critChance:.1,critMult:2},profile:'퍼플의 독립 아종. 플라스크 속 재료로 금속의 약점을 찾는 연금술사. 강한 한 방을 준비하므로 고방의 보호가 필요하다.'},
  rhythmpink:{name:'리듬 핑크',evolved:'페스티벌 리듬 핑크',color:'#fb9bc5',hp:19000,atk:1800,interval:4,range:7,cost:800,cooldown:12,role:'메탈 범위 정지 지원',extra:{area:true,attackClass:'범위',statusVs:['metal'],freezeChance:.5,freezeDuration:2},profile:'핑크의 독립 아종. 마라카스를 흔드는 거리의 연주자. 리듬에 맞춰 메탈을 멈춰 크리티컬 딜러가 공격할 틈을 만든다.'}
 };
-for(const[id,s]of Object.entries(CYCLONE_ALLIES)){
+const registerCycloneAlly=(id,s)=>{// 7.1: 늦게 불러오는 파일(cyclone-advents2.js)도 같은 함수로 등록한다
  for(const list of [RARE_TYPES,ALLIES,NEW_ALLY_TYPES,GENERIC_CD_TYPES])if(!list.includes(id))list.push(id);// 원작 사이클론 보상(우주 고양이·브론즈·줄넘기·태엽 고양이)처럼 레어 등급
  data.units[id]={hp:500,atk:100,interval:s.interval,speed:id==='kendonavy'?7:4,range:s.range,cost:s.cost,cooldown:s.cooldown,knockbacks:3,noRangeGrow:true,attackDuration:Math.min(s.interval,.9),windup:.3,...s.extra};
  LV20_TARGET[id]={hp:s.hp/1.15,atk:s.atk/1.15};
@@ -16,7 +16,7 @@ for(const[id,s]of Object.entries(CYCLONE_ALLIES)){
  const lv=SUBSPECIES_SAVED_TRAINING?.levels?.[id];training.levels[id]=Number.isInteger(lv)?Math.max(1,Math.min(LEVEL_HARD_MAX,lv)):1;
  if(SUBSPECIES_SAVED_TRAINING?.forms?.[id]===1)training.forms[id]=1;
  const b=document.createElement('button');b.id=id+'Btn';b.className='unit-btn';b.innerHTML='<i></i><strong>'+s.name+'</strong><small></small><em></em>';b.onclick=()=>addUnit(id);$('.controls').append(b);
-}
+};for(const[id,s]of Object.entries(CYCLONE_ALLIES))registerCycloneAlly(id,s);
 const cycloneNameBefore=unitDisplayName;
 unitDisplayName=function(t,tr=false,ev=false){return CYCLONE_ALLIES[t]?(ev?CYCLONE_ALLIES[t].evolved:CYCLONE_ALLIES[t].name):cycloneNameBefore(t,tr,ev)};
 // HP/attack/attack timings/KB retained at 100%; ranges ×0.034 like every other enemy, movement speed adapted ×.67.
@@ -26,11 +26,11 @@ const CYCLONE_BOSSES={
  whitecyclone:{name:'화이트 사이클론',hp:999999,atk:89000,range:70,speed:7,knockbacks:5,traits:['floating']},
  angelcyclone:{name:'천사 사이클론',hp:1399999,atk:76000,range:70,speed:6,knockbacks:1,traits:['angel']}
 };
-for(const[id,s]of Object.entries(CYCLONE_BOSSES)){
+const registerCycloneBoss=(id,s)=>{
  data.units[id]={...s,range:Math.round(s.range*.034*10)/10,speed:s.speed*.67,reward:3000,area:true,interval:5/30,attackDuration:5/30,windup:1/30};
  UNIT_NAMES[id]=s.name;ENEMY_ORDER.push(id);NEW_ATLASES[id]=CYCLONE_ATLASES[id];
  ENEMY_TEXT[id]=s.name+'. 짧은 사거리에서 5프레임마다 범위 공격한다. '+(id==='angelcyclone'?'천사 속성만 지닌다. 떠 있는 적 대상 메즈가 통하지 않으므로 천사 정지·느리게로 저지하자.':id==='blackcyclone'?'검은 적·떠 있는 적. 공격마다 20% 확률로 날려버린다. 메즈로 전진을 막자.':id==='redcyclone'?'빨간 적·떠 있는 적. 높은 공격력을 받아내기보다 정지·느리게로 저지하자.':'떠 있는 적. 흰 몸이지만 무속성이 아니므로 공중 메즈를 준비하자.');
-}
+};for(const[id,s]of Object.entries(CYCLONE_BOSSES))registerCycloneBoss(id,s);
 data.units.angelfanboy={trait:'metal',hp:5,atk:1,range:27.2,speed:4*.67,knockbacks:5,interval:605/30,windup:6/30,attackDuration:1,reward:1};
 UNIT_NAMES.angelfanboy='천사 애호가';ENEMY_TEXT.angelfanboy='천사를 좋아하지만 천사 속성이 아닌 메탈 적. 체력은 5이며 아주 긴 사거리에서 약한 공격을 한다.';ENEMY_ORDER.push('angelfanboy');NEW_ATLASES.angelfanboy=CYCLONE_ATLASES.angelfanboy;
 // Frame-based reference schedules converted to seconds. hp-trigger delays are relative to activation.
@@ -48,10 +48,10 @@ const CYCLONE_EVENTS=[
 ];
 let cycloneClears=[];
 try{const v=JSON.parse(localStorage.getItem('red-battle-cyclone-v1')||'[]');if(Array.isArray(v))cycloneClears=[...new Set(v.filter(id=>CYCLONE_EVENTS.some(e=>e.id===id)))]}catch{}
-for(const e of CYCLONE_EVENTS){
+const registerCycloneEvent=e=>{
  e.index=STAGES.length;STAGES.push({name:e.stage,flag:'🌪️',hp:e.hp,xp:3800,maxEnemies:e.max,gap:4,wave:0,sky:'#b5c4d6',land:e.color,chapter:'special',cyclone:e.id,special:{item:e.reward,itemName:CYCLONE_ALLIES[e.reward].name,count:1,chance:e.chance,xp:3800},desc:e.name+' · '+UNIT_NAMES[e.boss]+' · 레어 '+CYCLONE_ALLIES[e.reward].name+' '+Math.round(e.chance*100)+'% 획득'});
  STAGE_SPAWNS[e.index]=e.rules;ACQUIRE_TEXT[e.reward]=e.name+' / '+e.stage+' 클리어 시 '+Math.round(e.chance*100)+'% 획득';
-}
+};CYCLONE_EVENTS.forEach(registerCycloneEvent);
 function cycloneStageOpen(e){return cleared.includes(CHAPTER1_LEN*e.chapter-1)}
 const cycloneDropBefore=specialDropOpen,cycloneGiveBefore=giveSpecialItem,cycloneItemBefore=specialItemText;
 specialDropOpen=function(sp){return CYCLONE_ALLIES[sp.item]?!gachaOwns(sp.item):cycloneDropBefore(sp)};
