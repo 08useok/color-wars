@@ -1,0 +1,557 @@
+[
+ {
+  "db": "002",
+  "jp": "わんこ",
+  "en": "Doge",
+  "jpOk": true,
+  "game": "dog",
+  "stages": 2,
+  "gameOk": true
+ },
+ {
+  "db": "003",
+  "jp": "にょろ",
+  "en": "Snache",
+  "jpOk": true,
+  "game": "snache",
+  "stages": 5,
+  "gameOk": true
+ },
+ {
+  "db": "004",
+  "jp": "例のヤツ",
+  "en": "Those_Guys",
+  "jpOk": true,
+  "game": "guys",
+  "stages": 8,
+  "gameOk": true
+ },
+ {
+  "db": "006",
+  "jp": "ブタヤロウ",
+  "en": "Pigge",
+  "jpOk": true,
+  "game": "pigge",
+  "stages": 5,
+  "gameOk": true
+ },
+ {
+  "db": "007",
+  "jp": "ジャッキー・ペン",
+  "en": "Jackie_Peng",
+  "jpOk": true,
+  "game": "peng",
+  "stages": 1,
+  "gameOk": false,
+  "hpCandidates": [
+   "peng"
+  ]
+ },
+ {
+  "db": "008",
+  "jp": "ゴリさん",
+  "en": "Gory",
+  "jpOk": true,
+  "game": "gory",
+  "stages": 3,
+  "gameOk": true
+ },
+ {
+  "db": "009",
+  "jp": "メェメェ",
+  "en": "Baa_Baa",
+  "jpOk": true,
+  "game": "baa",
+  "stages": 1,
+  "gameOk": true
+ },
+ {
+  "db": "010",
+  "jp": "ゴマさま",
+  "en": "Sir_Seal",
+  "jpOk": true,
+  "game": "seal",
+  "stages": 7,
+  "gameOk": true
+ },
+ {
+  "db": "012",
+  "jp": "カ・ンガリュ",
+  "en": "Kang_Roo",
+  "jpOk": true,
+  "game": "kangaroo",
+  "stages": 3,
+  "gameOk": true
+ },
+ {
+  "db": "013",
+  "jp": "一角くん",
+  "en": "One_Horn",
+  "jpOk": true,
+  "game": "rhino",
+  "stages": 4,
+  "gameOk": true
+ },
+ {
+  "db": "015",
+  "jp": "ワニック",
+  "en": "Croco",
+  "jpOk": true,
+  "game": "croco",
+  "stages": 7,
+  "gameOk": true
+ },
+ {
+  "db": "016",
+  "jp": "ウサ銀",
+  "en": "B.B.Bunny",
+  "jpOk": true,
+  "game": "rabbit",
+  "stages": 7,
+  "gameOk": true
+ },
+ {
+  "db": "017",
+  "jp": "リッスントゥミー",
+  "en": "Squire_Rel",
+  "jpOk": true,
+  "game": "squirrel",
+  "stages": 13,
+  "gameOk": true
+ },
+ {
+  "db": "019",
+  "jp": "赤羅我王",
+  "en": "Shy_Boy",
+  "jpOk": true,
+  "game": "shyboy",
+  "stages": 1,
+  "gameOk": true
+ },
+ {
+  "db": "023",
+  "jp": "カンバン娘",
+  "en": "Ms._Sign",
+  "jpOk": true,
+  "game": null,
+  "stages": 47,
+  "gameOk": false,
+  "hpCandidates": [
+   "mamaleboin",
+   "owlbrow",
+   "zthrillerz"
+  ],
+  "skip": "timeout(900초) 표지판 아가씨 — 이전 장과 같이 구현하지 않음"
+ },
+ {
+  "db": "024",
+  "jp": "ガガガガ",
+  "en": "Mooth",
+  "jpOk": true,
+  "game": "mooth",
+  "stages": 2,
+  "gameOk": true
+ },
+ {
+  "db": "040",
+  "jp": "イノシャシ",
+  "en": "Bore",
+  "jpOk": true,
+  "game": "bore",
+  "stages": 2,
+  "gameOk": true
+ },
+ {
+  "db": "043",
+  "jp": "だっふんど",
+  "en": "Dagshund",
+  "jpOk": true,
+  "game": "dagshund",
+  "stages": 1,
+  "gameOk": true
+ },
+ {
+  "db": "048",
+  "jp": "殺意のわんこ",
+  "en": "Doge_Dark",
+  "jpOk": true,
+  "game": "darkdog",
+  "stages": 16,
+  "gameOk": true
+ },
+ {
+  "db": "049",
+  "jp": "メタルカバちゃん",
+  "en": "Metal_Hippoe",
+  "jpOk": true,
+  "game": "metalhippo",
+  "stages": 5,
+  "gameOk": true
+ },
+ {
+  "db": "050",
+  "jp": "エリザベス2世",
+  "en": "St._Pigge_the_2nd",
+  "jpOk": true,
+  "game": "stpigge",
+  "stages": 2,
+  "gameOk": false,
+  "hpCandidates": [
+   "zomboe",
+   "coffinzoge",
+   "krabbe",
+   "shadowboxer"
+  ]
+ },
+ {
+  "db": "053",
+  "jp": "ブラッゴリ",
+  "en": "Gory_Dark",
+  "jpOk": true,
+  "game": "gorydark",
+  "stages": 3,
+  "gameOk": true
+ },
+ {
+  "db": "054",
+  "jp": "シャドウボクサー",
+  "en": "Shadow_Boxer_K",
+  "jpOk": true,
+  "game": "shadowboxer",
+  "stages": 3,
+  "gameOk": true
+ },
+ {
+  "db": "058",
+  "jp": "メタルサイボーグ",
+  "en": "Metal_One_Horn",
+  "jpOk": true,
+  "game": "metalcyborg",
+  "stages": 1,
+  "gameOk": false,
+  "hpCandidates": [
+   "metalcyborg",
+   "baa"
+  ]
+ },
+ {
+  "db": "115",
+  "jp": "天使カバちゃん",
+  "en": "Heavenly_Hippoe",
+  "jpOk": true,
+  "game": "heavenlyhippoe",
+  "stages": 5,
+  "gameOk": true
+ },
+ {
+  "db": "116",
+  "jp": "天使ガブリエル",
+  "en": "Gabriel",
+  "jpOk": true,
+  "game": "gabriel",
+  "stages": 10,
+  "gameOk": true
+ },
+ {
+  "db": "117",
+  "jp": "天使ゴンザレス",
+  "en": "Angelic_Gory",
+  "jpOk": true,
+  "game": "gonzales",
+  "stages": 4,
+  "gameOk": true
+ },
+ {
+  "db": "120",
+  "jp": "赤毛のにょろ",
+  "en": "Ginger_Snache",
+  "jpOk": true,
+  "game": "redsnache",
+  "stages": 10,
+  "gameOk": true
+ },
+ {
+  "db": "149",
+  "jp": "メタルわんこ",
+  "en": "Metal_Doge",
+  "jpOk": true,
+  "game": "metaldoge",
+  "stages": 1,
+  "gameOk": true
+ },
+ {
+  "db": "169",
+  "jp": "エイリワン",
+  "en": "Shibalien",
+  "jpOk": true,
+  "game": "shibalien",
+  "stages": 14,
+  "gameOk": true
+ },
+ {
+  "db": "170",
+  "jp": "ワーニック",
+  "en": "Kroxo",
+  "jpOk": true,
+  "game": "kroxo",
+  "stages": 18,
+  "gameOk": true
+ },
+ {
+  "db": "171",
+  "jp": "カーバチャン",
+  "en": "Hyppoh",
+  "jpOk": true,
+  "game": "hyppoh",
+  "stages": 8,
+  "gameOk": true
+ },
+ {
+  "db": "172",
+  "jp": "ゴマサーマン",
+  "en": "Imperator_Sael",
+  "jpOk": true,
+  "game": "sael",
+  "stages": 8,
+  "gameOk": true
+ },
+ {
+  "db": "173",
+  "jp": "レディ・ガ",
+  "en": "Maawth",
+  "jpOk": true,
+  "game": "maawth",
+  "stages": 3,
+  "gameOk": true
+ },
+ {
+  "db": "174",
+  "jp": "デカメガネル",
+  "en": "LeMurr",
+  "jpOk": true,
+  "game": "lemurr",
+  "stages": 8,
+  "gameOk": true
+ },
+ {
+  "db": "175",
+  "jp": "ヤドカリー",
+  "en": "Helmut_Krabbe",
+  "jpOk": true,
+  "game": "krabbe",
+  "stages": 3,
+  "gameOk": false,
+  "hpCandidates": []
+ },
+ {
+  "db": "176",
+  "jp": "カヲルさん",
+  "en": "I.M._Phace",
+  "jpOk": true,
+  "game": "phace",
+  "stages": 3,
+  "gameOk": true
+ },
+ {
+  "db": "177",
+  "jp": "クマンチュー",
+  "en": "Ursamajor",
+  "jpOk": true,
+  "game": "ursamajor",
+  "stages": 1,
+  "gameOk": true
+ },
+ {
+  "db": "178",
+  "jp": "破壊生物クオリネン",
+  "en": "Cli-One",
+  "jpOk": true,
+  "game": "clione",
+  "stages": 1,
+  "gameOk": true
+ },
+ {
+  "db": "179",
+  "jp": "イノヴァルカン",
+  "en": "Nimoy_Bore",
+  "jpOk": true,
+  "game": "nimoy",
+  "stages": 3,
+  "gameOk": true
+ },
+ {
+  "db": "180",
+  "jp": "エリザベス56世",
+  "en": "Elizabeth_the_LVIth",
+  "jpOk": true,
+  "game": "liz56",
+  "stages": 3,
+  "gameOk": true
+ },
+ {
+  "db": "182",
+  "jp": "ギャラクシーニャンダム",
+  "en": "Galactic_Overseer_Nyandam",
+  "jpOk": true,
+  "game": "galaxynyandam",
+  "stages": 1,
+  "gameOk": false,
+  "hpCandidates": [
+   "galaxynyandam"
+  ]
+ },
+ {
+  "db": "184",
+  "jp": "ハサミーマン",
+  "en": "Scissoroo",
+  "jpOk": true,
+  "game": "scissorman",
+  "stages": 5,
+  "gameOk": true
+ },
+ {
+  "db": "185",
+  "jp": "サイバーX",
+  "en": "Cyberhorn",
+  "jpOk": true,
+  "game": "cyberx",
+  "stages": 2,
+  "gameOk": true
+ },
+ {
+  "db": "186",
+  "jp": "プドール夫人",
+  "en": "Mistress_Celeboodle",
+  "jpOk": true,
+  "game": "madampoodle",
+  "stages": 7,
+  "gameOk": true
+ },
+ {
+  "db": "213",
+  "jp": "パラサイトブンブン",
+  "en": "Bun_Bun_Symbiote",
+  "jpOk": true,
+  "game": "alienbunbun",
+  "stages": 1,
+  "gameOk": false,
+  "hpCandidates": [
+   "gravey",
+   "alienbunbun"
+  ]
+ },
+ {
+  "db": "362",
+  "jp": "エリートエイリワン",
+  "en": "Shibalien_Elite",
+  "jpOk": true,
+  "game": "shibalienelite",
+  "stages": 32,
+  "gameOk": true
+ },
+ {
+  "db": "363",
+  "jp": "スター・ペン",
+  "en": "Star_Peng",
+  "jpOk": true,
+  "game": "starpeng",
+  "stages": 33,
+  "gameOk": true
+ },
+ {
+  "db": "364",
+  "jp": "グレゴリー将軍",
+  "en": "General_GreGory",
+  "jpOk": true,
+  "game": "gregory",
+  "stages": 16,
+  "gameOk": true
+ },
+ {
+  "db": "365",
+  "jp": "ハハパオン",
+  "en": "Le'Solar",
+  "jpOk": true,
+  "game": "mamaleboin",
+  "stages": 5,
+  "gameOk": true
+ },
+ {
+  "db": "366",
+  "jp": "巨匠",
+  "en": "Project_A",
+  "jpOk": true,
+  "game": "eldersloth",
+  "stages": 4,
+  "gameOk": true
+ },
+ {
+  "db": "367",
+  "jp": "キャプテン・モグー",
+  "en": "Corporal_Weyland",
+  "jpOk": true,
+  "game": "captainmogu",
+  "stages": 8,
+  "gameOk": true
+ },
+ {
+  "db": "368",
+  "jp": "スペースマンボルグ",
+  "en": "Spacefish_Jones",
+  "jpOk": true,
+  "game": "spaceborg",
+  "stages": 3,
+  "gameOk": true
+ },
+ {
+  "db": "390",
+  "jp": "ウルトラメェメェ",
+  "en": "UltraBaaBaa",
+  "jpOk": true,
+  "game": null,
+  "stages": 16,
+  "gameOk": false,
+  "hpCandidates": [
+   "strayguy"
+  ],
+  "isNew": "ultrabaabaa"
+ },
+ {
+  "db": "419",
+  "jp": "マナブくん",
+  "en": "Kid_Tappa",
+  "jpOk": true,
+  "game": null,
+  "stages": 13,
+  "gameOk": false,
+  "hpCandidates": [
+   "zomboe",
+   "coffinzoge",
+   "krabbe",
+   "shadowboxer"
+  ],
+  "isNew": "kidtappa"
+ },
+ {
+  "db": "420",
+  "jp": "ゲコック",
+  "en": "Ribbo",
+  "jpOk": true,
+  "game": null,
+  "stages": 12,
+  "gameOk": false,
+  "hpCandidates": [],
+  "isNew": "ribbo"
+ },
+ {
+  "db": "421",
+  "jp": "神さま（本気）",
+  "en": "Cat_God",
+  "jpOk": true,
+  "game": null,
+  "stages": 1,
+  "gameOk": false,
+  "hpCandidates": [],
+  "isNew": "kamisama_serious"
+ }
+]
