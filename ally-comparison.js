@@ -67,7 +67,7 @@ function allyComparisonText(s){
  if(s.wave||s.surge)text+='위 수치는 직접 공격과 추가 공격을 모두 맞히는 상한이며, 넉백이나 위치 이탈로 실제 피해가 줄어들 수 있다. ';
  else if(s.critChance)text+='크리티컬은 확률에 따른 평균값으로 반영했다. ';
  if(s.pull)text+=`보스에게 끌어오기는 통하지 않지만 피해는 30% 증가해 약 <b>${n(s.atk*1.3)}</b>(기본 데미지 ×1.3)이 들어간다. `;
- if(s.range>=25&&!s.engageRange&&s.attackClass!=='범위'&&(s.zoneMin??s.range*.25)>0)text+='긴 사거리 안쪽의 사각지대는 고방으로 보호해야 한다. ';
+ if(s.blindSpot&&!s.engageRange&&(s.zoneMin??s.range*.25)>0)text+='긴 사거리 안쪽의 사각지대는 고방으로 보호해야 한다. ';
  const peak=allyMaximumHit(s),peakNumber=typeof codexHighStat==='function'?codexHighStat(peak.damage,'damage'):n(peak.damage);
  if(peak.damage>300000)text+=`<br><b>최고 데미지(한 대상·직접 1타): ${peakNumber}</b>${peak.conditions.length?' — '+peak.conditions.join(' + '):''}. `;
  return text;
