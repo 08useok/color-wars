@@ -1,6 +1,6 @@
 // Build from archived battlecats-db spawn tables, preserving their 30fps timing.
 const fs=require('fs'),path=require('path');const root=path.resolve(__dirname,'..');
-const ids={'ゴマさま':'seal','ゴマサーマン':'sael','ブチゴマさま':'zirzeal','破壊生物クオリネン':'phace','ツバメンズ':'brollow','イルカ娘':'dolphina','ブラックマ':'assassinbear','イカ天':'calamaria','カルピンチョ':'capy','ウサ銀':'rabbit','わんこ':'dog','にょろ':'snache','カバちゃん':'hippo','カ・ンガリュ':'kangaroo','スカルボクサー':'zangroo','ダディ':'daddy','はぐれたヤツ':'strayguy','わんこの城':'dogebase','ミスターエンジェル':'mrangel','ド鳩・サブ・レー':'pigeon','ちびぶんぶん':'lilbunbun'};
+const ids={'ゴマさま':'seal','ゴマサーマン':'sael','ブチゴマさま':'zirzeal','破壊生物クオリネン':'clione','ツバメンズ':'brollow','イルカ娘':'dolphina','ブラックマ':'assassinbear','イカ天':'calamaria','カルピンチョ':'capy','ウサ銀':'rabbit','わんこ':'dog','にょろ':'snache','カバちゃん':'hippo','カ・ンガリュ':'kangaroo','スカルボクサー':'zangroo','ダディ':'daddy','はぐれたヤツ':'strayguy','わんこの城':'dogebase','ミスターエンジェル':'mrangel','ド鳩・サブ・レー':'pigeon','ちびぶんぶん':'lilbunbun'};
 const names=['통통한 숨은 항구','로맨스 그레이 하이웨이','만취 마사지사','감옥의 사랑 늪','페로몬 문','천공 비보의 저택'];
 const jp=['むっちり隠れ港','ロマンスグレーハイウェイ','泥酔マッサージャー','豚箱恋愛沼','フェロモン門','天空秘宝の館'];
 const hp=[400000,666666,1000000,500000,750000,900000],max=[11,10,9,15,50,10],xp=[2660,2850,2660,2850,2945,3135];

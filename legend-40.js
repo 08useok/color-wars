@@ -195,7 +195,7 @@ const LEGEND40_DATA=[
         ]
       },
       {
-        "type": "phace",
+        "type": "clione",
         "at": {
           "t": 0.06666666666666667
         },
