@@ -39,13 +39,14 @@ const BLUE_UBERS={
   role:'범위 · 공격력 다운 100% · 움직임을 느리게 한다',
   text:'플로리스트. 꽃다발에서 흩날린 꽃가루가 적의 공격 의욕을 꺾고, 가시 돋친 줄기가 움직임을 느리게 한다.',
   textEvo:'꽃가루가 더 짙어 적이 거의 항상 느려진다.',evoText:'체력·공격력 +15% · 움직임을 느리게 한다 80%'},
- // 7.1 신캐: 인스톨 연합의 간판 도장공. 빨간 적·에이리언 적을 8초 멈춘다(공격 간격 5.3초). 그림은 플레임을 색만 바꾼 임시 그림이다.
- vermilion:{name:'버밀리언',color:'#e34234',job:'간판 도장공',base:'flame',tint:'hue-rotate(8deg) saturate(1.6) brightness(1.05)',
-  hp:40000,atk:6000,interval:5.3,speed:5,range:14,cost:3600,cooldown:45,knockbacks:3,
-  extra:{attackClass:'개체',statusVs:['red','alien'],freezeChance:1,freezeDuration:8},
-  role:'개체 · 빨간 적·에이리언 적 움직임을 멈춘다',
-  text:'간판 도장공. 주홍 안료를 듬뿍 묻힌 붓으로 빨간 적과 에이리언의 몸을 칠해 8초 동안 굳혀 버린다.',
-  textEvo:'붓놀림이 한층 단단해져 칠이 더 오래 버틴다.',evoText:'체력·공격력 +15%'}
+ // 7.1 신캐: 인스톨 연합의 타투이스트(여성·29세). 전용 에셋은 allies-71-motion.js에서 연결한다.
+ vermilion:{name:'버밀리언',color:'#f4320c',job:'타투이스트',base:'flame',tint:'hue-rotate(8deg) saturate(1.6) brightness(1.05)',
+  hp:54000,atk:6000,interval:5.3,speed:5,range:14,cost:3600,cooldown:45,knockbacks:3,
+  // 범위 공격. 사거리 14(표시) · 인식(공격을 시작하는 거리) 12 · 타격 범위 앞 15 ~ 뒤 -3.
+  extra:{area:true,attackClass:'범위',statusVs:['red','alien'],freezeChance:1,freezeDuration:8,engageRange:12,zoneMax:15,backRange:3},
+  role:'범위 · 빨간 적·에이리언 적 움직임을 멈춘다',
+  text:'여성, 29세의 타투이스트(문신 아티스트). 타투 펜과 주홍빛 잉크로 도안을 그린다. 잉크의 힘으로 빨간 적과 에이리언의 움직임을 8초 동안 멈춘다.',
+  textEvo:'작업 앞치마와 장갑을 갖추고 더 정교한 도안을 그린다. 체력과 공격력이 15% 늘어난다.',evoText:'체력·공격력 +15%'}
 };
 const BLUE_EVO_EXTRA={
  aquamarine:()=>({blowChance:.45}),
@@ -54,7 +55,7 @@ const BLUE_EVO_EXTRA={
  night:d=>({freezeChance:.5,wave:{...d.wave,reach:d.wave.reach+10}}),
  fuchsia:()=>({critChance:.4}),
  rose:()=>({slowChance:.8}),
- vermilion:()=>({})
+ vermilion:d=>({engageRange:d.engageRange})// 2진에서도 사거리처럼 인식 거리를 12로 유지(엔진은 2진에서 인식 거리를 ×1.2로 늘린다)
 };
 for(const [id,s] of Object.entries(BLUE_UBERS)){
  for(const list of [EX_TYPES,EX_GRADE,ALLIES,NEW_ALLY_TYPES,GENERIC_CD_TYPES])if(!list.includes(id))list.push(id);

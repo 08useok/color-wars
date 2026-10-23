@@ -1,0 +1,18 @@
+const assert=require('assert/strict'),make=require('./full-harness.cjs');
+const e=make({extraSetup:`globalThis.__ivory3={ready:trueFormAssetReady,bonus:TRUE_FORM_BONUS,statusMult:fruitStatusMultiplier,combos:ALLY_COMBOS,active:l=>activeAllyCombos(l,0),apply:applyAllyComboStats};`});
+const x=globalThis.__ivory3;delete globalThis.__ivory3;
+assert(x.ready('ivory'));assert(!x.ready('lightcream'));assert.equal(x.bonus.lightcream,undefined);
+e.setProfile({trueForms:[]});const base=e.unitStats('ivory');
+e.setProfile({trueForms:['ivory']});const third=e.unitStats('ivory');
+assert.equal(third.hp,Math.round(base.hp*1.4));assert.equal(third.atk,Math.round(base.atk*1.4));assert.equal(third.critChance,.4);assert.equal(third.critMult,2.5);assert.equal(third.metalKiller,.12);
+for(const key of ['cost','cooldown','range'])assert.equal(third[key],base[key],key);assert.equal(base.slowChance,.6);assert.equal(third.slowChance,1);
+assert.equal(base.interval,3);assert.equal(third.interval,2.5);assert.equal(base.slowDuration,2.5);assert.equal(third.slowDuration,3);assert(!third.statusVs);
+e.reset();const g=e.getGame();g.running=true;g.paused=false;g.money=999999;g.tutorial=99;g.spawnRules=[];e.addUnit('ivory');e.addUnit('metalhippo');const u=g.units.find(v=>v.ally),v=g.units.find(v=>!v.ally);assert(u&&v);u.x=54;v.x=50;v.hp=v.max=1000000;u.stats.critChance=0;e.damage(v,u.stats.atk,u);assert.equal(v.hp,879999);
+e.damage(v,1,u);assert(Math.abs(v.slowUntil-g.elapsed-third.slowDuration*x.statusMult(u,v))<1e-6,'metal enemy slowed for the full third-form duration (보물 보정 포함)');
+const slowCombo=x.combos.find(c=>c.id==='slow-stroll');assert(slowCombo&&slowCombo.slowDurationBonus===.2);
+const ids=l=>x.active(l).map(c=>c.id);
+assert(ids(['ivory','lilac','violet','red','blue']).includes('slow-stroll'));assert(!ids(['ivory','lilac','red','blue','yellow']).includes('slow-stroll'),'멤버가 하나라도 빠지면 발동 안 함');assert(!ids(['red','blue','yellow','green','ivory','lilac','violet']).includes('slow-stroll'),'1열(1~5번)에 있어야 함');
+const act=x.active(['ivory','lilac','violet','red','blue']);
+const lil=e.unitStats('lilac'),withC=x.apply(lil,act);assert.equal(withC.slowDuration,Math.round(lil.slowDuration*1.2*100)/100);assert.equal(x.apply(third,act).slowDuration,3.6);assert.equal(x.apply(third,act).slowChance,1);
+const red=e.unitStats('red');assert.equal(x.apply(red,act).slowDuration,red.slowDuration,'슬로우가 없는 아군은 그대로');
+console.log('PASS: Ivory third-form draft, correct asset gate, unchanged economy, metal killer 12%, slow 100%/3s on every enemy (metal included), interval 2.5s, 느긋한 산책 combo (+20% slow time).');process.exit(0);
