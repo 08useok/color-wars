@@ -2,9 +2,12 @@
 // v1 세계편 (first push, 2026-09-24) · v2 레전드 스토리 (09-30) · v3 미래편 1장 (10-03) · v4 미래편 2장 + 3진 (10-06) · v5 미래편 3장 (10-08) · v6 우주편 1장 (10-09) · v7 우주편 2장 (10-22).
 // User release rule (2026-10-18): bump PATCH for every commit-and-push release unless an explicit version is requested; do not bump twice when already prepared.
 // A new NOTICE.version shows the notice once on load; the 공지 button on the stage screen reopens it.
-const GAME_VERSION='7.1.1';
+const GAME_VERSION='7.1.2';
 const NOTICE={version:GAME_VERSION,date:'2026-10-23',title:`v${GAME_VERSION} 업데이트`,html:`
 <p class="notice-lead">지금까지 <b>세계편 1~3장 · 미래편 1~3장 · 우주편 1~2장 · 레전드 스토리 1~40장</b>을 담았습니다.</p>
+<h3>👹 v7.1.2 보스 스테이지: 성이 무너지기 전에 보스 소환</h3>
+<ul><li>보스가 있는 스테이지에서 성을 한 번에 무너뜨릴 만큼 큰 피해가 들어가도, 보스가 아직 나오지 않았다면 성 체력이 <b>1</b>만 남고 <b>보스가 바로 소환</b>됩니다. 보스가 나온 뒤에는 성이 평소처럼 무너집니다. 보스가 나오는 조건(성 체력 비율·시간)은 그대로입니다.</li>
+<li>사이클론은 전과 같이 보스를 쓰러뜨려야 성이 무너집니다. 보스가 아직 안 나왔다면 성이 1이 되는 순간 바로 소환됩니다.</li></ul>
 <h3>💾 v7.1.1 우주편 2장 저장 오류 수정 · 사이클론은 보스를 쓰러뜨려야 클리어</h3>
 <ul><li><b>우주편 2장 클리어가 새로고침하면 사라지던 문제</b>를 고쳤습니다. 저장된 진행도를 읽을 때 2장 스테이지 번호를 몰라 걸러내고 있었습니다. 이제 2장 클리어가 그대로 남습니다. 이미 새로고침한 뒤 다른 스테이지를 깨서 저장까지 된 경우에는 기록이 지워졌을 수 있어, 그 스테이지는 다시 깨야 합니다.</li></ul>
 <ul><li>사이클론 강림 6종(붉은·검은·하얀·천사·메탈·코스믹) 모두 <b>보스를 쓰러뜨려야 성이 무너집니다</b>. 보스를 쓰러뜨리기 전에는 적 성 체력이 1에서 멈추고, 보스가 나오기 전에 성만 무너뜨려 클리어되던 문제를 고쳤습니다.</li>

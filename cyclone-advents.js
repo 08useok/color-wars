@@ -71,18 +71,5 @@ renderSpecialStages=function(){cycloneSpecialBefore();for(const e of CYCLONE_EVE
 // Keep actual evolution text in sync: these independent variants deliberately keep their range.
 const cyclonePreviewBefore=renderCodexPreview;
 renderCodexPreview=function(){cyclonePreviewBefore();if(codexTab==='ally'&&CYCLONE_ALLIES[codexType])$('#codexDesc').innerHTML=(codexEvolved?PROFILE_TEXT_EVOLVED[codexType]+'<br><strong>2진 효과: 체력·공격력 15% 증가 · 사거리 유지</strong>':PROFILE_TEXT[codexType])};
-// 7.1.1: 사이클론 강림은 보스를 쓰러뜨려야 클리어된다. 보스가 쓰러지기 전에는 적 성 체력이 1 아래로 내려가지 않는다(보스 등장 조건인 성 체력 비율·시간은 그대로 작동).
-{
- const base=data.bases.enemy;let hp=base.hp;
- const bossType=()=>CYCLONE_EVENTS.find(e=>e.index===selectedStage)?.boss;
- Object.defineProperty(base,'hp',{configurable:true,enumerable:true,get(){return hp},set(v){
-  hp=v;
-  if(hp<1&&game&&!game.ended&&!game.cyBossDown&&bossType()){
-   hp=1;
-   if(!game.cyHint){game.cyHint=true;$('#battleNotice').textContent='사이클론 보스를 쓰러뜨려야 성이 무너져요!';game.noticeTime=3}
-  }
- }});
- const cycloneHitbackBefore=startHitback;
- startHitback=function(u,...rest){if(u&&!u.ally&&u.hp<=0&&game&&u.type===bossType())game.cyBossDown=true;return cycloneHitbackBefore.call(this,u,...rest)};
-}
+// 사이클론 보스 처치 조건(7.1.1)과 보스 스테이지 성 보호(7.1.2)는 boss-castle-guard.js가 맡는다.
 renderNewButtons();renderDeckButtons();renderTraining();renderSpecialStages();
