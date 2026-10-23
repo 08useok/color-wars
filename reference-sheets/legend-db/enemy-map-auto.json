@@ -1,0 +1,1033 @@
+[
+ {
+  "db": "002",
+  "jp": "わんこ",
+  "en": "Doge",
+  "hp": 90,
+  "game": "dog",
+  "how": "script"
+ },
+ {
+  "db": "003",
+  "jp": "にょろ",
+  "en": "Snache",
+  "hp": 100,
+  "game": "snache",
+  "how": "script"
+ },
+ {
+  "db": "004",
+  "jp": "例のヤツ",
+  "en": "Those_Guys",
+  "hp": 200,
+  "game": "guys",
+  "how": "script"
+ },
+ {
+  "db": "023",
+  "jp": "カンバン娘",
+  "en": "Ms._Sign",
+  "hp": 10000,
+  "game": null,
+  "how": "",
+  "hpCand": [
+   "mamaleboin",
+   "owlbrow",
+   "zthrillerz"
+  ]
+ },
+ {
+  "db": "049",
+  "jp": "メタルカバちゃん",
+  "en": "Metal_Hippoe",
+  "hp": 80,
+  "game": "metalhippo",
+  "how": "script"
+ },
+ {
+  "db": "015",
+  "jp": "ワニック",
+  "en": "Croco",
+  "hp": 70,
+  "game": "croco",
+  "how": "script"
+ },
+ {
+  "db": "009",
+  "jp": "メェメェ",
+  "en": "Baa_Baa",
+  "hp": 500,
+  "game": "baa",
+  "how": "script"
+ },
+ {
+  "db": "050",
+  "jp": "エリザベス2世",
+  "en": "St._Pigge_the_2nd",
+  "hp": 40000,
+  "game": "stpigge",
+  "how": "script"
+ },
+ {
+  "db": "007",
+  "jp": "ジャッキー・ペン",
+  "en": "Jackie_Peng",
+  "hp": 1300,
+  "game": "peng",
+  "how": "script"
+ },
+ {
+  "db": "008",
+  "jp": "ゴリさん",
+  "en": "Gory",
+  "hp": 1000,
+  "game": "gory",
+  "how": "script"
+ },
+ {
+  "db": "011",
+  "jp": "パオン",
+  "en": "Le'boin",
+  "hp": 4000,
+  "game": "leboin",
+  "how": "script"
+ },
+ {
+  "db": "005",
+  "jp": "カバちゃん",
+  "en": "Hippoe",
+  "hp": 1000,
+  "game": "hippo",
+  "how": "script"
+ },
+ {
+  "db": "048",
+  "jp": "殺意のわんこ",
+  "en": "Doge_Dark",
+  "hp": 5000,
+  "game": "darkdog",
+  "how": "script"
+ },
+ {
+  "db": "017",
+  "jp": "リッスントゥミー",
+  "en": "Squire_Rel",
+  "hp": 80,
+  "game": "squirrel",
+  "how": "script"
+ },
+ {
+  "db": "024",
+  "jp": "ガガガガ",
+  "en": "Mooth",
+  "hp": 5000,
+  "game": "mooth",
+  "how": "script"
+ },
+ {
+  "db": "010",
+  "jp": "ゴマさま",
+  "en": "Sir_Seal",
+  "hp": 2500,
+  "game": "seal",
+  "how": "script"
+ },
+ {
+  "db": "006",
+  "jp": "ブタヤロウ",
+  "en": "Pigge",
+  "hp": 1500,
+  "game": "pigge",
+  "how": "script"
+ },
+ {
+  "db": "012",
+  "jp": "カ・ンガリュ",
+  "en": "Kang_Roo",
+  "hp": 4000,
+  "game": "kangaroo",
+  "how": "script"
+ },
+ {
+  "db": "033",
+  "jp": "師匠",
+  "en": "Master_A.",
+  "hp": 40000,
+  "game": "mastera",
+  "how": "english"
+ },
+ {
+  "db": "044",
+  "jp": "セレブ",
+  "en": "Celeboodle",
+  "hp": 9000,
+  "game": "celeboodle",
+  "how": "english"
+ },
+ {
+  "db": "016",
+  "jp": "ウサ銀",
+  "en": "B.B.Bunny",
+  "hp": 500,
+  "game": "rabbit",
+  "how": "script"
+ },
+ {
+  "db": "043",
+  "jp": "だっふんど",
+  "en": "Dagshund",
+  "hp": 60000,
+  "game": "dagshund",
+  "how": "script"
+ },
+ {
+  "db": "038",
+  "jp": "アヒルンルン",
+  "en": "Duche",
+  "hp": 40000,
+  "game": "duche",
+  "how": "english"
+ },
+ {
+  "db": "013",
+  "jp": "一角くん",
+  "en": "One_Horn",
+  "hp": 15000,
+  "game": "rhino",
+  "how": "script"
+ },
+ {
+  "db": "014",
+  "jp": "クマ先生",
+  "en": "Teacher_Bear",
+  "hp": 3000,
+  "game": null,
+  "how": "",
+  "hpCand": [
+   "duche"
+  ]
+ },
+ {
+  "db": "041",
+  "jp": "ナマルケモルル",
+  "en": "THE_SLOTH",
+  "hp": 300000,
+  "game": null,
+  "how": "",
+  "hpCand": [
+   "bigsal",
+   "phace"
+  ]
+ },
+ {
+  "db": "019",
+  "jp": "赤羅我王",
+  "en": "Shy_Boy",
+  "hp": 35000,
+  "game": "shyboy",
+  "how": "script"
+ },
+ {
+  "db": "020",
+  "jp": "カオル君",
+  "en": "The_Face",
+  "hp": 99999,
+  "game": null,
+  "how": "",
+  "hpCand": [
+   "bunbun"
+  ]
+ },
+ {
+  "db": "035",
+  "jp": "フルぼっこ",
+  "en": "Otta-smack-u",
+  "hp": 30000,
+  "game": null,
+  "how": "",
+  "hpCand": [
+   "spaceborg",
+   "walldoge",
+   "sael"
+  ]
+ },
+ {
+  "db": "051",
+  "jp": "赤井ブン太郎",
+  "en": "J.K._Bun_Bun",
+  "hp": 400000,
+  "game": "jkbunbun",
+  "how": "english"
+ },
+ {
+  "db": "025",
+  "jp": "悪の帝王ニャンダム",
+  "en": "Dark_Emperor_Nyandam",
+  "hp": 99999,
+  "game": null,
+  "how": "",
+  "hpCand": [
+   "bunbun"
+  ]
+ },
+ {
+  "db": "040",
+  "jp": "イノシャシ",
+  "en": "Bore",
+  "hp": 400000,
+  "game": "bore",
+  "how": "script"
+ },
+ {
+  "db": "026",
+  "jp": "ぶんぶん先生",
+  "en": "Teacher_Bun_Bun",
+  "hp": 99999,
+  "game": null,
+  "how": "",
+  "hpCand": [
+   "bunbun"
+  ]
+ },
+ {
+  "db": "054",
+  "jp": "シャドウボクサー",
+  "en": "Shadow_Boxer_K",
+  "hp": 80000,
+  "game": "shadowboxer",
+  "how": "script"
+ },
+ {
+  "db": "042",
+  "jp": "ナカイくん",
+  "en": "Rain_D.",
+  "hp": 90000,
+  "game": "raind",
+  "how": "english"
+ },
+ {
+  "db": "053",
+  "jp": "ブラッゴリ",
+  "en": "Gory_Dark",
+  "hp": 40000,
+  "game": "gorydark",
+  "how": "script"
+ },
+ {
+  "db": "039",
+  "jp": "まゆげどり",
+  "en": "Owlbrow",
+  "hp": 10000,
+  "game": "owlbrow",
+  "how": "english"
+ },
+ {
+  "db": "037",
+  "jp": "こぶへい",
+  "en": "Camelle",
+  "hp": 100000,
+  "game": "camelle",
+  "how": "english"
+ },
+ {
+  "db": "018",
+  "jp": "ブラックマ",
+  "en": "Assassin_Bear",
+  "hp": 550,
+  "game": "assassinbear",
+  "how": "script"
+ },
+ {
+  "db": "036",
+  "jp": "コアラッキョ",
+  "en": "Kory",
+  "hp": 120000,
+  "game": "kory",
+  "how": "english"
+ },
+ {
+  "db": "055",
+  "jp": "クロサワ監督",
+  "en": "Director_Kurosawah",
+  "hp": 200000,
+  "game": null,
+  "how": "",
+  "hpCand": [
+   "kurosawah",
+   "hienergy",
+   "sloth"
+  ]
+ },
+ {
+  "db": "058",
+  "jp": "メタルサイボーグ",
+  "en": "Metal_One_Horn",
+  "hp": 800,
+  "game": "metalcyborg",
+  "how": "script"
+ },
+ {
+  "db": "052",
+  "jp": "ブラックブンブン",
+  "en": "Bun_Bun_Black",
+  "hp": 777777,
+  "game": "bunbunblack",
+  "how": "english"
+ },
+ {
+  "db": "045",
+  "jp": "ハイ・エナジー",
+  "en": "H._Nah",
+  "hp": 200000,
+  "game": null,
+  "how": "",
+  "hpCand": [
+   "kurosawah",
+   "hienergy",
+   "sloth"
+  ]
+ },
+ {
+  "db": "034",
+  "jp": "ダチョウ同好会",
+  "en": "R.Ost",
+  "hp": 340000,
+  "game": null,
+  "how": "",
+  "hpCand": [
+   "ostrich"
+  ]
+ },
+ {
+  "db": "046",
+  "jp": "ダディ",
+  "en": "Dober_P.D",
+  "hp": 800000,
+  "game": "daddy",
+  "how": "script"
+ },
+ {
+  "db": "061",
+  "jp": "メタルゴマさま",
+  "en": "Sir_Metal_Seal",
+  "hp": 22000,
+  "game": null,
+  "how": "",
+  "hpCand": [
+   "metalseal"
+  ]
+ },
+ {
+  "db": "047",
+  "jp": "ウルフとウルルン",
+  "en": "Ururun_Wolf_(Enemy)",
+  "hp": 700000,
+  "game": null,
+  "how": "",
+  "hpCand": [
+   "wolfururun"
+  ]
+ },
+ {
+  "db": "115",
+  "jp": "天使カバちゃん",
+  "en": "Heavenly_Hippoe",
+  "hp": 55000,
+  "game": "heavenlyhippoe",
+  "how": "script"
+ },
+ {
+  "db": "116",
+  "jp": "天使ガブリエル",
+  "en": "Gabriel",
+  "hp": 13000,
+  "game": "gabriel",
+  "how": "script"
+ },
+ {
+  "db": "117",
+  "jp": "天使ゴンザレス",
+  "en": "Angelic_Gory",
+  "hp": 98000,
+  "game": "gonzales",
+  "how": "script"
+ },
+ {
+  "db": "120",
+  "jp": "赤毛のにょろ",
+  "en": "Ginger_Snache",
+  "hp": 12000,
+  "game": "redsnache",
+  "how": "script"
+ },
+ {
+  "db": "056",
+  "jp": "超メタルカバちゃん",
+  "en": "Super_Metal_Hippoe",
+  "hp": 8000,
+  "game": null,
+  "how": "",
+  "hpCand": [
+   "supermetalhippo"
+  ]
+ },
+ {
+  "db": "119",
+  "jp": "カベわんこ",
+  "en": "Wall_Doge",
+  "hp": 30000,
+  "game": "walldoge",
+  "how": "english"
+ },
+ {
+  "db": "121",
+  "jp": "マンボーグ鈴木",
+  "en": "Sunfish_Jones",
+  "hp": 1200000,
+  "game": null,
+  "how": "",
+  "hpCand": [
+   "redriding",
+   "sunfish",
+   "blackcyclone"
+  ]
+ },
+ {
+  "db": "125",
+  "jp": "ド鳩・サブ・レー",
+  "en": "Pigeon_de_Sable",
+  "hp": 8300,
+  "game": "pigeon",
+  "how": "script"
+ },
+ {
+  "db": "126",
+  "jp": "ブラッコ",
+  "en": "Dark_Otter",
+  "hp": 175000,
+  "game": "blackotta",
+  "how": "script"
+ },
+ {
+  "db": "127",
+  "jp": "天使スレイプニール",
+  "en": "Angelic_Sleipnir",
+  "hp": 363000,
+  "game": null,
+  "how": "",
+  "hpCand": [
+   "sleipnir"
+  ]
+ },
+ {
+  "db": "148",
+  "jp": "はぐれたヤツ",
+  "en": "Trolly_Blogger",
+  "hp": 500,
+  "game": "strayguy",
+  "how": "script"
+ },
+ {
+  "db": "149",
+  "jp": "メタルわんこ",
+  "en": "Metal_Doge",
+  "hp": 30,
+  "game": "metaldoge",
+  "how": "script"
+ },
+ {
+  "db": "151",
+  "jp": "松 黒蔵",
+  "en": "Le'noir",
+  "hp": 460000,
+  "game": null,
+  "how": "",
+  "hpCand": [
+   "blackleboin"
+  ]
+ },
+ {
+  "db": "150",
+  "jp": "コニャンダム",
+  "en": "Li'l_Nyandam_(Enemy)",
+  "hp": 669000,
+  "game": null,
+  "how": "",
+  "hpCand": [
+   "lilnyandam"
+  ]
+ },
+ {
+  "db": "162",
+  "jp": "天使ヒオコエル",
+  "en": "Chickful_A",
+  "hp": 160000,
+  "game": null,
+  "how": "",
+  "hpCand": [
+   "hiyokoel",
+   "nyandam"
+  ]
+ },
+ {
+  "db": "169",
+  "jp": "エイリワン",
+  "en": "Shibalien",
+  "hp": 900,
+  "game": "shibalien",
+  "how": "script"
+ },
+ {
+  "db": "171",
+  "jp": "カーバチャン",
+  "en": "Hyppoh",
+  "hp": 7000,
+  "game": "hyppoh",
+  "how": "script"
+ },
+ {
+  "db": "175",
+  "jp": "ヤドカリー",
+  "en": "Helmut_Krabbe",
+  "hp": 9000,
+  "game": "krabbe",
+  "how": "script"
+ },
+ {
+  "db": "172",
+  "jp": "ゴマサーマン",
+  "en": "Imperator_Sael",
+  "hp": 15000,
+  "game": "sael",
+  "how": "script"
+ },
+ {
+  "db": "173",
+  "jp": "レディ・ガ",
+  "en": "Maawth",
+  "hp": 17777,
+  "game": "maawth",
+  "how": "script"
+ },
+ {
+  "db": "177",
+  "jp": "クマンチュー",
+  "en": "Ursamajor",
+  "hp": 30000,
+  "game": "ursamajor",
+  "how": "script"
+ },
+ {
+  "db": "180",
+  "jp": "エリザベス56世",
+  "en": "Elizabeth_the_LVIth",
+  "hp": 60000,
+  "game": "liz56",
+  "how": "script"
+ },
+ {
+  "db": "179",
+  "jp": "イノヴァルカン",
+  "en": "Nimoy_Bore",
+  "hp": 160000,
+  "game": "nimoy",
+  "how": "script"
+ },
+ {
+  "db": "207",
+  "jp": "カルピンチョ",
+  "en": "Capy",
+  "hp": 530000,
+  "game": "capy",
+  "how": "script"
+ },
+ {
+  "db": "185",
+  "jp": "サイバーX",
+  "en": "Cyberhorn",
+  "hp": 120000,
+  "game": "cyberx",
+  "how": "script"
+ },
+ {
+  "db": "182",
+  "jp": "ギャラクシーニャンダム",
+  "en": "Galactic_Overseer_Nyandam",
+  "hp": 144444,
+  "game": "galaxynyandam",
+  "how": "script"
+ },
+ {
+  "db": "186",
+  "jp": "プドール夫人",
+  "en": "Mistress_Celeboodle",
+  "hp": 4500,
+  "game": "madampoodle",
+  "how": "script"
+ },
+ {
+  "db": "184",
+  "jp": "ハサミーマン",
+  "en": "Scissoroo",
+  "hp": 24000,
+  "game": "scissorman",
+  "how": "script"
+ },
+ {
+  "db": "209",
+  "jp": "ツバメンズ",
+  "en": "Brollow",
+  "hp": 19000,
+  "game": "brollow",
+  "how": "script"
+ },
+ {
+  "db": "208",
+  "jp": "バトルコアラッキョ",
+  "en": "Berserkory",
+  "hp": 920000,
+  "game": "berserkory",
+  "how": "english"
+ },
+ {
+  "db": "170",
+  "jp": "ワーニック",
+  "en": "Kroxo",
+  "hp": 3000,
+  "game": "kroxo",
+  "how": "script"
+ },
+ {
+  "db": "210",
+  "jp": "よっちゃん",
+  "en": "Calamary",
+  "hp": 45000,
+  "game": "calamary",
+  "how": "english"
+ },
+ {
+  "db": "211",
+  "jp": "アルパッカ",
+  "en": "Alpacky",
+  "hp": 175000,
+  "game": "alpacky",
+  "how": "english"
+ },
+ {
+  "db": "176",
+  "jp": "カヲルさん",
+  "en": "I.M._Phace",
+  "hp": 44444,
+  "game": "phace",
+  "how": "script"
+ },
+ {
+  "db": "213",
+  "jp": "パラサイトブンブン",
+  "en": "Bun_Bun_Symbiote",
+  "hp": 750000,
+  "game": "alienbunbun",
+  "how": "script"
+ },
+ {
+  "db": "237",
+  "jp": "ドリュウ",
+  "en": "Mr._Mole",
+  "hp": 420000,
+  "game": "mrmole",
+  "how": "english"
+ },
+ {
+  "db": "060",
+  "jp": "メタルカオル君",
+  "en": "CyberFace",
+  "hp": 299,
+  "game": "cyberface",
+  "how": "english"
+ },
+ {
+  "db": "174",
+  "jp": "デカメガネル",
+  "en": "LeMurr",
+  "hp": 20000,
+  "game": "lemurr",
+  "how": "script"
+ },
+ {
+  "db": "257",
+  "jp": "キョセーヌ",
+  "en": "Two_Can",
+  "hp": 250000,
+  "game": "twocan",
+  "how": "english"
+ },
+ {
+  "db": "260",
+  "jp": "わんこずきんミーニャ",
+  "en": "Codename_\"Red_Riding\"",
+  "hp": 1200000,
+  "game": null,
+  "how": "",
+  "hpCand": [
+   "redriding",
+   "sunfish",
+   "blackcyclone"
+  ]
+ },
+ {
+  "db": "256",
+  "jp": "ミスターエンジェル",
+  "en": "Mr._Angel",
+  "hp": 13500,
+  "game": "mrangel",
+  "how": "script"
+ },
+ {
+  "db": "258",
+  "jp": "タッちゃん",
+  "en": "Tackey",
+  "hp": 128000,
+  "game": "tackey",
+  "how": "english"
+ },
+ {
+  "db": "212",
+  "jp": "ヨキカナ",
+  "en": "Elder_Sloth",
+  "hp": 360000,
+  "game": "eldersloth",
+  "how": "english"
+ },
+ {
+  "db": "263",
+  "jp": "イノエンジェル",
+  "en": "Boraphim",
+  "hp": 1440000,
+  "game": "boraphim",
+  "how": "english"
+ },
+ {
+  "db": "268",
+  "jp": "ヒカル",
+  "en": "Henry",
+  "hp": 1000000,
+  "game": "henry",
+  "how": "english"
+ },
+ {
+  "db": "274",
+  "jp": "ちびぶんぶん",
+  "en": "Li'l_Bun_Bun",
+  "hp": 29997,
+  "game": "lilbunbun",
+  "how": "script"
+ },
+ {
+  "db": "187",
+  "jp": "教授",
+  "en": "Professor_A.",
+  "hp": 320000,
+  "game": null,
+  "how": "",
+  "hpCand": [
+   "professor"
+  ]
+ },
+ {
+  "db": "178",
+  "jp": "破壊生物クオリネン",
+  "en": "Cli-One",
+  "hp": 120000,
+  "game": "clione",
+  "how": "script"
+ },
+ {
+  "db": "282",
+  "jp": "イノワール",
+  "en": "Razorback",
+  "hp": 1150000,
+  "game": "razorback",
+  "how": "english"
+ },
+ {
+  "db": "286",
+  "jp": "ゾンビワン",
+  "en": "Zoge",
+  "hp": 15000,
+  "game": "zoge",
+  "how": "script"
+ },
+ {
+  "db": "287",
+  "jp": "にょろろん",
+  "en": "Znache",
+  "hp": 16000,
+  "game": "nyororon",
+  "how": "script"
+ },
+ {
+  "db": "290",
+  "jp": "ジャッキー・ペンZ",
+  "en": "Zackie_Peng",
+  "hp": 42000,
+  "game": "zackiepeng",
+  "how": "script"
+ },
+ {
+  "db": "294",
+  "jp": "ワニボン",
+  "en": "Zroco",
+  "hp": 15000,
+  "game": "zroco",
+  "how": "script"
+ },
+ {
+  "db": "292",
+  "jp": "ブチゴマさま",
+  "en": "Zir_Zeal",
+  "hp": 75000,
+  "game": "zirzeal",
+  "how": "script"
+ },
+ {
+  "db": "289",
+  "jp": "トンシー",
+  "en": "Zigge",
+  "hp": 48000,
+  "game": "zigge",
+  "how": "script"
+ },
+ {
+  "db": "288",
+  "jp": "カバタリアン",
+  "en": "Zomboe",
+  "hp": 40000,
+  "game": "zomboe",
+  "how": "script"
+ },
+ {
+  "db": "293",
+  "jp": "スカルボクサー",
+  "en": "Zang_Roo",
+  "hp": 100000,
+  "game": "zangroo",
+  "how": "script"
+ },
+ {
+  "db": "291",
+  "jp": "ゴリ・ンジュ",
+  "en": "Zory",
+  "hp": 50000,
+  "game": "zory",
+  "how": "script"
+ },
+ {
+  "db": "295",
+  "jp": "墓手太郎",
+  "en": "Lord_Gravey",
+  "hp": 750000,
+  "game": "gravey",
+  "how": "script"
+ },
+ {
+  "db": "306",
+  "jp": "オオさん",
+  "en": "Big_Sal",
+  "hp": 300000,
+  "game": "bigsal",
+  "how": "english"
+ },
+ {
+  "db": "311",
+  "jp": "ヒツギイヌ",
+  "en": "Coffin_Zoge",
+  "hp": 40000,
+  "game": "coffinzoge",
+  "how": "english"
+ },
+ {
+  "db": "312",
+  "jp": "キャベロン",
+  "en": "Zamelle",
+  "hp": 120000,
+  "game": null,
+  "how": "",
+  "hpCand": [
+   "cyberx",
+   "kory",
+   "zcamelle",
+   "cadaverbear"
+  ]
+ },
+ {
+  "db": "105",
+  "jp": "ゴーストわんこ",
+  "en": "Ghost_Doge",
+  "hp": 180,
+  "game": null,
+  "how": "",
+  "hpCand": [
+   "ghostdog"
+  ]
+ },
+ {
+  "db": "106",
+  "jp": "ゴーストにょろ",
+  "en": "Ghost_Snache",
+  "hp": 200,
+  "game": "ghostsnache",
+  "how": "english"
+ },
+ {
+  "db": "107",
+  "jp": "ゴーストメェメェ",
+  "en": "Ghost_Baa_Baa",
+  "hp": 1000,
+  "game": null,
+  "how": "",
+  "hpCand": [
+   "ghostbaa",
+   "gory"
+  ]
+ },
+ {
+  "db": "305",
+  "jp": "墓手花子",
+  "en": "Miss_Haka",
+  "hp": 720000,
+  "game": "misshaka",
+  "how": "script"
+ },
+ {
+  "db": "317",
+  "jp": "わんこの城",
+  "en": "Doge_Base_(Enemy_Base)",
+  "hp": 1500,
+  "game": "dogebase",
+  "how": "script"
+ },
+ {
+  "db": "318",
+  "jp": "犬武者 武蔵",
+  "en": "Inumusha",
+  "hp": 800000,
+  "game": "inumusha",
+  "how": "english"
+ },
+ {
+  "db": "320",
+  "jp": "イルカ娘",
+  "en": "Dolphina",
+  "hp": 450000,
+  "game": "dolphina",
+  "how": "script"
+ },
+ {
+  "db": "342",
+  "jp": "イカ天",
+  "en": "Cala_Maria",
+  "hp": 360000,
+  "game": "calamaria",
+  "how": "script"
+ }
+]
