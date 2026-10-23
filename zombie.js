@@ -4,12 +4,13 @@
 // - 좀비는 쓰러져도 한 번 되살아난다(곰선생은 두 번). 좀비 킬러(아이언·그레이)가 마무리하면 되살아나지 못한다. 땅굴 이동은 zombie-burrow.js.
 // - 보상: 처음 깰 때 XP와 Z 메달, 메달 12개마다 확정권, 한 장의 침공을 전부 깨면 확정권 11장. 장의 마지막 스테이지는 나머지를 다 깨야 열린다.
 // 그림은 임시(기본 적 그림 + 초록빛).
-// 원작 좀비 짝: Zoge(멍뭉이)·Znache(낼름이)·Zomboe(놈놈놈)·Zigge(돼지새끼)·Zackie Peng(재키펭)·Zory(고릴라저씨)·Zir Zeal(바다레오파드)·
+// 원작 좀비 짝: Zoge(멍뭉이)·Znache(낼름이)·Zomboe(하마양)·Zigge(돼지새끼)·Zackie Peng(재키펭)·Zory(고릴라저씨)·Zir Zeal(바다레오파드)·
 // Zang Roo(캥거류)·Zroco(아거)·Cadaver Bear(곰선생). 원작 좀비는 원래 적보다 훨씬 단단하고 넉백이 적다.
 const ZOMBIES={
  zdog:{base:'dog',name:'좀비 멍뭉이',hp:490,atk:60,interval:1.6,speed:4.5,range:4,reward:60,knockbacks:2,reviveDelay:3},
  znache:{base:'snache',name:'좀비 낼름이',hp:620,atk:100,interval:1.2,speed:6,range:4,reward:90,knockbacks:2,reviveDelay:3},
- zguys:{base:'guys',name:'좀비 놈놈놈',hp:1100,atk:130,interval:1,speed:4.5,range:4.2,reward:130,knockbacks:1,reviveDelay:3},
+ // 원작 침공판에서 놈놈놈(例のヤツ)은 좀비가 되지 않고 하마양(カバちゃん)이 Zomboe(カバタリアン)가 된다. id는 저장·도감 호환을 위해 zguys 그대로.
+ zguys:{base:'hippo',name:'좀비 하마양',hp:3000,atk:170,interval:2.2,speed:2.5,range:5,reward:300,knockbacks:1,area:true,reviveDelay:3},
  zcroco:{base:'croco',name:'좀비 아거',hp:175,atk:35,interval:.6,speed:7.5,range:3.7,reward:50,knockbacks:1,reviveDelay:2},
  zpeng:{base:'peng',name:'좀비 재키펭',hp:1800,atk:90,interval:.8,speed:6.5,range:5,reward:200,knockbacks:2,reviveDelay:3},
  zgory:{base:'gory',name:'좀비 고릴라저씨',hp:2240,atk:95,interval:.53,speed:7,range:5,reward:300,knockbacks:2,area:true,reviveDelay:3},
@@ -25,16 +26,16 @@ const ZOMBIES={
  zostrich:{base:'ostrich',name:'좀비 타조동호회',hp:1600000,atk:23000,interval:.57,speed:8.58,range:8.8,reward:1080,knockbacks:4,area:true,reviveCount:99,reviveDelay:6},// Oldstrich: 무한 부활
  zdagshund:{base:'dagshund',name:'좀비 핫도그',hp:800000,atk:30000,interval:6.4,speed:4,range:14.7,reward:800,knockbacks:1,area:true,freezeChance:1,freezeDuration:2,reviveHp:1,reviveDelay:8},// Deathshund: 움직임을 멈춘다 100%
  zduche:{base:'duche',name:'좀비 오리룰루',hp:17500,atk:17000,interval:.87,speed:8,range:4,reward:300,knockbacks:1,area:true,reviveHp:1,reviveDelay:20},// Zuche: 20초 뒤 100%로 부활
- zthrillerz:{base:'guys',name:'스릴러즈',hp:10000,atk:6500,interval:1.27,speed:6,range:3.7,reward:110,knockbacks:1,reviveHp:1,reviveDelay:8}// The Thrillerz: 놈놈놈의 좀비(미래편 2·3장)
+ zthrillerz:{base:'guys',noPair:true,name:'스릴러즈',hp:10000,atk:6500,interval:1.27,speed:6,range:3.7,reward:110,knockbacks:1,reviveHp:1,reviveDelay:8}// The Thrillerz: 놈놈놈의 좀비(미래편 2·3장)
 };
-// 원작 좀비 그림: 좀비멍(Zoge)·뼈낼름이(Znache)·좀비하마(Zomboe=놈놈놈 짝)·해골돼지(Zigge)·재키펭 Z·좀비 고릴라(Zory)·얼룩 바다레오파드(Zir Zeal)·스컬 복서(Zang Roo)·뼈악어(Zroco)
+// 원작 좀비 그림: 좀비멍(Zoge)·뼈낼름이(Znache)·좀비하마(Zomboe=하마양 짝)·해골돼지(Zigge)·재키펭 Z·좀비 고릴라(Zory)·얼룩 바다레오파드(Zir Zeal)·스컬 복서(Zang Roo)·뼈악어(Zroco)
 const ZOMBIE_ART={zdog:'zoge',znache:'nyororon',zguys:'zomboe',zpigge:'zigge',zpeng:'zackiepeng',zgory:'zory',zseal:'zirzeal',zkangaroo:'zangroo',zcroco:'zroco'};
 const ZOMBIE_TINT='hue-rotate(70deg) saturate(.75) brightness(.82)';
 const ZOMBIE_MAP={};
 for(const [id,z] of Object.entries(ZOMBIES)){
- const {base,name,...stats}=z;
+ const {base,name,noPair,...stats}=z;
  data.units[id]={trait:'zombie',reviveCount:1,reviveHp:.5,attackDuration:Math.min(.9,stats.interval),windup:.3,...stats};
- UNIT_NAMES[id]=name;if(!ZOMBIE_MAP[base])ZOMBIE_MAP[base]=id;
+ UNIT_NAMES[id]=name;if(!noPair&&!ZOMBIE_MAP[base])ZOMBIE_MAP[base]=id;
  // 원작 좀비 그림이 있으면(레전드 34~36장용으로 구운 원작 모션) 그대로 쓰고, 없으면 짝 적 그림에 초록 색조를 입힌다.
  const art=ZOMBIE_ART[id];
  if(art&&NEW_ATLASES[art])NEW_ATLASES[id]={...NEW_ATLASES[art]};
@@ -70,12 +71,17 @@ const ZOMBIE_CHAPTERS={
  7:{final:FUTURE3_END-1,strength:1.5,chapMag:1,label:'미래편 3장'},
  8:{final:COSMOS_END-1,strength:1.6,chapMag:1,label:'우주편 1장'}
 };
-const ZOMBIE_CHAPTER_OVERRIDE={6:{guys:'zthrillerz'},7:{guys:'zthrillerz'}};// 원작 미래편 2·3장의 놈놈놈 좀비는 The Thrillerz
+// 원작 미래편 2·3장·우주편 1장의 놈놈놈 좀비는 The Thrillerz(미래편 1장은 일반 놈놈놈 그대로). null = 좀비로 바꾸지 않음(원작 세계편 침공판의 곰선생은 일반 적).
+const ZOMBIE_CHAPTER_OVERRIDE={1:{bear:null},2:{bear:null},3:{bear:null},6:{guys:'zthrillerz'},7:{guys:'zthrillerz'},8:{guys:'zthrillerz'}};
+// 짝 적이 없어 좀비가 하나도 안 생기는 판에 원작 침공판이 더하는 좀비 (battlecats-db s03003z-47: 아거 Z·바다레오파드 Z 150%, 성 체력 99%부터)
+const ZOMBIE_STAGE_EXTRA={};
+{const i=STAGES.findIndex((s,j)=>chapterOf(j)===5&&isStoryStage(j)&&s.name==='부유대륙');if(i>=0)ZOMBIE_STAGE_EXTRA[i]=[{type:'zcroco',mag:150,at:{hp:99},firstDelay:2/30,delay:[500/30,1000/30]},{type:'zseal',mag:150,at:{hp:99},firstDelay:2/30,delay:[60,80]}]}
 function zombieRulesOf(i){
  const ch=ZOMBIE_CHAPTERS[chapterOf(i)];if(!ch||!isStoryStage(i))return null;
  const f=ch.strength/ch.chapMag;let any=false;
  const ov=ZOMBIE_CHAPTER_OVERRIDE[chapterOf(i)]||{};
- const rules=(STAGE_SPAWNS[i]||[]).map(r=>{const z=ov[r.type]||ZOMBIE_MAP[r.type];if(!z)return {...r};any=true;return {...r,type:z,mag:Math.max(25,Math.round((r.mag||100)*f))}});
+ const rules=(STAGE_SPAWNS[i]||[]).map(r=>{const z=r.type in ov?ov[r.type]:ZOMBIE_MAP[r.type];if(!z)return {...r};any=true;return {...r,type:z,mag:Math.max(25,Math.round((r.mag||100)*f))}});
+ for(const r of ZOMBIE_STAGE_EXTRA[i]||[]){rules.push({...r,at:{...r.at},delay:[...r.delay]});any=true}
  return any?rules:null;
 }
 function zombieStagesOf(c){return STAGES.map((s,i)=>i).filter(i=>chapterOf(i)===c&&isStoryStage(i)&&zombieRulesOf(i))}
@@ -94,7 +100,7 @@ STAGE_SPAWNS[ZOMBIE_SLOT]=[];
 function startOutbreak(i){
  if(!zombieAvailable(i))return;
  const b=STAGES[i],z=STAGES[ZOMBIE_SLOT],first=!zombieSave.clear.includes(i);
- z.name=b.name+' 좀비 침공';z.hp=zombieCastleHp(i);z.maxEnemies=b.maxEnemies;z.sky=b.sky;z.land=b.land;z.chapter=chapterOf(i);z.zombieOf=i;
+ z.name=b.name+' 좀비 침공';z.hp=zombieCastleHp(i);z.maxEnemies=Number.isFinite(maxEnemies(i))?maxEnemies(i):undefined;/* 원작 침공판의 출현 상한은 일반 판과 같다(세계편은 STAGE_MAX_ENEMIES) */z.sky=b.sky;z.land=b.land;z.chapter=chapterOf(i);z.zombieOf=i;
  z.special={item:'zmedal',itemName:'Z 메달',count:0,chance:0,xp:first?Math.round(stageXP(i)*.5):0};
  STAGE_SPAWNS[ZOMBIE_SLOT]=zombieRulesOf(i);
  selectedStage=ZOMBIE_SLOT;reset();
