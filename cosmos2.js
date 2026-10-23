@@ -10,4 +10,6 @@
  });
  COSMOS2_END=STAGES.length;
  ALIEN_SUPPRESSORS5.push(COSMOS2_START+23,COSMOS2_END-1);// 과자 행성(24번)·빅뱅(48번), 1장과 같은 위치
+ // 저장된 클리어 번호는 game.js가 먼저 읽는데, 그때는 2장 범위(COSMOS2_START/END)를 몰라 2장 클리어를 전부 걸러낸다(새로고침마다 사라지고 다음 저장 때 지워졌다). 범위가 정해진 뒤 2장 번호만 다시 합친다.
+ try{const saved=JSON.parse(localStorage.getItem('red-battle-progress-v1')||'[]');if(Array.isArray(saved))for(const x of saved)if(Number.isInteger(x)&&x>=COSMOS2_START&&x<COSMOS2_END&&!cleared.includes(x))cleared.push(x)}catch{}
 })();
