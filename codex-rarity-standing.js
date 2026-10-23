@@ -5,7 +5,7 @@ const CODEX_RARITY_EXTREMES={
       "grade": "기본",
       "position": "1등",
       "count": 18,
-      "seconds": 20.3
+      "seconds": 20.2
     }
   },
   "crystal": {
@@ -18,7 +18,7 @@ const CODEX_RARITY_EXTREMES={
     "3": {
       "grade": "기본",
       "position": "꼴찌",
-      "count": 4,
+      "count": 5,
       "seconds": -5.3
     }
   },
@@ -26,7 +26,7 @@ const CODEX_RARITY_EXTREMES={
     "3": {
       "grade": "기본",
       "position": "1등",
-      "count": 4,
+      "count": 5,
       "seconds": 27.4
     }
   },
@@ -50,7 +50,7 @@ const CODEX_RARITY_EXTREMES={
     "2": {
       "grade": "레어",
       "position": "1등",
-      "count": 42,
+      "count": 44,
       "seconds": 37
     }
   },
@@ -58,7 +58,7 @@ const CODEX_RARITY_EXTREMES={
     "2": {
       "grade": "레어",
       "position": "꼴찌",
-      "count": 42,
+      "count": 44,
       "seconds": -6.6
     }
   },
@@ -98,16 +98,16 @@ const CODEX_RARITY_EXTREMES={
     "2": {
       "grade": "울슈레",
       "position": "1등",
-      "count": 24,
+      "count": 25,
       "seconds": 51.9
     }
   },
-  "iron": {
+  "vermilion": {
     "2": {
       "grade": "울슈레",
       "position": "꼴찌",
-      "count": 24,
-      "seconds": 15.2
+      "count": 25,
+      "seconds": 11.4
     }
   }
 };
@@ -162,7 +162,7 @@ const CODEX_RARITY_POSITIONS={
   "tan": "중위권 레어 캐릭터",
   "hotpink": "중위권 레어 캐릭터",
   "fusioncream": "중위권 레어 캐릭터",
-  "lilac": "하위권 레어 캐릭터",
+  "lilac": "중위권 레어 캐릭터",
   "navy": "하위권 레어 캐릭터",
   "brown": "하위권 레어 캐릭터",
   "olive": "하위권 레어 캐릭터",
@@ -173,13 +173,15 @@ const CODEX_RARITY_POSITIONS={
   "silver": "하위권 레어 캐릭터",
   "mintcyan": "하위권 레어 캐릭터",
   "coral": "하위권 레어 캐릭터",
-  "aqua": "최하위권 레어 캐릭터",
+  "aqua": "하위권 레어 캐릭터",
   "midnight": "최하위권 레어 캐릭터",
   "scarlet": "최하위권 레어 캐릭터",
   "flame": "최하위권 레어 캐릭터",
   "lightcream": "최하위권 레어 캐릭터",
   "darklilac": "최하위권 레어 캐릭터",
+  "drumscarlet": "최하위권 레어 캐릭터",
   "herbmint": "최하위권 레어 캐릭터",
+  "hulasilver": "최하위권 레어 캐릭터",
   "kendonavy": "최하위권 레어 캐릭터",
   "rhythmpink": "최하위권 레어 캐릭터",
   "alchemypurple": "최하위권 레어 캐릭터",
@@ -206,24 +208,25 @@ const CODEX_RARITY_POSITIONS={
   "sapphire": "상위권 울슈레 캐릭터",
   "aquamarine": "상위권 울슈레 캐릭터",
   "fuchsia": "상위권 울슈레 캐릭터",
-  "orchid": "중위권 울슈레 캐릭터",
+  "orchid": "상위권 울슈레 캐릭터",
   "lime": "중위권 울슈레 캐릭터",
   "rainbow": "중위권 울슈레 캐릭터",
   "emerald": "중위권 울슈레 캐릭터",
   "banana": "중위권 울슈레 캐릭터",
   "grey": "중위권 울슈레 캐릭터",
-  "bronze": "하위권 울슈레 캐릭터",
+  "bronze": "중위권 울슈레 캐릭터",
   "turquoise": "하위권 울슈레 캐릭터",
   "rose": "하위권 울슈레 캐릭터",
   "vanilla": "하위권 울슈레 캐릭터",
   "acid": "하위권 울슈레 캐릭터",
   "crisp": "하위권 울슈레 캐릭터",
-  "carmine": "최하위권 울슈레 캐릭터",
+  "carmine": "하위권 울슈레 캐릭터",
   "royalblue": "최하위권 울슈레 캐릭터",
   "platinum": "최하위권 울슈레 캐릭터",
   "butter": "최하위권 울슈레 캐릭터",
   "spring": "최하위권 울슈레 캐릭터",
-  "iron": "최하위권 울슈레 캐릭터"
+  "iron": "최하위권 울슈레 캐릭터",
+  "vermilion": "최하위권 울슈레 캐릭터"
 };
 (function(){
  const previous=allyReview;
