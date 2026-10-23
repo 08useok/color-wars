@@ -2,9 +2,13 @@
 // v1 세계편 (first push, 2026-09-24) · v2 레전드 스토리 (09-30) · v3 미래편 1장 (10-03) · v4 미래편 2장 + 3진 (10-06) · v5 미래편 3장 (10-08) · v6 우주편 1장 (10-09) · v7 우주편 2장 (10-22).
 // User release rule (2026-10-18): bump PATCH for every commit-and-push release unless an explicit version is requested; do not bump twice when already prepared.
 // A new NOTICE.version shows the notice once on load; the 공지 button on the stage screen reopens it.
-const GAME_VERSION='7.1.0';
+const GAME_VERSION='7.1.1';
 const NOTICE={version:GAME_VERSION,date:'2026-10-23',title:`v${GAME_VERSION} 업데이트`,html:`
 <p class="notice-lead">지금까지 <b>세계편 1~3장 · 미래편 1~3장 · 우주편 1~2장 · 레전드 스토리 1~40장</b>을 담았습니다.</p>
+<h3>🌪️ v7.1.1 사이클론은 보스를 쓰러뜨려야 클리어</h3>
+<ul><li>사이클론 강림 6종(붉은·검은·하얀·천사·메탈·코스믹) 모두 <b>보스를 쓰러뜨려야 성이 무너집니다</b>. 보스를 쓰러뜨리기 전에는 적 성 체력이 1에서 멈추고, 보스가 나오기 전에 성만 무너뜨려 클리어되던 문제를 고쳤습니다.</li>
+<li>보스는 전과 같은 조건(성 체력 비율 또는 시간)으로 나옵니다. 성을 거의 무너뜨렸는데 보스를 못 잡았다면 화면에 안내가 나옵니다.</li>
+<li>스테이지 카드 설명에 '보스를 쓰러뜨려야 클리어'를 적었습니다.</li></ul>
 <h3>🌪️ v7.1.0 사이클론 2종 · 버밀리언 · 젤라또 아이보리 · 신님 가면</h3>
 <ul><li>사이클론 강림 2종을 추가했습니다. <b>메탈 사이클론 '진격의 철부스러기'</b>(세계편 3장 클리어 후)와 <b>코스믹 사이클론 '진격의 블랙홀'</b>(미래편 3장 클리어 후)이며, 스페셜 스테이지에서 도전할 수 있습니다.</li>
 <li>보상 아군(클리어 시 30% 획득): <b>훌라 실버</b>(실버 아종·남성)는 메탈 적을 60% 확률로 1.5초 멈추고, <b>군악 스칼렛</b>(스칼렛 아종·여성)은 메탈 적의 공격력을 40% 확률로 6초 동안 절반으로 낮춥니다. 1·2진 전용 모션을 적용했습니다.</li>

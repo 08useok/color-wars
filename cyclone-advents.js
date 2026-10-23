@@ -50,7 +50,7 @@ let cycloneClears=[];
 try{const v=JSON.parse(localStorage.getItem('red-battle-cyclone-v1')||'[]');if(Array.isArray(v))cycloneClears=[...new Set(v.filter(id=>CYCLONE_EVENTS.some(e=>e.id===id)))]}catch{}
 const registerCycloneEvent=e=>{
  e.index=STAGES.length;STAGES.push({name:e.stage,flag:'🌪️',hp:e.hp,xp:3800,maxEnemies:e.max,gap:4,wave:0,sky:'#b5c4d6',land:e.color,chapter:'special',cyclone:e.id,special:{item:e.reward,itemName:CYCLONE_ALLIES[e.reward].name,count:1,chance:e.chance,xp:3800},desc:e.name+' · '+UNIT_NAMES[e.boss]+' · 레어 '+CYCLONE_ALLIES[e.reward].name+' '+Math.round(e.chance*100)+'% 획득'});
- STAGE_SPAWNS[e.index]=e.rules;ACQUIRE_TEXT[e.reward]=e.name+' / '+e.stage+' 클리어 시 '+Math.round(e.chance*100)+'% 획득';
+ STAGE_SPAWNS[e.index]=e.rules;STAGES[e.index].desc+=' · 보스를 쓰러뜨려야 클리어';ACQUIRE_TEXT[e.reward]=e.name+' / '+e.stage+' 클리어 시 '+Math.round(e.chance*100)+'% 획득';
 };CYCLONE_EVENTS.forEach(registerCycloneEvent);
 function cycloneStageOpen(e){return cleared.includes(CHAPTER1_LEN*e.chapter-1)}
 const cycloneDropBefore=specialDropOpen,cycloneGiveBefore=giveSpecialItem,cycloneItemBefore=specialItemText;
@@ -71,4 +71,18 @@ renderSpecialStages=function(){cycloneSpecialBefore();for(const e of CYCLONE_EVE
 // Keep actual evolution text in sync: these independent variants deliberately keep their range.
 const cyclonePreviewBefore=renderCodexPreview;
 renderCodexPreview=function(){cyclonePreviewBefore();if(codexTab==='ally'&&CYCLONE_ALLIES[codexType])$('#codexDesc').innerHTML=(codexEvolved?PROFILE_TEXT_EVOLVED[codexType]+'<br><strong>2진 효과: 체력·공격력 15% 증가 · 사거리 유지</strong>':PROFILE_TEXT[codexType])};
+// 7.1.1: 사이클론 강림은 보스를 쓰러뜨려야 클리어된다. 보스가 쓰러지기 전에는 적 성 체력이 1 아래로 내려가지 않는다(보스 등장 조건인 성 체력 비율·시간은 그대로 작동).
+{
+ const base=data.bases.enemy;let hp=base.hp;
+ const bossType=()=>CYCLONE_EVENTS.find(e=>e.index===selectedStage)?.boss;
+ Object.defineProperty(base,'hp',{configurable:true,enumerable:true,get(){return hp},set(v){
+  hp=v;
+  if(hp<1&&game&&!game.ended&&!game.cyBossDown&&bossType()){
+   hp=1;
+   if(!game.cyHint){game.cyHint=true;$('#battleNotice').textContent='사이클론 보스를 쓰러뜨려야 성이 무너져요!';game.noticeTime=3}
+  }
+ }});
+ const cycloneHitbackBefore=startHitback;
+ startHitback=function(u,...rest){if(u&&!u.ally&&u.hp<=0&&game&&u.type===bossType())game.cyBossDown=true;return cycloneHitbackBefore.call(this,u,...rest)};
+}
 renderNewButtons();renderDeckButtons();renderTraining();renderSpecialStages();
