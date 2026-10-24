@@ -1,0 +1,3 @@
+.codex-consistent-review .codex-review-numbers{display:grid;grid-template-columns:minmax(80px,1fr) minmax(0,1.6fr);gap:6px 12px;margin:12px 0}.codex-review-numbers dt{font-weight:500}.codex-review-numbers dd{margin:0;font-weight:700;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}.codex-consistent-review h4{margin:16px 0 4px}.codex-consistent-review h4+p{margin-top:0}.codex-consistent-review details{margin:12px 0}.codex-consistent-review summary{cursor:pointer;font-weight:700}.codex-consistent-review small{display:block;line-height:1.65}.codex-consistent-review li{margin:7px 0;line-height:1.6}.codex-consistent-review p{overflow-wrap:anywhere}
+
+#codexMenu{background:#101b2c}

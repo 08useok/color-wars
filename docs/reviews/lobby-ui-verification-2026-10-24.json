@@ -1,0 +1,78 @@
+{
+  "readonly": {
+    "layout": {
+      "title": "레전드 스토리",
+      "subtitle": "전설의 시작 · ★4 · 8 / 8 클리어",
+      "cards": 1,
+      "pickers": 12,
+      "battle": 254,
+      "characters": 1115.53125,
+      "stages": 8
+    },
+    "box": {
+      "n": 116,
+      "fix": 365,
+      "text": "📦 보관함 116확정권 116장모두 받기",
+      "open": true
+    },
+    "savePreserved": true,
+    "stats": {
+      "base": 120000,
+      "income": 1610,
+      "wallet": 15800,
+      "power": 36000,
+      "charge": 1,
+      "hp": 104650,
+      "atk": 151340
+    }
+  },
+  "actions": {
+    "formsAndDeck": true,
+    "upgrade": {
+      "prior": {
+        "level": 29,
+        "xp": 10000000
+      },
+      "upgraded": {
+        "level": 30,
+        "xp": 9971580
+      }
+    },
+    "thirdEvolution": {
+      "assetReady": true,
+      "button": "3진 진화 · 무료",
+      "disabled": false,
+      "executed": true
+    },
+    "mobile": {
+      "viewport": 390,
+      "width": 366,
+      "scrollWidth": 366,
+      "clientWidth": 366,
+      "battleTop": 357,
+      "cards": 1
+    },
+    "next": {
+      "stage": 693,
+      "hidden": true
+    },
+    "errors": []
+  },
+  "mobile": {
+    "layouts": [
+      {
+        "viewport": 390,
+        "width": 366,
+        "scroll": 366,
+        "battle": 398
+      },
+      {
+        "viewport": 350,
+        "width": 296,
+        "scroll": 296,
+        "battle": 511
+      }
+    ],
+    "errors": []
+  }
+}
