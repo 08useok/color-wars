@@ -14,7 +14,8 @@ function battleImageUrls(){
  for(const type of roster){
   const base=NEW_ATLASES[type];if(!base)continue;
   const stats=ALLIES.includes(type)?unitStats(type):null,atlas=stats?.trueForm&&base.true?base.true:stats?.evolved&&base.evolved?base.evolved:base;
-  for(const url of [base.sheet,atlas.sheet,atlas.attackAtlas?.sheet])if(url)urls.add(url);
+  // 쓰는 형태의 시트만 받는다. 1진 시트는 쓰는 형태에 자기 시트가 없을 때(game.js animateAtlas의 되돌림)만 필요하다.
+  for(const url of [atlas.sheet||base.sheet,atlas.attackAtlas?.sheet])if(url)urls.add(url);
  }
  // Include CSS-backed legacy sprites, shadows, held items and shared effects.
  function readRules(rules){for(const rule of rules){
