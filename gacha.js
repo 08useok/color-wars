@@ -97,13 +97,17 @@ function gachaStageReward(i){// 세계편·미래편 첫 클리어: 각 장의 �
 const EX_NAME={ribbonchart:'리본 샤트',obsidian:'옵시디언',ribbonorange:'리본 오렌지',garnet:'가넷',lapis:'라피스',selenite:'셀레나이트',topaz:'토파즈'};
 function grantEx(id){if(gachaOwns(id))return false;gacha.owned.push(id);saveGacha();gachaAppendDetail('EX '+EX_NAME[id]+' 획득!');renderNewButtons();renderDeckButtons();return true}
 function gachaAppendDetail(text){const el=document.querySelector('#resultDetail');if(el&&text)el.textContent+=(el.textContent?' · ':'')+text}
+// Backfill the guaranteed reward for accounts that cleared chapter 3 before its release.
+// Check ownership before grantEx: progression wraps duplicate grants into +levels.
+function recoverSeleniteReward(){return cleared.includes(MAIN_STAGE_COUNT-1)&&!gachaOwns('selenite')?grantEx('selenite'):false}
 const _finish=finish;
 finish=function(win){
  const fresh=!game.ended,idx=selectedStage,st=STAGES[idx],was=cleared.includes(idx);
  _finish(win);
  if(!fresh||!win||st.legend)return;
  if(st.special){if(idx===MAIN_STAGE_COUNT+3)grantEx('lapis');if(Math.random()<GACHA_CFG.specialChance){gachaGive(0,1);gachaAppendDetail('확정권 10장 획득!')}return}
- if(!was&&cleared.includes(idx)){if(idx===GACHA_OPEN_AT){renderGachaBadge();gachaAppendDetail('뽑기가 열렸어요!')}if(idx===MAIN_STAGE_COUNT-1)grantEx('selenite');const r=gachaStageReward(idx);if(r.t1||r.t10){gachaGive(r.t1,r.t10);gachaAppendDetail(gachaTicketText(r.t1,r.t10)+' 획득!')}}
+ if(idx===MAIN_STAGE_COUNT-1)recoverSeleniteReward();
+ if(!was&&cleared.includes(idx)){if(idx===GACHA_OPEN_AT){renderGachaBadge();gachaAppendDetail('뽑기가 열렸어요!')}const r=gachaStageReward(idx);if(r.t1||r.t10){gachaGive(r.t1,r.t10);gachaAppendDetail(gachaTicketText(r.t1,r.t10)+' 획득!')}}
 };
 const _legendFinish=legendFinish;
 legendFinish=function(win){
@@ -197,4 +201,4 @@ renderGachaBadge();
 // game.js drew the first screen before this file loaded, so characters owned through the gacha/rewards were still locked: redraw now.
 {const menuOpen=!$('#stageMenu').classList.contains('hidden');if(menuOpen)renderStageMenu();renderNewButtons();renderDeckButtons();render()}
 // 일일 보상은 모든 스크립트가 로드된 뒤(보관함·확정권 로직이 붙은 뒤)에 받는다.
-window.addEventListener('DOMContentLoaded',()=>{const d=gachaUnlocked()?gachaClaimDaily():null;if(d){renderGachaBadge();gachaToast(`일일 보상! ${gachaTicketText(d.t1,d.t10)}${d.fix?' · 추가 확정권 1장':''} → 보관함 (${d.streak}일 연속 출석)`)}});
+window.addEventListener('DOMContentLoaded',()=>{recoverSeleniteReward();const d=gachaUnlocked()?gachaClaimDaily():null;if(d){renderGachaBadge();gachaToast(`일일 보상! ${gachaTicketText(d.t1,d.t10)}${d.fix?' · 추가 확정권 1장':''} → 보관함 (${d.streak}일 연속 출석)`)}});

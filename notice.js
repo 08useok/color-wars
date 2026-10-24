@@ -2,9 +2,11 @@
 // v1 세계편 (first push, 2026-09-24) · v2 레전드 스토리 (09-30) · v3 미래편 1장 (10-03) · v4 미래편 2장 + 3진 (10-06) · v5 미래편 3장 (10-08) · v6 우주편 1장 (10-09) · v7 우주편 2장 (10-22).
 // User release rule (2026-10-18): bump PATCH for every commit-and-push release unless an explicit version is requested; do not bump twice when already prepared.
 // A new NOTICE.version shows the notice once on load; the 공지 button on the stage screen reopens it.
-const GAME_VERSION='7.1.2';
-const NOTICE={version:GAME_VERSION,date:'2026-10-23',title:`v${GAME_VERSION} 업데이트`,html:`
+const GAME_VERSION='7.1.3';
+const NOTICE={version:GAME_VERSION,date:'2026-10-24',title:`v${GAME_VERSION} 업데이트`,html:`
 <p class="notice-lead">지금까지 <b>세계편 1~3장 · 미래편 1~3장 · 우주편 1~2장 · 레전드 스토리 1~40장</b>을 담았습니다.</p>
+<h3>🌙 v7.1.3 셀레나이트 미지급 보상 복구</h3>
+<ul><li>세계편 3장 달을 이미 클리어했지만 <b>셀레나이트</b>가 없는 계정은 접속 시 자동으로 받습니다. 캐릭터 추가 전에 클리어해 보상을 놓친 경우도 포함합니다.</li><li>이미 보유한 계정에는 중복 지급하지 않으며, +레벨이나 첫 클리어 티켓도 추가로 지급하지 않습니다.</li></ul>
 <h3>👹 v7.1.2 보스 스테이지: 성이 무너지기 전에 보스 소환</h3>
 <ul><li>보스가 있는 스테이지에서 성을 한 번에 무너뜨릴 만큼 큰 피해가 들어가도, 보스가 아직 나오지 않았다면 성 체력이 <b>1</b>만 남고 <b>보스가 바로 소환</b>됩니다. 보스가 나온 뒤에는 성이 평소처럼 무너집니다. 보스가 나오는 조건(성 체력 비율·시간)은 그대로입니다.</li>
 <li>사이클론은 전과 같이 보스를 쓰러뜨려야 성이 무너집니다. 보스가 아직 안 나왔다면 성이 1이 되는 순간 바로 소환됩니다.</li></ul>
