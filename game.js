@@ -1475,7 +1475,7 @@ game.spawnCd=Math.max(0,game.spawnCd-dt);game.orangeCd=Math.max(0,game.orangeCd-
  }
  render()
 }
-function render(){renderDeckButtons();renderSpeedButton();renderNyancomButton();renderBoostButtons();renderNewButtons();renderGreenButton();renderOrangeButton();renderYellowButton();renderUnitLevels();$('#battleNotice').classList.toggle('hidden',!(game.noticeTime>0));$('#pauseBtn').disabled=!game.running||game.ended;$('#pauseBtn').textContent=game.paused?'계속하기':'일시정지';$('#pauseNotice').classList.toggle('hidden',!game.paused);$('#timer').textContent=`${STAGES[selectedStage].name}${chapterOf(selectedStage)===2||chapterOf(selectedStage)===3?` (${chapterOf(selectedStage)}장)`:chapterOf(selectedStage)===5?' (미래편)':chapterOf(selectedStage)===6?' (미래편 2장)':''}${STAGES[selectedStage].legend?' ★'+legendCrown:''} · ${Math.floor(game.elapsed)}초`;let l=data.income[game.level];$('#money').textContent=`${Math.floor(game.money)} / ${walletMax()}원`;$('#enemyHp').textContent=data.bases.enemy.hp;$('#allyHp').textContent=data.bases.ally.hp;for(let [name,b] of Object.entries(data.bases))$(`#${name}Base span`).style.width=(b.hp/b.max*100)+'%';let sb=$('#spawnBtn'),ib=$('#incomeBtn'),canSpawn=!game.ended&&!game.paused&&(game.running||game.tutorial===2),canUpgrade=!game.ended&&!game.paused&&(game.running||game.tutorial===4);sb.disabled=game.money<unitCost('red')||game.spawnCd>0||!canSpawn||allyDeployFull();sb.querySelector('small').textContent=allyDeployFull()?'출격 인원 가득참':unitCost('red')+'원';sb.querySelector('em').style.display=game.spawnCd?'block':'none';sb.querySelector('em').style.transform=`scaleY(${game.spawnCd/unitStats('red').cooldown})`;ib.disabled=!canUpgrade||game.level===data.income.length-1||game.money<(l.cost||0);ib.innerHTML=game.level===data.income.length-1?'수입 Lv.MAX':`수입 업그레이드<br><small>${l.cost}원</small>`}
+function render(){renderDeckButtons();renderSpeedButton();renderNyancomButton();renderBoostButtons();renderNewButtonsLive();renderGreenButton();renderOrangeButton();renderYellowButton();renderUnitLevelsThrottled();$('#battleNotice').classList.toggle('hidden',!(game.noticeTime>0));$('#pauseBtn').disabled=!game.running||game.ended;$('#pauseBtn').textContent=game.paused?'계속하기':'일시정지';$('#pauseNotice').classList.toggle('hidden',!game.paused);$('#timer').textContent=`${STAGES[selectedStage].name}${chapterOf(selectedStage)===2||chapterOf(selectedStage)===3?` (${chapterOf(selectedStage)}장)`:chapterOf(selectedStage)===5?' (미래편)':chapterOf(selectedStage)===6?' (미래편 2장)':''}${STAGES[selectedStage].legend?' ★'+legendCrown:''} · ${Math.floor(game.elapsed)}초`;let l=data.income[game.level];$('#money').textContent=`${Math.floor(game.money)} / ${walletMax()}원`;$('#enemyHp').textContent=data.bases.enemy.hp;$('#allyHp').textContent=data.bases.ally.hp;for(let [name,b] of Object.entries(data.bases))$(`#${name}Base span`).style.width=(b.hp/b.max*100)+'%';let sb=$('#spawnBtn'),ib=$('#incomeBtn'),canSpawn=!game.ended&&!game.paused&&(game.running||game.tutorial===2),canUpgrade=!game.ended&&!game.paused&&(game.running||game.tutorial===4);sb.disabled=game.money<unitCost('red')||game.spawnCd>0||!canSpawn||allyDeployFull();sb.querySelector('small').textContent=allyDeployFull()?'출격 인원 가득참':unitCost('red')+'원';sb.querySelector('em').style.display=game.spawnCd?'block':'none';sb.querySelector('em').style.transform=`scaleY(${game.spawnCd/unitStats('red').cooldown})`;ib.disabled=!canUpgrade||game.level===data.income.length-1||game.money<(l.cost||0);{const incomeHtml=game.level===data.income.length-1?'수입 Lv.MAX':`수입 업그레이드<br><small>${l.cost}원</small>`;if(ib.dataset.html!==incomeHtml){ib.innerHTML=incomeHtml;ib.dataset.html=incomeHtml}}}
 function renderOrangeButton(){
  const button=$('#orangeBtn'),d=data.units.orange,unlocked=orangeUnlocked();
  button.disabled=!unlocked||!game.running||game.paused||game.ended||game.money<unitCost("orange")||game.orangeCd>0||allyDeployFull();
@@ -2128,6 +2128,32 @@ function renderNewButtons(){for(const type of GENERIC_CD_TYPES){
  b.querySelector('small').textContent=!unlocked?(UNLOCK_AT[type]==null?(ACQUIRE_TEXT[type]||'뽑기로 획득'):STAGES[UNLOCK_AT[type]].name+(chapterTag(UNLOCK_AT[type]))+' 클리어 시 해금'):allyDeployFull()?'출격 인원 가득참':`${unitCost(type)}원`;
  b.querySelector('em').style.display=cd?'block':'none';b.querySelector('em').style.transform=`scaleY(${cd/Math.max(.01,unitStats(type).cooldown)})`;
 }}
+
+// 전투 프레임마다 도는 버튼 갱신(7.1.4): 화면에 보이는(덱) 버튼만 갱신하고, 값이 그대로면 DOM에 다시 쓰지 않는다.
+// 숨은 버튼은 보이게 되는 같은 render() 안에서 renderDeckButtons가 먼저 풀리므로 그 프레임에 갱신된다. 결과는 renderNewButtons와 같다(시험: battle-button-state-browser-test).
+const NEW_BTN_REFS=new Map();
+function renderNewButtonsLive(){
+ const full=allyDeployFull(),idle=!game.running||game.paused||game.ended,money=game.money;
+ for(const type of GENERIC_CD_TYPES){
+  let r=NEW_BTN_REFS.get(type);
+  if(!r||!r.b.isConnected){const b=$('#'+type+'Btn');r={b,small:b.querySelector('small'),em:b.querySelector('em')};NEW_BTN_REFS.set(type,r)}
+  const b=r.b;if(b.hidden)continue;
+  const unlocked=allyUnlocked(type),cd=unitCooldown(type),cost=unitCost(type);
+  const dis=!unlocked||idle||money<cost||cd>0||full;if(b.disabled!==dis)b.disabled=dis;
+  const text=!unlocked?(UNLOCK_AT[type]==null?(ACQUIRE_TEXT[type]||'뽑기로 획득'):STAGES[UNLOCK_AT[type]].name+(chapterTag(UNLOCK_AT[type]))+' 클리어 시 해금'):full?'출격 인원 가득참':`${cost}원`;
+  if(r.small.textContent!==text)r.small.textContent=text;
+  const disp=cd?'block':'none';if(r.em.style.display!==disp)r.em.style.display=disp;
+  if(cd){const tf=`scaleY(${cd/Math.max(.01,unitStats(type).cooldown)})`;if(r.em.style.transform!==tf)r.em.style.transform=tf}
+ }
+}
+// 아군 버튼의 레벨 글자·툴팁은 전투 중에 바뀌지 않으므로 전투 프레임에서는 0.5초에 한 번만 갱신한다(전투 시작 첫 프레임은 바로 갱신).
+// 오렌지·옐로우·그린 버튼은 renderXxxButton이 매 프레임 간단한 툴팁을 쓰고 renderUnitLevels가 그 위에 완전한 툴팁을 덮어쓴다. 건너뛰는 프레임에는 마지막 전체 갱신의 툴팁을 다시 덮어 같은 결과를 유지한다.
+const LEVEL_TITLE_BTNS=['green','orange','yellow'];
+function renderUnitLevelsThrottled(){
+ const now=performance.now();
+ if(game.levelsAt!==undefined&&now-game.levelsAt<500){if(game.levelTitles)for(const t of LEVEL_TITLE_BTNS){const b=$('#'+t+'Btn'),v=game.levelTitles[t];if(v!==undefined&&b.title!==v)b.title=v}return}
+ game.levelsAt=now;renderUnitLevels();game.levelTitles={};for(const t of LEVEL_TITLE_BTNS)game.levelTitles[t]=$('#'+t+'Btn').title;
+}
 
 const RARE_STRIKE={ribbonchart:2,peasquirrel:1,ironboar:1,ribbonorange:2,maple:2,brick:2,korn:2,teal:2,violet:2,orchid:2,cobalt:2,flame:2,scarlet:2,moss:2,coral:2,aqua:2,cooper:2,navy:2,dandelion:2,babyblue:2,mintcyan:2,peach:2,lightcream:2,midnight:2,darklilac:2,fusioncream:2,silver:2,lava:2,babypink:2,magenta:2,rainbow:2,lapis:2,selenite:2,topaz:2,cornflower:2,bittersweet:2,claret:2,verdigris:2,plum:2,forest:2,canary:2,cherry:2,mauve:2,khaki:2,tangerine:2,burgundy:2,mustard:2,sky:2,denim:2,charcoal:2,garnet:2,prism:2,black:1,white:1,maroon:1,brown:1,tan:1,beige:1,cream:1,olive:1,clover:2,indigo:1,lilac:1,hotpink:1,ruby:1,hacienda:2};// attack-frame index where the hit lands (frames before it are the windup)
 const NEW_ATLASES={
