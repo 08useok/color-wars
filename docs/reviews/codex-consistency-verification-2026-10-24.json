@@ -1,14 +1,14 @@
 {
-  "roster": 115,
-  "forms": 242,
-  "formProfileCases": 472,
+  "roster": 116,
+  "forms": 248,
+  "formProfileCases": 480,
   "profileCounts": {
-    "none": 230,
-    "complete": 242
+    "none": 232,
+    "complete": 248
   },
   "treasureProfiles": 2,
-  "combatChecks": 3743,
-  "metalKillerChecks": 1,
+  "combatChecks": 3803,
+  "metalKillerChecks": 2,
   "report": [
     {
       "type": "red",
@@ -281,6 +281,15 @@
       "metal": 2100.25
     },
     {
+      "type": "azure",
+      "form": 3,
+      "hp": 283764,
+      "atk": 50400,
+      "range": 10.799999999999999,
+      "dps": 30240,
+      "metal": 10080.25
+    },
+    {
       "type": "crystal",
       "form": 1,
       "hp": 75950,
@@ -324,6 +333,15 @@
       "range": 28.2,
       "dps": 3220,
       "metal": 0.25
+    },
+    {
+      "type": "lavender",
+      "form": 3,
+      "hp": 105053,
+      "atk": 18032,
+      "range": 28.2,
+      "dps": 6010.666666666667,
+      "metal": 0.3333333333333333
     },
     {
       "type": "salmon",
@@ -884,6 +902,15 @@
       "metal": 1.0309278350515465
     },
     {
+      "type": "aqua",
+      "form": 3,
+      "hp": 51620,
+      "atk": 9200,
+      "range": 12,
+      "dps": 9484.536082474227,
+      "metal": 1.0309278350515465
+    },
+    {
       "type": "cooper",
       "form": 1,
       "hp": 39865,
@@ -954,6 +981,15 @@
       "range": 16.2,
       "dps": 1958.6666666666667,
       "metal": 0.6666666666666666
+    },
+    {
+      "type": "babyblue",
+      "form": 3,
+      "hp": 35925,
+      "atk": 7345,
+      "range": 16.2,
+      "dps": 9793.333333333334,
+      "metal": 1.3333333333333333
     },
     {
       "type": "mintcyan",
@@ -2187,6 +2223,24 @@
       "range": 10,
       "dps": 1750,
       "metal": 0.35714285714285715
+    },
+    {
+      "type": "cheerdandelion",
+      "form": 1,
+      "hp": 17390,
+      "atk": 21740,
+      "range": 32,
+      "dps": 5435,
+      "metal": null
+    },
+    {
+      "type": "cheerdandelion",
+      "form": 2,
+      "hp": 19998,
+      "atk": 25000,
+      "range": 32,
+      "dps": 6250,
+      "metal": null
     }
   ]
 }

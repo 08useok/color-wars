@@ -1227,6 +1227,8 @@ function damage(v,amount,from){
  if(from?.stats?.pull&&isBoss)amount*=1.3;
  if(from?.stats?.bossDamage&&isBoss)amount*=from.stats.bossDamage;
  if(hasTrait(data.units[v.type],'metal')&&!crit)amount=1+(from?.stats?.metalKiller?Math.ceil(v.hp*from.stats.metalKiller):0);
+ // A full-HP metal finisher also works when this hit is critical.
+ if(from?.stats?.metalKiller===1&&hasTrait(data.units[v.type],'metal'))amount=Math.max(amount,v.hp);
  if(v.stats?.barrier&&!v.barrierBroken){if(amount>v.stats.barrier){v.barrierBroken=true;v.el.classList.remove('barrier-on')}v.flashTime=.1;v.el.classList.add('damage-flash');return}// 베리어: a hit at or below the barrier value does nothing; the first bigger hit breaks it (and deals no damage itself)// metal: every non-critical hit deals exactly 1
  if(v.stats?.survive&&(!v.stats.surviveOnce||!v.survived)&&amount>=v.hp&&Math.random()<v.stats.survive){if(v.stats.surviveOnce)v.survived=true;amount=v.hp-1;v.surviveFxUntil=game.elapsed+SURVIVE_FX_TIME}// 살아남는다: a lethal blow (i.e. once every hitback is used up) leaves 1 HP instead
  v.hp=Math.max(0,v.hp-amount);v.flashTime=.1;v.el.classList.add('damage-flash');

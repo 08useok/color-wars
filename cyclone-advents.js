@@ -6,7 +6,7 @@ const CYCLONE_ALLIES={
  rhythmpink:{name:'리듬 핑크',evolved:'페스티벌 리듬 핑크',color:'#fb9bc5',hp:19000,atk:1800,interval:4,range:7,cost:800,cooldown:12,role:'메탈 범위 정지 지원',extra:{area:true,attackClass:'범위',statusVs:['metal'],freezeChance:.5,freezeDuration:2},profile:'핑크의 독립 아종. 마라카스를 흔드는 거리의 연주자. 리듬에 맞춰 메탈을 멈춰 크리티컬 딜러가 공격할 틈을 만든다.'}
 };
 const registerCycloneAlly=(id,s)=>{// 7.1: 늦게 불러오는 파일(cyclone-advents2.js)도 같은 함수로 등록한다
- for(const list of [RARE_TYPES,ALLIES,NEW_ALLY_TYPES,GENERIC_CD_TYPES])if(!list.includes(id))list.push(id);// 원작 사이클론 보상(우주 고양이·브론즈·줄넘기·태엽 고양이)처럼 레어 등급
+ for(const list of [s.grade==='sr'?SR_TYPES:RARE_TYPES,ALLIES,NEW_ALLY_TYPES,GENERIC_CD_TYPES])if(!list.includes(id))list.push(id);
  data.units[id]={hp:500,atk:100,interval:s.interval,speed:id==='kendonavy'?7:4,range:s.range,cost:s.cost,cooldown:s.cooldown,knockbacks:3,noRangeGrow:true,attackDuration:Math.min(s.interval,.9),windup:.3,...s.extra};
  LV20_TARGET[id]={hp:s.hp/1.15,atk:s.atk/1.15};
  UNIT_NAMES[id]=s.name;COLORS[id]=s.color;ROLES[id]=s.role;
@@ -49,8 +49,9 @@ const CYCLONE_EVENTS=[
 let cycloneClears=[];
 try{const v=JSON.parse(localStorage.getItem('red-battle-cyclone-v1')||'[]');if(Array.isArray(v))cycloneClears=[...new Set(v.filter(id=>CYCLONE_EVENTS.some(e=>e.id===id)))]}catch{}
 const registerCycloneEvent=e=>{
- e.index=STAGES.length;STAGES.push({name:e.stage,flag:'🌪️',hp:e.hp,xp:3800,maxEnemies:e.max,gap:4,wave:0,sky:'#b5c4d6',land:e.color,chapter:'special',cyclone:e.id,special:{item:e.reward,itemName:CYCLONE_ALLIES[e.reward].name,count:1,chance:e.chance,xp:3800},desc:e.name+' · '+UNIT_NAMES[e.boss]+' · 레어 '+CYCLONE_ALLIES[e.reward].name+' '+Math.round(e.chance*100)+'% 획득'});
- STAGE_SPAWNS[e.index]=e.rules;STAGES[e.index].desc+=' · 보스를 쓰러뜨려야 클리어';ACQUIRE_TEXT[e.reward]=e.name+' / '+e.stage+' 클리어 시 '+Math.round(e.chance*100)+'% 획득';
+ const reward=CYCLONE_ALLIES[e.reward];
+ e.index=STAGES.length;STAGES.push({name:e.stage,flag:'🌪️',hp:e.hp,xp:3800,maxEnemies:e.max,gap:4,wave:0,sky:'#b5c4d6',land:e.color,chapter:'special',cyclone:e.id,...(reward?{special:{item:e.reward,itemName:reward.name,count:1,chance:e.chance,xp:3800}}:{}),desc:e.name+' · '+UNIT_NAMES[e.boss]+' · '+(reward?'레어 '+reward.name+' '+Math.round(e.chance*100)+'% 획득':'클리어 XP · 보상 캐릭터 준비 중')});
+ STAGE_SPAWNS[e.index]=e.rules;STAGES[e.index].desc+=' · 보스를 쓰러뜨려야 클리어';if(reward)ACQUIRE_TEXT[e.reward]=e.name+' / '+e.stage+' 클리어 시 '+Math.round(e.chance*100)+'% 획득';
 };CYCLONE_EVENTS.forEach(registerCycloneEvent);
 function cycloneStageOpen(e){return cleared.includes(CHAPTER1_LEN*e.chapter-1)}
 const cycloneDropBefore=specialDropOpen,cycloneGiveBefore=giveSpecialItem,cycloneItemBefore=specialItemText;
@@ -66,7 +67,7 @@ isStageCleared=function(i){const id=STAGES[i]?.cyclone;return id?cycloneClears.i
 const cycloneSpecialBefore=renderSpecialStages;
 renderSpecialStages=function(){cycloneSpecialBefore();for(const e of CYCLONE_EVENTS){
  const row=document.createElement('div');row.className='special-row today cyclone-event';row.dataset.cyclone=e.id;const label=document.createElement('div');label.className='special-label';label.innerHTML='<b class="day">매일</b><strong>🌪️ '+e.name+'</strong><small>'+UNIT_NAMES[e.boss]+'</small>';row.append(label);
- const b=document.createElement('button');b.className='stage-card ribbon';b.disabled=!cycloneStageOpen(e);b.innerHTML='<strong>'+e.stage+'</strong><small>'+(b.disabled?'세계편 '+e.chapter+'장 클리어 필요':gachaOwns(e.reward)?'획득 완료 ✓':CYCLONE_ALLIES[e.reward].name+' '+Math.round(e.chance*100)+'%')+'</small>';b.title=STAGES[e.index].desc;b.onclick=()=>{selectedStage=e.index;reset()};row.append(b);$('#specialGrid').append(row);
+ const b=document.createElement('button');b.className='stage-card ribbon';b.disabled=!cycloneStageOpen(e);b.innerHTML='<strong>'+e.stage+'</strong><small>'+(b.disabled?'세계편 '+e.chapter+'장 클리어 필요':!e.reward?'클리어 XP · 보상 캐릭터 준비 중':gachaOwns(e.reward)?'획득 완료 ✓':CYCLONE_ALLIES[e.reward].name+' '+Math.round(e.chance*100)+'%')+'</small>';b.title=STAGES[e.index].desc;b.onclick=()=>{selectedStage=e.index;reset()};row.append(b);$('#specialGrid').append(row);
 }};
 // Keep actual evolution text in sync: these independent variants deliberately keep their range.
 const cyclonePreviewBefore=renderCodexPreview;

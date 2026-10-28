@@ -1,0 +1,223 @@
+{
+  "index": 696,
+  "checks": [
+    "append-only map",
+    "existing stats/spawns preserved",
+    "infinite full-HP revive",
+    "corpse blocks castle",
+    "zombie-killer permanent kill",
+    "chapter gate"
+  ],
+  "rows": [
+    {
+      "deck": [
+        "red",
+        "yellow",
+        "iron",
+        "platinum",
+        "sapphire",
+        "grey",
+        "lapis",
+        "rainbow",
+        "selenite",
+        "garnet"
+      ],
+      "seed": 1,
+      "result": {
+        "win": true,
+        "timeout": false,
+        "seconds": 42.3,
+        "allyHp": 60000,
+        "enemyHp": 0,
+        "frames": 1269,
+        "deployments": {
+          "rainbow": 1,
+          "grey": 1,
+          "iron": 1,
+          "platinum": 1,
+          "sapphire": 1,
+          "garnet": 1,
+          "selenite": 1,
+          "lapis": 1,
+          "yellow": 4,
+          "red": 12
+        }
+      }
+    },
+    {
+      "deck": [
+        "red",
+        "yellow",
+        "iron",
+        "platinum",
+        "sapphire",
+        "grey",
+        "lapis",
+        "rainbow",
+        "selenite",
+        "garnet"
+      ],
+      "seed": 2,
+      "result": {
+        "win": true,
+        "timeout": false,
+        "seconds": 40.9,
+        "allyHp": 60000,
+        "enemyHp": 0,
+        "frames": 1227,
+        "deployments": {
+          "rainbow": 1,
+          "grey": 1,
+          "iron": 1,
+          "platinum": 1,
+          "sapphire": 1,
+          "garnet": 1,
+          "selenite": 1,
+          "lapis": 1,
+          "yellow": 4,
+          "red": 12
+        }
+      }
+    },
+    {
+      "deck": [
+        "red",
+        "yellow",
+        "iron",
+        "platinum",
+        "sapphire",
+        "grey",
+        "lapis",
+        "rainbow",
+        "selenite",
+        "garnet"
+      ],
+      "seed": 3,
+      "result": {
+        "win": true,
+        "timeout": false,
+        "seconds": 106.9,
+        "allyHp": 60000,
+        "enemyHp": 0,
+        "frames": 3207,
+        "deployments": {
+          "rainbow": 3,
+          "grey": 2,
+          "iron": 2,
+          "platinum": 2,
+          "sapphire": 3,
+          "garnet": 2,
+          "selenite": 2,
+          "lapis": 2,
+          "yellow": 13,
+          "red": 45
+        }
+      }
+    },
+    {
+      "deck": [
+        "red",
+        "yellow",
+        "blue",
+        "purple",
+        "gold",
+        "lavender",
+        "aqua",
+        "babyblue",
+        "azure",
+        "coral"
+      ],
+      "seed": 1,
+      "result": {
+        "win": false,
+        "timeout": true,
+        "seconds": 300,
+        "allyHp": 46500,
+        "enemyHp": 1,
+        "frames": 9000,
+        "deployments": {
+          "lavender": 9,
+          "gold": 8,
+          "azure": 10,
+          "blue": 40,
+          "coral": 7,
+          "babyblue": 31,
+          "aqua": 10,
+          "purple": 14,
+          "yellow": 18,
+          "red": 51
+        }
+      }
+    },
+    {
+      "deck": [
+        "red",
+        "yellow",
+        "blue",
+        "purple",
+        "gold",
+        "lavender",
+        "aqua",
+        "babyblue",
+        "azure",
+        "coral"
+      ],
+      "seed": 2,
+      "result": {
+        "win": false,
+        "timeout": true,
+        "seconds": 300,
+        "allyHp": 60000,
+        "enemyHp": 1,
+        "frames": 9000,
+        "deployments": {
+          "lavender": 9,
+          "gold": 8,
+          "azure": 9,
+          "blue": 35,
+          "coral": 6,
+          "babyblue": 23,
+          "aqua": 6,
+          "purple": 9,
+          "yellow": 11,
+          "red": 36
+        }
+      }
+    },
+    {
+      "deck": [
+        "red",
+        "yellow",
+        "blue",
+        "purple",
+        "gold",
+        "lavender",
+        "aqua",
+        "babyblue",
+        "azure",
+        "coral"
+      ],
+      "seed": 3,
+      "result": {
+        "win": false,
+        "timeout": true,
+        "seconds": 300,
+        "allyHp": 60000,
+        "enemyHp": 1,
+        "frames": 9000,
+        "deployments": {
+          "lavender": 9,
+          "gold": 6,
+          "azure": 7,
+          "blue": 38,
+          "coral": 7,
+          "babyblue": 23,
+          "aqua": 7,
+          "purple": 10,
+          "yellow": 12,
+          "red": 34
+        }
+      }
+    }
+  ]
+}

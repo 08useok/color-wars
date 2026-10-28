@@ -15,5 +15,5 @@
   if(!waiting.length&&!game.cyHint){game.cyHint=true;$('#battleNotice').textContent='사이클론 보스를 쓰러뜨려야 성이 무너져요!';game.noticeTime=3}
  }});
  const guardHitbackBefore=startHitback;
- startHitback=function(u,...rest){if(u&&!u.ally&&u.hp<=0&&game&&u.type===cycloneBoss())game.cyBossDown=true;return guardHitbackBefore.call(this,u,...rest)};
+ startHitback=function(u,...rest){if(u&&!u.ally&&u.hp<=0&&game&&u.type===cycloneBoss())game.cyBossDown=u.reviveAt===undefined;return guardHitbackBefore.call(this,u,...rest)};
 }

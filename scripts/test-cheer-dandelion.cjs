@@ -1,0 +1,18 @@
+const fs=require('fs'),assert=require('node:assert/strict'),make=require('./full-harness.cjs');
+const source=fs.readFileSync(require.resolve('./full-harness.cjs'),'utf8'),addons=JSON.parse(source.match(/const DEFAULT_ADDONS=(\[[^;]+\]);/)[1].replace(/'/g,'"'));
+const setup=`globalThis.__cheer={select:i=>selectedStage=i,event:ZYCLONE_EVENT,events:CYCLONE_EVENTS,target,resolve:resolveAttack,can:canTrueForm};`;
+const previous=make({addons:addons.filter(s=>!s.includes('cheer-dandelion')),extraSetup:setup});
+const e=make({extraSetup:setup}),t=globalThis.__cheer;delete globalThis.__cheer;t.select(t.event.index);
+for(const [id,s]of Object.entries(previous.units))assert.deepEqual(e.units[id],s,id+' existing stats');
+assert.equal(e.stageList.length,previous.stageList.length);assert.deepEqual(e.stageList.slice(0,-1),previous.stageList.slice(0,-1));assert.deepEqual(e.spawnList,previous.spawnList);
+assert.equal(e.gradeOf('cheerdandelion'),'sr');assert.equal(t.event.reward,'cheerdandelion');assert.equal(e.stageList[t.event.index].special.chance,.3);assert(!t.can('cheerdandelion'));
+const second=e.unitStats('cheerdandelion',30,2);assert.equal(second.critChance,1);assert.equal(second.metalKiller,1);assert.equal(second.knockbacks,4);assert.equal(second.interval,8);assert.equal(second.windup,1.6);assert.equal(second.cooldown,30);assert.equal(second.cost,1350);assert(!second.area&&!second.blindSpot);
+const first=e.unitStats('cheerdandelion',30,1);assert.equal(first.knockbacks,4);assert.equal(first.range,second.range);
+function setupBattle(enemy='dog',mag=1){t.select(t.event.index);e.reset();const g=e.getGame();g.running=true;g.paused=false;g.tutorial=99;g.spawnRules=[];g.money=1e9;g.auto=false;e.addUnit('cheerdandelion');e.addUnit(enemy,false,mag);const u=g.units.find(v=>v.ally),v=g.units.find(v=>!v.ally);assert(u&&v);u.x=60;v.x=45;u.emerging=v.emerging=false;return {g,u,v};}
+const metals=Object.entries(e.units).filter(([id,s])=>!e.roster.includes(id)&&(s.trait==='metal'||s.traits?.includes('metal'))).map(([id])=>id);
+for(const id of metals)for(const mag of [1,10,100,1000]){const {u,v}=setupBattle(id,mag);t.resolve(u,v);assert.equal(v.hp,0,id+' '+mag+' one hit');}
+{const {g,u,v}=setupBattle('dog');v.hp=v.max=1e9;t.resolve(u,v);assert(v.hp>0&&v.hp<v.max,'normal enemy not executed');e.addUnit('metaldoge');const m=g.units.find(x=>x.type==='metaldoge');m.emerging=false;m.x=40;v.x=58;assert.equal(t.target(u),m,'metal before closer dog');m.x=20;assert.equal(t.target(u),v,'outside range not chased');m.x=65;assert.equal(t.target(u),v,'behind ignored');m.x=45;m.kbTime=1;assert.equal(t.target(u),v,'knockback ignored');}
+{const {g,u,v}=setupBattle('metaldoge');e.addUnit('metaldoge');const other=g.units.filter(x=>x.type==='metaldoge')[1];other.emerging=false;other.x=44;const hp=other.hp;t.resolve(u,v);assert.equal(v.hp,0);assert.equal(other.hp,hp,'single target');}
+const rows=[];for(const seed of [1,2,3]){e.setProfile({level:30});const map=t.events.find(x=>x.id==='metal');rows.push({seed,result:e.simulate(map.index,1,['red','yellow','cheerdandelion','herbmint','hulasilver','drumscarlet','rhythmpink','kendonavy','alchemypurple','platinum'],seed,300,'smart2')});}
+fs.writeFileSync('docs/simulations/cheer-dandelion-2026-10-28.json',JSON.stringify({second,first,checks:{metals:metals.length,magnifications:[1,10,100,1000],singleTarget:true,metalPriority:true,normalEnemySurvives:true,legacyStatsAndStagesPreserved:true},rows},null,2));
+console.log('PASS: both forms,',metals.length*4,'metal execution cases, priority/fallback, single-target, unchanged existing stats/stages; battles',rows.map(r=>r.result));process.exit(0);

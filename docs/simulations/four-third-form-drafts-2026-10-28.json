@@ -1,0 +1,178 @@
+{
+  "lockedWithoutArt": true,
+  "fixturesOnly": false,
+  "dedicatedArt": true,
+  "rows": [
+    {
+      "id": "lavender",
+      "second": {
+        "hp": 70035,
+        "atk": 12880,
+        "interval": 4,
+        "speed": 5,
+        "range": 28.2,
+        "cost": 1170,
+        "cooldown": 27,
+        "knockbacks": 3,
+        "area": true,
+        "atkDownPct": 0.5,
+        "atkDownChance": 0.6,
+        "atkDownDuration": 6,
+        "blindSpot": false,
+        "evolved": true,
+        "treasureEligible": true
+      },
+      "third": {
+        "hp": 105053,
+        "atk": 18032,
+        "interval": 3,
+        "speed": 5,
+        "range": 28.2,
+        "cost": 1170,
+        "cooldown": 27,
+        "knockbacks": 3,
+        "area": true,
+        "atkDownPct": 0.5,
+        "atkDownChance": 1,
+        "atkDownDuration": 7,
+        "blindSpot": false,
+        "evolved": true,
+        "treasureEligible": true,
+        "trueForm": true,
+        "slowChance": 1,
+        "slowDuration": 3,
+        "strengthen": {
+          "at": 0.5,
+          "mult": 2
+        }
+      }
+    },
+    {
+      "id": "azure",
+      "second": {
+        "hp": 94588,
+        "atk": 16800,
+        "interval": 3.2,
+        "speed": 6.5,
+        "range": 10.799999999999999,
+        "cost": 1040,
+        "cooldown": 25,
+        "knockbacks": 2,
+        "dash": true,
+        "blindSpot": false,
+        "evolved": true,
+        "critChance": 0.2,
+        "critMult": 2,
+        "treasureEligible": true
+      },
+      "third": {
+        "hp": 283764,
+        "atk": 50400,
+        "interval": 3.2,
+        "speed": 6.5,
+        "range": 10.799999999999999,
+        "cost": 1040,
+        "cooldown": 25,
+        "knockbacks": 2,
+        "dash": true,
+        "blindSpot": false,
+        "evolved": true,
+        "critChance": 0.2,
+        "critMult": 2,
+        "treasureEligible": true,
+        "trueForm": true,
+        "savageChance": 0.3,
+        "savageMult": 3,
+        "wave": {
+          "chance": 0.3,
+          "level": 10,
+          "reach": 77.1,
+          "mult": 1
+        }
+      }
+    },
+    {
+      "id": "aqua",
+      "second": {
+        "hp": 34413,
+        "atk": 3680,
+        "interval": 0.97,
+        "speed": 5,
+        "range": 12,
+        "cost": 425,
+        "cooldown": 17,
+        "knockbacks": 3,
+        "slowChance": 0.35,
+        "slowDuration": 4.5,
+        "statusVs": [
+          "floating"
+        ],
+        "attackDuration": 0.8,
+        "windup": 0.34,
+        "blindSpot": false,
+        "evolved": true,
+        "treasureEligible": true
+      },
+      "third": {
+        "hp": 51620,
+        "atk": 9200,
+        "interval": 0.97,
+        "speed": 5,
+        "range": 12,
+        "cost": 425,
+        "cooldown": 17,
+        "knockbacks": 3,
+        "slowChance": 1,
+        "slowDuration": 8,
+        "statusVs": [
+          "floating",
+          "angel"
+        ],
+        "attackDuration": 0.8,
+        "windup": 0.34,
+        "blindSpot": false,
+        "evolved": true,
+        "treasureEligible": true,
+        "trueForm": true
+      }
+    },
+    {
+      "id": "babyblue",
+      "second": {
+        "hp": 23950,
+        "atk": 2938,
+        "interval": 1.5,
+        "speed": 4,
+        "range": 16.2,
+        "cost": 500,
+        "cooldown": 19,
+        "knockbacks": 3,
+        "blowChance": 0.44999999999999996,
+        "blowDistance": 18,
+        "attackDuration": 0.8,
+        "windup": 0.35,
+        "blindSpot": false,
+        "evolved": true,
+        "treasureEligible": true
+      },
+      "third": {
+        "hp": 35925,
+        "atk": 7345,
+        "interval": 0.75,
+        "speed": 4,
+        "range": 16.2,
+        "cost": 470,
+        "cooldown": 3.8,
+        "knockbacks": 3,
+        "blowChance": 0.7,
+        "blowDistance": 18,
+        "attackDuration": 0.8,
+        "windup": 0.35,
+        "blindSpot": false,
+        "evolved": true,
+        "treasureEligible": true,
+        "trueForm": true
+      }
+    }
+  ]
+}

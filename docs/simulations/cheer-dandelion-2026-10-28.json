@@ -1,0 +1,129 @@
+{
+  "second": {
+    "hp": 19998,
+    "atk": 25000,
+    "interval": 8,
+    "speed": 4,
+    "range": 32,
+    "cost": 1350,
+    "cooldown": 30,
+    "knockbacks": 4,
+    "noRangeGrow": true,
+    "attackDuration": 2.2,
+    "windup": 1.6,
+    "critChance": 1,
+    "critMult": 2,
+    "metalKiller": 1,
+    "metalPriority": true,
+    "attackClass": "개체",
+    "flatCost": true,
+    "blindSpot": false,
+    "evolved": true,
+    "treasureEligible": true
+  },
+  "first": {
+    "hp": 17390,
+    "atk": 21740,
+    "interval": 8,
+    "speed": 4,
+    "range": 32,
+    "cost": 1350,
+    "cooldown": 30,
+    "knockbacks": 4,
+    "noRangeGrow": true,
+    "attackDuration": 2.2,
+    "windup": 1.6,
+    "critChance": 1,
+    "critMult": 2,
+    "metalKiller": 1,
+    "metalPriority": true,
+    "attackClass": "개체",
+    "flatCost": true,
+    "blindSpot": false,
+    "treasureEligible": true
+  },
+  "checks": {
+    "metals": 9,
+    "magnifications": [
+      1,
+      10,
+      100,
+      1000
+    ],
+    "singleTarget": true,
+    "metalPriority": true,
+    "normalEnemySurvives": true,
+    "legacyStatsAndStagesPreserved": true
+  },
+  "rows": [
+    {
+      "seed": 1,
+      "result": {
+        "win": true,
+        "timeout": false,
+        "seconds": 35.23,
+        "allyHp": 60000,
+        "enemyHp": 0,
+        "frames": 1057,
+        "deployments": {
+          "platinum": 1,
+          "alchemypurple": 2,
+          "cheerdandelion": 1,
+          "rhythmpink": 3,
+          "hulasilver": 3,
+          "herbmint": 4,
+          "drumscarlet": 4,
+          "kendonavy": 5,
+          "yellow": 4,
+          "red": 12
+        }
+      }
+    },
+    {
+      "seed": 2,
+      "result": {
+        "win": true,
+        "timeout": false,
+        "seconds": 35.23,
+        "allyHp": 60000,
+        "enemyHp": 0,
+        "frames": 1057,
+        "deployments": {
+          "platinum": 1,
+          "alchemypurple": 2,
+          "cheerdandelion": 1,
+          "rhythmpink": 3,
+          "hulasilver": 3,
+          "herbmint": 4,
+          "drumscarlet": 4,
+          "kendonavy": 5,
+          "yellow": 4,
+          "red": 12
+        }
+      }
+    },
+    {
+      "seed": 3,
+      "result": {
+        "win": true,
+        "timeout": false,
+        "seconds": 35.23,
+        "allyHp": 60000,
+        "enemyHp": 0,
+        "frames": 1057,
+        "deployments": {
+          "platinum": 1,
+          "alchemypurple": 2,
+          "cheerdandelion": 1,
+          "rhythmpink": 3,
+          "hulasilver": 3,
+          "herbmint": 4,
+          "drumscarlet": 4,
+          "kendonavy": 5,
+          "yellow": 4,
+          "red": 12
+        }
+      }
+    }
+  ]
+}

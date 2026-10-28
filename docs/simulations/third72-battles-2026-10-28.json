@@ -1,0 +1,845 @@
+{
+  "basis": "Lv30, full treasures, red/yellow/blue/purple + candidate, seed 1, smart2, 300s; smoke comparison, not a tier ranking",
+  "rows": [
+    {
+      "id": "lavender",
+      "map": 498,
+      "crown": 1,
+      "form": 2,
+      "result": {
+        "win": true,
+        "timeout": false,
+        "seconds": 47.77,
+        "allyHp": 60000,
+        "enemyHp": 0,
+        "frames": 1434,
+        "deployments": {
+          "lavender": 2,
+          "blue": 15,
+          "purple": 5,
+          "yellow": 7,
+          "red": 22
+        }
+      }
+    },
+    {
+      "id": "lavender",
+      "map": 498,
+      "crown": 1,
+      "form": 3,
+      "result": {
+        "win": true,
+        "timeout": false,
+        "seconds": 41.67,
+        "allyHp": 60000,
+        "enemyHp": 0,
+        "frames": 1251,
+        "deployments": {
+          "lavender": 2,
+          "blue": 13,
+          "purple": 5,
+          "yellow": 6,
+          "red": 19
+        }
+      }
+    },
+    {
+      "id": "lavender",
+      "map": 326,
+      "crown": 3,
+      "form": 2,
+      "result": {
+        "win": true,
+        "timeout": false,
+        "seconds": 96.27,
+        "allyHp": 60000,
+        "enemyHp": 0,
+        "frames": 2889,
+        "deployments": {
+          "lavender": 4,
+          "blue": 31,
+          "purple": 11,
+          "yellow": 14,
+          "red": 46
+        }
+      }
+    },
+    {
+      "id": "lavender",
+      "map": 326,
+      "crown": 3,
+      "form": 3,
+      "result": {
+        "win": true,
+        "timeout": false,
+        "seconds": 89.1,
+        "allyHp": 60000,
+        "enemyHp": 0,
+        "frames": 2674,
+        "deployments": {
+          "lavender": 4,
+          "blue": 28,
+          "purple": 10,
+          "yellow": 13,
+          "red": 43
+        }
+      }
+    },
+    {
+      "id": "lavender",
+      "map": 442,
+      "crown": 3,
+      "form": 2,
+      "result": {
+        "win": true,
+        "timeout": false,
+        "seconds": 92.37,
+        "allyHp": 60000,
+        "enemyHp": 0,
+        "frames": 2772,
+        "deployments": {
+          "lavender": 4,
+          "blue": 29,
+          "purple": 10,
+          "yellow": 13,
+          "red": 43
+        }
+      }
+    },
+    {
+      "id": "lavender",
+      "map": 442,
+      "crown": 3,
+      "form": 3,
+      "result": {
+        "win": true,
+        "timeout": false,
+        "seconds": 81.23,
+        "allyHp": 60000,
+        "enemyHp": 0,
+        "frames": 2437,
+        "deployments": {
+          "lavender": 3,
+          "blue": 24,
+          "purple": 8,
+          "yellow": 11,
+          "red": 37
+        }
+      }
+    },
+    {
+      "id": "lavender",
+      "map": 433,
+      "crown": 1,
+      "form": 2,
+      "result": {
+        "win": true,
+        "timeout": false,
+        "seconds": 92.93,
+        "allyHp": 60000,
+        "enemyHp": 0,
+        "frames": 2788,
+        "deployments": {
+          "lavender": 4,
+          "blue": 30,
+          "purple": 10,
+          "red": 45,
+          "yellow": 13
+        }
+      }
+    },
+    {
+      "id": "lavender",
+      "map": 433,
+      "crown": 1,
+      "form": 3,
+      "result": {
+        "win": true,
+        "timeout": false,
+        "seconds": 72.17,
+        "allyHp": 60000,
+        "enemyHp": 0,
+        "frames": 2166,
+        "deployments": {
+          "lavender": 3,
+          "blue": 23,
+          "purple": 8,
+          "red": 34,
+          "yellow": 10
+        }
+      }
+    },
+    {
+      "id": "lavender",
+      "map": 541,
+      "crown": 1,
+      "form": 2,
+      "result": {
+        "win": false,
+        "timeout": true,
+        "seconds": 300,
+        "allyHp": 60000,
+        "enemyHp": 300000,
+        "frames": 9000,
+        "deployments": {
+          "lavender": 11,
+          "blue": 98,
+          "purple": 33,
+          "yellow": 42,
+          "red": 147
+        }
+      }
+    },
+    {
+      "id": "lavender",
+      "map": 541,
+      "crown": 1,
+      "form": 3,
+      "result": {
+        "win": false,
+        "timeout": true,
+        "seconds": 300,
+        "allyHp": 60000,
+        "enemyHp": 300000,
+        "frames": 9000,
+        "deployments": {
+          "lavender": 11,
+          "blue": 96,
+          "purple": 33,
+          "yellow": 42,
+          "red": 145
+        }
+      }
+    },
+    {
+      "id": "azure",
+      "map": 498,
+      "crown": 1,
+      "form": 2,
+      "result": {
+        "win": true,
+        "timeout": false,
+        "seconds": 50.6,
+        "allyHp": 60000,
+        "enemyHp": 0,
+        "frames": 1518,
+        "deployments": {
+          "azure": 2,
+          "blue": 16,
+          "purple": 6,
+          "yellow": 7,
+          "red": 24
+        }
+      }
+    },
+    {
+      "id": "azure",
+      "map": 498,
+      "crown": 1,
+      "form": 3,
+      "result": {
+        "win": true,
+        "timeout": false,
+        "seconds": 31.63,
+        "allyHp": 60000,
+        "enemyHp": 0,
+        "frames": 949,
+        "deployments": {
+          "azure": 2,
+          "blue": 10,
+          "purple": 4,
+          "yellow": 4,
+          "red": 14
+        }
+      }
+    },
+    {
+      "id": "azure",
+      "map": 326,
+      "crown": 3,
+      "form": 2,
+      "result": {
+        "win": true,
+        "timeout": false,
+        "seconds": 187.73,
+        "allyHp": 60000,
+        "enemyHp": 0,
+        "frames": 5632,
+        "deployments": {
+          "azure": 8,
+          "blue": 61,
+          "purple": 21,
+          "yellow": 27,
+          "red": 92
+        }
+      }
+    },
+    {
+      "id": "azure",
+      "map": 326,
+      "crown": 3,
+      "form": 3,
+      "result": {
+        "win": true,
+        "timeout": false,
+        "seconds": 65.77,
+        "allyHp": 60000,
+        "enemyHp": 0,
+        "frames": 1974,
+        "deployments": {
+          "azure": 3,
+          "blue": 21,
+          "purple": 7,
+          "yellow": 9,
+          "red": 31
+        }
+      }
+    },
+    {
+      "id": "azure",
+      "map": 442,
+      "crown": 3,
+      "form": 2,
+      "result": {
+        "win": true,
+        "timeout": false,
+        "seconds": 92.93,
+        "allyHp": 60000,
+        "enemyHp": 0,
+        "frames": 2789,
+        "deployments": {
+          "azure": 4,
+          "blue": 30,
+          "purple": 10,
+          "yellow": 13,
+          "red": 45
+        }
+      }
+    },
+    {
+      "id": "azure",
+      "map": 442,
+      "crown": 3,
+      "form": 3,
+      "result": {
+        "win": true,
+        "timeout": false,
+        "seconds": 58.6,
+        "allyHp": 60000,
+        "enemyHp": 0,
+        "frames": 1759,
+        "deployments": {
+          "azure": 3,
+          "blue": 18,
+          "purple": 7,
+          "yellow": 8,
+          "red": 28
+        }
+      }
+    },
+    {
+      "id": "azure",
+      "map": 433,
+      "crown": 1,
+      "form": 2,
+      "result": {
+        "win": true,
+        "timeout": false,
+        "seconds": 107.17,
+        "allyHp": 60000,
+        "enemyHp": 0,
+        "frames": 3215,
+        "deployments": {
+          "azure": 5,
+          "blue": 34,
+          "purple": 12,
+          "yellow": 15,
+          "red": 52
+        }
+      }
+    },
+    {
+      "id": "azure",
+      "map": 433,
+      "crown": 1,
+      "form": 3,
+      "result": {
+        "win": true,
+        "timeout": false,
+        "seconds": 57.5,
+        "allyHp": 60000,
+        "enemyHp": 0,
+        "frames": 1725,
+        "deployments": {
+          "azure": 3,
+          "blue": 18,
+          "purple": 6,
+          "yellow": 8,
+          "red": 27
+        }
+      }
+    },
+    {
+      "id": "azure",
+      "map": 541,
+      "crown": 1,
+      "form": 2,
+      "result": {
+        "win": false,
+        "timeout": true,
+        "seconds": 300,
+        "allyHp": 60000,
+        "enemyHp": 300000,
+        "frames": 9000,
+        "deployments": {
+          "azure": 12,
+          "blue": 98,
+          "purple": 33,
+          "yellow": 43,
+          "red": 148
+        }
+      }
+    },
+    {
+      "id": "azure",
+      "map": 541,
+      "crown": 1,
+      "form": 3,
+      "result": {
+        "win": true,
+        "timeout": false,
+        "seconds": 33.43,
+        "allyHp": 60000,
+        "enemyHp": 0,
+        "frames": 1003,
+        "deployments": {
+          "azure": 2,
+          "blue": 10,
+          "purple": 4,
+          "yellow": 5,
+          "red": 15
+        }
+      }
+    },
+    {
+      "id": "aqua",
+      "map": 498,
+      "crown": 1,
+      "form": 2,
+      "result": {
+        "win": true,
+        "timeout": false,
+        "seconds": 41.47,
+        "allyHp": 60000,
+        "enemyHp": 0,
+        "frames": 1244,
+        "deployments": {
+          "blue": 13,
+          "aqua": 3,
+          "purple": 5,
+          "yellow": 6,
+          "red": 19
+        }
+      }
+    },
+    {
+      "id": "aqua",
+      "map": 498,
+      "crown": 1,
+      "form": 3,
+      "result": {
+        "win": true,
+        "timeout": false,
+        "seconds": 36.67,
+        "allyHp": 60000,
+        "enemyHp": 0,
+        "frames": 1100,
+        "deployments": {
+          "blue": 12,
+          "aqua": 2,
+          "purple": 4,
+          "yellow": 5,
+          "red": 17
+        }
+      }
+    },
+    {
+      "id": "aqua",
+      "map": 326,
+      "crown": 3,
+      "form": 2,
+      "result": {
+        "win": true,
+        "timeout": false,
+        "seconds": 213.37,
+        "allyHp": 60000,
+        "enemyHp": 0,
+        "frames": 6402,
+        "deployments": {
+          "blue": 70,
+          "aqua": 13,
+          "purple": 24,
+          "yellow": 30,
+          "red": 105
+        }
+      }
+    },
+    {
+      "id": "aqua",
+      "map": 326,
+      "crown": 3,
+      "form": 3,
+      "result": {
+        "win": true,
+        "timeout": false,
+        "seconds": 131.27,
+        "allyHp": 60000,
+        "enemyHp": 0,
+        "frames": 3938,
+        "deployments": {
+          "blue": 43,
+          "aqua": 8,
+          "purple": 15,
+          "yellow": 19,
+          "red": 64
+        }
+      }
+    },
+    {
+      "id": "aqua",
+      "map": 442,
+      "crown": 3,
+      "form": 2,
+      "result": {
+        "win": true,
+        "timeout": false,
+        "seconds": 81.83,
+        "allyHp": 60000,
+        "enemyHp": 0,
+        "frames": 2455,
+        "deployments": {
+          "blue": 27,
+          "aqua": 5,
+          "purple": 9,
+          "yellow": 12,
+          "red": 40
+        }
+      }
+    },
+    {
+      "id": "aqua",
+      "map": 442,
+      "crown": 3,
+      "form": 3,
+      "result": {
+        "win": true,
+        "timeout": false,
+        "seconds": 79.27,
+        "allyHp": 60000,
+        "enemyHp": 0,
+        "frames": 2378,
+        "deployments": {
+          "blue": 26,
+          "aqua": 5,
+          "purple": 9,
+          "yellow": 11,
+          "red": 38
+        }
+      }
+    },
+    {
+      "id": "aqua",
+      "map": 433,
+      "crown": 1,
+      "form": 2,
+      "result": {
+        "win": true,
+        "timeout": false,
+        "seconds": 106.7,
+        "allyHp": 60000,
+        "enemyHp": 0,
+        "frames": 3201,
+        "deployments": {
+          "blue": 35,
+          "aqua": 7,
+          "purple": 12,
+          "yellow": 15,
+          "red": 52
+        }
+      }
+    },
+    {
+      "id": "aqua",
+      "map": 433,
+      "crown": 1,
+      "form": 3,
+      "result": {
+        "win": true,
+        "timeout": false,
+        "seconds": 102.03,
+        "allyHp": 60000,
+        "enemyHp": 0,
+        "frames": 3061,
+        "deployments": {
+          "blue": 33,
+          "aqua": 6,
+          "purple": 11,
+          "yellow": 15,
+          "red": 50
+        }
+      }
+    },
+    {
+      "id": "aqua",
+      "map": 541,
+      "crown": 1,
+      "form": 2,
+      "result": {
+        "win": false,
+        "timeout": true,
+        "seconds": 300,
+        "allyHp": 60000,
+        "enemyHp": 300000,
+        "frames": 9000,
+        "deployments": {
+          "blue": 98,
+          "aqua": 18,
+          "purple": 33,
+          "yellow": 43,
+          "red": 149
+        }
+      }
+    },
+    {
+      "id": "aqua",
+      "map": 541,
+      "crown": 1,
+      "form": 3,
+      "result": {
+        "win": false,
+        "timeout": true,
+        "seconds": 300,
+        "allyHp": 60000,
+        "enemyHp": 300000,
+        "frames": 9000,
+        "deployments": {
+          "blue": 98,
+          "aqua": 18,
+          "purple": 33,
+          "yellow": 43,
+          "red": 149
+        }
+      }
+    },
+    {
+      "id": "babyblue",
+      "map": 498,
+      "crown": 1,
+      "form": 2,
+      "result": {
+        "win": true,
+        "timeout": false,
+        "seconds": 41.17,
+        "allyHp": 60000,
+        "enemyHp": 0,
+        "frames": 1235,
+        "deployments": {
+          "blue": 13,
+          "babyblue": 2,
+          "purple": 5,
+          "yellow": 6,
+          "red": 19
+        }
+      }
+    },
+    {
+      "id": "babyblue",
+      "map": 498,
+      "crown": 1,
+      "form": 3,
+      "result": {
+        "win": true,
+        "timeout": false,
+        "seconds": 36.37,
+        "allyHp": 60000,
+        "enemyHp": 0,
+        "frames": 1091,
+        "deployments": {
+          "blue": 12,
+          "babyblue": 9,
+          "purple": 4,
+          "yellow": 5,
+          "red": 17
+        }
+      }
+    },
+    {
+      "id": "babyblue",
+      "map": 326,
+      "crown": 3,
+      "form": 2,
+      "result": {
+        "win": true,
+        "timeout": false,
+        "seconds": 250.87,
+        "allyHp": 60000,
+        "enemyHp": 0,
+        "frames": 7527,
+        "deployments": {
+          "blue": 82,
+          "babyblue": 14,
+          "purple": 28,
+          "yellow": 36,
+          "red": 124
+        }
+      }
+    },
+    {
+      "id": "babyblue",
+      "map": 326,
+      "crown": 3,
+      "form": 3,
+      "result": {
+        "win": true,
+        "timeout": false,
+        "seconds": 50.03,
+        "allyHp": 60000,
+        "enemyHp": 0,
+        "frames": 1501,
+        "deployments": {
+          "blue": 16,
+          "babyblue": 13,
+          "purple": 6,
+          "yellow": 7,
+          "red": 24
+        }
+      }
+    },
+    {
+      "id": "babyblue",
+      "map": 442,
+      "crown": 3,
+      "form": 2,
+      "result": {
+        "win": true,
+        "timeout": false,
+        "seconds": 98.8,
+        "allyHp": 60000,
+        "enemyHp": 0,
+        "frames": 2964,
+        "deployments": {
+          "blue": 32,
+          "babyblue": 6,
+          "purple": 11,
+          "yellow": 14,
+          "red": 48
+        }
+      }
+    },
+    {
+      "id": "babyblue",
+      "map": 442,
+      "crown": 3,
+      "form": 3,
+      "result": {
+        "win": true,
+        "timeout": false,
+        "seconds": 40.93,
+        "allyHp": 60000,
+        "enemyHp": 0,
+        "frames": 1229,
+        "deployments": {
+          "blue": 13,
+          "babyblue": 10,
+          "purple": 5,
+          "yellow": 6,
+          "red": 19
+        }
+      }
+    },
+    {
+      "id": "babyblue",
+      "map": 433,
+      "crown": 1,
+      "form": 2,
+      "result": {
+        "win": true,
+        "timeout": false,
+        "seconds": 97.67,
+        "allyHp": 60000,
+        "enemyHp": 0,
+        "frames": 2930,
+        "deployments": {
+          "blue": 32,
+          "babyblue": 5,
+          "purple": 11,
+          "yellow": 14,
+          "red": 48
+        }
+      }
+    },
+    {
+      "id": "babyblue",
+      "map": 433,
+      "crown": 1,
+      "form": 3,
+      "result": {
+        "win": true,
+        "timeout": false,
+        "seconds": 47.43,
+        "allyHp": 60000,
+        "enemyHp": 0,
+        "frames": 1424,
+        "deployments": {
+          "blue": 15,
+          "babyblue": 12,
+          "purple": 5,
+          "yellow": 7,
+          "red": 22
+        }
+      }
+    },
+    {
+      "id": "babyblue",
+      "map": 541,
+      "crown": 1,
+      "form": 2,
+      "result": {
+        "win": false,
+        "timeout": true,
+        "seconds": 300,
+        "allyHp": 60000,
+        "enemyHp": 300000,
+        "frames": 9000,
+        "deployments": {
+          "blue": 94,
+          "babyblue": 16,
+          "purple": 33,
+          "yellow": 41,
+          "red": 134
+        }
+      }
+    },
+    {
+      "id": "babyblue",
+      "map": 541,
+      "crown": 1,
+      "form": 3,
+      "result": {
+        "win": false,
+        "timeout": true,
+        "seconds": 300,
+        "allyHp": 60000,
+        "enemyHp": 300000,
+        "frames": 9000,
+        "deployments": {
+          "blue": 62,
+          "babyblue": 45,
+          "purple": 21,
+          "yellow": 18,
+          "red": 46
+        }
+      }
+    }
+  ]
+}
