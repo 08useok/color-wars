@@ -3,9 +3,10 @@
  const previous=renderCodexPreview;let selection=null;
  renderCodexPreview=function(){
   if(selection&&(selection.type!==codexType||codexTab!=='ally'||!codexEvolved&&selection.form!==1))selection=null;
-  const saved=trueForms;
+  const saved=trueForms,choices=typeof ALLY_FORM_CHOICE==='undefined'?null:ALLY_FORM_CHOICE,savedChoice=choices?.[codexType];
   try{
    if(selection?.form===2)trueForms=saved.filter(t=>t!==codexType);
+   if(selection?.form===3&&choices)delete choices[codexType];
    previous();
    const old=document.querySelector('#codexEvolveToggle');
    let box=document.querySelector('#codexFormAssets');
@@ -30,6 +31,6 @@
     const caption=document.createElement('span');caption.textContent=label;button.append(caption);
     button.onclick=()=>{selection={type:codexType,form};codexEvolved=form!==1;renderCodexPreview()};box.append(button);
    }
-  }finally{trueForms=saved}
+  }finally{trueForms=saved;if(choices){if(savedChoice===undefined)delete choices[codexType];else choices[codexType]=savedChoice;}}
  };
 })();

@@ -1,5 +1,27 @@
 // Dedicated deck editor. Changes use the existing deck save and deployment controls.
 let deckEditorGrade='all';
+let deckEditorCounter='all';
+const DECK_COUNTER_TRAITS=[['all','전체'],['red','빨간 적'],['floating','떠 있는 적'],['black','검은 적'],['metal','메탈'],['angel','천사'],['alien','에이리언'],['zombie','좀비'],['traitless','무속성']];
+function deckCounterReasons(s,trait){
+ if(trait==='all'||s.onlyTraitless&&trait!=='traitless')return [];
+ if(s.hiddenAbility&&typeof futureOpen==='function'&&!futureOpen())return [];
+ const reasons=[];
+ for(const [key,label]of [['strongVs','엄청 강하다'],['resistVs','맷집'],['massiveVs','초데미지'],['extremeVs','극데미지']])if(s[key]?.includes(trait)&&!(trait==='metal'&&['massiveVs','extremeVs'].includes(key)))reasons.push(label);
+ if(trait==='red'&&s.redStrong)reasons.push('빨간 적 특화');
+ if(trait==='floating'&&s.floatStrong)reasons.push('떠 있는 적 특화');
+ if(trait==='traitless'&&s.onlyTraitless)reasons.push('무속성 전용');
+ if(trait==='metal'){if(s.critChance>0)reasons.push('크리티컬');if(s.metalKiller>0)reasons.push('메탈 킬러');if(s.metalPriority)reasons.push('메탈 우선');}
+ if(trait==='zombie'&&s.zombieKiller)reasons.push('좀비 킬러');
+ if(trait==='alien'&&s.barrierBreak>0)reasons.push('베리어 브레이커');
+ if(!s.statusVs?.length||s.statusVs.includes(trait)){
+  const prefix=s.statusVs?.length?'':'공통 ';
+  if(s.freezeChance>0)reasons.push(prefix+'정지');
+  if(s.slowChance>0)reasons.push(prefix+'느리게');
+  if(s.atkDownChance>0&&s.atkDownPct>0)reasons.push(prefix+'공격력 다운');
+  if(s.blowChance>0)reasons.push(prefix+'날려버리기');
+ }
+ return [...new Set(reasons)];
+}
 const ENDGAME_DECK=['red','yellow','brick','indigo','ribbonorange','rainbow','cornflower','khaki','silver','fusioncream'];
 function applyEndgameDeck(){
  if(ENDGAME_DECK.some(t=>!allyUnlocked(t)||!allyStageAllowed(t)))return false;
@@ -10,6 +32,13 @@ DECK_EDITOR.id='deckEditor';DECK_EDITOR.className='overlay hidden';
 DECK_EDITOR.setAttribute('role','dialog');DECK_EDITOR.setAttribute('aria-modal','true');DECK_EDITOR.setAttribute('aria-labelledby','deckEditorTitle');
 DECK_EDITOR.innerHTML='<div class="deck-editor-panel"><div class="codex-heading"><h1 id="deckEditorTitle">덱 세팅</h1><button id="deckEditorClose" type="button">닫기</button></div><p id="deckEditorInfo" role="status"></p><section id="deckEditorCombos" aria-label="아군 콤보"></section><div id="deckEditorSlots" class="deck-editor-slots"></div><div id="deckEditorGrades" class="codex-tabs grade-tabs"></div><div id="deckEditorUnits" class="deck-editor-units"></div></div>';
 $('#game').append(DECK_EDITOR);
+const counterToggle=document.createElement('button');counterToggle.id='deckCounterToggle';counterToggle.type='button';counterToggle.textContent='속성 대항 찾기';counterToggle.setAttribute('aria-expanded','false');counterToggle.setAttribute('aria-controls','deckCounterPanel');
+const counterPanel=document.createElement('section');counterPanel.id='deckCounterPanel';counterPanel.hidden=true;counterPanel.setAttribute('aria-label','속성 대항 찾기');
+const counterHint=document.createElement('p');counterHint.textContent='적 속성을 골라 보유 아군을 찾으세요. 현재 선택한 진화 형태의 특효·메즈를 표시하며, 모든 속성에 통하는 메즈는 공통으로 표시합니다.';counterPanel.append(counterHint);
+const counterButtons=document.createElement('div');counterButtons.className='codex-tabs grade-tabs';
+for(const [trait,label]of DECK_COUNTER_TRAITS){const b=document.createElement('button');b.type='button';b.textContent=label;b.dataset.counterTrait=trait;b.setAttribute('aria-pressed',String(trait==='all'));b.onclick=()=>{deckEditorCounter=trait;renderDeckEditor();};counterButtons.append(b);}
+counterPanel.append(counterButtons);$('#deckEditorGrades').before(counterToggle,counterPanel);
+counterToggle.onclick=()=>{counterPanel.hidden=!counterPanel.hidden;counterToggle.setAttribute('aria-expanded',String(!counterPanel.hidden));if(counterPanel.hidden){deckEditorCounter='all';renderDeckEditor();}};
 const DECK_EDITOR_BUTTON=document.createElement('button');DECK_EDITOR_BUTTON.id='deckEditorBtn';DECK_EDITOR_BUTTON.type='button';DECK_EDITOR_BUTTON.textContent='덱 세팅';$('#codexBtn').after(DECK_EDITOR_BUTTON);
 function deckEditorName(t){const s=unitStats(t);return unitDisplayName(t,s.trueForm,s.evolved)}
 function changeDeckOrder(t,delta){const i=deck.indexOf(t),j=i+delta;if(i<0||j<0||j>=deck.length)return;[deck[i],deck[j]]=[deck[j],deck[i]];saveDeck();renderTraining();render();renderDeckEditor()}
@@ -32,9 +61,12 @@ function renderDeckEditor(){
  }
  const tabs=$('#deckEditorGrades');tabs.innerHTML='';for(const [g,label] of GRADE_LIST){const b=document.createElement('button');b.type='button';b.className='codex-tab'+(g===deckEditorGrade?' active':'');b.textContent=label;b.onclick=()=>{deckEditorGrade=g;renderDeckEditor()};tabs.append(b)}
  const grid=$('#deckEditorUnits');grid.innerHTML='';
- for(const t of ALLIES){if(!allyUnlocked(t)||(deckEditorGrade!=='all'&&gradeOf(t)!==deckEditorGrade))continue;const s=unitStats(t),selected=deck.includes(t),allowed=allyStageAllowed(t),card=document.createElement('article');card.className='deck-editor-unit'+(selected?' selected':'');card.innerHTML=`${profileMarkup(t,s.evolved)}<strong>${deckEditorName(t)}</strong><small>Lv.${levelText(t)} · ${s.cost.toLocaleString()}원</small><p>${ROLES[t]}</p>`;
+ for(const b of counterButtons.children){const active=b.dataset.counterTrait===deckEditorCounter;b.setAttribute('aria-pressed',String(active));b.classList.toggle('active',active);}
+ for(const t of ALLIES){if(!allyUnlocked(t)||(deckEditorGrade!=='all'&&gradeOf(t)!==deckEditorGrade))continue;const s=unitStats(t),reasons=deckCounterReasons(s,deckEditorCounter);if(deckEditorCounter!=='all'&&!reasons.length)continue;const selected=deck.includes(t),allowed=allyStageAllowed(t),card=document.createElement('article');card.className='deck-editor-unit'+(selected?' selected':'');card.innerHTML=`${profileMarkup(t,s.evolved)}<strong>${deckEditorName(t)}</strong><small>Lv.${levelText(t)} · ${s.cost.toLocaleString()}원</small><p>${ROLES[t]}</p>`;
+  if(deckEditorCounter!=='all'){const reason=document.createElement('small');reason.textContent=reasons.join(' · ');card.append(reason);}
   const b=document.createElement('button');b.type='button';b.textContent=selected?'덱에서 빼기':!allowed?'★4 출전 불가':deck.length>=DECK_SIZE?'덱 가득참':'덱에 넣기';b.disabled=!selected&&(!allowed||deck.length>=DECK_SIZE);b.setAttribute('aria-label',`${deckEditorName(t)} ${selected?'덱에서 빼기':'덱에 넣기'}`);b.onclick=()=>editDeckMember(t);card.append(b);grid.append(card)
  }
+ if(!grid.children.length){const empty=document.createElement('p');empty.textContent='현재 등급·속성 조건에 맞는 보유 아군이 없습니다.';grid.append(empty);}
 }
 function closeDeckEditor(){DECK_EDITOR.classList.add('hidden');DECK_EDITOR_BUTTON.focus()}
 DECK_EDITOR_BUTTON.onclick=()=>{renderDeckEditor();DECK_EDITOR.classList.remove('hidden');$('#deckEditorClose').focus()};

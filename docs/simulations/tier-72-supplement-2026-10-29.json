@@ -1,0 +1,1027 @@
+{
+  "date": "2026-10-29",
+  "map": "405:3",
+  "name": "황제의 야옹이",
+  "seeds": 3,
+  "policies": [
+    "auto",
+    "smart2"
+  ],
+  "core": [
+    "red",
+    "yellow",
+    "blue",
+    "purple"
+  ],
+  "anchor": {
+    "gain": 21.043333333333347,
+    "se": 3.9012490877210433,
+    "perSeed": [
+      18.360000000000042,
+      16.04000000000003,
+      28.72999999999997
+    ],
+    "tier": "B",
+    "historicalMatchedSeeds": 21.043333333333347,
+    "drift": 0
+  },
+  "rows": [
+    {
+      "key": "lavender2",
+      "id": "lavender",
+      "form": 2,
+      "name": "라벤더",
+      "grade": "basic",
+      "gain": -11.78000000000001,
+      "se": 5.672627257276817,
+      "perSeed": [
+        -12.670000000000003,
+        -21.130000000000003,
+        -1.5400000000000302
+      ],
+      "tier": "X"
+    },
+    {
+      "key": "lavender3",
+      "id": "lavender",
+      "form": 3,
+      "name": "라벤더",
+      "grade": "basic",
+      "gain": 15.653333333333341,
+      "se": 2.260341665422371,
+      "perSeed": [
+        11.160000000000036,
+        17.470000000000006,
+        18.32999999999998
+      ],
+      "tier": "C"
+    },
+    {
+      "key": "azure2",
+      "id": "azure",
+      "form": 2,
+      "name": "애저",
+      "grade": "basic",
+      "gain": -10.28,
+      "se": 5.699274807669259,
+      "perSeed": [
+        -14.500000000000002,
+        1.000000000000023,
+        -17.34000000000002
+      ],
+      "tier": "X"
+    },
+    {
+      "key": "azure3",
+      "id": "azure",
+      "form": 3,
+      "name": "애저",
+      "grade": "basic",
+      "gain": 44.62,
+      "se": 1.5504945447608818,
+      "perSeed": [
+        43.62999999999999,
+        42.57000000000004,
+        47.65999999999995
+      ],
+      "tier": "SSS"
+    },
+    {
+      "key": "aqua2",
+      "id": "aqua",
+      "form": 2,
+      "name": "아쿠아",
+      "grade": "rare",
+      "gain": 8.343333333333325,
+      "se": 1.1616846005310937,
+      "perSeed": [
+        7.929999999999993,
+        6.570000000000009,
+        10.529999999999973
+      ],
+      "tier": "D"
+    },
+    {
+      "key": "aqua3",
+      "id": "aqua",
+      "form": 3,
+      "name": "아쿠아",
+      "grade": "rare",
+      "gain": 18.099999999999984,
+      "se": 1.8572021968541705,
+      "perSeed": [
+        15.199999999999992,
+        17.54,
+        21.559999999999956
+      ],
+      "tier": "B"
+    },
+    {
+      "key": "babyblue2",
+      "id": "babyblue",
+      "form": 2,
+      "name": "베이비 블루",
+      "grade": "rare",
+      "gain": 13.433333333333318,
+      "se": 2.141201635634614,
+      "perSeed": [
+        9.300000000000042,
+        16.469999999999985,
+        14.529999999999932
+      ],
+      "tier": "C"
+    },
+    {
+      "key": "babyblue3",
+      "id": "babyblue",
+      "form": 3,
+      "name": "베이비 블루",
+      "grade": "rare",
+      "gain": 52.69666666666666,
+      "se": 2.365814400534778,
+      "perSeed": [
+        48.93000000000001,
+        52.099999999999994,
+        57.059999999999974
+      ],
+      "tier": "OP"
+    },
+    {
+      "key": "cheerdandelion2",
+      "id": "cheerdandelion",
+      "form": 2,
+      "name": "응원단 민들레",
+      "grade": "sr",
+      "gain": 4.7566666666666535,
+      "se": 2.5998995707099333,
+      "perSeed": [
+        4.23,
+        0.5400000000000071,
+        9.499999999999954
+      ],
+      "tier": "E"
+    }
+  ],
+  "meta": [
+    {
+      "key": "base",
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "key": "base",
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "key": "base",
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "key": "base",
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "key": "base",
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "key": "base",
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "key": "lavender2",
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "key": "lavender2",
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "key": "lavender2",
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "key": "lavender2",
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "key": "lavender2",
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "key": "lavender2",
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "key": "lavender3",
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "key": "lavender3",
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "key": "lavender3",
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "key": "lavender3",
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "key": "lavender3",
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "key": "lavender3",
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "key": "azure2",
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "key": "azure2",
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "key": "azure2",
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "key": "azure2",
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "key": "azure2",
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "key": "azure2",
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "key": "azure3",
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "key": "azure3",
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "key": "azure3",
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "key": "azure3",
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "key": "azure3",
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "key": "azure3",
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "key": "aqua2",
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "key": "aqua2",
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "key": "aqua2",
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "key": "aqua2",
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "key": "aqua2",
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "key": "aqua2",
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "key": "aqua3",
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "key": "aqua3",
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "key": "aqua3",
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "key": "aqua3",
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "key": "aqua3",
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "key": "aqua3",
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "key": "babyblue2",
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "key": "babyblue2",
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "key": "babyblue2",
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "key": "babyblue2",
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "key": "babyblue2",
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "key": "babyblue2",
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "key": "babyblue3",
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "key": "babyblue3",
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "key": "babyblue3",
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "key": "babyblue3",
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "key": "babyblue3",
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "key": "babyblue3",
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "key": "cheerdandelion2",
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "key": "cheerdandelion2",
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "key": "cheerdandelion2",
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "key": "cheerdandelion2",
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "key": "cheerdandelion2",
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "key": "cheerdandelion2",
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "key": "garnet2",
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "key": "garnet2",
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "key": "garnet2",
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "key": "garnet2",
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "key": "garnet2",
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "key": "garnet2",
+      "seed": 3,
+      "policy": "smart2"
+    }
+  ],
+  "raw": [
+    {
+      "id": 0,
+      "win": true,
+      "timeout": false,
+      "seconds": 83.33,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 1,
+      "win": true,
+      "timeout": false,
+      "seconds": 83.33,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 2,
+      "win": true,
+      "timeout": false,
+      "seconds": 83.87,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 3,
+      "win": true,
+      "timeout": false,
+      "seconds": 83.87,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 4,
+      "win": true,
+      "timeout": false,
+      "seconds": 87.93,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 5,
+      "win": true,
+      "timeout": false,
+      "seconds": 87.93,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 6,
+      "win": true,
+      "timeout": false,
+      "seconds": 96,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 7,
+      "win": true,
+      "timeout": false,
+      "seconds": 96,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 8,
+      "win": true,
+      "timeout": false,
+      "seconds": 105,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 9,
+      "win": true,
+      "timeout": false,
+      "seconds": 105,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 10,
+      "win": true,
+      "timeout": false,
+      "seconds": 89.47,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 11,
+      "win": true,
+      "timeout": false,
+      "seconds": 89.47,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 12,
+      "win": true,
+      "timeout": false,
+      "seconds": 72.17,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 13,
+      "win": true,
+      "timeout": false,
+      "seconds": 72.17,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 14,
+      "win": true,
+      "timeout": false,
+      "seconds": 66.4,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 15,
+      "win": true,
+      "timeout": false,
+      "seconds": 66.4,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 16,
+      "win": true,
+      "timeout": false,
+      "seconds": 69.6,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 17,
+      "win": true,
+      "timeout": false,
+      "seconds": 69.6,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 18,
+      "win": true,
+      "timeout": false,
+      "seconds": 97.83,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 19,
+      "win": true,
+      "timeout": false,
+      "seconds": 97.83,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 20,
+      "win": true,
+      "timeout": false,
+      "seconds": 82.87,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 21,
+      "win": true,
+      "timeout": false,
+      "seconds": 82.87,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 22,
+      "win": true,
+      "timeout": false,
+      "seconds": 105.27,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 23,
+      "win": true,
+      "timeout": false,
+      "seconds": 105.27,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 24,
+      "win": true,
+      "timeout": false,
+      "seconds": 39.7,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 25,
+      "win": true,
+      "timeout": false,
+      "seconds": 39.7,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 26,
+      "win": true,
+      "timeout": false,
+      "seconds": 41.3,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 27,
+      "win": true,
+      "timeout": false,
+      "seconds": 41.3,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 28,
+      "win": true,
+      "timeout": false,
+      "seconds": 40.27,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 29,
+      "win": true,
+      "timeout": false,
+      "seconds": 40.27,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 30,
+      "win": true,
+      "timeout": false,
+      "seconds": 75.4,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 31,
+      "win": true,
+      "timeout": false,
+      "seconds": 75.4,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 32,
+      "win": true,
+      "timeout": false,
+      "seconds": 77.3,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 33,
+      "win": true,
+      "timeout": false,
+      "seconds": 77.3,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 34,
+      "win": true,
+      "timeout": false,
+      "seconds": 77.4,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 35,
+      "win": true,
+      "timeout": false,
+      "seconds": 77.4,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 36,
+      "win": true,
+      "timeout": false,
+      "seconds": 68.13,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 37,
+      "win": true,
+      "timeout": false,
+      "seconds": 68.13,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 38,
+      "win": true,
+      "timeout": false,
+      "seconds": 66.33,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 39,
+      "win": true,
+      "timeout": false,
+      "seconds": 66.33,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 40,
+      "win": true,
+      "timeout": false,
+      "seconds": 66.37,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 41,
+      "win": true,
+      "timeout": false,
+      "seconds": 66.37,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 42,
+      "win": true,
+      "timeout": false,
+      "seconds": 74.03,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 43,
+      "win": true,
+      "timeout": false,
+      "seconds": 74.03,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 44,
+      "win": true,
+      "timeout": false,
+      "seconds": 67.4,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 45,
+      "win": true,
+      "timeout": false,
+      "seconds": 67.4,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 46,
+      "win": true,
+      "timeout": false,
+      "seconds": 73.4,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 47,
+      "win": true,
+      "timeout": false,
+      "seconds": 73.4,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 48,
+      "win": true,
+      "timeout": false,
+      "seconds": 34.4,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 49,
+      "win": true,
+      "timeout": false,
+      "seconds": 34.4,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 50,
+      "win": true,
+      "timeout": false,
+      "seconds": 31.77,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 51,
+      "win": true,
+      "timeout": false,
+      "seconds": 31.77,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 52,
+      "win": true,
+      "timeout": false,
+      "seconds": 30.87,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 53,
+      "win": true,
+      "timeout": false,
+      "seconds": 30.87,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 54,
+      "win": true,
+      "timeout": false,
+      "seconds": 79.1,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 55,
+      "win": true,
+      "timeout": false,
+      "seconds": 79.1,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 56,
+      "win": true,
+      "timeout": false,
+      "seconds": 83.33,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 57,
+      "win": true,
+      "timeout": false,
+      "seconds": 83.33,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 58,
+      "win": true,
+      "timeout": false,
+      "seconds": 78.43,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 59,
+      "win": true,
+      "timeout": false,
+      "seconds": 78.43,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 60,
+      "win": true,
+      "timeout": false,
+      "seconds": 64.97,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 61,
+      "win": true,
+      "timeout": false,
+      "seconds": 64.97,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 62,
+      "win": true,
+      "timeout": false,
+      "seconds": 67.83,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 63,
+      "win": true,
+      "timeout": false,
+      "seconds": 67.83,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 64,
+      "win": true,
+      "timeout": false,
+      "seconds": 59.2,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 65,
+      "win": true,
+      "timeout": false,
+      "seconds": 59.2,
+      "allyHp": 60000,
+      "enemyHp": 0
+    }
+  ]
+}

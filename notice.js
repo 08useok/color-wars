@@ -2,9 +2,15 @@
 // v1 세계편 (first push, 2026-09-24) · v2 레전드 스토리 (09-30) · v3 미래편 1장 (10-03) · v4 미래편 2장 + 3진 (10-06) · v5 미래편 3장 (10-08) · v6 우주편 1장 (10-09) · v7 우주편 2장 (10-22).
 // User release rule (2026-10-18): bump PATCH for every commit-and-push release unless an explicit version is requested; do not bump twice when already prepared.
 // A new NOTICE.version shows the notice once on load; the 공지 button on the stage screen reopens it.
-const GAME_VERSION='7.2.0';
+const GAME_VERSION='7.2.1';
 const NOTICE={version:GAME_VERSION,date:'2026-10-29',title:`v${GAME_VERSION} 업데이트`,html:`
 <p class="notice-lead">지금까지 <b>세계편 1~3장 · 미래편 1~3장 · 우주편 1~2장 · 레전드 스토리 1~40장</b>을 담았습니다.</p>
+<h3>🛠️ v7.2.1 덱 속성 검색 · 진화 선택 · 보스 전투 수정</h3>
+<ul><li>덱 세팅에 <b>속성 대항 찾기</b>를 추가했습니다. 적 속성별로 보유 아군을 찾고 특효·메즈 등 대응 이유를 확인할 수 있습니다. 현재 진화 형태와 등급 필터를 반영합니다.</li>
+<li>3진 보유 캐릭터도 <b>1·2·3진을 각각 선택</b>할 수 있습니다. ‘2진으로 변경’을 눌렀을 때 3진으로 바뀌던 문제를 수정하고, 선택 형태를 저장합니다. 도감의 형태 미리보기는 실제 선택을 바꾸지 않습니다.</li>
+<li>애시드의 영혼 공격으로 좀비 사이클론의 부활을 취소하면 <b>최종 처치로 인정</b>하여 성 보호가 풀리도록 수정했습니다.</li>
+<li>보스 등장 충격파를 <b>거리 10 · 지속시간 1.2초 · 총 2회 바운스</b>로 조정했습니다. 일반 피격 넉백은 그대로입니다.</li>
+<li>신규 아군·3진의 총평에 성능 개선 이유와 활용 조건을 보강했습니다. 티어표 문서에는 신규 5개 형태의 짧은 추가 측정과 잠정 티어를 구분해 적었습니다.</li></ul>
 <h3>🌼 v7.2.0 신규 3진 4명 · 좀비 사이클론 강림</h3>
 <ul><li><b>플로럴 라벤더</b>: 체력 150%·공격력 140%. 공격력 다운 확정·기본 7초, 확정 느리게 3초, 공격 간격 3초. 체력 절반 이하에서 공격력이 2배가 됩니다.</li>
 <li><b>빅웨이브 애저</b>: 체력·공격력 300%. 크리티컬 20%를 유지하고, 30% 확률의 3배 혼신의 일격과 30% 확률의 10레벨 파동을 얻습니다.</li>

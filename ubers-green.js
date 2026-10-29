@@ -72,6 +72,8 @@ resolveAttack=function(u,t,share){
    const dx=v.x-u.x;
    if(-dx>=-1&&Math.abs(dx)<=d.range){
     delete v.reviveAt;
+    // Soulstrike bypasses the normal lethal-hit path; release the cyclone castle too.
+    if(typeof CYCLONE_EVENTS!=='undefined'&&CYCLONE_EVENTS.some(e=>e.index===selectedStage&&e.boss===v.type))game.cyBossDown=true;
     game.money=Math.min(walletMax(),game.money+Math.round(data.units[v.type].reward*enemyMagnification()*accMult()));
    }
   }

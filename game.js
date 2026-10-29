@@ -1167,8 +1167,8 @@ function tickHitback(u,dt){
 const SURFACE_DURATION=40/30;
 const ZOMBIE_FX={"down":[[0,13,47,53,31,16],[49,15,45,51,28,1],[96,35,63,31,33,-7],[161,29,65,37,33,-7],[228,23,69,43,34,-7],[299,31,71,35,35,-7],[372,38,83,28,42,-7],[457,38,86,28,45,-7],[545,37,89,29,45,-7],[636,37,89,29,45,-7],[727,38,90,28,45,-7],[819,38,90,28,45,-7],[911,38,90,28,45,-7],[1003,38,90,28,45,-7],[1095,38,90,28,45,-7],[1187,38,90,28,45,-7],[1279,38,90,28,45,-7]],"revive":[[1371,38,90,28,45,-7],[1463,35,90,31,45,-6],[1555,32,90,34,45,-6],[1647,28,90,38,45,-7],[1739,25,90,41,45,-6],[1831,22,90,44,45,-6],[1923,19,89,47,44,-6],[2014,16,88,50,44,-6],[2104,12,86,54,43,-7],[2192,9,84,57,42,-7],[2278,6,81,60,41,-6],[2361,3,75,63,38,-7],[2438,0,66,66,33,-6],[2506,26,43,40,27,22],[2551,26,42,40,26,24],[2595,28,42,38,26,28],[2639,28,41,38,25,31],[2682,29,41,37,25,34],[2725,29,40,37,24,37],[2767,45,39,21,24,40],[2808,65,1,1,27,7]]};
 function zombieFx(el,state,i){const fr=ZOMBIE_FX[state],f=fr[Math.max(0,Math.min(fr.length-1,i|0))];el.style.backgroundPosition=`-${f[0]}px -${f[1]}px`;el.style.width=f[2]+'px';el.style.height=f[3]+'px';el.style.left=(21-f[4]*.833)+'px';el.style.bottom=(f[5]*.833)+'px'}
-const BOSS_KNOCKBACK_DURATION=.8;
-const BOSS_KNOCKBACK_DISTANCE=HITBACK_DISTANCE;// 원작: 보스 충격파는 일반 넉백과 같은 거리
+const BOSS_KNOCKBACK_DURATION=1.2;
+const BOSS_KNOCKBACK_DISTANCE=10;// 보스 등장 충격파 전용 거리. 일반 피격 넉백(6)은 유지한다.
 function triggerBossShockwave(){
  const field=$('#field');field.classList.remove('boss-shake');void field.offsetWidth;field.classList.add('boss-shake');
  const wave=document.createElement('i');wave.className='boss-wave';field.append(wave);if(typeof setTimeout==='function'){setTimeout(()=>wave.remove(),850);setTimeout(()=>field.classList.remove('boss-shake'),450);}
