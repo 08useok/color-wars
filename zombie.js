@@ -153,3 +153,45 @@ renderStageMenu=function(){
  if(note&&!note.textContent.includes('보라색 Z'))note.textContent+=(note.textContent?' · ':'')+`보라색 Z = 좀비 침공(Z 메달 ${zombieSave.clear.length}개)`;
 };
 renderStageMenu();
+// ---- 도감 (v7.3.1): 침공판에만 나오는 좀비도 적 도감에 올린다. 그 좀비가 나오는 침공판을 하나라도 깨면 '본 적 있음'.
+{
+ const Z_FLAVOR={
+  zdog:'좀비가 된 멍뭉이. 원래보다 훨씬 단단하다.',znache:'좀비가 된 낼름이. 원래보다 훨씬 단단하다.',zguys:'좀비가 된 하마양. 묵직한 범위 공격을 한다.',
+  zpigge:'좀비가 된 돼지새끼. 느리지만 단단하고 범위로 들이받는다.',zpeng:'좀비가 된 재키펭. 빠른 주먹을 쉬지 않고 날린다.',zgory:'좀비가 된 고릴라저씨. 빠르게 범위 공격을 한다.',
+  zseal:'좀비가 된 바다레오파드. 넓게 할퀸다.',zcroco:'뼈만 남은 좀비 아거. 약하지만 재빠르다.',zkangaroo:'좀비가 된 캥거류. 빠르게 달려와 세게 친다.',
+  zbear:'좀비가 된 곰선생. 멀리까지 닿는 범위 공격을 한다.',zbore:'좀비가 된 샤이 보어. 엄청나게 빠르게 달려와 범위로 몰아친다.',zthrillerz:'좀비가 된 놈놈놈 3인조. 공격력이 매우 높다.',
+  zdagshund:'좀비가 된 핫도그. 먼 거리에 범위 공격을 하고, 맞은 아군을 반드시 2초간 멈추게 한다.',zduche:'좀비가 된 오리룰루. 공격력이 매우 높다.',
+  zcamelle:'좀비가 된 혹부리 낙타. 아주 먼 거리에 범위 공격을 한다.'
+ };
+ const times=n=>n>=99?'끝없이':n===1?'한 번':n+'번';
+ for(const [id,flavor] of Object.entries(Z_FLAVOR)){
+  if(!data.units[id]||ENEMY_TEXT[id])continue;
+  // 땅굴은 다음 파일(zombie-burrow.js)이 붙이므로 읽을 때 만든다
+  Object.defineProperty(ENEMY_TEXT,id,{enumerable:true,configurable:true,get(){
+   const u=data.units[id],parts=[flavor];
+   if(u.burrow)parts.push(`땅굴을 ${times(u.burrow.times)} 파서 전선 뒤로 파고든다.`);
+   parts.push(`쓰러져도 ${Math.round(u.reviveDelay*10)/10}초 뒤 체력 ${Math.round(u.reviveHp*100)}%로 ${times(u.reviveCount)} 되살아나며, 좀비 킬러로 마무리하면 되살아나지 못한다. 좀비.`);
+   return parts.join(' ');
+  }});
+  if(!ENEMY_ORDER.includes(id))ENEMY_ORDER.push(id);
+ }
+}
+let zombieCodexIndex=null;
+function zombieOutbreakStagesOf(t){
+ if(!zombieCodexIndex){zombieCodexIndex={};for(const c of Object.keys(ZOMBIE_CHAPTERS))for(const i of zombieStagesOf(+c))for(const x of new Set((zombieRulesOf(i)||[]).map(r=>r.type)))(zombieCodexIndex[x]??=[]).push(i)}
+ return zombieCodexIndex[t]||[];
+}
+const _zbEnemySeen=enemySeen;
+enemySeen=function(t){return _zbEnemySeen(t)||zombieOutbreakStagesOf(t).some(i=>zombieSave.clear.includes(i))};
+const _zbCodexExtra=renderCodexExtra;
+renderCodexExtra=function(ally){
+ _zbCodexExtra.apply(this,arguments);
+ if(ally||!codexWiki)return;
+ const list=zombieOutbreakStagesOf(codexType);if(!list.length)return;
+ const ex=$('#codexExtra');if(!stagesOfEnemy(codexType).length)ex.innerHTML='';// 일반 스테이지에 안 나오면 '정보 없음' 대신 침공판만
+ ex.insertAdjacentHTML('beforeend',`<h3>좀비 침공 <small>${list.length}곳</small></h3>`);
+ const wrap=document.createElement('div');wrap.className='codex-chips';
+ for(const i of list.slice(0,24)){const b=document.createElement('span');b.className='codex-chip';b.textContent=`${ZOMBIE_CHAPTERS[chapterOf(i)].label} · ${STAGES[i].name}`;wrap.append(b)}
+ if(list.length>24){const m=document.createElement('span');m.className='codex-more';m.textContent=`외 ${list.length-24}곳`;wrap.append(m)}
+ ex.append(wrap);
+};

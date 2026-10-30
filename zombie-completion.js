@@ -37,12 +37,13 @@ allyDeployFull=function(){const limit=STAGES[selectedStage]?.allyLimit;const hid
 // The legacy area attack path ignores hit shares. Apply them only to the new Zuche.
 const outbreakResolveBefore=resolveAttack;
 resolveAttack=function(u,t,share=1){if(u.type!=='zuche'||!u.stats?.area||share===1)return outbreakResolveBefore.apply(this,arguments);const atk=u.stats.atk;try{u.stats.atk=atk*share;return outbreakResolveBefore.call(this,u,t,1)}finally{u.stats.atk=atk}};
+// 워프(warpChance·warpDistance·warpDuration): 맞은 아군이 사라졌다가 뒤에서 나타난다. 처음엔 좀비 까르삔초 전용이었고, v7.3.1부터 워프 능력을 가진 모든 적이 쓴다(엘리트 에이리뭉·스타 펭·화백·캡틴 모구·게콕).
 const outbreakDamageBefore=damage;
 damage=function(v,amount,from){
  if(v?.warpLeft>0)return;
  if(v?.type==='zapy'&&((game.inWave&&v.stats.waveImmune)||(game.inSurge&&v.stats.surgeImmune)))return;
  const before=v?.hp,result=outbreakDamageBefore.apply(this,arguments);
- if(from?.type==='zapy'&&v?.ally&&v.hp>0&&v.hp<before&&!v.stats?.immune?.warp&&!v.warpLeft&&Math.random()<from.stats.warpChance){
+ if(from?.stats?.warpChance&&!from.ally&&v?.ally&&v.hp>0&&v.hp<before&&!v.stats?.immune?.warp&&!v.warpLeft&&Math.random()<from.stats.warpChance){
   v.warpLeft=from.stats.warpDuration;v.warpEnd=Math.min(98,v.x+from.stats.warpDistance);v.attackTime=0;v.pendingAttack=null;v.atkCd=0;
   v.el.style.visibility='hidden';game.units=game.units.filter(u=>u!==v);(game.warped??=[]).push(v);
  }
@@ -51,7 +52,7 @@ damage=function(v,amount,from){
 const outbreakAttackBefore=attack;
 attack=function(u){if(u.warpLeft>0)return;return outbreakAttackBefore.apply(this,arguments)};
 const outbreakBadgesBefore=codexTraitBadges;
-codexTraitBadges=function(d){const b=outbreakBadgesBefore.apply(this,arguments);if(d.warpChance)b.push(Math.round(d.warpChance*100)+'% 워프 · '+d.warpDuration+'초');return b};
+codexTraitBadges=function(d){const b=outbreakBadgesBefore.apply(this,arguments);if(d.warpChance)b.push(Math.round(d.warpChance*100)+'% 워프 · '+Math.round(d.warpDuration*10)/10+'초');return b};
 const outbreakUpdateBefore=update;
 update=function(dt){
  const moving=game?.running&&!game.paused&&!game.ended,warped=moving?[...(game.warped||[])]:[];

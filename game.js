@@ -839,14 +839,14 @@ data.units.blackleboin={trait:'black',hp:460000,atk:16000,interval:6.233,speed:1
 data.units.supermetalhippo={trait:'metal',hp:8000,atk:3000,interval:1.567,speed:9.65,range:5.8,reward:549,knockbacks:16,attackDuration:0.6,windup:0.267,area:true,blowChance:1,blowDistance:14};
 // 미래편 3장 final boss 폭주의 냥코무트: original stats (HP/ATK x1, speed x0.536, range x0.034, money x0.55), 3연속 공격은 한 방으로 합산.
 data.units.ragingcat={"traits":["floating","alien"],"hp":1222222,"atk":44444,"interval":1.167,"speed":21.44,"range":10.9,"reward":2444,"knockbacks":10,"attackDuration":1.167,"windup":0.167,"area":true};
-// 우주편 1장 enemies: original stats (HP/ATK x1, speed x0.536, range x0.034, money x0.55). 워프 is played as 날려버림 over the warp distance;
+// 우주편 1장 enemies: original stats (HP/ATK x1, speed x0.536, range x0.034, money x0.55). 워프 is a real warp (v7.3.1: the ally vanishes for the original frames and comes back that far behind; was 날려버림 before);
 // 베리어 values stay at the original numbers. 신님's 3-hit 18,000x3 is one 53,997 hit.
-data.units.shibalienelite={trait:'alien',hp:7000,atk:500,interval:1.233,speed:6.43,range:4.1,reward:55,knockbacks:3,attackDuration:0.533,windup:0.267,starred:true,blowChance:0.35,blowDistance:25.5};
-data.units.starpeng={trait:'alien',hp:14000,atk:750,interval:0.8,speed:7.5,range:5.1,reward:248,knockbacks:2,attackDuration:0.8,windup:0.267,starred:true,blowChance:1,blowDistance:17};
+data.units.shibalienelite={trait:'alien',hp:7000,atk:500,interval:1.233,speed:6.43,range:4.1,reward:55,knockbacks:3,attackDuration:0.533,windup:0.267,starred:true,warpChance:0.35,warpDistance:25.5,warpDuration:10/30};// 원작: 35% 750 뒤로 워프(10F)
+data.units.starpeng={trait:'alien',hp:14000,atk:750,interval:0.8,speed:7.5,range:5.1,reward:248,knockbacks:2,attackDuration:0.8,windup:0.267,starred:true,warpChance:1,warpDistance:17,warpDuration:100/30};// 원작: 100% 500 뒤로 워프(100F)
 data.units.gregory={trait:'alien',hp:15000,atk:567,interval:0.533,speed:8.04,range:5.6,reward:275,knockbacks:5,attackDuration:0.533,windup:0.267,area:true,starred:true,barrier:6000};
 data.units.mamaleboin={trait:'alien',hp:10000,atk:1147,interval:6.233,speed:2.14,range:13.6,reward:550,knockbacks:1,attackDuration:0.533,windup:0.267,area:true,starred:true,barrier:40000};
-data.units.painter={trait:'alien',hp:12800,atk:149,interval:0.8,speed:2.14,range:15.3,reward:825,knockbacks:4,attackDuration:0.8,windup:0.033,area:true,starred:true,blowChance:0.2,blowDistance:17};
-data.units.captainmogu={trait:'alien',hp:16000,atk:222,interval:6,speed:3.22,range:10.2,reward:413,knockbacks:6,attackDuration:3.533,windup:2.033,area:true,starred:true,zoneMin:10.2,zoneMax:20.4,barrier:2500,blowChance:0.3,blowDistance:8.5};
+data.units.painter={trait:'alien',hp:12800,atk:149,interval:0.8,speed:2.14,range:15.3,reward:825,knockbacks:4,attackDuration:0.8,windup:0.033,area:true,starred:true,warpChance:0.2,warpDistance:17,warpDuration:10/30};// 원작: 20% 500 뒤로 워프(10F)
+data.units.captainmogu={trait:'alien',hp:16000,atk:222,interval:6,speed:3.22,range:10.2,reward:413,knockbacks:6,attackDuration:3.533,windup:2.033,area:true,starred:true,zoneMin:10.2,zoneMax:20.4,barrier:2500,warpChance:0.3,warpDistance:8.5,warpDuration:40/30};// 원작: 30% 250 뒤로 워프(40F)
 data.units.spaceborg={traits:['floating','alien'],hp:30000,atk:1234,interval:9.933,speed:3.22,range:28.6,reward:1222,knockbacks:3,attackDuration:4.033,windup:1.967,area:true,starred:true,barrier:12000};
 data.units.kamisama={trait:'floating',hp:1399999,atk:53997,interval:12.033,speed:1.61,range:34,reward:3300,knockbacks:5,attackDuration:6.7,windup:3,area:true};
 // Legend Story 28-36 enemies: original stats (HP/ATK x1, speed x0.536, range x0.034, money x0.55). Zombies revive and burrow
@@ -3013,12 +3013,12 @@ const ENEMY_TEXT={
  misshaka:'묘지기 하나코. 넉백이 아주 잦지만 땅굴을 끝없이 판다. 좀비. (레전드 스토리 보스)',
  bigsal:'거대한 좀비 도롱뇽. 한 방이 엄청나고 성에 4배 피해, 땅굴을 끝없이 판다. 좀비. (레전드 스토리 보스)',
  coffinzoge:'관 속의 멍뭉이. 쓰러져도 2초 뒤 계속 되살아난다. 좀비 킬러로 마무리해야 한다. 좀비. (레전드 스토리)',
- shibalienelite:'우주 계급 별 하나를 단 엘리트 에이리뭉. 35% 확률로 아군을 멀리 워프시킨다. 별 에이리언. (우주편)',
- starpeng:'워프 능력을 발명한 펭귄 마을의 과학자. 맞으면 반드시 멀리 워프된다. 별 에이리언. (우주편)',
+ shibalienelite:'우주 계급 별 하나를 단 엘리트 에이리뭉. 35% 확률로 아군을 멀리 뒤로 워프시킨다(잠깐 사라졌다가 뒤에서 나타남). 별 에이리언. (우주편)',
+ starpeng:'워프 능력을 발명한 펭귄 마을의 과학자. 맞은 아군은 반드시 3초 넘게 사라졌다가 멀리 뒤에서 나타난다. 별 에이리언. (우주편)',
  gregory:'얼굴이 무섭다는 이유로 장군이 된 고릴라. 베리어(6,000)를 두르고 범위로 빠르게 공격한다. 별 에이리언. (우주편)',
  mamaleboin:'철벽 같은 몸을 가진 엄마 코끼리. 아주 두꺼운 베리어(40,000)를 두르고 멀리서 쏜다. 별 에이리언. (우주편)',
- painter:'혀로 캔버스에 그림을 그리는 화백. 아주 먼 곳까지 혀를 뻗고, 20% 확률로 워프시킨다. 별 에이리언. (우주편)',
- captainmogu:'우주의 평화를 지키는 두더지. 땅속에서 다가와 먼 곳에 범위 공격을 하고, 베리어(2,500)와 30% 워프를 지녔다. 별 에이리언. (우주편)',
+ painter:'혀로 캔버스에 그림을 그리는 화백. 아주 먼 곳까지 혀를 뻗고, 20% 확률로 아군을 뒤로 워프시킨다. 별 에이리언. (우주편)',
+ captainmogu:'우주의 평화를 지키는 두더지. 땅속에서 다가와 먼 곳에 범위 공격을 하고, 베리어(2,500)와 30% 워프(1.3초 사라졌다가 뒤에서 나타남)를 지녔다. 별 에이리언. (우주편)',
  spaceborg:'우주 끝을 떠도는 납작한 생물 병기. 베리어(12,000)를 두르고 엄청난 사거리로 공격한다. 떠있는 적·별 에이리언. (우주편)',
  kamisama:'"나 신님인데." 엄청난 체력과 사거리를 가진 우주편 최종 보스. 3연속 공격으로 넓은 범위를 쓸어 버린다. 떠있는 적. (우주편 1장 최종 보스)',
  ragingcat:'봉인된 탈을 벗어던지고 다시 세상을 멸하려 날아오른 냥코무트. 스스로도 힘을 다스리지 못해 엄청난 속도로 돌진하며 넓은 범위를 연속으로 할퀸다. 떠있는 적·에이리언. (미래편 3장 최종 보스)',
@@ -3076,15 +3076,15 @@ const ENEMY_TEXT={
  shibalien:'우주에서 온 에이리언 멍뭉이. 미래편 어디에나 나타나며 멍뭉이보다 훨씬 단단하다. 에이리언. (미래편)',
  kroxo:'눈이 툭 튀어나온 외계 아거. 작지만 빠른 연속 물기로 전선을 갉아먹는다. 에이리언. (미래편)',
  hyppoh:'하마양을 닮은 외계 생물. 큰 입으로 주변을 한꺼번에 물어뜯는다. 에이리언. (미래편)',
- sael:'더듬이를 숨긴 외계 바다레오파드. 입을 쩍 벌려 넓게 할퀸다. 에이리언. (미래편)',
- maawth:'날개를 펄럭이며 돌진하는 외계 나방. 빠르게 날아와 몸통 박치기를 한다. 에이리언. (미래편)',
+ sael:'더듬이를 숨긴 외계 바다레오파드. 입을 쩍 벌려 넓게 할퀴고, 20% 확률로 2초간 느리게 한다. 에이리언. (미래편)',
+ maawth:'날개를 펄럭이며 돌진하는 외계 나방. 빠르게 날아와 몸통 박치기를 하고, 30% 확률로 2초간 멈추게 한다. 에이리언. (미래편)',
  lemurr:'커다란 안경을 쓴 외계 원숭이. 펄쩍 뛰어올라 날카로운 손톱으로 할퀸다. 에이리언. (미래편)',
  krabbe:'하얀 소라 껍데기를 뒤집어쓴 외계 집게. 느리지만 매우 단단하다. 에이리언. (미래편)',
- phace:'푸른 피부의 대갈이군. 느리게 떠다니며 먼 거리까지 강력한 범위 공격을 한다. 에이리언 보스. (미래편)',
+ phace:'푸른 피부의 대갈이군. 느리게 떠다니며 먼 거리까지 강력한 범위 공격을 하고, 30% 확률로 2초간 멈추게 한다. 에이리언 보스. (미래편)',
  ursamajor:'곰선생을 닮은 외계 곰. 긴 팔을 휘둘러 넓은 범위를 휩쓴다. 에이리언. (미래편)',
  clione:'소용돌이 무늬의 몸으로 떠다니는 파괴생물. 미래편 1장 달의 최종 보스. 에이리언. (미래편)',
  nimoy:'단발머리에 거대한 엄니를 가진 외계 멧돼지. 부유 대륙의 보스. 에이리언. (미래편)',
- liz56:'엘리자베스 2세의 먼 후손인 외계 돼지. 넉백이 많고 체력이 매우 높다. 에이리언. (미래편)',
+ liz56:'엘리자베스 2세의 먼 후손인 외계 돼지. 공격마다 반드시 파동을 일으키고, 넉백이 많고 체력이 매우 높다. 에이리언. (미래편)',
  shyboy:'빨갛게 달아오른 대갈이군. 느리지만 먼 거리까지 범위 공격을 한다. 빨간 적. (미래편)',
  gorydark:'새카만 고릴라저씨. 빠른 주먹질로 몰아친다. 검은 적. (미래편)',
  shadowboxer:'새끼를 품은 검은 캥거류. 원투 펀치와 어퍼컷을 날린다. 검은 적. (미래편)',

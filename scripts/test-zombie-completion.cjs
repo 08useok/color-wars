@@ -19,7 +19,8 @@ for(const b of old.allRules){
  });
  extra.forEach((r,k)=>assert.deepEqual(now[src.length+k],JSON.parse(JSON.stringify(r))));
 }
-for(const [id,s]of Object.entries(old.units))if(id!=='zguys')assert.deepEqual(JSON.parse(JSON.stringify(e.units[id])),s,'existing unit changed '+id);
+// 10-30: 원작 워프 5종은 날려버림 → 워프로 바뀜(test-enemy-consistency가 확인)
+for(const [id,s]of Object.entries(old.units))if(!['zguys','shibalienelite','starpeng','painter','captainmogu','ribbo'].includes(id))assert.deepEqual(JSON.parse(JSON.stringify(e.units[id])),s,'existing unit changed '+id);
 assert.equal(e.names.zguys,'좀비 하마양');assert(e.units.zguys.area);
 for(const [i,d]of t.completion){assert(!old.allRules[i].rules);assert(d.rules.length);assert(d.rules.some(r=>e.units[r.type].trait==='zombie'||e.units[r.type].traits?.includes('zombie')));for(const r of d.rules)assert(e.units[r.type],r.type);}
 // Newly completed chapters require all 47 non-final outbreaks before the Moon/Big Bang.
