@@ -5,7 +5,7 @@ const e=make({extraSetup:`globalThis.__g={STAGES,SP:STAGE_SPAWNS,base:()=>data.b
 const g0=globalThis.__g;delete globalThis.__g;
 e.setProfile({level:30});g0.setCleared(g0.STAGES.map((_,i)=>i));
 // 보스 규칙이 있는 모든 스테이지: 한 방에 성이 무너질 피해 → 체력 1 + 보스 소환 예약 → 한 프레임 뒤 보스 등장 → 이후 성이 무너질 수 있음
-const stages=g0.STAGES.map((s,i)=>i).filter(i=>(g0.SP[i]||[]).some(r=>r.boss));
+const stages=g0.STAGES.map((s,i)=>i).filter(i=>(g0.SP[i]||[]).some(r=>r.boss)&&!g0.STAGES[i].relay73);// 보어 릴레이(주자 5명이 차례로 나옴)는 test-stages-73이 따로 확인
 let checked=0,skipped=[];
 for(const i of stages){
  g0.sel(i);g0.deck(['red']);e.reset();const g=e.getGame();

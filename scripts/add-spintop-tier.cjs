@@ -1,0 +1,10 @@
+const fs=require('fs'),make=require('./full-harness.cjs'),tier=require('../docs/simulations/tier-current-2026-10-29.json'),e=make();
+const raw=[],perSeed=[],score=r=>r.win?2-Math.min(300,r.seconds)/300:Math.max(0,Math.min(.95,1-r.enemyHp/e.stageList[405].hp));
+e.setProfile({level:30,trueForms:[]});
+for(let seed=1;seed<=3;seed++){const base=[],candidate=[];for(const policy of ['auto','smart2']){const r=e.simulate(405,3,[...tier.core,'spintoprainbow'],seed,300,policy);candidate.push(score(r));raw.push({seed,policy,...r});const i=tier.meta.findIndex(m=>m.set==='main'&&m.id===null&&m.seed===seed&&m.policy===policy);base.push(score(tier.raw[i]));}perSeed.push((Math.max(...candidate)-Math.max(...base))*300);}
+const gain=perSeed.reduce((a,b)=>a+b,0)/3,se=Math.sqrt(perSeed.reduce((s,x)=>s+(x-gain)**2,0)/2/3),i=tier.edges.findIndex(x=>gain>=x),band=tier.bands[i<0?10:i];
+const out={name:'자이로 레인보우',id:'spintoprainbow',form:2,date:'2026-10-30',map:'405:3',grade:'rare',gain,se,band,perSeed,raw,note:'Three-seed supplement, same reference deck/policies. Six baseline outcomes separately confirmed unchanged by test-release-731.cjs. No whole-roster remeasurement or new global rank.'};
+fs.writeFileSync('docs/simulations/spintop-rainbow-tier-2026-10-30.json',JSON.stringify(out,null,2));
+const note=`## 팽이 레인보우 신규 등재 · 2026-10-30\n\n현재 연결 대상은 2진 120명·3진 18명이다. 아래 1명을 추가 측정했으며, 본문의 137개 형태 표는 이전 전체 측정 기록이다. 전체 순위·+/−를 다시 부여하지 않았다.\n\n|잠정 티어|캐릭터|등급|단축 점수 ±표준오차|\n|---|---|---|---:|\n|${band}|자이로 레인보우 2진|레어|${gain.toFixed(1)} ± ${se.toFixed(1)}초|\n\n황제의 야옹이 ★3·Lv.30·시드 3·auto/smart2 조건이다. 메탈이 거의 없는 기준 맵이므로 빠른 범위 크리티컬의 특화 성능은 별도로 봐야 한다. 원본: [추가 측정](../simulations/spintop-rainbow-tier-2026-10-30.json).\n`;
+for(const file of ['docs/티어표/티어표-2진-3진-2026-10-29.md','docs/티어표/등급별-아군-티어리스트-2026-10-29.md']){let s=fs.readFileSync(file,'utf8').replace(/<!-- SPINTOP_TIER -->[\s\S]*?<!-- END_SPINTOP_TIER -->\n*/,'');const at=s.indexOf('\n');s=s.slice(0,at+1)+'\n<!-- SPINTOP_TIER -->\n'+note+'<!-- END_SPINTOP_TIER -->\n'+s.slice(at+1);fs.writeFileSync(file,s);}
+console.log({band,gain,se});process.exit(0);

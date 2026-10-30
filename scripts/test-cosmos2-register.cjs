@@ -4,7 +4,7 @@ const make=require('./full-harness.cjs');
 const e=make({extraSetup:`globalThis.__c2={isUnlocked,isChainEnd,isStoryStage,chapterOf,alienMagnification,alienSuppressed,alienSuppressorsOf,get S(){return COSMOS2_START},get E(){return COSMOS2_END},COSMOS_END,STAGE_SPAWNS,codexCatOf,chapterTag,stageEnemies,stageXP,FUTURE_XP_SCALE,UNIT_NAMES,data,setCleared:l=>{cleared.length=0;cleared.push(...l)},setStage:i=>{selectedStage=i},mask:cosmos2MaskComplete,unitStats};`});
 const t=globalThis.__c2;delete globalThis.__c2;
 const S=t.S,E=t.E,list=e.stageList;
-assert.equal(E-S,48);assert.equal(list.length,E+2,'우주편 2장 뒤에는 7.1 사이클론 강림 2개(cyclone-advents2.js)만 온다');
+assert.equal(E-S,48);assert(list.length>=E+2,'우주편 2장 뒤에 스테이지가 더 붙는다(7.1 이후 사이클론·레전드 41~49장 등)');assert.equal(list[E].cyclone,'metal','2장 바로 뒤 첫 스테이지는 7.1 메탈 사이클론');assert.equal(list[E+1].cyclone,'cosmic');
 assert(list.slice(S,E).every(s=>s.chapter===9&&s.future),'chapter 9');
 // 잠금: 1장 빅뱅을 깨야 열리고, 이후는 차례로
 t.setCleared([]);assert(!t.isUnlocked(S));

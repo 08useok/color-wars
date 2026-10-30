@@ -17,15 +17,27 @@ STAGES.push({name:BORE73_RELAY.name,flag:'🐗',chapter:'special',hp:1200000,max
  desc:'샤이 보어 → 이노와르 → 천사 멧돼지 → 불칸 보어 → 좀비 보어. 앞 보어를 완전히 처치하면 2초 뒤 다음 보어가 등장한다. 다섯 마리를 모두 쓰러뜨려야 성이 무너진다.'});
 STAGE_SPAWNS[BORE73_RELAY.index]=BORE73_RELAY.types.map((type,i)=>({type,mag:BORE73_RELAY.magnifications[i],count:1,boss:true,at:{t:10},relay73:i}));
 let bore73Cleared=false;try{bore73Cleared=localStorage.getItem('red-battle-bore-relay-v1')==='1';}catch{}
+// Core progress loading only keeps story stages. Restore these two confirmed event
+// clears for awardXP's replay calculation without granting rewards or writing saves.
+for(const [i,done]of [[HURRICANE73_EVENT.index,cycloneClears.includes('hurricane')],[BORE73_RELAY.index,bore73Cleared]])
+ if(done&&!cleared.includes(i))cleared.push(i);
 function bore73Open(){return cleared.includes(CHAPTER1_LEN*3-1)}
 {const before=updateStageSpawns;
  updateStageSpawns=function(dt){
   if(selectedStage!==BORE73_RELAY.index)return before(dt);
   const rules=game.spawnRules,phase=game.relay73Phase||0,current=rules.find(r=>r.relay73===phase);let next=phase;
-  if(current?.spawned){const alive=[...game.units,...game.defeated].some(u=>!u.ally&&u.type===current.type&&(u.hp>0||u.reviveAt!==undefined));
-   if(!alive){next=phase+1;game.relay73Phase=next;const pending=rules.find(r=>r.relay73===next);if(pending){pending.at={t:game.elapsed+2};$('#battleNotice').textContent='다음 주자: '+UNIT_NAMES[pending.type];game.noticeTime=2;}else game.relay73Done=true;}
+  if(current?.spawned){
+   // The burrow wrapper temporarily removes underground enemies from game.units.
+   // Keep the actual current boss reference, including its revive/death state.
+   const tracked=game.relay73Boss?.type===current.type?game.relay73Boss:null;
+   const alive=tracked&&(tracked.hp>0||tracked.reviveAt!==undefined)||[...game.units,...game.defeated].some(u=>!u.ally&&u.type===current.type&&(u.hp>0||u.reviveAt!==undefined));
+   if(!alive){next=phase+1;game.relay73Phase=next;delete game.relay73Boss;const pending=rules.find(r=>r.relay73===next);if(pending){pending.at={t:game.elapsed+2};$('#battleNotice').textContent='다음 주자: '+UNIT_NAMES[pending.type];game.noticeTime=2;}else game.relay73Done=true;}
   }
-  try{game.spawnRules=rules.filter(r=>r.relay73<=next);return before(dt)}finally{game.spawnRules=rules;}
+  try{game.spawnRules=rules.filter(r=>r.relay73<=next);return before(dt)}finally{
+   game.spawnRules=rules;
+   const type=rules.find(r=>r.relay73===next)?.type,boss=game.units.find(u=>!u.ally&&u.type===type&&(u.hp>0||u.reviveAt!==undefined));
+   if(boss)game.relay73Boss=boss;
+  }
  };
 }
 // Keep the castle intact until all five bosses, including a reviving zombie, are gone.

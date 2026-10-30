@@ -1,7 +1,8 @@
 const fs=require('fs'),assert=require('node:assert/strict'),make=require('./full-harness.cjs');
 const source=fs.readFileSync(require.resolve('./full-harness.cjs'),'utf8'),addons=JSON.parse(source.match(/const DEFAULT_ADDONS=(\[[^;]+\]);/)[1].replace(/'/g,'"'));
-const prev=make({addons:addons.filter(f=>!['hurricane-73-atlas.js','stages-73.js'].includes(f))});
-const e=make({extraSetup:'globalThis.__s73={h:HURRICANE73_EVENT,r:BORE73_RELAY,select:i=>selectedStage=i,spawns:updateStageSpawns,base:data.bases.enemy,open:bore73Open,assets:NEW_ATLASES,attack:resolveAttack};'}),c=globalThis.__s73;delete globalThis.__s73;
+const noArena=addons.filter(f=>f!=='tier-test-stages.js');// 티어 시험 구역 9맵은 맨 끝에 붙으므로 이 시험의 번호 비교에서 뺀다(test-tier-arenas가 따로 확인)
+const prev=make({addons:noArena.filter(f=>!['hurricane-73-atlas.js','stages-73.js'].includes(f)&&!f.includes('spintop-rainbow'))});
+const e=make({addons:noArena,extraSetup:'globalThis.__s73={h:HURRICANE73_EVENT,r:BORE73_RELAY,select:i=>selectedStage=i,spawns:updateStageSpawns,base:data.bases.enemy,open:bore73Open,assets:NEW_ATLASES,attack:resolveAttack};'}),c=globalThis.__s73;delete globalThis.__s73;
 assert.equal(e.stageList.length,prev.stageList.length+2);assert.deepEqual(e.stageList.slice(0,-2),prev.stageList);for(const [id,d]of Object.entries(prev.units))assert.deepEqual(e.units[id],d);for(const [i,r]of Object.entries(prev.spawnList))assert.deepEqual(e.spawnList[i],r);
 assert.equal(c.h.index,748);assert.equal(c.r.index,749);assert.equal(e.units.hurricanecyclone.interval,.2);assert.equal(e.units.hurricanecyclone.zoneMin,8.5);assert.equal(e.units.hurricanecyclone.zoneMax,22.1);assert.equal(e.spawnList[748].length,9);assert.equal(e.spawnList[748].find(r=>r.boss).at.t,30);
 for(const mode of ['walk','attack','hurt'])assert(c.assets.hurricanecyclone[mode].length);assert(fs.existsSync(c.assets.hurricanecyclone.sheet.split('?')[0]));
@@ -20,5 +21,5 @@ c.select(748);e.reset();g=e.getGame();g.running=true;g.tutorial=99;g.money=1e9;g
 const rows=[];e.setCleared(e.stageList.map((_,i)=>i));e.setProfile({level:30,trueForms:['gold','violet','orchid','lavender','aqua','babyblue']});
 const deck=['red','yellow','garnet','sapphire','lavender','aqua','sunflower','fern','jade','orchid'];
 for(const i of [748,749])for(const seed of [1,2,3]){const r=e.simulate(i,1,deck,seed,300,'smart2');for(const k of ['seconds','allyHp','enemyHp'])assert(Number.isFinite(r[k]));rows.push({i,seed,...r});}
-fs.writeFileSync('docs/simulations/stages-73-2026-10-29.json',JSON.stringify({checks:['append-only indices/stats/spawns','world3 gate','original Hurricane stats/spawn timing','Hurricane blind spot','five sequential bosses','two-second intermission','zombie revival blocks finish','all five kills release castle'],deck,rows},null,2));
+fs.writeFileSync(process.argv[2]||'docs/simulations/stages-73-2026-10-29.json',JSON.stringify({checks:['append-only indices/stats/spawns','world3 gate','original Hurricane stats/spawn timing','Hurricane blind spot','five sequential bosses','two-second intermission','zombie revival blocks finish','all five kills release castle'],deck,rows},null,2));
 console.log('PASS stage rules, gate, relay, zombie revival and Hurricane attack zone;',rows.map(r=>[r.i,r.seed,r.win,r.seconds]));process.exit(0);

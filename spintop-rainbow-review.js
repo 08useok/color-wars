@@ -1,0 +1,2 @@
+const SPINTOP_REVIEW={strength:'짧은 사거리에서 빠른 범위 3연타를 반복해 메탈 무리에게 크리티컬을 노리는 양산 딜러다. 여러 마리를 쌓으면 짧은 주기로 크리티컬 기회를 늘릴 수 있다.',weakness:'메탈 킬러나 확정 크리티컬은 없다. 불발한 타격은 메탈에게 1 피해만 주며, 짧은 사거리와 낮은 체력 때문에 전선이 무너지면 함께 쓰러지기 쉽다.',use:'메탈 정지·느리게 요원과 고방 뒤에 여러 마리를 모은다. 높은 체력의 메탈 한 마리는 응원단 민들레 같은 확실한 저격 요원과 분담한다.'};
+{const before=codexReviewAssessment;codexReviewAssessment=function(id,s){return id==='spintoprainbow'?SPINTOP_REVIEW:before(id,s)};}
