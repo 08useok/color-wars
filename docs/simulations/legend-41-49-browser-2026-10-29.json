@@ -1,0 +1,54 @@
+{
+  "menu": {
+    "stages": 748,
+    "chapters": 49,
+    "last": {
+      "name": "고대 연구소",
+      "en": "Laboratory of Relics",
+      "jp": "古代研究所",
+      "start": 323,
+      "len": 1
+    },
+    "cards": [
+      "IT카타콤\n★★★★★★★★★\n👑1 6 / 6",
+      "수상한 미술관\n★★★★★★★★★\n👑1 6 / 6",
+      "22구역\n★★★★★★★★★\n👑1 6 / 6",
+      "초월 사바나\n★★★★★★★★★\n👑1 6 / 6",
+      "블리자드 도로\n★★★★★★★★★\n👑1 6 / 6",
+      "싱귤래리티 마을\n★★★★★★★★★\n👑1 6 / 6",
+      "마지막 대륙\n★★★★★★★★★\n👑1 6 / 6",
+      "전설의 끝\n★★★★★★★★★\n👑1 8 / 8",
+      "고대 연구소\n★★★★★★★★★\n👑1 1 / 1"
+    ]
+  },
+  "battle": {
+    "name": "태고의 힘",
+    "units": [
+      {
+        "type": "croakley",
+        "background": "url(\"http://127.0.0.1:60267/assets/anim_croakley.webp?v=1\")",
+        "width": "63px"
+      },
+      {
+        "type": "bigdream",
+        "background": "url(\"http://127.0.0.1:60267/assets/anim_bigdream.webp?v=1\")",
+        "width": "105px"
+      },
+      {
+        "type": "angelbutta",
+        "background": "url(\"http://127.0.0.1:60267/assets/anim_angelbutta.webp?v=1\")",
+        "width": "150px"
+      },
+      {
+        "type": "hackey",
+        "background": "url(\"http://127.0.0.1:60267/assets/anim_hackey.webp?v=1\")",
+        "width": "60px"
+      },
+      {
+        "type": "mechabun",
+        "background": "url(\"http://127.0.0.1:60267/assets/anim_mechabun.webp?v=1\")",
+        "width": "217px"
+      }
+    ]
+  }
+}

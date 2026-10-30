@@ -1,0 +1,158 @@
+{
+  "checks": [
+    "append-only indices/stats/spawns",
+    "world3 gate",
+    "original Hurricane stats/spawn timing",
+    "Hurricane blind spot",
+    "five sequential bosses",
+    "two-second intermission",
+    "zombie revival blocks finish",
+    "all five kills release castle"
+  ],
+  "deck": [
+    "red",
+    "yellow",
+    "garnet",
+    "sapphire",
+    "lavender",
+    "aqua",
+    "sunflower",
+    "fern",
+    "jade",
+    "orchid"
+  ],
+  "rows": [
+    {
+      "i": 748,
+      "seed": 1,
+      "win": true,
+      "timeout": false,
+      "seconds": 39.73,
+      "allyHp": 60000,
+      "enemyHp": 0,
+      "frames": 1192,
+      "deployments": {
+        "sapphire": 1,
+        "fern": 1,
+        "jade": 1,
+        "sunflower": 1,
+        "orchid": 1,
+        "garnet": 1,
+        "lavender": 1,
+        "aqua": 2,
+        "yellow": 4,
+        "red": 12
+      }
+    },
+    {
+      "i": 748,
+      "seed": 2,
+      "win": true,
+      "timeout": false,
+      "seconds": 38.23,
+      "allyHp": 60000,
+      "enemyHp": 0,
+      "frames": 1147,
+      "deployments": {
+        "sapphire": 1,
+        "fern": 1,
+        "jade": 1,
+        "sunflower": 1,
+        "orchid": 1,
+        "garnet": 1,
+        "lavender": 1,
+        "aqua": 2,
+        "yellow": 4,
+        "red": 12
+      }
+    },
+    {
+      "i": 748,
+      "seed": 3,
+      "win": true,
+      "timeout": false,
+      "seconds": 49.1,
+      "allyHp": 60000,
+      "enemyHp": 0,
+      "frames": 1473,
+      "deployments": {
+        "sapphire": 2,
+        "fern": 1,
+        "jade": 1,
+        "sunflower": 1,
+        "orchid": 1,
+        "garnet": 1,
+        "lavender": 2,
+        "aqua": 2,
+        "yellow": 5,
+        "red": 17
+      }
+    },
+    {
+      "i": 749,
+      "seed": 1,
+      "win": true,
+      "timeout": false,
+      "seconds": 66.47,
+      "allyHp": 60000,
+      "enemyHp": 0,
+      "frames": 1994,
+      "deployments": {
+        "sapphire": 2,
+        "fern": 2,
+        "jade": 2,
+        "sunflower": 2,
+        "orchid": 2,
+        "garnet": 1,
+        "lavender": 2,
+        "aqua": 3,
+        "yellow": 8,
+        "red": 25
+      }
+    },
+    {
+      "i": 749,
+      "seed": 2,
+      "win": true,
+      "timeout": false,
+      "seconds": 68.67,
+      "allyHp": 60000,
+      "enemyHp": 0,
+      "frames": 2060,
+      "deployments": {
+        "sapphire": 2,
+        "fern": 2,
+        "jade": 2,
+        "sunflower": 2,
+        "orchid": 2,
+        "garnet": 1,
+        "lavender": 2,
+        "aqua": 4,
+        "yellow": 8,
+        "red": 27
+      }
+    },
+    {
+      "i": 749,
+      "seed": 3,
+      "win": true,
+      "timeout": false,
+      "seconds": 68.2,
+      "allyHp": 60000,
+      "enemyHp": 0,
+      "frames": 2046,
+      "deployments": {
+        "sapphire": 2,
+        "fern": 2,
+        "jade": 2,
+        "sunflower": 2,
+        "orchid": 2,
+        "garnet": 1,
+        "lavender": 2,
+        "aqua": 4,
+        "yellow": 8,
+        "red": 26
+      }
+    }
+  ]
+}

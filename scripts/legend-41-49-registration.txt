@@ -1,0 +1,23 @@
+// Append after every existing stage module: saved absolute indices remain stable.
+const LEGEND4149_START=STAGES.length;
+for(const [j,sc]of LEGEND4149_SUBS.entries()){
+ LEGEND_SUBS.push({name:sc.name,en:sc.en,jp:sc.jp,start:sc.start,len:sc.len});
+ LEGEND_SUB_CROWN[40+j]=sc.crowns;
+ LEGEND_STAR_RANGES.push([9,9]);
+}
+for(const [j,{stage,rules}]of LEGEND4149_DATA.entries()){
+ const t={...stage,desc:[...new Set(rules.map(r=>UNIT_NAMES[r.type]||r.type))].join(' · ')};
+ LEGEND_STAGES.push(t);STAGES.push({...t,gap:4,wave:0,chapter:4,legend:{k:273+j},maxEnemies:t.max});
+ STAGE_SPAWNS[LEGEND4149_START+j]=rules;
+}
+const legendIdxBefore4149=legendIdx;
+legendIdx=function(k){return k>=273&&k<324?LEGEND4149_START+k-273:legendIdxBefore4149(k)};
+// Core legacy helper reuses ★3 for ★4; new chapters use their actual source crown multiplier.
+const legendCrownMultBefore4149=legendCrownMult;
+legendCrownMult=function(c,sub){return sub>=40&&sub<=48?LEGEND_SUB_CROWN[sub][c-1]:legendCrownMultBefore4149(c,sub)};
+// Core save restore runs before add-ons. Recover only the appended logical stage keys.
+try{
+ const saved=JSON.parse(localStorage.getItem('red-battle-legend-v1')||'{}');
+ for(const c of [1,2,3,4])if(Array.isArray(saved[c]))for(const k of saved[c])
+  if(Number.isInteger(k)&&k>=273&&k<324&&!legendProgress[c].includes(k))legendProgress[c].push(k);
+}catch{}

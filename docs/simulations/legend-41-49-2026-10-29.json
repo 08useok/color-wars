@@ -1,0 +1,223 @@
+{
+  "stages": 51,
+  "rules": 358,
+  "legacyPreserved": 697,
+  "sourceRulesMatched": true,
+  "checks": [
+    "old stage indices/stats/spawns",
+    "save restore/deduplication",
+    "sequential unlock",
+    "source crowns 1–4",
+    "five atlases",
+    "slow/weaken/blind spot/backside/wave"
+  ],
+  "rows": [
+    {
+      "chapter": 41,
+      "k": 278,
+      "name": "원망의 음향 커플러",
+      "win": true,
+      "timeout": false,
+      "seconds": 32.67,
+      "allyHp": 60000,
+      "enemyHp": 0,
+      "frames": 980,
+      "deployments": {
+        "rainbow": 1,
+        "garnet": 1,
+        "selenite": 1,
+        "lapis": 1,
+        "gold": 1,
+        "blue": 8,
+        "aqua": 2,
+        "purple": 3,
+        "yellow": 4,
+        "red": 11
+      }
+    },
+    {
+      "chapter": 42,
+      "k": 284,
+      "name": "관장의 자화상",
+      "win": true,
+      "timeout": false,
+      "seconds": 70.4,
+      "allyHp": 60000,
+      "enemyHp": 0,
+      "frames": 2112,
+      "deployments": {
+        "red": 32,
+        "yellow": 10,
+        "purple": 8,
+        "aqua": 4,
+        "blue": 21,
+        "gold": 3,
+        "lapis": 2,
+        "rainbow": 2,
+        "garnet": 2,
+        "selenite": 2
+      }
+    },
+    {
+      "chapter": 43,
+      "k": 290,
+      "name": "당신은 지쳐 있어요",
+      "win": true,
+      "timeout": false,
+      "seconds": 30.57,
+      "allyHp": 60000,
+      "enemyHp": 0,
+      "frames": 917,
+      "deployments": {
+        "rainbow": 1,
+        "garnet": 1,
+        "selenite": 1,
+        "lapis": 1,
+        "gold": 1,
+        "blue": 7,
+        "aqua": 2,
+        "purple": 3,
+        "yellow": 3,
+        "red": 10
+      }
+    },
+    {
+      "chapter": 44,
+      "k": 296,
+      "name": "천국에서 가장 가까운 물웅덩이",
+      "win": true,
+      "timeout": false,
+      "seconds": 49.43,
+      "allyHp": 60000,
+      "enemyHp": 0,
+      "frames": 1483,
+      "deployments": {
+        "rainbow": 2,
+        "garnet": 1,
+        "selenite": 1,
+        "lapis": 1,
+        "gold": 2,
+        "blue": 13,
+        "aqua": 3,
+        "purple": 5,
+        "yellow": 6,
+        "red": 20
+      }
+    },
+    {
+      "chapter": 45,
+      "k": 302,
+      "name": "요금소 히트 쇼크",
+      "win": true,
+      "timeout": false,
+      "seconds": 36.2,
+      "allyHp": 60000,
+      "enemyHp": 0,
+      "frames": 1087,
+      "deployments": {
+        "rainbow": 1,
+        "red": 15,
+        "yellow": 5,
+        "purple": 4,
+        "aqua": 2,
+        "blue": 10,
+        "gold": 2,
+        "lapis": 1,
+        "garnet": 1,
+        "selenite": 1
+      }
+    },
+    {
+      "chapter": 46,
+      "k": 308,
+      "name": "게놈 봉오도리",
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 60000,
+      "enemyHp": 990000,
+      "frames": 9000,
+      "deployments": {
+        "rainbow": 2,
+        "garnet": 1,
+        "selenite": 1,
+        "red": 68,
+        "yellow": 23,
+        "purple": 17,
+        "aqua": 9,
+        "blue": 18,
+        "gold": 4,
+        "lapis": 1
+      }
+    },
+    {
+      "chapter": 47,
+      "k": 314,
+      "name": "피날레 신전",
+      "win": true,
+      "timeout": false,
+      "seconds": 33.77,
+      "allyHp": 60000,
+      "enemyHp": 0,
+      "frames": 1013,
+      "deployments": {
+        "rainbow": 1,
+        "garnet": 1,
+        "selenite": 1,
+        "lapis": 1,
+        "gold": 1,
+        "blue": 8,
+        "aqua": 2,
+        "purple": 3,
+        "yellow": 4,
+        "red": 12
+      }
+    },
+    {
+      "chapter": 48,
+      "k": 322,
+      "name": "깨진 맹세",
+      "win": true,
+      "timeout": false,
+      "seconds": 70.33,
+      "allyHp": 60000,
+      "enemyHp": 0,
+      "frames": 2110,
+      "deployments": {
+        "rainbow": 2,
+        "garnet": 1,
+        "selenite": 1,
+        "lapis": 1,
+        "gold": 2,
+        "blue": 12,
+        "aqua": 3,
+        "purple": 4,
+        "yellow": 6,
+        "red": 18
+      }
+    },
+    {
+      "chapter": 49,
+      "k": 323,
+      "name": "태고의 힘",
+      "win": true,
+      "timeout": false,
+      "seconds": 65.97,
+      "allyHp": 60000,
+      "enemyHp": 0,
+      "frames": 1979,
+      "deployments": {
+        "rainbow": 2,
+        "red": 29,
+        "yellow": 9,
+        "purple": 7,
+        "aqua": 4,
+        "blue": 20,
+        "garnet": 2,
+        "selenite": 2,
+        "lapis": 2,
+        "gold": 3
+      }
+    }
+  ]
+}

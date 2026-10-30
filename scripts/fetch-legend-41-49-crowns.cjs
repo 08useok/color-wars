@@ -1,0 +1,6 @@
+const fs=require('fs'),https=require('https');
+const get=u=>new Promise((ok,no)=>https.get(u,{headers:{'User-Agent':'Mozilla/5.0'}},r=>{let b=[];r.on('data',x=>b.push(x));r.on('end',()=>r.statusCode===200?ok(Buffer.concat(b).toString('utf8')):no(Error(u+' '+r.statusCode)))}).on('error',no));
+(async()=>{const result={};for(let n=40;n<=48;n++){const tag='s000'+n,base=fs.readFileSync('reference-sheets/legend-41-49/'+tag+'.html','utf8');
+ const mags=h=>[...h.matchAll(/enemy\/\d+\.html\?mag=([\d.]+)/g)].map(m=>Number(m[1]));const b=mags(base);result[n]=[1];
+ for(let c=2;c<=4;c++){const file='reference-sheets/legend-41-49/'+tag+'-crown'+c+'.html';if(!fs.existsSync(file))fs.writeFileSync(file,await get('https://battlecats-db.com/stage/'+tag+'.html?star='+c));const v=mags(fs.readFileSync(file,'utf8'));if(v.length!==b.length)throw Error('enemy count '+tag);const ratios=v.map((m,i)=>m/b[i]);const common=ratios.filter((m,i)=>b[i]!==100||m!==100);result[n].push(common[0]);if(common.some(m=>Math.abs(m-common[0])>.025))console.log('rounding/exception',n,c,[...new Set(common)]);}
+ console.log(n+1,result[n]);}fs.writeFileSync('reference-sheets/legend-41-49/crowns.json',JSON.stringify(result,null,2));})().catch(e=>{console.error(e);process.exitCode=1});
