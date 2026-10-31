@@ -1466,7 +1466,7 @@ game.spawnCd=Math.max(0,game.spawnCd-dt);game.orangeCd=Math.max(0,game.orangeCd-
   if(!u.ally&&(u.emerging||u.x<data.bases.enemy.frontX)){u.emerging=true;u.x=Math.min(data.bases.enemy.frontX,u.x+spd*dt);if(u.x>=data.bases.enemy.frontX)u.emerging=false;u.el.style.left=`calc(${u.x}% - 21px)`;animateDog(u);continue}
   if(u.ally&&(u.emerging||u.x>data.bases.ally.frontX)){u.emerging=true;u.x=Math.max(data.bases.ally.frontX,u.x-spd*dt);if(u.x<=data.bases.ally.frontX)u.emerging=false;u.el.style.left=`calc(${u.x}% - 21px)`;animateUnit(u);continue}
   let t=target(u),dist=t?Math.abs(t.x-u.x):Infinity;
-  if(t&&dist<=(d.engageRange??d.range)){const tv=deadZone(u)&&dist<deadZone(u)?targetValid(u):t;if(tv&&Math.abs(tv.x-u.x)<=(d.engageRange??d.range)&&u.atkCd<=0&&(!u.ally||canEngage(tv))){if(u.ally)lockEngage(tv,d.attackDuration||d.interval||.56);attack(u,tv)}}
+  if(t&&dist<=(d.engageRange??d.range)){const tv=!u.ally&&d.zoneMin>0&&!d.engageRange?t:deadZone(u)&&dist<deadZone(u)?targetValid(u):t;/* 원작 원방 공격(타격 구간이 있는 적): 맨 앞 목표가 사거리 안이면 휘두르고, 피해는 구간 안에만 들어간다. 예전엔 사각지대 밖 목표가 사거리 안이어야 시작해서, 사거리가 구간 시작보다 짧은 6종(탓짱·멍뭉두건 미냐·히카루·돌고래 아가씨·케로롱·불만두)은 아예 못 쳤고 캡틴 모구·두더더지·게콕·허리케인 사이클론도 맨 앞이 사각지대면 구간 뒤쪽을 못 쳤다 */if(tv&&Math.abs(tv.x-u.x)<=(d.engageRange??d.range)&&u.atkCd<=0&&(!u.ally||canEngage(tv))){if(u.ally)lockEngage(tv,d.attackDuration||d.interval||.56);attack(u,tv)}}
   else{
    let baseDist=u.ally?u.x-data.bases.enemy.frontX:data.bases.ally.frontX-u.x,base=u.ally?data.bases.enemy:data.bases.ally;
    if(!t&&baseDist<=(d.engageRange??d.range)){if(u.atkCd<=0&&(!u.ally||canEngage(base))){if(u.ally)lockEngage(base,d.attackDuration||d.interval||.56);attack(u)}}
