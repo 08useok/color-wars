@@ -1,0 +1,144 @@
+{
+  "acquisition": {
+    "draws": [
+      {
+        "banner": "레드 바스터즈",
+        "id": "heliotrope",
+        "kind": "prism"
+      },
+      {
+        "banner": "블랙 바스터즈",
+        "id": "wisteria",
+        "kind": "prism"
+      },
+      {
+        "banner": "천사 바스터즈",
+        "id": "blossom",
+        "kind": "prism"
+      },
+      {
+        "banner": "레드 바스터즈",
+        "id": "almondblossom",
+        "kind": "prism"
+      }
+    ],
+    "tickets": 6,
+    "owned": [
+      "heliotrope",
+      "wisteria",
+      "blossom",
+      "almondblossom"
+    ],
+    "pity": {
+      "red": 17,
+      "black": 9
+    },
+    "rotation": {
+      "day": 20757,
+      "index": 9,
+      "series": "하이퍼 고양이 축제",
+      "next": "글라스 군단",
+      "endsAt": 1793458800000
+    },
+    "seriesCount": 10,
+    "banners": "바스터즈 전용: 레드 바스터즈오늘의 시리즈레드 바스터즈블랙 바스터즈에이리언 바스터즈천사 바스터즈떠적 바스터즈",
+    "rates": "확정 뽑기: 레어 64% · 슈퍼 레어 23% · 울트라 슈퍼 레어 13% 중 하나 확정 (못 가진 캐릭터 우선) · 중복은 +레벨 +1(최대 +10), 이후 XP로 환산"
+  },
+  "reload": {
+    "owned": [
+      "heliotrope",
+      "wisteria",
+      "blossom",
+      "almondblossom"
+    ],
+    "tickets": 6,
+    "pity": {
+      "red": 17,
+      "black": 9
+    },
+    "banner": "레드 바스터즈",
+    "visible": true
+  },
+  "deployment": {
+    "units": [
+      {
+        "id": "heliotrope",
+        "form": 1,
+        "sheet": "url(\"assets/heliotrope-motion/heliotrope_1.webp?v=1\")",
+        "hp": 62609,
+        "atk": 26087,
+        "attackClass": "원거리 범위"
+      },
+      {
+        "id": "heliotrope",
+        "form": 2,
+        "sheet": "url(\"assets/heliotrope-motion/heliotrope_2.webp?v=1\")",
+        "hp": 72000,
+        "atk": 30000,
+        "attackClass": "원거리 범위"
+      },
+      {
+        "id": "wisteria",
+        "form": 1,
+        "sheet": "url(\"assets/busters-remaining-motion/wisteria_1.webp?v=1\")",
+        "hp": 139130,
+        "atk": 13913,
+        "attackClass": "전방위"
+      },
+      {
+        "id": "wisteria",
+        "form": 2,
+        "sheet": "url(\"assets/busters-remaining-motion/wisteria_2.webp?v=1\")",
+        "hp": 160000,
+        "atk": 16000,
+        "attackClass": "전방위"
+      },
+      {
+        "id": "blossom",
+        "form": 1,
+        "sheet": "url(\"assets/busters-remaining-motion/blossom_1.webp?v=1\")",
+        "hp": 97391,
+        "atk": 21739,
+        "attackClass": "범위"
+      },
+      {
+        "id": "blossom",
+        "form": 2,
+        "sheet": "url(\"assets/busters-remaining-motion/blossom_2.webp?v=1\")",
+        "hp": 112000,
+        "atk": 25000,
+        "attackClass": "범위"
+      },
+      {
+        "id": "almondblossom",
+        "form": 1,
+        "sheet": "url(\"assets/busters-remaining-motion/almondblossom_1.webp?v=1\")",
+        "hp": 121739,
+        "atk": 26087,
+        "attackClass": "개체"
+      },
+      {
+        "id": "almondblossom",
+        "form": 2,
+        "sheet": "url(\"assets/busters-remaining-motion/almondblossom_2.webp?v=1\")",
+        "hp": 140000,
+        "atk": 30000,
+        "attackClass": "개체"
+      }
+    ],
+    "active": 8,
+    "lightRainbowRegistered": false,
+    "imagesLoaded": true
+  },
+  "reviews": {
+    "reviews": [
+      "heliotrope",
+      "wisteria",
+      "blossom",
+      "almondblossom"
+    ],
+    "pityPreserved": true,
+    "ticketsPreserved": true,
+    "lightRainbowAbsent": true
+  }
+}

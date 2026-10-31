@@ -1,0 +1,9295 @@
+{
+  "date": "2026-10-31",
+  "maps": [
+    {
+      "i": 750,
+      "name": "티어 시험 · 범용",
+      "id": "general"
+    },
+    {
+      "i": 751,
+      "name": "티어 시험 · 빨간 적",
+      "id": "red"
+    },
+    {
+      "i": 752,
+      "name": "티어 시험 · 검은 적",
+      "id": "black"
+    },
+    {
+      "i": 753,
+      "name": "티어 시험 · 천사",
+      "id": "angel"
+    },
+    {
+      "i": 754,
+      "name": "티어 시험 · 에이리언",
+      "id": "alien"
+    },
+    {
+      "i": 755,
+      "name": "티어 시험 · 떠 있는 적",
+      "id": "floating"
+    },
+    {
+      "i": 756,
+      "name": "티어 시험 · 메탈",
+      "id": "metal"
+    },
+    {
+      "i": 757,
+      "name": "티어 시험 · 좀비",
+      "id": "zombie"
+    },
+    {
+      "i": 758,
+      "name": "티어 시험 · 파동",
+      "id": "wave"
+    }
+  ],
+  "core": [
+    "red",
+    "yellow",
+    "blue",
+    "purple"
+  ],
+  "candidates": [
+    {
+      "id": "heliotrope",
+      "form": 1
+    },
+    {
+      "id": "heliotrope",
+      "form": 2
+    },
+    {
+      "id": "wisteria",
+      "form": 1
+    },
+    {
+      "id": "wisteria",
+      "form": 2
+    },
+    {
+      "id": "blossom",
+      "form": 1
+    },
+    {
+      "id": "blossom",
+      "form": 2
+    },
+    {
+      "id": "almondblossom",
+      "form": 1
+    },
+    {
+      "id": "almondblossom",
+      "form": 2
+    },
+    {
+      "id": "verdigris",
+      "form": 3
+    }
+  ],
+  "meta": [
+    {
+      "map": 750,
+      "seed": 1,
+      "policy": "auto",
+      "id": null,
+      "form": 2
+    },
+    {
+      "map": 750,
+      "seed": 1,
+      "policy": "auto",
+      "id": "heliotrope",
+      "form": 1
+    },
+    {
+      "map": 750,
+      "seed": 1,
+      "policy": "auto",
+      "id": "heliotrope",
+      "form": 2
+    },
+    {
+      "map": 750,
+      "seed": 1,
+      "policy": "auto",
+      "id": "wisteria",
+      "form": 1
+    },
+    {
+      "map": 750,
+      "seed": 1,
+      "policy": "auto",
+      "id": "wisteria",
+      "form": 2
+    },
+    {
+      "map": 750,
+      "seed": 1,
+      "policy": "auto",
+      "id": "blossom",
+      "form": 1
+    },
+    {
+      "map": 750,
+      "seed": 1,
+      "policy": "auto",
+      "id": "blossom",
+      "form": 2
+    },
+    {
+      "map": 750,
+      "seed": 1,
+      "policy": "auto",
+      "id": "almondblossom",
+      "form": 1
+    },
+    {
+      "map": 750,
+      "seed": 1,
+      "policy": "auto",
+      "id": "almondblossom",
+      "form": 2
+    },
+    {
+      "map": 750,
+      "seed": 1,
+      "policy": "auto",
+      "id": "verdigris",
+      "form": 3
+    },
+    {
+      "map": 750,
+      "seed": 1,
+      "policy": "smart2",
+      "id": null,
+      "form": 2
+    },
+    {
+      "map": 750,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "heliotrope",
+      "form": 1
+    },
+    {
+      "map": 750,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "heliotrope",
+      "form": 2
+    },
+    {
+      "map": 750,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "wisteria",
+      "form": 1
+    },
+    {
+      "map": 750,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "wisteria",
+      "form": 2
+    },
+    {
+      "map": 750,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "blossom",
+      "form": 1
+    },
+    {
+      "map": 750,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "blossom",
+      "form": 2
+    },
+    {
+      "map": 750,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "almondblossom",
+      "form": 1
+    },
+    {
+      "map": 750,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "almondblossom",
+      "form": 2
+    },
+    {
+      "map": 750,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "verdigris",
+      "form": 3
+    },
+    {
+      "map": 750,
+      "seed": 2,
+      "policy": "auto",
+      "id": null,
+      "form": 2
+    },
+    {
+      "map": 750,
+      "seed": 2,
+      "policy": "auto",
+      "id": "heliotrope",
+      "form": 1
+    },
+    {
+      "map": 750,
+      "seed": 2,
+      "policy": "auto",
+      "id": "heliotrope",
+      "form": 2
+    },
+    {
+      "map": 750,
+      "seed": 2,
+      "policy": "auto",
+      "id": "wisteria",
+      "form": 1
+    },
+    {
+      "map": 750,
+      "seed": 2,
+      "policy": "auto",
+      "id": "wisteria",
+      "form": 2
+    },
+    {
+      "map": 750,
+      "seed": 2,
+      "policy": "auto",
+      "id": "blossom",
+      "form": 1
+    },
+    {
+      "map": 750,
+      "seed": 2,
+      "policy": "auto",
+      "id": "blossom",
+      "form": 2
+    },
+    {
+      "map": 750,
+      "seed": 2,
+      "policy": "auto",
+      "id": "almondblossom",
+      "form": 1
+    },
+    {
+      "map": 750,
+      "seed": 2,
+      "policy": "auto",
+      "id": "almondblossom",
+      "form": 2
+    },
+    {
+      "map": 750,
+      "seed": 2,
+      "policy": "auto",
+      "id": "verdigris",
+      "form": 3
+    },
+    {
+      "map": 750,
+      "seed": 2,
+      "policy": "smart2",
+      "id": null,
+      "form": 2
+    },
+    {
+      "map": 750,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "heliotrope",
+      "form": 1
+    },
+    {
+      "map": 750,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "heliotrope",
+      "form": 2
+    },
+    {
+      "map": 750,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "wisteria",
+      "form": 1
+    },
+    {
+      "map": 750,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "wisteria",
+      "form": 2
+    },
+    {
+      "map": 750,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "blossom",
+      "form": 1
+    },
+    {
+      "map": 750,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "blossom",
+      "form": 2
+    },
+    {
+      "map": 750,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "almondblossom",
+      "form": 1
+    },
+    {
+      "map": 750,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "almondblossom",
+      "form": 2
+    },
+    {
+      "map": 750,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "verdigris",
+      "form": 3
+    },
+    {
+      "map": 750,
+      "seed": 3,
+      "policy": "auto",
+      "id": null,
+      "form": 2
+    },
+    {
+      "map": 750,
+      "seed": 3,
+      "policy": "auto",
+      "id": "heliotrope",
+      "form": 1
+    },
+    {
+      "map": 750,
+      "seed": 3,
+      "policy": "auto",
+      "id": "heliotrope",
+      "form": 2
+    },
+    {
+      "map": 750,
+      "seed": 3,
+      "policy": "auto",
+      "id": "wisteria",
+      "form": 1
+    },
+    {
+      "map": 750,
+      "seed": 3,
+      "policy": "auto",
+      "id": "wisteria",
+      "form": 2
+    },
+    {
+      "map": 750,
+      "seed": 3,
+      "policy": "auto",
+      "id": "blossom",
+      "form": 1
+    },
+    {
+      "map": 750,
+      "seed": 3,
+      "policy": "auto",
+      "id": "blossom",
+      "form": 2
+    },
+    {
+      "map": 750,
+      "seed": 3,
+      "policy": "auto",
+      "id": "almondblossom",
+      "form": 1
+    },
+    {
+      "map": 750,
+      "seed": 3,
+      "policy": "auto",
+      "id": "almondblossom",
+      "form": 2
+    },
+    {
+      "map": 750,
+      "seed": 3,
+      "policy": "auto",
+      "id": "verdigris",
+      "form": 3
+    },
+    {
+      "map": 750,
+      "seed": 3,
+      "policy": "smart2",
+      "id": null,
+      "form": 2
+    },
+    {
+      "map": 750,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "heliotrope",
+      "form": 1
+    },
+    {
+      "map": 750,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "heliotrope",
+      "form": 2
+    },
+    {
+      "map": 750,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "wisteria",
+      "form": 1
+    },
+    {
+      "map": 750,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "wisteria",
+      "form": 2
+    },
+    {
+      "map": 750,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "blossom",
+      "form": 1
+    },
+    {
+      "map": 750,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "blossom",
+      "form": 2
+    },
+    {
+      "map": 750,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "almondblossom",
+      "form": 1
+    },
+    {
+      "map": 750,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "almondblossom",
+      "form": 2
+    },
+    {
+      "map": 750,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "verdigris",
+      "form": 3
+    },
+    {
+      "map": 751,
+      "seed": 1,
+      "policy": "auto",
+      "id": null,
+      "form": 2
+    },
+    {
+      "map": 751,
+      "seed": 1,
+      "policy": "auto",
+      "id": "heliotrope",
+      "form": 1
+    },
+    {
+      "map": 751,
+      "seed": 1,
+      "policy": "auto",
+      "id": "heliotrope",
+      "form": 2
+    },
+    {
+      "map": 751,
+      "seed": 1,
+      "policy": "auto",
+      "id": "wisteria",
+      "form": 1
+    },
+    {
+      "map": 751,
+      "seed": 1,
+      "policy": "auto",
+      "id": "wisteria",
+      "form": 2
+    },
+    {
+      "map": 751,
+      "seed": 1,
+      "policy": "auto",
+      "id": "blossom",
+      "form": 1
+    },
+    {
+      "map": 751,
+      "seed": 1,
+      "policy": "auto",
+      "id": "blossom",
+      "form": 2
+    },
+    {
+      "map": 751,
+      "seed": 1,
+      "policy": "auto",
+      "id": "almondblossom",
+      "form": 1
+    },
+    {
+      "map": 751,
+      "seed": 1,
+      "policy": "auto",
+      "id": "almondblossom",
+      "form": 2
+    },
+    {
+      "map": 751,
+      "seed": 1,
+      "policy": "auto",
+      "id": "verdigris",
+      "form": 3
+    },
+    {
+      "map": 751,
+      "seed": 1,
+      "policy": "smart2",
+      "id": null,
+      "form": 2
+    },
+    {
+      "map": 751,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "heliotrope",
+      "form": 1
+    },
+    {
+      "map": 751,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "heliotrope",
+      "form": 2
+    },
+    {
+      "map": 751,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "wisteria",
+      "form": 1
+    },
+    {
+      "map": 751,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "wisteria",
+      "form": 2
+    },
+    {
+      "map": 751,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "blossom",
+      "form": 1
+    },
+    {
+      "map": 751,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "blossom",
+      "form": 2
+    },
+    {
+      "map": 751,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "almondblossom",
+      "form": 1
+    },
+    {
+      "map": 751,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "almondblossom",
+      "form": 2
+    },
+    {
+      "map": 751,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "verdigris",
+      "form": 3
+    },
+    {
+      "map": 751,
+      "seed": 2,
+      "policy": "auto",
+      "id": null,
+      "form": 2
+    },
+    {
+      "map": 751,
+      "seed": 2,
+      "policy": "auto",
+      "id": "heliotrope",
+      "form": 1
+    },
+    {
+      "map": 751,
+      "seed": 2,
+      "policy": "auto",
+      "id": "heliotrope",
+      "form": 2
+    },
+    {
+      "map": 751,
+      "seed": 2,
+      "policy": "auto",
+      "id": "wisteria",
+      "form": 1
+    },
+    {
+      "map": 751,
+      "seed": 2,
+      "policy": "auto",
+      "id": "wisteria",
+      "form": 2
+    },
+    {
+      "map": 751,
+      "seed": 2,
+      "policy": "auto",
+      "id": "blossom",
+      "form": 1
+    },
+    {
+      "map": 751,
+      "seed": 2,
+      "policy": "auto",
+      "id": "blossom",
+      "form": 2
+    },
+    {
+      "map": 751,
+      "seed": 2,
+      "policy": "auto",
+      "id": "almondblossom",
+      "form": 1
+    },
+    {
+      "map": 751,
+      "seed": 2,
+      "policy": "auto",
+      "id": "almondblossom",
+      "form": 2
+    },
+    {
+      "map": 751,
+      "seed": 2,
+      "policy": "auto",
+      "id": "verdigris",
+      "form": 3
+    },
+    {
+      "map": 751,
+      "seed": 2,
+      "policy": "smart2",
+      "id": null,
+      "form": 2
+    },
+    {
+      "map": 751,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "heliotrope",
+      "form": 1
+    },
+    {
+      "map": 751,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "heliotrope",
+      "form": 2
+    },
+    {
+      "map": 751,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "wisteria",
+      "form": 1
+    },
+    {
+      "map": 751,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "wisteria",
+      "form": 2
+    },
+    {
+      "map": 751,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "blossom",
+      "form": 1
+    },
+    {
+      "map": 751,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "blossom",
+      "form": 2
+    },
+    {
+      "map": 751,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "almondblossom",
+      "form": 1
+    },
+    {
+      "map": 751,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "almondblossom",
+      "form": 2
+    },
+    {
+      "map": 751,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "verdigris",
+      "form": 3
+    },
+    {
+      "map": 751,
+      "seed": 3,
+      "policy": "auto",
+      "id": null,
+      "form": 2
+    },
+    {
+      "map": 751,
+      "seed": 3,
+      "policy": "auto",
+      "id": "heliotrope",
+      "form": 1
+    },
+    {
+      "map": 751,
+      "seed": 3,
+      "policy": "auto",
+      "id": "heliotrope",
+      "form": 2
+    },
+    {
+      "map": 751,
+      "seed": 3,
+      "policy": "auto",
+      "id": "wisteria",
+      "form": 1
+    },
+    {
+      "map": 751,
+      "seed": 3,
+      "policy": "auto",
+      "id": "wisteria",
+      "form": 2
+    },
+    {
+      "map": 751,
+      "seed": 3,
+      "policy": "auto",
+      "id": "blossom",
+      "form": 1
+    },
+    {
+      "map": 751,
+      "seed": 3,
+      "policy": "auto",
+      "id": "blossom",
+      "form": 2
+    },
+    {
+      "map": 751,
+      "seed": 3,
+      "policy": "auto",
+      "id": "almondblossom",
+      "form": 1
+    },
+    {
+      "map": 751,
+      "seed": 3,
+      "policy": "auto",
+      "id": "almondblossom",
+      "form": 2
+    },
+    {
+      "map": 751,
+      "seed": 3,
+      "policy": "auto",
+      "id": "verdigris",
+      "form": 3
+    },
+    {
+      "map": 751,
+      "seed": 3,
+      "policy": "smart2",
+      "id": null,
+      "form": 2
+    },
+    {
+      "map": 751,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "heliotrope",
+      "form": 1
+    },
+    {
+      "map": 751,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "heliotrope",
+      "form": 2
+    },
+    {
+      "map": 751,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "wisteria",
+      "form": 1
+    },
+    {
+      "map": 751,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "wisteria",
+      "form": 2
+    },
+    {
+      "map": 751,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "blossom",
+      "form": 1
+    },
+    {
+      "map": 751,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "blossom",
+      "form": 2
+    },
+    {
+      "map": 751,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "almondblossom",
+      "form": 1
+    },
+    {
+      "map": 751,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "almondblossom",
+      "form": 2
+    },
+    {
+      "map": 751,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "verdigris",
+      "form": 3
+    },
+    {
+      "map": 752,
+      "seed": 1,
+      "policy": "auto",
+      "id": null,
+      "form": 2
+    },
+    {
+      "map": 752,
+      "seed": 1,
+      "policy": "auto",
+      "id": "heliotrope",
+      "form": 1
+    },
+    {
+      "map": 752,
+      "seed": 1,
+      "policy": "auto",
+      "id": "heliotrope",
+      "form": 2
+    },
+    {
+      "map": 752,
+      "seed": 1,
+      "policy": "auto",
+      "id": "wisteria",
+      "form": 1
+    },
+    {
+      "map": 752,
+      "seed": 1,
+      "policy": "auto",
+      "id": "wisteria",
+      "form": 2
+    },
+    {
+      "map": 752,
+      "seed": 1,
+      "policy": "auto",
+      "id": "blossom",
+      "form": 1
+    },
+    {
+      "map": 752,
+      "seed": 1,
+      "policy": "auto",
+      "id": "blossom",
+      "form": 2
+    },
+    {
+      "map": 752,
+      "seed": 1,
+      "policy": "auto",
+      "id": "almondblossom",
+      "form": 1
+    },
+    {
+      "map": 752,
+      "seed": 1,
+      "policy": "auto",
+      "id": "almondblossom",
+      "form": 2
+    },
+    {
+      "map": 752,
+      "seed": 1,
+      "policy": "auto",
+      "id": "verdigris",
+      "form": 3
+    },
+    {
+      "map": 752,
+      "seed": 1,
+      "policy": "smart2",
+      "id": null,
+      "form": 2
+    },
+    {
+      "map": 752,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "heliotrope",
+      "form": 1
+    },
+    {
+      "map": 752,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "heliotrope",
+      "form": 2
+    },
+    {
+      "map": 752,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "wisteria",
+      "form": 1
+    },
+    {
+      "map": 752,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "wisteria",
+      "form": 2
+    },
+    {
+      "map": 752,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "blossom",
+      "form": 1
+    },
+    {
+      "map": 752,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "blossom",
+      "form": 2
+    },
+    {
+      "map": 752,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "almondblossom",
+      "form": 1
+    },
+    {
+      "map": 752,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "almondblossom",
+      "form": 2
+    },
+    {
+      "map": 752,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "verdigris",
+      "form": 3
+    },
+    {
+      "map": 752,
+      "seed": 2,
+      "policy": "auto",
+      "id": null,
+      "form": 2
+    },
+    {
+      "map": 752,
+      "seed": 2,
+      "policy": "auto",
+      "id": "heliotrope",
+      "form": 1
+    },
+    {
+      "map": 752,
+      "seed": 2,
+      "policy": "auto",
+      "id": "heliotrope",
+      "form": 2
+    },
+    {
+      "map": 752,
+      "seed": 2,
+      "policy": "auto",
+      "id": "wisteria",
+      "form": 1
+    },
+    {
+      "map": 752,
+      "seed": 2,
+      "policy": "auto",
+      "id": "wisteria",
+      "form": 2
+    },
+    {
+      "map": 752,
+      "seed": 2,
+      "policy": "auto",
+      "id": "blossom",
+      "form": 1
+    },
+    {
+      "map": 752,
+      "seed": 2,
+      "policy": "auto",
+      "id": "blossom",
+      "form": 2
+    },
+    {
+      "map": 752,
+      "seed": 2,
+      "policy": "auto",
+      "id": "almondblossom",
+      "form": 1
+    },
+    {
+      "map": 752,
+      "seed": 2,
+      "policy": "auto",
+      "id": "almondblossom",
+      "form": 2
+    },
+    {
+      "map": 752,
+      "seed": 2,
+      "policy": "auto",
+      "id": "verdigris",
+      "form": 3
+    },
+    {
+      "map": 752,
+      "seed": 2,
+      "policy": "smart2",
+      "id": null,
+      "form": 2
+    },
+    {
+      "map": 752,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "heliotrope",
+      "form": 1
+    },
+    {
+      "map": 752,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "heliotrope",
+      "form": 2
+    },
+    {
+      "map": 752,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "wisteria",
+      "form": 1
+    },
+    {
+      "map": 752,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "wisteria",
+      "form": 2
+    },
+    {
+      "map": 752,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "blossom",
+      "form": 1
+    },
+    {
+      "map": 752,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "blossom",
+      "form": 2
+    },
+    {
+      "map": 752,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "almondblossom",
+      "form": 1
+    },
+    {
+      "map": 752,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "almondblossom",
+      "form": 2
+    },
+    {
+      "map": 752,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "verdigris",
+      "form": 3
+    },
+    {
+      "map": 752,
+      "seed": 3,
+      "policy": "auto",
+      "id": null,
+      "form": 2
+    },
+    {
+      "map": 752,
+      "seed": 3,
+      "policy": "auto",
+      "id": "heliotrope",
+      "form": 1
+    },
+    {
+      "map": 752,
+      "seed": 3,
+      "policy": "auto",
+      "id": "heliotrope",
+      "form": 2
+    },
+    {
+      "map": 752,
+      "seed": 3,
+      "policy": "auto",
+      "id": "wisteria",
+      "form": 1
+    },
+    {
+      "map": 752,
+      "seed": 3,
+      "policy": "auto",
+      "id": "wisteria",
+      "form": 2
+    },
+    {
+      "map": 752,
+      "seed": 3,
+      "policy": "auto",
+      "id": "blossom",
+      "form": 1
+    },
+    {
+      "map": 752,
+      "seed": 3,
+      "policy": "auto",
+      "id": "blossom",
+      "form": 2
+    },
+    {
+      "map": 752,
+      "seed": 3,
+      "policy": "auto",
+      "id": "almondblossom",
+      "form": 1
+    },
+    {
+      "map": 752,
+      "seed": 3,
+      "policy": "auto",
+      "id": "almondblossom",
+      "form": 2
+    },
+    {
+      "map": 752,
+      "seed": 3,
+      "policy": "auto",
+      "id": "verdigris",
+      "form": 3
+    },
+    {
+      "map": 752,
+      "seed": 3,
+      "policy": "smart2",
+      "id": null,
+      "form": 2
+    },
+    {
+      "map": 752,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "heliotrope",
+      "form": 1
+    },
+    {
+      "map": 752,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "heliotrope",
+      "form": 2
+    },
+    {
+      "map": 752,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "wisteria",
+      "form": 1
+    },
+    {
+      "map": 752,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "wisteria",
+      "form": 2
+    },
+    {
+      "map": 752,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "blossom",
+      "form": 1
+    },
+    {
+      "map": 752,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "blossom",
+      "form": 2
+    },
+    {
+      "map": 752,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "almondblossom",
+      "form": 1
+    },
+    {
+      "map": 752,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "almondblossom",
+      "form": 2
+    },
+    {
+      "map": 752,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "verdigris",
+      "form": 3
+    },
+    {
+      "map": 753,
+      "seed": 1,
+      "policy": "auto",
+      "id": null,
+      "form": 2
+    },
+    {
+      "map": 753,
+      "seed": 1,
+      "policy": "auto",
+      "id": "heliotrope",
+      "form": 1
+    },
+    {
+      "map": 753,
+      "seed": 1,
+      "policy": "auto",
+      "id": "heliotrope",
+      "form": 2
+    },
+    {
+      "map": 753,
+      "seed": 1,
+      "policy": "auto",
+      "id": "wisteria",
+      "form": 1
+    },
+    {
+      "map": 753,
+      "seed": 1,
+      "policy": "auto",
+      "id": "wisteria",
+      "form": 2
+    },
+    {
+      "map": 753,
+      "seed": 1,
+      "policy": "auto",
+      "id": "blossom",
+      "form": 1
+    },
+    {
+      "map": 753,
+      "seed": 1,
+      "policy": "auto",
+      "id": "blossom",
+      "form": 2
+    },
+    {
+      "map": 753,
+      "seed": 1,
+      "policy": "auto",
+      "id": "almondblossom",
+      "form": 1
+    },
+    {
+      "map": 753,
+      "seed": 1,
+      "policy": "auto",
+      "id": "almondblossom",
+      "form": 2
+    },
+    {
+      "map": 753,
+      "seed": 1,
+      "policy": "auto",
+      "id": "verdigris",
+      "form": 3
+    },
+    {
+      "map": 753,
+      "seed": 1,
+      "policy": "smart2",
+      "id": null,
+      "form": 2
+    },
+    {
+      "map": 753,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "heliotrope",
+      "form": 1
+    },
+    {
+      "map": 753,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "heliotrope",
+      "form": 2
+    },
+    {
+      "map": 753,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "wisteria",
+      "form": 1
+    },
+    {
+      "map": 753,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "wisteria",
+      "form": 2
+    },
+    {
+      "map": 753,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "blossom",
+      "form": 1
+    },
+    {
+      "map": 753,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "blossom",
+      "form": 2
+    },
+    {
+      "map": 753,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "almondblossom",
+      "form": 1
+    },
+    {
+      "map": 753,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "almondblossom",
+      "form": 2
+    },
+    {
+      "map": 753,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "verdigris",
+      "form": 3
+    },
+    {
+      "map": 753,
+      "seed": 2,
+      "policy": "auto",
+      "id": null,
+      "form": 2
+    },
+    {
+      "map": 753,
+      "seed": 2,
+      "policy": "auto",
+      "id": "heliotrope",
+      "form": 1
+    },
+    {
+      "map": 753,
+      "seed": 2,
+      "policy": "auto",
+      "id": "heliotrope",
+      "form": 2
+    },
+    {
+      "map": 753,
+      "seed": 2,
+      "policy": "auto",
+      "id": "wisteria",
+      "form": 1
+    },
+    {
+      "map": 753,
+      "seed": 2,
+      "policy": "auto",
+      "id": "wisteria",
+      "form": 2
+    },
+    {
+      "map": 753,
+      "seed": 2,
+      "policy": "auto",
+      "id": "blossom",
+      "form": 1
+    },
+    {
+      "map": 753,
+      "seed": 2,
+      "policy": "auto",
+      "id": "blossom",
+      "form": 2
+    },
+    {
+      "map": 753,
+      "seed": 2,
+      "policy": "auto",
+      "id": "almondblossom",
+      "form": 1
+    },
+    {
+      "map": 753,
+      "seed": 2,
+      "policy": "auto",
+      "id": "almondblossom",
+      "form": 2
+    },
+    {
+      "map": 753,
+      "seed": 2,
+      "policy": "auto",
+      "id": "verdigris",
+      "form": 3
+    },
+    {
+      "map": 753,
+      "seed": 2,
+      "policy": "smart2",
+      "id": null,
+      "form": 2
+    },
+    {
+      "map": 753,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "heliotrope",
+      "form": 1
+    },
+    {
+      "map": 753,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "heliotrope",
+      "form": 2
+    },
+    {
+      "map": 753,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "wisteria",
+      "form": 1
+    },
+    {
+      "map": 753,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "wisteria",
+      "form": 2
+    },
+    {
+      "map": 753,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "blossom",
+      "form": 1
+    },
+    {
+      "map": 753,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "blossom",
+      "form": 2
+    },
+    {
+      "map": 753,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "almondblossom",
+      "form": 1
+    },
+    {
+      "map": 753,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "almondblossom",
+      "form": 2
+    },
+    {
+      "map": 753,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "verdigris",
+      "form": 3
+    },
+    {
+      "map": 753,
+      "seed": 3,
+      "policy": "auto",
+      "id": null,
+      "form": 2
+    },
+    {
+      "map": 753,
+      "seed": 3,
+      "policy": "auto",
+      "id": "heliotrope",
+      "form": 1
+    },
+    {
+      "map": 753,
+      "seed": 3,
+      "policy": "auto",
+      "id": "heliotrope",
+      "form": 2
+    },
+    {
+      "map": 753,
+      "seed": 3,
+      "policy": "auto",
+      "id": "wisteria",
+      "form": 1
+    },
+    {
+      "map": 753,
+      "seed": 3,
+      "policy": "auto",
+      "id": "wisteria",
+      "form": 2
+    },
+    {
+      "map": 753,
+      "seed": 3,
+      "policy": "auto",
+      "id": "blossom",
+      "form": 1
+    },
+    {
+      "map": 753,
+      "seed": 3,
+      "policy": "auto",
+      "id": "blossom",
+      "form": 2
+    },
+    {
+      "map": 753,
+      "seed": 3,
+      "policy": "auto",
+      "id": "almondblossom",
+      "form": 1
+    },
+    {
+      "map": 753,
+      "seed": 3,
+      "policy": "auto",
+      "id": "almondblossom",
+      "form": 2
+    },
+    {
+      "map": 753,
+      "seed": 3,
+      "policy": "auto",
+      "id": "verdigris",
+      "form": 3
+    },
+    {
+      "map": 753,
+      "seed": 3,
+      "policy": "smart2",
+      "id": null,
+      "form": 2
+    },
+    {
+      "map": 753,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "heliotrope",
+      "form": 1
+    },
+    {
+      "map": 753,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "heliotrope",
+      "form": 2
+    },
+    {
+      "map": 753,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "wisteria",
+      "form": 1
+    },
+    {
+      "map": 753,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "wisteria",
+      "form": 2
+    },
+    {
+      "map": 753,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "blossom",
+      "form": 1
+    },
+    {
+      "map": 753,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "blossom",
+      "form": 2
+    },
+    {
+      "map": 753,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "almondblossom",
+      "form": 1
+    },
+    {
+      "map": 753,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "almondblossom",
+      "form": 2
+    },
+    {
+      "map": 753,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "verdigris",
+      "form": 3
+    },
+    {
+      "map": 754,
+      "seed": 1,
+      "policy": "auto",
+      "id": null,
+      "form": 2
+    },
+    {
+      "map": 754,
+      "seed": 1,
+      "policy": "auto",
+      "id": "heliotrope",
+      "form": 1
+    },
+    {
+      "map": 754,
+      "seed": 1,
+      "policy": "auto",
+      "id": "heliotrope",
+      "form": 2
+    },
+    {
+      "map": 754,
+      "seed": 1,
+      "policy": "auto",
+      "id": "wisteria",
+      "form": 1
+    },
+    {
+      "map": 754,
+      "seed": 1,
+      "policy": "auto",
+      "id": "wisteria",
+      "form": 2
+    },
+    {
+      "map": 754,
+      "seed": 1,
+      "policy": "auto",
+      "id": "blossom",
+      "form": 1
+    },
+    {
+      "map": 754,
+      "seed": 1,
+      "policy": "auto",
+      "id": "blossom",
+      "form": 2
+    },
+    {
+      "map": 754,
+      "seed": 1,
+      "policy": "auto",
+      "id": "almondblossom",
+      "form": 1
+    },
+    {
+      "map": 754,
+      "seed": 1,
+      "policy": "auto",
+      "id": "almondblossom",
+      "form": 2
+    },
+    {
+      "map": 754,
+      "seed": 1,
+      "policy": "auto",
+      "id": "verdigris",
+      "form": 3
+    },
+    {
+      "map": 754,
+      "seed": 1,
+      "policy": "smart2",
+      "id": null,
+      "form": 2
+    },
+    {
+      "map": 754,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "heliotrope",
+      "form": 1
+    },
+    {
+      "map": 754,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "heliotrope",
+      "form": 2
+    },
+    {
+      "map": 754,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "wisteria",
+      "form": 1
+    },
+    {
+      "map": 754,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "wisteria",
+      "form": 2
+    },
+    {
+      "map": 754,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "blossom",
+      "form": 1
+    },
+    {
+      "map": 754,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "blossom",
+      "form": 2
+    },
+    {
+      "map": 754,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "almondblossom",
+      "form": 1
+    },
+    {
+      "map": 754,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "almondblossom",
+      "form": 2
+    },
+    {
+      "map": 754,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "verdigris",
+      "form": 3
+    },
+    {
+      "map": 754,
+      "seed": 2,
+      "policy": "auto",
+      "id": null,
+      "form": 2
+    },
+    {
+      "map": 754,
+      "seed": 2,
+      "policy": "auto",
+      "id": "heliotrope",
+      "form": 1
+    },
+    {
+      "map": 754,
+      "seed": 2,
+      "policy": "auto",
+      "id": "heliotrope",
+      "form": 2
+    },
+    {
+      "map": 754,
+      "seed": 2,
+      "policy": "auto",
+      "id": "wisteria",
+      "form": 1
+    },
+    {
+      "map": 754,
+      "seed": 2,
+      "policy": "auto",
+      "id": "wisteria",
+      "form": 2
+    },
+    {
+      "map": 754,
+      "seed": 2,
+      "policy": "auto",
+      "id": "blossom",
+      "form": 1
+    },
+    {
+      "map": 754,
+      "seed": 2,
+      "policy": "auto",
+      "id": "blossom",
+      "form": 2
+    },
+    {
+      "map": 754,
+      "seed": 2,
+      "policy": "auto",
+      "id": "almondblossom",
+      "form": 1
+    },
+    {
+      "map": 754,
+      "seed": 2,
+      "policy": "auto",
+      "id": "almondblossom",
+      "form": 2
+    },
+    {
+      "map": 754,
+      "seed": 2,
+      "policy": "auto",
+      "id": "verdigris",
+      "form": 3
+    },
+    {
+      "map": 754,
+      "seed": 2,
+      "policy": "smart2",
+      "id": null,
+      "form": 2
+    },
+    {
+      "map": 754,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "heliotrope",
+      "form": 1
+    },
+    {
+      "map": 754,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "heliotrope",
+      "form": 2
+    },
+    {
+      "map": 754,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "wisteria",
+      "form": 1
+    },
+    {
+      "map": 754,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "wisteria",
+      "form": 2
+    },
+    {
+      "map": 754,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "blossom",
+      "form": 1
+    },
+    {
+      "map": 754,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "blossom",
+      "form": 2
+    },
+    {
+      "map": 754,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "almondblossom",
+      "form": 1
+    },
+    {
+      "map": 754,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "almondblossom",
+      "form": 2
+    },
+    {
+      "map": 754,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "verdigris",
+      "form": 3
+    },
+    {
+      "map": 754,
+      "seed": 3,
+      "policy": "auto",
+      "id": null,
+      "form": 2
+    },
+    {
+      "map": 754,
+      "seed": 3,
+      "policy": "auto",
+      "id": "heliotrope",
+      "form": 1
+    },
+    {
+      "map": 754,
+      "seed": 3,
+      "policy": "auto",
+      "id": "heliotrope",
+      "form": 2
+    },
+    {
+      "map": 754,
+      "seed": 3,
+      "policy": "auto",
+      "id": "wisteria",
+      "form": 1
+    },
+    {
+      "map": 754,
+      "seed": 3,
+      "policy": "auto",
+      "id": "wisteria",
+      "form": 2
+    },
+    {
+      "map": 754,
+      "seed": 3,
+      "policy": "auto",
+      "id": "blossom",
+      "form": 1
+    },
+    {
+      "map": 754,
+      "seed": 3,
+      "policy": "auto",
+      "id": "blossom",
+      "form": 2
+    },
+    {
+      "map": 754,
+      "seed": 3,
+      "policy": "auto",
+      "id": "almondblossom",
+      "form": 1
+    },
+    {
+      "map": 754,
+      "seed": 3,
+      "policy": "auto",
+      "id": "almondblossom",
+      "form": 2
+    },
+    {
+      "map": 754,
+      "seed": 3,
+      "policy": "auto",
+      "id": "verdigris",
+      "form": 3
+    },
+    {
+      "map": 754,
+      "seed": 3,
+      "policy": "smart2",
+      "id": null,
+      "form": 2
+    },
+    {
+      "map": 754,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "heliotrope",
+      "form": 1
+    },
+    {
+      "map": 754,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "heliotrope",
+      "form": 2
+    },
+    {
+      "map": 754,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "wisteria",
+      "form": 1
+    },
+    {
+      "map": 754,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "wisteria",
+      "form": 2
+    },
+    {
+      "map": 754,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "blossom",
+      "form": 1
+    },
+    {
+      "map": 754,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "blossom",
+      "form": 2
+    },
+    {
+      "map": 754,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "almondblossom",
+      "form": 1
+    },
+    {
+      "map": 754,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "almondblossom",
+      "form": 2
+    },
+    {
+      "map": 754,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "verdigris",
+      "form": 3
+    },
+    {
+      "map": 755,
+      "seed": 1,
+      "policy": "auto",
+      "id": null,
+      "form": 2
+    },
+    {
+      "map": 755,
+      "seed": 1,
+      "policy": "auto",
+      "id": "heliotrope",
+      "form": 1
+    },
+    {
+      "map": 755,
+      "seed": 1,
+      "policy": "auto",
+      "id": "heliotrope",
+      "form": 2
+    },
+    {
+      "map": 755,
+      "seed": 1,
+      "policy": "auto",
+      "id": "wisteria",
+      "form": 1
+    },
+    {
+      "map": 755,
+      "seed": 1,
+      "policy": "auto",
+      "id": "wisteria",
+      "form": 2
+    },
+    {
+      "map": 755,
+      "seed": 1,
+      "policy": "auto",
+      "id": "blossom",
+      "form": 1
+    },
+    {
+      "map": 755,
+      "seed": 1,
+      "policy": "auto",
+      "id": "blossom",
+      "form": 2
+    },
+    {
+      "map": 755,
+      "seed": 1,
+      "policy": "auto",
+      "id": "almondblossom",
+      "form": 1
+    },
+    {
+      "map": 755,
+      "seed": 1,
+      "policy": "auto",
+      "id": "almondblossom",
+      "form": 2
+    },
+    {
+      "map": 755,
+      "seed": 1,
+      "policy": "auto",
+      "id": "verdigris",
+      "form": 3
+    },
+    {
+      "map": 755,
+      "seed": 1,
+      "policy": "smart2",
+      "id": null,
+      "form": 2
+    },
+    {
+      "map": 755,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "heliotrope",
+      "form": 1
+    },
+    {
+      "map": 755,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "heliotrope",
+      "form": 2
+    },
+    {
+      "map": 755,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "wisteria",
+      "form": 1
+    },
+    {
+      "map": 755,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "wisteria",
+      "form": 2
+    },
+    {
+      "map": 755,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "blossom",
+      "form": 1
+    },
+    {
+      "map": 755,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "blossom",
+      "form": 2
+    },
+    {
+      "map": 755,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "almondblossom",
+      "form": 1
+    },
+    {
+      "map": 755,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "almondblossom",
+      "form": 2
+    },
+    {
+      "map": 755,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "verdigris",
+      "form": 3
+    },
+    {
+      "map": 755,
+      "seed": 2,
+      "policy": "auto",
+      "id": null,
+      "form": 2
+    },
+    {
+      "map": 755,
+      "seed": 2,
+      "policy": "auto",
+      "id": "heliotrope",
+      "form": 1
+    },
+    {
+      "map": 755,
+      "seed": 2,
+      "policy": "auto",
+      "id": "heliotrope",
+      "form": 2
+    },
+    {
+      "map": 755,
+      "seed": 2,
+      "policy": "auto",
+      "id": "wisteria",
+      "form": 1
+    },
+    {
+      "map": 755,
+      "seed": 2,
+      "policy": "auto",
+      "id": "wisteria",
+      "form": 2
+    },
+    {
+      "map": 755,
+      "seed": 2,
+      "policy": "auto",
+      "id": "blossom",
+      "form": 1
+    },
+    {
+      "map": 755,
+      "seed": 2,
+      "policy": "auto",
+      "id": "blossom",
+      "form": 2
+    },
+    {
+      "map": 755,
+      "seed": 2,
+      "policy": "auto",
+      "id": "almondblossom",
+      "form": 1
+    },
+    {
+      "map": 755,
+      "seed": 2,
+      "policy": "auto",
+      "id": "almondblossom",
+      "form": 2
+    },
+    {
+      "map": 755,
+      "seed": 2,
+      "policy": "auto",
+      "id": "verdigris",
+      "form": 3
+    },
+    {
+      "map": 755,
+      "seed": 2,
+      "policy": "smart2",
+      "id": null,
+      "form": 2
+    },
+    {
+      "map": 755,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "heliotrope",
+      "form": 1
+    },
+    {
+      "map": 755,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "heliotrope",
+      "form": 2
+    },
+    {
+      "map": 755,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "wisteria",
+      "form": 1
+    },
+    {
+      "map": 755,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "wisteria",
+      "form": 2
+    },
+    {
+      "map": 755,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "blossom",
+      "form": 1
+    },
+    {
+      "map": 755,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "blossom",
+      "form": 2
+    },
+    {
+      "map": 755,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "almondblossom",
+      "form": 1
+    },
+    {
+      "map": 755,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "almondblossom",
+      "form": 2
+    },
+    {
+      "map": 755,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "verdigris",
+      "form": 3
+    },
+    {
+      "map": 755,
+      "seed": 3,
+      "policy": "auto",
+      "id": null,
+      "form": 2
+    },
+    {
+      "map": 755,
+      "seed": 3,
+      "policy": "auto",
+      "id": "heliotrope",
+      "form": 1
+    },
+    {
+      "map": 755,
+      "seed": 3,
+      "policy": "auto",
+      "id": "heliotrope",
+      "form": 2
+    },
+    {
+      "map": 755,
+      "seed": 3,
+      "policy": "auto",
+      "id": "wisteria",
+      "form": 1
+    },
+    {
+      "map": 755,
+      "seed": 3,
+      "policy": "auto",
+      "id": "wisteria",
+      "form": 2
+    },
+    {
+      "map": 755,
+      "seed": 3,
+      "policy": "auto",
+      "id": "blossom",
+      "form": 1
+    },
+    {
+      "map": 755,
+      "seed": 3,
+      "policy": "auto",
+      "id": "blossom",
+      "form": 2
+    },
+    {
+      "map": 755,
+      "seed": 3,
+      "policy": "auto",
+      "id": "almondblossom",
+      "form": 1
+    },
+    {
+      "map": 755,
+      "seed": 3,
+      "policy": "auto",
+      "id": "almondblossom",
+      "form": 2
+    },
+    {
+      "map": 755,
+      "seed": 3,
+      "policy": "auto",
+      "id": "verdigris",
+      "form": 3
+    },
+    {
+      "map": 755,
+      "seed": 3,
+      "policy": "smart2",
+      "id": null,
+      "form": 2
+    },
+    {
+      "map": 755,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "heliotrope",
+      "form": 1
+    },
+    {
+      "map": 755,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "heliotrope",
+      "form": 2
+    },
+    {
+      "map": 755,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "wisteria",
+      "form": 1
+    },
+    {
+      "map": 755,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "wisteria",
+      "form": 2
+    },
+    {
+      "map": 755,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "blossom",
+      "form": 1
+    },
+    {
+      "map": 755,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "blossom",
+      "form": 2
+    },
+    {
+      "map": 755,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "almondblossom",
+      "form": 1
+    },
+    {
+      "map": 755,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "almondblossom",
+      "form": 2
+    },
+    {
+      "map": 755,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "verdigris",
+      "form": 3
+    },
+    {
+      "map": 756,
+      "seed": 1,
+      "policy": "auto",
+      "id": null,
+      "form": 2
+    },
+    {
+      "map": 756,
+      "seed": 1,
+      "policy": "auto",
+      "id": "heliotrope",
+      "form": 1
+    },
+    {
+      "map": 756,
+      "seed": 1,
+      "policy": "auto",
+      "id": "heliotrope",
+      "form": 2
+    },
+    {
+      "map": 756,
+      "seed": 1,
+      "policy": "auto",
+      "id": "wisteria",
+      "form": 1
+    },
+    {
+      "map": 756,
+      "seed": 1,
+      "policy": "auto",
+      "id": "wisteria",
+      "form": 2
+    },
+    {
+      "map": 756,
+      "seed": 1,
+      "policy": "auto",
+      "id": "blossom",
+      "form": 1
+    },
+    {
+      "map": 756,
+      "seed": 1,
+      "policy": "auto",
+      "id": "blossom",
+      "form": 2
+    },
+    {
+      "map": 756,
+      "seed": 1,
+      "policy": "auto",
+      "id": "almondblossom",
+      "form": 1
+    },
+    {
+      "map": 756,
+      "seed": 1,
+      "policy": "auto",
+      "id": "almondblossom",
+      "form": 2
+    },
+    {
+      "map": 756,
+      "seed": 1,
+      "policy": "auto",
+      "id": "verdigris",
+      "form": 3
+    },
+    {
+      "map": 756,
+      "seed": 1,
+      "policy": "smart2",
+      "id": null,
+      "form": 2
+    },
+    {
+      "map": 756,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "heliotrope",
+      "form": 1
+    },
+    {
+      "map": 756,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "heliotrope",
+      "form": 2
+    },
+    {
+      "map": 756,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "wisteria",
+      "form": 1
+    },
+    {
+      "map": 756,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "wisteria",
+      "form": 2
+    },
+    {
+      "map": 756,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "blossom",
+      "form": 1
+    },
+    {
+      "map": 756,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "blossom",
+      "form": 2
+    },
+    {
+      "map": 756,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "almondblossom",
+      "form": 1
+    },
+    {
+      "map": 756,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "almondblossom",
+      "form": 2
+    },
+    {
+      "map": 756,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "verdigris",
+      "form": 3
+    },
+    {
+      "map": 756,
+      "seed": 2,
+      "policy": "auto",
+      "id": null,
+      "form": 2
+    },
+    {
+      "map": 756,
+      "seed": 2,
+      "policy": "auto",
+      "id": "heliotrope",
+      "form": 1
+    },
+    {
+      "map": 756,
+      "seed": 2,
+      "policy": "auto",
+      "id": "heliotrope",
+      "form": 2
+    },
+    {
+      "map": 756,
+      "seed": 2,
+      "policy": "auto",
+      "id": "wisteria",
+      "form": 1
+    },
+    {
+      "map": 756,
+      "seed": 2,
+      "policy": "auto",
+      "id": "wisteria",
+      "form": 2
+    },
+    {
+      "map": 756,
+      "seed": 2,
+      "policy": "auto",
+      "id": "blossom",
+      "form": 1
+    },
+    {
+      "map": 756,
+      "seed": 2,
+      "policy": "auto",
+      "id": "blossom",
+      "form": 2
+    },
+    {
+      "map": 756,
+      "seed": 2,
+      "policy": "auto",
+      "id": "almondblossom",
+      "form": 1
+    },
+    {
+      "map": 756,
+      "seed": 2,
+      "policy": "auto",
+      "id": "almondblossom",
+      "form": 2
+    },
+    {
+      "map": 756,
+      "seed": 2,
+      "policy": "auto",
+      "id": "verdigris",
+      "form": 3
+    },
+    {
+      "map": 756,
+      "seed": 2,
+      "policy": "smart2",
+      "id": null,
+      "form": 2
+    },
+    {
+      "map": 756,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "heliotrope",
+      "form": 1
+    },
+    {
+      "map": 756,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "heliotrope",
+      "form": 2
+    },
+    {
+      "map": 756,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "wisteria",
+      "form": 1
+    },
+    {
+      "map": 756,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "wisteria",
+      "form": 2
+    },
+    {
+      "map": 756,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "blossom",
+      "form": 1
+    },
+    {
+      "map": 756,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "blossom",
+      "form": 2
+    },
+    {
+      "map": 756,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "almondblossom",
+      "form": 1
+    },
+    {
+      "map": 756,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "almondblossom",
+      "form": 2
+    },
+    {
+      "map": 756,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "verdigris",
+      "form": 3
+    },
+    {
+      "map": 756,
+      "seed": 3,
+      "policy": "auto",
+      "id": null,
+      "form": 2
+    },
+    {
+      "map": 756,
+      "seed": 3,
+      "policy": "auto",
+      "id": "heliotrope",
+      "form": 1
+    },
+    {
+      "map": 756,
+      "seed": 3,
+      "policy": "auto",
+      "id": "heliotrope",
+      "form": 2
+    },
+    {
+      "map": 756,
+      "seed": 3,
+      "policy": "auto",
+      "id": "wisteria",
+      "form": 1
+    },
+    {
+      "map": 756,
+      "seed": 3,
+      "policy": "auto",
+      "id": "wisteria",
+      "form": 2
+    },
+    {
+      "map": 756,
+      "seed": 3,
+      "policy": "auto",
+      "id": "blossom",
+      "form": 1
+    },
+    {
+      "map": 756,
+      "seed": 3,
+      "policy": "auto",
+      "id": "blossom",
+      "form": 2
+    },
+    {
+      "map": 756,
+      "seed": 3,
+      "policy": "auto",
+      "id": "almondblossom",
+      "form": 1
+    },
+    {
+      "map": 756,
+      "seed": 3,
+      "policy": "auto",
+      "id": "almondblossom",
+      "form": 2
+    },
+    {
+      "map": 756,
+      "seed": 3,
+      "policy": "auto",
+      "id": "verdigris",
+      "form": 3
+    },
+    {
+      "map": 756,
+      "seed": 3,
+      "policy": "smart2",
+      "id": null,
+      "form": 2
+    },
+    {
+      "map": 756,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "heliotrope",
+      "form": 1
+    },
+    {
+      "map": 756,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "heliotrope",
+      "form": 2
+    },
+    {
+      "map": 756,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "wisteria",
+      "form": 1
+    },
+    {
+      "map": 756,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "wisteria",
+      "form": 2
+    },
+    {
+      "map": 756,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "blossom",
+      "form": 1
+    },
+    {
+      "map": 756,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "blossom",
+      "form": 2
+    },
+    {
+      "map": 756,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "almondblossom",
+      "form": 1
+    },
+    {
+      "map": 756,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "almondblossom",
+      "form": 2
+    },
+    {
+      "map": 756,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "verdigris",
+      "form": 3
+    },
+    {
+      "map": 757,
+      "seed": 1,
+      "policy": "auto",
+      "id": null,
+      "form": 2
+    },
+    {
+      "map": 757,
+      "seed": 1,
+      "policy": "auto",
+      "id": "heliotrope",
+      "form": 1
+    },
+    {
+      "map": 757,
+      "seed": 1,
+      "policy": "auto",
+      "id": "heliotrope",
+      "form": 2
+    },
+    {
+      "map": 757,
+      "seed": 1,
+      "policy": "auto",
+      "id": "wisteria",
+      "form": 1
+    },
+    {
+      "map": 757,
+      "seed": 1,
+      "policy": "auto",
+      "id": "wisteria",
+      "form": 2
+    },
+    {
+      "map": 757,
+      "seed": 1,
+      "policy": "auto",
+      "id": "blossom",
+      "form": 1
+    },
+    {
+      "map": 757,
+      "seed": 1,
+      "policy": "auto",
+      "id": "blossom",
+      "form": 2
+    },
+    {
+      "map": 757,
+      "seed": 1,
+      "policy": "auto",
+      "id": "almondblossom",
+      "form": 1
+    },
+    {
+      "map": 757,
+      "seed": 1,
+      "policy": "auto",
+      "id": "almondblossom",
+      "form": 2
+    },
+    {
+      "map": 757,
+      "seed": 1,
+      "policy": "auto",
+      "id": "verdigris",
+      "form": 3
+    },
+    {
+      "map": 757,
+      "seed": 1,
+      "policy": "smart2",
+      "id": null,
+      "form": 2
+    },
+    {
+      "map": 757,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "heliotrope",
+      "form": 1
+    },
+    {
+      "map": 757,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "heliotrope",
+      "form": 2
+    },
+    {
+      "map": 757,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "wisteria",
+      "form": 1
+    },
+    {
+      "map": 757,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "wisteria",
+      "form": 2
+    },
+    {
+      "map": 757,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "blossom",
+      "form": 1
+    },
+    {
+      "map": 757,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "blossom",
+      "form": 2
+    },
+    {
+      "map": 757,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "almondblossom",
+      "form": 1
+    },
+    {
+      "map": 757,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "almondblossom",
+      "form": 2
+    },
+    {
+      "map": 757,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "verdigris",
+      "form": 3
+    },
+    {
+      "map": 757,
+      "seed": 2,
+      "policy": "auto",
+      "id": null,
+      "form": 2
+    },
+    {
+      "map": 757,
+      "seed": 2,
+      "policy": "auto",
+      "id": "heliotrope",
+      "form": 1
+    },
+    {
+      "map": 757,
+      "seed": 2,
+      "policy": "auto",
+      "id": "heliotrope",
+      "form": 2
+    },
+    {
+      "map": 757,
+      "seed": 2,
+      "policy": "auto",
+      "id": "wisteria",
+      "form": 1
+    },
+    {
+      "map": 757,
+      "seed": 2,
+      "policy": "auto",
+      "id": "wisteria",
+      "form": 2
+    },
+    {
+      "map": 757,
+      "seed": 2,
+      "policy": "auto",
+      "id": "blossom",
+      "form": 1
+    },
+    {
+      "map": 757,
+      "seed": 2,
+      "policy": "auto",
+      "id": "blossom",
+      "form": 2
+    },
+    {
+      "map": 757,
+      "seed": 2,
+      "policy": "auto",
+      "id": "almondblossom",
+      "form": 1
+    },
+    {
+      "map": 757,
+      "seed": 2,
+      "policy": "auto",
+      "id": "almondblossom",
+      "form": 2
+    },
+    {
+      "map": 757,
+      "seed": 2,
+      "policy": "auto",
+      "id": "verdigris",
+      "form": 3
+    },
+    {
+      "map": 757,
+      "seed": 2,
+      "policy": "smart2",
+      "id": null,
+      "form": 2
+    },
+    {
+      "map": 757,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "heliotrope",
+      "form": 1
+    },
+    {
+      "map": 757,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "heliotrope",
+      "form": 2
+    },
+    {
+      "map": 757,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "wisteria",
+      "form": 1
+    },
+    {
+      "map": 757,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "wisteria",
+      "form": 2
+    },
+    {
+      "map": 757,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "blossom",
+      "form": 1
+    },
+    {
+      "map": 757,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "blossom",
+      "form": 2
+    },
+    {
+      "map": 757,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "almondblossom",
+      "form": 1
+    },
+    {
+      "map": 757,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "almondblossom",
+      "form": 2
+    },
+    {
+      "map": 757,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "verdigris",
+      "form": 3
+    },
+    {
+      "map": 757,
+      "seed": 3,
+      "policy": "auto",
+      "id": null,
+      "form": 2
+    },
+    {
+      "map": 757,
+      "seed": 3,
+      "policy": "auto",
+      "id": "heliotrope",
+      "form": 1
+    },
+    {
+      "map": 757,
+      "seed": 3,
+      "policy": "auto",
+      "id": "heliotrope",
+      "form": 2
+    },
+    {
+      "map": 757,
+      "seed": 3,
+      "policy": "auto",
+      "id": "wisteria",
+      "form": 1
+    },
+    {
+      "map": 757,
+      "seed": 3,
+      "policy": "auto",
+      "id": "wisteria",
+      "form": 2
+    },
+    {
+      "map": 757,
+      "seed": 3,
+      "policy": "auto",
+      "id": "blossom",
+      "form": 1
+    },
+    {
+      "map": 757,
+      "seed": 3,
+      "policy": "auto",
+      "id": "blossom",
+      "form": 2
+    },
+    {
+      "map": 757,
+      "seed": 3,
+      "policy": "auto",
+      "id": "almondblossom",
+      "form": 1
+    },
+    {
+      "map": 757,
+      "seed": 3,
+      "policy": "auto",
+      "id": "almondblossom",
+      "form": 2
+    },
+    {
+      "map": 757,
+      "seed": 3,
+      "policy": "auto",
+      "id": "verdigris",
+      "form": 3
+    },
+    {
+      "map": 757,
+      "seed": 3,
+      "policy": "smart2",
+      "id": null,
+      "form": 2
+    },
+    {
+      "map": 757,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "heliotrope",
+      "form": 1
+    },
+    {
+      "map": 757,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "heliotrope",
+      "form": 2
+    },
+    {
+      "map": 757,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "wisteria",
+      "form": 1
+    },
+    {
+      "map": 757,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "wisteria",
+      "form": 2
+    },
+    {
+      "map": 757,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "blossom",
+      "form": 1
+    },
+    {
+      "map": 757,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "blossom",
+      "form": 2
+    },
+    {
+      "map": 757,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "almondblossom",
+      "form": 1
+    },
+    {
+      "map": 757,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "almondblossom",
+      "form": 2
+    },
+    {
+      "map": 757,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "verdigris",
+      "form": 3
+    },
+    {
+      "map": 758,
+      "seed": 1,
+      "policy": "auto",
+      "id": null,
+      "form": 2
+    },
+    {
+      "map": 758,
+      "seed": 1,
+      "policy": "auto",
+      "id": "heliotrope",
+      "form": 1
+    },
+    {
+      "map": 758,
+      "seed": 1,
+      "policy": "auto",
+      "id": "heliotrope",
+      "form": 2
+    },
+    {
+      "map": 758,
+      "seed": 1,
+      "policy": "auto",
+      "id": "wisteria",
+      "form": 1
+    },
+    {
+      "map": 758,
+      "seed": 1,
+      "policy": "auto",
+      "id": "wisteria",
+      "form": 2
+    },
+    {
+      "map": 758,
+      "seed": 1,
+      "policy": "auto",
+      "id": "blossom",
+      "form": 1
+    },
+    {
+      "map": 758,
+      "seed": 1,
+      "policy": "auto",
+      "id": "blossom",
+      "form": 2
+    },
+    {
+      "map": 758,
+      "seed": 1,
+      "policy": "auto",
+      "id": "almondblossom",
+      "form": 1
+    },
+    {
+      "map": 758,
+      "seed": 1,
+      "policy": "auto",
+      "id": "almondblossom",
+      "form": 2
+    },
+    {
+      "map": 758,
+      "seed": 1,
+      "policy": "auto",
+      "id": "verdigris",
+      "form": 3
+    },
+    {
+      "map": 758,
+      "seed": 1,
+      "policy": "smart2",
+      "id": null,
+      "form": 2
+    },
+    {
+      "map": 758,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "heliotrope",
+      "form": 1
+    },
+    {
+      "map": 758,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "heliotrope",
+      "form": 2
+    },
+    {
+      "map": 758,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "wisteria",
+      "form": 1
+    },
+    {
+      "map": 758,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "wisteria",
+      "form": 2
+    },
+    {
+      "map": 758,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "blossom",
+      "form": 1
+    },
+    {
+      "map": 758,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "blossom",
+      "form": 2
+    },
+    {
+      "map": 758,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "almondblossom",
+      "form": 1
+    },
+    {
+      "map": 758,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "almondblossom",
+      "form": 2
+    },
+    {
+      "map": 758,
+      "seed": 1,
+      "policy": "smart2",
+      "id": "verdigris",
+      "form": 3
+    },
+    {
+      "map": 758,
+      "seed": 2,
+      "policy": "auto",
+      "id": null,
+      "form": 2
+    },
+    {
+      "map": 758,
+      "seed": 2,
+      "policy": "auto",
+      "id": "heliotrope",
+      "form": 1
+    },
+    {
+      "map": 758,
+      "seed": 2,
+      "policy": "auto",
+      "id": "heliotrope",
+      "form": 2
+    },
+    {
+      "map": 758,
+      "seed": 2,
+      "policy": "auto",
+      "id": "wisteria",
+      "form": 1
+    },
+    {
+      "map": 758,
+      "seed": 2,
+      "policy": "auto",
+      "id": "wisteria",
+      "form": 2
+    },
+    {
+      "map": 758,
+      "seed": 2,
+      "policy": "auto",
+      "id": "blossom",
+      "form": 1
+    },
+    {
+      "map": 758,
+      "seed": 2,
+      "policy": "auto",
+      "id": "blossom",
+      "form": 2
+    },
+    {
+      "map": 758,
+      "seed": 2,
+      "policy": "auto",
+      "id": "almondblossom",
+      "form": 1
+    },
+    {
+      "map": 758,
+      "seed": 2,
+      "policy": "auto",
+      "id": "almondblossom",
+      "form": 2
+    },
+    {
+      "map": 758,
+      "seed": 2,
+      "policy": "auto",
+      "id": "verdigris",
+      "form": 3
+    },
+    {
+      "map": 758,
+      "seed": 2,
+      "policy": "smart2",
+      "id": null,
+      "form": 2
+    },
+    {
+      "map": 758,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "heliotrope",
+      "form": 1
+    },
+    {
+      "map": 758,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "heliotrope",
+      "form": 2
+    },
+    {
+      "map": 758,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "wisteria",
+      "form": 1
+    },
+    {
+      "map": 758,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "wisteria",
+      "form": 2
+    },
+    {
+      "map": 758,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "blossom",
+      "form": 1
+    },
+    {
+      "map": 758,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "blossom",
+      "form": 2
+    },
+    {
+      "map": 758,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "almondblossom",
+      "form": 1
+    },
+    {
+      "map": 758,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "almondblossom",
+      "form": 2
+    },
+    {
+      "map": 758,
+      "seed": 2,
+      "policy": "smart2",
+      "id": "verdigris",
+      "form": 3
+    },
+    {
+      "map": 758,
+      "seed": 3,
+      "policy": "auto",
+      "id": null,
+      "form": 2
+    },
+    {
+      "map": 758,
+      "seed": 3,
+      "policy": "auto",
+      "id": "heliotrope",
+      "form": 1
+    },
+    {
+      "map": 758,
+      "seed": 3,
+      "policy": "auto",
+      "id": "heliotrope",
+      "form": 2
+    },
+    {
+      "map": 758,
+      "seed": 3,
+      "policy": "auto",
+      "id": "wisteria",
+      "form": 1
+    },
+    {
+      "map": 758,
+      "seed": 3,
+      "policy": "auto",
+      "id": "wisteria",
+      "form": 2
+    },
+    {
+      "map": 758,
+      "seed": 3,
+      "policy": "auto",
+      "id": "blossom",
+      "form": 1
+    },
+    {
+      "map": 758,
+      "seed": 3,
+      "policy": "auto",
+      "id": "blossom",
+      "form": 2
+    },
+    {
+      "map": 758,
+      "seed": 3,
+      "policy": "auto",
+      "id": "almondblossom",
+      "form": 1
+    },
+    {
+      "map": 758,
+      "seed": 3,
+      "policy": "auto",
+      "id": "almondblossom",
+      "form": 2
+    },
+    {
+      "map": 758,
+      "seed": 3,
+      "policy": "auto",
+      "id": "verdigris",
+      "form": 3
+    },
+    {
+      "map": 758,
+      "seed": 3,
+      "policy": "smart2",
+      "id": null,
+      "form": 2
+    },
+    {
+      "map": 758,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "heliotrope",
+      "form": 1
+    },
+    {
+      "map": 758,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "heliotrope",
+      "form": 2
+    },
+    {
+      "map": 758,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "wisteria",
+      "form": 1
+    },
+    {
+      "map": 758,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "wisteria",
+      "form": 2
+    },
+    {
+      "map": 758,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "blossom",
+      "form": 1
+    },
+    {
+      "map": 758,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "blossom",
+      "form": 2
+    },
+    {
+      "map": 758,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "almondblossom",
+      "form": 1
+    },
+    {
+      "map": 758,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "almondblossom",
+      "form": 2
+    },
+    {
+      "map": 758,
+      "seed": 3,
+      "policy": "smart2",
+      "id": "verdigris",
+      "form": 3
+    }
+  ],
+  "raw": [
+    {
+      "id": 0,
+      "win": true,
+      "timeout": false,
+      "seconds": 149.27,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 1,
+      "win": true,
+      "timeout": false,
+      "seconds": 85.83,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 2,
+      "win": true,
+      "timeout": false,
+      "seconds": 76.9,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 3,
+      "win": true,
+      "timeout": false,
+      "seconds": 93.1,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 4,
+      "win": true,
+      "timeout": false,
+      "seconds": 84.37,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 5,
+      "win": true,
+      "timeout": false,
+      "seconds": 72.13,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 6,
+      "win": true,
+      "timeout": false,
+      "seconds": 75.6,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 7,
+      "win": true,
+      "timeout": false,
+      "seconds": 69.23,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 8,
+      "win": true,
+      "timeout": false,
+      "seconds": 70.2,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 9,
+      "win": true,
+      "timeout": false,
+      "seconds": 114.9,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 10,
+      "win": true,
+      "timeout": false,
+      "seconds": 149.27,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 11,
+      "win": true,
+      "timeout": false,
+      "seconds": 85.83,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 12,
+      "win": true,
+      "timeout": false,
+      "seconds": 76.9,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 13,
+      "win": true,
+      "timeout": false,
+      "seconds": 93.1,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 14,
+      "win": true,
+      "timeout": false,
+      "seconds": 84.37,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 15,
+      "win": true,
+      "timeout": false,
+      "seconds": 72.13,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 16,
+      "win": true,
+      "timeout": false,
+      "seconds": 75.6,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 17,
+      "win": true,
+      "timeout": false,
+      "seconds": 69.23,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 18,
+      "win": true,
+      "timeout": false,
+      "seconds": 70.2,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 19,
+      "win": true,
+      "timeout": false,
+      "seconds": 114.9,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 20,
+      "win": true,
+      "timeout": false,
+      "seconds": 149.27,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 21,
+      "win": true,
+      "timeout": false,
+      "seconds": 85.83,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 22,
+      "win": true,
+      "timeout": false,
+      "seconds": 76.9,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 23,
+      "win": true,
+      "timeout": false,
+      "seconds": 93.1,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 24,
+      "win": true,
+      "timeout": false,
+      "seconds": 84.37,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 25,
+      "win": true,
+      "timeout": false,
+      "seconds": 72.13,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 26,
+      "win": true,
+      "timeout": false,
+      "seconds": 75.6,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 27,
+      "win": true,
+      "timeout": false,
+      "seconds": 65.97,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 28,
+      "win": true,
+      "timeout": false,
+      "seconds": 72.27,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 29,
+      "win": true,
+      "timeout": false,
+      "seconds": 117.33,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 30,
+      "win": true,
+      "timeout": false,
+      "seconds": 149.27,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 31,
+      "win": true,
+      "timeout": false,
+      "seconds": 85.83,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 32,
+      "win": true,
+      "timeout": false,
+      "seconds": 76.9,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 33,
+      "win": true,
+      "timeout": false,
+      "seconds": 93.1,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 34,
+      "win": true,
+      "timeout": false,
+      "seconds": 84.37,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 35,
+      "win": true,
+      "timeout": false,
+      "seconds": 72.13,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 36,
+      "win": true,
+      "timeout": false,
+      "seconds": 75.6,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 37,
+      "win": true,
+      "timeout": false,
+      "seconds": 65.97,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 38,
+      "win": true,
+      "timeout": false,
+      "seconds": 72.27,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 39,
+      "win": true,
+      "timeout": false,
+      "seconds": 117.33,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 40,
+      "win": true,
+      "timeout": false,
+      "seconds": 149.27,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 41,
+      "win": true,
+      "timeout": false,
+      "seconds": 85.83,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 42,
+      "win": true,
+      "timeout": false,
+      "seconds": 76.9,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 43,
+      "win": true,
+      "timeout": false,
+      "seconds": 93.1,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 44,
+      "win": true,
+      "timeout": false,
+      "seconds": 84.37,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 45,
+      "win": true,
+      "timeout": false,
+      "seconds": 72.13,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 46,
+      "win": true,
+      "timeout": false,
+      "seconds": 75.6,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 47,
+      "win": true,
+      "timeout": false,
+      "seconds": 73.77,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 48,
+      "win": true,
+      "timeout": false,
+      "seconds": 74.73,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 49,
+      "win": true,
+      "timeout": false,
+      "seconds": 107.67,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 50,
+      "win": true,
+      "timeout": false,
+      "seconds": 149.27,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 51,
+      "win": true,
+      "timeout": false,
+      "seconds": 85.83,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 52,
+      "win": true,
+      "timeout": false,
+      "seconds": 76.9,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 53,
+      "win": true,
+      "timeout": false,
+      "seconds": 93.1,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 54,
+      "win": true,
+      "timeout": false,
+      "seconds": 84.37,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 55,
+      "win": true,
+      "timeout": false,
+      "seconds": 72.13,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 56,
+      "win": true,
+      "timeout": false,
+      "seconds": 75.6,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 57,
+      "win": true,
+      "timeout": false,
+      "seconds": 73.77,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 58,
+      "win": true,
+      "timeout": false,
+      "seconds": 74.73,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 59,
+      "win": true,
+      "timeout": false,
+      "seconds": 107.67,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 60,
+      "win": true,
+      "timeout": false,
+      "seconds": 105.53,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 61,
+      "win": true,
+      "timeout": false,
+      "seconds": 73.1,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 62,
+      "win": true,
+      "timeout": false,
+      "seconds": 69.53,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 63,
+      "win": true,
+      "timeout": false,
+      "seconds": 90.7,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 64,
+      "win": true,
+      "timeout": false,
+      "seconds": 81.63,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 65,
+      "win": true,
+      "timeout": false,
+      "seconds": 76.63,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 66,
+      "win": true,
+      "timeout": false,
+      "seconds": 77.47,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 67,
+      "win": true,
+      "timeout": false,
+      "seconds": 67.43,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 68,
+      "win": true,
+      "timeout": false,
+      "seconds": 67.03,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 69,
+      "win": true,
+      "timeout": false,
+      "seconds": 86.6,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 70,
+      "win": true,
+      "timeout": false,
+      "seconds": 105.53,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 71,
+      "win": true,
+      "timeout": false,
+      "seconds": 73.1,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 72,
+      "win": true,
+      "timeout": false,
+      "seconds": 69.53,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 73,
+      "win": true,
+      "timeout": false,
+      "seconds": 90.7,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 74,
+      "win": true,
+      "timeout": false,
+      "seconds": 81.63,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 75,
+      "win": true,
+      "timeout": false,
+      "seconds": 76.63,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 76,
+      "win": true,
+      "timeout": false,
+      "seconds": 77.47,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 77,
+      "win": true,
+      "timeout": false,
+      "seconds": 67.43,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 78,
+      "win": true,
+      "timeout": false,
+      "seconds": 67.03,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 79,
+      "win": true,
+      "timeout": false,
+      "seconds": 86.6,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 80,
+      "win": true,
+      "timeout": false,
+      "seconds": 105.53,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 81,
+      "win": true,
+      "timeout": false,
+      "seconds": 73.1,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 82,
+      "win": true,
+      "timeout": false,
+      "seconds": 69.53,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 83,
+      "win": true,
+      "timeout": false,
+      "seconds": 90.7,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 84,
+      "win": true,
+      "timeout": false,
+      "seconds": 81.63,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 85,
+      "win": true,
+      "timeout": false,
+      "seconds": 76.63,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 86,
+      "win": true,
+      "timeout": false,
+      "seconds": 77.47,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 87,
+      "win": true,
+      "timeout": false,
+      "seconds": 69.63,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 88,
+      "win": true,
+      "timeout": false,
+      "seconds": 68,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 89,
+      "win": true,
+      "timeout": false,
+      "seconds": 88.93,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 90,
+      "win": true,
+      "timeout": false,
+      "seconds": 105.53,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 91,
+      "win": true,
+      "timeout": false,
+      "seconds": 73.1,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 92,
+      "win": true,
+      "timeout": false,
+      "seconds": 69.53,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 93,
+      "win": true,
+      "timeout": false,
+      "seconds": 90.7,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 94,
+      "win": true,
+      "timeout": false,
+      "seconds": 81.63,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 95,
+      "win": true,
+      "timeout": false,
+      "seconds": 76.63,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 96,
+      "win": true,
+      "timeout": false,
+      "seconds": 77.47,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 97,
+      "win": true,
+      "timeout": false,
+      "seconds": 69.63,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 98,
+      "win": true,
+      "timeout": false,
+      "seconds": 68,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 99,
+      "win": true,
+      "timeout": false,
+      "seconds": 88.93,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 100,
+      "win": true,
+      "timeout": false,
+      "seconds": 105.53,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 101,
+      "win": true,
+      "timeout": false,
+      "seconds": 73.1,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 102,
+      "win": true,
+      "timeout": false,
+      "seconds": 69.53,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 103,
+      "win": true,
+      "timeout": false,
+      "seconds": 90.7,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 104,
+      "win": true,
+      "timeout": false,
+      "seconds": 81.63,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 105,
+      "win": true,
+      "timeout": false,
+      "seconds": 76.63,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 106,
+      "win": true,
+      "timeout": false,
+      "seconds": 77.47,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 107,
+      "win": true,
+      "timeout": false,
+      "seconds": 68.3,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 108,
+      "win": true,
+      "timeout": false,
+      "seconds": 66.2,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 109,
+      "win": true,
+      "timeout": false,
+      "seconds": 89.6,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 110,
+      "win": true,
+      "timeout": false,
+      "seconds": 105.53,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 111,
+      "win": true,
+      "timeout": false,
+      "seconds": 73.1,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 112,
+      "win": true,
+      "timeout": false,
+      "seconds": 69.53,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 113,
+      "win": true,
+      "timeout": false,
+      "seconds": 90.7,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 114,
+      "win": true,
+      "timeout": false,
+      "seconds": 81.63,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 115,
+      "win": true,
+      "timeout": false,
+      "seconds": 76.63,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 116,
+      "win": true,
+      "timeout": false,
+      "seconds": 77.47,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 117,
+      "win": true,
+      "timeout": false,
+      "seconds": 68.3,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 118,
+      "win": true,
+      "timeout": false,
+      "seconds": 66.2,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 119,
+      "win": true,
+      "timeout": false,
+      "seconds": 89.6,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 120,
+      "win": true,
+      "timeout": false,
+      "seconds": 186.33,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 121,
+      "win": true,
+      "timeout": false,
+      "seconds": 82.37,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 122,
+      "win": true,
+      "timeout": false,
+      "seconds": 80.23,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 123,
+      "win": true,
+      "timeout": false,
+      "seconds": 88.2,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 124,
+      "win": true,
+      "timeout": false,
+      "seconds": 79.47,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 125,
+      "win": true,
+      "timeout": false,
+      "seconds": 100.57,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 126,
+      "win": true,
+      "timeout": false,
+      "seconds": 96.2,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 127,
+      "win": true,
+      "timeout": false,
+      "seconds": 73.9,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 128,
+      "win": true,
+      "timeout": false,
+      "seconds": 71.47,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 129,
+      "win": true,
+      "timeout": false,
+      "seconds": 155.3,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 130,
+      "win": true,
+      "timeout": false,
+      "seconds": 193.2,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 131,
+      "win": true,
+      "timeout": false,
+      "seconds": 82.37,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 132,
+      "win": true,
+      "timeout": false,
+      "seconds": 80.23,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 133,
+      "win": true,
+      "timeout": false,
+      "seconds": 88.2,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 134,
+      "win": true,
+      "timeout": false,
+      "seconds": 79.47,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 135,
+      "win": true,
+      "timeout": false,
+      "seconds": 100.57,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 136,
+      "win": true,
+      "timeout": false,
+      "seconds": 96.2,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 137,
+      "win": true,
+      "timeout": false,
+      "seconds": 73.9,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 138,
+      "win": true,
+      "timeout": false,
+      "seconds": 71.47,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 139,
+      "win": true,
+      "timeout": false,
+      "seconds": 172.73,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 140,
+      "win": true,
+      "timeout": false,
+      "seconds": 186.33,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 141,
+      "win": true,
+      "timeout": false,
+      "seconds": 82.37,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 142,
+      "win": true,
+      "timeout": false,
+      "seconds": 80.23,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 143,
+      "win": true,
+      "timeout": false,
+      "seconds": 88.2,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 144,
+      "win": true,
+      "timeout": false,
+      "seconds": 79.47,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 145,
+      "win": true,
+      "timeout": false,
+      "seconds": 100.57,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 146,
+      "win": true,
+      "timeout": false,
+      "seconds": 96.2,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 147,
+      "win": true,
+      "timeout": false,
+      "seconds": 76.4,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 148,
+      "win": true,
+      "timeout": false,
+      "seconds": 70.93,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 149,
+      "win": true,
+      "timeout": false,
+      "seconds": 133.77,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 150,
+      "win": true,
+      "timeout": false,
+      "seconds": 193.2,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 151,
+      "win": true,
+      "timeout": false,
+      "seconds": 82.37,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 152,
+      "win": true,
+      "timeout": false,
+      "seconds": 80.23,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 153,
+      "win": true,
+      "timeout": false,
+      "seconds": 88.2,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 154,
+      "win": true,
+      "timeout": false,
+      "seconds": 79.47,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 155,
+      "win": true,
+      "timeout": false,
+      "seconds": 100.57,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 156,
+      "win": true,
+      "timeout": false,
+      "seconds": 96.2,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 157,
+      "win": true,
+      "timeout": false,
+      "seconds": 76.4,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 158,
+      "win": true,
+      "timeout": false,
+      "seconds": 70.93,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 159,
+      "win": true,
+      "timeout": false,
+      "seconds": 138.1,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 160,
+      "win": true,
+      "timeout": false,
+      "seconds": 186.33,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 161,
+      "win": true,
+      "timeout": false,
+      "seconds": 82.37,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 162,
+      "win": true,
+      "timeout": false,
+      "seconds": 80.23,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 163,
+      "win": true,
+      "timeout": false,
+      "seconds": 88.2,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 164,
+      "win": true,
+      "timeout": false,
+      "seconds": 79.47,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 165,
+      "win": true,
+      "timeout": false,
+      "seconds": 100.57,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 166,
+      "win": true,
+      "timeout": false,
+      "seconds": 96.2,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 167,
+      "win": true,
+      "timeout": false,
+      "seconds": 72.57,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 168,
+      "win": true,
+      "timeout": false,
+      "seconds": 75.93,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 169,
+      "win": true,
+      "timeout": false,
+      "seconds": 173.07,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 170,
+      "win": true,
+      "timeout": false,
+      "seconds": 193.2,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 171,
+      "win": true,
+      "timeout": false,
+      "seconds": 82.37,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 172,
+      "win": true,
+      "timeout": false,
+      "seconds": 80.23,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 173,
+      "win": true,
+      "timeout": false,
+      "seconds": 88.2,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 174,
+      "win": true,
+      "timeout": false,
+      "seconds": 79.47,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 175,
+      "win": true,
+      "timeout": false,
+      "seconds": 100.57,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 176,
+      "win": true,
+      "timeout": false,
+      "seconds": 96.2,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 177,
+      "win": true,
+      "timeout": false,
+      "seconds": 72.57,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 178,
+      "win": true,
+      "timeout": false,
+      "seconds": 75.93,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 179,
+      "win": true,
+      "timeout": false,
+      "seconds": 159.13,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 180,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 181,
+      "win": true,
+      "timeout": false,
+      "seconds": 168.3,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 182,
+      "win": true,
+      "timeout": false,
+      "seconds": 163.93,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 183,
+      "win": true,
+      "timeout": false,
+      "seconds": 199.53,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 184,
+      "win": true,
+      "timeout": false,
+      "seconds": 143.77,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 185,
+      "win": true,
+      "timeout": false,
+      "seconds": 78.1,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 186,
+      "win": true,
+      "timeout": false,
+      "seconds": 75.5,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 187,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2926086
+    },
+    {
+      "id": 188,
+      "win": true,
+      "timeout": false,
+      "seconds": 213.2,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 189,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 190,
+      "win": false,
+      "timeout": false,
+      "seconds": 32.27,
+      "allyHp": 0,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 191,
+      "win": false,
+      "timeout": false,
+      "seconds": 26.77,
+      "allyHp": 0,
+      "enemyHp": 2899998
+    },
+    {
+      "id": 192,
+      "win": false,
+      "timeout": false,
+      "seconds": 29.77,
+      "allyHp": 0,
+      "enemyHp": 3000000
+    },
+    {
+      "id": 193,
+      "win": false,
+      "timeout": false,
+      "seconds": 37.6,
+      "allyHp": 0,
+      "enemyHp": 2860868
+    },
+    {
+      "id": 194,
+      "win": true,
+      "timeout": false,
+      "seconds": 143.77,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 195,
+      "win": true,
+      "timeout": false,
+      "seconds": 78.1,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 196,
+      "win": true,
+      "timeout": false,
+      "seconds": 75.5,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 197,
+      "win": false,
+      "timeout": false,
+      "seconds": 45.33,
+      "allyHp": 0,
+      "enemyHp": 2926086
+    },
+    {
+      "id": 198,
+      "win": false,
+      "timeout": false,
+      "seconds": 55.73,
+      "allyHp": 0,
+      "enemyHp": 2995652
+    },
+    {
+      "id": 199,
+      "win": false,
+      "timeout": false,
+      "seconds": 37.17,
+      "allyHp": 0,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 200,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 201,
+      "win": true,
+      "timeout": false,
+      "seconds": 163.37,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 202,
+      "win": true,
+      "timeout": false,
+      "seconds": 168.6,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 203,
+      "win": true,
+      "timeout": false,
+      "seconds": 182.17,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 204,
+      "win": true,
+      "timeout": false,
+      "seconds": 184.97,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 205,
+      "win": true,
+      "timeout": false,
+      "seconds": 74.9,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 206,
+      "win": true,
+      "timeout": false,
+      "seconds": 71.7,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 207,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2904346
+    },
+    {
+      "id": 208,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2864128
+    },
+    {
+      "id": 209,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2965216
+    },
+    {
+      "id": 210,
+      "win": false,
+      "timeout": false,
+      "seconds": 31.93,
+      "allyHp": 0,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 211,
+      "win": false,
+      "timeout": false,
+      "seconds": 26.77,
+      "allyHp": 0,
+      "enemyHp": 2899998
+    },
+    {
+      "id": 212,
+      "win": false,
+      "timeout": false,
+      "seconds": 29.33,
+      "allyHp": 0,
+      "enemyHp": 2925000
+    },
+    {
+      "id": 213,
+      "win": false,
+      "timeout": false,
+      "seconds": 29.13,
+      "allyHp": 0,
+      "enemyHp": 3000000
+    },
+    {
+      "id": 214,
+      "win": false,
+      "timeout": false,
+      "seconds": 38.93,
+      "allyHp": 0,
+      "enemyHp": 2800000
+    },
+    {
+      "id": 215,
+      "win": true,
+      "timeout": false,
+      "seconds": 74.9,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 216,
+      "win": true,
+      "timeout": false,
+      "seconds": 71.7,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 217,
+      "win": false,
+      "timeout": false,
+      "seconds": 48.33,
+      "allyHp": 0,
+      "enemyHp": 2904346
+    },
+    {
+      "id": 218,
+      "win": false,
+      "timeout": false,
+      "seconds": 55.37,
+      "allyHp": 0,
+      "enemyHp": 2864128
+    },
+    {
+      "id": 219,
+      "win": false,
+      "timeout": false,
+      "seconds": 37.63,
+      "allyHp": 0,
+      "enemyHp": 2965216
+    },
+    {
+      "id": 220,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 221,
+      "win": true,
+      "timeout": false,
+      "seconds": 163.13,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 222,
+      "win": true,
+      "timeout": false,
+      "seconds": 165.6,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 223,
+      "win": true,
+      "timeout": false,
+      "seconds": 208.47,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 224,
+      "win": true,
+      "timeout": false,
+      "seconds": 160.3,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 225,
+      "win": true,
+      "timeout": false,
+      "seconds": 73.43,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 226,
+      "win": true,
+      "timeout": false,
+      "seconds": 73.03,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 227,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2926086
+    },
+    {
+      "id": 228,
+      "win": true,
+      "timeout": false,
+      "seconds": 185.93,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 229,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 230,
+      "win": false,
+      "timeout": false,
+      "seconds": 33.57,
+      "allyHp": 0,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 231,
+      "win": false,
+      "timeout": false,
+      "seconds": 28.93,
+      "allyHp": 0,
+      "enemyHp": 2899998
+    },
+    {
+      "id": 232,
+      "win": false,
+      "timeout": false,
+      "seconds": 28.83,
+      "allyHp": 0,
+      "enemyHp": 3000000
+    },
+    {
+      "id": 233,
+      "win": false,
+      "timeout": false,
+      "seconds": 38.43,
+      "allyHp": 0,
+      "enemyHp": 2860868
+    },
+    {
+      "id": 234,
+      "win": false,
+      "timeout": false,
+      "seconds": 38.1,
+      "allyHp": 0,
+      "enemyHp": 2800000
+    },
+    {
+      "id": 235,
+      "win": true,
+      "timeout": false,
+      "seconds": 73.43,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 236,
+      "win": true,
+      "timeout": false,
+      "seconds": 73.03,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 237,
+      "win": false,
+      "timeout": false,
+      "seconds": 51.23,
+      "allyHp": 0,
+      "enemyHp": 2926086
+    },
+    {
+      "id": 238,
+      "win": false,
+      "timeout": false,
+      "seconds": 46.33,
+      "allyHp": 0,
+      "enemyHp": 2995652
+    },
+    {
+      "id": 239,
+      "win": false,
+      "timeout": false,
+      "seconds": 36.57,
+      "allyHp": 0,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 240,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2944691
+    },
+    {
+      "id": 241,
+      "win": true,
+      "timeout": false,
+      "seconds": 110.27,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 242,
+      "win": true,
+      "timeout": false,
+      "seconds": 114.37,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 243,
+      "win": true,
+      "timeout": false,
+      "seconds": 79,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 244,
+      "win": true,
+      "timeout": false,
+      "seconds": 78.03,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 245,
+      "win": true,
+      "timeout": false,
+      "seconds": 107.5,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 246,
+      "win": true,
+      "timeout": false,
+      "seconds": 104.73,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 247,
+      "win": true,
+      "timeout": false,
+      "seconds": 131.53,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 248,
+      "win": true,
+      "timeout": false,
+      "seconds": 114.63,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 249,
+      "win": true,
+      "timeout": false,
+      "seconds": 241.63,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 250,
+      "win": false,
+      "timeout": false,
+      "seconds": 108.33,
+      "allyHp": 0,
+      "enemyHp": 2944691
+    },
+    {
+      "id": 251,
+      "win": true,
+      "timeout": false,
+      "seconds": 110.27,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 252,
+      "win": true,
+      "timeout": false,
+      "seconds": 114.37,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 253,
+      "win": true,
+      "timeout": false,
+      "seconds": 79,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 254,
+      "win": true,
+      "timeout": false,
+      "seconds": 78.03,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 255,
+      "win": true,
+      "timeout": false,
+      "seconds": 107.5,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 256,
+      "win": true,
+      "timeout": false,
+      "seconds": 104.73,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 257,
+      "win": true,
+      "timeout": false,
+      "seconds": 136.57,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 258,
+      "win": true,
+      "timeout": false,
+      "seconds": 114.63,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 259,
+      "win": true,
+      "timeout": false,
+      "seconds": 253.17,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 260,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2970050
+    },
+    {
+      "id": 261,
+      "win": true,
+      "timeout": false,
+      "seconds": 108.23,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 262,
+      "win": true,
+      "timeout": false,
+      "seconds": 114.87,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 263,
+      "win": true,
+      "timeout": false,
+      "seconds": 75.2,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 264,
+      "win": true,
+      "timeout": false,
+      "seconds": 74.9,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 265,
+      "win": true,
+      "timeout": false,
+      "seconds": 109.87,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 266,
+      "win": true,
+      "timeout": false,
+      "seconds": 109.9,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 267,
+      "win": true,
+      "timeout": false,
+      "seconds": 113.93,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 268,
+      "win": true,
+      "timeout": false,
+      "seconds": 109.47,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 269,
+      "win": true,
+      "timeout": false,
+      "seconds": 246.63,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 270,
+      "win": false,
+      "timeout": false,
+      "seconds": 111.8,
+      "allyHp": 0,
+      "enemyHp": 2970050
+    },
+    {
+      "id": 271,
+      "win": true,
+      "timeout": false,
+      "seconds": 108.23,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 272,
+      "win": true,
+      "timeout": false,
+      "seconds": 114.87,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 273,
+      "win": true,
+      "timeout": false,
+      "seconds": 75.2,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 274,
+      "win": true,
+      "timeout": false,
+      "seconds": 74.9,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 275,
+      "win": true,
+      "timeout": false,
+      "seconds": 109.87,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 276,
+      "win": true,
+      "timeout": false,
+      "seconds": 109.9,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 277,
+      "win": true,
+      "timeout": false,
+      "seconds": 113.93,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 278,
+      "win": true,
+      "timeout": false,
+      "seconds": 109.47,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 279,
+      "win": true,
+      "timeout": false,
+      "seconds": 234.13,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 280,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2970050
+    },
+    {
+      "id": 281,
+      "win": true,
+      "timeout": false,
+      "seconds": 104.93,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 282,
+      "win": true,
+      "timeout": false,
+      "seconds": 106.47,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 283,
+      "win": true,
+      "timeout": false,
+      "seconds": 77.33,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 284,
+      "win": true,
+      "timeout": false,
+      "seconds": 79.67,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 285,
+      "win": true,
+      "timeout": false,
+      "seconds": 108.47,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 286,
+      "win": true,
+      "timeout": false,
+      "seconds": 108.6,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 287,
+      "win": true,
+      "timeout": false,
+      "seconds": 112.13,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 288,
+      "win": true,
+      "timeout": false,
+      "seconds": 108.97,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 289,
+      "win": true,
+      "timeout": false,
+      "seconds": 223.37,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 290,
+      "win": false,
+      "timeout": false,
+      "seconds": 107.37,
+      "allyHp": 0,
+      "enemyHp": 2970050
+    },
+    {
+      "id": 291,
+      "win": true,
+      "timeout": false,
+      "seconds": 104.93,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 292,
+      "win": true,
+      "timeout": false,
+      "seconds": 106.47,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 293,
+      "win": true,
+      "timeout": false,
+      "seconds": 77.33,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 294,
+      "win": true,
+      "timeout": false,
+      "seconds": 79.67,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 295,
+      "win": true,
+      "timeout": false,
+      "seconds": 108.47,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 296,
+      "win": true,
+      "timeout": false,
+      "seconds": 108.6,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 297,
+      "win": true,
+      "timeout": false,
+      "seconds": 112.13,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 298,
+      "win": true,
+      "timeout": false,
+      "seconds": 108.97,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 299,
+      "win": true,
+      "timeout": false,
+      "seconds": 235.1,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 300,
+      "win": true,
+      "timeout": false,
+      "seconds": 273.33,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 301,
+      "win": true,
+      "timeout": false,
+      "seconds": 71.37,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 302,
+      "win": true,
+      "timeout": false,
+      "seconds": 71.8,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 303,
+      "win": true,
+      "timeout": false,
+      "seconds": 99.1,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 304,
+      "win": true,
+      "timeout": false,
+      "seconds": 95.93,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 305,
+      "win": true,
+      "timeout": false,
+      "seconds": 99.93,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 306,
+      "win": true,
+      "timeout": false,
+      "seconds": 91.53,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 307,
+      "win": true,
+      "timeout": false,
+      "seconds": 113.83,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 308,
+      "win": true,
+      "timeout": false,
+      "seconds": 112.17,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 309,
+      "win": true,
+      "timeout": false,
+      "seconds": 164.73,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 310,
+      "win": true,
+      "timeout": false,
+      "seconds": 271.5,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 311,
+      "win": true,
+      "timeout": false,
+      "seconds": 71.37,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 312,
+      "win": true,
+      "timeout": false,
+      "seconds": 71.8,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 313,
+      "win": true,
+      "timeout": false,
+      "seconds": 99.1,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 314,
+      "win": true,
+      "timeout": false,
+      "seconds": 95.93,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 315,
+      "win": true,
+      "timeout": false,
+      "seconds": 99.93,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 316,
+      "win": true,
+      "timeout": false,
+      "seconds": 91.53,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 317,
+      "win": true,
+      "timeout": false,
+      "seconds": 113.83,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 318,
+      "win": true,
+      "timeout": false,
+      "seconds": 112.17,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 319,
+      "win": true,
+      "timeout": false,
+      "seconds": 164.73,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 320,
+      "win": true,
+      "timeout": false,
+      "seconds": 273.33,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 321,
+      "win": true,
+      "timeout": false,
+      "seconds": 71.37,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 322,
+      "win": true,
+      "timeout": false,
+      "seconds": 71.8,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 323,
+      "win": true,
+      "timeout": false,
+      "seconds": 99.1,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 324,
+      "win": true,
+      "timeout": false,
+      "seconds": 95.93,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 325,
+      "win": true,
+      "timeout": false,
+      "seconds": 99.93,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 326,
+      "win": true,
+      "timeout": false,
+      "seconds": 91.53,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 327,
+      "win": true,
+      "timeout": false,
+      "seconds": 107.57,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 328,
+      "win": true,
+      "timeout": false,
+      "seconds": 107.2,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 329,
+      "win": true,
+      "timeout": false,
+      "seconds": 165.7,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 330,
+      "win": true,
+      "timeout": false,
+      "seconds": 271.5,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 331,
+      "win": true,
+      "timeout": false,
+      "seconds": 71.37,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 332,
+      "win": true,
+      "timeout": false,
+      "seconds": 71.8,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 333,
+      "win": true,
+      "timeout": false,
+      "seconds": 99.1,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 334,
+      "win": true,
+      "timeout": false,
+      "seconds": 95.93,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 335,
+      "win": true,
+      "timeout": false,
+      "seconds": 99.93,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 336,
+      "win": true,
+      "timeout": false,
+      "seconds": 91.53,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 337,
+      "win": true,
+      "timeout": false,
+      "seconds": 107.57,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 338,
+      "win": true,
+      "timeout": false,
+      "seconds": 107.2,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 339,
+      "win": true,
+      "timeout": false,
+      "seconds": 165.7,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 340,
+      "win": true,
+      "timeout": false,
+      "seconds": 273.33,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 341,
+      "win": true,
+      "timeout": false,
+      "seconds": 71.37,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 342,
+      "win": true,
+      "timeout": false,
+      "seconds": 71.8,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 343,
+      "win": true,
+      "timeout": false,
+      "seconds": 99.1,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 344,
+      "win": true,
+      "timeout": false,
+      "seconds": 95.93,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 345,
+      "win": true,
+      "timeout": false,
+      "seconds": 99.93,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 346,
+      "win": true,
+      "timeout": false,
+      "seconds": 91.53,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 347,
+      "win": true,
+      "timeout": false,
+      "seconds": 120.73,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 348,
+      "win": true,
+      "timeout": false,
+      "seconds": 117.23,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 349,
+      "win": true,
+      "timeout": false,
+      "seconds": 166.4,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 350,
+      "win": true,
+      "timeout": false,
+      "seconds": 271.5,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 351,
+      "win": true,
+      "timeout": false,
+      "seconds": 71.37,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 352,
+      "win": true,
+      "timeout": false,
+      "seconds": 71.8,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 353,
+      "win": true,
+      "timeout": false,
+      "seconds": 99.1,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 354,
+      "win": true,
+      "timeout": false,
+      "seconds": 95.93,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 355,
+      "win": true,
+      "timeout": false,
+      "seconds": 99.93,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 356,
+      "win": true,
+      "timeout": false,
+      "seconds": 91.53,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 357,
+      "win": true,
+      "timeout": false,
+      "seconds": 120.73,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 358,
+      "win": true,
+      "timeout": false,
+      "seconds": 117.23,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 359,
+      "win": true,
+      "timeout": false,
+      "seconds": 166.4,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 360,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2957249
+    },
+    {
+      "id": 361,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 1
+    },
+    {
+      "id": 362,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 1
+    },
+    {
+      "id": 363,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 3000000
+    },
+    {
+      "id": 364,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 3000000
+    },
+    {
+      "id": 365,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 1
+    },
+    {
+      "id": 366,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 1
+    },
+    {
+      "id": 367,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 3000000
+    },
+    {
+      "id": 368,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 3000000
+    },
+    {
+      "id": 369,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 1
+    },
+    {
+      "id": 370,
+      "win": false,
+      "timeout": false,
+      "seconds": 113.67,
+      "allyHp": 0,
+      "enemyHp": 2957249
+    },
+    {
+      "id": 371,
+      "win": false,
+      "timeout": false,
+      "seconds": 89.57,
+      "allyHp": 0,
+      "enemyHp": 3000000
+    },
+    {
+      "id": 372,
+      "win": false,
+      "timeout": false,
+      "seconds": 89.57,
+      "allyHp": 0,
+      "enemyHp": 3000000
+    },
+    {
+      "id": 373,
+      "win": false,
+      "timeout": false,
+      "seconds": 159.63,
+      "allyHp": 0,
+      "enemyHp": 3000000
+    },
+    {
+      "id": 374,
+      "win": false,
+      "timeout": false,
+      "seconds": 147.27,
+      "allyHp": 0,
+      "enemyHp": 3000000
+    },
+    {
+      "id": 375,
+      "win": false,
+      "timeout": false,
+      "seconds": 133.37,
+      "allyHp": 0,
+      "enemyHp": 3000000
+    },
+    {
+      "id": 376,
+      "win": false,
+      "timeout": false,
+      "seconds": 133.37,
+      "allyHp": 0,
+      "enemyHp": 3000000
+    },
+    {
+      "id": 377,
+      "win": false,
+      "timeout": false,
+      "seconds": 112.33,
+      "allyHp": 0,
+      "enemyHp": 3000000
+    },
+    {
+      "id": 378,
+      "win": false,
+      "timeout": false,
+      "seconds": 112.33,
+      "allyHp": 0,
+      "enemyHp": 3000000
+    },
+    {
+      "id": 379,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2244053
+    },
+    {
+      "id": 380,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2957249
+    },
+    {
+      "id": 381,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 1
+    },
+    {
+      "id": 382,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 1
+    },
+    {
+      "id": 383,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 3000000
+    },
+    {
+      "id": 384,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 3000000
+    },
+    {
+      "id": 385,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 1
+    },
+    {
+      "id": 386,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 1
+    },
+    {
+      "id": 387,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 3000000
+    },
+    {
+      "id": 388,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 3000000
+    },
+    {
+      "id": 389,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 1609245
+    },
+    {
+      "id": 390,
+      "win": false,
+      "timeout": false,
+      "seconds": 113.67,
+      "allyHp": 0,
+      "enemyHp": 2957249
+    },
+    {
+      "id": 391,
+      "win": false,
+      "timeout": false,
+      "seconds": 89.57,
+      "allyHp": 0,
+      "enemyHp": 3000000
+    },
+    {
+      "id": 392,
+      "win": false,
+      "timeout": false,
+      "seconds": 89.57,
+      "allyHp": 0,
+      "enemyHp": 3000000
+    },
+    {
+      "id": 393,
+      "win": false,
+      "timeout": false,
+      "seconds": 159.63,
+      "allyHp": 0,
+      "enemyHp": 3000000
+    },
+    {
+      "id": 394,
+      "win": false,
+      "timeout": false,
+      "seconds": 147.27,
+      "allyHp": 0,
+      "enemyHp": 3000000
+    },
+    {
+      "id": 395,
+      "win": false,
+      "timeout": false,
+      "seconds": 133.37,
+      "allyHp": 0,
+      "enemyHp": 3000000
+    },
+    {
+      "id": 396,
+      "win": false,
+      "timeout": false,
+      "seconds": 133.37,
+      "allyHp": 0,
+      "enemyHp": 3000000
+    },
+    {
+      "id": 397,
+      "win": false,
+      "timeout": false,
+      "seconds": 112.33,
+      "allyHp": 0,
+      "enemyHp": 3000000
+    },
+    {
+      "id": 398,
+      "win": false,
+      "timeout": false,
+      "seconds": 112.33,
+      "allyHp": 0,
+      "enemyHp": 3000000
+    },
+    {
+      "id": 399,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2905073
+    },
+    {
+      "id": 400,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2957249
+    },
+    {
+      "id": 401,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 1
+    },
+    {
+      "id": 402,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 1
+    },
+    {
+      "id": 403,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 3000000
+    },
+    {
+      "id": 404,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 3000000
+    },
+    {
+      "id": 405,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 1
+    },
+    {
+      "id": 406,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 1
+    },
+    {
+      "id": 407,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 3000000
+    },
+    {
+      "id": 408,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 3000000
+    },
+    {
+      "id": 409,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 1970253
+    },
+    {
+      "id": 410,
+      "win": false,
+      "timeout": false,
+      "seconds": 113.67,
+      "allyHp": 0,
+      "enemyHp": 2957249
+    },
+    {
+      "id": 411,
+      "win": false,
+      "timeout": false,
+      "seconds": 89.57,
+      "allyHp": 0,
+      "enemyHp": 3000000
+    },
+    {
+      "id": 412,
+      "win": false,
+      "timeout": false,
+      "seconds": 89.57,
+      "allyHp": 0,
+      "enemyHp": 3000000
+    },
+    {
+      "id": 413,
+      "win": false,
+      "timeout": false,
+      "seconds": 159.63,
+      "allyHp": 0,
+      "enemyHp": 3000000
+    },
+    {
+      "id": 414,
+      "win": false,
+      "timeout": false,
+      "seconds": 147.27,
+      "allyHp": 0,
+      "enemyHp": 3000000
+    },
+    {
+      "id": 415,
+      "win": false,
+      "timeout": false,
+      "seconds": 133.37,
+      "allyHp": 0,
+      "enemyHp": 3000000
+    },
+    {
+      "id": 416,
+      "win": false,
+      "timeout": false,
+      "seconds": 133.37,
+      "allyHp": 0,
+      "enemyHp": 3000000
+    },
+    {
+      "id": 417,
+      "win": false,
+      "timeout": false,
+      "seconds": 112.33,
+      "allyHp": 0,
+      "enemyHp": 3000000
+    },
+    {
+      "id": 418,
+      "win": false,
+      "timeout": false,
+      "seconds": 112.33,
+      "allyHp": 0,
+      "enemyHp": 3000000
+    },
+    {
+      "id": 419,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 1722536
+    },
+    {
+      "id": 420,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 1665293
+    },
+    {
+      "id": 421,
+      "win": true,
+      "timeout": false,
+      "seconds": 115.37,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 422,
+      "win": true,
+      "timeout": false,
+      "seconds": 134.67,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 423,
+      "win": true,
+      "timeout": false,
+      "seconds": 228.9,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 424,
+      "win": true,
+      "timeout": false,
+      "seconds": 204.6,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 425,
+      "win": true,
+      "timeout": false,
+      "seconds": 86.73,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 426,
+      "win": true,
+      "timeout": false,
+      "seconds": 88.3,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 427,
+      "win": true,
+      "timeout": false,
+      "seconds": 208.6,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 428,
+      "win": true,
+      "timeout": false,
+      "seconds": 227.7,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 429,
+      "win": true,
+      "timeout": false,
+      "seconds": 263.3,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 430,
+      "win": false,
+      "timeout": false,
+      "seconds": 96.43,
+      "allyHp": 0,
+      "enemyHp": 1
+    },
+    {
+      "id": 431,
+      "win": true,
+      "timeout": false,
+      "seconds": 139.27,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 432,
+      "win": true,
+      "timeout": false,
+      "seconds": 109.6,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 433,
+      "win": false,
+      "timeout": false,
+      "seconds": 90.47,
+      "allyHp": 0,
+      "enemyHp": 791221
+    },
+    {
+      "id": 434,
+      "win": false,
+      "timeout": false,
+      "seconds": 86.23,
+      "allyHp": 0,
+      "enemyHp": 838184
+    },
+    {
+      "id": 435,
+      "win": true,
+      "timeout": false,
+      "seconds": 86.73,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 436,
+      "win": true,
+      "timeout": false,
+      "seconds": 88.3,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 437,
+      "win": false,
+      "timeout": false,
+      "seconds": 91.77,
+      "allyHp": 0,
+      "enemyHp": 1
+    },
+    {
+      "id": 438,
+      "win": false,
+      "timeout": false,
+      "seconds": 96.17,
+      "allyHp": 0,
+      "enemyHp": 1
+    },
+    {
+      "id": 439,
+      "win": false,
+      "timeout": false,
+      "seconds": 114.03,
+      "allyHp": 0,
+      "enemyHp": 1526020
+    },
+    {
+      "id": 440,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 1988492
+    },
+    {
+      "id": 441,
+      "win": true,
+      "timeout": false,
+      "seconds": 114.9,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 442,
+      "win": true,
+      "timeout": false,
+      "seconds": 106.87,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 443,
+      "win": true,
+      "timeout": false,
+      "seconds": 218.47,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 444,
+      "win": true,
+      "timeout": false,
+      "seconds": 190.97,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 445,
+      "win": true,
+      "timeout": false,
+      "seconds": 88.47,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 446,
+      "win": true,
+      "timeout": false,
+      "seconds": 87.73,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 447,
+      "win": true,
+      "timeout": false,
+      "seconds": 207.9,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 448,
+      "win": true,
+      "timeout": false,
+      "seconds": 223.6,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 449,
+      "win": true,
+      "timeout": false,
+      "seconds": 258.53,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 450,
+      "win": false,
+      "timeout": false,
+      "seconds": 87.23,
+      "allyHp": 0,
+      "enemyHp": 1
+    },
+    {
+      "id": 451,
+      "win": false,
+      "timeout": false,
+      "seconds": 90.6,
+      "allyHp": 0,
+      "enemyHp": 660786
+    },
+    {
+      "id": 452,
+      "win": true,
+      "timeout": false,
+      "seconds": 131.63,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 453,
+      "win": false,
+      "timeout": false,
+      "seconds": 83.47,
+      "allyHp": 0,
+      "enemyHp": 939054
+    },
+    {
+      "id": 454,
+      "win": false,
+      "timeout": false,
+      "seconds": 103.2,
+      "allyHp": 0,
+      "enemyHp": 354688
+    },
+    {
+      "id": 455,
+      "win": true,
+      "timeout": false,
+      "seconds": 88.47,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 456,
+      "win": true,
+      "timeout": false,
+      "seconds": 87.73,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 457,
+      "win": false,
+      "timeout": false,
+      "seconds": 102.9,
+      "allyHp": 0,
+      "enemyHp": 1
+    },
+    {
+      "id": 458,
+      "win": false,
+      "timeout": false,
+      "seconds": 98.2,
+      "allyHp": 0,
+      "enemyHp": 1
+    },
+    {
+      "id": 459,
+      "win": false,
+      "timeout": false,
+      "seconds": 75.2,
+      "allyHp": 0,
+      "enemyHp": 1477913
+    },
+    {
+      "id": 460,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 1663576
+    },
+    {
+      "id": 461,
+      "win": true,
+      "timeout": false,
+      "seconds": 120.8,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 462,
+      "win": true,
+      "timeout": false,
+      "seconds": 125.7,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 463,
+      "win": true,
+      "timeout": false,
+      "seconds": 212.53,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 464,
+      "win": true,
+      "timeout": false,
+      "seconds": 199.13,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 465,
+      "win": true,
+      "timeout": false,
+      "seconds": 105.1,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 466,
+      "win": true,
+      "timeout": false,
+      "seconds": 87.77,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 467,
+      "win": true,
+      "timeout": false,
+      "seconds": 210.43,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 468,
+      "win": true,
+      "timeout": false,
+      "seconds": 215.9,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 469,
+      "win": true,
+      "timeout": false,
+      "seconds": 253.13,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 470,
+      "win": false,
+      "timeout": false,
+      "seconds": 96.43,
+      "allyHp": 0,
+      "enemyHp": 1
+    },
+    {
+      "id": 471,
+      "win": true,
+      "timeout": false,
+      "seconds": 133.8,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 472,
+      "win": true,
+      "timeout": false,
+      "seconds": 127.27,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 473,
+      "win": false,
+      "timeout": false,
+      "seconds": 91.33,
+      "allyHp": 0,
+      "enemyHp": 765133
+    },
+    {
+      "id": 474,
+      "win": false,
+      "timeout": false,
+      "seconds": 93.43,
+      "allyHp": 0,
+      "enemyHp": 646872
+    },
+    {
+      "id": 475,
+      "win": true,
+      "timeout": false,
+      "seconds": 105.1,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 476,
+      "win": true,
+      "timeout": false,
+      "seconds": 87.77,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 477,
+      "win": false,
+      "timeout": false,
+      "seconds": 86.73,
+      "allyHp": 0,
+      "enemyHp": 1
+    },
+    {
+      "id": 478,
+      "win": false,
+      "timeout": false,
+      "seconds": 85.67,
+      "allyHp": 0,
+      "enemyHp": 1
+    },
+    {
+      "id": 479,
+      "win": false,
+      "timeout": false,
+      "seconds": 117.23,
+      "allyHp": 0,
+      "enemyHp": 1556852
+    },
+    {
+      "id": 480,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2889868
+    },
+    {
+      "id": 481,
+      "win": true,
+      "timeout": false,
+      "seconds": 94.67,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 482,
+      "win": true,
+      "timeout": false,
+      "seconds": 81.7,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 483,
+      "win": true,
+      "timeout": false,
+      "seconds": 139,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 484,
+      "win": true,
+      "timeout": false,
+      "seconds": 117.87,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 485,
+      "win": true,
+      "timeout": false,
+      "seconds": 176.73,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 486,
+      "win": true,
+      "timeout": false,
+      "seconds": 169.43,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 487,
+      "win": true,
+      "timeout": false,
+      "seconds": 82.23,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 488,
+      "win": true,
+      "timeout": false,
+      "seconds": 69.33,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 489,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2889868
+    },
+    {
+      "id": 490,
+      "win": false,
+      "timeout": false,
+      "seconds": 82.77,
+      "allyHp": 0,
+      "enemyHp": 2889868
+    },
+    {
+      "id": 491,
+      "win": true,
+      "timeout": false,
+      "seconds": 94.67,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 492,
+      "win": true,
+      "timeout": false,
+      "seconds": 81.7,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 493,
+      "win": true,
+      "timeout": false,
+      "seconds": 139,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 494,
+      "win": true,
+      "timeout": false,
+      "seconds": 117.87,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 495,
+      "win": true,
+      "timeout": false,
+      "seconds": 174.9,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 496,
+      "win": true,
+      "timeout": false,
+      "seconds": 168.17,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 497,
+      "win": true,
+      "timeout": false,
+      "seconds": 82.23,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 498,
+      "win": true,
+      "timeout": false,
+      "seconds": 69.33,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 499,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2889868
+    },
+    {
+      "id": 500,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2889868
+    },
+    {
+      "id": 501,
+      "win": true,
+      "timeout": false,
+      "seconds": 94.67,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 502,
+      "win": true,
+      "timeout": false,
+      "seconds": 81.7,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 503,
+      "win": true,
+      "timeout": false,
+      "seconds": 139,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 504,
+      "win": true,
+      "timeout": false,
+      "seconds": 117.87,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 505,
+      "win": true,
+      "timeout": false,
+      "seconds": 176.73,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 506,
+      "win": true,
+      "timeout": false,
+      "seconds": 169.43,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 507,
+      "win": true,
+      "timeout": false,
+      "seconds": 90.13,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 508,
+      "win": true,
+      "timeout": false,
+      "seconds": 78.27,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 509,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2734228
+    },
+    {
+      "id": 510,
+      "win": false,
+      "timeout": false,
+      "seconds": 82.77,
+      "allyHp": 0,
+      "enemyHp": 2889868
+    },
+    {
+      "id": 511,
+      "win": true,
+      "timeout": false,
+      "seconds": 94.67,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 512,
+      "win": true,
+      "timeout": false,
+      "seconds": 81.7,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 513,
+      "win": true,
+      "timeout": false,
+      "seconds": 139,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 514,
+      "win": true,
+      "timeout": false,
+      "seconds": 117.87,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 515,
+      "win": true,
+      "timeout": false,
+      "seconds": 174.9,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 516,
+      "win": true,
+      "timeout": false,
+      "seconds": 168.17,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 517,
+      "win": true,
+      "timeout": false,
+      "seconds": 90.13,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 518,
+      "win": true,
+      "timeout": false,
+      "seconds": 78.27,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 519,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2734228
+    },
+    {
+      "id": 520,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2889868
+    },
+    {
+      "id": 521,
+      "win": true,
+      "timeout": false,
+      "seconds": 94.67,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 522,
+      "win": true,
+      "timeout": false,
+      "seconds": 81.7,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 523,
+      "win": true,
+      "timeout": false,
+      "seconds": 139,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 524,
+      "win": true,
+      "timeout": false,
+      "seconds": 117.87,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 525,
+      "win": true,
+      "timeout": false,
+      "seconds": 176.73,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 526,
+      "win": true,
+      "timeout": false,
+      "seconds": 169.43,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 527,
+      "win": true,
+      "timeout": false,
+      "seconds": 72.33,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 528,
+      "win": true,
+      "timeout": false,
+      "seconds": 72.63,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 529,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2821164
+    },
+    {
+      "id": 530,
+      "win": false,
+      "timeout": false,
+      "seconds": 82.77,
+      "allyHp": 0,
+      "enemyHp": 2889868
+    },
+    {
+      "id": 531,
+      "win": true,
+      "timeout": false,
+      "seconds": 94.67,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 532,
+      "win": true,
+      "timeout": false,
+      "seconds": 81.7,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 533,
+      "win": true,
+      "timeout": false,
+      "seconds": 139,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 534,
+      "win": true,
+      "timeout": false,
+      "seconds": 117.87,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 535,
+      "win": true,
+      "timeout": false,
+      "seconds": 174.9,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 536,
+      "win": true,
+      "timeout": false,
+      "seconds": 168.17,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 537,
+      "win": true,
+      "timeout": false,
+      "seconds": 72.33,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 538,
+      "win": true,
+      "timeout": false,
+      "seconds": 72.63,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 539,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2795076
+    }
+  ],
+  "perMap": [
+    {
+      "map": 750,
+      "id": "heliotrope",
+      "form": 1,
+      "gain": 0.2114666666666667,
+      "pct": 0.8819444444444444,
+      "perSeed": [
+        0.2114666666666667,
+        0.2114666666666667,
+        0.2114666666666667
+      ]
+    },
+    {
+      "map": 750,
+      "id": "heliotrope",
+      "form": 2,
+      "gain": 0.2412333333333334,
+      "pct": 0.9166666666666666,
+      "perSeed": [
+        0.2412333333333334,
+        0.2412333333333334,
+        0.2412333333333334
+      ]
+    },
+    {
+      "map": 750,
+      "id": "wisteria",
+      "form": 1,
+      "gain": 0.18723333333333336,
+      "pct": 0.8125,
+      "perSeed": [
+        0.18723333333333336,
+        0.18723333333333336,
+        0.18723333333333336
+      ]
+    },
+    {
+      "map": 750,
+      "id": "wisteria",
+      "form": 2,
+      "gain": 0.2163333333333335,
+      "pct": 0.8819444444444444,
+      "perSeed": [
+        0.2163333333333335,
+        0.2163333333333335,
+        0.2163333333333335
+      ]
+    },
+    {
+      "map": 750,
+      "id": "blossom",
+      "form": 1,
+      "gain": 0.25713333333333344,
+      "pct": 0.9861111111111112,
+      "perSeed": [
+        0.25713333333333344,
+        0.25713333333333344,
+        0.25713333333333344
+      ]
+    },
+    {
+      "map": 750,
+      "id": "blossom",
+      "form": 2,
+      "gain": 0.2455666666666667,
+      "pct": 0.9166666666666666,
+      "perSeed": [
+        0.2455666666666667,
+        0.2455666666666667,
+        0.2455666666666667
+      ]
+    },
+    {
+      "map": 750,
+      "id": "almondblossom",
+      "form": 1,
+      "gain": 0.26537777777777777,
+      "pct": 0.9930555555555556,
+      "perSeed": [
+        0.2667999999999999,
+        0.27766666666666673,
+        0.2516666666666667
+      ]
+    },
+    {
+      "map": 750,
+      "id": "almondblossom",
+      "form": 2,
+      "gain": 0.25623333333333337,
+      "pct": 0.9791666666666666,
+      "perSeed": [
+        0.2635666666666667,
+        0.2566666666666668,
+        0.2484666666666666
+      ]
+    },
+    {
+      "map": 750,
+      "id": "verdigris",
+      "form": 3,
+      "gain": 0.11990000000000005,
+      "pct": 0.5138888888888888,
+      "perSeed": [
+        0.1145666666666667,
+        0.10646666666666671,
+        0.13866666666666672
+      ]
+    },
+    {
+      "map": 751,
+      "id": "heliotrope",
+      "form": 1,
+      "gain": 0.10810000000000008,
+      "pct": 0.9930555555555556,
+      "perSeed": [
+        0.10810000000000008,
+        0.10810000000000008,
+        0.10810000000000008
+      ]
+    },
+    {
+      "map": 751,
+      "id": "heliotrope",
+      "form": 2,
+      "gain": 0.1200000000000001,
+      "pct": 0.9930555555555556,
+      "perSeed": [
+        0.1200000000000001,
+        0.1200000000000001,
+        0.1200000000000001
+      ]
+    },
+    {
+      "map": 751,
+      "id": "wisteria",
+      "form": 1,
+      "gain": 0.04943333333333344,
+      "pct": 0.6180555555555556,
+      "perSeed": [
+        0.04943333333333344,
+        0.04943333333333344,
+        0.04943333333333344
+      ]
+    },
+    {
+      "map": 751,
+      "id": "wisteria",
+      "form": 2,
+      "gain": 0.07966666666666677,
+      "pct": 0.9305555555555556,
+      "perSeed": [
+        0.07966666666666677,
+        0.07966666666666677,
+        0.07966666666666677
+      ]
+    },
+    {
+      "map": 751,
+      "id": "blossom",
+      "form": 1,
+      "gain": 0.09633333333333338,
+      "pct": 0.9791666666666666,
+      "perSeed": [
+        0.09633333333333338,
+        0.09633333333333338,
+        0.09633333333333338
+      ]
+    },
+    {
+      "map": 751,
+      "id": "blossom",
+      "form": 2,
+      "gain": 0.09353333333333347,
+      "pct": 0.9722222222222222,
+      "perSeed": [
+        0.09353333333333347,
+        0.09353333333333347,
+        0.09353333333333347
+      ]
+    },
+    {
+      "map": 751,
+      "id": "almondblossom",
+      "form": 1,
+      "gain": 0.12358888888888897,
+      "pct": 0.9930555555555556,
+      "perSeed": [
+        0.127,
+        0.11966666666666681,
+        0.1241000000000001
+      ]
+    },
+    {
+      "map": 751,
+      "id": "almondblossom",
+      "form": 2,
+      "gain": 0.12817777777777786,
+      "pct": 0.9930555555555556,
+      "perSeed": [
+        0.1283333333333334,
+        0.1251000000000002,
+        0.1311
+      ]
+    },
+    {
+      "map": 751,
+      "id": "verdigris",
+      "form": 3,
+      "gain": 0.05717777777777792,
+      "pct": 0.7777777777777778,
+      "perSeed": [
+        0.06310000000000016,
+        0.055333333333333456,
+        0.05310000000000015
+      ]
+    },
+    {
+      "map": 752,
+      "id": "heliotrope",
+      "form": 1,
+      "gain": 0.3465333333333336,
+      "pct": 0.9791666666666666,
+      "perSeed": [
+        0.3465333333333336,
+        0.3465333333333336,
+        0.3465333333333336
+      ]
+    },
+    {
+      "map": 752,
+      "id": "heliotrope",
+      "form": 2,
+      "gain": 0.3536666666666668,
+      "pct": 0.9861111111111112,
+      "perSeed": [
+        0.3536666666666668,
+        0.3536666666666668,
+        0.3536666666666668
+      ]
+    },
+    {
+      "map": 752,
+      "id": "wisteria",
+      "form": 1,
+      "gain": 0.32710000000000017,
+      "pct": 0.9791666666666666,
+      "perSeed": [
+        0.32710000000000017,
+        0.32710000000000017,
+        0.32710000000000017
+      ]
+    },
+    {
+      "map": 752,
+      "id": "wisteria",
+      "form": 2,
+      "gain": 0.3562000000000003,
+      "pct": 0.9861111111111112,
+      "perSeed": [
+        0.3562000000000003,
+        0.3562000000000003,
+        0.3562000000000003
+      ]
+    },
+    {
+      "map": 752,
+      "id": "blossom",
+      "form": 1,
+      "gain": 0.28586666666666694,
+      "pct": 0.9375,
+      "perSeed": [
+        0.28586666666666694,
+        0.28586666666666694,
+        0.28586666666666694
+      ]
+    },
+    {
+      "map": 752,
+      "id": "blossom",
+      "form": 2,
+      "gain": 0.30043333333333355,
+      "pct": 0.9583333333333334,
+      "perSeed": [
+        0.30043333333333355,
+        0.30043333333333355,
+        0.30043333333333355
+      ]
+    },
+    {
+      "map": 752,
+      "id": "almondblossom",
+      "form": 1,
+      "gain": 0.3734666666666669,
+      "pct": 0.9930555555555556,
+      "perSeed": [
+        0.3747666666666669,
+        0.3664333333333336,
+        0.3792000000000002
+      ]
+    },
+    {
+      "map": 752,
+      "id": "almondblossom",
+      "form": 2,
+      "gain": 0.3785111111111113,
+      "pct": 0.9930555555555556,
+      "perSeed": [
+        0.3828666666666669,
+        0.38466666666666693,
+        0.3680000000000001
+      ]
+    },
+    {
+      "map": 752,
+      "id": "verdigris",
+      "form": 3,
+      "gain": 0.12310000000000021,
+      "pct": 0.4513888888888889,
+      "perSeed": [
+        0.10343333333333349,
+        0.17520000000000024,
+        0.0906666666666669
+      ]
+    },
+    {
+      "map": 753,
+      "id": "heliotrope",
+      "form": 1,
+      "gain": 1.4502222222222223,
+      "pct": 0.8819444444444444,
+      "perSeed": [
+        1.439,
+        1.4554333333333334,
+        1.4562333333333335
+      ]
+    },
+    {
+      "map": 753,
+      "id": "heliotrope",
+      "form": 2,
+      "gain": 1.446522222222222,
+      "pct": 0.8819444444444444,
+      "perSeed": [
+        1.4535666666666667,
+        1.4380000000000002,
+        1.448
+      ]
+    },
+    {
+      "map": 753,
+      "id": "wisteria",
+      "form": 1,
+      "gain": 1.3442555555555558,
+      "pct": 0.7361111111111112,
+      "perSeed": [
+        1.3349,
+        1.3927666666666667,
+        1.3051
+      ]
+    },
+    {
+      "map": 753,
+      "id": "wisteria",
+      "form": 2,
+      "gain": 1.4566222222222223,
+      "pct": 0.8888888888888888,
+      "perSeed": [
+        1.5207666666666666,
+        1.3834333333333333,
+        1.4656666666666667
+      ]
+    },
+    {
+      "map": 753,
+      "id": "blossom",
+      "form": 1,
+      "gain": 1.7484111111111111,
+      "pct": 1,
+      "perSeed": [
+        1.7396666666666667,
+        1.7503333333333333,
+        1.7552333333333334
+      ]
+    },
+    {
+      "map": 753,
+      "id": "blossom",
+      "form": 2,
+      "gain": 1.7553,
+      "pct": 1,
+      "perSeed": [
+        1.7483333333333333,
+        1.761,
+        1.7565666666666666
+      ]
+    },
+    {
+      "map": 753,
+      "id": "almondblossom",
+      "form": 1,
+      "gain": 0,
+      "pct": 0.2048611111111111,
+      "perSeed": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "map": 753,
+      "id": "almondblossom",
+      "form": 2,
+      "gain": 0.8898555555555556,
+      "pct": 0.4375,
+      "perSeed": [
+        1.2893333333333334,
+        0,
+        1.3802333333333334
+      ]
+    },
+    {
+      "map": 753,
+      "id": "verdigris",
+      "form": 3,
+      "gain": 0,
+      "pct": 0.2048611111111111,
+      "perSeed": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "map": 754,
+      "id": "heliotrope",
+      "form": 1,
+      "gain": 1.6406333333333334,
+      "pct": 0.9791666666666666,
+      "perSeed": [
+        1.6324333333333334,
+        1.6392333333333333,
+        1.6502333333333334
+      ]
+    },
+    {
+      "map": 754,
+      "id": "heliotrope",
+      "form": 2,
+      "gain": 1.6269888888888888,
+      "pct": 0.9583333333333334,
+      "perSeed": [
+        1.6187666666666667,
+        1.6171,
+        1.6451
+      ]
+    },
+    {
+      "map": 754,
+      "id": "wisteria",
+      "form": 1,
+      "gain": 1.7427444444444447,
+      "pct": 1,
+      "perSeed": [
+        1.7366666666666668,
+        1.7493333333333334,
+        1.7422333333333333
+      ]
+    },
+    {
+      "map": 754,
+      "id": "wisteria",
+      "form": 2,
+      "gain": 1.7415555555555555,
+      "pct": 1,
+      "perSeed": [
+        1.7399,
+        1.7503333333333333,
+        1.7344333333333333
+      ]
+    },
+    {
+      "map": 754,
+      "id": "blossom",
+      "form": 1,
+      "gain": 1.6379555555555554,
+      "pct": 0.9652777777777778,
+      "perSeed": [
+        1.6416666666666666,
+        1.6337666666666666,
+        1.6384333333333334
+      ]
+    },
+    {
+      "map": 754,
+      "id": "blossom",
+      "form": 2,
+      "gain": 1.6408555555555555,
+      "pct": 0.9791666666666666,
+      "perSeed": [
+        1.6509,
+        1.6336666666666666,
+        1.638
+      ]
+    },
+    {
+      "map": 754,
+      "id": "almondblossom",
+      "form": 1,
+      "gain": 1.6026777777777779,
+      "pct": 0.9236111111111112,
+      "perSeed": [
+        1.5615666666666668,
+        1.6202333333333332,
+        1.6262333333333334
+      ]
+    },
+    {
+      "map": 754,
+      "id": "almondblossom",
+      "form": 2,
+      "gain": 1.6299222222222223,
+      "pct": 0.9583333333333334,
+      "perSeed": [
+        1.6179000000000001,
+        1.6351,
+        1.6367666666666667
+      ]
+    },
+    {
+      "map": 754,
+      "id": "verdigris",
+      "form": 3,
+      "gain": 1.2231888888888889,
+      "pct": 0.3958333333333333,
+      "perSeed": [
+        1.1945666666666668,
+        1.2195666666666667,
+        1.2554333333333334
+      ]
+    },
+    {
+      "map": 755,
+      "id": "heliotrope",
+      "form": 1,
+      "gain": 0.6671,
+      "pct": 0.9861111111111112,
+      "perSeed": [
+        0.6671,
+        0.6671,
+        0.6671
+      ]
+    },
+    {
+      "map": 755,
+      "id": "heliotrope",
+      "form": 2,
+      "gain": 0.6656666666666666,
+      "pct": 0.9861111111111112,
+      "perSeed": [
+        0.6656666666666666,
+        0.6656666666666666,
+        0.6656666666666666
+      ]
+    },
+    {
+      "map": 755,
+      "id": "wisteria",
+      "form": 1,
+      "gain": 0.5746666666666667,
+      "pct": 0.9236111111111112,
+      "perSeed": [
+        0.5746666666666667,
+        0.5746666666666667,
+        0.5746666666666667
+      ]
+    },
+    {
+      "map": 755,
+      "id": "wisteria",
+      "form": 2,
+      "gain": 0.5852333333333333,
+      "pct": 0.9444444444444444,
+      "perSeed": [
+        0.5852333333333333,
+        0.5852333333333333,
+        0.5852333333333333
+      ]
+    },
+    {
+      "map": 755,
+      "id": "blossom",
+      "form": 1,
+      "gain": 0.5719000000000001,
+      "pct": 0.9236111111111112,
+      "perSeed": [
+        0.5719000000000001,
+        0.5719000000000001,
+        0.5719000000000001
+      ]
+    },
+    {
+      "map": 755,
+      "id": "blossom",
+      "form": 2,
+      "gain": 0.5999000000000001,
+      "pct": 0.9513888888888888,
+      "perSeed": [
+        0.5999000000000001,
+        0.5999000000000001,
+        0.5999000000000001
+      ]
+    },
+    {
+      "map": 755,
+      "id": "almondblossom",
+      "form": 1,
+      "gain": 0.5248555555555555,
+      "pct": 0.8541666666666666,
+      "perSeed": [
+        0.5255666666666667,
+        0.5464333333333333,
+        0.5025666666666666
+      ]
+    },
+    {
+      "map": 755,
+      "id": "almondblossom",
+      "form": 2,
+      "gain": 0.531,
+      "pct": 0.8611111111111112,
+      "perSeed": [
+        0.5311000000000001,
+        0.5476666666666667,
+        0.5142333333333333
+      ]
+    },
+    {
+      "map": 755,
+      "id": "verdigris",
+      "form": 3,
+      "gain": 0.3529666666666667,
+      "pct": 0.5208333333333334,
+      "perSeed": [
+        0.3559000000000001,
+        0.3526666666666667,
+        0.3503333333333334
+      ]
+    },
+    {
+      "map": 756,
+      "id": "heliotrope",
+      "form": 1,
+      "gain": 0,
+      "pct": 0.4270833333333333,
+      "perSeed": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "map": 756,
+      "id": "heliotrope",
+      "form": 2,
+      "gain": 0,
+      "pct": 0.4270833333333333,
+      "perSeed": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "map": 756,
+      "id": "wisteria",
+      "form": 1,
+      "gain": 0,
+      "pct": 0.4270833333333333,
+      "perSeed": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "map": 756,
+      "id": "wisteria",
+      "form": 2,
+      "gain": 0,
+      "pct": 0.4270833333333333,
+      "perSeed": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "map": 756,
+      "id": "blossom",
+      "form": 1,
+      "gain": 0,
+      "pct": 0.4270833333333333,
+      "perSeed": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "map": 756,
+      "id": "blossom",
+      "form": 2,
+      "gain": 0,
+      "pct": 0.4270833333333333,
+      "perSeed": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "map": 756,
+      "id": "almondblossom",
+      "form": 1,
+      "gain": 0,
+      "pct": 0.4270833333333333,
+      "perSeed": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "map": 756,
+      "id": "almondblossom",
+      "form": 2,
+      "gain": 0,
+      "pct": 0.4270833333333333,
+      "perSeed": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "map": 756,
+      "id": "verdigris",
+      "form": 3,
+      "gain": 0,
+      "pct": 0.4270833333333333,
+      "perSeed": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "map": 757,
+      "id": "heliotrope",
+      "form": 1,
+      "gain": 1.609922222222222,
+      "pct": 0.9652777777777778,
+      "perSeed": [
+        1.6154333333333333,
+        1.617,
+        1.5973333333333333
+      ]
+    },
+    {
+      "map": 757,
+      "id": "heliotrope",
+      "form": 2,
+      "gain": 1.619811111111111,
+      "pct": 0.9722222222222222,
+      "perSeed": [
+        1.6346666666666667,
+        1.6437666666666666,
+        1.581
+      ]
+    },
+    {
+      "map": 757,
+      "id": "wisteria",
+      "form": 1,
+      "gain": 1.2667777777777778,
+      "pct": 0.6388888888888888,
+      "perSeed": [
+        1.237,
+        1.2717666666666667,
+        1.2915666666666668
+      ]
+    },
+    {
+      "map": 757,
+      "id": "wisteria",
+      "form": 2,
+      "gain": 1.3392222222222223,
+      "pct": 0.75,
+      "perSeed": [
+        1.318,
+        1.3634333333333335,
+        1.3362333333333334
+      ]
+    },
+    {
+      "map": 757,
+      "id": "blossom",
+      "form": 1,
+      "gain": 1.6885555555555556,
+      "pct": 1,
+      "perSeed": [
+        1.7109,
+        1.7051,
+        1.6496666666666666
+      ]
+    },
+    {
+      "map": 757,
+      "id": "blossom",
+      "form": 2,
+      "gain": 1.706888888888889,
+      "pct": 1,
+      "perSeed": [
+        1.7056666666666667,
+        1.7075666666666667,
+        1.7074333333333334
+      ]
+    },
+    {
+      "map": 757,
+      "id": "almondblossom",
+      "form": 1,
+      "gain": 1.303411111111111,
+      "pct": 0.6805555555555556,
+      "perSeed": [
+        1.3046666666666666,
+        1.307,
+        1.2985666666666666
+      ]
+    },
+    {
+      "map": 757,
+      "id": "almondblossom",
+      "form": 2,
+      "gain": 1.2586666666666666,
+      "pct": 0.625,
+      "perSeed": [
+        1.241,
+        1.2546666666666666,
+        1.2803333333333333
+      ]
+    },
+    {
+      "map": 757,
+      "id": "verdigris",
+      "form": 3,
+      "gain": 1.1389333333333334,
+      "pct": 0.4236111111111111,
+      "perSeed": [
+        1.1223333333333332,
+        1.1382333333333334,
+        1.1562333333333332
+      ]
+    },
+    {
+      "map": 758,
+      "id": "heliotrope",
+      "form": 1,
+      "gain": 1.6844333333333334,
+      "pct": 1,
+      "perSeed": [
+        1.6844333333333332,
+        1.6844333333333332,
+        1.6844333333333332
+      ]
+    },
+    {
+      "map": 758,
+      "id": "heliotrope",
+      "form": 2,
+      "gain": 1.7276666666666667,
+      "pct": 1,
+      "perSeed": [
+        1.7276666666666667,
+        1.7276666666666667,
+        1.7276666666666667
+      ]
+    },
+    {
+      "map": 758,
+      "id": "wisteria",
+      "form": 1,
+      "gain": 1.5366666666666664,
+      "pct": 1,
+      "perSeed": [
+        1.5366666666666666,
+        1.5366666666666666,
+        1.5366666666666666
+      ]
+    },
+    {
+      "map": 758,
+      "id": "wisteria",
+      "form": 2,
+      "gain": 1.6071,
+      "pct": 1,
+      "perSeed": [
+        1.6071,
+        1.6071,
+        1.6071
+      ]
+    },
+    {
+      "map": 758,
+      "id": "blossom",
+      "form": 1,
+      "gain": 1.4169999999999998,
+      "pct": 0.9861111111111112,
+      "perSeed": [
+        1.4169999999999998,
+        1.4169999999999998,
+        1.4169999999999998
+      ]
+    },
+    {
+      "map": 758,
+      "id": "blossom",
+      "form": 2,
+      "gain": 1.4394333333333333,
+      "pct": 0.9861111111111112,
+      "perSeed": [
+        1.4394333333333333,
+        1.4394333333333333,
+        1.4394333333333333
+      ]
+    },
+    {
+      "map": 758,
+      "id": "almondblossom",
+      "form": 1,
+      "gain": 1.7281222222222226,
+      "pct": 1,
+      "perSeed": [
+        1.7259,
+        1.6995666666666667,
+        1.7589000000000001
+      ]
+    },
+    {
+      "map": 758,
+      "id": "almondblossom",
+      "form": 2,
+      "gain": 1.7553,
+      "pct": 1,
+      "perSeed": [
+        1.7689,
+        1.7391,
+        1.7579
+      ]
+    },
+    {
+      "map": 758,
+      "id": "verdigris",
+      "form": 3,
+      "gain": 0,
+      "pct": 0.4513888888888889,
+      "perSeed": [
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "composed": [
+    {
+      "id": "heliotrope",
+      "form": 1,
+      "name": "헬리오트로프 1진",
+      "grade": "uber",
+      "score": 0.8993055555555556,
+      "coreMember": false
+    },
+    {
+      "id": "heliotrope",
+      "form": 2,
+      "name": "헬리오트로프 2진",
+      "grade": "uber",
+      "score": 0.902391975308642,
+      "coreMember": false
+    },
+    {
+      "id": "wisteria",
+      "form": 1,
+      "name": "위스테리아 1진",
+      "grade": "uber",
+      "score": 0.792824074074074,
+      "coreMember": false
+    },
+    {
+      "id": "wisteria",
+      "form": 2,
+      "name": "위스테리아 2진",
+      "grade": "uber",
+      "score": 0.8676697530864197,
+      "coreMember": false
+    },
+    {
+      "id": "blossom",
+      "form": 1,
+      "name": "블로섬 1진",
+      "grade": "uber",
+      "score": 0.9116512345679014,
+      "coreMember": false
+    },
+    {
+      "id": "blossom",
+      "form": 2,
+      "name": "블로섬 2진",
+      "grade": "uber",
+      "score": 0.9101080246913581,
+      "coreMember": false
+    },
+    {
+      "id": "almondblossom",
+      "form": 1,
+      "name": "아몬드 블로섬 1진",
+      "grade": "uber",
+      "score": 0.7854938271604939,
+      "coreMember": false
+    },
+    {
+      "id": "almondblossom",
+      "form": 2,
+      "name": "아몬드 블로섬 2진",
+      "grade": "uber",
+      "score": 0.8082561728395061,
+      "coreMember": false
+    },
+    {
+      "id": "verdigris",
+      "form": 3,
+      "name": "베르디그리 3진",
+      "grade": "sr",
+      "score": 0.4629629629629629,
+      "coreMember": false
+    }
+  ],
+  "reversals": [
+    {
+      "id": "heliotrope",
+      "form": 1,
+      "maps": []
+    },
+    {
+      "id": "heliotrope",
+      "form": 2,
+      "maps": []
+    },
+    {
+      "id": "wisteria",
+      "form": 1,
+      "maps": []
+    },
+    {
+      "id": "wisteria",
+      "form": 2,
+      "maps": []
+    },
+    {
+      "id": "blossom",
+      "form": 1,
+      "maps": []
+    },
+    {
+      "id": "blossom",
+      "form": 2,
+      "maps": []
+    },
+    {
+      "id": "almondblossom",
+      "form": 1,
+      "maps": []
+    },
+    {
+      "id": "almondblossom",
+      "form": 2,
+      "maps": []
+    },
+    {
+      "id": "verdigris",
+      "form": 3,
+      "maps": []
+    }
+  ],
+  "baselineChecks": 54,
+  "anchor": "tier-arena-current-2026-10-30.json"
+}

@@ -1,0 +1,179 @@
+{
+  "acquisition": {
+    "version": "7.5.0",
+    "draws": [
+      {
+        "banner": "레드 바스터즈",
+        "id": "heliotrope"
+      },
+      {
+        "banner": "블랙 바스터즈",
+        "id": "wisteria"
+      },
+      {
+        "banner": "천사 바스터즈",
+        "id": "blossom"
+      },
+      {
+        "banner": "레드 바스터즈",
+        "id": "almondblossom"
+      }
+    ],
+    "tickets": 6,
+    "owned": [
+      "heliotrope",
+      "wisteria",
+      "blossom",
+      "almondblossom",
+      "verdigris"
+    ],
+    "pity": {
+      "red": 17,
+      "black": 9
+    },
+    "banners": "바스터즈 전용: 에이리언 바스터즈오늘의 시리즈레드 바스터즈블랙 바스터즈에이리언 바스터즈천사 바스터즈떠적 바스터즈",
+    "scriptCount": 105,
+    "allScriptsOK": true,
+    "third": true,
+    "cost": {
+      "fruit": 7,
+      "seed": 5,
+      "xp": 900000
+    },
+    "noLightRainbow": true
+  },
+  "battle": {
+    "version": "7.5.0",
+    "reload": true,
+    "sprites": [
+      {
+        "id": "heliotrope",
+        "form": 1,
+        "image": [
+          1536,
+          1024
+        ],
+        "style": "url(\"assets/heliotrope-motion/heliotrope_1.webp?v=1\")",
+        "positions": [
+          "0px 0px",
+          "-768px -512px",
+          "-1152px -768px"
+        ]
+      },
+      {
+        "id": "heliotrope",
+        "form": 2,
+        "image": [
+          1536,
+          1024
+        ],
+        "style": "url(\"assets/heliotrope-motion/heliotrope_2.webp?v=1\")",
+        "positions": [
+          "0px 0px",
+          "-768px -512px",
+          "-1152px -768px"
+        ]
+      },
+      {
+        "id": "wisteria",
+        "form": 1,
+        "image": [
+          1536,
+          1024
+        ],
+        "style": "url(\"assets/busters-remaining-motion/wisteria_1.webp?v=1\")",
+        "positions": [
+          "0px 0px",
+          "-768px -512px",
+          "-1152px -768px"
+        ]
+      },
+      {
+        "id": "wisteria",
+        "form": 2,
+        "image": [
+          1536,
+          1024
+        ],
+        "style": "url(\"assets/busters-remaining-motion/wisteria_2.webp?v=1\")",
+        "positions": [
+          "0px 0px",
+          "-768px -512px",
+          "-1152px -768px"
+        ]
+      },
+      {
+        "id": "blossom",
+        "form": 1,
+        "image": [
+          1536,
+          1024
+        ],
+        "style": "url(\"assets/busters-remaining-motion/blossom_1.webp?v=1\")",
+        "positions": [
+          "0px 0px",
+          "-768px -512px",
+          "-1152px -768px"
+        ]
+      },
+      {
+        "id": "blossom",
+        "form": 2,
+        "image": [
+          1536,
+          1024
+        ],
+        "style": "url(\"assets/busters-remaining-motion/blossom_2.webp?v=1\")",
+        "positions": [
+          "0px 0px",
+          "-768px -512px",
+          "-1152px -768px"
+        ]
+      },
+      {
+        "id": "almondblossom",
+        "form": 1,
+        "image": [
+          1536,
+          1024
+        ],
+        "style": "url(\"assets/busters-remaining-motion/almondblossom_1.webp?v=1\")",
+        "positions": [
+          "0px 0px",
+          "-768px -512px",
+          "-1152px -768px"
+        ]
+      },
+      {
+        "id": "almondblossom",
+        "form": 2,
+        "image": [
+          1536,
+          1024
+        ],
+        "style": "url(\"assets/busters-remaining-motion/almondblossom_2.webp?v=1\")",
+        "positions": [
+          "0px 0px",
+          "-768px -512px",
+          "-1152px -768px"
+        ]
+      },
+      {
+        "id": "verdigris",
+        "form": 3,
+        "image": [
+          1536,
+          1024
+        ],
+        "style": "url(\"assets/verdigris-3-motion-v2/verdigris_3.webp?v=1\")",
+        "positions": [
+          "0px 0px",
+          "-384px -512px",
+          "-1152px -768px"
+        ]
+      }
+    ],
+    "arenas": 9,
+    "thirdReady": true
+  }
+}

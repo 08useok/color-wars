@@ -1,0 +1,200 @@
+{
+  "stats": {
+    "heliotrope": {
+      "hp": 180000,
+      "atk": 75000,
+      "interval": 3,
+      "speed": 12,
+      "range": 26,
+      "cost": 2800,
+      "cooldown": 40,
+      "knockbacks": 3,
+      "flatCost": true,
+      "noRangeGrow": true,
+      "freezeChance": 1,
+      "freezeDuration": 4,
+      "statusVs": [
+        "red",
+        "floating"
+      ],
+      "massiveVs": [
+        "red",
+        "floating"
+      ],
+      "windup": 0.3,
+      "attackDuration": 0.8,
+      "area": true,
+      "attackClass": "원거리 범위",
+      "zoneMin": 0,
+      "zoneMax": 40,
+      "immune": {
+        "weaken": true,
+        "freeze": true
+      },
+      "blindSpot": false,
+      "evolved": true,
+      "treasureEligible": true
+    },
+    "wisteria": {
+      "hp": 400000,
+      "atk": 40000,
+      "interval": 2,
+      "speed": 16,
+      "range": 18,
+      "cost": 2665,
+      "cooldown": 40,
+      "knockbacks": 3,
+      "flatCost": true,
+      "noRangeGrow": true,
+      "freezeChance": 1,
+      "freezeDuration": 3,
+      "statusVs": [
+        "black",
+        "alien"
+      ],
+      "massiveVs": [
+        "black",
+        "alien"
+      ],
+      "windup": 0.2,
+      "attackDuration": 0.6000000000000001,
+      "area": true,
+      "attackClass": "전방위",
+      "zoneMin": 0,
+      "zoneMax": 24,
+      "backRange": 18,
+      "knockbackImmune": true,
+      "strengthen": {
+        "at": 0.5,
+        "mult": 2
+      },
+      "blindSpot": false,
+      "evolved": true,
+      "treasureEligible": true
+    },
+    "blossom": {
+      "hp": 280000,
+      "atk": 62500,
+      "interval": 2.5,
+      "speed": 14,
+      "range": 24,
+      "cost": 2665,
+      "cooldown": 40,
+      "knockbacks": 3,
+      "flatCost": true,
+      "noRangeGrow": true,
+      "freezeChance": 1,
+      "freezeDuration": 3.5,
+      "statusVs": [
+        "angel",
+        "zombie"
+      ],
+      "massiveVs": [
+        "angel",
+        "zombie"
+      ],
+      "windup": 0.3,
+      "attackDuration": 0.8,
+      "area": true,
+      "attackClass": "범위",
+      "zoneMin": 0,
+      "zoneMax": 28,
+      "immune": {
+        "freeze": true,
+        "poison": true
+      },
+      "blindSpot": false,
+      "evolved": true,
+      "treasureEligible": true
+    },
+    "almondblossom": {
+      "hp": 350000,
+      "atk": 75000,
+      "interval": 1.5,
+      "speed": 22,
+      "range": 12,
+      "cost": 2535,
+      "cooldown": 35,
+      "knockbacks": 3,
+      "flatCost": true,
+      "noRangeGrow": true,
+      "freezeChance": 1,
+      "freezeDuration": 2.5,
+      "statusVs": [
+        "red",
+        "black"
+      ],
+      "massiveVs": [
+        "red",
+        "black"
+      ],
+      "windup": 0.15,
+      "attackDuration": 0.4,
+      "attackClass": "개체",
+      "immune": {
+        "weaken": true
+      },
+      "savageChance": 0.3,
+      "savageMult": 3,
+      "blindSpot": false,
+      "evolved": true,
+      "treasureEligible": true
+    }
+  },
+  "hitChecks": [
+    {
+      "id": "heliotrope",
+      "damage": [
+        300000,
+        300000
+      ],
+      "freeze": [
+        4.8,
+        4.8
+      ]
+    },
+    {
+      "id": "wisteria",
+      "damage": [
+        160000,
+        133333.33333337307
+      ],
+      "freeze": [
+        3.5999999999999996,
+        3.2
+      ]
+    },
+    {
+      "id": "blossom",
+      "damage": [
+        250000,
+        208333.33333337307
+      ],
+      "freeze": [
+        4.2,
+        3.7333333333333334
+      ]
+    },
+    {
+      "id": "almondblossom",
+      "damage": [
+        300000,
+        0
+      ],
+      "freeze": [
+        3,
+        null
+      ]
+    }
+  ],
+  "checks": [
+    "four registered, Light Rainbow absent",
+    "old units and stages preserved",
+    "planned LV30 evolved HP/DPS/CD",
+    "both form atlases",
+    "no blind spot",
+    "actual front/rear/single damage",
+    "continuous freeze for twelve seconds",
+    "poison-context immunity does not block normal damage"
+  ]
+}
