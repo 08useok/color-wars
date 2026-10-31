@@ -1,0 +1,1900 @@
+{
+  "maps": [
+    {
+      "i": 750,
+      "id": "general",
+      "name": "티어 시험 · 범용"
+    },
+    {
+      "i": 751,
+      "id": "red",
+      "name": "티어 시험 · 빨간 적"
+    },
+    {
+      "i": 752,
+      "id": "black",
+      "name": "티어 시험 · 검은 적"
+    },
+    {
+      "i": 753,
+      "id": "angel",
+      "name": "티어 시험 · 천사"
+    },
+    {
+      "i": 754,
+      "id": "alien",
+      "name": "티어 시험 · 에이리언"
+    },
+    {
+      "i": 755,
+      "id": "floating",
+      "name": "티어 시험 · 떠 있는 적"
+    },
+    {
+      "i": 756,
+      "id": "metal",
+      "name": "티어 시험 · 메탈"
+    },
+    {
+      "i": 757,
+      "id": "zombie",
+      "name": "티어 시험 · 좀비"
+    },
+    {
+      "i": 758,
+      "id": "wave",
+      "name": "티어 시험 · 파동"
+    }
+  ],
+  "decks": [
+    [
+      "red",
+      "yellow",
+      "blue",
+      "purple"
+    ],
+    [
+      "red",
+      "yellow",
+      "brown",
+      "indigo",
+      "silver",
+      "rainbow"
+    ],
+    [
+      "garnet",
+      "lapis",
+      "selenite",
+      "topaz",
+      "ribbonorange",
+      "obsidian",
+      "cornflower",
+      "khaki",
+      "rainbow"
+    ]
+  ],
+  "meta": [
+    {
+      "i": 750,
+      "id": "general",
+      "name": "티어 시험 · 범용",
+      "d": 0,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "i": 750,
+      "id": "general",
+      "name": "티어 시험 · 범용",
+      "d": 0,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "i": 750,
+      "id": "general",
+      "name": "티어 시험 · 범용",
+      "d": 0,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "i": 750,
+      "id": "general",
+      "name": "티어 시험 · 범용",
+      "d": 0,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "i": 750,
+      "id": "general",
+      "name": "티어 시험 · 범용",
+      "d": 1,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "i": 750,
+      "id": "general",
+      "name": "티어 시험 · 범용",
+      "d": 1,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "i": 750,
+      "id": "general",
+      "name": "티어 시험 · 범용",
+      "d": 1,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "i": 750,
+      "id": "general",
+      "name": "티어 시험 · 범용",
+      "d": 1,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "i": 750,
+      "id": "general",
+      "name": "티어 시험 · 범용",
+      "d": 2,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "i": 750,
+      "id": "general",
+      "name": "티어 시험 · 범용",
+      "d": 2,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "i": 750,
+      "id": "general",
+      "name": "티어 시험 · 범용",
+      "d": 2,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "i": 750,
+      "id": "general",
+      "name": "티어 시험 · 범용",
+      "d": 2,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "i": 751,
+      "id": "red",
+      "name": "티어 시험 · 빨간 적",
+      "d": 0,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "i": 751,
+      "id": "red",
+      "name": "티어 시험 · 빨간 적",
+      "d": 0,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "i": 751,
+      "id": "red",
+      "name": "티어 시험 · 빨간 적",
+      "d": 0,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "i": 751,
+      "id": "red",
+      "name": "티어 시험 · 빨간 적",
+      "d": 0,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "i": 751,
+      "id": "red",
+      "name": "티어 시험 · 빨간 적",
+      "d": 1,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "i": 751,
+      "id": "red",
+      "name": "티어 시험 · 빨간 적",
+      "d": 1,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "i": 751,
+      "id": "red",
+      "name": "티어 시험 · 빨간 적",
+      "d": 1,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "i": 751,
+      "id": "red",
+      "name": "티어 시험 · 빨간 적",
+      "d": 1,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "i": 751,
+      "id": "red",
+      "name": "티어 시험 · 빨간 적",
+      "d": 2,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "i": 751,
+      "id": "red",
+      "name": "티어 시험 · 빨간 적",
+      "d": 2,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "i": 751,
+      "id": "red",
+      "name": "티어 시험 · 빨간 적",
+      "d": 2,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "i": 751,
+      "id": "red",
+      "name": "티어 시험 · 빨간 적",
+      "d": 2,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "i": 752,
+      "id": "black",
+      "name": "티어 시험 · 검은 적",
+      "d": 0,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "i": 752,
+      "id": "black",
+      "name": "티어 시험 · 검은 적",
+      "d": 0,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "i": 752,
+      "id": "black",
+      "name": "티어 시험 · 검은 적",
+      "d": 0,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "i": 752,
+      "id": "black",
+      "name": "티어 시험 · 검은 적",
+      "d": 0,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "i": 752,
+      "id": "black",
+      "name": "티어 시험 · 검은 적",
+      "d": 1,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "i": 752,
+      "id": "black",
+      "name": "티어 시험 · 검은 적",
+      "d": 1,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "i": 752,
+      "id": "black",
+      "name": "티어 시험 · 검은 적",
+      "d": 1,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "i": 752,
+      "id": "black",
+      "name": "티어 시험 · 검은 적",
+      "d": 1,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "i": 752,
+      "id": "black",
+      "name": "티어 시험 · 검은 적",
+      "d": 2,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "i": 752,
+      "id": "black",
+      "name": "티어 시험 · 검은 적",
+      "d": 2,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "i": 752,
+      "id": "black",
+      "name": "티어 시험 · 검은 적",
+      "d": 2,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "i": 752,
+      "id": "black",
+      "name": "티어 시험 · 검은 적",
+      "d": 2,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "i": 753,
+      "id": "angel",
+      "name": "티어 시험 · 천사",
+      "d": 0,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "i": 753,
+      "id": "angel",
+      "name": "티어 시험 · 천사",
+      "d": 0,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "i": 753,
+      "id": "angel",
+      "name": "티어 시험 · 천사",
+      "d": 0,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "i": 753,
+      "id": "angel",
+      "name": "티어 시험 · 천사",
+      "d": 0,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "i": 753,
+      "id": "angel",
+      "name": "티어 시험 · 천사",
+      "d": 1,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "i": 753,
+      "id": "angel",
+      "name": "티어 시험 · 천사",
+      "d": 1,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "i": 753,
+      "id": "angel",
+      "name": "티어 시험 · 천사",
+      "d": 1,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "i": 753,
+      "id": "angel",
+      "name": "티어 시험 · 천사",
+      "d": 1,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "i": 753,
+      "id": "angel",
+      "name": "티어 시험 · 천사",
+      "d": 2,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "i": 753,
+      "id": "angel",
+      "name": "티어 시험 · 천사",
+      "d": 2,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "i": 753,
+      "id": "angel",
+      "name": "티어 시험 · 천사",
+      "d": 2,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "i": 753,
+      "id": "angel",
+      "name": "티어 시험 · 천사",
+      "d": 2,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "i": 754,
+      "id": "alien",
+      "name": "티어 시험 · 에이리언",
+      "d": 0,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "i": 754,
+      "id": "alien",
+      "name": "티어 시험 · 에이리언",
+      "d": 0,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "i": 754,
+      "id": "alien",
+      "name": "티어 시험 · 에이리언",
+      "d": 0,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "i": 754,
+      "id": "alien",
+      "name": "티어 시험 · 에이리언",
+      "d": 0,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "i": 754,
+      "id": "alien",
+      "name": "티어 시험 · 에이리언",
+      "d": 1,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "i": 754,
+      "id": "alien",
+      "name": "티어 시험 · 에이리언",
+      "d": 1,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "i": 754,
+      "id": "alien",
+      "name": "티어 시험 · 에이리언",
+      "d": 1,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "i": 754,
+      "id": "alien",
+      "name": "티어 시험 · 에이리언",
+      "d": 1,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "i": 754,
+      "id": "alien",
+      "name": "티어 시험 · 에이리언",
+      "d": 2,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "i": 754,
+      "id": "alien",
+      "name": "티어 시험 · 에이리언",
+      "d": 2,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "i": 754,
+      "id": "alien",
+      "name": "티어 시험 · 에이리언",
+      "d": 2,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "i": 754,
+      "id": "alien",
+      "name": "티어 시험 · 에이리언",
+      "d": 2,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "i": 755,
+      "id": "floating",
+      "name": "티어 시험 · 떠 있는 적",
+      "d": 0,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "i": 755,
+      "id": "floating",
+      "name": "티어 시험 · 떠 있는 적",
+      "d": 0,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "i": 755,
+      "id": "floating",
+      "name": "티어 시험 · 떠 있는 적",
+      "d": 0,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "i": 755,
+      "id": "floating",
+      "name": "티어 시험 · 떠 있는 적",
+      "d": 0,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "i": 755,
+      "id": "floating",
+      "name": "티어 시험 · 떠 있는 적",
+      "d": 1,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "i": 755,
+      "id": "floating",
+      "name": "티어 시험 · 떠 있는 적",
+      "d": 1,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "i": 755,
+      "id": "floating",
+      "name": "티어 시험 · 떠 있는 적",
+      "d": 1,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "i": 755,
+      "id": "floating",
+      "name": "티어 시험 · 떠 있는 적",
+      "d": 1,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "i": 755,
+      "id": "floating",
+      "name": "티어 시험 · 떠 있는 적",
+      "d": 2,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "i": 755,
+      "id": "floating",
+      "name": "티어 시험 · 떠 있는 적",
+      "d": 2,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "i": 755,
+      "id": "floating",
+      "name": "티어 시험 · 떠 있는 적",
+      "d": 2,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "i": 755,
+      "id": "floating",
+      "name": "티어 시험 · 떠 있는 적",
+      "d": 2,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "i": 756,
+      "id": "metal",
+      "name": "티어 시험 · 메탈",
+      "d": 0,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "i": 756,
+      "id": "metal",
+      "name": "티어 시험 · 메탈",
+      "d": 0,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "i": 756,
+      "id": "metal",
+      "name": "티어 시험 · 메탈",
+      "d": 0,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "i": 756,
+      "id": "metal",
+      "name": "티어 시험 · 메탈",
+      "d": 0,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "i": 756,
+      "id": "metal",
+      "name": "티어 시험 · 메탈",
+      "d": 1,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "i": 756,
+      "id": "metal",
+      "name": "티어 시험 · 메탈",
+      "d": 1,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "i": 756,
+      "id": "metal",
+      "name": "티어 시험 · 메탈",
+      "d": 1,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "i": 756,
+      "id": "metal",
+      "name": "티어 시험 · 메탈",
+      "d": 1,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "i": 756,
+      "id": "metal",
+      "name": "티어 시험 · 메탈",
+      "d": 2,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "i": 756,
+      "id": "metal",
+      "name": "티어 시험 · 메탈",
+      "d": 2,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "i": 756,
+      "id": "metal",
+      "name": "티어 시험 · 메탈",
+      "d": 2,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "i": 756,
+      "id": "metal",
+      "name": "티어 시험 · 메탈",
+      "d": 2,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "i": 757,
+      "id": "zombie",
+      "name": "티어 시험 · 좀비",
+      "d": 0,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "i": 757,
+      "id": "zombie",
+      "name": "티어 시험 · 좀비",
+      "d": 0,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "i": 757,
+      "id": "zombie",
+      "name": "티어 시험 · 좀비",
+      "d": 0,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "i": 757,
+      "id": "zombie",
+      "name": "티어 시험 · 좀비",
+      "d": 0,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "i": 757,
+      "id": "zombie",
+      "name": "티어 시험 · 좀비",
+      "d": 1,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "i": 757,
+      "id": "zombie",
+      "name": "티어 시험 · 좀비",
+      "d": 1,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "i": 757,
+      "id": "zombie",
+      "name": "티어 시험 · 좀비",
+      "d": 1,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "i": 757,
+      "id": "zombie",
+      "name": "티어 시험 · 좀비",
+      "d": 1,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "i": 757,
+      "id": "zombie",
+      "name": "티어 시험 · 좀비",
+      "d": 2,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "i": 757,
+      "id": "zombie",
+      "name": "티어 시험 · 좀비",
+      "d": 2,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "i": 757,
+      "id": "zombie",
+      "name": "티어 시험 · 좀비",
+      "d": 2,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "i": 757,
+      "id": "zombie",
+      "name": "티어 시험 · 좀비",
+      "d": 2,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "i": 758,
+      "id": "wave",
+      "name": "티어 시험 · 파동",
+      "d": 0,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "i": 758,
+      "id": "wave",
+      "name": "티어 시험 · 파동",
+      "d": 0,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "i": 758,
+      "id": "wave",
+      "name": "티어 시험 · 파동",
+      "d": 0,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "i": 758,
+      "id": "wave",
+      "name": "티어 시험 · 파동",
+      "d": 0,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "i": 758,
+      "id": "wave",
+      "name": "티어 시험 · 파동",
+      "d": 1,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "i": 758,
+      "id": "wave",
+      "name": "티어 시험 · 파동",
+      "d": 1,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "i": 758,
+      "id": "wave",
+      "name": "티어 시험 · 파동",
+      "d": 1,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "i": 758,
+      "id": "wave",
+      "name": "티어 시험 · 파동",
+      "d": 1,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "i": 758,
+      "id": "wave",
+      "name": "티어 시험 · 파동",
+      "d": 2,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "i": 758,
+      "id": "wave",
+      "name": "티어 시험 · 파동",
+      "d": 2,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "i": 758,
+      "id": "wave",
+      "name": "티어 시험 · 파동",
+      "d": 2,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "i": 758,
+      "id": "wave",
+      "name": "티어 시험 · 파동",
+      "d": 2,
+      "seed": 2,
+      "policy": "smart2"
+    }
+  ],
+  "raw": [
+    {
+      "id": 0,
+      "win": true,
+      "timeout": false,
+      "seconds": 149.27,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 1,
+      "win": true,
+      "timeout": false,
+      "seconds": 149.27,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 2,
+      "win": true,
+      "timeout": false,
+      "seconds": 149.27,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 3,
+      "win": true,
+      "timeout": false,
+      "seconds": 149.27,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 4,
+      "win": true,
+      "timeout": false,
+      "seconds": 104.53,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 5,
+      "win": true,
+      "timeout": false,
+      "seconds": 110.5,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 6,
+      "win": true,
+      "timeout": false,
+      "seconds": 104.53,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 7,
+      "win": true,
+      "timeout": false,
+      "seconds": 110.5,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 8,
+      "win": true,
+      "timeout": false,
+      "seconds": 82.07,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 9,
+      "win": true,
+      "timeout": false,
+      "seconds": 82.4,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 10,
+      "win": true,
+      "timeout": false,
+      "seconds": 82.37,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 11,
+      "win": true,
+      "timeout": false,
+      "seconds": 81.37,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 12,
+      "win": true,
+      "timeout": false,
+      "seconds": 105.53,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 13,
+      "win": true,
+      "timeout": false,
+      "seconds": 105.53,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 14,
+      "win": true,
+      "timeout": false,
+      "seconds": 105.53,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 15,
+      "win": true,
+      "timeout": false,
+      "seconds": 105.53,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 16,
+      "win": true,
+      "timeout": false,
+      "seconds": 90.47,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 17,
+      "win": true,
+      "timeout": false,
+      "seconds": 90.47,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 18,
+      "win": true,
+      "timeout": false,
+      "seconds": 97.13,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 19,
+      "win": true,
+      "timeout": false,
+      "seconds": 97.13,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 20,
+      "win": true,
+      "timeout": false,
+      "seconds": 78.73,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 21,
+      "win": true,
+      "timeout": false,
+      "seconds": 78.73,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 22,
+      "win": true,
+      "timeout": false,
+      "seconds": 82.03,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 23,
+      "win": true,
+      "timeout": false,
+      "seconds": 82.03,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 24,
+      "win": true,
+      "timeout": false,
+      "seconds": 186.33,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 25,
+      "win": true,
+      "timeout": false,
+      "seconds": 193.2,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 26,
+      "win": true,
+      "timeout": false,
+      "seconds": 186.33,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 27,
+      "win": true,
+      "timeout": false,
+      "seconds": 193.2,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 28,
+      "win": true,
+      "timeout": false,
+      "seconds": 98.03,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 29,
+      "win": true,
+      "timeout": false,
+      "seconds": 98.03,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 30,
+      "win": true,
+      "timeout": false,
+      "seconds": 88.57,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 31,
+      "win": true,
+      "timeout": false,
+      "seconds": 88.57,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 32,
+      "win": true,
+      "timeout": false,
+      "seconds": 77,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 33,
+      "win": true,
+      "timeout": false,
+      "seconds": 77,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 34,
+      "win": true,
+      "timeout": false,
+      "seconds": 76.07,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 35,
+      "win": true,
+      "timeout": false,
+      "seconds": 76.07,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 36,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 37,
+      "win": false,
+      "timeout": false,
+      "seconds": 32.27,
+      "allyHp": 0,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 38,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 39,
+      "win": false,
+      "timeout": false,
+      "seconds": 31.93,
+      "allyHp": 0,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 40,
+      "win": true,
+      "timeout": false,
+      "seconds": 105.73,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 41,
+      "win": true,
+      "timeout": false,
+      "seconds": 100.77,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 42,
+      "win": true,
+      "timeout": false,
+      "seconds": 105.27,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 43,
+      "win": true,
+      "timeout": false,
+      "seconds": 101.97,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 44,
+      "win": true,
+      "timeout": false,
+      "seconds": 85.47,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 45,
+      "win": true,
+      "timeout": false,
+      "seconds": 87.9,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 46,
+      "win": true,
+      "timeout": false,
+      "seconds": 133.3,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 47,
+      "win": true,
+      "timeout": false,
+      "seconds": 85.07,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 48,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2944691
+    },
+    {
+      "id": 49,
+      "win": false,
+      "timeout": false,
+      "seconds": 108.33,
+      "allyHp": 0,
+      "enemyHp": 2944691
+    },
+    {
+      "id": 50,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2970050
+    },
+    {
+      "id": 51,
+      "win": false,
+      "timeout": false,
+      "seconds": 111.8,
+      "allyHp": 0,
+      "enemyHp": 2970050
+    },
+    {
+      "id": 52,
+      "win": true,
+      "timeout": false,
+      "seconds": 102.53,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 53,
+      "win": true,
+      "timeout": false,
+      "seconds": 102.53,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 54,
+      "win": true,
+      "timeout": false,
+      "seconds": 101.37,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 55,
+      "win": true,
+      "timeout": false,
+      "seconds": 101.37,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 56,
+      "win": true,
+      "timeout": false,
+      "seconds": 81.8,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 57,
+      "win": true,
+      "timeout": false,
+      "seconds": 81.8,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 58,
+      "win": true,
+      "timeout": false,
+      "seconds": 79.67,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 59,
+      "win": true,
+      "timeout": false,
+      "seconds": 79.67,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 60,
+      "win": true,
+      "timeout": false,
+      "seconds": 273.33,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 61,
+      "win": true,
+      "timeout": false,
+      "seconds": 271.5,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 62,
+      "win": true,
+      "timeout": false,
+      "seconds": 273.33,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 63,
+      "win": true,
+      "timeout": false,
+      "seconds": 271.5,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 64,
+      "win": true,
+      "timeout": false,
+      "seconds": 92.27,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 65,
+      "win": true,
+      "timeout": false,
+      "seconds": 92.27,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 66,
+      "win": true,
+      "timeout": false,
+      "seconds": 96.9,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 67,
+      "win": true,
+      "timeout": false,
+      "seconds": 96.9,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 68,
+      "win": true,
+      "timeout": false,
+      "seconds": 74.23,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 69,
+      "win": true,
+      "timeout": false,
+      "seconds": 74.23,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 70,
+      "win": true,
+      "timeout": false,
+      "seconds": 71.53,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 71,
+      "win": true,
+      "timeout": false,
+      "seconds": 71.53,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 72,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2957249
+    },
+    {
+      "id": 73,
+      "win": false,
+      "timeout": false,
+      "seconds": 113.67,
+      "allyHp": 0,
+      "enemyHp": 2957249
+    },
+    {
+      "id": 74,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2957249
+    },
+    {
+      "id": 75,
+      "win": false,
+      "timeout": false,
+      "seconds": 113.67,
+      "allyHp": 0,
+      "enemyHp": 2957249
+    },
+    {
+      "id": 76,
+      "win": true,
+      "timeout": false,
+      "seconds": 96.13,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 77,
+      "win": true,
+      "timeout": false,
+      "seconds": 94.23,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 78,
+      "win": true,
+      "timeout": false,
+      "seconds": 96.13,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 79,
+      "win": true,
+      "timeout": false,
+      "seconds": 94.23,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 80,
+      "win": true,
+      "timeout": false,
+      "seconds": 104.93,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 81,
+      "win": true,
+      "timeout": false,
+      "seconds": 106.13,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 82,
+      "win": true,
+      "timeout": false,
+      "seconds": 111.97,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 83,
+      "win": true,
+      "timeout": false,
+      "seconds": 106.33,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 84,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 1665293
+    },
+    {
+      "id": 85,
+      "win": false,
+      "timeout": false,
+      "seconds": 96.43,
+      "allyHp": 0,
+      "enemyHp": 1
+    },
+    {
+      "id": 86,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 1988492
+    },
+    {
+      "id": 87,
+      "win": false,
+      "timeout": false,
+      "seconds": 87.23,
+      "allyHp": 0,
+      "enemyHp": 1
+    },
+    {
+      "id": 88,
+      "win": true,
+      "timeout": false,
+      "seconds": 141.33,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 89,
+      "win": false,
+      "timeout": false,
+      "seconds": 67.13,
+      "allyHp": 0,
+      "enemyHp": 2551298
+    },
+    {
+      "id": 90,
+      "win": true,
+      "timeout": false,
+      "seconds": 148,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 91,
+      "win": false,
+      "timeout": false,
+      "seconds": 67.13,
+      "allyHp": 0,
+      "enemyHp": 2551298
+    },
+    {
+      "id": 92,
+      "win": true,
+      "timeout": false,
+      "seconds": 143.23,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 93,
+      "win": false,
+      "timeout": false,
+      "seconds": 49.47,
+      "allyHp": 0,
+      "enemyHp": 2030061
+    },
+    {
+      "id": 94,
+      "win": true,
+      "timeout": false,
+      "seconds": 132.37,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 95,
+      "win": false,
+      "timeout": false,
+      "seconds": 43.17,
+      "allyHp": 0,
+      "enemyHp": 2288847
+    },
+    {
+      "id": 96,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2889868
+    },
+    {
+      "id": 97,
+      "win": false,
+      "timeout": false,
+      "seconds": 82.77,
+      "allyHp": 0,
+      "enemyHp": 2889868
+    },
+    {
+      "id": 98,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2889868
+    },
+    {
+      "id": 99,
+      "win": false,
+      "timeout": false,
+      "seconds": 82.77,
+      "allyHp": 0,
+      "enemyHp": 2889868
+    },
+    {
+      "id": 100,
+      "win": true,
+      "timeout": false,
+      "seconds": 299.87,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 101,
+      "win": false,
+      "timeout": false,
+      "seconds": 76.23,
+      "allyHp": 0,
+      "enemyHp": 3000000
+    },
+    {
+      "id": 102,
+      "win": true,
+      "timeout": false,
+      "seconds": 299.87,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 103,
+      "win": false,
+      "timeout": false,
+      "seconds": 76.23,
+      "allyHp": 0,
+      "enemyHp": 3000000
+    },
+    {
+      "id": 104,
+      "win": true,
+      "timeout": false,
+      "seconds": 157.73,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 105,
+      "win": true,
+      "timeout": false,
+      "seconds": 152.43,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 106,
+      "win": true,
+      "timeout": false,
+      "seconds": 163.17,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 107,
+      "win": true,
+      "timeout": false,
+      "seconds": 162.5,
+      "allyHp": 300000,
+      "enemyHp": 0
+    }
+  ],
+  "summary": [
+    {
+      "i": 750,
+      "id": "general",
+      "name": "티어 시험 · 범용",
+      "wins": 12,
+      "n": 12,
+      "min": 81.37,
+      "max": 149.27,
+      "timeouts": 0
+    },
+    {
+      "i": 751,
+      "id": "red",
+      "name": "티어 시험 · 빨간 적",
+      "wins": 12,
+      "n": 12,
+      "min": 78.73,
+      "max": 105.53,
+      "timeouts": 0
+    },
+    {
+      "i": 752,
+      "id": "black",
+      "name": "티어 시험 · 검은 적",
+      "wins": 12,
+      "n": 12,
+      "min": 76.07,
+      "max": 193.2,
+      "timeouts": 0
+    },
+    {
+      "i": 753,
+      "id": "angel",
+      "name": "티어 시험 · 천사",
+      "wins": 8,
+      "n": 12,
+      "min": 85.07,
+      "max": 133.3,
+      "timeouts": 2
+    },
+    {
+      "i": 754,
+      "id": "alien",
+      "name": "티어 시험 · 에이리언",
+      "wins": 8,
+      "n": 12,
+      "min": 79.67,
+      "max": 102.53,
+      "timeouts": 2
+    },
+    {
+      "i": 755,
+      "id": "floating",
+      "name": "티어 시험 · 떠 있는 적",
+      "wins": 12,
+      "n": 12,
+      "min": 71.53,
+      "max": 273.33,
+      "timeouts": 0
+    },
+    {
+      "i": 756,
+      "id": "metal",
+      "name": "티어 시험 · 메탈",
+      "wins": 8,
+      "n": 12,
+      "min": 94.23,
+      "max": 111.97,
+      "timeouts": 2
+    },
+    {
+      "i": 757,
+      "id": "zombie",
+      "name": "티어 시험 · 좀비",
+      "wins": 4,
+      "n": 12,
+      "min": 132.37,
+      "max": 148,
+      "timeouts": 2
+    },
+    {
+      "i": 758,
+      "id": "wave",
+      "name": "티어 시험 · 파동",
+      "wins": 6,
+      "n": 12,
+      "min": 152.43,
+      "max": 299.87,
+      "timeouts": 2
+    }
+  ]
+}

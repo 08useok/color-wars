@@ -1,0 +1,41 @@
+{
+  "checks": [
+    "burrowing zombie remains current boss",
+    "underground castle protection",
+    "revival blocks finish",
+    "permanent kill releases castle",
+    "six tier-reference baseline outcomes unchanged"
+  ],
+  "baseline": [
+    {
+      "seed": 1,
+      "policy": "auto",
+      "seconds": 83.33
+    },
+    {
+      "seed": 1,
+      "policy": "smart2",
+      "seconds": 83.33
+    },
+    {
+      "seed": 2,
+      "policy": "auto",
+      "seconds": 83.87
+    },
+    {
+      "seed": 2,
+      "policy": "smart2",
+      "seconds": 83.87
+    },
+    {
+      "seed": 3,
+      "policy": "auto",
+      "seconds": 87.93
+    },
+    {
+      "seed": 3,
+      "policy": "smart2",
+      "seconds": 87.93
+    }
+  ]
+}

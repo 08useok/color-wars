@@ -1,0 +1,1610 @@
+[
+  {
+    "variant": "second",
+    "seed": 1,
+    "policy": "auto",
+    "win": true,
+    "timeout": false,
+    "seconds": 76.27,
+    "allyHp": 60000,
+    "enemyHp": 0,
+    "frames": 2288,
+    "deployments": {
+      "babypink": 3,
+      "blue": 25,
+      "purple": 9,
+      "yellow": 11,
+      "red": 38
+    },
+    "trace": {
+      "blue": {
+        "attacks": 237,
+        "damage": 795120.6000000001,
+        "kills": 3,
+        "blocked": 0
+      },
+      "babypink": {
+        "attacks": 13,
+        "damage": 308358.49999999977,
+        "kills": 1,
+        "blocked": 0
+      },
+      "all": {
+        "attacks": 0,
+        "damage": 0,
+        "kills": 0,
+        "blocked": 5212
+      },
+      "purple": {
+        "attacks": 45,
+        "damage": 390515.90000000043,
+        "kills": 3,
+        "blocked": 0
+      },
+      "red": {
+        "attacks": 54,
+        "damage": 82696,
+        "kills": 1,
+        "blocked": 0
+      },
+      "yellow": {
+        "attacks": 43,
+        "damage": 226317,
+        "kills": 1,
+        "blocked": 0
+      }
+    }
+  },
+  {
+    "variant": "second",
+    "seed": 1,
+    "policy": "smart2",
+    "win": true,
+    "timeout": false,
+    "seconds": 76.27,
+    "allyHp": 60000,
+    "enemyHp": 0,
+    "frames": 2288,
+    "deployments": {
+      "babypink": 3,
+      "blue": 25,
+      "purple": 9,
+      "yellow": 11,
+      "red": 38
+    },
+    "trace": {
+      "blue": {
+        "attacks": 237,
+        "damage": 795120.6000000001,
+        "kills": 3,
+        "blocked": 0
+      },
+      "babypink": {
+        "attacks": 13,
+        "damage": 308358.49999999977,
+        "kills": 1,
+        "blocked": 0
+      },
+      "all": {
+        "attacks": 0,
+        "damage": 0,
+        "kills": 0,
+        "blocked": 5212
+      },
+      "purple": {
+        "attacks": 45,
+        "damage": 390515.90000000043,
+        "kills": 3,
+        "blocked": 0
+      },
+      "red": {
+        "attacks": 54,
+        "damage": 82696,
+        "kills": 1,
+        "blocked": 0
+      },
+      "yellow": {
+        "attacks": 43,
+        "damage": 226317,
+        "kills": 1,
+        "blocked": 0
+      }
+    }
+  },
+  {
+    "variant": "second",
+    "seed": 2,
+    "policy": "auto",
+    "win": true,
+    "timeout": false,
+    "seconds": 75.1,
+    "allyHp": 60000,
+    "enemyHp": 0,
+    "frames": 2253,
+    "deployments": {
+      "babypink": 3,
+      "blue": 25,
+      "purple": 9,
+      "yellow": 11,
+      "red": 37
+    },
+    "trace": {
+      "blue": {
+        "attacks": 243,
+        "damage": 850604.1999999996,
+        "kills": 7,
+        "blocked": 0
+      },
+      "babypink": {
+        "attacks": 12,
+        "damage": 301070,
+        "kills": 0,
+        "blocked": 0
+      },
+      "all": {
+        "attacks": 0,
+        "damage": 0,
+        "kills": 0,
+        "blocked": 5450
+      },
+      "purple": {
+        "attacks": 45,
+        "damage": 364743.8000000005,
+        "kills": 2,
+        "blocked": 0
+      },
+      "red": {
+        "attacks": 61,
+        "damage": 73920,
+        "kills": 0,
+        "blocked": 0
+      },
+      "yellow": {
+        "attacks": 41,
+        "damage": 212670,
+        "kills": 0,
+        "blocked": 0
+      }
+    }
+  },
+  {
+    "variant": "second",
+    "seed": 2,
+    "policy": "smart2",
+    "win": true,
+    "timeout": false,
+    "seconds": 75.1,
+    "allyHp": 60000,
+    "enemyHp": 0,
+    "frames": 2253,
+    "deployments": {
+      "babypink": 3,
+      "blue": 25,
+      "purple": 9,
+      "yellow": 11,
+      "red": 37
+    },
+    "trace": {
+      "blue": {
+        "attacks": 243,
+        "damage": 850604.1999999996,
+        "kills": 7,
+        "blocked": 0
+      },
+      "babypink": {
+        "attacks": 12,
+        "damage": 301070,
+        "kills": 0,
+        "blocked": 0
+      },
+      "all": {
+        "attacks": 0,
+        "damage": 0,
+        "kills": 0,
+        "blocked": 5450
+      },
+      "purple": {
+        "attacks": 45,
+        "damage": 364743.8000000005,
+        "kills": 2,
+        "blocked": 0
+      },
+      "red": {
+        "attacks": 61,
+        "damage": 73920,
+        "kills": 0,
+        "blocked": 0
+      },
+      "yellow": {
+        "attacks": 41,
+        "damage": 212670,
+        "kills": 0,
+        "blocked": 0
+      }
+    }
+  },
+  {
+    "variant": "second",
+    "seed": 3,
+    "policy": "auto",
+    "win": true,
+    "timeout": false,
+    "seconds": 77.7,
+    "allyHp": 60000,
+    "enemyHp": 0,
+    "frames": 2331,
+    "deployments": {
+      "babypink": 3,
+      "blue": 26,
+      "purple": 9,
+      "yellow": 11,
+      "red": 39
+    },
+    "trace": {
+      "blue": {
+        "attacks": 246,
+        "damage": 838299.6999999998,
+        "kills": 4,
+        "blocked": 0
+      },
+      "babypink": {
+        "attacks": 9,
+        "damage": 246330,
+        "kills": 0,
+        "blocked": 0
+      },
+      "all": {
+        "attacks": 0,
+        "damage": 0,
+        "kills": 0,
+        "blocked": 5989
+      },
+      "purple": {
+        "attacks": 37,
+        "damage": 380777.7000000004,
+        "kills": 2,
+        "blocked": 0
+      },
+      "red": {
+        "attacks": 78,
+        "damage": 111917.3,
+        "kills": 2,
+        "blocked": 0
+      },
+      "yellow": {
+        "attacks": 50,
+        "damage": 225683.30000000002,
+        "kills": 1,
+        "blocked": 0
+      }
+    }
+  },
+  {
+    "variant": "second",
+    "seed": 3,
+    "policy": "smart2",
+    "win": true,
+    "timeout": false,
+    "seconds": 77.7,
+    "allyHp": 60000,
+    "enemyHp": 0,
+    "frames": 2331,
+    "deployments": {
+      "babypink": 3,
+      "blue": 26,
+      "purple": 9,
+      "yellow": 11,
+      "red": 39
+    },
+    "trace": {
+      "blue": {
+        "attacks": 246,
+        "damage": 838299.6999999998,
+        "kills": 4,
+        "blocked": 0
+      },
+      "babypink": {
+        "attacks": 9,
+        "damage": 246330,
+        "kills": 0,
+        "blocked": 0
+      },
+      "all": {
+        "attacks": 0,
+        "damage": 0,
+        "kills": 0,
+        "blocked": 5989
+      },
+      "purple": {
+        "attacks": 37,
+        "damage": 380777.7000000004,
+        "kills": 2,
+        "blocked": 0
+      },
+      "red": {
+        "attacks": 78,
+        "damage": 111917.3,
+        "kills": 2,
+        "blocked": 0
+      },
+      "yellow": {
+        "attacks": 50,
+        "damage": 225683.30000000002,
+        "kills": 1,
+        "blocked": 0
+      }
+    }
+  },
+  {
+    "variant": "third",
+    "seed": 1,
+    "policy": "auto",
+    "win": true,
+    "timeout": false,
+    "seconds": 81,
+    "allyHp": 60000,
+    "enemyHp": 0,
+    "frames": 2431,
+    "deployments": {
+      "babypink": 3,
+      "blue": 27,
+      "purple": 9,
+      "yellow": 12,
+      "red": 40
+    },
+    "trace": {
+      "blue": {
+        "attacks": 225,
+        "damage": 818186.1,
+        "kills": 2,
+        "blocked": 0
+      },
+      "babypink": {
+        "attacks": 16,
+        "damage": 368883.5,
+        "kills": 4,
+        "blocked": 0
+      },
+      "all": {
+        "attacks": 0,
+        "damage": 0,
+        "kills": 0,
+        "blocked": 6088
+      },
+      "purple": {
+        "attacks": 39,
+        "damage": 295163.3,
+        "kills": 1,
+        "blocked": 0
+      },
+      "red": {
+        "attacks": 58,
+        "damage": 88730,
+        "kills": 1,
+        "blocked": 0
+      },
+      "yellow": {
+        "attacks": 48,
+        "damage": 232045.1,
+        "kills": 1,
+        "blocked": 0
+      }
+    }
+  },
+  {
+    "variant": "third",
+    "seed": 1,
+    "policy": "smart2",
+    "win": true,
+    "timeout": false,
+    "seconds": 81,
+    "allyHp": 60000,
+    "enemyHp": 0,
+    "frames": 2431,
+    "deployments": {
+      "babypink": 3,
+      "blue": 27,
+      "purple": 9,
+      "yellow": 12,
+      "red": 40
+    },
+    "trace": {
+      "blue": {
+        "attacks": 225,
+        "damage": 818186.1,
+        "kills": 2,
+        "blocked": 0
+      },
+      "babypink": {
+        "attacks": 16,
+        "damage": 368883.5,
+        "kills": 4,
+        "blocked": 0
+      },
+      "all": {
+        "attacks": 0,
+        "damage": 0,
+        "kills": 0,
+        "blocked": 6088
+      },
+      "purple": {
+        "attacks": 39,
+        "damage": 295163.3,
+        "kills": 1,
+        "blocked": 0
+      },
+      "red": {
+        "attacks": 58,
+        "damage": 88730,
+        "kills": 1,
+        "blocked": 0
+      },
+      "yellow": {
+        "attacks": 48,
+        "damage": 232045.1,
+        "kills": 1,
+        "blocked": 0
+      }
+    }
+  },
+  {
+    "variant": "third",
+    "seed": 2,
+    "policy": "auto",
+    "win": true,
+    "timeout": false,
+    "seconds": 73.1,
+    "allyHp": 60000,
+    "enemyHp": 0,
+    "frames": 2193,
+    "deployments": {
+      "babypink": 2,
+      "blue": 24,
+      "purple": 8,
+      "yellow": 11,
+      "red": 36
+    },
+    "trace": {
+      "blue": {
+        "attacks": 211,
+        "damage": 747384.1,
+        "kills": 2,
+        "blocked": 0
+      },
+      "babypink": {
+        "attacks": 16,
+        "damage": 415644.99999999965,
+        "kills": 3,
+        "blocked": 0
+      },
+      "all": {
+        "attacks": 0,
+        "damage": 0,
+        "kills": 0,
+        "blocked": 5951
+      },
+      "red": {
+        "attacks": 53,
+        "damage": 65896,
+        "kills": 1,
+        "blocked": 0
+      },
+      "purple": {
+        "attacks": 41,
+        "damage": 380026.60000000056,
+        "kills": 1,
+        "blocked": 0
+      },
+      "yellow": {
+        "attacks": 47,
+        "damage": 194056.3,
+        "kills": 2,
+        "blocked": 0
+      }
+    }
+  },
+  {
+    "variant": "third",
+    "seed": 2,
+    "policy": "smart2",
+    "win": true,
+    "timeout": false,
+    "seconds": 73.1,
+    "allyHp": 60000,
+    "enemyHp": 0,
+    "frames": 2193,
+    "deployments": {
+      "babypink": 2,
+      "blue": 24,
+      "purple": 8,
+      "yellow": 11,
+      "red": 36
+    },
+    "trace": {
+      "blue": {
+        "attacks": 211,
+        "damage": 747384.1,
+        "kills": 2,
+        "blocked": 0
+      },
+      "babypink": {
+        "attacks": 16,
+        "damage": 415644.99999999965,
+        "kills": 3,
+        "blocked": 0
+      },
+      "all": {
+        "attacks": 0,
+        "damage": 0,
+        "kills": 0,
+        "blocked": 5951
+      },
+      "red": {
+        "attacks": 53,
+        "damage": 65896,
+        "kills": 1,
+        "blocked": 0
+      },
+      "purple": {
+        "attacks": 41,
+        "damage": 380026.60000000056,
+        "kills": 1,
+        "blocked": 0
+      },
+      "yellow": {
+        "attacks": 47,
+        "damage": 194056.3,
+        "kills": 2,
+        "blocked": 0
+      }
+    }
+  },
+  {
+    "variant": "third",
+    "seed": 3,
+    "policy": "auto",
+    "win": true,
+    "timeout": false,
+    "seconds": 80.63,
+    "allyHp": 60000,
+    "enemyHp": 0,
+    "frames": 2419,
+    "deployments": {
+      "babypink": 3,
+      "blue": 27,
+      "purple": 9,
+      "yellow": 12,
+      "red": 40
+    },
+    "trace": {
+      "blue": {
+        "attacks": 237,
+        "damage": 815132,
+        "kills": 1,
+        "blocked": 0
+      },
+      "babypink": {
+        "attacks": 12,
+        "damage": 333529.6,
+        "kills": 5,
+        "blocked": 0
+      },
+      "all": {
+        "attacks": 0,
+        "damage": 0,
+        "kills": 0,
+        "blocked": 6256
+      },
+      "red": {
+        "attacks": 70,
+        "damage": 107520,
+        "kills": 0,
+        "blocked": 0
+      },
+      "purple": {
+        "attacks": 39,
+        "damage": 334007.40000000014,
+        "kills": 2,
+        "blocked": 0
+      },
+      "yellow": {
+        "attacks": 50,
+        "damage": 212819,
+        "kills": 1,
+        "blocked": 0
+      }
+    }
+  },
+  {
+    "variant": "third",
+    "seed": 3,
+    "policy": "smart2",
+    "win": true,
+    "timeout": false,
+    "seconds": 80.63,
+    "allyHp": 60000,
+    "enemyHp": 0,
+    "frames": 2419,
+    "deployments": {
+      "babypink": 3,
+      "blue": 27,
+      "purple": 9,
+      "yellow": 12,
+      "red": 40
+    },
+    "trace": {
+      "blue": {
+        "attacks": 237,
+        "damage": 815132,
+        "kills": 1,
+        "blocked": 0
+      },
+      "babypink": {
+        "attacks": 12,
+        "damage": 333529.6,
+        "kills": 5,
+        "blocked": 0
+      },
+      "all": {
+        "attacks": 0,
+        "damage": 0,
+        "kills": 0,
+        "blocked": 6256
+      },
+      "red": {
+        "attacks": 70,
+        "damage": 107520,
+        "kills": 0,
+        "blocked": 0
+      },
+      "purple": {
+        "attacks": 39,
+        "damage": 334007.40000000014,
+        "kills": 2,
+        "blocked": 0
+      },
+      "yellow": {
+        "attacks": 50,
+        "damage": 212819,
+        "kills": 1,
+        "blocked": 0
+      }
+    }
+  },
+  {
+    "variant": "thirdWindup",
+    "seed": 1,
+    "policy": "auto",
+    "win": true,
+    "timeout": false,
+    "seconds": 76.1,
+    "allyHp": 60000,
+    "enemyHp": 0,
+    "frames": 2284,
+    "deployments": {
+      "babypink": 3,
+      "blue": 25,
+      "purple": 9,
+      "yellow": 11,
+      "red": 38
+    },
+    "trace": {
+      "blue": {
+        "attacks": 219,
+        "damage": 735031.3,
+        "kills": 3,
+        "blocked": 0
+      },
+      "babypink": {
+        "attacks": 16,
+        "damage": 368777.2,
+        "kills": 1,
+        "blocked": 0
+      },
+      "all": {
+        "attacks": 0,
+        "damage": 0,
+        "kills": 0,
+        "blocked": 5270
+      },
+      "purple": {
+        "attacks": 43,
+        "damage": 398365.2000000001,
+        "kills": 3,
+        "blocked": 0
+      },
+      "red": {
+        "attacks": 49,
+        "damage": 71157.29999999999,
+        "kills": 1,
+        "blocked": 0
+      },
+      "yellow": {
+        "attacks": 44,
+        "damage": 229677,
+        "kills": 1,
+        "blocked": 0
+      }
+    }
+  },
+  {
+    "variant": "thirdWindup",
+    "seed": 1,
+    "policy": "smart2",
+    "win": true,
+    "timeout": false,
+    "seconds": 76.1,
+    "allyHp": 60000,
+    "enemyHp": 0,
+    "frames": 2284,
+    "deployments": {
+      "babypink": 3,
+      "blue": 25,
+      "purple": 9,
+      "yellow": 11,
+      "red": 38
+    },
+    "trace": {
+      "blue": {
+        "attacks": 219,
+        "damage": 735031.3,
+        "kills": 3,
+        "blocked": 0
+      },
+      "babypink": {
+        "attacks": 16,
+        "damage": 368777.2,
+        "kills": 1,
+        "blocked": 0
+      },
+      "all": {
+        "attacks": 0,
+        "damage": 0,
+        "kills": 0,
+        "blocked": 5270
+      },
+      "purple": {
+        "attacks": 43,
+        "damage": 398365.2000000001,
+        "kills": 3,
+        "blocked": 0
+      },
+      "red": {
+        "attacks": 49,
+        "damage": 71157.29999999999,
+        "kills": 1,
+        "blocked": 0
+      },
+      "yellow": {
+        "attacks": 44,
+        "damage": 229677,
+        "kills": 1,
+        "blocked": 0
+      }
+    }
+  },
+  {
+    "variant": "thirdWindup",
+    "seed": 2,
+    "policy": "auto",
+    "win": true,
+    "timeout": false,
+    "seconds": 75.73,
+    "allyHp": 60000,
+    "enemyHp": 0,
+    "frames": 2272,
+    "deployments": {
+      "babypink": 3,
+      "blue": 25,
+      "purple": 9,
+      "yellow": 11,
+      "red": 38
+    },
+    "trace": {
+      "blue": {
+        "attacks": 231,
+        "damage": 749803.5,
+        "kills": 4,
+        "blocked": 0
+      },
+      "babypink": {
+        "attacks": 15,
+        "damage": 348003.8999999998,
+        "kills": 2,
+        "blocked": 0
+      },
+      "all": {
+        "attacks": 0,
+        "damage": 0,
+        "kills": 0,
+        "blocked": 5525
+      },
+      "red": {
+        "attacks": 46,
+        "damage": 73604,
+        "kills": 1,
+        "blocked": 0
+      },
+      "purple": {
+        "attacks": 39,
+        "damage": 412671.60000000044,
+        "kills": 2,
+        "blocked": 0
+      },
+      "yellow": {
+        "attacks": 45,
+        "damage": 218925,
+        "kills": 0,
+        "blocked": 0
+      }
+    }
+  },
+  {
+    "variant": "thirdWindup",
+    "seed": 2,
+    "policy": "smart2",
+    "win": true,
+    "timeout": false,
+    "seconds": 75.73,
+    "allyHp": 60000,
+    "enemyHp": 0,
+    "frames": 2272,
+    "deployments": {
+      "babypink": 3,
+      "blue": 25,
+      "purple": 9,
+      "yellow": 11,
+      "red": 38
+    },
+    "trace": {
+      "blue": {
+        "attacks": 231,
+        "damage": 749803.5,
+        "kills": 4,
+        "blocked": 0
+      },
+      "babypink": {
+        "attacks": 15,
+        "damage": 348003.8999999998,
+        "kills": 2,
+        "blocked": 0
+      },
+      "all": {
+        "attacks": 0,
+        "damage": 0,
+        "kills": 0,
+        "blocked": 5525
+      },
+      "red": {
+        "attacks": 46,
+        "damage": 73604,
+        "kills": 1,
+        "blocked": 0
+      },
+      "purple": {
+        "attacks": 39,
+        "damage": 412671.60000000044,
+        "kills": 2,
+        "blocked": 0
+      },
+      "yellow": {
+        "attacks": 45,
+        "damage": 218925,
+        "kills": 0,
+        "blocked": 0
+      }
+    }
+  },
+  {
+    "variant": "thirdWindup",
+    "seed": 3,
+    "policy": "auto",
+    "win": true,
+    "timeout": false,
+    "seconds": 70.13,
+    "allyHp": 60000,
+    "enemyHp": 0,
+    "frames": 2104,
+    "deployments": {
+      "babypink": 2,
+      "blue": 23,
+      "purple": 8,
+      "yellow": 10,
+      "red": 35
+    },
+    "trace": {
+      "blue": {
+        "attacks": 240,
+        "damage": 848369.4,
+        "kills": 3,
+        "blocked": 0
+      },
+      "babypink": {
+        "attacks": 15,
+        "damage": 318792.3999999998,
+        "kills": 2,
+        "blocked": 0
+      },
+      "all": {
+        "attacks": 0,
+        "damage": 0,
+        "kills": 0,
+        "blocked": 4780
+      },
+      "red": {
+        "attacks": 55,
+        "damage": 95217,
+        "kills": 1,
+        "blocked": 0
+      },
+      "purple": {
+        "attacks": 36,
+        "damage": 355977.9000000004,
+        "kills": 1,
+        "blocked": 0
+      },
+      "yellow": {
+        "attacks": 45,
+        "damage": 184651.3,
+        "kills": 2,
+        "blocked": 0
+      }
+    }
+  },
+  {
+    "variant": "thirdWindup",
+    "seed": 3,
+    "policy": "smart2",
+    "win": true,
+    "timeout": false,
+    "seconds": 70.13,
+    "allyHp": 60000,
+    "enemyHp": 0,
+    "frames": 2104,
+    "deployments": {
+      "babypink": 2,
+      "blue": 23,
+      "purple": 8,
+      "yellow": 10,
+      "red": 35
+    },
+    "trace": {
+      "blue": {
+        "attacks": 240,
+        "damage": 848369.4,
+        "kills": 3,
+        "blocked": 0
+      },
+      "babypink": {
+        "attacks": 15,
+        "damage": 318792.3999999998,
+        "kills": 2,
+        "blocked": 0
+      },
+      "all": {
+        "attacks": 0,
+        "damage": 0,
+        "kills": 0,
+        "blocked": 4780
+      },
+      "red": {
+        "attacks": 55,
+        "damage": 95217,
+        "kills": 1,
+        "blocked": 0
+      },
+      "purple": {
+        "attacks": 36,
+        "damage": 355977.9000000004,
+        "kills": 1,
+        "blocked": 0
+      },
+      "yellow": {
+        "attacks": 45,
+        "damage": 184651.3,
+        "kills": 2,
+        "blocked": 0
+      }
+    }
+  },
+  {
+    "variant": "secondNoLocks",
+    "seed": 1,
+    "policy": "auto",
+    "win": true,
+    "timeout": false,
+    "seconds": 43.47,
+    "allyHp": 60000,
+    "enemyHp": 0,
+    "frames": 1304,
+    "deployments": {
+      "babypink": 2,
+      "blue": 14,
+      "purple": 5,
+      "yellow": 6,
+      "red": 22
+    },
+    "trace": {
+      "blue": {
+        "attacks": 326,
+        "damage": 1084968.3,
+        "kills": 3,
+        "blocked": 0
+      },
+      "babypink": {
+        "attacks": 9,
+        "damage": 221259,
+        "kills": 1,
+        "blocked": 0
+      },
+      "purple": {
+        "attacks": 26,
+        "damage": 231682.69999999998,
+        "kills": 2,
+        "blocked": 0
+      },
+      "red": {
+        "attacks": 53,
+        "damage": 104160,
+        "kills": 0,
+        "blocked": 0
+      },
+      "yellow": {
+        "attacks": 24,
+        "damage": 118845,
+        "kills": 0,
+        "blocked": 0
+      }
+    }
+  },
+  {
+    "variant": "secondNoLocks",
+    "seed": 1,
+    "policy": "smart2",
+    "win": true,
+    "timeout": false,
+    "seconds": 43.47,
+    "allyHp": 60000,
+    "enemyHp": 0,
+    "frames": 1304,
+    "deployments": {
+      "babypink": 2,
+      "blue": 14,
+      "purple": 5,
+      "yellow": 6,
+      "red": 22
+    },
+    "trace": {
+      "blue": {
+        "attacks": 326,
+        "damage": 1084968.3,
+        "kills": 3,
+        "blocked": 0
+      },
+      "babypink": {
+        "attacks": 9,
+        "damage": 221259,
+        "kills": 1,
+        "blocked": 0
+      },
+      "purple": {
+        "attacks": 26,
+        "damage": 231682.69999999998,
+        "kills": 2,
+        "blocked": 0
+      },
+      "red": {
+        "attacks": 53,
+        "damage": 104160,
+        "kills": 0,
+        "blocked": 0
+      },
+      "yellow": {
+        "attacks": 24,
+        "damage": 118845,
+        "kills": 0,
+        "blocked": 0
+      }
+    }
+  },
+  {
+    "variant": "secondNoLocks",
+    "seed": 2,
+    "policy": "auto",
+    "win": true,
+    "timeout": false,
+    "seconds": 44.03,
+    "allyHp": 60000,
+    "enemyHp": 0,
+    "frames": 1321,
+    "deployments": {
+      "babypink": 2,
+      "blue": 15,
+      "purple": 5,
+      "yellow": 7,
+      "red": 22
+    },
+    "trace": {
+      "blue": {
+        "attacks": 351,
+        "damage": 1182321.2,
+        "kills": 4,
+        "blocked": 0
+      },
+      "babypink": {
+        "attacks": 9,
+        "damage": 191590,
+        "kills": 0,
+        "blocked": 0
+      },
+      "red": {
+        "attacks": 49,
+        "damage": 98809.1,
+        "kills": 1,
+        "blocked": 0
+      },
+      "purple": {
+        "attacks": 18,
+        "damage": 167660.69999999998,
+        "kills": 2,
+        "blocked": 0
+      },
+      "yellow": {
+        "attacks": 27,
+        "damage": 131355,
+        "kills": 0,
+        "blocked": 0
+      }
+    }
+  },
+  {
+    "variant": "secondNoLocks",
+    "seed": 2,
+    "policy": "smart2",
+    "win": true,
+    "timeout": false,
+    "seconds": 44.03,
+    "allyHp": 60000,
+    "enemyHp": 0,
+    "frames": 1321,
+    "deployments": {
+      "babypink": 2,
+      "blue": 15,
+      "purple": 5,
+      "yellow": 7,
+      "red": 22
+    },
+    "trace": {
+      "blue": {
+        "attacks": 351,
+        "damage": 1182321.2,
+        "kills": 4,
+        "blocked": 0
+      },
+      "babypink": {
+        "attacks": 9,
+        "damage": 191590,
+        "kills": 0,
+        "blocked": 0
+      },
+      "red": {
+        "attacks": 49,
+        "damage": 98809.1,
+        "kills": 1,
+        "blocked": 0
+      },
+      "purple": {
+        "attacks": 18,
+        "damage": 167660.69999999998,
+        "kills": 2,
+        "blocked": 0
+      },
+      "yellow": {
+        "attacks": 27,
+        "damage": 131355,
+        "kills": 0,
+        "blocked": 0
+      }
+    }
+  },
+  {
+    "variant": "secondNoLocks",
+    "seed": 3,
+    "policy": "auto",
+    "win": true,
+    "timeout": false,
+    "seconds": 47.47,
+    "allyHp": 60000,
+    "enemyHp": 0,
+    "frames": 1424,
+    "deployments": {
+      "babypink": 2,
+      "blue": 16,
+      "purple": 6,
+      "yellow": 7,
+      "red": 24
+    },
+    "trace": {
+      "blue": {
+        "attacks": 341,
+        "damage": 1168742.3,
+        "kills": 3,
+        "blocked": 0
+      },
+      "babypink": {
+        "attacks": 8,
+        "damage": 164895.3999999999,
+        "kills": 2,
+        "blocked": 0
+      },
+      "red": {
+        "attacks": 49,
+        "damage": 101704.1,
+        "kills": 1,
+        "blocked": 0
+      },
+      "purple": {
+        "attacks": 25,
+        "damage": 208552.20000000007,
+        "kills": 1,
+        "blocked": 0
+      },
+      "yellow": {
+        "attacks": 30,
+        "damage": 137610,
+        "kills": 0,
+        "blocked": 0
+      }
+    }
+  },
+  {
+    "variant": "secondNoLocks",
+    "seed": 3,
+    "policy": "smart2",
+    "win": true,
+    "timeout": false,
+    "seconds": 47.47,
+    "allyHp": 60000,
+    "enemyHp": 0,
+    "frames": 1424,
+    "deployments": {
+      "babypink": 2,
+      "blue": 16,
+      "purple": 6,
+      "yellow": 7,
+      "red": 24
+    },
+    "trace": {
+      "blue": {
+        "attacks": 341,
+        "damage": 1168742.3,
+        "kills": 3,
+        "blocked": 0
+      },
+      "babypink": {
+        "attacks": 8,
+        "damage": 164895.3999999999,
+        "kills": 2,
+        "blocked": 0
+      },
+      "red": {
+        "attacks": 49,
+        "damage": 101704.1,
+        "kills": 1,
+        "blocked": 0
+      },
+      "purple": {
+        "attacks": 25,
+        "damage": 208552.20000000007,
+        "kills": 1,
+        "blocked": 0
+      },
+      "yellow": {
+        "attacks": 30,
+        "damage": 137610,
+        "kills": 0,
+        "blocked": 0
+      }
+    }
+  },
+  {
+    "variant": "thirdNoLocks",
+    "seed": 1,
+    "policy": "auto",
+    "win": true,
+    "timeout": false,
+    "seconds": 41.57,
+    "allyHp": 60000,
+    "enemyHp": 0,
+    "frames": 1247,
+    "deployments": {
+      "babypink": 2,
+      "blue": 14,
+      "purple": 5,
+      "yellow": 6,
+      "red": 21
+    },
+    "trace": {
+      "blue": {
+        "attacks": 305,
+        "damage": 1025359,
+        "kills": 1,
+        "blocked": 0
+      },
+      "babypink": {
+        "attacks": 11,
+        "damage": 313878,
+        "kills": 2,
+        "blocked": 0
+      },
+      "purple": {
+        "attacks": 22,
+        "damage": 142855.70000000007,
+        "kills": 0,
+        "blocked": 0
+      },
+      "red": {
+        "attacks": 46,
+        "damage": 77147.19999999991,
+        "kills": 1,
+        "blocked": 0
+      },
+      "yellow": {
+        "attacks": 22,
+        "damage": 100080,
+        "kills": 0,
+        "blocked": 0
+      }
+    }
+  },
+  {
+    "variant": "thirdNoLocks",
+    "seed": 1,
+    "policy": "smart2",
+    "win": true,
+    "timeout": false,
+    "seconds": 41.57,
+    "allyHp": 60000,
+    "enemyHp": 0,
+    "frames": 1247,
+    "deployments": {
+      "babypink": 2,
+      "blue": 14,
+      "purple": 5,
+      "yellow": 6,
+      "red": 21
+    },
+    "trace": {
+      "blue": {
+        "attacks": 305,
+        "damage": 1025359,
+        "kills": 1,
+        "blocked": 0
+      },
+      "babypink": {
+        "attacks": 11,
+        "damage": 313878,
+        "kills": 2,
+        "blocked": 0
+      },
+      "purple": {
+        "attacks": 22,
+        "damage": 142855.70000000007,
+        "kills": 0,
+        "blocked": 0
+      },
+      "red": {
+        "attacks": 46,
+        "damage": 77147.19999999991,
+        "kills": 1,
+        "blocked": 0
+      },
+      "yellow": {
+        "attacks": 22,
+        "damage": 100080,
+        "kills": 0,
+        "blocked": 0
+      }
+    }
+  },
+  {
+    "variant": "thirdNoLocks",
+    "seed": 2,
+    "policy": "auto",
+    "win": true,
+    "timeout": false,
+    "seconds": 43.87,
+    "allyHp": 60000,
+    "enemyHp": 0,
+    "frames": 1316,
+    "deployments": {
+      "babypink": 2,
+      "blue": 15,
+      "purple": 5,
+      "yellow": 7,
+      "red": 22
+    },
+    "trace": {
+      "blue": {
+        "attacks": 337,
+        "damage": 1116819.2000000002,
+        "kills": 5,
+        "blocked": 0
+      },
+      "babypink": {
+        "attacks": 11,
+        "damage": 286508,
+        "kills": 2,
+        "blocked": 0
+      },
+      "red": {
+        "attacks": 46,
+        "damage": 97440,
+        "kills": 0,
+        "blocked": 0
+      },
+      "purple": {
+        "attacks": 20,
+        "damage": 178898.8,
+        "kills": 1,
+        "blocked": 0
+      },
+      "yellow": {
+        "attacks": 26,
+        "damage": 112590,
+        "kills": 0,
+        "blocked": 0
+      }
+    }
+  },
+  {
+    "variant": "thirdNoLocks",
+    "seed": 2,
+    "policy": "smart2",
+    "win": true,
+    "timeout": false,
+    "seconds": 43.87,
+    "allyHp": 60000,
+    "enemyHp": 0,
+    "frames": 1316,
+    "deployments": {
+      "babypink": 2,
+      "blue": 15,
+      "purple": 5,
+      "yellow": 7,
+      "red": 22
+    },
+    "trace": {
+      "blue": {
+        "attacks": 337,
+        "damage": 1116819.2000000002,
+        "kills": 5,
+        "blocked": 0
+      },
+      "babypink": {
+        "attacks": 11,
+        "damage": 286508,
+        "kills": 2,
+        "blocked": 0
+      },
+      "red": {
+        "attacks": 46,
+        "damage": 97440,
+        "kills": 0,
+        "blocked": 0
+      },
+      "purple": {
+        "attacks": 20,
+        "damage": 178898.8,
+        "kills": 1,
+        "blocked": 0
+      },
+      "yellow": {
+        "attacks": 26,
+        "damage": 112590,
+        "kills": 0,
+        "blocked": 0
+      }
+    }
+  },
+  {
+    "variant": "thirdNoLocks",
+    "seed": 3,
+    "policy": "auto",
+    "win": true,
+    "timeout": false,
+    "seconds": 43.23,
+    "allyHp": 60000,
+    "enemyHp": 0,
+    "frames": 1298,
+    "deployments": {
+      "babypink": 2,
+      "blue": 14,
+      "purple": 5,
+      "yellow": 6,
+      "red": 21
+    },
+    "trace": {
+      "blue": {
+        "attacks": 335,
+        "damage": 1119889.7,
+        "kills": 3,
+        "blocked": 0
+      },
+      "babypink": {
+        "attacks": 11,
+        "damage": 221016,
+        "kills": 1,
+        "blocked": 0
+      },
+      "red": {
+        "attacks": 41,
+        "damage": 90720,
+        "kills": 0,
+        "blocked": 0
+      },
+      "purple": {
+        "attacks": 23,
+        "damage": 218073.20000000007,
+        "kills": 2,
+        "blocked": 0
+      },
+      "yellow": {
+        "attacks": 25,
+        "damage": 112590,
+        "kills": 0,
+        "blocked": 0
+      }
+    }
+  },
+  {
+    "variant": "thirdNoLocks",
+    "seed": 3,
+    "policy": "smart2",
+    "win": true,
+    "timeout": false,
+    "seconds": 43.23,
+    "allyHp": 60000,
+    "enemyHp": 0,
+    "frames": 1298,
+    "deployments": {
+      "babypink": 2,
+      "blue": 14,
+      "purple": 5,
+      "yellow": 6,
+      "red": 21
+    },
+    "trace": {
+      "blue": {
+        "attacks": 335,
+        "damage": 1119889.7,
+        "kills": 3,
+        "blocked": 0
+      },
+      "babypink": {
+        "attacks": 11,
+        "damage": 221016,
+        "kills": 1,
+        "blocked": 0
+      },
+      "red": {
+        "attacks": 41,
+        "damage": 90720,
+        "kills": 0,
+        "blocked": 0
+      },
+      "purple": {
+        "attacks": 23,
+        "damage": 218073.20000000007,
+        "kills": 2,
+        "blocked": 0
+      },
+      "yellow": {
+        "attacks": 25,
+        "damage": 112590,
+        "kills": 0,
+        "blocked": 0
+      }
+    }
+  }
+]

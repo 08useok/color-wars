@@ -1,0 +1,1335 @@
+{
+  "maps": [
+    {
+      "i": 405,
+      "crown": 3,
+      "tag": "현재 기준 맵"
+    },
+    {
+      "i": 633,
+      "share": 0.9953282845069119,
+      "crown": 1,
+      "tag": "floating"
+    },
+    {
+      "i": 606,
+      "share": 0.9868846800983649,
+      "crown": 1,
+      "tag": "angel"
+    },
+    {
+      "i": 540,
+      "share": 1,
+      "crown": 1,
+      "tag": "alien"
+    },
+    {
+      "i": 611,
+      "share": 0.7617315307265305,
+      "crown": 1,
+      "tag": "zombie"
+    }
+  ],
+  "core": [
+    "red",
+    "yellow",
+    "blue",
+    "purple"
+  ],
+  "meta": [
+    {
+      "map": 405,
+      "seed": 1,
+      "policy": "auto",
+      "variant": "second"
+    },
+    {
+      "map": 405,
+      "seed": 1,
+      "policy": "auto",
+      "variant": "oldThird"
+    },
+    {
+      "map": 405,
+      "seed": 1,
+      "policy": "auto",
+      "variant": "newThird"
+    },
+    {
+      "map": 405,
+      "seed": 1,
+      "policy": "smart2",
+      "variant": "second"
+    },
+    {
+      "map": 405,
+      "seed": 1,
+      "policy": "smart2",
+      "variant": "oldThird"
+    },
+    {
+      "map": 405,
+      "seed": 1,
+      "policy": "smart2",
+      "variant": "newThird"
+    },
+    {
+      "map": 405,
+      "seed": 2,
+      "policy": "auto",
+      "variant": "second"
+    },
+    {
+      "map": 405,
+      "seed": 2,
+      "policy": "auto",
+      "variant": "oldThird"
+    },
+    {
+      "map": 405,
+      "seed": 2,
+      "policy": "auto",
+      "variant": "newThird"
+    },
+    {
+      "map": 405,
+      "seed": 2,
+      "policy": "smart2",
+      "variant": "second"
+    },
+    {
+      "map": 405,
+      "seed": 2,
+      "policy": "smart2",
+      "variant": "oldThird"
+    },
+    {
+      "map": 405,
+      "seed": 2,
+      "policy": "smart2",
+      "variant": "newThird"
+    },
+    {
+      "map": 405,
+      "seed": 3,
+      "policy": "auto",
+      "variant": "second"
+    },
+    {
+      "map": 405,
+      "seed": 3,
+      "policy": "auto",
+      "variant": "oldThird"
+    },
+    {
+      "map": 405,
+      "seed": 3,
+      "policy": "auto",
+      "variant": "newThird"
+    },
+    {
+      "map": 405,
+      "seed": 3,
+      "policy": "smart2",
+      "variant": "second"
+    },
+    {
+      "map": 405,
+      "seed": 3,
+      "policy": "smart2",
+      "variant": "oldThird"
+    },
+    {
+      "map": 405,
+      "seed": 3,
+      "policy": "smart2",
+      "variant": "newThird"
+    },
+    {
+      "map": 633,
+      "seed": 1,
+      "policy": "auto",
+      "variant": "second"
+    },
+    {
+      "map": 633,
+      "seed": 1,
+      "policy": "auto",
+      "variant": "oldThird"
+    },
+    {
+      "map": 633,
+      "seed": 1,
+      "policy": "auto",
+      "variant": "newThird"
+    },
+    {
+      "map": 633,
+      "seed": 1,
+      "policy": "smart2",
+      "variant": "second"
+    },
+    {
+      "map": 633,
+      "seed": 1,
+      "policy": "smart2",
+      "variant": "oldThird"
+    },
+    {
+      "map": 633,
+      "seed": 1,
+      "policy": "smart2",
+      "variant": "newThird"
+    },
+    {
+      "map": 633,
+      "seed": 2,
+      "policy": "auto",
+      "variant": "second"
+    },
+    {
+      "map": 633,
+      "seed": 2,
+      "policy": "auto",
+      "variant": "oldThird"
+    },
+    {
+      "map": 633,
+      "seed": 2,
+      "policy": "auto",
+      "variant": "newThird"
+    },
+    {
+      "map": 633,
+      "seed": 2,
+      "policy": "smart2",
+      "variant": "second"
+    },
+    {
+      "map": 633,
+      "seed": 2,
+      "policy": "smart2",
+      "variant": "oldThird"
+    },
+    {
+      "map": 633,
+      "seed": 2,
+      "policy": "smart2",
+      "variant": "newThird"
+    },
+    {
+      "map": 633,
+      "seed": 3,
+      "policy": "auto",
+      "variant": "second"
+    },
+    {
+      "map": 633,
+      "seed": 3,
+      "policy": "auto",
+      "variant": "oldThird"
+    },
+    {
+      "map": 633,
+      "seed": 3,
+      "policy": "auto",
+      "variant": "newThird"
+    },
+    {
+      "map": 633,
+      "seed": 3,
+      "policy": "smart2",
+      "variant": "second"
+    },
+    {
+      "map": 633,
+      "seed": 3,
+      "policy": "smart2",
+      "variant": "oldThird"
+    },
+    {
+      "map": 633,
+      "seed": 3,
+      "policy": "smart2",
+      "variant": "newThird"
+    },
+    {
+      "map": 606,
+      "seed": 1,
+      "policy": "auto",
+      "variant": "second"
+    },
+    {
+      "map": 606,
+      "seed": 1,
+      "policy": "auto",
+      "variant": "oldThird"
+    },
+    {
+      "map": 606,
+      "seed": 1,
+      "policy": "auto",
+      "variant": "newThird"
+    },
+    {
+      "map": 606,
+      "seed": 1,
+      "policy": "smart2",
+      "variant": "second"
+    },
+    {
+      "map": 606,
+      "seed": 1,
+      "policy": "smart2",
+      "variant": "oldThird"
+    },
+    {
+      "map": 606,
+      "seed": 1,
+      "policy": "smart2",
+      "variant": "newThird"
+    },
+    {
+      "map": 606,
+      "seed": 2,
+      "policy": "auto",
+      "variant": "second"
+    },
+    {
+      "map": 606,
+      "seed": 2,
+      "policy": "auto",
+      "variant": "oldThird"
+    },
+    {
+      "map": 606,
+      "seed": 2,
+      "policy": "auto",
+      "variant": "newThird"
+    },
+    {
+      "map": 606,
+      "seed": 2,
+      "policy": "smart2",
+      "variant": "second"
+    },
+    {
+      "map": 606,
+      "seed": 2,
+      "policy": "smart2",
+      "variant": "oldThird"
+    },
+    {
+      "map": 606,
+      "seed": 2,
+      "policy": "smart2",
+      "variant": "newThird"
+    },
+    {
+      "map": 606,
+      "seed": 3,
+      "policy": "auto",
+      "variant": "second"
+    },
+    {
+      "map": 606,
+      "seed": 3,
+      "policy": "auto",
+      "variant": "oldThird"
+    },
+    {
+      "map": 606,
+      "seed": 3,
+      "policy": "auto",
+      "variant": "newThird"
+    },
+    {
+      "map": 606,
+      "seed": 3,
+      "policy": "smart2",
+      "variant": "second"
+    },
+    {
+      "map": 606,
+      "seed": 3,
+      "policy": "smart2",
+      "variant": "oldThird"
+    },
+    {
+      "map": 606,
+      "seed": 3,
+      "policy": "smart2",
+      "variant": "newThird"
+    },
+    {
+      "map": 540,
+      "seed": 1,
+      "policy": "auto",
+      "variant": "second"
+    },
+    {
+      "map": 540,
+      "seed": 1,
+      "policy": "auto",
+      "variant": "oldThird"
+    },
+    {
+      "map": 540,
+      "seed": 1,
+      "policy": "auto",
+      "variant": "newThird"
+    },
+    {
+      "map": 540,
+      "seed": 1,
+      "policy": "smart2",
+      "variant": "second"
+    },
+    {
+      "map": 540,
+      "seed": 1,
+      "policy": "smart2",
+      "variant": "oldThird"
+    },
+    {
+      "map": 540,
+      "seed": 1,
+      "policy": "smart2",
+      "variant": "newThird"
+    },
+    {
+      "map": 540,
+      "seed": 2,
+      "policy": "auto",
+      "variant": "second"
+    },
+    {
+      "map": 540,
+      "seed": 2,
+      "policy": "auto",
+      "variant": "oldThird"
+    },
+    {
+      "map": 540,
+      "seed": 2,
+      "policy": "auto",
+      "variant": "newThird"
+    },
+    {
+      "map": 540,
+      "seed": 2,
+      "policy": "smart2",
+      "variant": "second"
+    },
+    {
+      "map": 540,
+      "seed": 2,
+      "policy": "smart2",
+      "variant": "oldThird"
+    },
+    {
+      "map": 540,
+      "seed": 2,
+      "policy": "smart2",
+      "variant": "newThird"
+    },
+    {
+      "map": 540,
+      "seed": 3,
+      "policy": "auto",
+      "variant": "second"
+    },
+    {
+      "map": 540,
+      "seed": 3,
+      "policy": "auto",
+      "variant": "oldThird"
+    },
+    {
+      "map": 540,
+      "seed": 3,
+      "policy": "auto",
+      "variant": "newThird"
+    },
+    {
+      "map": 540,
+      "seed": 3,
+      "policy": "smart2",
+      "variant": "second"
+    },
+    {
+      "map": 540,
+      "seed": 3,
+      "policy": "smart2",
+      "variant": "oldThird"
+    },
+    {
+      "map": 540,
+      "seed": 3,
+      "policy": "smart2",
+      "variant": "newThird"
+    },
+    {
+      "map": 611,
+      "seed": 1,
+      "policy": "auto",
+      "variant": "second"
+    },
+    {
+      "map": 611,
+      "seed": 1,
+      "policy": "auto",
+      "variant": "oldThird"
+    },
+    {
+      "map": 611,
+      "seed": 1,
+      "policy": "auto",
+      "variant": "newThird"
+    },
+    {
+      "map": 611,
+      "seed": 1,
+      "policy": "smart2",
+      "variant": "second"
+    },
+    {
+      "map": 611,
+      "seed": 1,
+      "policy": "smart2",
+      "variant": "oldThird"
+    },
+    {
+      "map": 611,
+      "seed": 1,
+      "policy": "smart2",
+      "variant": "newThird"
+    },
+    {
+      "map": 611,
+      "seed": 2,
+      "policy": "auto",
+      "variant": "second"
+    },
+    {
+      "map": 611,
+      "seed": 2,
+      "policy": "auto",
+      "variant": "oldThird"
+    },
+    {
+      "map": 611,
+      "seed": 2,
+      "policy": "auto",
+      "variant": "newThird"
+    },
+    {
+      "map": 611,
+      "seed": 2,
+      "policy": "smart2",
+      "variant": "second"
+    },
+    {
+      "map": 611,
+      "seed": 2,
+      "policy": "smart2",
+      "variant": "oldThird"
+    },
+    {
+      "map": 611,
+      "seed": 2,
+      "policy": "smart2",
+      "variant": "newThird"
+    },
+    {
+      "map": 611,
+      "seed": 3,
+      "policy": "auto",
+      "variant": "second"
+    },
+    {
+      "map": 611,
+      "seed": 3,
+      "policy": "auto",
+      "variant": "oldThird"
+    },
+    {
+      "map": 611,
+      "seed": 3,
+      "policy": "auto",
+      "variant": "newThird"
+    },
+    {
+      "map": 611,
+      "seed": 3,
+      "policy": "smart2",
+      "variant": "second"
+    },
+    {
+      "map": 611,
+      "seed": 3,
+      "policy": "smart2",
+      "variant": "oldThird"
+    },
+    {
+      "map": 611,
+      "seed": 3,
+      "policy": "smart2",
+      "variant": "newThird"
+    }
+  ],
+  "raw": [
+    {
+      "id": 0,
+      "win": true,
+      "timeout": false,
+      "seconds": 76.27,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 1,
+      "win": true,
+      "timeout": false,
+      "seconds": 80.43,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 2,
+      "win": true,
+      "timeout": false,
+      "seconds": 81,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 3,
+      "win": true,
+      "timeout": false,
+      "seconds": 76.27,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 4,
+      "win": true,
+      "timeout": false,
+      "seconds": 80.43,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 5,
+      "win": true,
+      "timeout": false,
+      "seconds": 81,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 6,
+      "win": true,
+      "timeout": false,
+      "seconds": 75.1,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 7,
+      "win": true,
+      "timeout": false,
+      "seconds": 75.57,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 8,
+      "win": true,
+      "timeout": false,
+      "seconds": 73.1,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 9,
+      "win": true,
+      "timeout": false,
+      "seconds": 75.1,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 10,
+      "win": true,
+      "timeout": false,
+      "seconds": 75.57,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 11,
+      "win": true,
+      "timeout": false,
+      "seconds": 73.1,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 12,
+      "win": true,
+      "timeout": false,
+      "seconds": 77.7,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 13,
+      "win": true,
+      "timeout": false,
+      "seconds": 89.6,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 14,
+      "win": true,
+      "timeout": false,
+      "seconds": 80.63,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 15,
+      "win": true,
+      "timeout": false,
+      "seconds": 77.7,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 16,
+      "win": true,
+      "timeout": false,
+      "seconds": 89.6,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 17,
+      "win": true,
+      "timeout": false,
+      "seconds": 80.63,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 18,
+      "win": true,
+      "timeout": false,
+      "seconds": 41.5,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 19,
+      "win": true,
+      "timeout": false,
+      "seconds": 43.03,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 20,
+      "win": true,
+      "timeout": false,
+      "seconds": 43.03,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 21,
+      "win": true,
+      "timeout": false,
+      "seconds": 41.5,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 22,
+      "win": true,
+      "timeout": false,
+      "seconds": 43.03,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 23,
+      "win": true,
+      "timeout": false,
+      "seconds": 43.03,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 24,
+      "win": true,
+      "timeout": false,
+      "seconds": 44.43,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 25,
+      "win": true,
+      "timeout": false,
+      "seconds": 41.47,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 26,
+      "win": true,
+      "timeout": false,
+      "seconds": 42.13,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 27,
+      "win": true,
+      "timeout": false,
+      "seconds": 44.43,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 28,
+      "win": true,
+      "timeout": false,
+      "seconds": 41.47,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 29,
+      "win": true,
+      "timeout": false,
+      "seconds": 42.13,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 30,
+      "win": true,
+      "timeout": false,
+      "seconds": 42.87,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 31,
+      "win": true,
+      "timeout": false,
+      "seconds": 42.13,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 32,
+      "win": true,
+      "timeout": false,
+      "seconds": 42.5,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 33,
+      "win": true,
+      "timeout": false,
+      "seconds": 42.87,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 34,
+      "win": true,
+      "timeout": false,
+      "seconds": 42.13,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 35,
+      "win": true,
+      "timeout": false,
+      "seconds": 42.5,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 36,
+      "win": true,
+      "timeout": false,
+      "seconds": 43.2,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 37,
+      "win": true,
+      "timeout": false,
+      "seconds": 42.3,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 38,
+      "win": true,
+      "timeout": false,
+      "seconds": 48.23,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 39,
+      "win": true,
+      "timeout": false,
+      "seconds": 43.2,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 40,
+      "win": true,
+      "timeout": false,
+      "seconds": 42.3,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 41,
+      "win": true,
+      "timeout": false,
+      "seconds": 48.23,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 42,
+      "win": true,
+      "timeout": false,
+      "seconds": 46.8,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 43,
+      "win": true,
+      "timeout": false,
+      "seconds": 44.67,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 44,
+      "win": true,
+      "timeout": false,
+      "seconds": 45.8,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 45,
+      "win": true,
+      "timeout": false,
+      "seconds": 46.8,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 46,
+      "win": true,
+      "timeout": false,
+      "seconds": 44.67,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 47,
+      "win": true,
+      "timeout": false,
+      "seconds": 45.8,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 48,
+      "win": true,
+      "timeout": false,
+      "seconds": 49.07,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 49,
+      "win": true,
+      "timeout": false,
+      "seconds": 46.4,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 50,
+      "win": true,
+      "timeout": false,
+      "seconds": 48.27,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 51,
+      "win": true,
+      "timeout": false,
+      "seconds": 49.07,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 52,
+      "win": true,
+      "timeout": false,
+      "seconds": 46.4,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 53,
+      "win": true,
+      "timeout": false,
+      "seconds": 48.27,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 54,
+      "win": true,
+      "timeout": false,
+      "seconds": 26.93,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 55,
+      "win": true,
+      "timeout": false,
+      "seconds": 26.57,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 56,
+      "win": true,
+      "timeout": false,
+      "seconds": 26.33,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 57,
+      "win": true,
+      "timeout": false,
+      "seconds": 26.93,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 58,
+      "win": true,
+      "timeout": false,
+      "seconds": 26.57,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 59,
+      "win": true,
+      "timeout": false,
+      "seconds": 26.33,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 60,
+      "win": true,
+      "timeout": false,
+      "seconds": 26.93,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 61,
+      "win": true,
+      "timeout": false,
+      "seconds": 29,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 62,
+      "win": true,
+      "timeout": false,
+      "seconds": 27.8,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 63,
+      "win": true,
+      "timeout": false,
+      "seconds": 26.93,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 64,
+      "win": true,
+      "timeout": false,
+      "seconds": 29,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 65,
+      "win": true,
+      "timeout": false,
+      "seconds": 27.8,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 66,
+      "win": true,
+      "timeout": false,
+      "seconds": 26.93,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 67,
+      "win": true,
+      "timeout": false,
+      "seconds": 26.57,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 68,
+      "win": true,
+      "timeout": false,
+      "seconds": 25.4,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 69,
+      "win": true,
+      "timeout": false,
+      "seconds": 26.93,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 70,
+      "win": true,
+      "timeout": false,
+      "seconds": 26.57,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 71,
+      "win": true,
+      "timeout": false,
+      "seconds": 25.4,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 72,
+      "win": true,
+      "timeout": false,
+      "seconds": 136.7,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 73,
+      "win": true,
+      "timeout": false,
+      "seconds": 135,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 74,
+      "win": true,
+      "timeout": false,
+      "seconds": 133.43,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 75,
+      "win": false,
+      "timeout": false,
+      "seconds": 27.77,
+      "allyHp": 0,
+      "enemyHp": 217388
+    },
+    {
+      "id": 76,
+      "win": false,
+      "timeout": false,
+      "seconds": 28.9,
+      "allyHp": 0,
+      "enemyHp": 217388
+    },
+    {
+      "id": 77,
+      "win": false,
+      "timeout": false,
+      "seconds": 32.7,
+      "allyHp": 0,
+      "enemyHp": 217388
+    },
+    {
+      "id": 78,
+      "win": true,
+      "timeout": false,
+      "seconds": 122.77,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 79,
+      "win": true,
+      "timeout": false,
+      "seconds": 127.37,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 80,
+      "win": true,
+      "timeout": false,
+      "seconds": 126,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 81,
+      "win": false,
+      "timeout": false,
+      "seconds": 27.77,
+      "allyHp": 0,
+      "enemyHp": 217388
+    },
+    {
+      "id": 82,
+      "win": false,
+      "timeout": false,
+      "seconds": 28.9,
+      "allyHp": 0,
+      "enemyHp": 217388
+    },
+    {
+      "id": 83,
+      "win": false,
+      "timeout": false,
+      "seconds": 32.7,
+      "allyHp": 0,
+      "enemyHp": 217388
+    },
+    {
+      "id": 84,
+      "win": true,
+      "timeout": false,
+      "seconds": 134.27,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 85,
+      "win": true,
+      "timeout": false,
+      "seconds": 149.67,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 86,
+      "win": true,
+      "timeout": false,
+      "seconds": 134.63,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 87,
+      "win": false,
+      "timeout": false,
+      "seconds": 27.77,
+      "allyHp": 0,
+      "enemyHp": 217388
+    },
+    {
+      "id": 88,
+      "win": false,
+      "timeout": false,
+      "seconds": 28.9,
+      "allyHp": 0,
+      "enemyHp": 217388
+    },
+    {
+      "id": 89,
+      "win": false,
+      "timeout": false,
+      "seconds": 32.7,
+      "allyHp": 0,
+      "enemyHp": 217388
+    }
+  ],
+  "rows": [
+    {
+      "map": 405,
+      "name": "황제의 야옹이",
+      "gainVsOldThird": 3.623333333333335,
+      "gainVsSecond": -1.8866666666666656
+    },
+    {
+      "map": 633,
+      "name": "고비 사막 상급",
+      "gainVsOldThird": -0.3433333333333337,
+      "gainVsSecond": 0.37999999999999784
+    },
+    {
+      "map": 606,
+      "name": "유혹의 치킨 룸",
+      "gainVsOldThird": -2.9766666666666666,
+      "gainVsSecond": -1.0766666666666656
+    },
+    {
+      "map": 540,
+      "name": "마이도무리",
+      "gainVsOldThird": 0.870000000000001,
+      "gainVsSecond": 0.42000000000000054
+    },
+    {
+      "map": 611,
+      "name": "아역 출신",
+      "gainVsOldThird": 5.99333333333333,
+      "gainVsSecond": -0.10666666666666913
+    }
+  ]
+}

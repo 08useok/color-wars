@@ -1,0 +1,50 @@
+{
+  "legacy": {
+    "owned": 1,
+    "marker": "done",
+    "plus": 0
+  },
+  "duplicate": {
+    "owned": 1,
+    "plus": 0
+  },
+  "failed": {
+    "owned": 0,
+    "xp": 3800,
+    "expected": 3800,
+    "marker": "done"
+  },
+  "failedReload": false,
+  "success": {
+    "owned": 1,
+    "xp": 1900,
+    "expected": 1900,
+    "marker": "done"
+  },
+  "replay": {
+    "owned": 1,
+    "xp": 1900,
+    "expected": 1900,
+    "marker": "done"
+  },
+  "sprites": [
+    {
+      "evolved": false,
+      "image": "url(\"http://127.0.0.1:49679/assets/spintop-rainbow-motion/spintoprainbow_1.webp?v=1\")",
+      "hits": 3,
+      "cost": 845
+    },
+    {
+      "evolved": true,
+      "image": "url(\"http://127.0.0.1:49679/assets/spintop-rainbow-motion/spintoprainbow_2.webp?v=1\")",
+      "hits": 3,
+      "cost": 1100
+    }
+  ],
+  "saved": {
+    "owned": true,
+    "level": 30,
+    "form": 1
+  },
+  "note": "Drop/XP handlers invoked directly; battle behavior covered separately by engine tests. Test account only."
+}

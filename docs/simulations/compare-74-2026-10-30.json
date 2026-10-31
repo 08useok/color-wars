@@ -1,0 +1,5626 @@
+{
+  "date": "2026-10-30",
+  "core": [
+    "red",
+    "yellow",
+    "blue",
+    "purple"
+  ],
+  "maps": [
+    {
+      "i": 405,
+      "crown": 3,
+      "tag": "현재 기준 맵"
+    },
+    {
+      "i": 633,
+      "share": 0.9953282845069119,
+      "crown": 1,
+      "tag": "floating"
+    },
+    {
+      "i": 606,
+      "share": 0.9868846800983649,
+      "crown": 1,
+      "tag": "angel"
+    },
+    {
+      "i": 540,
+      "share": 1,
+      "crown": 1,
+      "tag": "alien"
+    },
+    {
+      "i": 611,
+      "share": 0.7617315307265305,
+      "crown": 1,
+      "tag": "zombie"
+    }
+  ],
+  "meta": [
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "baseline",
+      "form": 2,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "lilac",
+      "form": 2,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "lilac",
+      "form": 3,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "babypink",
+      "form": 2,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "babypink",
+      "form": 3,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "magenta",
+      "form": 2,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "magenta",
+      "form": 3,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "fusioncream",
+      "form": 2,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "fusioncream",
+      "form": 3,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "ocean",
+      "form": 2,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "sea",
+      "form": 2,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "baseline",
+      "form": 2,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "lilac",
+      "form": 2,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "lilac",
+      "form": 3,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "babypink",
+      "form": 2,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "babypink",
+      "form": 3,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "magenta",
+      "form": 2,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "magenta",
+      "form": 3,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "fusioncream",
+      "form": 2,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "fusioncream",
+      "form": 3,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "ocean",
+      "form": 2,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "sea",
+      "form": 2,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "baseline",
+      "form": 2,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "lilac",
+      "form": 2,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "lilac",
+      "form": 3,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "babypink",
+      "form": 2,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "babypink",
+      "form": 3,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "magenta",
+      "form": 2,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "magenta",
+      "form": 3,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "fusioncream",
+      "form": 2,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "fusioncream",
+      "form": 3,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "ocean",
+      "form": 2,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "sea",
+      "form": 2,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "baseline",
+      "form": 2,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "lilac",
+      "form": 2,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "lilac",
+      "form": 3,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "babypink",
+      "form": 2,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "babypink",
+      "form": 3,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "magenta",
+      "form": 2,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "magenta",
+      "form": 3,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "fusioncream",
+      "form": 2,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "fusioncream",
+      "form": 3,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "ocean",
+      "form": 2,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "sea",
+      "form": 2,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "baseline",
+      "form": 2,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "lilac",
+      "form": 2,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "lilac",
+      "form": 3,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "babypink",
+      "form": 2,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "babypink",
+      "form": 3,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "magenta",
+      "form": 2,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "magenta",
+      "form": 3,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "fusioncream",
+      "form": 2,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "fusioncream",
+      "form": 3,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "ocean",
+      "form": 2,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "sea",
+      "form": 2,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "baseline",
+      "form": 2,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "lilac",
+      "form": 2,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "lilac",
+      "form": 3,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "babypink",
+      "form": 2,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "babypink",
+      "form": 3,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "magenta",
+      "form": 2,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "magenta",
+      "form": 3,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "fusioncream",
+      "form": 2,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "fusioncream",
+      "form": 3,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "ocean",
+      "form": 2,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "map": 405,
+      "tag": "현재 기준 맵",
+      "id": "sea",
+      "form": 2,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "baseline",
+      "form": 2,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "lilac",
+      "form": 2,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "lilac",
+      "form": 3,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "babypink",
+      "form": 2,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "babypink",
+      "form": 3,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "magenta",
+      "form": 2,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "magenta",
+      "form": 3,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "fusioncream",
+      "form": 2,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "fusioncream",
+      "form": 3,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "ocean",
+      "form": 2,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "sea",
+      "form": 2,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "baseline",
+      "form": 2,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "lilac",
+      "form": 2,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "lilac",
+      "form": 3,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "babypink",
+      "form": 2,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "babypink",
+      "form": 3,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "magenta",
+      "form": 2,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "magenta",
+      "form": 3,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "fusioncream",
+      "form": 2,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "fusioncream",
+      "form": 3,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "ocean",
+      "form": 2,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "sea",
+      "form": 2,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "baseline",
+      "form": 2,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "lilac",
+      "form": 2,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "lilac",
+      "form": 3,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "babypink",
+      "form": 2,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "babypink",
+      "form": 3,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "magenta",
+      "form": 2,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "magenta",
+      "form": 3,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "fusioncream",
+      "form": 2,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "fusioncream",
+      "form": 3,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "ocean",
+      "form": 2,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "sea",
+      "form": 2,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "baseline",
+      "form": 2,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "lilac",
+      "form": 2,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "lilac",
+      "form": 3,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "babypink",
+      "form": 2,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "babypink",
+      "form": 3,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "magenta",
+      "form": 2,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "magenta",
+      "form": 3,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "fusioncream",
+      "form": 2,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "fusioncream",
+      "form": 3,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "ocean",
+      "form": 2,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "sea",
+      "form": 2,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "baseline",
+      "form": 2,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "lilac",
+      "form": 2,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "lilac",
+      "form": 3,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "babypink",
+      "form": 2,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "babypink",
+      "form": 3,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "magenta",
+      "form": 2,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "magenta",
+      "form": 3,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "fusioncream",
+      "form": 2,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "fusioncream",
+      "form": 3,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "ocean",
+      "form": 2,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "sea",
+      "form": 2,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "baseline",
+      "form": 2,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "lilac",
+      "form": 2,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "lilac",
+      "form": 3,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "babypink",
+      "form": 2,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "babypink",
+      "form": 3,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "magenta",
+      "form": 2,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "magenta",
+      "form": 3,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "fusioncream",
+      "form": 2,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "fusioncream",
+      "form": 3,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "ocean",
+      "form": 2,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "map": 633,
+      "tag": "floating",
+      "id": "sea",
+      "form": 2,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "baseline",
+      "form": 2,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "lilac",
+      "form": 2,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "lilac",
+      "form": 3,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "babypink",
+      "form": 2,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "babypink",
+      "form": 3,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "magenta",
+      "form": 2,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "magenta",
+      "form": 3,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "fusioncream",
+      "form": 2,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "fusioncream",
+      "form": 3,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "ocean",
+      "form": 2,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "sea",
+      "form": 2,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "baseline",
+      "form": 2,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "lilac",
+      "form": 2,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "lilac",
+      "form": 3,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "babypink",
+      "form": 2,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "babypink",
+      "form": 3,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "magenta",
+      "form": 2,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "magenta",
+      "form": 3,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "fusioncream",
+      "form": 2,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "fusioncream",
+      "form": 3,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "ocean",
+      "form": 2,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "sea",
+      "form": 2,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "baseline",
+      "form": 2,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "lilac",
+      "form": 2,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "lilac",
+      "form": 3,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "babypink",
+      "form": 2,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "babypink",
+      "form": 3,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "magenta",
+      "form": 2,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "magenta",
+      "form": 3,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "fusioncream",
+      "form": 2,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "fusioncream",
+      "form": 3,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "ocean",
+      "form": 2,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "sea",
+      "form": 2,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "baseline",
+      "form": 2,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "lilac",
+      "form": 2,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "lilac",
+      "form": 3,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "babypink",
+      "form": 2,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "babypink",
+      "form": 3,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "magenta",
+      "form": 2,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "magenta",
+      "form": 3,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "fusioncream",
+      "form": 2,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "fusioncream",
+      "form": 3,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "ocean",
+      "form": 2,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "sea",
+      "form": 2,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "baseline",
+      "form": 2,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "lilac",
+      "form": 2,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "lilac",
+      "form": 3,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "babypink",
+      "form": 2,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "babypink",
+      "form": 3,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "magenta",
+      "form": 2,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "magenta",
+      "form": 3,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "fusioncream",
+      "form": 2,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "fusioncream",
+      "form": 3,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "ocean",
+      "form": 2,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "sea",
+      "form": 2,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "baseline",
+      "form": 2,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "lilac",
+      "form": 2,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "lilac",
+      "form": 3,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "babypink",
+      "form": 2,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "babypink",
+      "form": 3,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "magenta",
+      "form": 2,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "magenta",
+      "form": 3,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "fusioncream",
+      "form": 2,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "fusioncream",
+      "form": 3,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "ocean",
+      "form": 2,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "map": 606,
+      "tag": "angel",
+      "id": "sea",
+      "form": 2,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "baseline",
+      "form": 2,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "lilac",
+      "form": 2,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "lilac",
+      "form": 3,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "babypink",
+      "form": 2,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "babypink",
+      "form": 3,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "magenta",
+      "form": 2,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "magenta",
+      "form": 3,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "fusioncream",
+      "form": 2,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "fusioncream",
+      "form": 3,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "ocean",
+      "form": 2,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "sea",
+      "form": 2,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "baseline",
+      "form": 2,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "lilac",
+      "form": 2,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "lilac",
+      "form": 3,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "babypink",
+      "form": 2,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "babypink",
+      "form": 3,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "magenta",
+      "form": 2,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "magenta",
+      "form": 3,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "fusioncream",
+      "form": 2,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "fusioncream",
+      "form": 3,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "ocean",
+      "form": 2,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "sea",
+      "form": 2,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "baseline",
+      "form": 2,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "lilac",
+      "form": 2,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "lilac",
+      "form": 3,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "babypink",
+      "form": 2,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "babypink",
+      "form": 3,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "magenta",
+      "form": 2,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "magenta",
+      "form": 3,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "fusioncream",
+      "form": 2,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "fusioncream",
+      "form": 3,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "ocean",
+      "form": 2,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "sea",
+      "form": 2,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "baseline",
+      "form": 2,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "lilac",
+      "form": 2,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "lilac",
+      "form": 3,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "babypink",
+      "form": 2,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "babypink",
+      "form": 3,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "magenta",
+      "form": 2,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "magenta",
+      "form": 3,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "fusioncream",
+      "form": 2,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "fusioncream",
+      "form": 3,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "ocean",
+      "form": 2,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "sea",
+      "form": 2,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "baseline",
+      "form": 2,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "lilac",
+      "form": 2,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "lilac",
+      "form": 3,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "babypink",
+      "form": 2,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "babypink",
+      "form": 3,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "magenta",
+      "form": 2,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "magenta",
+      "form": 3,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "fusioncream",
+      "form": 2,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "fusioncream",
+      "form": 3,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "ocean",
+      "form": 2,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "sea",
+      "form": 2,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "baseline",
+      "form": 2,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "lilac",
+      "form": 2,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "lilac",
+      "form": 3,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "babypink",
+      "form": 2,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "babypink",
+      "form": 3,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "magenta",
+      "form": 2,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "magenta",
+      "form": 3,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "fusioncream",
+      "form": 2,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "fusioncream",
+      "form": 3,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "ocean",
+      "form": 2,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "map": 540,
+      "tag": "alien",
+      "id": "sea",
+      "form": 2,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "baseline",
+      "form": 2,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "lilac",
+      "form": 2,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "lilac",
+      "form": 3,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "babypink",
+      "form": 2,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "babypink",
+      "form": 3,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "magenta",
+      "form": 2,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "magenta",
+      "form": 3,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "fusioncream",
+      "form": 2,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "fusioncream",
+      "form": 3,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "ocean",
+      "form": 2,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "sea",
+      "form": 2,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "baseline",
+      "form": 2,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "lilac",
+      "form": 2,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "lilac",
+      "form": 3,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "babypink",
+      "form": 2,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "babypink",
+      "form": 3,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "magenta",
+      "form": 2,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "magenta",
+      "form": 3,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "fusioncream",
+      "form": 2,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "fusioncream",
+      "form": 3,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "ocean",
+      "form": 2,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "sea",
+      "form": 2,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "baseline",
+      "form": 2,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "lilac",
+      "form": 2,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "lilac",
+      "form": 3,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "babypink",
+      "form": 2,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "babypink",
+      "form": 3,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "magenta",
+      "form": 2,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "magenta",
+      "form": 3,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "fusioncream",
+      "form": 2,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "fusioncream",
+      "form": 3,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "ocean",
+      "form": 2,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "sea",
+      "form": 2,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "baseline",
+      "form": 2,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "lilac",
+      "form": 2,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "lilac",
+      "form": 3,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "babypink",
+      "form": 2,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "babypink",
+      "form": 3,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "magenta",
+      "form": 2,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "magenta",
+      "form": 3,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "fusioncream",
+      "form": 2,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "fusioncream",
+      "form": 3,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "ocean",
+      "form": 2,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "sea",
+      "form": 2,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "baseline",
+      "form": 2,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "lilac",
+      "form": 2,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "lilac",
+      "form": 3,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "babypink",
+      "form": 2,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "babypink",
+      "form": 3,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "magenta",
+      "form": 2,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "magenta",
+      "form": 3,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "fusioncream",
+      "form": 2,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "fusioncream",
+      "form": 3,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "ocean",
+      "form": 2,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "sea",
+      "form": 2,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "baseline",
+      "form": 2,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "lilac",
+      "form": 2,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "lilac",
+      "form": 3,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "babypink",
+      "form": 2,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "babypink",
+      "form": 3,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "magenta",
+      "form": 2,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "magenta",
+      "form": 3,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "fusioncream",
+      "form": 2,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "fusioncream",
+      "form": 3,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "ocean",
+      "form": 2,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "map": 611,
+      "tag": "zombie",
+      "id": "sea",
+      "form": 2,
+      "seed": 3,
+      "policy": "smart2"
+    }
+  ],
+  "raw": [
+    {
+      "id": 0,
+      "win": true,
+      "timeout": false,
+      "seconds": 97.3,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 1,
+      "win": true,
+      "timeout": false,
+      "seconds": 78.5,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 2,
+      "win": true,
+      "timeout": false,
+      "seconds": 73.7,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 3,
+      "win": true,
+      "timeout": false,
+      "seconds": 76.27,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 4,
+      "win": true,
+      "timeout": false,
+      "seconds": 80.43,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 5,
+      "win": true,
+      "timeout": false,
+      "seconds": 53.43,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 6,
+      "win": true,
+      "timeout": false,
+      "seconds": 53.43,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 7,
+      "win": true,
+      "timeout": false,
+      "seconds": 86.93,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 8,
+      "win": true,
+      "timeout": false,
+      "seconds": 61.3,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 9,
+      "win": true,
+      "timeout": false,
+      "seconds": 64.5,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 10,
+      "win": true,
+      "timeout": false,
+      "seconds": 66.63,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 11,
+      "win": true,
+      "timeout": false,
+      "seconds": 97.3,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 12,
+      "win": true,
+      "timeout": false,
+      "seconds": 78.5,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 13,
+      "win": true,
+      "timeout": false,
+      "seconds": 73.7,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 14,
+      "win": true,
+      "timeout": false,
+      "seconds": 76.27,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 15,
+      "win": true,
+      "timeout": false,
+      "seconds": 80.43,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 16,
+      "win": true,
+      "timeout": false,
+      "seconds": 53.43,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 17,
+      "win": true,
+      "timeout": false,
+      "seconds": 53.43,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 18,
+      "win": true,
+      "timeout": false,
+      "seconds": 86.93,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 19,
+      "win": true,
+      "timeout": false,
+      "seconds": 61.3,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 20,
+      "win": true,
+      "timeout": false,
+      "seconds": 64.5,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 21,
+      "win": true,
+      "timeout": false,
+      "seconds": 66.63,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 22,
+      "win": true,
+      "timeout": false,
+      "seconds": 89.37,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 23,
+      "win": true,
+      "timeout": false,
+      "seconds": 70.27,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 24,
+      "win": true,
+      "timeout": false,
+      "seconds": 71.13,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 25,
+      "win": true,
+      "timeout": false,
+      "seconds": 75.1,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 26,
+      "win": true,
+      "timeout": false,
+      "seconds": 75.57,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 27,
+      "win": true,
+      "timeout": false,
+      "seconds": 47.1,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 28,
+      "win": true,
+      "timeout": false,
+      "seconds": 47.1,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 29,
+      "win": true,
+      "timeout": false,
+      "seconds": 82.23,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 30,
+      "win": true,
+      "timeout": false,
+      "seconds": 51.23,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 31,
+      "win": true,
+      "timeout": false,
+      "seconds": 62.6,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 32,
+      "win": true,
+      "timeout": false,
+      "seconds": 61.3,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 33,
+      "win": true,
+      "timeout": false,
+      "seconds": 89.37,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 34,
+      "win": true,
+      "timeout": false,
+      "seconds": 70.27,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 35,
+      "win": true,
+      "timeout": false,
+      "seconds": 71.13,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 36,
+      "win": true,
+      "timeout": false,
+      "seconds": 75.1,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 37,
+      "win": true,
+      "timeout": false,
+      "seconds": 75.57,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 38,
+      "win": true,
+      "timeout": false,
+      "seconds": 47.1,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 39,
+      "win": true,
+      "timeout": false,
+      "seconds": 47.1,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 40,
+      "win": true,
+      "timeout": false,
+      "seconds": 82.23,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 41,
+      "win": true,
+      "timeout": false,
+      "seconds": 51.23,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 42,
+      "win": true,
+      "timeout": false,
+      "seconds": 62.6,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 43,
+      "win": true,
+      "timeout": false,
+      "seconds": 61.3,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 44,
+      "win": true,
+      "timeout": false,
+      "seconds": 96.07,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 45,
+      "win": true,
+      "timeout": false,
+      "seconds": 80.83,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 46,
+      "win": true,
+      "timeout": false,
+      "seconds": 78,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 47,
+      "win": true,
+      "timeout": false,
+      "seconds": 77.7,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 48,
+      "win": true,
+      "timeout": false,
+      "seconds": 89.6,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 49,
+      "win": true,
+      "timeout": false,
+      "seconds": 50.1,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 50,
+      "win": true,
+      "timeout": false,
+      "seconds": 50.1,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 51,
+      "win": true,
+      "timeout": false,
+      "seconds": 89.97,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 52,
+      "win": true,
+      "timeout": false,
+      "seconds": 46.47,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 53,
+      "win": true,
+      "timeout": false,
+      "seconds": 64.53,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 54,
+      "win": true,
+      "timeout": false,
+      "seconds": 61.03,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 55,
+      "win": true,
+      "timeout": false,
+      "seconds": 96.07,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 56,
+      "win": true,
+      "timeout": false,
+      "seconds": 80.83,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 57,
+      "win": true,
+      "timeout": false,
+      "seconds": 78,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 58,
+      "win": true,
+      "timeout": false,
+      "seconds": 77.7,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 59,
+      "win": true,
+      "timeout": false,
+      "seconds": 89.6,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 60,
+      "win": true,
+      "timeout": false,
+      "seconds": 50.1,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 61,
+      "win": true,
+      "timeout": false,
+      "seconds": 50.1,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 62,
+      "win": true,
+      "timeout": false,
+      "seconds": 89.97,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 63,
+      "win": true,
+      "timeout": false,
+      "seconds": 46.47,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 64,
+      "win": true,
+      "timeout": false,
+      "seconds": 64.53,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 65,
+      "win": true,
+      "timeout": false,
+      "seconds": 61.03,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 66,
+      "win": true,
+      "timeout": false,
+      "seconds": 43.77,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 67,
+      "win": true,
+      "timeout": false,
+      "seconds": 44.97,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 68,
+      "win": true,
+      "timeout": false,
+      "seconds": 44.83,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 69,
+      "win": true,
+      "timeout": false,
+      "seconds": 41.5,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 70,
+      "win": true,
+      "timeout": false,
+      "seconds": 43.03,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 71,
+      "win": true,
+      "timeout": false,
+      "seconds": 41.23,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 72,
+      "win": true,
+      "timeout": false,
+      "seconds": 41.23,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 73,
+      "win": true,
+      "timeout": false,
+      "seconds": 41.27,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 74,
+      "win": true,
+      "timeout": false,
+      "seconds": 39.83,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 75,
+      "win": true,
+      "timeout": false,
+      "seconds": 44.87,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 76,
+      "win": true,
+      "timeout": false,
+      "seconds": 42.57,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 77,
+      "win": true,
+      "timeout": false,
+      "seconds": 43.77,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 78,
+      "win": true,
+      "timeout": false,
+      "seconds": 44.97,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 79,
+      "win": true,
+      "timeout": false,
+      "seconds": 44.83,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 80,
+      "win": true,
+      "timeout": false,
+      "seconds": 41.5,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 81,
+      "win": true,
+      "timeout": false,
+      "seconds": 43.03,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 82,
+      "win": true,
+      "timeout": false,
+      "seconds": 41.23,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 83,
+      "win": true,
+      "timeout": false,
+      "seconds": 41.23,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 84,
+      "win": true,
+      "timeout": false,
+      "seconds": 41.27,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 85,
+      "win": true,
+      "timeout": false,
+      "seconds": 39.83,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 86,
+      "win": true,
+      "timeout": false,
+      "seconds": 44.87,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 87,
+      "win": true,
+      "timeout": false,
+      "seconds": 42.57,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 88,
+      "win": true,
+      "timeout": false,
+      "seconds": 45.37,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 89,
+      "win": true,
+      "timeout": false,
+      "seconds": 43.1,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 90,
+      "win": true,
+      "timeout": false,
+      "seconds": 45.3,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 91,
+      "win": true,
+      "timeout": false,
+      "seconds": 44.43,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 92,
+      "win": true,
+      "timeout": false,
+      "seconds": 41.47,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 93,
+      "win": true,
+      "timeout": false,
+      "seconds": 41.67,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 94,
+      "win": true,
+      "timeout": false,
+      "seconds": 41.67,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 95,
+      "win": true,
+      "timeout": false,
+      "seconds": 41.73,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 96,
+      "win": true,
+      "timeout": false,
+      "seconds": 40.3,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 97,
+      "win": true,
+      "timeout": false,
+      "seconds": 43.17,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 98,
+      "win": true,
+      "timeout": false,
+      "seconds": 43.17,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 99,
+      "win": true,
+      "timeout": false,
+      "seconds": 45.37,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 100,
+      "win": true,
+      "timeout": false,
+      "seconds": 43.1,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 101,
+      "win": true,
+      "timeout": false,
+      "seconds": 45.3,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 102,
+      "win": true,
+      "timeout": false,
+      "seconds": 44.43,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 103,
+      "win": true,
+      "timeout": false,
+      "seconds": 41.47,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 104,
+      "win": true,
+      "timeout": false,
+      "seconds": 41.67,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 105,
+      "win": true,
+      "timeout": false,
+      "seconds": 41.67,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 106,
+      "win": true,
+      "timeout": false,
+      "seconds": 41.73,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 107,
+      "win": true,
+      "timeout": false,
+      "seconds": 40.3,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 108,
+      "win": true,
+      "timeout": false,
+      "seconds": 43.17,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 109,
+      "win": true,
+      "timeout": false,
+      "seconds": 43.17,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 110,
+      "win": true,
+      "timeout": false,
+      "seconds": 43.07,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 111,
+      "win": true,
+      "timeout": false,
+      "seconds": 43.13,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 112,
+      "win": true,
+      "timeout": false,
+      "seconds": 44.23,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 113,
+      "win": true,
+      "timeout": false,
+      "seconds": 42.87,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 114,
+      "win": true,
+      "timeout": false,
+      "seconds": 42.13,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 115,
+      "win": true,
+      "timeout": false,
+      "seconds": 38.97,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 116,
+      "win": true,
+      "timeout": false,
+      "seconds": 38.97,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 117,
+      "win": true,
+      "timeout": false,
+      "seconds": 41.6,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 118,
+      "win": true,
+      "timeout": false,
+      "seconds": 40,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 119,
+      "win": true,
+      "timeout": false,
+      "seconds": 43.17,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 120,
+      "win": true,
+      "timeout": false,
+      "seconds": 43.93,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 121,
+      "win": true,
+      "timeout": false,
+      "seconds": 43.07,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 122,
+      "win": true,
+      "timeout": false,
+      "seconds": 43.13,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 123,
+      "win": true,
+      "timeout": false,
+      "seconds": 44.23,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 124,
+      "win": true,
+      "timeout": false,
+      "seconds": 42.87,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 125,
+      "win": true,
+      "timeout": false,
+      "seconds": 42.13,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 126,
+      "win": true,
+      "timeout": false,
+      "seconds": 38.97,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 127,
+      "win": true,
+      "timeout": false,
+      "seconds": 38.97,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 128,
+      "win": true,
+      "timeout": false,
+      "seconds": 41.6,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 129,
+      "win": true,
+      "timeout": false,
+      "seconds": 40,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 130,
+      "win": true,
+      "timeout": false,
+      "seconds": 43.17,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 131,
+      "win": true,
+      "timeout": false,
+      "seconds": 43.93,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 132,
+      "win": true,
+      "timeout": false,
+      "seconds": 48.63,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 133,
+      "win": true,
+      "timeout": false,
+      "seconds": 43.93,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 134,
+      "win": true,
+      "timeout": false,
+      "seconds": 44.4,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 135,
+      "win": true,
+      "timeout": false,
+      "seconds": 43.2,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 136,
+      "win": true,
+      "timeout": false,
+      "seconds": 42.3,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 137,
+      "win": true,
+      "timeout": false,
+      "seconds": 40.77,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 138,
+      "win": true,
+      "timeout": false,
+      "seconds": 40.77,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 139,
+      "win": true,
+      "timeout": false,
+      "seconds": 45.47,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 140,
+      "win": true,
+      "timeout": false,
+      "seconds": 44.27,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 141,
+      "win": true,
+      "timeout": false,
+      "seconds": 41.2,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 142,
+      "win": true,
+      "timeout": false,
+      "seconds": 44.9,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 143,
+      "win": true,
+      "timeout": false,
+      "seconds": 48.63,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 144,
+      "win": true,
+      "timeout": false,
+      "seconds": 43.93,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 145,
+      "win": true,
+      "timeout": false,
+      "seconds": 44.4,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 146,
+      "win": true,
+      "timeout": false,
+      "seconds": 43.2,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 147,
+      "win": true,
+      "timeout": false,
+      "seconds": 42.3,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 148,
+      "win": true,
+      "timeout": false,
+      "seconds": 40.77,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 149,
+      "win": true,
+      "timeout": false,
+      "seconds": 40.77,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 150,
+      "win": true,
+      "timeout": false,
+      "seconds": 45.47,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 151,
+      "win": true,
+      "timeout": false,
+      "seconds": 44.27,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 152,
+      "win": true,
+      "timeout": false,
+      "seconds": 41.2,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 153,
+      "win": true,
+      "timeout": false,
+      "seconds": 44.9,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 154,
+      "win": true,
+      "timeout": false,
+      "seconds": 44.47,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 155,
+      "win": true,
+      "timeout": false,
+      "seconds": 47.13,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 156,
+      "win": true,
+      "timeout": false,
+      "seconds": 39.7,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 157,
+      "win": true,
+      "timeout": false,
+      "seconds": 46.8,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 158,
+      "win": true,
+      "timeout": false,
+      "seconds": 44.67,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 159,
+      "win": true,
+      "timeout": false,
+      "seconds": 40.43,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 160,
+      "win": true,
+      "timeout": false,
+      "seconds": 40.43,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 161,
+      "win": true,
+      "timeout": false,
+      "seconds": 40.63,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 162,
+      "win": true,
+      "timeout": false,
+      "seconds": 41.93,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 163,
+      "win": true,
+      "timeout": false,
+      "seconds": 40.37,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 164,
+      "win": true,
+      "timeout": false,
+      "seconds": 43.63,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 165,
+      "win": true,
+      "timeout": false,
+      "seconds": 44.47,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 166,
+      "win": true,
+      "timeout": false,
+      "seconds": 47.13,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 167,
+      "win": true,
+      "timeout": false,
+      "seconds": 39.7,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 168,
+      "win": true,
+      "timeout": false,
+      "seconds": 46.8,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 169,
+      "win": true,
+      "timeout": false,
+      "seconds": 44.67,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 170,
+      "win": true,
+      "timeout": false,
+      "seconds": 40.43,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 171,
+      "win": true,
+      "timeout": false,
+      "seconds": 40.43,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 172,
+      "win": true,
+      "timeout": false,
+      "seconds": 40.63,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 173,
+      "win": true,
+      "timeout": false,
+      "seconds": 41.93,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 174,
+      "win": true,
+      "timeout": false,
+      "seconds": 40.37,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 175,
+      "win": true,
+      "timeout": false,
+      "seconds": 43.63,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 176,
+      "win": true,
+      "timeout": false,
+      "seconds": 48.8,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 177,
+      "win": true,
+      "timeout": false,
+      "seconds": 50.53,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 178,
+      "win": true,
+      "timeout": false,
+      "seconds": 41.1,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 179,
+      "win": true,
+      "timeout": false,
+      "seconds": 49.07,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 180,
+      "win": true,
+      "timeout": false,
+      "seconds": 46.4,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 181,
+      "win": true,
+      "timeout": false,
+      "seconds": 42.63,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 182,
+      "win": true,
+      "timeout": false,
+      "seconds": 42.63,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 183,
+      "win": true,
+      "timeout": false,
+      "seconds": 46.7,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 184,
+      "win": true,
+      "timeout": false,
+      "seconds": 37.33,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 185,
+      "win": true,
+      "timeout": false,
+      "seconds": 46.33,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 186,
+      "win": true,
+      "timeout": false,
+      "seconds": 48.57,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 187,
+      "win": true,
+      "timeout": false,
+      "seconds": 48.8,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 188,
+      "win": true,
+      "timeout": false,
+      "seconds": 50.53,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 189,
+      "win": true,
+      "timeout": false,
+      "seconds": 41.1,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 190,
+      "win": true,
+      "timeout": false,
+      "seconds": 49.07,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 191,
+      "win": true,
+      "timeout": false,
+      "seconds": 46.4,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 192,
+      "win": true,
+      "timeout": false,
+      "seconds": 42.63,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 193,
+      "win": true,
+      "timeout": false,
+      "seconds": 42.63,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 194,
+      "win": true,
+      "timeout": false,
+      "seconds": 46.7,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 195,
+      "win": true,
+      "timeout": false,
+      "seconds": 37.33,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 196,
+      "win": true,
+      "timeout": false,
+      "seconds": 46.33,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 197,
+      "win": true,
+      "timeout": false,
+      "seconds": 48.57,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 198,
+      "win": true,
+      "timeout": false,
+      "seconds": 30.53,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 199,
+      "win": true,
+      "timeout": false,
+      "seconds": 33.6,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 200,
+      "win": true,
+      "timeout": false,
+      "seconds": 31.8,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 201,
+      "win": true,
+      "timeout": false,
+      "seconds": 26.93,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 202,
+      "win": true,
+      "timeout": false,
+      "seconds": 26.57,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 203,
+      "win": true,
+      "timeout": false,
+      "seconds": 26.97,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 204,
+      "win": true,
+      "timeout": false,
+      "seconds": 26.97,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 205,
+      "win": true,
+      "timeout": false,
+      "seconds": 25,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 206,
+      "win": true,
+      "timeout": false,
+      "seconds": 18.6,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 207,
+      "win": true,
+      "timeout": false,
+      "seconds": 25.27,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 208,
+      "win": true,
+      "timeout": false,
+      "seconds": 26.77,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 209,
+      "win": true,
+      "timeout": false,
+      "seconds": 30.53,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 210,
+      "win": true,
+      "timeout": false,
+      "seconds": 33.6,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 211,
+      "win": true,
+      "timeout": false,
+      "seconds": 31.8,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 212,
+      "win": true,
+      "timeout": false,
+      "seconds": 26.93,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 213,
+      "win": true,
+      "timeout": false,
+      "seconds": 26.57,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 214,
+      "win": true,
+      "timeout": false,
+      "seconds": 26.97,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 215,
+      "win": true,
+      "timeout": false,
+      "seconds": 26.97,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 216,
+      "win": true,
+      "timeout": false,
+      "seconds": 25,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 217,
+      "win": true,
+      "timeout": false,
+      "seconds": 18.6,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 218,
+      "win": true,
+      "timeout": false,
+      "seconds": 25.27,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 219,
+      "win": true,
+      "timeout": false,
+      "seconds": 26.77,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 220,
+      "win": true,
+      "timeout": false,
+      "seconds": 30.53,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 221,
+      "win": true,
+      "timeout": false,
+      "seconds": 33.6,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 222,
+      "win": true,
+      "timeout": false,
+      "seconds": 33.83,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 223,
+      "win": true,
+      "timeout": false,
+      "seconds": 26.93,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 224,
+      "win": true,
+      "timeout": false,
+      "seconds": 29,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 225,
+      "win": true,
+      "timeout": false,
+      "seconds": 27.4,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 226,
+      "win": true,
+      "timeout": false,
+      "seconds": 27.4,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 227,
+      "win": true,
+      "timeout": false,
+      "seconds": 25,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 228,
+      "win": true,
+      "timeout": false,
+      "seconds": 18.6,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 229,
+      "win": true,
+      "timeout": false,
+      "seconds": 25.27,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 230,
+      "win": true,
+      "timeout": false,
+      "seconds": 27.33,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 231,
+      "win": true,
+      "timeout": false,
+      "seconds": 30.53,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 232,
+      "win": true,
+      "timeout": false,
+      "seconds": 33.6,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 233,
+      "win": true,
+      "timeout": false,
+      "seconds": 33.83,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 234,
+      "win": true,
+      "timeout": false,
+      "seconds": 26.93,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 235,
+      "win": true,
+      "timeout": false,
+      "seconds": 29,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 236,
+      "win": true,
+      "timeout": false,
+      "seconds": 27.4,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 237,
+      "win": true,
+      "timeout": false,
+      "seconds": 27.4,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 238,
+      "win": true,
+      "timeout": false,
+      "seconds": 25,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 239,
+      "win": true,
+      "timeout": false,
+      "seconds": 18.6,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 240,
+      "win": true,
+      "timeout": false,
+      "seconds": 25.27,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 241,
+      "win": true,
+      "timeout": false,
+      "seconds": 27.33,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 242,
+      "win": true,
+      "timeout": false,
+      "seconds": 30.53,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 243,
+      "win": true,
+      "timeout": false,
+      "seconds": 33.6,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 244,
+      "win": true,
+      "timeout": false,
+      "seconds": 31.8,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 245,
+      "win": true,
+      "timeout": false,
+      "seconds": 26.93,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 246,
+      "win": true,
+      "timeout": false,
+      "seconds": 26.57,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 247,
+      "win": true,
+      "timeout": false,
+      "seconds": 26.97,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 248,
+      "win": true,
+      "timeout": false,
+      "seconds": 26.97,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 249,
+      "win": true,
+      "timeout": false,
+      "seconds": 25,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 250,
+      "win": true,
+      "timeout": false,
+      "seconds": 18.6,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 251,
+      "win": true,
+      "timeout": false,
+      "seconds": 25.27,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 252,
+      "win": true,
+      "timeout": false,
+      "seconds": 26.33,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 253,
+      "win": true,
+      "timeout": false,
+      "seconds": 30.53,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 254,
+      "win": true,
+      "timeout": false,
+      "seconds": 33.6,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 255,
+      "win": true,
+      "timeout": false,
+      "seconds": 31.8,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 256,
+      "win": true,
+      "timeout": false,
+      "seconds": 26.93,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 257,
+      "win": true,
+      "timeout": false,
+      "seconds": 26.57,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 258,
+      "win": true,
+      "timeout": false,
+      "seconds": 26.97,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 259,
+      "win": true,
+      "timeout": false,
+      "seconds": 26.97,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 260,
+      "win": true,
+      "timeout": false,
+      "seconds": 25,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 261,
+      "win": true,
+      "timeout": false,
+      "seconds": 18.6,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 262,
+      "win": true,
+      "timeout": false,
+      "seconds": 25.27,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 263,
+      "win": true,
+      "timeout": false,
+      "seconds": 26.33,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 264,
+      "win": true,
+      "timeout": false,
+      "seconds": 152.03,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 265,
+      "win": true,
+      "timeout": false,
+      "seconds": 133.8,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 266,
+      "win": true,
+      "timeout": false,
+      "seconds": 113.43,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 267,
+      "win": true,
+      "timeout": false,
+      "seconds": 136.7,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 268,
+      "win": true,
+      "timeout": false,
+      "seconds": 135,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 269,
+      "win": true,
+      "timeout": false,
+      "seconds": 82.83,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 270,
+      "win": true,
+      "timeout": false,
+      "seconds": 82.83,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 271,
+      "win": true,
+      "timeout": false,
+      "seconds": 159.03,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 272,
+      "win": true,
+      "timeout": false,
+      "seconds": 164.47,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 273,
+      "win": true,
+      "timeout": false,
+      "seconds": 93.4,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 274,
+      "win": true,
+      "timeout": false,
+      "seconds": 141.23,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 275,
+      "win": false,
+      "timeout": false,
+      "seconds": 32.67,
+      "allyHp": 0,
+      "enemyHp": 204344
+    },
+    {
+      "id": 276,
+      "win": false,
+      "timeout": false,
+      "seconds": 30.3,
+      "allyHp": 0,
+      "enemyHp": 204344
+    },
+    {
+      "id": 277,
+      "win": false,
+      "timeout": false,
+      "seconds": 28.3,
+      "allyHp": 0,
+      "enemyHp": 204344
+    },
+    {
+      "id": 278,
+      "win": false,
+      "timeout": false,
+      "seconds": 27.77,
+      "allyHp": 0,
+      "enemyHp": 217388
+    },
+    {
+      "id": 279,
+      "win": false,
+      "timeout": false,
+      "seconds": 28.9,
+      "allyHp": 0,
+      "enemyHp": 217388
+    },
+    {
+      "id": 280,
+      "win": true,
+      "timeout": false,
+      "seconds": 58.6,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 281,
+      "win": true,
+      "timeout": false,
+      "seconds": 49.37,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 282,
+      "win": false,
+      "timeout": false,
+      "seconds": 32.67,
+      "allyHp": 0,
+      "enemyHp": 204344
+    },
+    {
+      "id": 283,
+      "win": false,
+      "timeout": false,
+      "seconds": 27.03,
+      "allyHp": 0,
+      "enemyHp": 134372
+    },
+    {
+      "id": 284,
+      "win": true,
+      "timeout": false,
+      "seconds": 59.5,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 285,
+      "win": false,
+      "timeout": false,
+      "seconds": 26.9,
+      "allyHp": 0,
+      "enemyHp": 180691
+    },
+    {
+      "id": 286,
+      "win": true,
+      "timeout": false,
+      "seconds": 151.93,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 287,
+      "win": true,
+      "timeout": false,
+      "seconds": 151.23,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 288,
+      "win": true,
+      "timeout": false,
+      "seconds": 119.07,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 289,
+      "win": true,
+      "timeout": false,
+      "seconds": 122.77,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 290,
+      "win": true,
+      "timeout": false,
+      "seconds": 127.37,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 291,
+      "win": true,
+      "timeout": false,
+      "seconds": 85.1,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 292,
+      "win": true,
+      "timeout": false,
+      "seconds": 85.1,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 293,
+      "win": true,
+      "timeout": false,
+      "seconds": 153.97,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 294,
+      "win": true,
+      "timeout": false,
+      "seconds": 160.97,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 295,
+      "win": true,
+      "timeout": false,
+      "seconds": 98.17,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 296,
+      "win": true,
+      "timeout": false,
+      "seconds": 136.23,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 297,
+      "win": false,
+      "timeout": false,
+      "seconds": 32.67,
+      "allyHp": 0,
+      "enemyHp": 204344
+    },
+    {
+      "id": 298,
+      "win": false,
+      "timeout": false,
+      "seconds": 30.3,
+      "allyHp": 0,
+      "enemyHp": 204344
+    },
+    {
+      "id": 299,
+      "win": false,
+      "timeout": false,
+      "seconds": 28.3,
+      "allyHp": 0,
+      "enemyHp": 204344
+    },
+    {
+      "id": 300,
+      "win": false,
+      "timeout": false,
+      "seconds": 27.77,
+      "allyHp": 0,
+      "enemyHp": 217388
+    },
+    {
+      "id": 301,
+      "win": false,
+      "timeout": false,
+      "seconds": 28.9,
+      "allyHp": 0,
+      "enemyHp": 217388
+    },
+    {
+      "id": 302,
+      "win": true,
+      "timeout": false,
+      "seconds": 58.47,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 303,
+      "win": true,
+      "timeout": false,
+      "seconds": 52.43,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 304,
+      "win": false,
+      "timeout": false,
+      "seconds": 32.67,
+      "allyHp": 0,
+      "enemyHp": 204344
+    },
+    {
+      "id": 305,
+      "win": false,
+      "timeout": false,
+      "seconds": 27.03,
+      "allyHp": 0,
+      "enemyHp": 134372
+    },
+    {
+      "id": 306,
+      "win": true,
+      "timeout": false,
+      "seconds": 55.23,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 307,
+      "win": false,
+      "timeout": false,
+      "seconds": 26.9,
+      "allyHp": 0,
+      "enemyHp": 214501
+    },
+    {
+      "id": 308,
+      "win": true,
+      "timeout": false,
+      "seconds": 154.5,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 309,
+      "win": true,
+      "timeout": false,
+      "seconds": 134.4,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 310,
+      "win": true,
+      "timeout": false,
+      "seconds": 111.57,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 311,
+      "win": true,
+      "timeout": false,
+      "seconds": 134.27,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 312,
+      "win": true,
+      "timeout": false,
+      "seconds": 149.67,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 313,
+      "win": true,
+      "timeout": false,
+      "seconds": 77.5,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 314,
+      "win": true,
+      "timeout": false,
+      "seconds": 77.5,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 315,
+      "win": true,
+      "timeout": false,
+      "seconds": 164.33,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 316,
+      "win": true,
+      "timeout": false,
+      "seconds": 151.7,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 317,
+      "win": true,
+      "timeout": false,
+      "seconds": 100.57,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 318,
+      "win": true,
+      "timeout": false,
+      "seconds": 128.67,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 319,
+      "win": false,
+      "timeout": false,
+      "seconds": 32.67,
+      "allyHp": 0,
+      "enemyHp": 204344
+    },
+    {
+      "id": 320,
+      "win": false,
+      "timeout": false,
+      "seconds": 30.3,
+      "allyHp": 0,
+      "enemyHp": 204344
+    },
+    {
+      "id": 321,
+      "win": false,
+      "timeout": false,
+      "seconds": 28.3,
+      "allyHp": 0,
+      "enemyHp": 204344
+    },
+    {
+      "id": 322,
+      "win": false,
+      "timeout": false,
+      "seconds": 27.77,
+      "allyHp": 0,
+      "enemyHp": 217388
+    },
+    {
+      "id": 323,
+      "win": false,
+      "timeout": false,
+      "seconds": 28.9,
+      "allyHp": 0,
+      "enemyHp": 217388
+    },
+    {
+      "id": 324,
+      "win": true,
+      "timeout": false,
+      "seconds": 58.27,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 325,
+      "win": true,
+      "timeout": false,
+      "seconds": 49.37,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 326,
+      "win": false,
+      "timeout": false,
+      "seconds": 32.67,
+      "allyHp": 0,
+      "enemyHp": 204344
+    },
+    {
+      "id": 327,
+      "win": false,
+      "timeout": false,
+      "seconds": 27.03,
+      "allyHp": 0,
+      "enemyHp": 134372
+    },
+    {
+      "id": 328,
+      "win": true,
+      "timeout": false,
+      "seconds": 55.37,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 329,
+      "win": false,
+      "timeout": false,
+      "seconds": 26.9,
+      "allyHp": 0,
+      "enemyHp": 180691
+    }
+  ],
+  "rows": [
+    {
+      "map": 405,
+      "name": "황제의 야옹이",
+      "tag": "현재 기준 맵",
+      "id": "lilac",
+      "comparison": "3진－2진",
+      "gain": 2.2566666666666624,
+      "winsBefore": 3,
+      "winsAfter": 3
+    },
+    {
+      "map": 405,
+      "name": "황제의 야옹이",
+      "tag": "현재 기준 맵",
+      "id": "babypink",
+      "comparison": "3진－2진",
+      "gain": -5.510000000000015,
+      "winsBefore": 3,
+      "winsAfter": 3
+    },
+    {
+      "map": 405,
+      "name": "황제의 야옹이",
+      "tag": "현재 기준 맵",
+      "id": "magenta",
+      "comparison": "3진－2진",
+      "gain": 0,
+      "winsBefore": 3,
+      "winsAfter": 3
+    },
+    {
+      "map": 405,
+      "name": "황제의 야옹이",
+      "tag": "현재 기준 맵",
+      "id": "fusioncream",
+      "comparison": "3진－2진",
+      "gain": 33.37666666666667,
+      "winsBefore": 3,
+      "winsAfter": 3
+    },
+    {
+      "map": 405,
+      "name": "황제의 야옹이",
+      "tag": "현재 기준 맵",
+      "id": "ocean",
+      "comparison": "추가－기준덱",
+      "gain": 30.369999999999987,
+      "winsBefore": 3,
+      "winsAfter": 3
+    },
+    {
+      "map": 405,
+      "name": "황제의 야옹이",
+      "tag": "현재 기준 맵",
+      "id": "sea",
+      "comparison": "추가－기준덱",
+      "gain": 31.26000000000002,
+      "winsBefore": 3,
+      "winsAfter": 3
+    },
+    {
+      "map": 633,
+      "name": "고비 사막 상급",
+      "tag": "floating",
+      "id": "lilac",
+      "comparison": "3진－2진",
+      "gain": -1.0533333333333506,
+      "winsBefore": 3,
+      "winsAfter": 3
+    },
+    {
+      "map": 633,
+      "name": "고비 사막 상급",
+      "tag": "floating",
+      "id": "babypink",
+      "comparison": "3진－2진",
+      "gain": 0.7233333333333203,
+      "winsBefore": 3,
+      "winsAfter": 3
+    },
+    {
+      "map": 633,
+      "name": "고비 사막 상급",
+      "tag": "floating",
+      "id": "magenta",
+      "comparison": "3진－2진",
+      "gain": 0,
+      "winsBefore": 3,
+      "winsAfter": 3
+    },
+    {
+      "map": 633,
+      "name": "고비 사막 상급",
+      "tag": "floating",
+      "id": "fusioncream",
+      "comparison": "3진－2진",
+      "gain": 1.4899999999999913,
+      "winsBefore": 3,
+      "winsAfter": 3
+    },
+    {
+      "map": 633,
+      "name": "고비 사막 상급",
+      "tag": "floating",
+      "id": "ocean",
+      "comparison": "추가－기준덱",
+      "gain": 0.33333333333334103,
+      "winsBefore": 3,
+      "winsAfter": 3
+    },
+    {
+      "map": 633,
+      "name": "고비 사막 상급",
+      "tag": "floating",
+      "id": "sea",
+      "comparison": "추가－기준덱",
+      "gain": 0.8466666666666622,
+      "winsBefore": 3,
+      "winsAfter": 3
+    },
+    {
+      "map": 606,
+      "name": "유혹의 치킨 룸",
+      "tag": "angel",
+      "id": "lilac",
+      "comparison": "3진－2진",
+      "gain": 5.463333333333331,
+      "winsBefore": 3,
+      "winsAfter": 3
+    },
+    {
+      "map": 606,
+      "name": "유혹의 치킨 룸",
+      "tag": "angel",
+      "id": "babypink",
+      "comparison": "3진－2진",
+      "gain": 1.8999999999999906,
+      "winsBefore": 3,
+      "winsAfter": 3
+    },
+    {
+      "map": 606,
+      "name": "유혹의 치킨 룸",
+      "tag": "angel",
+      "id": "magenta",
+      "comparison": "3진－2진",
+      "gain": 0,
+      "winsBefore": 3,
+      "winsAfter": 3
+    },
+    {
+      "map": 606,
+      "name": "유혹의 치킨 룸",
+      "tag": "angel",
+      "id": "fusioncream",
+      "comparison": "3진－2진",
+      "gain": 3.0899999999999928,
+      "winsBefore": 3,
+      "winsAfter": 3
+    },
+    {
+      "map": 606,
+      "name": "유혹의 치킨 룸",
+      "tag": "angel",
+      "id": "ocean",
+      "comparison": "추가－기준덱",
+      "gain": 4.666666666666663,
+      "winsBefore": 3,
+      "winsAfter": 3
+    },
+    {
+      "map": 606,
+      "name": "유혹의 치킨 룸",
+      "tag": "angel",
+      "id": "sea",
+      "comparison": "추가－기준덱",
+      "gain": 1.6000000000000236,
+      "winsBefore": 3,
+      "winsAfter": 3
+    },
+    {
+      "map": 540,
+      "name": "마이도무리",
+      "tag": "alien",
+      "id": "lilac",
+      "comparison": "3진－2진",
+      "gain": 1.1233333333333428,
+      "winsBefore": 3,
+      "winsAfter": 3
+    },
+    {
+      "map": 540,
+      "name": "마이도무리",
+      "tag": "alien",
+      "id": "babypink",
+      "comparison": "3진－2진",
+      "gain": -0.44999999999997264,
+      "winsBefore": 3,
+      "winsAfter": 3
+    },
+    {
+      "map": 540,
+      "name": "마이도무리",
+      "tag": "alien",
+      "id": "magenta",
+      "comparison": "3진－2진",
+      "gain": 0,
+      "winsBefore": 3,
+      "winsAfter": 3
+    },
+    {
+      "map": 540,
+      "name": "마이도무리",
+      "tag": "alien",
+      "id": "fusioncream",
+      "comparison": "3진－2진",
+      "gain": 6.39999999999996,
+      "winsBefore": 3,
+      "winsAfter": 3
+    },
+    {
+      "map": 540,
+      "name": "마이도무리",
+      "tag": "alien",
+      "id": "ocean",
+      "comparison": "추가－기준덱",
+      "gain": 5.26000000000002,
+      "winsBefore": 3,
+      "winsAfter": 3
+    },
+    {
+      "map": 540,
+      "name": "마이도무리",
+      "tag": "alien",
+      "id": "sea",
+      "comparison": "추가－기준덱",
+      "gain": 3.720000000000057,
+      "winsBefore": 3,
+      "winsAfter": 3
+    },
+    {
+      "map": 611,
+      "name": "아역 출신",
+      "tag": "zombie",
+      "id": "lilac",
+      "comparison": "3진－2진",
+      "gain": 25.120000000000008,
+      "winsBefore": 3,
+      "winsAfter": 3
+    },
+    {
+      "map": 611,
+      "name": "아역 출신",
+      "tag": "zombie",
+      "id": "babypink",
+      "comparison": "3진－2진",
+      "gain": -6.099999999999994,
+      "winsBefore": 3,
+      "winsAfter": 3
+    },
+    {
+      "map": 611,
+      "name": "아역 출신",
+      "tag": "zombie",
+      "id": "magenta",
+      "comparison": "3진－2진",
+      "gain": 8.056666666666645,
+      "winsBefore": 3,
+      "winsAfter": 3
+    },
+    {
+      "map": 611,
+      "name": "아역 출신",
+      "tag": "zombie",
+      "id": "fusioncream",
+      "comparison": "3진－2진",
+      "gain": 0.06333333333337048,
+      "winsBefore": 3,
+      "winsAfter": 3
+    },
+    {
+      "map": 611,
+      "name": "아역 출신",
+      "tag": "zombie",
+      "id": "ocean",
+      "comparison": "추가－기준덱",
+      "gain": 96.12000000000005,
+      "winsBefore": 3,
+      "winsAfter": 3
+    },
+    {
+      "map": 611,
+      "name": "아역 출신",
+      "tag": "zombie",
+      "id": "sea",
+      "comparison": "추가－기준덱",
+      "gain": 17.443333333333346,
+      "winsBefore": 3,
+      "winsAfter": 3
+    }
+  ]
+}
