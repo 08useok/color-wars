@@ -2449,7 +2449,9 @@ function animateAtlas(u){
 
 let stageChapterView=1;
 let legendSub=0;// 0 = subchapter list, n = inside LEGEND_SUBS[n-1]
-function renderStageMenu(){renderTraining();renderBaseUpgrade();renderSpecialStages();renderSweepBar();
+// 장 탭만 바꿀 때는 스테이지 목록만 다시 그린다(아군 강화·기지 강화·특별 스테이지·랭크는 그대로). 로비 최적화 10-31: 탭 전환 30ms → 약 5ms
+var stageMenuViewOnly=false;function renderStageView(){stageMenuViewOnly=true;try{renderStageMenu()}finally{stageMenuViewOnly=false}}
+function renderStageMenu(){if(!stageMenuViewOnly){renderTraining();renderBaseUpgrade();renderSpecialStages()}renderSweepBar();
  $('#legendArrow').textContent=stageChapterView==='legend'?'‹':'›';$('#legendArrow').classList.toggle('active',stageChapterView==='legend');
  $('#legendBar').classList.toggle('hidden',stageChapterView!=='legend');
  if(stageChapterView==='legend'){$('#chapter1Tab').classList.remove('active');$('#chapter2Tab').classList.remove('active');$('#chapter3Tab').classList.remove('active');$('#futureTab').classList.remove('active');$('#future2Tab')?.classList.remove('active');$('#future3Tab')?.classList.remove('active');$('#cosmosTab')?.classList.remove('active');$('#cosmos2Tab')?.classList.remove('active');renderLegend();return}
@@ -2568,11 +2570,11 @@ function legendFinish(win){
  $('#nextStageBtn').classList.toggle('hidden',!win||last);
  renderNewButtons();renderOrangeButton();renderYellowButton();renderGreenButton();
 }
-$('#chapter1Tab').onclick=()=>{stageChapterView=1;renderStageMenu()};
-$('#legendArrow').onclick=()=>{stageChapterView=stageChapterView==='legend'?1:'legend';if(stageChapterView==='legend')legendSub=0;renderStageMenu()};
-$('#chapter2Tab').onclick=()=>{stageChapterView=2;renderStageMenu()};
-$('#chapter3Tab').onclick=()=>{stageChapterView=3;renderStageMenu()};
-$('#futureTab').onclick=()=>{stageChapterView=5;renderStageMenu()};if($('#future2Tab'))$('#future2Tab').onclick=()=>{stageChapterView=6;renderStageMenu()};if($('#future3Tab'))$('#future3Tab').onclick=()=>{stageChapterView=7;renderStageMenu()};if($('#cosmosTab'))$('#cosmosTab').onclick=()=>{stageChapterView=8;renderStageMenu()};if($('#cosmos2Tab'))$('#cosmos2Tab').onclick=()=>{stageChapterView=9;renderStageMenu()};
+$('#chapter1Tab').onclick=()=>{stageChapterView=1;renderStageView()};
+$('#legendArrow').onclick=()=>{stageChapterView=stageChapterView==='legend'?1:'legend';if(stageChapterView==='legend')legendSub=0;renderStageView()};
+$('#chapter2Tab').onclick=()=>{stageChapterView=2;renderStageView()};
+$('#chapter3Tab').onclick=()=>{stageChapterView=3;renderStageView()};
+$('#futureTab').onclick=()=>{stageChapterView=5;renderStageView()};if($('#future2Tab'))$('#future2Tab').onclick=()=>{stageChapterView=6;renderStageView()};if($('#future3Tab'))$('#future3Tab').onclick=()=>{stageChapterView=7;renderStageView()};if($('#cosmosTab'))$('#cosmosTab').onclick=()=>{stageChapterView=8;renderStageView()};if($('#cosmos2Tab'))$('#cosmos2Tab').onclick=()=>{stageChapterView=9;renderStageView()};
 function openStages(){if(game.running&&!game.ended)game.paused=true;highlight();render();renderStageMenu();$('#stageMenu').classList.remove('hidden');$('#resumeBtn').textContent=game.ended?'결과로 돌아가기':'전투로 돌아가기'}
 $('#stagesBtn').onclick=openStages;
 $('#resultStagesBtn').onclick=openStages;
@@ -2815,7 +2817,7 @@ function unitStats(type,level=training.levels[type]||1,form=training.forms?.[typ
  if(type==='raspberry'){stats.condPierceDist=25;stats.condPierceCount=1}
  if(EVO_EXTRA[type])Object.assign(stats,EVO_EXTRA[type](d));
  return stats}
-function allyUnlocked(t){return ALWAYS_UNLOCKED.has(t)||cleared.some(i=>i>=UNLOCK_AT[t])}
+function allyUnlocked(t){const u=UNLOCK_AT[t];return ALWAYS_UNLOCKED.has(t)||(u!==undefined&&cleared.some(i=>i>=u))}// 해금 스테이지가 없는 아군(뽑기 등)은 클리어 목록(최대 수백 개)을 훑지 않는다 — 결과는 같음(i>=undefined는 늘 거짓)
 const DECK_SIZE=10;
 let deck=['red'];
 try{

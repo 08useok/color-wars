@@ -94,5 +94,5 @@ $('#rankClaimBtn').onclick=rankClaimAll;
 const _renderTrainingRank=renderTraining;
 renderTraining=function(){_renderTrainingRank();renderRank()};
 const _renderStageMenuRank=renderStageMenu;
-renderStageMenu=function(){_renderStageMenuRank();renderRank()};
+renderStageMenu=function(){_renderStageMenuRank();if(typeof stageMenuViewOnly==='undefined'||!stageMenuViewOnly)renderRank()};// 장 탭 전환 때는 랭크를 다시 계산하지 않는다
 renderRank();
