@@ -1,4 +1,4 @@
-// Four 7.5 releases only. Light Rainbow art is reserved for 8.0 and not registered.
+// Four 7.5 releases and Light Rainbow's 8.0 release share the same ownership path.
 const BUSTERS75={
  heliotrope:{name:'헬리오트로프',color:'#df73ff',hp:180000,dps:25000,interval:3,speed:12,range:26,cost:4200,wait:40,kb:3,traits:['red','floating'],freeze:4,windup:.3,recovery:.5,atlas:HELIOTROPE_MOTION_ATLASES,
   extra:{area:true,attackClass:'원거리 범위',zoneMin:0,zoneMax:40,immune:{weaken:true,freeze:true}},profile:'여성, 33세. 천연 염색 공예가. 염색 천에서 흩날리는 색으로 빨간 적과 떠 있는 적을 묶는다.',evolved:'두건과 작업 앞치마를 갖춘 헬리. 염료를 멀리 흩뿌린다.'},
@@ -7,7 +7,9 @@ const BUSTERS75={
  blossom:{name:'블로섬',color:'#ffb7c5',hp:280000,dps:25000,interval:2.5,speed:14,range:24,cost:4000,wait:40,kb:3,traits:['angel','zombie'],freeze:3.5,windup:.3,recovery:.5,atlas:BUSTERS_REMAINING_MOTION_ATLASES,
   extra:{area:true,attackClass:'범위',zoneMin:0,zoneMax:28,immune:{freeze:true,poison:true}},profile:'여성, 29세. 웨딩 플래너. 꽃잎으로 천사와 좀비의 움직임을 멈추게 한다. 좀비 킬러는 없어 처치한 좀비의 부활은 막지 못한다.',evolved:'플래너 정장을 입은 블로섬. 꽃다발로 전선을 넓게 정리한다.'},
  almondblossom:{name:'아몬드 블로섬',color:'#efd2c2',hp:350000,dps:50000,interval:1.5,speed:22,range:12,cost:3800,wait:35,kb:3,traits:['red','black'],freeze:2.5,windup:.15,recovery:.25,atlas:BUSTERS_REMAINING_MOTION_ATLASES,
-  extra:{attackClass:'개체',immune:{weaken:true},savageChance:.3,savageMult:3},profile:'여성, 34세. 견과류 전문점 사장. 나무 스쿱으로 빨간 적과 검은 적 한 마리를 집중 타격한다.',evolved:'가게 앞치마를 갖춘 아블. 30% 확률로 세 배 혼신의 일격을 날린다.'}
+  extra:{attackClass:'개체',immune:{weaken:true},savageChance:.3,savageMult:3},profile:'여성, 34세. 견과류 전문점 사장. 나무 스쿱으로 빨간 적과 검은 적 한 마리를 집중 타격한다.',evolved:'가게 앞치마를 갖춘 아블. 30% 확률로 세 배 혼신의 일격을 날린다.'},
+ lightrainbow:{name:'라이트 레인보우',color:'#e4d9ff',hp:220000,dps:60000,interval:3,speed:18,range:30,cost:4500,wait:45,kb:3,traits:['alien','angel'],freeze:4,windup:.4,recovery:.6,atlas:BUSTERS_REMAINING_MOTION_ATLASES,
+  extra:{attackClass:'원거리 개체',zoneMin:0,zoneMax:40,barrierBreak:1,immune:{warp:true}},profile:'여성, 26세. 안경사. 렌즈에 모은 옅은 무지개 빛으로 에이리언과 천사 한 마리를 겨눈다. 베리어를 확실하게 파괴하고 워프를 무시한다.',evolved:'광학 장비와 흰 작업복을 갖춘 라레인. 사각지대 없이 빛을 집중해 주력 적을 정지시킨다.'}
 };
 // Capture exclusive pity before the old series loader filters unknown series.
 const BUSTERS75_SAVED_PITY=(()=>{try{return JSON.parse(localStorage.getItem('red-battle-gacha-v1')||'{}').pityS||{};}catch{return {};}})();

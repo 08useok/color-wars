@@ -2,8 +2,8 @@
 const BUSTERS75_BANNERS={
  '레드 바스터즈':['heliotrope','almondblossom'],
  '블랙 바스터즈':['wisteria','almondblossom'],
- '에이리언 바스터즈':['wisteria'],
- '천사 바스터즈':['blossom'],
+ '에이리언 바스터즈':['wisteria','lightrainbow'],
+ '천사 바스터즈':['blossom','lightrainbow'],
  '떠적 바스터즈':['heliotrope']
 };
 let busters75Selection=null;
