@@ -1,5 +1,5 @@
 // 우주편 3장 데이터 (8.0). cosmos3.js가 스테이지 목록 맨 끝에 붙인다. 이 파일은 scripts/build-cosmos3.cjs가 만든다.
-// 출처: battlecats-db 宇宙編 第3章 s03008-01~48. 기존 적의 출현 배율은 원작 ×1.3(새 스테이지 난이도), 8.0 신규 13종은 능력치에 이미 ×1.3.
+// 출처: battlecats-db 宇宙編 第3章 s03008-01~48. 출현 배율은 원작 그대로.
 const COSMOS3_DATA=[
  {
   "n": 1,
@@ -11,7 +11,7 @@ const COSMOS3_DATA=[
   "max": 12,
   "xp": 1000,
   "width": 6000,
-  "desc": "보스 미니스타 사이클론 · 최대 195%",
+  "desc": "보스 미니스타 사이클론 · 최대 150%",
   "source": "battlecats-db s03008-01",
   "rules": [
    {
@@ -27,7 +27,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 23.33
     },
-    "mag": 195,
+    "mag": 150,
     "count": 1
    }
   ]
@@ -42,7 +42,7 @@ const COSMOS3_DATA=[
   "max": 10,
   "xp": 1300,
   "width": 3600,
-  "desc": "최대 3,900%",
+  "desc": "최대 3,000%",
   "source": "battlecats-db s03008-02",
   "rules": [
    {
@@ -50,7 +50,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 10
     },
-    "mag": 390,
+    "mag": 300,
     "count": 10,
     "delay": [
      13.33,
@@ -62,7 +62,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 0.07
     },
-    "mag": 3900,
+    "mag": 3000,
     "count": 10,
     "delay": [
      13.33,
@@ -74,7 +74,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 13.33
     },
-    "mag": 390,
+    "mag": 300,
     "count": 3,
     "delay": [
      6.67,
@@ -86,7 +86,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 40
     },
-    "mag": 2080,
+    "mag": 1600,
     "count": 1
    },
    {
@@ -94,7 +94,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 26.67
     },
-    "mag": 390,
+    "mag": 300,
     "count": 4,
     "delay": [
      20,
@@ -106,7 +106,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 3.33
     },
-    "mag": 2080,
+    "mag": 1600,
     "count": 1
    }
   ]
@@ -121,7 +121,7 @@ const COSMOS3_DATA=[
   "max": 15,
   "xp": 1600,
   "width": 4500,
-  "desc": "보스 아거 · 최대 3,900%",
+  "desc": "보스 아거 · 최대 3,000%",
   "source": "battlecats-db s03008-03",
   "rules": [
    {
@@ -129,7 +129,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 3900,
+    "mag": 3000,
     "count": 10,
     "delay": [
      1.67,
@@ -141,7 +141,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 33.33
     },
-    "mag": 3900,
+    "mag": 3000,
     "count": 10,
     "delay": [
      3.33,
@@ -153,7 +153,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 100
     },
-    "mag": 3900,
+    "mag": 3000,
     "delay": [
      5,
      15
@@ -164,7 +164,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 20
     },
-    "mag": 2080,
+    "mag": 1600,
     "delay": [
      20,
      30
@@ -175,7 +175,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 3900,
+    "mag": 3000,
     "delay": [
      10,
      20
@@ -186,7 +186,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 390,
+    "mag": 300,
     "count": 3,
     "delay": [
      26.67,
@@ -198,7 +198,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 390,
+    "mag": 300,
     "count": 5,
     "delay": [
      10,
@@ -210,7 +210,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 390,
+    "mag": 300,
     "count": 7,
     "delay": [
      3.33,
@@ -222,7 +222,6 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 130,
     "count": 1,
     "boss": true
    }
@@ -238,7 +237,7 @@ const COSMOS3_DATA=[
   "max": 15,
   "xp": 1900,
   "width": 3600,
-  "desc": "최대 3,900%",
+  "desc": "최대 3,000%",
   "source": "battlecats-db s03008-04",
   "rules": [
    {
@@ -246,7 +245,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 0.07
     },
-    "mag": 3120,
+    "mag": 2400,
     "count": 5,
     "delay": [
      6.67,
@@ -258,7 +257,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 47.33
     },
-    "mag": 3120,
+    "mag": 2400,
     "count": 5,
     "delay": [
      100,
@@ -270,7 +269,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 49
     },
-    "mag": 3120,
+    "mag": 2400,
     "count": 5,
     "delay": [
      100,
@@ -282,7 +281,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 40
     },
-    "mag": 390,
+    "mag": 300,
     "count": 5,
     "delay": [
      13.33,
@@ -294,7 +293,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 56.67
     },
-    "mag": 3900,
+    "mag": 3000,
     "delay": [
      10,
      16.67
@@ -305,7 +304,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 40
     },
-    "mag": 3120,
+    "mag": 2400,
     "count": 5,
     "delay": [
      6.67,
@@ -317,7 +316,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 41.67
     },
-    "mag": 3120,
+    "mag": 2400,
     "count": 5,
     "delay": [
      6.67,
@@ -329,7 +328,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 10
     },
-    "mag": 2080,
+    "mag": 1600,
     "count": 2,
     "delay": [
      33.33,
@@ -348,7 +347,7 @@ const COSMOS3_DATA=[
   "max": 12,
   "xp": 2200,
   "width": 5000,
-  "desc": "보스 쿠만츄 · 최대 2,080%",
+  "desc": "보스 쿠만츄 · 최대 1,600%",
   "source": "battlecats-db s03008-05",
   "rules": [
    {
@@ -356,7 +355,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 390,
+    "mag": 300,
     "count": 5,
     "delay": [
      3.33,
@@ -368,7 +367,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 50
     },
-    "mag": 390,
+    "mag": 300,
     "count": 5,
     "delay": [
      6.67,
@@ -380,7 +379,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 133.33
     },
-    "mag": 390,
+    "mag": 300,
     "count": 5,
     "delay": [
      10,
@@ -392,7 +391,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 2080,
+    "mag": 1600,
     "delay": [
      10,
      16.67
@@ -403,7 +402,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 195,
+    "mag": 150,
     "count": 1
    },
    {
@@ -411,7 +410,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 390,
+    "mag": 300,
     "count": 3,
     "delay": [
      10,
@@ -423,7 +422,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 390,
+    "mag": 300,
     "count": 5,
     "delay": [
      10,
@@ -435,7 +434,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 2080,
+    "mag": 1600,
     "count": 1,
     "boss": true
    }
@@ -451,7 +450,7 @@ const COSMOS3_DATA=[
   "max": 15,
   "xp": 2500,
   "width": 4800,
-  "desc": "최대 3,900%",
+  "desc": "최대 3,000%",
   "source": "battlecats-db s03008-06",
   "rules": [
    {
@@ -459,7 +458,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 6.67
     },
-    "mag": 260,
+    "mag": 200,
     "count": 2,
     "delay": [
      33.33,
@@ -471,7 +470,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 8.33
     },
-    "mag": 3900,
+    "mag": 3000,
     "count": 10,
     "delay": [
      3.33,
@@ -483,7 +482,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 10
     },
-    "mag": 3900,
+    "mag": 3000,
     "count": 10,
     "delay": [
      3.33,
@@ -495,7 +494,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 16.67
     },
-    "mag": 3900,
+    "mag": 3000,
     "delay": [
      6.67,
      10
@@ -506,7 +505,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 26.67
     },
-    "mag": 780,
+    "mag": 600,
     "count": 5,
     "delay": [
      16.67,
@@ -518,7 +517,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 33.33
     },
-    "mag": 520,
+    "mag": 400,
     "count": 1
    },
    {
@@ -526,7 +525,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 60
     },
-    "mag": 520,
+    "mag": 400,
     "count": 1
    },
    {
@@ -534,7 +533,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 66.67
     },
-    "mag": 520,
+    "mag": 400,
     "count": 1
    },
    {
@@ -542,7 +541,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 16.67
     },
-    "mag": 520,
+    "mag": 400,
     "delay": [
      33.33,
      50
@@ -553,7 +552,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 36.67
     },
-    "mag": 520,
+    "mag": 400,
     "count": 1
    },
    {
@@ -561,7 +560,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 63.33
     },
-    "mag": 520,
+    "mag": 400,
     "count": 1
    }
   ]
@@ -576,7 +575,7 @@ const COSMOS3_DATA=[
   "max": 12,
   "xp": 2800,
   "width": 4000,
-  "desc": "보스 대머리군 · 최대 3,120%",
+  "desc": "보스 대머리군 · 최대 2,400%",
   "source": "battlecats-db s03008-07",
   "rules": [
    {
@@ -584,7 +583,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 2080,
+    "mag": 1600,
     "delay": [
      13.33,
      26.67
@@ -595,7 +594,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 5
     },
-    "mag": 3120,
+    "mag": 2400,
     "delay": [
      13.33,
      26.67
@@ -606,7 +605,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 10
     },
-    "mag": 3120,
+    "mag": 2400,
     "count": 1
    },
    {
@@ -614,7 +613,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 30
     },
-    "mag": 2080,
+    "mag": 1600,
     "count": 3,
     "delay": [
      60,
@@ -626,7 +625,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 36.67
     },
-    "mag": 2080,
+    "mag": 1600,
     "count": 3,
     "delay": [
      60,
@@ -638,7 +637,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 60
     },
-    "mag": 3120,
+    "mag": 2400,
     "count": 3,
     "delay": [
      60,
@@ -650,7 +649,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 63.33
     },
-    "mag": 3120,
+    "mag": 2400,
     "count": 3,
     "delay": [
      60,
@@ -662,7 +661,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 780,
+    "mag": 600,
     "count": 2,
     "delay": [
      30,
@@ -674,7 +673,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 520,
+    "mag": 400,
     "count": 2,
     "delay": [
      6.67,
@@ -686,7 +685,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 260,
+    "mag": 200,
     "count": 1
    },
    {
@@ -694,7 +693,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 1300,
+    "mag": 1000,
     "count": 1,
     "boss": true
    }
@@ -710,7 +709,7 @@ const COSMOS3_DATA=[
   "max": 10,
   "xp": 3100,
   "width": 4400,
-  "desc": "보스 불칸 보어 · 최대 2,080%",
+  "desc": "보스 불칸 보어 · 최대 1,600%",
   "source": "battlecats-db s03008-08",
   "rules": [
    {
@@ -718,7 +717,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 0.07
     },
-    "mag": 2080,
+    "mag": 1600,
     "count": 3,
     "delay": [
      6,
@@ -730,7 +729,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 5.33
     },
-    "mag": 2080,
+    "mag": 1600,
     "count": 3,
     "delay": [
      6,
@@ -742,7 +741,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 46.67
     },
-    "mag": 1040,
+    "mag": 800,
     "count": 1
    },
    {
@@ -750,7 +749,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 66.67
     },
-    "mag": 1040,
+    "mag": 800,
     "count": 1
    },
    {
@@ -758,7 +757,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 520,
+    "mag": 400,
     "count": 2,
     "delay": [
      26.67,
@@ -770,7 +769,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 1040,
+    "mag": 800,
     "firstDelay": 40,
     "count": 1,
     "boss": true
@@ -787,7 +786,7 @@ const COSMOS3_DATA=[
   "max": 12,
   "xp": 3400,
   "width": 4400,
-  "desc": "최대 2,080%",
+  "desc": "최대 1,600%",
   "source": "battlecats-db s03008-09",
   "rules": [
    {
@@ -807,7 +806,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 2080,
+    "mag": 1600,
     "delay": [
      33.33,
      33.33
@@ -818,7 +817,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 6.67
     },
-    "mag": 520,
+    "mag": 400,
     "count": 1
    }
   ]
@@ -833,7 +832,7 @@ const COSMOS3_DATA=[
   "max": 10,
   "xp": 3700,
   "width": 3600,
-  "desc": "최대 1,300%",
+  "desc": "최대 1,000%",
   "source": "battlecats-db s03008-10",
   "rules": [
    {
@@ -841,7 +840,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 6.67
     },
-    "mag": 260,
+    "mag": 200,
     "count": 1
    },
    {
@@ -849,7 +848,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 10
     },
-    "mag": 1040,
+    "mag": 800,
     "count": 1
    },
    {
@@ -857,7 +856,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 30
     },
-    "mag": 520,
+    "mag": 400,
     "count": 3,
     "delay": [
      16.67,
@@ -869,7 +868,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 20
     },
-    "mag": 1300,
+    "mag": 1000,
     "count": 1
    }
   ]
@@ -884,7 +883,7 @@ const COSMOS3_DATA=[
   "max": 10,
   "xp": 4000,
   "width": 4000,
-  "desc": "보스 멍뭉이 · 최대 5,200%",
+  "desc": "보스 멍뭉이 · 최대 4,000%",
   "source": "battlecats-db s03008-11",
   "rules": [
    {
@@ -892,7 +891,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 4
     },
-    "mag": 5200,
+    "mag": 4000,
     "count": 15,
     "delay": [
      10,
@@ -904,7 +903,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 2
     },
-    "mag": 5200,
+    "mag": 4000,
     "count": 15,
     "delay": [
      10,
@@ -916,7 +915,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 0.07
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      10,
      16.67
@@ -927,7 +926,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 6.67
     },
-    "mag": 2080,
+    "mag": 1600,
     "count": 1
    },
    {
@@ -935,7 +934,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 0.07
     },
-    "mag": 2080,
+    "mag": 1600,
     "count": 15,
     "delay": [
      3.33,
@@ -947,7 +946,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 520,
+    "mag": 400,
     "firstDelay": 0.07,
     "count": 2,
     "delay": [
@@ -960,7 +959,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 2080,
+    "mag": 1600,
     "firstDelay": 6.67,
     "count": 1
    },
@@ -969,7 +968,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 2080,
+    "mag": 1600,
     "firstDelay": 0.07,
     "count": 1
    },
@@ -978,7 +977,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 13,
+    "mag": 10,
     "firstDelay": 4,
     "count": 1,
     "boss": true
@@ -995,7 +994,7 @@ const COSMOS3_DATA=[
   "max": 10,
   "xp": 4300,
   "width": 6000,
-  "desc": "보스 샤이 보어 · 최대 5,200%",
+  "desc": "보스 샤이 보어 · 최대 4,000%",
   "source": "battlecats-db s03008-12",
   "rules": [
    {
@@ -1011,7 +1010,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 3.33
     },
-    "mag": 2080,
+    "mag": 1600,
     "count": 10,
     "delay": [
      23.33,
@@ -1023,7 +1022,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 1.33
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      10,
      16.67
@@ -1034,7 +1033,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 3120,
+    "mag": 2400,
     "firstDelay": 2.67,
     "count": 2,
     "delay": [
@@ -1047,7 +1046,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 390,
+    "mag": 300,
     "count": 1,
     "boss": true
    }
@@ -1063,7 +1062,7 @@ const COSMOS3_DATA=[
   "max": 12,
   "xp": 4600,
   "width": 5000,
-  "desc": "최대 2,080%",
+  "desc": "최대 1,600%",
   "source": "battlecats-db s03008-13",
   "rules": [
    {
@@ -1071,7 +1070,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 16.67
     },
-    "mag": 520,
+    "mag": 400,
     "count": 1
    },
    {
@@ -1079,7 +1078,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 2080,
+    "mag": 1600,
     "delay": [
      16.67,
      23.33
@@ -1090,7 +1089,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 3.33
     },
-    "mag": 2080,
+    "mag": 1600,
     "count": 1
    },
    {
@@ -1106,7 +1105,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 26.67
     },
-    "mag": 1040,
+    "mag": 800,
     "count": 1
    },
    {
@@ -1114,7 +1113,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 16.67
     },
-    "mag": 2080,
+    "mag": 1600,
     "count": 8,
     "delay": [
      13.33,
@@ -1133,7 +1132,7 @@ const COSMOS3_DATA=[
   "max": 13,
   "xp": 4900,
   "width": 4000,
-  "desc": "최대 2,080%",
+  "desc": "최대 1,600%",
   "source": "battlecats-db s03008-14",
   "rules": [
    {
@@ -1141,7 +1140,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 50
     },
-    "mag": 520,
+    "mag": 400,
     "count": 1
    },
    {
@@ -1149,7 +1148,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 3.33
     },
-    "mag": 2080,
+    "mag": 1600,
     "count": 1
    },
    {
@@ -1157,7 +1156,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 28
     },
-    "mag": 390,
+    "mag": 300,
     "count": 3,
     "delay": [
      10,
@@ -1169,7 +1168,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 33.33
     },
-    "mag": 390,
+    "mag": 300,
     "count": 1
    },
    {
@@ -1177,7 +1176,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 36.67
     },
-    "mag": 520,
+    "mag": 400,
     "count": 1
    },
    {
@@ -1185,7 +1184,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 40
     },
-    "mag": 2080,
+    "mag": 1600,
     "count": 4,
     "delay": [
      23.33,
@@ -1197,7 +1196,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 20
     },
-    "mag": 2080,
+    "mag": 1600,
     "delay": [
      10,
      16.67
@@ -1215,7 +1214,7 @@ const COSMOS3_DATA=[
   "max": 10,
   "xp": 5200,
   "width": 4200,
-  "desc": "최대 5,200%",
+  "desc": "최대 4,000%",
   "source": "battlecats-db s03008-15",
   "rules": [
    {
@@ -1223,7 +1222,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 26.67
     },
-    "mag": 2080,
+    "mag": 1600,
     "count": 2,
     "delay": [
      13.33,
@@ -1235,7 +1234,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 10
     },
-    "mag": 325,
+    "mag": 250,
     "count": 5,
     "delay": [
      13.33,
@@ -1247,7 +1246,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 16.67
     },
-    "mag": 650,
+    "mag": 500,
     "count": 5,
     "delay": [
      16.67,
@@ -1259,7 +1258,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 20
     },
-    "mag": 5200,
+    "mag": 4000,
     "count": 8,
     "delay": [
      13.33,
@@ -1271,7 +1270,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 60
     },
-    "mag": 650,
+    "mag": 500,
     "count": 3,
     "delay": [
      20,
@@ -1290,7 +1289,7 @@ const COSMOS3_DATA=[
   "max": 10,
   "xp": 5500,
   "width": 4500,
-  "desc": "최대 2,080%",
+  "desc": "최대 1,600%",
   "source": "battlecats-db s03008-16",
   "rules": [
    {
@@ -1298,7 +1297,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 6.67
     },
-    "mag": 2080,
+    "mag": 1600,
     "delay": [
      13.33,
      20
@@ -1309,7 +1308,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 10
     },
-    "mag": 650,
+    "mag": 500,
     "count": 2,
     "delay": [
      50,
@@ -1321,7 +1320,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 26.67
     },
-    "mag": 325,
+    "mag": 250,
     "count": 1
    },
    {
@@ -1329,7 +1328,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 63.33
     },
-    "mag": 650,
+    "mag": 500,
     "count": 1
    }
   ]
@@ -1344,7 +1343,7 @@ const COSMOS3_DATA=[
   "max": 15,
   "xp": 5800,
   "width": 4500,
-  "desc": "최대 650%",
+  "desc": "최대 500%",
   "source": "battlecats-db s03008-17",
   "rules": [
    {
@@ -1352,7 +1351,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 650,
+    "mag": 500,
     "count": 1
    },
    {
@@ -1360,7 +1359,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 260,
+    "mag": 200,
     "delay": [
      6.67,
      13.33
@@ -1371,7 +1370,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 30
     },
-    "mag": 260,
+    "mag": 200,
     "delay": [
      30,
      33.33
@@ -1382,7 +1381,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 33.33
     },
-    "mag": 260,
+    "mag": 200,
     "delay": [
      30,
      33.33
@@ -1401,7 +1400,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 6.67
     },
-    "mag": 325,
+    "mag": 250,
     "count": 3,
     "delay": [
      33.33,
@@ -1413,7 +1412,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 30
     },
-    "mag": 650,
+    "mag": 500,
     "count": 1
    }
   ]
@@ -1428,7 +1427,7 @@ const COSMOS3_DATA=[
   "max": 10,
   "xp": 6100,
   "width": 5500,
-  "desc": "보스 대머리군 · 최대 5,200%",
+  "desc": "보스 대머리군 · 최대 4,000%",
   "source": "battlecats-db s03008-18",
   "rules": [
    {
@@ -1436,7 +1435,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 10
     },
-    "mag": 2080,
+    "mag": 1600,
     "count": 7,
     "delay": [
      16.67,
@@ -1448,7 +1447,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 10
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      3.33,
      10
@@ -1459,7 +1458,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 10
     },
-    "mag": 1300,
+    "mag": 1000,
     "count": 1,
     "boss": true
    },
@@ -1468,7 +1467,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 30
     },
-    "mag": 1040,
+    "mag": 800,
     "count": 1
    },
    {
@@ -1476,7 +1475,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 100
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      6.67,
      10
@@ -1502,7 +1501,7 @@ const COSMOS3_DATA=[
   "max": 10,
   "xp": 6400,
   "width": 3800,
-  "desc": "최대 650%",
+  "desc": "최대 500%",
   "source": "battlecats-db s03008-19",
   "rules": [
    {
@@ -1510,7 +1509,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 390,
+    "mag": 300,
     "count": 4,
     "delay": [
      13.33,
@@ -1522,7 +1521,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 36.67
     },
-    "mag": 650,
+    "mag": 500,
     "count": 3,
     "delay": [
      66.67,
@@ -1534,7 +1533,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 10
     },
-    "mag": 650,
+    "mag": 500,
     "count": 3,
     "delay": [
      13.33,
@@ -1546,7 +1545,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 16.67
     },
-    "mag": 650,
+    "mag": 500,
     "count": 8,
     "delay": [
      16.67,
@@ -1565,7 +1564,7 @@ const COSMOS3_DATA=[
   "max": 15,
   "xp": 6700,
   "width": 4500,
-  "desc": "보스 살의의 멍뭉이 · 최대 2,080%",
+  "desc": "보스 살의의 멍뭉이 · 최대 1,600%",
   "source": "battlecats-db s03008-20",
   "rules": [
    {
@@ -1573,7 +1572,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 0.07
     },
-    "mag": 2080,
+    "mag": 1600,
     "count": 1
    },
    {
@@ -1581,7 +1580,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 10
     },
-    "mag": 2080,
+    "mag": 1600,
     "delay": [
      20,
      20
@@ -1592,7 +1591,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 16.67
     },
-    "mag": 1040,
+    "mag": 800,
     "count": 2,
     "delay": [
      30,
@@ -1604,7 +1603,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 325,
+    "mag": 250,
     "firstDelay": 0.07,
     "count": 3,
     "delay": [
@@ -1617,7 +1616,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 325,
+    "mag": 250,
     "firstDelay": 0.07,
     "count": 1
    },
@@ -1626,7 +1625,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 780,
+    "mag": 600,
     "firstDelay": 0.07,
     "count": 2,
     "delay": [
@@ -1639,7 +1638,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 325,
+    "mag": 250,
     "firstDelay": 0.07,
     "count": 2,
     "delay": [
@@ -1652,7 +1651,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 13,
+    "mag": 10,
     "firstDelay": 16.67,
     "count": 1,
     "boss": true
@@ -1669,7 +1668,7 @@ const COSMOS3_DATA=[
   "max": 10,
   "xp": 7000,
   "width": 5000,
-  "desc": "최대 3,380%",
+  "desc": "최대 2,600%",
   "source": "battlecats-db s03008-21",
   "rules": [
    {
@@ -1677,7 +1676,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 3.33
     },
-    "mag": 3380,
+    "mag": 2600,
     "delay": [
      13.33,
      20
@@ -1688,7 +1687,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 6.67
     },
-    "mag": 2340,
+    "mag": 1800,
     "count": 3,
     "delay": [
      16.67,
@@ -1700,7 +1699,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 13.33
     },
-    "mag": 2080,
+    "mag": 1600,
     "count": 1
    },
    {
@@ -1716,7 +1715,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 18.67
     },
-    "mag": 650,
+    "mag": 500,
     "count": 1
    }
   ]
@@ -1731,7 +1730,7 @@ const COSMOS3_DATA=[
   "max": 10,
   "xp": 7300,
   "width": 3600,
-  "desc": "보스 미니스타 사이클론 · 최대 780%",
+  "desc": "보스 미니스타 사이클론 · 최대 600%",
   "source": "battlecats-db s03008-22",
   "rules": [
    {
@@ -1739,7 +1738,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 0.07
     },
-    "mag": 390,
+    "mag": 300,
     "count": 1
    },
    {
@@ -1747,7 +1746,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 23.33
     },
-    "mag": 390,
+    "mag": 300,
     "delay": [
      53.33,
      53.33
@@ -1758,7 +1757,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 46.67
     },
-    "mag": 260,
+    "mag": 200,
     "count": 1
    },
    {
@@ -1766,7 +1765,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 66.67
     },
-    "mag": 650,
+    "mag": 500,
     "delay": [
      20,
      20
@@ -1777,7 +1776,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 33.33
     },
-    "mag": 780,
+    "mag": 600,
     "count": 2,
     "delay": [
      26.67,
@@ -1789,7 +1788,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 390,
+    "mag": 300,
     "firstDelay": 0.07,
     "count": 2,
     "delay": [
@@ -1802,7 +1801,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 390,
+    "mag": 300,
     "firstDelay": 0.07,
     "count": 3,
     "delay": [
@@ -1832,7 +1831,7 @@ const COSMOS3_DATA=[
   "max": 20,
   "xp": 7600,
   "width": 4000,
-  "desc": "보스 루퍼좀씨 · 최대 2,340%",
+  "desc": "보스 루퍼좀씨 · 최대 1,800%",
   "source": "battlecats-db s03008-23",
   "rules": [
    {
@@ -1849,7 +1848,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 5
     },
-    "mag": 2340,
+    "mag": 1800,
     "delay": [
      6.67,
      10
@@ -1860,7 +1859,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 26.67
     },
-    "mag": 650,
+    "mag": 500,
     "count": 4,
     "delay": [
      13.33,
@@ -1879,7 +1878,7 @@ const COSMOS3_DATA=[
   "max": 10,
   "xp": 7900,
   "width": 3000,
-  "desc": "최대 3,380%",
+  "desc": "최대 2,600%",
   "source": "battlecats-db s03008-24",
   "rules": [
    {
@@ -1887,7 +1886,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 0.07
     },
-    "mag": 2340,
+    "mag": 1800,
     "count": 2,
     "delay": [
      6.67,
@@ -1899,7 +1898,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 3.33
     },
-    "mag": 1040,
+    "mag": 800,
     "count": 5,
     "delay": [
      10,
@@ -1911,7 +1910,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 10
     },
-    "mag": 2340,
+    "mag": 1800,
     "count": 5,
     "delay": [
      10,
@@ -1923,7 +1922,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 33.33
     },
-    "mag": 390,
+    "mag": 300,
     "count": 2,
     "delay": [
      13.33,
@@ -1935,7 +1934,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 36.67
     },
-    "mag": 910,
+    "mag": 700,
     "count": 3,
     "delay": [
      20,
@@ -1947,7 +1946,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 40
     },
-    "mag": 1040,
+    "mag": 800,
     "delay": [
      13.33,
      13.33
@@ -1958,7 +1957,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 43.33
     },
-    "mag": 2340,
+    "mag": 1800,
     "delay": [
      16.67,
      16.67
@@ -1969,7 +1968,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 50
     },
-    "mag": 1040,
+    "mag": 800,
     "delay": [
      3.33,
      3.33
@@ -1980,7 +1979,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 50
     },
-    "mag": 2340,
+    "mag": 1800,
     "count": 3,
     "delay": [
      3.33,
@@ -1992,7 +1991,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 53.33
     },
-    "mag": 2340,
+    "mag": 1800,
     "count": 6,
     "delay": [
      6.67,
@@ -2004,7 +2003,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 53.33
     },
-    "mag": 3380,
+    "mag": 2600,
     "count": 1
    }
   ]
@@ -2019,7 +2018,7 @@ const COSMOS3_DATA=[
   "max": 15,
   "xp": 8200,
   "width": 4000,
-  "desc": "최대 2,340%",
+  "desc": "최대 1,800%",
   "source": "battlecats-db s03008-25",
   "rules": [
    {
@@ -2027,7 +2026,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 23.33
     },
-    "mag": 1300,
+    "mag": 1000,
     "count": 1
    },
    {
@@ -2035,7 +2034,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 2340,
+    "mag": 1800,
     "delay": [
      10,
      20
@@ -2046,7 +2045,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 133.33
     },
-    "mag": 2340,
+    "mag": 1800,
     "delay": [
      20,
      40
@@ -2057,7 +2056,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 16.67
     },
-    "mag": 455,
+    "mag": 350,
     "count": 3,
     "delay": [
      46.67,
@@ -2069,7 +2068,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 33.33
     },
-    "mag": 910,
+    "mag": 700,
     "count": 3,
     "delay": [
      3.33,
@@ -2081,7 +2080,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 66.67
     },
-    "mag": 910,
+    "mag": 700,
     "count": 1
    },
    {
@@ -2089,7 +2088,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 93.33
     },
-    "mag": 910,
+    "mag": 700,
     "count": 4,
     "delay": [
      3.33,
@@ -2101,7 +2100,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 120
     },
-    "mag": 910,
+    "mag": 700,
     "count": 2,
     "delay": [
      6.67,
@@ -2120,7 +2119,7 @@ const COSMOS3_DATA=[
   "max": 4,
   "xp": 8500,
   "width": 3000,
-  "desc": "최대 910%",
+  "desc": "최대 700%",
   "source": "battlecats-db s03008-26",
   "rules": [
    {
@@ -2128,7 +2127,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 0.07
     },
-    "mag": 910,
+    "mag": 700,
     "count": 1
    },
    {
@@ -2144,7 +2143,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 3.33
     },
-    "mag": 910,
+    "mag": 700,
     "count": 2,
     "delay": [
      20,
@@ -2163,7 +2162,7 @@ const COSMOS3_DATA=[
   "max": 10,
   "xp": 8800,
   "width": 5000,
-  "desc": "최대 3,380%",
+  "desc": "최대 2,600%",
   "source": "battlecats-db s03008-27",
   "rules": [
    {
@@ -2171,7 +2170,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 5.33
     },
-    "mag": 1300,
+    "mag": 1000,
     "count": 1
    },
    {
@@ -2179,7 +2178,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 12
     },
-    "mag": 3380,
+    "mag": 2600,
     "count": 8,
     "delay": [
      24,
@@ -2191,7 +2190,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 0.07
     },
-    "mag": 3380,
+    "mag": 2600,
     "delay": [
      6.67,
      13.33
@@ -2202,7 +2201,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 0.67
     },
-    "mag": 2340,
+    "mag": 1800,
     "delay": [
      23.33,
      26.67
@@ -2213,7 +2212,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 60
     },
-    "mag": 2340,
+    "mag": 1800,
     "count": 1
    },
    {
@@ -2236,7 +2235,7 @@ const COSMOS3_DATA=[
   "max": 12,
   "xp": 9100,
   "width": 5000,
-  "desc": "최대 2,340%",
+  "desc": "최대 1,800%",
   "source": "battlecats-db s03008-28",
   "rules": [
    {
@@ -2244,7 +2243,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 20
     },
-    "mag": 910,
+    "mag": 700,
     "count": 1
    },
    {
@@ -2252,7 +2251,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 43.33
     },
-    "mag": 910,
+    "mag": 700,
     "count": 1
    },
    {
@@ -2260,7 +2259,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 63.33
     },
-    "mag": 910,
+    "mag": 700,
     "count": 1
    },
    {
@@ -2268,7 +2267,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 80
     },
-    "mag": 910,
+    "mag": 700,
     "count": 1
    },
    {
@@ -2276,7 +2275,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 93.33
     },
-    "mag": 910,
+    "mag": 700,
     "count": 1
    },
    {
@@ -2284,7 +2283,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 33.33
     },
-    "mag": 455,
+    "mag": 350,
     "count": 3,
     "delay": [
      26.67,
@@ -2296,7 +2295,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 2340,
+    "mag": 1800,
     "delay": [
      13.33,
      20
@@ -2307,7 +2306,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 6.67
     },
-    "mag": 2340,
+    "mag": 1800,
     "delay": [
      20,
      30
@@ -2333,7 +2332,7 @@ const COSMOS3_DATA=[
   "max": 10,
   "xp": 9400,
   "width": 4500,
-  "desc": "최대 910%",
+  "desc": "최대 700%",
   "source": "battlecats-db s03008-29",
   "rules": [
    {
@@ -2341,7 +2340,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 13.33
     },
-    "mag": 910,
+    "mag": 700,
     "count": 1
    },
    {
@@ -2349,7 +2348,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 40
     },
-    "mag": 910,
+    "mag": 700,
     "count": 1
    },
    {
@@ -2357,7 +2356,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 60
     },
-    "mag": 910,
+    "mag": 700,
     "count": 3,
     "delay": [
      20,
@@ -2369,7 +2368,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 0.07
     },
-    "mag": 390,
+    "mag": 300,
     "count": 4,
     "delay": [
      40,
@@ -2381,7 +2380,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 3.33
     },
-    "mag": 390,
+    "mag": 300,
     "count": 10,
     "delay": [
      3.33,
@@ -2393,7 +2392,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 6.67
     },
-    "mag": 390,
+    "mag": 300,
     "count": 15,
     "delay": [
      5,
@@ -2405,7 +2404,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 120
     },
-    "mag": 390,
+    "mag": 300,
     "delay": [
      6.67,
      13.33
@@ -2423,7 +2422,7 @@ const COSMOS3_DATA=[
   "max": 12,
   "xp": 9700,
   "width": 4000,
-  "desc": "보스 미니스타 사이클론 · 최대 2,340%",
+  "desc": "보스 미니스타 사이클론 · 최대 1,800%",
   "source": "battlecats-db s03008-30",
   "rules": [
    {
@@ -2431,7 +2430,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 20
     },
-    "mag": 910,
+    "mag": 700,
     "count": 1
    },
    {
@@ -2439,7 +2438,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 36.67
     },
-    "mag": 910,
+    "mag": 700,
     "count": 1
    },
    {
@@ -2447,7 +2446,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 2340,
+    "mag": 1800,
     "delay": [
      6.67,
      13.33
@@ -2458,7 +2457,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 5
     },
-    "mag": 2340,
+    "mag": 1800,
     "delay": [
      13.33,
      26.67
@@ -2469,7 +2468,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 910,
+    "mag": 700,
     "count": 3,
     "delay": [
      3.33,
@@ -2481,7 +2480,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 910,
+    "mag": 700,
     "count": 2,
     "delay": [
      63.33,
@@ -2493,7 +2492,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 910,
+    "mag": 700,
     "delay": [
      63.33,
      66.67
@@ -2504,7 +2503,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 910,
+    "mag": 700,
     "count": 2,
     "delay": [
      63.33,
@@ -2516,7 +2515,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 910,
+    "mag": 700,
     "count": 2,
     "delay": [
      63.33,
@@ -2544,7 +2543,7 @@ const COSMOS3_DATA=[
   "max": 15,
   "xp": 10000,
   "width": 5200,
-  "desc": "최대 5,200%",
+  "desc": "최대 4,000%",
   "source": "battlecats-db s03008-31",
   "rules": [
    {
@@ -2552,7 +2551,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 10
     },
-    "mag": 2340,
+    "mag": 1800,
     "count": 10,
     "delay": [
      23.33,
@@ -2564,7 +2563,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 13.33
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      10,
      16.67
@@ -2575,7 +2574,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 455,
+    "mag": 350,
     "count": 2,
     "delay": [
      20,
@@ -2587,7 +2586,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 40
     },
-    "mag": 455,
+    "mag": 350,
     "count": 3,
     "delay": [
      16.67,
@@ -2607,7 +2606,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 10
     },
-    "mag": 2340,
+    "mag": 1800,
     "count": 1
    },
    {
@@ -2615,7 +2614,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 30
     },
-    "mag": 2340,
+    "mag": 1800,
     "count": 1
    },
    {
@@ -2623,7 +2622,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 73.33
     },
-    "mag": 2340,
+    "mag": 1800,
     "count": 1
    }
   ]
@@ -2638,7 +2637,7 @@ const COSMOS3_DATA=[
   "max": 9,
   "xp": 10300,
   "width": 4800,
-  "desc": "보스 샤이 보어 · 최대 3,380%",
+  "desc": "보스 샤이 보어 · 최대 2,600%",
   "source": "battlecats-db s03008-32",
   "rules": [
    {
@@ -2646,7 +2645,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 3380,
+    "mag": 2600,
     "count": 5,
     "delay": [
      20,
@@ -2658,7 +2657,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 3380,
+    "mag": 2600,
     "count": 3,
     "delay": [
      26.67,
@@ -2670,7 +2669,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 3380,
+    "mag": 2600,
     "delay": [
      10,
      16.67
@@ -2681,7 +2680,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 20
     },
-    "mag": 390,
+    "mag": 300,
     "delay": [
      13.33,
      20
@@ -2692,7 +2691,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 390,
+    "mag": 300,
     "count": 15,
     "delay": [
      6.67,
@@ -2704,7 +2703,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 3380,
+    "mag": 2600,
     "count": 5,
     "delay": [
      33.33,
@@ -2716,7 +2715,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 390,
+    "mag": 300,
     "count": 1,
     "boss": true
    }
@@ -2732,7 +2731,7 @@ const COSMOS3_DATA=[
   "max": 10,
   "xp": 10600,
   "width": 3200,
-  "desc": "최대 3,120%",
+  "desc": "최대 2,400%",
   "source": "battlecats-db s03008-33",
   "rules": [
    {
@@ -2740,7 +2739,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 50
     },
-    "mag": 390,
+    "mag": 300,
     "count": 1
    },
    {
@@ -2748,7 +2747,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 0.07
     },
-    "mag": 1430,
+    "mag": 1100,
     "count": 9,
     "delay": [
      20,
@@ -2768,7 +2767,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 13.33
     },
-    "mag": 3120,
+    "mag": 2400,
     "count": 1
    },
    {
@@ -2776,7 +2775,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 26.67
     },
-    "mag": 1040,
+    "mag": 800,
     "count": 3,
     "delay": [
      56.67,
@@ -2795,7 +2794,7 @@ const COSMOS3_DATA=[
   "max": 10,
   "xp": 10900,
   "width": 4000,
-  "desc": "보스 쿠만츄 · 최대 2,340%",
+  "desc": "보스 쿠만츄 · 최대 1,800%",
   "source": "battlecats-db s03008-34",
   "rules": [
    {
@@ -2803,7 +2802,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 0.07
     },
-    "mag": 2340,
+    "mag": 1800,
     "count": 1
    },
    {
@@ -2811,7 +2810,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 40
     },
-    "mag": 1430,
+    "mag": 1100,
     "delay": [
      26.67,
      36.67
@@ -2822,7 +2821,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 20
     },
-    "mag": 1430,
+    "mag": 1100,
     "count": 1
    },
    {
@@ -2830,7 +2829,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 1430,
+    "mag": 1100,
     "firstDelay": 0.07,
     "count": 5,
     "delay": [
@@ -2843,7 +2842,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 715,
+    "mag": 550,
     "firstDelay": 0.07,
     "count": 1
    },
@@ -2852,7 +2851,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 2340,
+    "mag": 1800,
     "firstDelay": 0.07,
     "count": 1,
     "boss": true
@@ -2869,7 +2868,7 @@ const COSMOS3_DATA=[
   "max": 15,
   "xp": 11200,
   "width": 5500,
-  "desc": "보스 파괴생물 쿠오리넨 · 최대 2,340%",
+  "desc": "보스 파괴생물 쿠오리넨 · 최대 1,800%",
   "source": "battlecats-db s03008-35",
   "rules": [
    {
@@ -2889,7 +2888,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 0.67
     },
-    "mag": 2080,
+    "mag": 1600,
     "count": 1,
     "boss": true
    },
@@ -2898,7 +2897,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 6.67
     },
-    "mag": 1430,
+    "mag": 1100,
     "delay": [
      20,
      26.67
@@ -2909,7 +2908,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 13.33
     },
-    "mag": 2340,
+    "mag": 1800,
     "count": 1
    }
   ]
@@ -2924,7 +2923,7 @@ const COSMOS3_DATA=[
   "max": 10,
   "xp": 11500,
   "width": 4400,
-  "desc": "보스 불칸 보어 · 최대 2,340%",
+  "desc": "보스 불칸 보어 · 최대 1,800%",
   "source": "battlecats-db s03008-36",
   "rules": [
    {
@@ -2932,7 +2931,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 6.67
     },
-    "mag": 1040,
+    "mag": 800,
     "count": 4,
     "delay": [
      16.67,
@@ -2944,7 +2943,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 53.33
     },
-    "mag": 1040,
+    "mag": 800,
     "count": 1,
     "boss": true
    },
@@ -2953,7 +2952,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 2340,
+    "mag": 1800,
     "count": 3,
     "delay": [
      24,
@@ -2972,7 +2971,7 @@ const COSMOS3_DATA=[
   "max": 10,
   "xp": 11800,
   "width": 4800,
-  "desc": "보스 엄마빠옹 · 최대 1,430%",
+  "desc": "보스 엄마빠옹 · 최대 1,100%",
   "source": "battlecats-db s03008-37",
   "rules": [
    {
@@ -2980,7 +2979,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 3.33
     },
-    "mag": 390,
+    "mag": 300,
     "count": 1
    },
    {
@@ -2988,7 +2987,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 13.33
     },
-    "mag": 1430,
+    "mag": 1100,
     "count": 1
    },
    {
@@ -2996,7 +2995,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 1430,
+    "mag": 1100,
     "count": 3,
     "delay": [
      23.33,
@@ -3008,7 +3007,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 390,
+    "mag": 300,
     "count": 1
    },
    {
@@ -3016,7 +3015,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 1430,
+    "mag": 1100,
     "count": 2,
     "delay": [
      30,
@@ -3028,7 +3027,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 1430,
+    "mag": 1100,
     "count": 1,
     "boss": true
    }
@@ -3044,7 +3043,7 @@ const COSMOS3_DATA=[
   "max": 10,
   "xp": 12100,
   "width": 4200,
-  "desc": "보스 캡틴 모구 · 최대 3,900%",
+  "desc": "보스 캡틴 모구 · 최대 3,000%",
   "source": "battlecats-db s03008-38",
   "rules": [
    {
@@ -3052,7 +3051,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 6.67
     },
-    "mag": 3900,
+    "mag": 3000,
     "count": 2,
     "delay": [
      40,
@@ -3064,7 +3063,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 33.33
     },
-    "mag": 1040,
+    "mag": 800,
     "count": 2,
     "delay": [
      40,
@@ -3076,7 +3075,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 3900,
+    "mag": 3000,
     "count": 3,
     "delay": [
      33.33,
@@ -3088,7 +3087,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 1040,
+    "mag": 800,
     "count": 2,
     "delay": [
      36.67,
@@ -3100,7 +3099,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 390,
+    "mag": 300,
     "count": 1
    },
    {
@@ -3108,7 +3107,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 1430,
+    "mag": 1100,
     "count": 1,
     "boss": true
    }
@@ -3124,7 +3123,7 @@ const COSMOS3_DATA=[
   "max": 20,
   "xp": 12400,
   "width": 5200,
-  "desc": "최대 1,040%",
+  "desc": "최대 800%",
   "source": "battlecats-db s03008-39",
   "rules": [
    {
@@ -3132,7 +3131,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 6.67
     },
-    "mag": 1040,
+    "mag": 800,
     "delay": [
      30,
      33.33
@@ -3151,7 +3150,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 33.33
     },
-    "mag": 1040,
+    "mag": 800,
     "count": 3,
     "delay": [
      23.33,
@@ -3163,7 +3162,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 30
     },
-    "mag": 715,
+    "mag": 550,
     "count": 1
    }
   ]
@@ -3178,7 +3177,7 @@ const COSMOS3_DATA=[
   "max": 20,
   "xp": 12700,
   "width": 5500,
-  "desc": "보스 미니스타 사이클론 · 최대 3,380%",
+  "desc": "보스 미니스타 사이클론 · 최대 2,600%",
   "source": "battlecats-db s03008-40",
   "rules": [
    {
@@ -3186,7 +3185,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 6.67
     },
-    "mag": 390,
+    "mag": 300,
     "count": 1
    },
    {
@@ -3194,7 +3193,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 13.33
     },
-    "mag": 2340,
+    "mag": 1800,
     "count": 3,
     "delay": [
      23.33,
@@ -3206,7 +3205,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 13.33
     },
-    "mag": 2340,
+    "mag": 1800,
     "count": 1
    },
    {
@@ -3214,7 +3213,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 23.33
     },
-    "mag": 3380,
+    "mag": 2600,
     "delay": [
      20,
      26.67
@@ -3225,7 +3224,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 23.33
     },
-    "mag": 3380,
+    "mag": 2600,
     "delay": [
      20,
      26.67
@@ -3236,7 +3235,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 26.67
     },
-    "mag": 390,
+    "mag": 300,
     "count": 1
    },
    {
@@ -3244,7 +3243,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 66.67
     },
-    "mag": 390,
+    "mag": 300,
     "delay": [
      13.33,
      20
@@ -3255,7 +3254,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 2340,
+    "mag": 1800,
     "count": 1
    },
    {
@@ -3263,7 +3262,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 2340,
+    "mag": 1800,
     "count": 1
    },
    {
@@ -3271,7 +3270,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 390,
+    "mag": 300,
     "count": 1
    },
    {
@@ -3295,7 +3294,7 @@ const COSMOS3_DATA=[
   "max": 10,
   "xp": 13000,
   "width": 5200,
-  "desc": "보스 대머리군 · 최대 2,340%",
+  "desc": "보스 대머리군 · 최대 1,800%",
   "source": "battlecats-db s03008-41",
   "rules": [
    {
@@ -3303,7 +3302,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 6.67
     },
-    "mag": 2340,
+    "mag": 1800,
     "count": 1
    },
    {
@@ -3311,7 +3310,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 43.33
     },
-    "mag": 1430,
+    "mag": 1100,
     "count": 1
    },
    {
@@ -3319,7 +3318,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 3.33
     },
-    "mag": 2340,
+    "mag": 1800,
     "count": 1
    },
    {
@@ -3327,7 +3326,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 1430,
+    "mag": 1100,
     "count": 3,
     "delay": [
      6.67,
@@ -3339,7 +3338,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 1430,
+    "mag": 1100,
     "count": 4,
     "delay": [
      10,
@@ -3351,7 +3350,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 1300,
+    "mag": 1000,
     "count": 1,
     "boss": true
    }
@@ -3367,7 +3366,7 @@ const COSMOS3_DATA=[
   "max": 10,
   "xp": 13300,
   "width": 4400,
-  "desc": "최대 5,200%",
+  "desc": "최대 4,000%",
   "source": "battlecats-db s03008-42",
   "rules": [
    {
@@ -3375,7 +3374,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      30,
      40
@@ -3386,7 +3385,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 10
     },
-    "mag": 5200,
+    "mag": 4000,
     "count": 2,
     "delay": [
      3.33,
@@ -3398,7 +3397,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 20
     },
-    "mag": 390,
+    "mag": 300,
     "count": 2,
     "delay": [
      10,
@@ -3410,7 +3409,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 30
     },
-    "mag": 5200,
+    "mag": 4000,
     "count": 10,
     "delay": [
      13.33,
@@ -3422,7 +3421,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 46.67
     },
-    "mag": 390,
+    "mag": 300,
     "count": 3,
     "delay": [
      20,
@@ -3434,7 +3433,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 66.67
     },
-    "mag": 260,
+    "mag": 200,
     "count": 1
    },
    {
@@ -3442,7 +3441,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 83.33
     },
-    "mag": 2990,
+    "mag": 2300,
     "count": 2,
     "delay": [
      10,
@@ -3454,7 +3453,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 390,
+    "mag": 300,
     "count": 1
    },
    {
@@ -3462,7 +3461,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 2990,
+    "mag": 2300,
     "count": 1
    }
   ]
@@ -3477,7 +3476,7 @@ const COSMOS3_DATA=[
   "max": 40,
   "xp": 13600,
   "width": 5000,
-  "desc": "최대 5,200%",
+  "desc": "최대 4,000%",
   "source": "battlecats-db s03008-43",
   "rules": [
    {
@@ -3485,7 +3484,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 2990,
+    "mag": 2300,
     "count": 10,
     "delay": [
      20,
@@ -3497,7 +3496,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      0.07,
      4
@@ -3508,7 +3507,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      0.07,
      4
@@ -3519,7 +3518,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 2340,
+    "mag": 1800,
     "count": 10,
     "delay": [
      4,
@@ -3531,7 +3530,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      0.07,
      4
@@ -3542,7 +3541,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 16.67
     },
-    "mag": 390,
+    "mag": 300,
     "count": 10,
     "delay": [
      4,
@@ -3554,7 +3553,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 16.67
     },
-    "mag": 1040,
+    "mag": 800,
     "count": 10,
     "delay": [
      4,
@@ -3578,7 +3577,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 390,
+    "mag": 300,
     "count": 10,
     "delay": [
      6.67,
@@ -3597,7 +3596,7 @@ const COSMOS3_DATA=[
   "max": 10,
   "xp": 13900,
   "width": 5200,
-  "desc": "최대 3,900%",
+  "desc": "최대 3,000%",
   "source": "battlecats-db s03008-44",
   "rules": [
    {
@@ -3605,7 +3604,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 3900,
+    "mag": 3000,
     "delay": [
      16.67,
      36.67
@@ -3616,7 +3615,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 20
     },
-    "mag": 1560,
+    "mag": 1200,
     "count": 3,
     "delay": [
      23.33,
@@ -3628,7 +3627,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 93.33
     },
-    "mag": 390,
+    "mag": 300,
     "count": 1
    }
   ]
@@ -3643,7 +3642,7 @@ const COSMOS3_DATA=[
   "max": 20,
   "xp": 13900,
   "width": 4000,
-  "desc": "최대 5,200%",
+  "desc": "최대 4,000%",
   "source": "battlecats-db s03008-45",
   "rules": [
    {
@@ -3651,7 +3650,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 1.33
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      13.33,
      16.67
@@ -3662,7 +3661,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 3.33
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      13.33,
      16.67
@@ -3673,7 +3672,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 5.33
     },
-    "mag": 1560,
+    "mag": 1200,
     "count": 3,
     "delay": [
      26.67,
@@ -3685,7 +3684,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 6.67
     },
-    "mag": 390,
+    "mag": 300,
     "count": 5,
     "delay": [
      26.67,
@@ -3697,7 +3696,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 1
     },
-    "mag": 390,
+    "mag": 300,
     "count": 2,
     "delay": [
      4,
@@ -3709,7 +3708,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 46.67
     },
-    "mag": 2990,
+    "mag": 2300,
     "count": 1
    },
    {
@@ -3717,7 +3716,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 48
     },
-    "mag": 1560,
+    "mag": 1200,
     "count": 3,
     "delay": [
      13.33,
@@ -3729,7 +3728,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 50
     },
-    "mag": 2990,
+    "mag": 2300,
     "count": 3,
     "delay": [
      16.67,
@@ -3741,7 +3740,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 63.33
     },
-    "mag": 390,
+    "mag": 300,
     "count": 1
    },
    {
@@ -3749,7 +3748,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 66.67
     },
-    "mag": 390,
+    "mag": 300,
     "count": 1
    }
   ]
@@ -3764,7 +3763,7 @@ const COSMOS3_DATA=[
   "max": 10,
   "xp": 13900,
   "width": 5000,
-  "desc": "보스 엘리트 에이리뭉 · 최대 2,990%",
+  "desc": "보스 엘리트 에이리뭉 · 최대 2,300%",
   "source": "battlecats-db s03008-46",
   "rules": [
    {
@@ -3772,7 +3771,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 5
     },
-    "mag": 1040,
+    "mag": 800,
     "count": 3,
     "delay": [
      2,
@@ -3784,7 +3783,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 26.67
     },
-    "mag": 390,
+    "mag": 300,
     "count": 1
    },
    {
@@ -3792,7 +3791,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 13.33
     },
-    "mag": 2990,
+    "mag": 2300,
     "count": 2,
     "delay": [
      16.67,
@@ -3804,7 +3803,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 16.67
     },
-    "mag": 390,
+    "mag": 300,
     "count": 1
    },
    {
@@ -3812,7 +3811,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 40
     },
-    "mag": 1040,
+    "mag": 800,
     "count": 3,
     "delay": [
      2,
@@ -3824,7 +3823,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 58.33
     },
-    "mag": 390,
+    "mag": 300,
     "count": 1
    },
    {
@@ -3832,7 +3831,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 1040,
+    "mag": 800,
     "delay": [
      6.67,
      6.67
@@ -3843,7 +3842,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 390,
+    "mag": 300,
     "delay": [
      13.33,
      26.67
@@ -3862,7 +3861,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 2990,
+    "mag": 2300,
     "firstDelay": 0.07,
     "count": 1
    },
@@ -3871,7 +3870,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 2990,
+    "mag": 2300,
     "firstDelay": 0.07,
     "delay": [
      20,
@@ -3883,7 +3882,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 1300,
+    "mag": 1000,
     "count": 3,
     "delay": [
      36.67,
@@ -3895,7 +3894,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 13,
+    "mag": 10,
     "firstDelay": 0.07,
     "count": 1,
     "boss": true
@@ -3912,7 +3911,7 @@ const COSMOS3_DATA=[
   "max": 9,
   "xp": 14200,
   "width": 5000,
-  "desc": "보스 엘리트 에이리뭉 · 최대 3,250%",
+  "desc": "보스 엘리트 에이리뭉 · 최대 2,500%",
   "source": "battlecats-db s03008-47",
   "rules": [
    {
@@ -3920,7 +3919,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 10
     },
-    "mag": 3250,
+    "mag": 2500,
     "count": 5,
     "delay": [
      6.67,
@@ -3932,7 +3931,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 33.33
     },
-    "mag": 3250,
+    "mag": 2500,
     "count": 1
    },
    {
@@ -3940,7 +3939,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 40
     },
-    "mag": 3250,
+    "mag": 2500,
     "count": 1
    },
    {
@@ -3948,7 +3947,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 66.67
     },
-    "mag": 3250,
+    "mag": 2500,
     "count": 1
    },
    {
@@ -3956,7 +3955,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 100
     },
-    "mag": 3250,
+    "mag": 2500,
     "count": 4,
     "delay": [
      33.33,
@@ -3994,7 +3993,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 13,
+    "mag": 10,
     "count": 1,
     "boss": true
    }
@@ -4010,7 +4009,7 @@ const COSMOS3_DATA=[
   "max": 12,
   "xp": 14500,
   "width": 6000,
-  "desc": "보스 파이널 기가 그랜드 신 · 최대 3,250%",
+  "desc": "보스 파이널 기가 그랜드 신 · 최대 2,500%",
   "source": "battlecats-db s03008-48",
   "rules": [
    {
@@ -4026,7 +4025,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 23.33
     },
-    "mag": 1690,
+    "mag": 1300,
     "count": 1
    },
    {
@@ -4034,7 +4033,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 26.67
     },
-    "mag": 3250,
+    "mag": 2500,
     "count": 4,
     "delay": [
      3.33,
@@ -4046,7 +4045,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 31.67
     },
-    "mag": 3250,
+    "mag": 2500,
     "count": 2,
     "delay": [
      6.67,
@@ -4058,7 +4057,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 53.33
     },
-    "mag": 3250,
+    "mag": 2500,
     "count": 3,
     "delay": [
      6.67,
@@ -4070,7 +4069,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 80
     },
-    "mag": 1690,
+    "mag": 1300,
     "count": 1
    },
    {
@@ -4086,7 +4085,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 123.33
     },
-    "mag": 3250,
+    "mag": 2500,
     "count": 5,
     "delay": [
      20,
@@ -4110,7 +4109,7 @@ const COSMOS3_DATA=[
     "at": {
      "t": 153.33
     },
-    "mag": 1690,
+    "mag": 1300,
     "count": 2,
     "delay": [
      20,
@@ -4122,7 +4121,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 90
     },
-    "mag": 3250,
+    "mag": 2500,
     "firstDelay": 0.07,
     "count": 1
    },
@@ -4131,7 +4130,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 80
     },
-    "mag": 3250,
+    "mag": 2500,
     "firstDelay": 0.07,
     "count": 1
    },
@@ -4140,7 +4139,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 70
     },
-    "mag": 3250,
+    "mag": 2500,
     "firstDelay": 0.07,
     "count": 1
    },
@@ -4149,7 +4148,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 60
     },
-    "mag": 3250,
+    "mag": 2500,
     "firstDelay": 0.07,
     "count": 1
    },
@@ -4158,7 +4157,7 @@ const COSMOS3_DATA=[
     "at": {
      "hp": 50
     },
-    "mag": 3250,
+    "mag": 2500,
     "firstDelay": 0.07,
     "count": 1
    }

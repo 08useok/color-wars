@@ -1,5 +1,5 @@
 // 신레전드 0~12장 (8.0). scripts/build-true-legend.cjs가 만든다. 출처: battlecats-db s13000~s13012. 한국어 이름은 임시 번역.
-// 기존 적의 출현 배율은 원작 ×1.3(새 스테이지 난이도), 8.0 신규 13종은 능력치에 이미 ×1.3. 900초 제한 적(간판 아가씨)은 이전 장처럼 뺐다.
+// 출현 배율은 원작 그대로. 900초 제한 적(간판 아가씨)은 이전 장처럼 뺐다.
 const TRUELEGEND_DATA=[
  {
   "sub": 0,
@@ -119,7 +119,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      6,
      10
@@ -130,7 +130,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 40
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      6,
      10
@@ -141,7 +141,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 5200,
+    "mag": 4000,
     "count": 4,
     "delay": [
      10.666666666666666,
@@ -153,7 +153,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 80
     },
-    "mag": 5200,
+    "mag": 4000,
     "count": 4,
     "delay": [
      2,
@@ -194,7 +194,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      6,
      10
@@ -205,7 +205,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      6,
      10
@@ -216,7 +216,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 30
     },
-    "mag": 390,
+    "mag": 300,
     "count": 1
    }
   ]
@@ -267,7 +267,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      3,
      20
@@ -278,7 +278,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      3,
      20
@@ -289,7 +289,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 20
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      3,
      20
@@ -300,7 +300,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 3120,
+    "mag": 2400,
     "delay": [
      20,
      40
@@ -311,7 +311,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 40
     },
-    "mag": 3120,
+    "mag": 2400,
     "count": 1
    },
    {
@@ -319,7 +319,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 80
     },
-    "mag": 3120,
+    "mag": 2400,
     "count": 1
    },
    {
@@ -327,7 +327,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 116.66666666666667
     },
-    "mag": 3120,
+    "mag": 2400,
     "count": 1
    }
   ]
@@ -362,7 +362,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      3,
      20
@@ -373,7 +373,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 40
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      3,
      20
@@ -384,7 +384,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      0.6666666666666666,
      1.3333333333333333
@@ -395,7 +395,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 390,
+    "mag": 300,
     "delay": [
      6.666666666666667,
      13.333333333333334
@@ -406,7 +406,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 3120,
+    "mag": 2400,
     "count": 1,
     "boss": true
    }
@@ -431,7 +431,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 10
     },
-    "mag": 3640,
+    "mag": 2800,
     "count": 1,
     "boss": true
    },
@@ -464,7 +464,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      2,
      6
@@ -475,7 +475,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 20
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      2,
      6
@@ -504,7 +504,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 20
     },
-    "mag": 650,
+    "mag": 500,
     "delay": [
      6,
      20
@@ -515,7 +515,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      3,
      20
@@ -526,7 +526,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      3,
      20
@@ -537,7 +537,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 195,
+    "mag": 150,
     "count": 1
    },
    {
@@ -545,7 +545,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 195,
+    "mag": 150,
     "count": 1
    },
    {
@@ -553,7 +553,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 195,
+    "mag": 150,
     "count": 1
    },
    {
@@ -561,7 +561,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 130,
+    "mag": 100,
     "count": 1,
     "boss": true
    }
@@ -588,7 +588,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 3120,
+    "mag": 2400,
     "delay": [
      6.666666666666667,
      10
@@ -599,7 +599,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 20
     },
-    "mag": 3120,
+    "mag": 2400,
     "delay": [
      6.666666666666667,
      10
@@ -610,7 +610,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 1560,
+    "mag": 1200,
     "delay": [
      13.333333333333334,
      20
@@ -621,7 +621,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 40
     },
-    "mag": 390,
+    "mag": 300,
     "count": 3,
     "delay": [
      40,
@@ -649,7 +649,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      6,
      12
@@ -660,7 +660,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      6,
      12
@@ -682,7 +682,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 650,
+    "mag": 500,
     "delay": [
      8,
      16
@@ -693,7 +693,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      8,
      16
@@ -724,7 +724,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 130,
+    "mag": 100,
     "count": 1,
     "boss": true
    }
@@ -751,7 +751,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 390,
+    "mag": 300,
     "delay": [
      12,
      20
@@ -762,7 +762,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 390,
+    "mag": 300,
     "delay": [
      12,
      20
@@ -773,7 +773,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 60
     },
-    "mag": 390,
+    "mag": 300,
     "count": 3,
     "delay": [
      40,
@@ -785,7 +785,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 40
     },
-    "mag": 1560,
+    "mag": 1200,
     "count": 3,
     "delay": [
      53.333333333333336,
@@ -797,7 +797,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 40.333333333333336
     },
-    "mag": 1560,
+    "mag": 1200,
     "count": 3,
     "delay": [
      53.333333333333336,
@@ -809,7 +809,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 40.666666666666664
     },
-    "mag": 1560,
+    "mag": 1200,
     "count": 3,
     "delay": [
      53.333333333333336,
@@ -821,7 +821,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 42.666666666666664
     },
-    "mag": 1560,
+    "mag": 1200,
     "count": 3,
     "delay": [
      53.333333333333336,
@@ -849,7 +849,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      4,
      8
@@ -860,7 +860,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 20
     },
-    "mag": 1560,
+    "mag": 1200,
     "count": 3,
     "delay": [
      0.6666666666666666,
@@ -872,7 +872,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 1040,
+    "mag": 800,
     "count": 1
    },
    {
@@ -880,7 +880,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 1040,
+    "mag": 800,
     "count": 1
    },
    {
@@ -888,7 +888,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 1040,
+    "mag": 800,
     "count": 1
    },
    {
@@ -896,7 +896,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 1040,
+    "mag": 800,
     "delay": [
      20,
      40
@@ -907,7 +907,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 195,
+    "mag": 150,
     "count": 1,
     "boss": true
    },
@@ -916,7 +916,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 390,
+    "mag": 300,
     "count": 1,
     "boss": true
    }
@@ -1056,7 +1056,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 20
     },
-    "mag": 260,
+    "mag": 200,
     "count": 1
    },
    {
@@ -1064,7 +1064,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 60
     },
-    "mag": 780,
+    "mag": 600,
     "count": 1
    },
    {
@@ -1072,7 +1072,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 93.33333333333333
     },
-    "mag": 260,
+    "mag": 200,
     "count": 1
    },
    {
@@ -1080,7 +1080,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 120
     },
-    "mag": 780,
+    "mag": 600,
     "count": 1
    },
    {
@@ -1088,7 +1088,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 140
     },
-    "mag": 260,
+    "mag": 200,
     "count": 1
    }
   ]
@@ -1125,7 +1125,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      3,
      20
@@ -1136,7 +1136,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 13.333333333333334
     },
-    "mag": 130,
+    "mag": 100,
     "delay": [
      6,
      12
@@ -1147,7 +1147,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 4
     },
-    "mag": 390,
+    "mag": 300,
     "count": 1
    },
    {
@@ -1155,7 +1155,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 10
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      6,
      21.333333333333332
@@ -1166,7 +1166,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 53.333333333333336
     },
-    "mag": 260,
+    "mag": 200,
     "count": 5,
     "delay": [
      12,
@@ -1196,7 +1196,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 390,
+    "mag": 300,
     "delay": [
      10,
      30
@@ -1207,7 +1207,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 60
     },
-    "mag": 390,
+    "mag": 300,
     "delay": [
      20,
      40
@@ -1218,7 +1218,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 20
     },
-    "mag": 325,
+    "mag": 250,
     "count": 1
    },
    {
@@ -1226,7 +1226,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 390,
+    "mag": 300,
     "delay": [
      40,
      80
@@ -1237,7 +1237,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 40
     },
-    "mag": 390,
+    "mag": 300,
     "delay": [
      60,
      80
@@ -1264,7 +1264,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 650,
+    "mag": 500,
     "count": 1
    },
    {
@@ -1272,7 +1272,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 20
     },
-    "mag": 650,
+    "mag": 500,
     "count": 1
    },
    {
@@ -1280,7 +1280,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 21.333333333333332
     },
-    "mag": 650,
+    "mag": 500,
     "count": 1
    },
    {
@@ -1288,7 +1288,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 23.333333333333332
     },
-    "mag": 650,
+    "mag": 500,
     "count": 1
    },
    {
@@ -1296,7 +1296,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 40
     },
-    "mag": 260,
+    "mag": 200,
     "delay": [
      6.666666666666667,
      20
@@ -1307,7 +1307,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 60
     },
-    "mag": 650,
+    "mag": 500,
     "delay": [
      6.666666666666667,
      20
@@ -1318,7 +1318,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 650,
+    "mag": 500,
     "delay": [
      26.666666666666668,
      33.333333333333336
@@ -1329,7 +1329,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 390,
+    "mag": 300,
     "count": 5,
     "delay": [
      13.333333333333334,
@@ -1341,7 +1341,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 390,
+    "mag": 300,
     "count": 10,
     "delay": [
      6.666666666666667,
@@ -1353,7 +1353,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 520,
+    "mag": 400,
     "count": 3,
     "delay": [
      13.333333333333334,
@@ -1365,7 +1365,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 130,
+    "mag": 100,
     "count": 1,
     "boss": true
    }
@@ -1392,7 +1392,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 6.666666666666667
     },
-    "mag": 780,
+    "mag": 600,
     "count": 1
    },
    {
@@ -1408,7 +1408,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 80
     },
-    "mag": 780,
+    "mag": 600,
     "count": 1
    },
    {
@@ -1424,7 +1424,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 146.66666666666666
     },
-    "mag": 195,
+    "mag": 150,
     "count": 1
    },
    {
@@ -1432,7 +1432,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 6.666666666666667
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      3.3333333333333335,
      10
@@ -1470,7 +1470,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      6,
      20
@@ -1481,7 +1481,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 5200,
+    "mag": 4000,
     "count": 100,
     "delay": [
      0.06666666666666667,
@@ -1505,7 +1505,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 780,
+    "mag": 600,
     "count": 2,
     "delay": [
      19.333333333333332,
@@ -1517,7 +1517,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 780,
+    "mag": 600,
     "count": 2,
     "delay": [
      19.333333333333332,
@@ -1529,7 +1529,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 780,
+    "mag": 600,
     "count": 2,
     "delay": [
      19.333333333333332,
@@ -1541,7 +1541,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 780,
+    "mag": 600,
     "count": 1,
     "boss": true
    }
@@ -1566,7 +1566,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      6.666666666666667,
      10
@@ -1577,7 +1577,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 6.666666666666667
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      10,
      16.666666666666668
@@ -1588,7 +1588,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 33.333333333333336
     },
-    "mag": 5200,
+    "mag": 4000,
     "count": 1
    },
    {
@@ -1620,7 +1620,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 650,
+    "mag": 500,
     "count": 5,
     "delay": [
      13.333333333333334,
@@ -1632,7 +1632,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 325,
+    "mag": 250,
     "count": 2,
     "delay": [
      20,
@@ -1644,7 +1644,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 390,
+    "mag": 300,
     "count": 5,
     "delay": [
      13.333333333333334,
@@ -1656,7 +1656,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 650,
+    "mag": 500,
     "count": 5,
     "delay": [
      13.333333333333334,
@@ -1719,7 +1719,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 390,
+    "mag": 300,
     "delay": [
      3,
      8
@@ -1730,7 +1730,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 10
     },
-    "mag": 390,
+    "mag": 300,
     "delay": [
      2,
      4
@@ -1741,7 +1741,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 20
     },
-    "mag": 390,
+    "mag": 300,
     "delay": [
      2,
      4
@@ -1752,7 +1752,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 40
     },
-    "mag": 390,
+    "mag": 300,
     "count": 1
    },
    {
@@ -1760,7 +1760,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 390,
+    "mag": 300,
     "count": 1
    },
    {
@@ -1768,7 +1768,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 390,
+    "mag": 300,
     "count": 1
    },
    {
@@ -1776,7 +1776,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 390,
+    "mag": 300,
     "count": 1
    }
   ]
@@ -1802,7 +1802,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 520,
+    "mag": 400,
     "count": 1
    },
    {
@@ -1810,7 +1810,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 390,
+    "mag": 300,
     "count": 1
    },
    {
@@ -1818,7 +1818,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 10
     },
-    "mag": 520,
+    "mag": 400,
     "count": 1
    },
    {
@@ -1826,7 +1826,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 10
     },
-    "mag": 390,
+    "mag": 300,
     "count": 1
    },
    {
@@ -1834,7 +1834,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 60
     },
-    "mag": 520,
+    "mag": 400,
     "delay": [
      26.666666666666668,
      40
@@ -1845,7 +1845,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 60
     },
-    "mag": 390,
+    "mag": 300,
     "count": 3,
     "delay": [
      26.666666666666668,
@@ -1857,7 +1857,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 40
     },
-    "mag": 1300,
+    "mag": 1000,
     "count": 3,
     "delay": [
      40,
@@ -1885,7 +1885,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 195,
+    "mag": 150,
     "count": 1
    },
    {
@@ -1893,7 +1893,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 13.333333333333334
     },
-    "mag": 195,
+    "mag": 150,
     "count": 1
    },
    {
@@ -1901,7 +1901,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 33.333333333333336
     },
-    "mag": 195,
+    "mag": 150,
     "count": 1
    },
    {
@@ -1909,7 +1909,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 60
     },
-    "mag": 195,
+    "mag": 150,
     "count": 1
    },
    {
@@ -1943,7 +1943,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 6.666666666666667
     },
-    "mag": 390,
+    "mag": 300,
     "count": 1
    },
    {
@@ -1951,7 +1951,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 26.666666666666668
     },
-    "mag": 390,
+    "mag": 300,
     "count": 1
    },
    {
@@ -1959,7 +1959,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 28
     },
-    "mag": 390,
+    "mag": 300,
     "count": 1
    },
    {
@@ -1967,7 +1967,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 30
     },
-    "mag": 390,
+    "mag": 300,
     "count": 1
    },
    {
@@ -1975,7 +1975,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 60
     },
-    "mag": 390,
+    "mag": 300,
     "delay": [
      30,
      60
@@ -1986,7 +1986,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 390,
+    "mag": 300,
     "count": 5,
     "delay": [
      20,
@@ -1998,7 +1998,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 390,
+    "mag": 300,
     "count": 3,
     "delay": [
      40,
@@ -2010,7 +2010,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 520,
+    "mag": 400,
     "count": 1,
     "boss": true
    },
@@ -2019,7 +2019,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 520,
+    "mag": 400,
     "count": 1
    }
   ]
@@ -2258,7 +2258,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 10
     },
-    "mag": 5200,
+    "mag": 4000,
     "count": 5,
     "delay": [
      10,
@@ -2270,7 +2270,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 50
     },
-    "mag": 390,
+    "mag": 300,
     "count": 3,
     "delay": [
      3.3333333333333335,
@@ -2293,7 +2293,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 650,
+    "mag": 500,
     "count": 10,
     "delay": [
      6.666666666666667,
@@ -2305,7 +2305,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 390,
+    "mag": 300,
     "count": 10,
     "delay": [
      13.333333333333334,
@@ -2317,7 +2317,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 390,
+    "mag": 300,
     "count": 2,
     "delay": [
      50,
@@ -2329,7 +2329,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 325,
+    "mag": 250,
     "count": 5,
     "delay": [
      20,
@@ -2353,7 +2353,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 130,
+    "mag": 100,
     "count": 1,
     "boss": true
    }
@@ -2380,7 +2380,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      3,
      20
@@ -2391,7 +2391,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 1300,
+    "mag": 1000,
     "delay": [
      3,
      20
@@ -2402,7 +2402,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 1300,
+    "mag": 1000,
     "delay": [
      0.06666666666666667,
      4
@@ -2413,7 +2413,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 1300,
+    "mag": 1000,
     "count": 30,
     "delay": [
      0.06666666666666667,
@@ -2425,7 +2425,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 2600,
+    "mag": 2000,
     "count": 3,
     "delay": [
      13.333333333333334,
@@ -2437,7 +2437,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 195,
+    "mag": 150,
     "count": 1,
     "boss": true
    }
@@ -2464,7 +2464,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 5200,
+    "mag": 4000,
     "count": 10,
     "delay": [
      1,
@@ -2476,7 +2476,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 5200,
+    "mag": 4000,
     "count": 1
    },
    {
@@ -2503,7 +2503,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 40
     },
-    "mag": 650,
+    "mag": 500,
     "count": 1,
     "boss": true
    }
@@ -2528,7 +2528,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 10
     },
-    "mag": 390,
+    "mag": 300,
     "count": 3,
     "delay": [
      25.666666666666668,
@@ -2540,7 +2540,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 11.333333333333334
     },
-    "mag": 390,
+    "mag": 300,
     "count": 3,
     "delay": [
      25.666666666666668,
@@ -2552,7 +2552,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 13.333333333333334
     },
-    "mag": 390,
+    "mag": 300,
     "count": 3,
     "delay": [
      25.666666666666668,
@@ -2576,7 +2576,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 390,
+    "mag": 300,
     "delay": [
      12,
      24
@@ -2587,7 +2587,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 390,
+    "mag": 300,
     "count": 8,
     "delay": [
      6,
@@ -2662,7 +2662,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 33.333333333333336
     },
-    "mag": 195,
+    "mag": 150,
     "count": 1
    },
    {
@@ -2670,7 +2670,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 26.666666666666668
     },
-    "mag": 650,
+    "mag": 500,
     "count": 10,
     "delay": [
      10,
@@ -2682,7 +2682,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 133.33333333333334
     },
-    "mag": 650,
+    "mag": 500,
     "delay": [
      16.666666666666668,
      33.333333333333336
@@ -2693,7 +2693,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 6.666666666666667
     },
-    "mag": 325,
+    "mag": 250,
     "count": 1
    },
    {
@@ -2741,7 +2741,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 20
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      2,
      10
@@ -2752,7 +2752,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      2,
      10
@@ -2763,7 +2763,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 130,
+    "mag": 100,
     "count": 5,
     "delay": [
      6,
@@ -2775,7 +2775,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 390,
+    "mag": 300,
     "count": 5,
     "delay": [
      32,
@@ -2787,7 +2787,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 390,
+    "mag": 300,
     "count": 5,
     "delay": [
      40,
@@ -2799,7 +2799,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 130,
+    "mag": 100,
     "count": 5,
     "delay": [
      12,
@@ -2811,7 +2811,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 1040,
+    "mag": 800,
     "count": 10,
     "delay": [
      0.6666666666666666,
@@ -2823,7 +2823,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 390,
+    "mag": 300,
     "count": 5,
     "delay": [
      12,
@@ -2835,7 +2835,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 520,
+    "mag": 400,
     "count": 1,
     "boss": true
    },
@@ -2844,7 +2844,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 450
     },
-    "mag": 1040,
+    "mag": 800,
     "delay": [
      0.06666666666666667,
      4
@@ -2855,7 +2855,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 450
     },
-    "mag": 1040,
+    "mag": 800,
     "count": 1
    }
   ]
@@ -2936,7 +2936,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 66.66666666666667
     },
-    "mag": 390,
+    "mag": 300,
     "count": 1
    },
    {
@@ -2944,7 +2944,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 150
     },
-    "mag": 390,
+    "mag": 300,
     "count": 1
    }
   ]
@@ -2970,7 +2970,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 390,
+    "mag": 300,
     "count": 10,
     "delay": [
      12,
@@ -2982,7 +2982,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      6,
      20
@@ -2993,7 +2993,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      6,
      20
@@ -3004,7 +3004,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      6,
      20
@@ -3015,7 +3015,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 40
     },
-    "mag": 260,
+    "mag": 200,
     "count": 8,
     "delay": [
      12,
@@ -3027,7 +3027,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 53.333333333333336
     },
-    "mag": 520,
+    "mag": 400,
     "count": 3,
     "delay": [
      40,
@@ -3039,7 +3039,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 40
     },
-    "mag": 390,
+    "mag": 300,
     "count": 1
    },
    {
@@ -3047,7 +3047,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 40
     },
-    "mag": 520,
+    "mag": 400,
     "count": 3,
     "delay": [
      24,
@@ -3059,7 +3059,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 40
     },
-    "mag": 520,
+    "mag": 400,
     "count": 5,
     "delay": [
      18,
@@ -3071,7 +3071,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 90
     },
-    "mag": 520,
+    "mag": 400,
     "count": 1
    }
   ]
@@ -3097,7 +3097,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      3,
      20
@@ -3108,7 +3108,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      3,
      20
@@ -3119,7 +3119,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 10
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      5.333333333333333,
      20
@@ -3130,7 +3130,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 20
     },
-    "mag": 1300,
+    "mag": 1000,
     "delay": [
      13.333333333333334,
      26.666666666666668
@@ -3141,7 +3141,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 26.666666666666668
     },
-    "mag": 2600,
+    "mag": 2000,
     "count": 1
    },
    {
@@ -3149,7 +3149,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 40
     },
-    "mag": 260,
+    "mag": 200,
     "count": 1
    },
    {
@@ -3157,7 +3157,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 53.333333333333336
     },
-    "mag": 780,
+    "mag": 600,
     "count": 1
    }
   ]
@@ -3181,7 +3181,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      16.666666666666668,
      33.333333333333336
@@ -3192,7 +3192,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 5200,
+    "mag": 4000,
     "count": 3,
     "delay": [
      33.333333333333336,
@@ -3204,7 +3204,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 10
     },
-    "mag": 390,
+    "mag": 300,
     "count": 3,
     "delay": [
      3.3333333333333335,
@@ -3216,7 +3216,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 50
     },
-    "mag": 390,
+    "mag": 300,
     "count": 4,
     "delay": [
      30,
@@ -3228,7 +3228,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 390,
+    "mag": 300,
     "count": 2,
     "delay": [
      30,
@@ -3240,7 +3240,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 390,
+    "mag": 300,
     "count": 4,
     "delay": [
      20,
@@ -3252,7 +3252,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 390,
+    "mag": 300,
     "count": 6,
     "delay": [
      6.666666666666667,
@@ -3303,7 +3303,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      6,
      20
@@ -3314,7 +3314,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      6,
      20
@@ -3325,7 +3325,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 6.666666666666667
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      16,
      30
@@ -3336,7 +3336,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 13.333333333333334
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      16,
      30
@@ -3347,7 +3347,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 20
     },
-    "mag": 1300,
+    "mag": 1000,
     "delay": [
      16,
      30
@@ -3358,7 +3358,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 1300,
+    "mag": 1000,
     "firstDelay": 20,
     "delay": [
      16,
@@ -3370,7 +3370,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 5200,
+    "mag": 4000,
     "count": 3,
     "delay": [
      6.666666666666667,
@@ -3431,7 +3431,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 24
     },
-    "mag": 1040,
+    "mag": 800,
     "delay": [
      32,
      53.333333333333336
@@ -3442,7 +3442,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 1040,
+    "mag": 800,
     "count": 3,
     "delay": [
      26,
@@ -3454,7 +3454,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 1040,
+    "mag": 800,
     "count": 3,
     "delay": [
      26,
@@ -3466,7 +3466,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 1040,
+    "mag": 800,
     "count": 3,
     "delay": [
      26,
@@ -3478,7 +3478,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 325,
+    "mag": 250,
     "count": 3,
     "delay": [
      26,
@@ -3490,7 +3490,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 325,
+    "mag": 250,
     "count": 3,
     "delay": [
      26,
@@ -3502,7 +3502,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 5200,
+    "mag": 4000,
     "count": 1
    },
    {
@@ -3510,7 +3510,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 12
     },
-    "mag": 5200,
+    "mag": 4000,
     "count": 1
    },
    {
@@ -3518,7 +3518,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 390,
+    "mag": 300,
     "count": 3,
     "delay": [
      26,
@@ -3530,7 +3530,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 195,
+    "mag": 150,
     "count": 5,
     "delay": [
      17.333333333333332,
@@ -3542,7 +3542,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 130,
+    "mag": 100,
     "count": 1,
     "boss": true
    }
@@ -3567,7 +3567,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 6.666666666666667
     },
-    "mag": 5200,
+    "mag": 4000,
     "count": 20,
     "delay": [
      1,
@@ -3591,7 +3591,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 33.333333333333336
     },
-    "mag": 520,
+    "mag": 400,
     "count": 5,
     "delay": [
      3,
@@ -3603,7 +3603,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 520,
+    "mag": 400,
     "count": 10,
     "delay": [
      10,
@@ -3615,7 +3615,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 260,
+    "mag": 200,
     "firstDelay": 0.06666666666666667,
     "count": 2,
     "delay": [
@@ -3655,7 +3655,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 3.3333333333333335
     },
-    "mag": 390,
+    "mag": 300,
     "delay": [
      10,
      20
@@ -3666,7 +3666,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 3.3333333333333335
     },
-    "mag": 390,
+    "mag": 300,
     "delay": [
      10,
      20
@@ -3677,7 +3677,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 40
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      3,
      20
@@ -3688,7 +3688,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 40
     },
-    "mag": 390,
+    "mag": 300,
     "count": 2,
     "delay": [
      60,
@@ -3700,7 +3700,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 5200,
+    "mag": 4000,
     "count": 2,
     "delay": [
      66.66666666666667,
@@ -3712,7 +3712,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      6,
      12
@@ -3723,7 +3723,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 5
     },
-    "mag": 1300,
+    "mag": 1000,
     "delay": [
      16.666666666666668,
      26.666666666666668
@@ -3734,7 +3734,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 5200,
+    "mag": 4000,
     "firstDelay": 40,
     "count": 1
    }
@@ -3761,7 +3761,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 1950,
+    "mag": 1500,
     "count": 2,
     "delay": [
      23.333333333333332,
@@ -3773,7 +3773,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 40
     },
-    "mag": 1040,
+    "mag": 800,
     "delay": [
      20,
      20
@@ -3784,7 +3784,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 1950,
+    "mag": 1500,
     "count": 1
    },
    {
@@ -3792,7 +3792,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 1950,
+    "mag": 1500,
     "count": 1
    },
    {
@@ -3800,7 +3800,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 130,
+    "mag": 100,
     "count": 1
    },
    {
@@ -3808,7 +3808,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 13,
+    "mag": 10,
     "count": 1,
     "boss": true
    }
@@ -3833,7 +3833,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 6.666666666666667
     },
-    "mag": 325,
+    "mag": 250,
     "count": 8,
     "delay": [
      6.666666666666667,
@@ -3845,7 +3845,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 70
     },
-    "mag": 325,
+    "mag": 250,
     "count": 1
    },
    {
@@ -3883,7 +3883,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      6,
      20
@@ -3894,7 +3894,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      6,
      20
@@ -3905,7 +3905,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 20
     },
-    "mag": 1300,
+    "mag": 1000,
     "count": 5,
     "delay": [
      30,
@@ -3917,7 +3917,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 60
     },
-    "mag": 1300,
+    "mag": 1000,
     "delay": [
      14.666666666666666,
      25.333333333333332
@@ -3928,7 +3928,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 50
     },
-    "mag": 130,
+    "mag": 100,
     "count": 2,
     "delay": [
      50,
@@ -3940,7 +3940,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 83.33333333333333
     },
-    "mag": 130,
+    "mag": 100,
     "count": 1
    }
   ]
@@ -3964,7 +3964,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      4,
      20
@@ -3975,7 +3975,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      4,
      20
@@ -3986,7 +3986,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      12,
      40
@@ -3997,7 +3997,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      12,
      40
@@ -4008,7 +4008,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 390,
+    "mag": 300,
     "count": 8,
     "delay": [
      6.666666666666667,
@@ -4020,7 +4020,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 390,
+    "mag": 300,
     "count": 5,
     "delay": [
      13.333333333333334,
@@ -4032,7 +4032,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 390,
+    "mag": 300,
     "count": 3,
     "delay": [
      20,
@@ -4044,7 +4044,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 390,
+    "mag": 300,
     "count": 1
    },
    {
@@ -4052,7 +4052,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 520,
+    "mag": 400,
     "count": 1,
     "boss": true
    }
@@ -4086,7 +4086,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 260,
+    "mag": 200,
     "count": 1
    },
    {
@@ -4094,7 +4094,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 60
     },
-    "mag": 780,
+    "mag": 600,
     "count": 1
    },
    {
@@ -4102,7 +4102,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 113.33333333333333
     },
-    "mag": 780,
+    "mag": 600,
     "count": 1
    },
    {
@@ -4110,7 +4110,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 390,
+    "mag": 300,
     "delay": [
      20,
      30
@@ -4139,7 +4139,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 71500,
+    "mag": 55000,
     "count": 1
    },
    {
@@ -4147,7 +4147,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 780,
+    "mag": 600,
     "count": 20,
     "delay": [
      16.666666666666668,
@@ -4159,7 +4159,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 16.666666666666668
     },
-    "mag": 260,
+    "mag": 200,
     "count": 2,
     "delay": [
      16.666666666666668,
@@ -4171,7 +4171,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 13.333333333333334
     },
-    "mag": 260,
+    "mag": 200,
     "count": 5,
     "delay": [
      43.333333333333336,
@@ -4183,7 +4183,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 6
     },
-    "mag": 3640,
+    "mag": 2800,
     "count": 1,
     "boss": true
    },
@@ -4192,7 +4192,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 100
     },
-    "mag": 260,
+    "mag": 200,
     "count": 2,
     "delay": [
      3.3333333333333335,
@@ -4222,7 +4222,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 520,
+    "mag": 400,
     "count": 1
    },
    {
@@ -4230,7 +4230,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 520,
+    "mag": 400,
     "count": 5,
     "delay": [
      16.666666666666668,
@@ -4242,7 +4242,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 520,
+    "mag": 400,
     "count": 1
    },
    {
@@ -4250,7 +4250,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 130,
+    "mag": 100,
     "count": 3,
     "delay": [
      6.666666666666667,
@@ -4262,7 +4262,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 260,
+    "mag": 200,
     "count": 1
    },
    {
@@ -4270,7 +4270,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 13,
+    "mag": 10,
     "count": 1,
     "boss": true
    }
@@ -4304,7 +4304,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 260,
+    "mag": 200,
     "count": 5,
     "delay": [
      10,
@@ -4334,7 +4334,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 5200,
+    "mag": 4000,
     "count": 10,
     "delay": [
      8,
@@ -4346,7 +4346,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 5200,
+    "mag": 4000,
     "count": 3,
     "delay": [
      1,
@@ -4358,7 +4358,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 16.666666666666668
     },
-    "mag": 390,
+    "mag": 300,
     "count": 3,
     "delay": [
      4,
@@ -4370,7 +4370,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 390,
+    "mag": 300,
     "count": 9,
     "delay": [
      6.666666666666667,
@@ -4382,7 +4382,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 5200,
+    "mag": 4000,
     "count": 1
    },
    {
@@ -4390,7 +4390,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      40,
      60
@@ -4401,7 +4401,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 390,
+    "mag": 300,
     "count": 3,
     "delay": [
      30,
@@ -4413,7 +4413,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 390,
+    "mag": 300,
     "count": 1,
     "boss": true
    }
@@ -4438,7 +4438,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 390,
+    "mag": 300,
     "count": 3,
     "delay": [
      10,
@@ -4450,7 +4450,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 1300,
+    "mag": 1000,
     "count": 1
    },
    {
@@ -4458,7 +4458,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 1300,
+    "mag": 1000,
     "delay": [
      30,
      40
@@ -4469,7 +4469,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 390,
+    "mag": 300,
     "count": 1,
     "boss": true
    },
@@ -4478,7 +4478,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 325,
+    "mag": 250,
     "count": 3,
     "delay": [
      33.333333333333336,
@@ -4490,7 +4490,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 390,
+    "mag": 300,
     "count": 6,
     "delay": [
      10,
@@ -4518,7 +4518,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 5200,
+    "mag": 4000,
     "count": 10,
     "delay": [
      6.666666666666667,
@@ -4530,7 +4530,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 6.666666666666667
     },
-    "mag": 5200,
+    "mag": 4000,
     "count": 10,
     "delay": [
      6.666666666666667,
@@ -4542,7 +4542,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 20
     },
-    "mag": 260,
+    "mag": 200,
     "count": 10,
     "delay": [
      6.666666666666667,
@@ -4574,7 +4574,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 260,
+    "mag": 200,
     "count": 3,
     "delay": [
      0.06666666666666667,
@@ -4586,7 +4586,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 5200,
+    "mag": 4000,
     "count": 3,
     "delay": [
      0.06666666666666667,
@@ -4598,7 +4598,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 5200,
+    "mag": 4000,
     "count": 3,
     "delay": [
      0.06666666666666667,
@@ -4610,7 +4610,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 390,
+    "mag": 300,
     "count": 4,
     "delay": [
      20,
@@ -4622,7 +4622,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 260,
+    "mag": 200,
     "count": 3,
     "delay": [
      0.06666666666666667,
@@ -4634,7 +4634,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 5200,
+    "mag": 4000,
     "count": 3,
     "delay": [
      0.06666666666666667,
@@ -4646,7 +4646,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 5200,
+    "mag": 4000,
     "count": 3,
     "delay": [
      0.06666666666666667,
@@ -4658,7 +4658,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 520,
+    "mag": 400,
     "count": 6,
     "delay": [
      13.333333333333334,
@@ -4670,7 +4670,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 325,
+    "mag": 250,
     "count": 1
    },
    {
@@ -4678,7 +4678,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 2080,
+    "mag": 1600,
     "count": 1,
     "boss": true
    }
@@ -4705,7 +4705,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 390,
+    "mag": 300,
     "delay": [
      1,
      2
@@ -4716,7 +4716,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 6.666666666666667
     },
-    "mag": 390,
+    "mag": 300,
     "count": 3,
     "delay": [
      33.333333333333336,
@@ -4728,7 +4728,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 520,
+    "mag": 400,
     "count": 4,
     "delay": [
      30,
@@ -4740,7 +4740,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 46.666666666666664
     },
-    "mag": 390,
+    "mag": 300,
     "count": 3,
     "delay": [
      26.666666666666668,
@@ -4752,7 +4752,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 120
     },
-    "mag": 390,
+    "mag": 300,
     "count": 2,
     "delay": [
      40,
@@ -4800,7 +4800,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 16.666666666666668
     },
-    "mag": 5200,
+    "mag": 4000,
     "count": 2,
     "delay": [
      30,
@@ -4812,7 +4812,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 6.666666666666667
     },
-    "mag": 390,
+    "mag": 300,
     "count": 2,
     "delay": [
      60,
@@ -4824,7 +4824,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 60
     },
-    "mag": 1560,
+    "mag": 1200,
     "count": 1
    }
   ]
@@ -4848,7 +4848,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 130,
+    "mag": 100,
     "count": 7,
     "delay": [
      3.3333333333333335,
@@ -4860,7 +4860,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 16.666666666666668
     },
-    "mag": 390,
+    "mag": 300,
     "count": 1
    },
    {
@@ -4868,7 +4868,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 6500,
+    "mag": 5000,
     "firstDelay": 0.06666666666666667,
     "delay": [
      6.666666666666667,
@@ -4899,7 +4899,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 260,
+    "mag": 200,
     "count": 1,
     "boss": true
    },
@@ -4908,7 +4908,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 6.666666666666667
     },
-    "mag": 195,
+    "mag": 150,
     "count": 1
    },
    {
@@ -4916,7 +4916,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 10
     },
-    "mag": 195,
+    "mag": 150,
     "count": 1
    },
    {
@@ -4924,7 +4924,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 16.666666666666668
     },
-    "mag": 260,
+    "mag": 200,
     "count": 5,
     "delay": [
      33.333333333333336,
@@ -4936,7 +4936,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 20
     },
-    "mag": 260,
+    "mag": 200,
     "count": 1
    },
    {
@@ -4944,7 +4944,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 520,
+    "mag": 400,
     "count": 1
    }
   ]
@@ -4968,7 +4968,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 33.333333333333336
     },
-    "mag": 130,
+    "mag": 100,
     "count": 20,
     "delay": [
      0.6666666666666666,
@@ -4980,7 +4980,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 650,
+    "mag": 500,
     "count": 1,
     "boss": true
    }
@@ -5050,7 +5050,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 30
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      20,
      40
@@ -5061,7 +5061,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 60
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      20,
      40
@@ -5072,7 +5072,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 90
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      20,
      40
@@ -5083,7 +5083,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 520,
+    "mag": 400,
     "count": 1
    },
    {
@@ -5091,7 +5091,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 20
     },
-    "mag": 520,
+    "mag": 400,
     "count": 1
    },
    {
@@ -5099,7 +5099,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 40
     },
-    "mag": 390,
+    "mag": 300,
     "count": 1
    }
   ]
@@ -5125,7 +5125,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 6.666666666666667
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      3,
      20
@@ -5136,7 +5136,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 20
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      20,
      30
@@ -5147,7 +5147,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      6.666666666666667,
      10
@@ -5158,7 +5158,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 130,
+    "mag": 100,
     "count": 1
    },
    {
@@ -5166,7 +5166,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 130,
+    "mag": 100,
     "count": 1
    },
    {
@@ -5174,7 +5174,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 520,
+    "mag": 400,
     "count": 1
    },
    {
@@ -5182,7 +5182,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 130,
+    "mag": 100,
     "count": 1,
     "boss": true
    }
@@ -5207,7 +5207,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 13.333333333333334
     },
-    "mag": 1300,
+    "mag": 1000,
     "count": 100,
     "delay": [
      0.06666666666666667,
@@ -5219,7 +5219,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 10
     },
-    "mag": 1300,
+    "mag": 1000,
     "count": 1
    },
    {
@@ -5227,7 +5227,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 5
     },
-    "mag": 1300,
+    "mag": 1000,
     "count": 1
    },
    {
@@ -5235,7 +5235,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 1300,
+    "mag": 1000,
     "count": 1
    }
   ]
@@ -5261,7 +5261,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 1040,
+    "mag": 800,
     "count": 4,
     "delay": [
      1.6666666666666667,
@@ -5273,7 +5273,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 22
     },
-    "mag": 1040,
+    "mag": 800,
     "delay": [
      40,
      50
@@ -5284,7 +5284,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 22
     },
-    "mag": 2600,
+    "mag": 2000,
     "count": 3,
     "delay": [
      20,
@@ -5296,7 +5296,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 22.666666666666668
     },
-    "mag": 2600,
+    "mag": 2000,
     "count": 1
    }
   ]
@@ -5320,7 +5320,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      3,
      20
@@ -5331,7 +5331,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      3,
      20
@@ -5342,7 +5342,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      3,
      20
@@ -5353,7 +5353,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 1300,
+    "mag": 1000,
     "delay": [
      6,
      20
@@ -5364,7 +5364,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 650,
+    "mag": 500,
     "delay": [
      10,
      30
@@ -5375,7 +5375,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 780,
+    "mag": 600,
     "count": 3,
     "delay": [
      16.666666666666668,
@@ -5387,7 +5387,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 780,
+    "mag": 600,
     "count": 2,
     "delay": [
      16.666666666666668,
@@ -5399,7 +5399,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 780,
+    "mag": 600,
     "count": 1
    },
    {
@@ -5407,7 +5407,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 130,
+    "mag": 100,
     "count": 1,
     "boss": true
    }
@@ -5432,7 +5432,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 10
     },
-    "mag": 1300,
+    "mag": 1000,
     "count": 1
    },
    {
@@ -5440,7 +5440,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      3.3333333333333335,
      10
@@ -5475,7 +5475,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 520,
+    "mag": 400,
     "count": 3,
     "delay": [
      40,
@@ -5519,7 +5519,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 130,
+    "mag": 100,
     "count": 1,
     "boss": true
    }
@@ -5557,7 +5557,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 3120,
+    "mag": 2400,
     "count": 2,
     "delay": [
      20,
@@ -5608,7 +5608,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 520,
+    "mag": 400,
     "count": 50,
     "delay": [
      10,
@@ -5620,7 +5620,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 520,
+    "mag": 400,
     "count": 4,
     "delay": [
      14.666666666666666,
@@ -5632,7 +5632,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 1560,
+    "mag": 1200,
     "count": 4,
     "delay": [
      2,
@@ -5644,7 +5644,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 13,
+    "mag": 10,
     "count": 1,
     "boss": true
    }
@@ -5669,7 +5669,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 10
     },
-    "mag": 390,
+    "mag": 300,
     "count": 2,
     "delay": [
      36.666666666666664,
@@ -5681,7 +5681,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      1.6666666666666667,
      3.3333333333333335
@@ -5733,7 +5733,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 390,
+    "mag": 300,
     "count": 8,
     "delay": [
      12,
@@ -5745,7 +5745,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      3,
      20
@@ -5756,7 +5756,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 20
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      3,
      20
@@ -5767,7 +5767,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      3,
      20
@@ -5778,7 +5778,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      3,
      20
@@ -5789,7 +5789,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 390,
+    "mag": 300,
     "count": 1
    },
    {
@@ -5797,7 +5797,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 195,
+    "mag": 150,
     "count": 1,
     "boss": true
    }
@@ -5822,7 +5822,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 390,
+    "mag": 300,
     "count": 24,
     "delay": [
      6,
@@ -5834,7 +5834,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 390,
+    "mag": 300,
     "count": 16,
     "delay": [
      12,
@@ -5846,7 +5846,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 390,
+    "mag": 300,
     "delay": [
      3,
      20
@@ -5857,7 +5857,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 20
     },
-    "mag": 520,
+    "mag": 400,
     "count": 8,
     "delay": [
      10,
@@ -5885,7 +5885,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0.6666666666666666
     },
-    "mag": 5200,
+    "mag": 4000,
     "count": 3,
     "delay": [
      6.666666666666667,
@@ -5897,7 +5897,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 33.333333333333336
     },
-    "mag": 650,
+    "mag": 500,
     "delay": [
      39.333333333333336,
      40
@@ -5908,7 +5908,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 34
     },
-    "mag": 650,
+    "mag": 500,
     "count": 3,
     "delay": [
      39.333333333333336,
@@ -5920,7 +5920,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 34.666666666666664
     },
-    "mag": 650,
+    "mag": 500,
     "count": 6,
     "delay": [
      39.333333333333336,
@@ -5932,7 +5932,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 10
     },
-    "mag": 650,
+    "mag": 500,
     "count": 5,
     "delay": [
      6.666666666666667,
@@ -5944,7 +5944,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 30
     },
-    "mag": 260,
+    "mag": 200,
     "count": 1
    },
    {
@@ -5952,7 +5952,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 60
     },
-    "mag": 260,
+    "mag": 200,
     "delay": [
      83.33333333333333,
      83.33333333333333
@@ -5963,7 +5963,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 63.333333333333336
     },
-    "mag": 260,
+    "mag": 200,
     "count": 3,
     "delay": [
      83.33333333333333,
@@ -5999,7 +5999,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 650,
+    "mag": 500,
     "count": 10,
     "delay": [
      3.3333333333333335,
@@ -6011,7 +6011,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 90
     },
-    "mag": 260,
+    "mag": 200,
     "count": 3,
     "delay": [
      6.666666666666667,
@@ -6023,7 +6023,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 80
     },
-    "mag": 5200,
+    "mag": 4000,
     "count": 2,
     "delay": [
      10,
@@ -6053,7 +6053,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 5200,
+    "mag": 4000,
     "delay": [
      3,
      20
@@ -6064,7 +6064,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 33.333333333333336
     },
-    "mag": 3250,
+    "mag": 2500,
     "count": 5,
     "delay": [
      26.666666666666668,
@@ -6076,7 +6076,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 13.333333333333334
     },
-    "mag": 1560,
+    "mag": 1200,
     "count": 5,
     "delay": [
      16.666666666666668,
@@ -6096,7 +6096,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 20
     },
-    "mag": 260,
+    "mag": 200,
     "count": 1
    }
   ]
@@ -6122,7 +6122,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 6.666666666666667
     },
-    "mag": 390,
+    "mag": 300,
     "count": 1,
     "boss": true
    },
@@ -6131,7 +6131,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 16.666666666666668
     },
-    "mag": 130,
+    "mag": 100,
     "count": 2,
     "delay": [
      0.06666666666666667,
@@ -6143,7 +6143,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 23.333333333333332
     },
-    "mag": 390,
+    "mag": 300,
     "delay": [
      26.666666666666668,
      33.333333333333336
@@ -6154,7 +6154,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 20
     },
-    "mag": 390,
+    "mag": 300,
     "delay": [
      23.333333333333332,
      30
@@ -6165,7 +6165,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 40
     },
-    "mag": 5200,
+    "mag": 4000,
     "count": 4,
     "delay": [
      53.333333333333336,
@@ -6193,7 +6193,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 1300,
+    "mag": 1000,
     "count": 1,
     "boss": true
    },
@@ -6240,7 +6240,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 3120,
+    "mag": 2400,
     "delay": [
      10,
      20
@@ -6251,7 +6251,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 20
     },
-    "mag": 1560,
+    "mag": 1200,
     "count": 6,
     "delay": [
      24,
@@ -6263,7 +6263,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 40
     },
-    "mag": 390,
+    "mag": 300,
     "count": 2,
     "delay": [
      40,
@@ -6275,7 +6275,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 60
     },
-    "mag": 390,
+    "mag": 300,
     "count": 2,
     "delay": [
      40,
@@ -6287,7 +6287,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 60
     },
-    "mag": 325,
+    "mag": 250,
     "count": 1
    },
    {
@@ -6295,7 +6295,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 0
     },
-    "mag": 325,
+    "mag": 250,
     "count": 1
    }
   ]
@@ -6330,7 +6330,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 1300,
+    "mag": 1000,
     "count": 10,
     "delay": [
      2.6666666666666665,
@@ -6342,7 +6342,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 5200,
+    "mag": 4000,
     "count": 20,
     "delay": [
      2.6666666666666665,
@@ -6363,7 +6363,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 2600,
+    "mag": 2000,
     "firstDelay": 40,
     "count": 2,
     "delay": [
@@ -6376,7 +6376,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "hp": 99
     },
-    "mag": 2600,
+    "mag": 2000,
     "firstDelay": 40,
     "count": 2,
     "delay": [
@@ -6427,7 +6427,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 5
     },
-    "mag": 3120,
+    "mag": 2400,
     "count": 1
    },
    {
@@ -6435,7 +6435,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 40
     },
-    "mag": 390,
+    "mag": 300,
     "delay": [
      46.666666666666664,
      46.666666666666664
@@ -6446,7 +6446,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 43.333333333333336
     },
-    "mag": 390,
+    "mag": 300,
     "count": 3,
     "delay": [
      26.666666666666668,
@@ -6458,7 +6458,7 @@ const TRUELEGEND_DATA=[
     "at": {
      "t": 66.66666666666667
     },
-    "mag": 3120,
+    "mag": 2400,
     "count": 2,
     "delay": [
      2,

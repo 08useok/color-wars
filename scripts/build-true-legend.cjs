@@ -1,12 +1,11 @@
 // 신레전드 0~12장(真レジェンド s13000~s13012, 73맵) → true-legend.js. 구레전드 41~49장 빌더와 같은 규칙:
 // 프레임/30 → 초, 성 연동 100%는 at:{t}, 그 밖은 at:{hp}+firstDelay, 023 간판 아가씨(900초 제한 적) 제외, XP 드롭은 ÷4(레전드가 ×4로 지급).
-// 난이도(사용자 10-30): 기존 적의 출현 배율 ×1.3, 8.0 신규 13종은 능력치에 이미 ×1.3이라 원작 배율 그대로.
+// 출현 배율은 원작 그대로(사용자 11-01: 새 스테이지 ×1.3 규칙 삭제).
 // 왕관 배율은 battlecats-db ?star=2~4 페이지 비교(reference-sheets/true-legend/crowns.json). 한국어 장·스테이지 이름은 임시 번역.
 const fs=require('fs'),path=require('path'),root=path.resolve(__dirname,'..'),dir=path.join(root,'reference-sheets/true-legend');
 const chapters=JSON.parse(fs.readFileSync(path.join(dir,'stages.json'),'utf8')).slice(0,13);
 const crowns=JSON.parse(fs.readFileSync(path.join(dir,'crowns.json'),'utf8'));
 const NEW80={'408':'truebunbun','409':'ancientdog','414':'inglis','415':'koraino','416':'supermayor','422':'datemegane','425':'kogaou','426':'oldree','445':'ministercyclone','446':'gardeneels','447':'looper','448':'finalgod','452':'dogumaru'};
-const NEW80_KEYS=new Set(Object.values(NEW80));
 const auto=JSON.parse(fs.readFileSync(path.join(root,'reference-sheets/legend-db/enemy-map-auto.json'),'utf8'));
 const map=Object.fromEntries(auto.filter(x=>x.game).map(x=>[x.db,x.game]));
 const legendSrc=fs.readFileSync(path.join(__dirname,'build-legend-41-49.cjs'),'utf8');
@@ -38,7 +37,7 @@ for(const [ci,ch] of chapters.entries()){
    const db=r[2].split('#')[1];if(db==='023')return [];
    const type=map[db];if(!type)throw Error('unmapped '+r[2]);
    const threshold=parseInt(r[5]),first=Number(r[6]),src=parseInt(String(r[3]).replace(/[^\d]/g,''));
-   const rule={type,at:threshold===100?{t:sec(first)}:{hp:threshold},mag:NEW80_KEYS.has(type)?src:Math.round(src*1.3)};
+   const rule={type,at:threshold===100?{t:sec(first)}:{hp:threshold},mag:src};
    if(threshold!==100&&first)rule.firstDelay=sec(first);
    if(r[4]&&r[4]!=='無制限')rule.count=Number(r[4]);
    if(r[7]&&r[7]!=='-'){const d=r[7].split('～').map(Number);rule.delay=[sec(d[0]),sec(d[1]??d[0])];}
@@ -53,7 +52,7 @@ for(const [ci,ch] of chapters.entries()){
 }
 let k=324;const subs=KO.map(([name,en],i)=>{const jp=chapters[i].title.replace('ステージデータ ',''),len=data.filter(s=>s.sub===i).length,s={name,en,jp,start:k,len,crowns:crowns[i]};k+=len;return s});
 const out=['// 신레전드 0~12장 (8.0). scripts/build-true-legend.cjs가 만든다. 출처: battlecats-db s13000~s13012. 한국어 이름은 임시 번역.',
- '// 기존 적의 출현 배율은 원작 ×1.3(새 스테이지 난이도), 8.0 신규 13종은 능력치에 이미 ×1.3. 900초 제한 적(간판 아가씨)은 이전 장처럼 뺐다.',
+ '// 출현 배율은 원작 그대로. 900초 제한 적(간판 아가씨)은 이전 장처럼 뺐다.',
  `const TRUELEGEND_DATA=${JSON.stringify(data,null,1)};`,`const TRUELEGEND_SUBS=${JSON.stringify(subs)};`,
  fs.readFileSync(path.join(__dirname,'true-legend-registration.txt'),'utf8')];
 fs.writeFileSync(path.join(root,'true-legend.js'),out.join('\n')+'\n');
