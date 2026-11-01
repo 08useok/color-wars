@@ -1,0 +1,24 @@
+{
+  "hacienda": {
+    "tool": "built-in imagegen",
+    "type": "third evolution motion redesign",
+    "status": "packed and inspected"
+  },
+  "lightcream": {
+    "tool": "built-in imagegen",
+    "type": "third evolution motion redesign",
+    "status": "packed and inspected"
+  },
+  "moss": {
+    "tool": "built-in imagegen",
+    "type": "third evolution motion redesign",
+    "status": "packed and inspected",
+    "finalPrompt": "This portrait is the approved NEW design. Create ONLY a square FOUR ROW BY FOUR COLUMN animation sprite sheet, no large portrait. SAME olive-green two-eyed smiling botanist with layered hair, cyan goggles, tiny flowers, leaf cape, ivory coat, book and boots in every cell. 16 cells: row1 four idle book-holding poses; row2 four alternating-foot walking poses; row3 prepare, open book, release compact green curse vine LEFT, follow through; row4 follow through, retract vine, close book idle, single hurt knockback. Face three-quarter LEFT so BOTH EYES and mouth visible. Preserve exact portrait design, chibi 2-head-tall. Use real transparent background, not a colored backdrop; no large illustration, no horizontal strip, no text. Every sprite and its compact effect wholly contained inside 70% of each equal cell with WIDE empty gutters. 4 rows and4 columns mandatory."
+  },
+  "ruby": {
+    "tool": "built-in imagegen",
+    "type": "third evolution motion redesign",
+    "status": "packed and inspected",
+    "finalPrompt": "Use this APPROVED THIRD-FORM's cute short humanlike anatomy and TWO-EYED smiling face as STYLE reference. Design a NEW RUBY THIRD FORM: female chibi ruby regent with DEEP RUBY-PINK skin (no human skin), short dark-crimson bob hair, two oval black eyelash eyes both visible in three-quarter LEFT view, tiny mouth. Small ruby-and-gold crown, white shoulder mantle crimson lining, fitted ruby/gold short tunic dress, black leggings, red boots, a short gold scepter topped by a large ruby. Do NOT use a one-eyed round blob or side-profile face. Create a SQUARE 4 ROW x4 COLUMN 16-pose animation sheet. Row1 four idle; row2 four clearly alternating walking; row3 prepare, raise scepter, HIT emitting compact red-crystal fan LEFT, followthrough; row4 followthrough, retract, settled idle, single hurt knockback. Exact same character every cell. Cute simple clean cartoon with thick black outlines and glossy flat shading. Wide transparent gutters, each whole sprite/effect contained within70% of its own equal cell. ACTUAL TRANSPARENT alpha, no background, no captions, no big portrait, no wide strip."
+  }
+}
