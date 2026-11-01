@@ -707,11 +707,17 @@ function legendSubCount(sub,c){const sc=LEGEND_SUBS[sub];return legendProgress[c
 function isStoryStage(i){return i<MAIN_STAGE_COUNT||(i>=FUTURE_START&&i<FUTURE_END)||(i>=FUTURE2_START&&i<FUTURE2_END)||(i>=FUTURE3_START&&i<FUTURE3_END)||(i>=COSMOS_START&&i<COSMOS_END)||(i>=COSMOS2_START&&i<COSMOS2_END)}
 function isChainEnd(i){return i===MAIN_STAGE_COUNT-1||i===FUTURE_END-1||i===FUTURE2_END-1||i===FUTURE3_END-1||i===COSMOS_END-1||i===COSMOS2_END-1}
 let selectedStage=0,cleared=[];
+let progressRegistrationReady=false;
 try{const saved=JSON.parse(localStorage.getItem('red-battle-progress-v1')||'[]');if(Array.isArray(saved))cleared=[...new Set(saved.filter(x=>Number.isInteger(x)&&x>=0&&isStoryStage(x)))]}catch{}
-function saveProgress(){try{localStorage.setItem('red-battle-progress-v1',JSON.stringify(cleared))}catch{}}
+function saveProgress(){
+ // cosmos2.js restores late-registered story clears. Until that finishes,
+ // pagehide/visibility autosaves must not overwrite the original saved list.
+ if(!progressRegistrationReady||COSMOS2_START>=1e9||COSMOS2_END<=COSMOS2_START)return;
+ try{localStorage.setItem('red-battle-progress-v1',JSON.stringify(cleared))}catch{}
+}
 let legendCrown=1,legendProgress={1:[],2:[],3:[],4:[]};
 try{const saved=JSON.parse(localStorage.getItem('red-battle-legend-v1')||'{}');for(const c of [1,2,3,4])if(Array.isArray(saved[c]))legendProgress[c]=[...new Set(saved[c].filter(k=>Number.isInteger(k)&&k>=0&&k<LEGEND_STAGES.length))]}catch{}
-function saveLegend(){try{localStorage.setItem('red-battle-legend-v1',JSON.stringify(legendProgress))}catch{}}
+function saveLegend(){if(!progressRegistrationReady)return;try{localStorage.setItem('red-battle-legend-v1',JSON.stringify(legendProgress))}catch{}}
 function legendOpen(){return cleared.includes(CHAPTER1_LEN-1)}
 function legendCrownUnlocked(c,sub=legendSub-1){return c===1||legendSubDone(Math.max(0,sub),c-1)}
 function legendSubOpen(sub){return sub===0?legendOpen():legendSubDone(sub-1,1)}// the next subchapter opens once the previous one is cleared on ★1
