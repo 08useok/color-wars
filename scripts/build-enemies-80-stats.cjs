@@ -1,11 +1,11 @@
 // 8.0 신규 적 13종: 원작 DB 수치(reference-sheets/enemies-80-stats.json)를 게임 수치로 바꾼다 → reference-sheets/enemies-80-game.json.
 //   node scripts/build-enemies-80-stats.cjs
-// 변환은 41~49장(build-legend-41-49.cjs)과 같다: 속도 ×.5367, 사거리·구간 ×.034, 프레임/30 = 초. 새 적은 체력·공격 ×1.3(new-enemy-difficulty).
+// 변환은 41~49장(build-legend-41-49.cjs)과 같다: 속도 ×.5367, 사거리·구간 ×.034, 프레임/30 = 초. 체력·공격은 원작 그대로(MULT=1; 11-01 사용자가 '새 적·스테이지 ×1.3' 규칙을 삭제했다. 10-31까지는 1.3이었다).
 // 공격 모션 길이는 baked 시트(reference-sheets/enemies-80/atlas.json)의 공격 칸 수 × attackStep 이다.
 const fs=require('fs'),path=require('path'),root=path.resolve(__dirname,'..');
 const db=JSON.parse(fs.readFileSync(path.join(root,'reference-sheets/enemies-80-stats.json'),'utf8'));
 const atlas=JSON.parse(fs.readFileSync(path.join(root,'reference-sheets/enemies-80/atlas.json'),'utf8'));
-const MULT=1.3,S=.034,SPEED=.5367,r1=v=>Math.round(v*100)/100,sec=f=>+(f/30).toFixed(4);
+const MULT=1,S=.034,SPEED=.5367,r1=v=>Math.round(v*100)/100,sec=f=>+(f/30).toFixed(4);
 // [DB번호, 키, 한글 이름, 속성, 구간/능력(원작 수치 그대로)]
 const SPEC=[
  ['408','truebunbun','신 레전드 맴매',{traits:['ancient'],area:true,zone:[0,300],back:300,curse:[1,300]}],

@@ -12,8 +12,8 @@
    "animFrames": 16
   },
   "game": {
-   "hp": 3900000,
-   "atk": 14444,
+   "hp": 3000000,
+   "atk": 11111,
    "knockbacks": 5,
    "interval": 0.5333,
    "speed": 6.98,
@@ -43,8 +43,8 @@
    "animFrames": 42
   },
   "game": {
-   "hp": 97500,
-   "atk": 15600,
+   "hp": 75000,
+   "atk": 12000,
    "knockbacks": 3,
    "interval": 1.4,
    "speed": 10.73,
@@ -71,8 +71,8 @@
    "animFrames": 12
   },
   "game": {
-   "hp": 65000,
-   "atk": 16250,
+   "hp": 50000,
+   "atk": 12500,
    "knockbacks": 5,
    "interval": 0.4333,
    "speed": 21.47,
@@ -98,8 +98,8 @@
    "animFrames": 12
   },
   "game": {
-   "hp": 3120000,
-   "atk": 15600,
+   "hp": 2400000,
+   "atk": 12000,
    "knockbacks": 1,
    "interval": 0.4,
    "speed": 2.15,
@@ -126,8 +126,8 @@
    "animFrames": 88
   },
   "game": {
-   "hp": 1040000,
-   "atk": 14444,
+   "hp": 800000,
+   "atk": 11111,
    "knockbacks": 1,
    "interval": 2.9333,
    "speed": 10.73,
@@ -160,8 +160,8 @@
    "animFrames": 20
   },
   "game": {
-   "hp": 468000,
-   "atk": 7800,
+   "hp": 360000,
+   "atk": 6000,
    "knockbacks": 6,
    "interval": 5,
    "speed": 4.83,
@@ -190,8 +190,8 @@
    "animFrames": 40
   },
   "game": {
-   "hp": 1444444,
-   "atk": 7800,
+   "hp": 1111111,
+   "atk": 6000,
    "knockbacks": 1,
    "interval": 1.3667,
    "speed": 1.07,
@@ -221,8 +221,8 @@
    "animFrames": 16
   },
   "game": {
-   "hp": 1768000,
-   "atk": 11700,
+   "hp": 1360000,
+   "atk": 9000,
    "knockbacks": 10,
    "interval": 0.5667,
    "speed": 17.17,
@@ -253,8 +253,8 @@
    "animFrames": 4
   },
   "game": {
-   "hp": 57777,
-   "atk": 866,
+   "hp": 44444,
+   "atk": 666,
    "knockbacks": 2,
    "interval": 0.1667,
    "speed": 7.51,
@@ -285,8 +285,8 @@
    "animFrames": 120
   },
   "game": {
-   "hp": 5200,
-   "atk": 260,
+   "hp": 4000,
+   "atk": 200,
    "knockbacks": 4,
    "interval": 4.0333,
    "speed": 2.68,
@@ -319,8 +319,8 @@
    "animFrames": 172
   },
   "game": {
-   "hp": 65000,
-   "atk": 52000,
+   "hp": 50000,
+   "atk": 40000,
    "knockbacks": 5,
    "interval": 266.0333,
    "speed": 5.37,
@@ -352,8 +352,8 @@
    "animFrames": 204
   },
   "game": {
-   "hp": 1299999,
-   "atk": 96196,
+   "hp": 999999,
+   "atk": 73997,
    "knockbacks": 5,
    "interval": 14.9667,
    "speed": 1.61,
@@ -403,8 +403,8 @@
    "animFrames": 88
   },
   "game": {
-   "hp": 1300000,
-   "atk": 11700,
+   "hp": 1000000,
+   "atk": 9000,
    "knockbacks": 3,
    "interval": 2.8667,
    "speed": 8.05,

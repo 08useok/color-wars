@@ -17,13 +17,13 @@ function webpSize(f){const b=fs.readFileSync(f);assert.equal(b.toString('ascii',
  if(k==='VP8X')return [1+b.readUIntLE(24,3),1+b.readUIntLE(27,3)];if(k==='VP8L'){const v=b.readUInt32LE(21);return [1+(v&0x3fff),1+((v>>14)&0x3fff)]}
  if(k==='VP8 ')return [b.readUInt16LE(26)&0x3fff,b.readUInt16LE(28)&0x3fff];throw Error('webp '+k)}
 
-// ---- 1) 등록: 이름·문구·순서·속성·수치(원작 ×1.3)
+// ---- 1) 등록: 이름·문구·순서·속성·수치(원작 그대로)
 for(const id of ids){
  const [db,name,traits]=SPEC[id],u=data.units[id],o=orig[db];
  assert(u,id+' 능력치');assert.equal(t.UNIT_NAMES[id],name,id+' 이름');assert(t.ENEMY_TEXT[id]&&t.ENEMY_TEXT[id].length>30,id+' 도감 문구');assert(t.ENEMY_ORDER.includes(id),id+' 도감 순서');
  assert.deepEqual(t.traitsOf(u),traits,id+' 속성');
- assert.equal(u.hp,Math.round(o.hp*1.3),id+' 체력 ×1.3');
- assert.equal(u.atk,Math.round(o.atk*1.3),id+' 공격 ×1.3');
+ assert.equal(u.hp,o.hp,id+' 체력은 원작 그대로');
+ assert.equal(u.atk,o.atk,id+' 공격은 원작 그대로');
  assert.equal(u.knockbacks,o.kb,id+' 넉백');assert.equal(u.reward,o.money,id+' 보상은 원작 그대로');
  assert(Math.abs(u.interval-o.interval/30)<1e-3&&Math.abs(u.windup-o.windup/30)<1e-3,id+' 간격·선딜');
  assert(Math.abs(u.speed-o.speed*.5367)<.01&&Math.abs(u.range-o.range*.034)<.01,id+' 속도·사거리 변환');
@@ -31,8 +31,8 @@ for(const id of ids){
  assert.deepEqual(JSON.parse(JSON.stringify(u)).hp,gameJson[id].game.hp);
  const s=e.unitStats(id);assert(s.hp>0&&s.atk>0,id+' unitStats');
 }
-assert.equal(data.units.looper.barrier,10000,'베리어는 ×1.3 하지 않음');
-assert.equal(data.units.finalgod.atk,Math.round(73997*1.3));
+assert.equal(data.units.looper.barrier,10000,'베리어 10,000');
+assert.equal(data.units.finalgod.atk,73997);
 
 // ---- 2) 모션 시트: 파일이 있고, 모든 칸이 시트 안에 있으며, 공격 칸이 모션 길이를 덮는다
 for(const id of ids){
@@ -102,5 +102,5 @@ for(const id of ['truebunbun','inglis','dogumaru','datemegane']){
 }
 // ---- 10) 전체 전투 시험이 끝난 뒤에도 기존 도감 문구 도구가 13종을 읽는다
 for(const id of ids){const b=t.codexTraitBadges(data.units[id]);assert(b.length>0)}
-console.log('PASS: 8.0 신규 적 13종 — 이름·도감 문구·수치(원작 ×1.3, 베리어 그대로)·모션 시트(파일·칸 범위·공격 길이), 저주 9종, 올드 타조 날려버림·느리게, 앞으로 워프 2종, 루퍼좀씨 베리어·Lv10 파동, 파이널 기가 그랜드 신 3연타·첫 타 파동+워프, 선딜, 사각지대');
+console.log('PASS: 8.0 신규 적 13종 — 이름·도감 문구·수치(원작 그대로)·모션 시트(파일·칸 범위·공격 길이), 저주 9종, 올드 타조 날려버림·느리게, 앞으로 워프 2종, 루퍼좀씨 베리어·Lv10 파동, 파이널 기가 그랜드 신 3연타·첫 타 파동+워프, 선딜, 사각지대');
 process.exit(0);
