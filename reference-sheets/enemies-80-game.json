@@ -1,0 +1,424 @@
+{
+ "truebunbun": {
+  "db": "408",
+  "name": "신 레전드 맴매",
+  "original": {
+   "hp": 3000000,
+   "atk": 11111,
+   "interval": 16,
+   "speed": 13,
+   "range": 200,
+   "windup": 10,
+   "animFrames": 16
+  },
+  "game": {
+   "hp": 3900000,
+   "atk": 14444,
+   "knockbacks": 5,
+   "interval": 0.5333,
+   "speed": 6.98,
+   "range": 6.8,
+   "windup": 0.3333,
+   "attackDuration": 0.5333,
+   "reward": 6000,
+   "trait": "ancient",
+   "area": true,
+   "zoneMin": 0,
+   "zoneMax": 10.2,
+   "backRange": 10.2,
+   "curseChance": 1,
+   "curseDuration": 10
+  }
+ },
+ "ancientdog": {
+  "db": "409",
+  "name": "고대 멍뭉이",
+  "original": {
+   "hp": 75000,
+   "atk": 12000,
+   "interval": 42,
+   "speed": 20,
+   "range": 120,
+   "windup": 4,
+   "animFrames": 42
+  },
+  "game": {
+   "hp": 97500,
+   "atk": 15600,
+   "knockbacks": 3,
+   "interval": 1.4,
+   "speed": 10.73,
+   "range": 4.08,
+   "windup": 0.1333,
+   "attackDuration": 1.4,
+   "reward": 100,
+   "trait": "ancient",
+   "area": true,
+   "curseChance": 0.35,
+   "curseDuration": 3.3333
+  }
+ },
+ "inglis": {
+  "db": "414",
+  "name": "잉글릭스",
+  "original": {
+   "hp": 50000,
+   "atk": 12500,
+   "interval": 13,
+   "speed": 40,
+   "range": 110,
+   "windup": 6,
+   "animFrames": 12
+  },
+  "game": {
+   "hp": 65000,
+   "atk": 16250,
+   "knockbacks": 5,
+   "interval": 0.4333,
+   "speed": 21.47,
+   "range": 3.74,
+   "windup": 0.2,
+   "attackDuration": 0.4,
+   "reward": 50,
+   "trait": "ancient",
+   "curseChance": 1,
+   "curseDuration": 5
+  }
+ },
+ "koraino": {
+  "db": "415",
+  "name": "고대 보어",
+  "original": {
+   "hp": 2400000,
+   "atk": 12000,
+   "interval": 12,
+   "speed": 4,
+   "range": 80,
+   "windup": 6,
+   "animFrames": 12
+  },
+  "game": {
+   "hp": 3120000,
+   "atk": 15600,
+   "knockbacks": 1,
+   "interval": 0.4,
+   "speed": 2.15,
+   "range": 2.72,
+   "windup": 0.2,
+   "attackDuration": 0.4,
+   "reward": 1000,
+   "trait": "ancient",
+   "area": true,
+   "curseChance": 1,
+   "curseDuration": 10
+  }
+ },
+ "supermayor": {
+  "db": "416",
+  "name": "난나나난이장",
+  "original": {
+   "hp": 800000,
+   "atk": 11111,
+   "interval": 88,
+   "speed": 20,
+   "range": 340,
+   "windup": 34,
+   "animFrames": 88
+  },
+  "game": {
+   "hp": 1040000,
+   "atk": 14444,
+   "knockbacks": 1,
+   "interval": 2.9333,
+   "speed": 10.73,
+   "range": 11.56,
+   "windup": 1.1333,
+   "attackDuration": 2.9333,
+   "reward": 1500,
+   "traits": [
+    "floating",
+    "ancient"
+   ],
+   "area": true,
+   "zoneMin": 0,
+   "zoneMax": 14.96,
+   "backRange": 14.96,
+   "curseChance": 1,
+   "curseDuration": 2
+  }
+ },
+ "datemegane": {
+  "db": "422",
+  "name": "선글래숭이",
+  "original": {
+   "hp": 360000,
+   "atk": 6000,
+   "interval": 150,
+   "speed": 9,
+   "range": 449,
+   "windup": 11,
+   "animFrames": 20
+  },
+  "game": {
+   "hp": 468000,
+   "atk": 7800,
+   "knockbacks": 6,
+   "interval": 5,
+   "speed": 4.83,
+   "range": 15.27,
+   "windup": 0.3667,
+   "attackDuration": 0.6667,
+   "reward": 750,
+   "trait": "ancient",
+   "area": true,
+   "zoneMin": 17,
+   "zoneMax": 27.2,
+   "curseChance": 1,
+   "curseDuration": 5
+  }
+ },
+ "kogaou": {
+  "db": "425",
+  "name": "미남왕",
+  "original": {
+   "hp": 1111111,
+   "atk": 6000,
+   "interval": 41,
+   "speed": 2,
+   "range": 500,
+   "windup": 24,
+   "animFrames": 40
+  },
+  "game": {
+   "hp": 1444444,
+   "atk": 7800,
+   "knockbacks": 1,
+   "interval": 1.3667,
+   "speed": 1.07,
+   "range": 17,
+   "windup": 0.8,
+   "attackDuration": 1.3333,
+   "reward": 3000,
+   "traits": [
+    "floating",
+    "ancient"
+   ],
+   "area": true,
+   "curseChance": 1,
+   "curseDuration": 10
+  }
+ },
+ "oldree": {
+  "db": "426",
+  "name": "올드 타조",
+  "original": {
+   "hp": 1360000,
+   "atk": 9000,
+   "interval": 17,
+   "speed": 32,
+   "range": 310,
+   "windup": 4,
+   "animFrames": 16
+  },
+  "game": {
+   "hp": 1768000,
+   "atk": 11700,
+   "knockbacks": 10,
+   "interval": 0.5667,
+   "speed": 17.17,
+   "range": 10.54,
+   "windup": 0.1333,
+   "attackDuration": 0.5333,
+   "reward": 1080,
+   "trait": "ancient",
+   "area": true,
+   "curseChance": 1,
+   "curseDuration": 5,
+   "blowChance": 1,
+   "blowDistance": 14,
+   "slowChance": 1,
+   "slowDuration": 5
+  }
+ },
+ "ministercyclone": {
+  "db": "445",
+  "name": "미니스타 사이클론",
+  "original": {
+   "hp": 44444,
+   "atk": 666,
+   "interval": 5,
+   "speed": 14,
+   "range": 50,
+   "windup": 1,
+   "animFrames": 4
+  },
+  "game": {
+   "hp": 57777,
+   "atk": 866,
+   "knockbacks": 2,
+   "interval": 0.1667,
+   "speed": 7.51,
+   "range": 1.7,
+   "windup": 0.0333,
+   "attackDuration": 0.1333,
+   "reward": 333,
+   "trait": "alien",
+   "starred": true,
+   "area": true,
+   "warp": {
+    "chance": 1,
+    "distance": -5.1,
+    "duration": 3.3333
+   }
+  }
+ },
+ "gardeneels": {
+  "db": "446",
+  "name": "붕장어 5형제",
+  "original": {
+   "hp": 4000,
+   "atk": 200,
+   "interval": 121,
+   "speed": 5,
+   "range": 1800,
+   "windup": 65,
+   "animFrames": 120
+  },
+  "game": {
+   "hp": 5200,
+   "atk": 260,
+   "knockbacks": 4,
+   "interval": 4.0333,
+   "speed": 2.68,
+   "range": 61.2,
+   "windup": 2.1667,
+   "attackDuration": 4,
+   "reward": 200,
+   "trait": "alien",
+   "starred": true,
+   "area": true,
+   "zoneMin": 57.8,
+   "zoneMax": 66.3,
+   "warp": {
+    "chance": 1,
+    "distance": -46.75,
+    "duration": 0.0333
+   }
+  }
+ },
+ "looper": {
+  "db": "447",
+  "name": "루퍼좀씨",
+  "original": {
+   "hp": 50000,
+   "atk": 40000,
+   "interval": 7981,
+   "speed": 10,
+   "range": 450,
+   "windup": 111,
+   "animFrames": 172
+  },
+  "game": {
+   "hp": 65000,
+   "atk": 52000,
+   "knockbacks": 5,
+   "interval": 266.0333,
+   "speed": 5.37,
+   "range": 15.3,
+   "windup": 3.7,
+   "attackDuration": 5.7333,
+   "reward": 1000,
+   "trait": "alien",
+   "starred": true,
+   "area": true,
+   "wave": {
+    "chance": 1,
+    "level": 10,
+    "reach": 77.1
+   },
+   "barrier": 10000
+  }
+ },
+ "finalgod": {
+  "db": "448",
+  "name": "파이널 기가 그랜드 신",
+  "original": {
+   "hp": 999999,
+   "atk": 73997,
+   "interval": 449,
+   "speed": 3,
+   "range": 800,
+   "windup": 90,
+   "animFrames": 204
+  },
+  "game": {
+   "hp": 1299999,
+   "atk": 96196,
+   "knockbacks": 5,
+   "interval": 14.9667,
+   "speed": 1.61,
+   "range": 27.2,
+   "windup": 3,
+   "attackDuration": 6.8,
+   "reward": 6000,
+   "area": true,
+   "hits": [
+    {
+     "at": 3,
+     "share": 0.05404,
+     "abilities": {
+      "wave": {
+       "chance": 1,
+       "level": 12,
+       "reach": 90.7
+      },
+      "warp": {
+       "chance": 1,
+       "distance": 51,
+       "duration": 3
+      }
+     }
+    },
+    {
+     "at": 4,
+     "share": 0.05404
+    },
+    {
+     "at": 5,
+     "share": 0.89191
+    }
+   ]
+  }
+ },
+ "dogumaru": {
+  "db": "452",
+  "name": "토우전사 도그마루",
+  "original": {
+   "hp": 1000000,
+   "atk": 9000,
+   "interval": 86,
+   "speed": 15,
+   "range": 500,
+   "windup": 52,
+   "animFrames": 88
+  },
+  "game": {
+   "hp": 1300000,
+   "atk": 11700,
+   "knockbacks": 3,
+   "interval": 2.8667,
+   "speed": 8.05,
+   "range": 17,
+   "windup": 1.7333,
+   "attackDuration": 2.8667,
+   "reward": 3000,
+   "trait": "ancient",
+   "area": true,
+   "zoneMin": 0,
+   "zoneMax": 23.8,
+   "backRange": 17,
+   "curseChance": 1,
+   "curseDuration": 20
+  }
+ }
+}

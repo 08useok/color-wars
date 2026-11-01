@@ -6,3 +6,6 @@ red-battle-doge1.html
 # 개발 환경 찌꺼기(작업 폴더에 생기지만 커밋하지 않음)
 /Python/
 /%SystemDrive%/
+
+# 8.0 신규 적 프레임(굽기 중간 산출물, 시트는 assets/anim_*.webp)
+reference-sheets/enemies-80/frames/
