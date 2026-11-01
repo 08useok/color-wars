@@ -1,0 +1,2002 @@
+{
+  "scope": "allies only; current 281 forms; Lv30",
+  "rounding": "Battle Cats distance, ten-unit floor",
+  "bands": [
+    {
+      "max": 400,
+      "factor": 0.9
+    },
+    {
+      "max": 500,
+      "factor": 0.8
+    },
+    {
+      "max": 800,
+      "factor": 0.7
+    },
+    {
+      "max": null,
+      "factor": 0.6
+    }
+  ],
+  "rows": [
+    {
+      "id": "red",
+      "form": 1,
+      "before": 132,
+      "after": 110,
+      "factor": 0.9
+    },
+    {
+      "id": "orange",
+      "form": 1,
+      "before": 471,
+      "after": 370,
+      "factor": 0.8
+    },
+    {
+      "id": "yellow",
+      "form": 1,
+      "before": 118,
+      "after": 100,
+      "factor": 0.9
+    },
+    {
+      "id": "green",
+      "form": 1,
+      "before": 353,
+      "after": 310,
+      "factor": 0.9
+    },
+    {
+      "id": "cyan",
+      "form": 1,
+      "before": 735,
+      "after": 510,
+      "factor": 0.7
+    },
+    {
+      "id": "blue",
+      "form": 1,
+      "before": 118,
+      "after": 100,
+      "factor": 0.9
+    },
+    {
+      "id": "purple",
+      "form": 1,
+      "before": 176,
+      "after": 150,
+      "factor": 0.9
+    },
+    {
+      "id": "pink",
+      "form": 1,
+      "before": 676,
+      "after": 470,
+      "factor": 0.7
+    },
+    {
+      "id": "crimson",
+      "form": 1,
+      "before": 206,
+      "after": 180,
+      "factor": 0.9
+    },
+    {
+      "id": "gold",
+      "form": 1,
+      "before": 618,
+      "after": 430,
+      "factor": 0.7
+    },
+    {
+      "id": "ivory",
+      "form": 1,
+      "before": 588,
+      "after": 410,
+      "factor": 0.7
+    },
+    {
+      "id": "chartreuse",
+      "form": 1,
+      "before": 471,
+      "after": 370,
+      "factor": 0.8
+    },
+    {
+      "id": "mint",
+      "form": 1,
+      "before": 515,
+      "after": 360,
+      "factor": 0.7
+    },
+    {
+      "id": "azure",
+      "form": 1,
+      "before": 265,
+      "after": 230,
+      "factor": 0.9
+    },
+    {
+      "id": "crystal",
+      "form": 1,
+      "before": 662,
+      "after": 460,
+      "factor": 0.7
+    },
+    {
+      "id": "lavender",
+      "form": 1,
+      "before": 691,
+      "after": 480,
+      "factor": 0.7
+    },
+    {
+      "id": "salmon",
+      "form": 1,
+      "before": 735,
+      "after": 510,
+      "factor": 0.7
+    },
+    {
+      "id": "raspberry",
+      "form": 1,
+      "before": 882,
+      "after": 520,
+      "factor": 0.6
+    },
+    {
+      "id": "onyx",
+      "form": 1,
+      "before": 235,
+      "after": 210,
+      "factor": 0.9
+    },
+    {
+      "id": "black",
+      "form": 1,
+      "before": 265,
+      "after": 230,
+      "factor": 0.9
+    },
+    {
+      "id": "white",
+      "form": 1,
+      "before": 206,
+      "after": 180,
+      "factor": 0.9
+    },
+    {
+      "id": "maroon",
+      "form": 1,
+      "before": 647,
+      "after": 450,
+      "factor": 0.7
+    },
+    {
+      "id": "brown",
+      "form": 1,
+      "before": 118,
+      "after": 100,
+      "factor": 0.9
+    },
+    {
+      "id": "tan",
+      "form": 1,
+      "before": 294,
+      "after": 260,
+      "factor": 0.9
+    },
+    {
+      "id": "beige",
+      "form": 1,
+      "before": 176,
+      "after": 150,
+      "factor": 0.9
+    },
+    {
+      "id": "cream",
+      "form": 1,
+      "before": 235,
+      "after": 210,
+      "factor": 0.9
+    },
+    {
+      "id": "olive",
+      "form": 1,
+      "before": 235,
+      "after": 210,
+      "factor": 0.9
+    },
+    {
+      "id": "clover",
+      "form": 1,
+      "before": 588,
+      "after": 410,
+      "factor": 0.7
+    },
+    {
+      "id": "indigo",
+      "form": 1,
+      "before": 588,
+      "after": 410,
+      "factor": 0.7
+    },
+    {
+      "id": "lilac",
+      "form": 1,
+      "before": 412,
+      "after": 320,
+      "factor": 0.8
+    },
+    {
+      "id": "hotpink",
+      "form": 1,
+      "before": 588,
+      "after": 410,
+      "factor": 0.7
+    },
+    {
+      "id": "ruby",
+      "form": 1,
+      "before": 353,
+      "after": 310,
+      "factor": 0.9
+    },
+    {
+      "id": "hacienda",
+      "form": 1,
+      "before": 353,
+      "after": 310,
+      "factor": 0.9
+    },
+    {
+      "id": "maple",
+      "form": 1,
+      "before": 206,
+      "after": 180,
+      "factor": 0.9
+    },
+    {
+      "id": "brick",
+      "form": 1,
+      "before": 184,
+      "after": 160,
+      "factor": 0.9
+    },
+    {
+      "id": "korn",
+      "form": 1,
+      "before": 647,
+      "after": 450,
+      "factor": 0.7
+    },
+    {
+      "id": "violet",
+      "form": 1,
+      "before": 353,
+      "after": 310,
+      "factor": 0.9
+    },
+    {
+      "id": "cobalt",
+      "form": 1,
+      "before": 176,
+      "after": 150,
+      "factor": 0.9
+    },
+    {
+      "id": "flame",
+      "form": 1,
+      "before": 228,
+      "after": 200,
+      "factor": 0.9
+    },
+    {
+      "id": "scarlet",
+      "form": 1,
+      "before": 206,
+      "after": 180,
+      "factor": 0.9
+    },
+    {
+      "id": "moss",
+      "form": 1,
+      "before": 537,
+      "after": 370,
+      "factor": 0.7
+    },
+    {
+      "id": "coral",
+      "form": 1,
+      "before": 500,
+      "after": 400,
+      "factor": 0.8
+    },
+    {
+      "id": "aqua",
+      "form": 1,
+      "before": 294,
+      "after": 260,
+      "factor": 0.9
+    },
+    {
+      "id": "cooper",
+      "form": 1,
+      "before": 279,
+      "after": 250,
+      "factor": 0.9
+    },
+    {
+      "id": "navy",
+      "form": 1,
+      "before": 250,
+      "after": 220,
+      "factor": 0.9
+    },
+    {
+      "id": "dandelion",
+      "form": 1,
+      "before": 426,
+      "after": 340,
+      "factor": 0.8
+    },
+    {
+      "id": "babyblue",
+      "form": 1,
+      "before": 397,
+      "after": 350,
+      "factor": 0.9
+    },
+    {
+      "id": "mintcyan",
+      "form": 1,
+      "before": 221,
+      "after": 190,
+      "factor": 0.9
+    },
+    {
+      "id": "peach",
+      "form": 1,
+      "before": 176,
+      "after": 150,
+      "factor": 0.9
+    },
+    {
+      "id": "lightcream",
+      "form": 1,
+      "before": 221,
+      "after": 190,
+      "factor": 0.9
+    },
+    {
+      "id": "midnight",
+      "form": 1,
+      "before": 500,
+      "after": 400,
+      "factor": 0.8
+    },
+    {
+      "id": "darklilac",
+      "form": 1,
+      "before": 456,
+      "after": 360,
+      "factor": 0.8
+    },
+    {
+      "id": "fusioncream",
+      "form": 1,
+      "before": 265,
+      "after": 230,
+      "factor": 0.9
+    },
+    {
+      "id": "silver",
+      "form": 1,
+      "before": 515,
+      "after": 360,
+      "factor": 0.7
+    },
+    {
+      "id": "lava",
+      "form": 1,
+      "before": 324,
+      "after": 290,
+      "factor": 0.9
+    },
+    {
+      "id": "babypink",
+      "form": 1,
+      "before": 485,
+      "after": 380,
+      "factor": 0.8
+    },
+    {
+      "id": "magenta",
+      "form": 1,
+      "before": 375,
+      "after": 330,
+      "factor": 0.9
+    },
+    {
+      "id": "garnet",
+      "form": 1,
+      "before": 147,
+      "after": 130,
+      "factor": 0.9
+    },
+    {
+      "id": "prism",
+      "form": 1,
+      "before": 735,
+      "after": 510,
+      "factor": 0.7
+    },
+    {
+      "id": "rainbow",
+      "form": 1,
+      "before": 882,
+      "after": 520,
+      "factor": 0.6
+    },
+    {
+      "id": "orchid",
+      "form": 1,
+      "before": 706,
+      "after": 490,
+      "factor": 0.7
+    },
+    {
+      "id": "iron",
+      "form": 1,
+      "before": 353,
+      "after": 310,
+      "factor": 0.9
+    },
+    {
+      "id": "grey",
+      "form": 1,
+      "before": 676,
+      "after": 470,
+      "factor": 0.7
+    },
+    {
+      "id": "carmine",
+      "form": 1,
+      "before": 441,
+      "after": 350,
+      "factor": 0.8
+    },
+    {
+      "id": "lapis",
+      "form": 1,
+      "before": 147,
+      "after": 130,
+      "factor": 0.9
+    },
+    {
+      "id": "selenite",
+      "form": 1,
+      "before": 588,
+      "after": 410,
+      "factor": 0.7
+    },
+    {
+      "id": "topaz",
+      "form": 1,
+      "before": 706,
+      "after": 490,
+      "factor": 0.7
+    },
+    {
+      "id": "ribbonorange",
+      "form": 1,
+      "before": 529,
+      "after": 370,
+      "factor": 0.7
+    },
+    {
+      "id": "obsidian",
+      "form": 1,
+      "before": 647,
+      "after": 450,
+      "factor": 0.7
+    },
+    {
+      "id": "ribbonchart",
+      "form": 1,
+      "before": 471,
+      "after": 370,
+      "factor": 0.8
+    },
+    {
+      "id": "plum",
+      "form": 1,
+      "before": 735,
+      "after": 510,
+      "factor": 0.7
+    },
+    {
+      "id": "forest",
+      "form": 1,
+      "before": 147,
+      "after": 130,
+      "factor": 0.9
+    },
+    {
+      "id": "canary",
+      "form": 1,
+      "before": 412,
+      "after": 320,
+      "factor": 0.8
+    },
+    {
+      "id": "cherry",
+      "form": 1,
+      "before": 176,
+      "after": 150,
+      "factor": 0.9
+    },
+    {
+      "id": "mauve",
+      "form": 1,
+      "before": 706,
+      "after": 490,
+      "factor": 0.7
+    },
+    {
+      "id": "khaki",
+      "form": 1,
+      "before": 735,
+      "after": 510,
+      "factor": 0.7
+    },
+    {
+      "id": "tangerine",
+      "form": 1,
+      "before": 353,
+      "after": 310,
+      "factor": 0.9
+    },
+    {
+      "id": "burgundy",
+      "form": 1,
+      "before": 147,
+      "after": 130,
+      "factor": 0.9
+    },
+    {
+      "id": "mustard",
+      "form": 1,
+      "before": 206,
+      "after": 180,
+      "factor": 0.9
+    },
+    {
+      "id": "sky",
+      "form": 1,
+      "before": 735,
+      "after": 510,
+      "factor": 0.7
+    },
+    {
+      "id": "denim",
+      "form": 1,
+      "before": 235,
+      "after": 210,
+      "factor": 0.9
+    },
+    {
+      "id": "charcoal",
+      "form": 1,
+      "before": 647,
+      "after": 450,
+      "factor": 0.7
+    },
+    {
+      "id": "cornflower",
+      "form": 1,
+      "before": 647,
+      "after": 450,
+      "factor": 0.7
+    },
+    {
+      "id": "bittersweet",
+      "form": 1,
+      "before": 206,
+      "after": 180,
+      "factor": 0.9
+    },
+    {
+      "id": "claret",
+      "form": 1,
+      "before": 647,
+      "after": 450,
+      "factor": 0.7
+    },
+    {
+      "id": "verdigris",
+      "form": 1,
+      "before": 176,
+      "after": 150,
+      "factor": 0.9
+    },
+    {
+      "id": "teal",
+      "form": 1,
+      "before": 412,
+      "after": 320,
+      "factor": 0.8
+    },
+    {
+      "id": "mixedwhite",
+      "form": 1,
+      "before": 529,
+      "after": 370,
+      "factor": 0.7
+    },
+    {
+      "id": "earphonered",
+      "form": 1,
+      "before": 647,
+      "after": 450,
+      "factor": 0.7
+    },
+    {
+      "id": "shotguntan",
+      "form": 1,
+      "before": 412,
+      "after": 320,
+      "factor": 0.8
+    },
+    {
+      "id": "amber",
+      "form": 1,
+      "before": 176,
+      "after": 150,
+      "factor": 0.9
+    },
+    {
+      "id": "bronze",
+      "form": 1,
+      "before": 412,
+      "after": 320,
+      "factor": 0.8
+    },
+    {
+      "id": "banana",
+      "form": 1,
+      "before": 471,
+      "after": 370,
+      "factor": 0.8
+    },
+    {
+      "id": "butter",
+      "form": 1,
+      "before": 294,
+      "after": 260,
+      "factor": 0.9
+    },
+    {
+      "id": "vanilla",
+      "form": 1,
+      "before": 588,
+      "after": 410,
+      "factor": 0.7
+    },
+    {
+      "id": "lime",
+      "form": 1,
+      "before": 412,
+      "after": 320,
+      "factor": 0.8
+    },
+    {
+      "id": "emerald",
+      "form": 1,
+      "before": 471,
+      "after": 370,
+      "factor": 0.8
+    },
+    {
+      "id": "acid",
+      "form": 1,
+      "before": 353,
+      "after": 310,
+      "factor": 0.9
+    },
+    {
+      "id": "spring",
+      "form": 1,
+      "before": 471,
+      "after": 370,
+      "factor": 0.8
+    },
+    {
+      "id": "aquamarine",
+      "form": 1,
+      "before": 235,
+      "after": 210,
+      "factor": 0.9
+    },
+    {
+      "id": "sapphire",
+      "form": 1,
+      "before": 882,
+      "after": 520,
+      "factor": 0.6
+    },
+    {
+      "id": "royalblue",
+      "form": 1,
+      "before": 294,
+      "after": 260,
+      "factor": 0.9
+    },
+    {
+      "id": "night",
+      "form": 1,
+      "before": 882,
+      "after": 520,
+      "factor": 0.6
+    },
+    {
+      "id": "fuchsia",
+      "form": 1,
+      "before": 882,
+      "after": 520,
+      "factor": 0.6
+    },
+    {
+      "id": "rose",
+      "form": 1,
+      "before": 353,
+      "after": 310,
+      "factor": 0.9
+    },
+    {
+      "id": "vermilion",
+      "form": 1,
+      "before": 412,
+      "after": 320,
+      "factor": 0.8
+    },
+    {
+      "id": "turquoise",
+      "form": 1,
+      "before": 206,
+      "after": 180,
+      "factor": 0.9
+    },
+    {
+      "id": "platinum",
+      "form": 1,
+      "before": 353,
+      "after": 310,
+      "factor": 0.9
+    },
+    {
+      "id": "crisp",
+      "form": 1,
+      "before": 235,
+      "after": 210,
+      "factor": 0.9
+    },
+    {
+      "id": "sunflower",
+      "form": 1,
+      "before": 618,
+      "after": 430,
+      "factor": 0.7
+    },
+    {
+      "id": "fern",
+      "form": 1,
+      "before": 588,
+      "after": 410,
+      "factor": 0.7
+    },
+    {
+      "id": "jade",
+      "form": 1,
+      "before": 265,
+      "after": 230,
+      "factor": 0.9
+    },
+    {
+      "id": "ocean",
+      "form": 1,
+      "before": 676,
+      "after": 470,
+      "factor": 0.7
+    },
+    {
+      "id": "sea",
+      "form": 1,
+      "before": 294,
+      "after": 260,
+      "factor": 0.9
+    },
+    {
+      "id": "heliotrope",
+      "form": 1,
+      "before": 765,
+      "after": 530,
+      "factor": 0.7
+    },
+    {
+      "id": "wisteria",
+      "form": 1,
+      "before": 529,
+      "after": 370,
+      "factor": 0.7
+    },
+    {
+      "id": "blossom",
+      "form": 1,
+      "before": 706,
+      "after": 490,
+      "factor": 0.7
+    },
+    {
+      "id": "almondblossom",
+      "form": 1,
+      "before": 353,
+      "after": 310,
+      "factor": 0.9
+    },
+    {
+      "id": "lightrainbow",
+      "form": 1,
+      "before": 882,
+      "after": 520,
+      "factor": 0.6
+    },
+    {
+      "id": "herbmint",
+      "form": 1,
+      "before": 353,
+      "after": 310,
+      "factor": 0.9
+    },
+    {
+      "id": "kendonavy",
+      "form": 1,
+      "before": 162,
+      "after": 140,
+      "factor": 0.9
+    },
+    {
+      "id": "alchemypurple",
+      "form": 1,
+      "before": 176,
+      "after": 150,
+      "factor": 0.9
+    },
+    {
+      "id": "rhythmpink",
+      "form": 1,
+      "before": 206,
+      "after": 180,
+      "factor": 0.9
+    },
+    {
+      "id": "hulasilver",
+      "form": 1,
+      "before": 235,
+      "after": 210,
+      "factor": 0.9
+    },
+    {
+      "id": "drumscarlet",
+      "form": 1,
+      "before": 294,
+      "after": 260,
+      "factor": 0.9
+    },
+    {
+      "id": "cheerdandelion",
+      "form": 1,
+      "before": 941,
+      "after": 560,
+      "factor": 0.6
+    },
+    {
+      "id": "spintoprainbow",
+      "form": 1,
+      "before": 176,
+      "after": 150,
+      "factor": 0.9
+    },
+    {
+      "id": "red",
+      "form": 2,
+      "before": 159,
+      "after": 140,
+      "factor": 0.9
+    },
+    {
+      "id": "orange",
+      "form": 2,
+      "before": 565,
+      "after": 390,
+      "factor": 0.7
+    },
+    {
+      "id": "yellow",
+      "form": 2,
+      "before": 141,
+      "after": 120,
+      "factor": 0.9
+    },
+    {
+      "id": "green",
+      "form": 2,
+      "before": 424,
+      "after": 330,
+      "factor": 0.8
+    },
+    {
+      "id": "cyan",
+      "form": 2,
+      "before": 882,
+      "after": 520,
+      "factor": 0.6
+    },
+    {
+      "id": "blue",
+      "form": 2,
+      "before": 141,
+      "after": 120,
+      "factor": 0.9
+    },
+    {
+      "id": "purple",
+      "form": 2,
+      "before": 212,
+      "after": 190,
+      "factor": 0.9
+    },
+    {
+      "id": "pink",
+      "form": 2,
+      "before": 812,
+      "after": 480,
+      "factor": 0.6
+    },
+    {
+      "id": "crimson",
+      "form": 2,
+      "before": 247,
+      "after": 220,
+      "factor": 0.9
+    },
+    {
+      "id": "gold",
+      "form": 2,
+      "before": 741,
+      "after": 510,
+      "factor": 0.7
+    },
+    {
+      "id": "ivory",
+      "form": 2,
+      "before": 706,
+      "after": 490,
+      "factor": 0.7
+    },
+    {
+      "id": "chartreuse",
+      "form": 2,
+      "before": 565,
+      "after": 390,
+      "factor": 0.7
+    },
+    {
+      "id": "mint",
+      "form": 2,
+      "before": 618,
+      "after": 430,
+      "factor": 0.7
+    },
+    {
+      "id": "azure",
+      "form": 2,
+      "before": 318,
+      "after": 280,
+      "factor": 0.9
+    },
+    {
+      "id": "crystal",
+      "form": 2,
+      "before": 794,
+      "after": 550,
+      "factor": 0.7
+    },
+    {
+      "id": "lavender",
+      "form": 2,
+      "before": 829,
+      "after": 490,
+      "factor": 0.6
+    },
+    {
+      "id": "salmon",
+      "form": 2,
+      "before": 882,
+      "after": 520,
+      "factor": 0.6
+    },
+    {
+      "id": "raspberry",
+      "form": 2,
+      "before": 971,
+      "after": 580,
+      "factor": 0.6
+    },
+    {
+      "id": "onyx",
+      "form": 2,
+      "before": 282,
+      "after": 250,
+      "factor": 0.9
+    },
+    {
+      "id": "black",
+      "form": 2,
+      "before": 318,
+      "after": 280,
+      "factor": 0.9
+    },
+    {
+      "id": "white",
+      "form": 2,
+      "before": 247,
+      "after": 220,
+      "factor": 0.9
+    },
+    {
+      "id": "maroon",
+      "form": 2,
+      "before": 776,
+      "after": 540,
+      "factor": 0.7
+    },
+    {
+      "id": "brown",
+      "form": 2,
+      "before": 141,
+      "after": 120,
+      "factor": 0.9
+    },
+    {
+      "id": "tan",
+      "form": 2,
+      "before": 353,
+      "after": 310,
+      "factor": 0.9
+    },
+    {
+      "id": "beige",
+      "form": 2,
+      "before": 212,
+      "after": 190,
+      "factor": 0.9
+    },
+    {
+      "id": "cream",
+      "form": 2,
+      "before": 282,
+      "after": 250,
+      "factor": 0.9
+    },
+    {
+      "id": "olive",
+      "form": 2,
+      "before": 282,
+      "after": 250,
+      "factor": 0.9
+    },
+    {
+      "id": "clover",
+      "form": 2,
+      "before": 706,
+      "after": 490,
+      "factor": 0.7
+    },
+    {
+      "id": "indigo",
+      "form": 2,
+      "before": 706,
+      "after": 490,
+      "factor": 0.7
+    },
+    {
+      "id": "lilac",
+      "form": 2,
+      "before": 494,
+      "after": 390,
+      "factor": 0.8
+    },
+    {
+      "id": "hotpink",
+      "form": 2,
+      "before": 706,
+      "after": 490,
+      "factor": 0.7
+    },
+    {
+      "id": "ruby",
+      "form": 2,
+      "before": 424,
+      "after": 330,
+      "factor": 0.8
+    },
+    {
+      "id": "hacienda",
+      "form": 2,
+      "before": 424,
+      "after": 330,
+      "factor": 0.8
+    },
+    {
+      "id": "maple",
+      "form": 2,
+      "before": 247,
+      "after": 220,
+      "factor": 0.9
+    },
+    {
+      "id": "brick",
+      "form": 2,
+      "before": 221,
+      "after": 190,
+      "factor": 0.9
+    },
+    {
+      "id": "korn",
+      "form": 2,
+      "before": 776,
+      "after": 540,
+      "factor": 0.7
+    },
+    {
+      "id": "violet",
+      "form": 2,
+      "before": 424,
+      "after": 330,
+      "factor": 0.8
+    },
+    {
+      "id": "cobalt",
+      "form": 2,
+      "before": 212,
+      "after": 190,
+      "factor": 0.9
+    },
+    {
+      "id": "flame",
+      "form": 2,
+      "before": 274,
+      "after": 240,
+      "factor": 0.9
+    },
+    {
+      "id": "scarlet",
+      "form": 2,
+      "before": 247,
+      "after": 220,
+      "factor": 0.9
+    },
+    {
+      "id": "moss",
+      "form": 2,
+      "before": 644,
+      "after": 450,
+      "factor": 0.7
+    },
+    {
+      "id": "coral",
+      "form": 2,
+      "before": 600,
+      "after": 420,
+      "factor": 0.7
+    },
+    {
+      "id": "aqua",
+      "form": 2,
+      "before": 353,
+      "after": 310,
+      "factor": 0.9
+    },
+    {
+      "id": "cooper",
+      "form": 2,
+      "before": 335,
+      "after": 300,
+      "factor": 0.9
+    },
+    {
+      "id": "navy",
+      "form": 2,
+      "before": 300,
+      "after": 270,
+      "factor": 0.9
+    },
+    {
+      "id": "dandelion",
+      "form": 2,
+      "before": 512,
+      "after": 350,
+      "factor": 0.7
+    },
+    {
+      "id": "babyblue",
+      "form": 2,
+      "before": 476,
+      "after": 380,
+      "factor": 0.8
+    },
+    {
+      "id": "mintcyan",
+      "form": 2,
+      "before": 265,
+      "after": 230,
+      "factor": 0.9
+    },
+    {
+      "id": "peach",
+      "form": 2,
+      "before": 212,
+      "after": 190,
+      "factor": 0.9
+    },
+    {
+      "id": "lightcream",
+      "form": 2,
+      "before": 265,
+      "after": 230,
+      "factor": 0.9
+    },
+    {
+      "id": "midnight",
+      "form": 2,
+      "before": 600,
+      "after": 420,
+      "factor": 0.7
+    },
+    {
+      "id": "darklilac",
+      "form": 2,
+      "before": 547,
+      "after": 380,
+      "factor": 0.7
+    },
+    {
+      "id": "fusioncream",
+      "form": 2,
+      "before": 318,
+      "after": 280,
+      "factor": 0.9
+    },
+    {
+      "id": "silver",
+      "form": 2,
+      "before": 618,
+      "after": 430,
+      "factor": 0.7
+    },
+    {
+      "id": "lava",
+      "form": 2,
+      "before": 388,
+      "after": 340,
+      "factor": 0.9
+    },
+    {
+      "id": "babypink",
+      "form": 2,
+      "before": 582,
+      "after": 400,
+      "factor": 0.7
+    },
+    {
+      "id": "magenta",
+      "form": 2,
+      "before": 450,
+      "after": 360,
+      "factor": 0.8
+    },
+    {
+      "id": "garnet",
+      "form": 2,
+      "before": 176,
+      "after": 150,
+      "factor": 0.9
+    },
+    {
+      "id": "prism",
+      "form": 2,
+      "before": 882,
+      "after": 520,
+      "factor": 0.6
+    },
+    {
+      "id": "rainbow",
+      "form": 2,
+      "before": 882,
+      "after": 520,
+      "factor": 0.6
+    },
+    {
+      "id": "orchid",
+      "form": 2,
+      "before": 847,
+      "after": 500,
+      "factor": 0.6
+    },
+    {
+      "id": "iron",
+      "form": 2,
+      "before": 424,
+      "after": 330,
+      "factor": 0.8
+    },
+    {
+      "id": "grey",
+      "form": 2,
+      "before": 812,
+      "after": 480,
+      "factor": 0.6
+    },
+    {
+      "id": "carmine",
+      "form": 2,
+      "before": 529,
+      "after": 370,
+      "factor": 0.7
+    },
+    {
+      "id": "lapis",
+      "form": 2,
+      "before": 176,
+      "after": 150,
+      "factor": 0.9
+    },
+    {
+      "id": "selenite",
+      "form": 2,
+      "before": 706,
+      "after": 490,
+      "factor": 0.7
+    },
+    {
+      "id": "topaz",
+      "form": 2,
+      "before": 847,
+      "after": 500,
+      "factor": 0.6
+    },
+    {
+      "id": "ribbonorange",
+      "form": 2,
+      "before": 635,
+      "after": 440,
+      "factor": 0.7
+    },
+    {
+      "id": "obsidian",
+      "form": 2,
+      "before": 776,
+      "after": 540,
+      "factor": 0.7
+    },
+    {
+      "id": "ribbonchart",
+      "form": 2,
+      "before": 565,
+      "after": 390,
+      "factor": 0.7
+    },
+    {
+      "id": "plum",
+      "form": 2,
+      "before": 882,
+      "after": 520,
+      "factor": 0.6
+    },
+    {
+      "id": "forest",
+      "form": 2,
+      "before": 176,
+      "after": 150,
+      "factor": 0.9
+    },
+    {
+      "id": "canary",
+      "form": 2,
+      "before": 494,
+      "after": 390,
+      "factor": 0.8
+    },
+    {
+      "id": "cherry",
+      "form": 2,
+      "before": 212,
+      "after": 190,
+      "factor": 0.9
+    },
+    {
+      "id": "mauve",
+      "form": 2,
+      "before": 847,
+      "after": 500,
+      "factor": 0.6
+    },
+    {
+      "id": "khaki",
+      "form": 2,
+      "before": 882,
+      "after": 520,
+      "factor": 0.6
+    },
+    {
+      "id": "tangerine",
+      "form": 2,
+      "before": 424,
+      "after": 330,
+      "factor": 0.8
+    },
+    {
+      "id": "burgundy",
+      "form": 2,
+      "before": 176,
+      "after": 150,
+      "factor": 0.9
+    },
+    {
+      "id": "mustard",
+      "form": 2,
+      "before": 247,
+      "after": 220,
+      "factor": 0.9
+    },
+    {
+      "id": "sky",
+      "form": 2,
+      "before": 882,
+      "after": 520,
+      "factor": 0.6
+    },
+    {
+      "id": "denim",
+      "form": 2,
+      "before": 282,
+      "after": 250,
+      "factor": 0.9
+    },
+    {
+      "id": "charcoal",
+      "form": 2,
+      "before": 776,
+      "after": 540,
+      "factor": 0.7
+    },
+    {
+      "id": "cornflower",
+      "form": 2,
+      "before": 776,
+      "after": 540,
+      "factor": 0.7
+    },
+    {
+      "id": "bittersweet",
+      "form": 2,
+      "before": 247,
+      "after": 220,
+      "factor": 0.9
+    },
+    {
+      "id": "claret",
+      "form": 2,
+      "before": 776,
+      "after": 540,
+      "factor": 0.7
+    },
+    {
+      "id": "verdigris",
+      "form": 2,
+      "before": 212,
+      "after": 190,
+      "factor": 0.9
+    },
+    {
+      "id": "teal",
+      "form": 2,
+      "before": 494,
+      "after": 390,
+      "factor": 0.8
+    },
+    {
+      "id": "mixedwhite",
+      "form": 2,
+      "before": 529,
+      "after": 370,
+      "factor": 0.7
+    },
+    {
+      "id": "earphonered",
+      "form": 2,
+      "before": 647,
+      "after": 450,
+      "factor": 0.7
+    },
+    {
+      "id": "shotguntan",
+      "form": 2,
+      "before": 412,
+      "after": 320,
+      "factor": 0.8
+    },
+    {
+      "id": "amber",
+      "form": 2,
+      "before": 176,
+      "after": 150,
+      "factor": 0.9
+    },
+    {
+      "id": "bronze",
+      "form": 2,
+      "before": 412,
+      "after": 320,
+      "factor": 0.8
+    },
+    {
+      "id": "banana",
+      "form": 2,
+      "before": 471,
+      "after": 370,
+      "factor": 0.8
+    },
+    {
+      "id": "butter",
+      "form": 2,
+      "before": 294,
+      "after": 260,
+      "factor": 0.9
+    },
+    {
+      "id": "vanilla",
+      "form": 2,
+      "before": 588,
+      "after": 410,
+      "factor": 0.7
+    },
+    {
+      "id": "lime",
+      "form": 2,
+      "before": 412,
+      "after": 320,
+      "factor": 0.8
+    },
+    {
+      "id": "emerald",
+      "form": 2,
+      "before": 471,
+      "after": 370,
+      "factor": 0.8
+    },
+    {
+      "id": "acid",
+      "form": 2,
+      "before": 353,
+      "after": 310,
+      "factor": 0.9
+    },
+    {
+      "id": "spring",
+      "form": 2,
+      "before": 471,
+      "after": 370,
+      "factor": 0.8
+    },
+    {
+      "id": "aquamarine",
+      "form": 2,
+      "before": 235,
+      "after": 210,
+      "factor": 0.9
+    },
+    {
+      "id": "sapphire",
+      "form": 2,
+      "before": 882,
+      "after": 520,
+      "factor": 0.6
+    },
+    {
+      "id": "royalblue",
+      "form": 2,
+      "before": 294,
+      "after": 260,
+      "factor": 0.9
+    },
+    {
+      "id": "night",
+      "form": 2,
+      "before": 882,
+      "after": 520,
+      "factor": 0.6
+    },
+    {
+      "id": "fuchsia",
+      "form": 2,
+      "before": 882,
+      "after": 520,
+      "factor": 0.6
+    },
+    {
+      "id": "rose",
+      "form": 2,
+      "before": 353,
+      "after": 310,
+      "factor": 0.9
+    },
+    {
+      "id": "vermilion",
+      "form": 2,
+      "before": 412,
+      "after": 320,
+      "factor": 0.8
+    },
+    {
+      "id": "turquoise",
+      "form": 2,
+      "before": 206,
+      "after": 180,
+      "factor": 0.9
+    },
+    {
+      "id": "platinum",
+      "form": 2,
+      "before": 353,
+      "after": 310,
+      "factor": 0.9
+    },
+    {
+      "id": "crisp",
+      "form": 2,
+      "before": 235,
+      "after": 210,
+      "factor": 0.9
+    },
+    {
+      "id": "sunflower",
+      "form": 2,
+      "before": 618,
+      "after": 430,
+      "factor": 0.7
+    },
+    {
+      "id": "fern",
+      "form": 2,
+      "before": 588,
+      "after": 410,
+      "factor": 0.7
+    },
+    {
+      "id": "jade",
+      "form": 2,
+      "before": 265,
+      "after": 230,
+      "factor": 0.9
+    },
+    {
+      "id": "ocean",
+      "form": 2,
+      "before": 676,
+      "after": 470,
+      "factor": 0.7
+    },
+    {
+      "id": "sea",
+      "form": 2,
+      "before": 294,
+      "after": 260,
+      "factor": 0.9
+    },
+    {
+      "id": "heliotrope",
+      "form": 2,
+      "before": 765,
+      "after": 530,
+      "factor": 0.7
+    },
+    {
+      "id": "wisteria",
+      "form": 2,
+      "before": 529,
+      "after": 370,
+      "factor": 0.7
+    },
+    {
+      "id": "blossom",
+      "form": 2,
+      "before": 706,
+      "after": 490,
+      "factor": 0.7
+    },
+    {
+      "id": "almondblossom",
+      "form": 2,
+      "before": 353,
+      "after": 310,
+      "factor": 0.9
+    },
+    {
+      "id": "lightrainbow",
+      "form": 2,
+      "before": 882,
+      "after": 520,
+      "factor": 0.6
+    },
+    {
+      "id": "herbmint",
+      "form": 2,
+      "before": 353,
+      "after": 310,
+      "factor": 0.9
+    },
+    {
+      "id": "kendonavy",
+      "form": 2,
+      "before": 162,
+      "after": 140,
+      "factor": 0.9
+    },
+    {
+      "id": "alchemypurple",
+      "form": 2,
+      "before": 176,
+      "after": 150,
+      "factor": 0.9
+    },
+    {
+      "id": "rhythmpink",
+      "form": 2,
+      "before": 206,
+      "after": 180,
+      "factor": 0.9
+    },
+    {
+      "id": "hulasilver",
+      "form": 2,
+      "before": 235,
+      "after": 210,
+      "factor": 0.9
+    },
+    {
+      "id": "drumscarlet",
+      "form": 2,
+      "before": 294,
+      "after": 260,
+      "factor": 0.9
+    },
+    {
+      "id": "cheerdandelion",
+      "form": 2,
+      "before": 941,
+      "after": 560,
+      "factor": 0.6
+    },
+    {
+      "id": "spintoprainbow",
+      "form": 2,
+      "before": 176,
+      "after": 150,
+      "factor": 0.9
+    },
+    {
+      "id": "gold",
+      "form": 3,
+      "before": 741,
+      "after": 510,
+      "factor": 0.7
+    },
+    {
+      "id": "ivory",
+      "form": 3,
+      "before": 706,
+      "after": 490,
+      "factor": 0.7
+    },
+    {
+      "id": "azure",
+      "form": 3,
+      "before": 318,
+      "after": 280,
+      "factor": 0.9
+    },
+    {
+      "id": "crystal",
+      "form": 3,
+      "before": 794,
+      "after": 550,
+      "factor": 0.7
+    },
+    {
+      "id": "lavender",
+      "form": 3,
+      "before": 829,
+      "after": 490,
+      "factor": 0.6
+    },
+    {
+      "id": "salmon",
+      "form": 3,
+      "before": 1000,
+      "after": 600,
+      "factor": 0.6
+    },
+    {
+      "id": "raspberry",
+      "form": 3,
+      "before": 1147,
+      "after": 680,
+      "factor": 0.6
+    },
+    {
+      "id": "beige",
+      "form": 3,
+      "before": 412,
+      "after": 320,
+      "factor": 0.8
+    },
+    {
+      "id": "cream",
+      "form": 3,
+      "before": 471,
+      "after": 370,
+      "factor": 0.8
+    },
+    {
+      "id": "clover",
+      "form": 3,
+      "before": 706,
+      "after": 490,
+      "factor": 0.7
+    },
+    {
+      "id": "indigo",
+      "form": 3,
+      "before": 706,
+      "after": 490,
+      "factor": 0.7
+    },
+    {
+      "id": "lilac",
+      "form": 3,
+      "before": 494,
+      "after": 390,
+      "factor": 0.8
+    },
+    {
+      "id": "hotpink",
+      "form": 3,
+      "before": 882,
+      "after": 520,
+      "factor": 0.6
+    },
+    {
+      "id": "ruby",
+      "form": 3,
+      "before": 424,
+      "after": 300,
+      "factor": 0.8
+    },
+    {
+      "id": "hacienda",
+      "form": 3,
+      "before": 424,
+      "after": 330,
+      "factor": 0.8
+    },
+    {
+      "id": "violet",
+      "form": 3,
+      "before": 424,
+      "after": 330,
+      "factor": 0.8
+    },
+    {
+      "id": "moss",
+      "form": 3,
+      "before": 732,
+      "after": 510,
+      "factor": 0.7
+    },
+    {
+      "id": "coral",
+      "form": 3,
+      "before": 600,
+      "after": 420,
+      "factor": 0.7
+    },
+    {
+      "id": "aqua",
+      "form": 3,
+      "before": 353,
+      "after": 310,
+      "factor": 0.9
+    },
+    {
+      "id": "babyblue",
+      "form": 3,
+      "before": 476,
+      "after": 380,
+      "factor": 0.8
+    },
+    {
+      "id": "lightcream",
+      "form": 3,
+      "before": 265,
+      "after": 230,
+      "factor": 0.9
+    },
+    {
+      "id": "fusioncream",
+      "form": 3,
+      "before": 318,
+      "after": 280,
+      "factor": 0.9
+    },
+    {
+      "id": "lava",
+      "form": 3,
+      "before": 427,
+      "after": 340,
+      "factor": 0.8
+    },
+    {
+      "id": "babypink",
+      "form": 3,
+      "before": 582,
+      "after": 400,
+      "factor": 0.7
+    },
+    {
+      "id": "magenta",
+      "form": 3,
+      "before": 450,
+      "after": 360,
+      "factor": 0.8
+    },
+    {
+      "id": "orchid",
+      "form": 3,
+      "before": 847,
+      "after": 500,
+      "factor": 0.6
+    },
+    {
+      "id": "verdigris",
+      "form": 3,
+      "before": 212,
+      "after": 190,
+      "factor": 0.9
+    }
+  ],
+  "checks": [
+    "281 strict reductions",
+    "all direct ranges multiples of ten",
+    "other stats unchanged",
+    "all enemies unchanged",
+    "base definitions not mutated",
+    "no compounded scaling",
+    "band boundaries",
+    "future Ruby third 300",
+    "real direct hit boundaries"
+  ]
+}
