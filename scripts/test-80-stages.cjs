@@ -4,17 +4,17 @@ const fs=require('fs'),assert=require('node:assert/strict'),make=require('./full
 const src=fs.readFileSync(require.resolve('./full-harness.cjs'),'utf8'),addons=JSON.parse(src.match(/const DEFAULT_ADDONS=(\[[^;]+\]);/)[1].replace(/'/g,'"'));
 const LATE=['cosmos3-data.js','cosmos3.js','true-legend.js'];
 for(const f of LATE)assert(addons.includes(f),f+' in harness');
-assert.deepEqual(addons.filter(f=>f!=='progress-ready.js').slice(-3),LATE,'8.0 맵은 다른 모든 스테이지 모듈 뒤');
+assert.deepEqual(addons.filter(f=>f!=='progress-ready.js'&&f!=='readvent-81.js').slice(-3),LATE,'8.0 맵은 다른 모든 스테이지 모듈 뒤');// 8.1 재강림(readvent-81.js)은 그 뒤, test-readvent-81이 확인
 const html=fs.readFileSync('red-battle-doge.html','utf8'),order=[...html.matchAll(/<script src="([^"?]+)/g)].map(m=>m[1]);
 for(const f of LATE)assert(order.includes(f),f+' in html');
 for(const f of ['tier-test-stages.js','enemies-80.js'])assert(order.indexOf(f)<order.indexOf('cosmos3.js'),f+' before cosmos3.js');
 assert(order.indexOf('cosmos3.js')<order.indexOf('true-legend.js'));assert(html.includes('id="cosmos3Tab"'));
-const prev=make({addons:addons.filter(f=>!LATE.includes(f))});
+const prev=make({addons:addons.filter(f=>!LATE.includes(f)&&f!=='readvent-81.js')});
 const setup=`globalThis.__80={S:COSMOS3_START,E:COSMOS3_END,c2e:COSMOS2_END,sup:ALIEN_SUPPRESSORS6,unl:isUnlocked,story:isStoryStage,chain:isChainEnd,mag:alienMagnification,supd:alienSuppressed,tre:cosmosTreasureFinals,tag:chapterTag,codex:codexCatOf,
  prog:legendProgress,open:legendSubOpen,lunl:legendStageUnlocked,crown:legendCrownMult,starR:LEGEND_STAR_RANGES,stars:stageStars,TS:TRUELEGEND_START};`;
 const e=make({savedLegend:{1:[323,324,325,414,415,-1],3:[330]},extraSetup:setup}),x=globalThis.__80;delete globalThis.__80;
 // 기존 번호·데이터 불변, 맨 끝에 48+73
-assert.equal(e.stageList.length,prev.stageList.length+48+91);
+assert.equal(e.stageList.length,prev.stageList.length+48+91+(addons.includes('readvent-81.js')?8:0));
 assert.deepEqual(e.stageList.slice(0,prev.stageList.length),prev.stageList);
 for(const [id,v]of Object.entries(prev.spawnList))assert.deepEqual(e.spawnList[id],v,'spawns '+id);
 for(const [id,v]of Object.entries(prev.units))assert.deepEqual(e.units[id],v,'unit '+id);
