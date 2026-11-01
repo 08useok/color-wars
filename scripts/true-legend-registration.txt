@@ -1,0 +1,28 @@
+// 등록: 다른 모든 스테이지 모듈 뒤에 붙인다(저장된 절대 번호 유지). 레전드 키 324~396, 서브챕터 49~61.
+// 열림: 구레전드 49장(고대 연구소)을 ★1로 깨면 0장이 열리고, 이후 앞 장 ★1 완주로 다음 장이 열린다(game.js legendSubOpen의 순차 규칙 그대로, 사용자 10-31).
+const TRUELEGEND_START=STAGES.length,TRUELEGEND_K0=324,TRUELEGEND_SUB0=LEGEND_SUBS.length,TRUELEGEND_KN=TRUELEGEND_K0+TRUELEGEND_DATA.length;
+for(const [j,sc]of TRUELEGEND_SUBS.entries()){
+ LEGEND_SUBS.push({name:sc.name,en:sc.en,jp:sc.jp,start:sc.start,len:sc.len});
+ LEGEND_SUB_CROWN[TRUELEGEND_SUB0+j]=sc.crowns;
+}
+for(const [j,{stage,rules}]of TRUELEGEND_DATA.entries()){
+ const t={...stage,desc:[...new Set(rules.map(r=>UNIT_NAMES[r.type]||r.type))].join(' · ')};
+ LEGEND_STAGES.push(t);STAGES.push({...t,gap:4,wave:0,chapter:4,legend:{k:TRUELEGEND_K0+j},maxEnemies:t.max});
+ STAGE_SPAWNS[TRUELEGEND_START+j]=rules;
+}
+const legendIdxBeforeTrue=legendIdx;
+legendIdx=function(k){return k>=TRUELEGEND_K0&&k<TRUELEGEND_KN?TRUELEGEND_START+k-TRUELEGEND_K0:legendIdxBeforeTrue(k)};
+// 왕관 배율: 원작 값 그대로(★4는 1배).
+const legendCrownMultBeforeTrue=legendCrownMult;
+legendCrownMult=function(c,sub){return sub>=TRUELEGEND_SUB0&&sub<TRUELEGEND_SUB0+TRUELEGEND_SUBS.length?LEGEND_SUB_CROWN[sub][c-1]:legendCrownMultBeforeTrue(c,sub)};
+// 별 난이도: 원작 값을 구하지 못해, 각 장 스테이지의 적 구성 점수(stageStars와 같은 식)로 범위를 정한다.
+for(const [j,sc]of TRUELEGEND_SUBS.entries()){
+ const v=[];for(let k=sc.start;k<sc.start+sc.len;k++)v.push(Math.max(1,Math.min(12,Math.round(STAR_FIT.a*stageScore(legendIdx(k),1)+STAR_FIT.b))));
+ LEGEND_STAR_RANGES[TRUELEGEND_SUB0+j]=[Math.min(...v),Math.max(...v)];
+}
+// 저장 복원: game.js가 레전드 진행도를 먼저 읽을 때는 이 범위를 몰라 걸러낸다. 추가된 키만 다시 합친다.
+try{
+ const saved=JSON.parse(localStorage.getItem('red-battle-legend-v1')||'{}');
+ for(const c of [1,2,3,4])if(Array.isArray(saved[c]))for(const k of saved[c])
+  if(Number.isInteger(k)&&k>=TRUELEGEND_K0&&k<TRUELEGEND_KN&&!legendProgress[c].includes(k))legendProgress[c].push(k);
+}catch{}

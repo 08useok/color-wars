@@ -35,7 +35,7 @@
  renderBaseUpgrade=function(){renderBaseBefore.apply(this,arguments);
   const cards=[...baseGrid.children];const complete=document.createElement('details'),treasures=document.createElement('details');complete.className=treasures.className='lobby-base-group';complete.innerHTML='<summary>최대 레벨 강화</summary>';treasures.innerHTML='<summary>보물 효과 · 클리어와 적용 내역</summary>';
   for(const card of cards){const title=card.querySelector('h3')?.textContent||'';
-   if(title.includes('우주편 보물')){const done=[COSMOS_END-1,COSMOS2_END-1].filter(i=>cleared.includes(i)).length;card.querySelector('h3').textContent='우주편 클리어 '+done+' / 2장';card.querySelector('p').textContent='현재 보물 효과: '+cosmosTreasureCount()+'장분 (1장 빅뱅 기준). '+cosmosTreasureSummary()+' · 2장 빅뱅은 추가 XP·특성 보물 배율을 주지 않습니다. 별 에이리언 억제기와 신님 가면은 각 장의 진행도로 별도 적용됩니다.';}
+   if(title.includes('우주편 보물')){const done=cosmosTreasureFinals().filter(i=>cleared.includes(i)).length;card.querySelector('h3').textContent='우주편 클리어 '+done+' / 3장';card.querySelector('p').textContent='현재 보물 효과: '+cosmosTreasureCount()+'장분 (1·2·3장 빅뱅마다 1장분). '+cosmosTreasureSummary()+' · 별 에이리언 억제기와 신님 가면은 각 장의 진행도로 별도 적용됩니다.';}
    if(title.includes('보물'))treasures.append(card);else if([...card.querySelectorAll('button')].some(b=>b.textContent==='최대 레벨'))complete.append(card);
   }
   if(complete.children.length>1){complete.querySelector('summary').textContent+=' ('+(complete.children.length-1)+'개)';baseGrid.append(complete)}
@@ -54,7 +54,7 @@
  }
  function context(){
   const legend=stageChapterView==='legend',sc=legend&&legendSub?LEGEND_SUBS[legendSub-1]:null;
-  const label=legend?'레전드 스토리':stageChapterView===9?'우주편 2장':stageChapterView===8?'우주편 1장':stageChapterView>=5?'미래편 '+(stageChapterView-4)+'장':'세계편 '+stageChapterView+'장';
+  const label=legend?'레전드 스토리':stageChapterView===10?'우주편 3장':stageChapterView===9?'우주편 2장':stageChapterView===8?'우주편 1장':stageChapterView>=5?'미래편 '+(stageChapterView-4)+'장':'세계편 '+stageChapterView+'장';
   panel.querySelector('.stage-heading h1').textContent=label;
   const heading=panel.querySelector('.stage-heading small');if(heading.firstChild?.nodeType===3)heading.firstChild.nodeValue=(legend?'LEGEND STORY ':stageChapterView>=8?'CATS OF THE COSMOS ':stageChapterView>=5?'INTO THE FUTURE ':'WORLD CHAPTER ');
   intro.textContent=legend?(sc?sc.name+' · ★'+legendCrown+' · '+legendSubCount(legendSub-1,legendCrown)+' / '+sc.len+' 클리어':'서브챕터를 선택해 레전드 스토리에 도전하세요.'):stageChapterView>=8?'지구에서 빅뱅까지.':stageChapterView>=5?'일본에서 달까지.':'한국에서 달까지.';

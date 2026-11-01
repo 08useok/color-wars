@@ -1,6 +1,7 @@
 const fs=require('fs'),assert=require('node:assert/strict'),make=require('./full-harness.cjs');
 const source=fs.readFileSync(require.resolve('./full-harness.cjs'),'utf8'),addons=JSON.parse(source.match(/const DEFAULT_ADDONS=(\[[^;]+\]);/)[1].replace(/'/g,'"'));
-const noArena=addons.filter(f=>f!=='tier-test-stages.js');// 티어 시험 구역 9맵은 맨 끝에 붙으므로 이 시험의 번호 비교에서 뺀다(test-tier-arenas가 따로 확인)
+const noArena=addons.filter(f=>f!=='tier-test-stages.js'&&!['cosmos3-data.js','cosmos3.js','true-legend.js'].includes(f));// 8.0 우주편 3장·신레전드도 맨 끝에 붙으므로 뺀다(test-80-stages가 따로 확인)
+// 티어 시험 구역 9맵은 맨 끝에 붙으므로 이 시험의 번호 비교에서 뺀다(test-tier-arenas가 따로 확인)
 const prev=make({addons:noArena.filter(f=>!['hurricane-73-atlas.js','stages-73.js'].includes(f)&&!f.includes('spintop-rainbow'))});
 const e=make({addons:noArena,extraSetup:'globalThis.__s73={h:HURRICANE73_EVENT,r:BORE73_RELAY,select:i=>selectedStage=i,spawns:updateStageSpawns,base:data.bases.enemy,open:bore73Open,assets:NEW_ATLASES,attack:resolveAttack};'}),c=globalThis.__s73;delete globalThis.__s73;
 assert.equal(e.stageList.length,prev.stageList.length+2);assert.deepEqual(e.stageList.slice(0,-2),prev.stageList);for(const [id,d]of Object.entries(prev.units))assert.deepEqual(e.units[id],d);for(const [i,r]of Object.entries(prev.spawnList))assert.deepEqual(e.spawnList[i],r);

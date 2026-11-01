@@ -1,6 +1,7 @@
 const fs=require('fs'),assert=require('node:assert/strict'),make=require('./full-harness.cjs');
 const src=fs.readFileSync(require.resolve('./full-harness.cjs'),'utf8'),addons=JSON.parse(src.match(/const DEFAULT_ADDONS=(\[[^;]+\]);/)[1].replace(/'/g,'"'));
-const noArena=addons.filter(x=>x!=='tier-test-stages.js');// 티어 시험 구역 9맵은 맨 끝에 붙으므로 번호 비교에서 뺀다(test-tier-arenas가 따로 확인)
+const noArena=addons.filter(x=>x!=='tier-test-stages.js'&&!['cosmos3-data.js','cosmos3.js','true-legend.js'].includes(x));// 8.0 우주편 3장·신레전드도 맨 끝에 붙으므로 뺀다(test-80-stages가 따로 확인)
+// 티어 시험 구역 9맵은 맨 끝에 붙으므로 번호 비교에서 뺀다(test-tier-arenas가 따로 확인)
 const prev=make({addons:noArena.filter(x=>!['legend-41-49.js','hurricane-73-atlas.js','stages-73.js'].includes(x)&&!x.includes('spintop-rainbow'))});
 const setup=`globalThis.__l4149={progress:legendProgress,open:legendSubOpen,unlocked:legendStageUnlocked,assets:NEW_ATLASES,base:data.bases,select:i=>selectedStage=i,attack:resolveAttack,spawns:updateStageSpawns,stars:legendStars};`;
 const e=make({addons:noArena,savedLegend:{1:[272,273,323,323,324,-1],2:[273,322]},extraSetup:setup}),x=globalThis.__l4149;delete globalThis.__l4149;
