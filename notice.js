@@ -2,9 +2,11 @@
 // v1 세계편 (first push, 2026-09-24) · v2 레전드 스토리 (09-30) · v3 미래편 1장 (10-03) · v4 미래편 2장 + 3진 (10-06) · v5 미래편 3장 (10-08) · v6 우주편 1장 (10-09) · v7 우주편 2장 (10-22).
 // User release rule (2026-10-18): bump PATCH for every commit-and-push release unless an explicit version is requested; do not bump twice when already prepared.
 // A new NOTICE.version shows the notice once on load; the 공지 button on the stage screen reopens it.
-const GAME_VERSION='8.0.0';
+const GAME_VERSION='8.0.1';
 const NOTICE={version:GAME_VERSION,date:'2026-11-01',title:`v${GAME_VERSION} 업데이트`,html:`
 <p class="notice-lead">지금까지 <b>세계편 1~3장 · 미래편 1~3장 · 우주편 1~3장 · 레전드 스토리 1~49장 · 신레전드 0~12장</b>을 담았습니다.</p>
+<h3>💾 v8.0.1 우주편 2장 저장 보강</h3>
+<p>우주편 2장 클리어를 별도 기록으로도 보관해 구버전 탭의 덮어쓰기와 스테이지 번호 변경에 대비합니다. 확인된 기존 기록만 이관합니다.</p>
 <h3>🏛️ v8.0.0 우주편 3장 · 신레전드</h3>
 <ul><li><b>우주편 3장 48맵</b>과 <b>신레전드 0~12장 73맵</b>을 추가했습니다. 우주편 3장은 2장 빅뱅 클리어 후, 신레전드는 기존 레전드 ★1 완주 후 순서대로 열립니다.</li>
 <li>신규 적 <b>13종</b>에 원본 기반 모션과 능력을 적용했습니다. 고대종 9종의 <b>저주</b>, 스타 에이리언의 베리어·워프, 최종 보스의 3연타 등을 만나게 됩니다.</li>

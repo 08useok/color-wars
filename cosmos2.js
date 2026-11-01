@@ -12,4 +12,19 @@
  ALIEN_SUPPRESSORS5.push(COSMOS2_START+23,COSMOS2_END-1);// 과자 행성(24번)·빅뱅(48번), 1장과 같은 위치
  // 저장된 클리어 번호는 game.js가 먼저 읽는데, 그때는 2장 범위(COSMOS2_START/END)를 몰라 2장 클리어를 전부 걸러낸다(새로고침마다 사라지고 다음 저장 때 지워졌다). 범위가 정해진 뒤 2장 번호만 다시 합친다.
  try{const saved=JSON.parse(localStorage.getItem('red-battle-progress-v1')||'[]');if(Array.isArray(saved))for(const x of saved)if(Number.isInteger(x)&&x>=COSMOS2_START&&x<COSMOS2_END&&!cleared.includes(x))cleared.push(x)}catch{}
+ // Chapter-relative records survive stage-index changes and an older tab
+ // overwriting the shared progress list. Only actually recorded clears merge.
+ const key='red-battle-cosmos2-clears-v1';
+ function readChapter(){try{const a=JSON.parse(localStorage.getItem(key)||'[]');return Array.isArray(a)?a.filter(k=>Number.isInteger(k)&&k>=0&&k<COSMOS2_DATA.length):[]}catch{return []}}
+ for(const k of readChapter())if(!cleared.includes(COSMOS2_START+k))cleared.push(COSMOS2_START+k);
+ try{localStorage.setItem(key,JSON.stringify([...new Set(cleared.filter(i=>i>=COSMOS2_START&&i<COSMOS2_END).map(i=>i-COSMOS2_START))].sort((a,b)=>a-b)))}catch{}
+ const previousSave=saveProgress;
+ saveProgress=function(...args){
+  if(!progressRegistrationReady)return;
+  const known=new Set(readChapter());
+  for(const i of cleared)if(i>=COSMOS2_START&&i<COSMOS2_END)known.add(i-COSMOS2_START);
+  for(const k of known)if(!cleared.includes(COSMOS2_START+k))cleared.push(COSMOS2_START+k);
+  try{localStorage.setItem(key,JSON.stringify([...known].sort((a,b)=>a-b)))}catch{}
+  return previousSave.apply(this,args);
+ };
 })();
