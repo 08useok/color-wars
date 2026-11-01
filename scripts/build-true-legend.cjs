@@ -1,9 +1,9 @@
-// 신레전드 0~12장(真レジェンド s13000~s13012, 73맵) → true-legend.js. 구레전드 41~49장 빌더와 같은 규칙:
+// 신레전드 0~15장(真レジェンド s13000~s13015, 91맵) → true-legend.js. 구레전드 41~49장 빌더와 같은 규칙:
 // 프레임/30 → 초, 성 연동 100%는 at:{t}, 그 밖은 at:{hp}+firstDelay, 023 간판 아가씨(900초 제한 적) 제외, XP 드롭은 ÷4(레전드가 ×4로 지급).
 // 출현 배율은 원작 그대로(사용자 11-01: 새 스테이지 ×1.3 규칙 삭제).
 // 왕관 배율은 battlecats-db ?star=2~4 페이지 비교(reference-sheets/true-legend/crowns.json). 한국어 장·스테이지 이름은 임시 번역.
 const fs=require('fs'),path=require('path'),root=path.resolve(__dirname,'..'),dir=path.join(root,'reference-sheets/true-legend');
-const chapters=JSON.parse(fs.readFileSync(path.join(dir,'stages.json'),'utf8')).slice(0,13);
+const chapters=JSON.parse(fs.readFileSync(path.join(dir,'stages.json'),'utf8')).slice(0,16);
 const crowns=JSON.parse(fs.readFileSync(path.join(dir,'crowns.json'),'utf8'));
 const NEW80={'408':'truebunbun','409':'ancientdog','414':'inglis','415':'koraino','416':'supermayor','422':'datemegane','425':'kogaou','426':'oldree','445':'ministercyclone','446':'gardeneels','447':'looper','448':'finalgod','452':'dogumaru'};
 const auto=JSON.parse(fs.readFileSync(path.join(root,'reference-sheets/legend-db/enemy-map-auto.json'),'utf8'));
@@ -26,7 +26,10 @@ const KO=[
  ['캣 쿠데타','Coup de Chat','#e3b8b0','#8a4d45',['귀뚜라미 이데올로기','굴속의 최고 권력자','인민과 당근','밀고자 군단','망명 전야의 기습','레드 캣 작전']],
  ['체리 섬','Cherry Isles','#f0c7b8','#7a4e45',['용암 온욕','음속 화쇄류','재의 비, 사랑을 위해','정상의 대현자','폭군 칼데라','슈퍼 볼케이노']],
  ['혼의 밑바닥에서의 귀화','Return from the Soul','#c9c0de','#6e6488',['이상한 찬송가','연유 수도굴의 처녀','흥겨운 기도','르상티망의 숲','수다쟁이 은둔자','원시에 깃든 혼']],
- ['멸종 해양 타운','Extinct Ocean Town','#9fc7cf','#4e6b70',['이와록 암초','앵무조개 무덤','바다에서 돌아온 망자','인면어의 물가','낙타 안벽','시야 없는 사해']]
+ ['멸종 해양 타운','Extinct Ocean Town','#9fc7cf','#4e6b70',['이와록 암초','앵무조개 무덤','바다에서 돌아온 망자','인면어의 물가','낙타 안벽','시야 없는 사해']],
+ ['유배 리조트','Exile Resort','#bfeee0','#d9c08a',['속죄 바캉스','프라이빗 열대우림','허물없는 나이트 비치','13번 홀의 주민','승천 스파 마사지','호텔 화조풍월']],
+ ['미혹의 마도로','Bewildering Magic Road','#d6c6ea','#6f5f8a',['털가죽 튀김','인어 앙카케','제왕의 교실','허둥지둥 대들보','결벽증 파수꾼','절대 근시 구역']],
+ ['천계 바르 골목','Heavenly Bar Alley','#f3e3c4','#a88a6a',['두근두근 현관','뒹굴뒹굴 복도','술 취한 거실','깔끔한 키친','매복 욕실','어린 양의 침실']]
 ];
 const sec=f=>f/30;
 const data=[];
@@ -51,7 +54,7 @@ for(const [ci,ch] of chapters.entries()){
  }
 }
 let k=324;const subs=KO.map(([name,en],i)=>{const jp=chapters[i].title.replace('ステージデータ ',''),len=data.filter(s=>s.sub===i).length,s={name,en,jp,start:k,len,crowns:crowns[i]};k+=len;return s});
-const out=['// 신레전드 0~12장 (8.0). scripts/build-true-legend.cjs가 만든다. 출처: battlecats-db s13000~s13012. 한국어 이름은 임시 번역.',
+const out=['// 신레전드 0~15장 (8.0·8.1). scripts/build-true-legend.cjs가 만든다. 출처: battlecats-db s13000~s13015. 한국어 이름은 임시 번역.',
  '// 출현 배율은 원작 그대로. 900초 제한 적(간판 아가씨)은 이전 장처럼 뺐다.',
  `const TRUELEGEND_DATA=${JSON.stringify(data,null,1)};`,`const TRUELEGEND_SUBS=${JSON.stringify(subs)};`,
  fs.readFileSync(path.join(__dirname,'true-legend-registration.txt'),'utf8')];

@@ -1,4 +1,4 @@
-// 신레전드 0~12장 (8.0). scripts/build-true-legend.cjs가 만든다. 출처: battlecats-db s13000~s13012. 한국어 이름은 임시 번역.
+// 신레전드 0~15장 (8.0·8.1). scripts/build-true-legend.cjs가 만든다. 출처: battlecats-db s13000~s13015. 한국어 이름은 임시 번역.
 // 출현 배율은 원작 그대로. 900초 제한 적(간판 아가씨)은 이전 장처럼 뺐다.
 const TRUELEGEND_DATA=[
  {
@@ -6466,9 +6466,1702 @@ const TRUELEGEND_DATA=[
     ]
    }
   ]
+ },
+ {
+  "sub": 13,
+  "stage": {
+   "name": "속죄 바캉스",
+   "jp": "贖罪バカンス",
+   "flag": "🗺️",
+   "hp": 900000,
+   "max": 20,
+   "xp": 6840,
+   "sky": "#bfeee0",
+   "land": "#d9c08a",
+   "drop": {
+    "speed": 0.01
+   }
+  },
+  "rules": [
+   {
+    "type": "guys",
+    "at": {
+     "t": 0
+    },
+    "mag": 4000,
+    "delay": [
+     0.06666666666666667,
+     6
+    ]
+   },
+   {
+    "type": "shibalienelite",
+    "at": {
+     "t": 6.666666666666667
+    },
+    "mag": 2500,
+    "count": 2,
+    "delay": [
+     10,
+     16.666666666666668
+    ]
+   },
+   {
+    "type": "shibalienelite",
+    "at": {
+     "hp": 99
+    },
+    "mag": 2500,
+    "firstDelay": 6.666666666666667,
+    "count": 15,
+    "delay": [
+     13.333333333333334,
+     26.666666666666668
+    ]
+   },
+   {
+    "type": "stpigge",
+    "at": {
+     "hp": 99
+    },
+    "mag": 2000,
+    "count": 3,
+    "delay": [
+     46.666666666666664,
+     46.666666666666664
+    ]
+   },
+   {
+    "type": "stpigge",
+    "at": {
+     "hp": 99
+    },
+    "mag": 2000,
+    "count": 3,
+    "delay": [
+     46.666666666666664,
+     46.666666666666664
+    ]
+   },
+   {
+    "type": "captainmogu",
+    "at": {
+     "hp": 99
+    },
+    "mag": 2500,
+    "count": 3,
+    "delay": [
+     16.666666666666668,
+     16.666666666666668
+    ]
+   },
+   {
+    "type": "sloth",
+    "at": {
+     "hp": 99
+    },
+    "mag": 400,
+    "count": 1,
+    "boss": true
+   }
+  ]
+ },
+ {
+  "sub": 13,
+  "stage": {
+   "name": "프라이빗 열대우림",
+   "jp": "プライベート熱帯雨林",
+   "flag": "🗺️",
+   "hp": 850000,
+   "max": 15,
+   "xp": 7220,
+   "sky": "#bfeee0",
+   "land": "#d9c08a",
+   "drop": {
+    "nyan": 0.01
+   }
+  },
+  "rules": [
+   {
+    "type": "nyororon",
+    "at": {
+     "t": 0
+    },
+    "mag": 300,
+    "delay": [
+     16.666666666666668,
+     30
+    ]
+   },
+   {
+    "type": "guys",
+    "at": {
+     "t": 3.3333333333333335
+    },
+    "mag": 4000,
+    "delay": [
+     3,
+     20
+    ]
+   },
+   {
+    "type": "walldoge",
+    "at": {
+     "t": 23.333333333333332
+    },
+    "mag": 600,
+    "delay": [
+     16.666666666666668,
+     16.666666666666668
+    ]
+   },
+   {
+    "type": "brollow",
+    "at": {
+     "t": 16.666666666666668
+    },
+    "mag": 200,
+    "delay": [
+     26.666666666666668,
+     26.666666666666668
+    ]
+   },
+   {
+    "type": "cadaverbear",
+    "at": {
+     "t": 33.333333333333336
+    },
+    "mag": 300,
+    "count": 2,
+    "delay": [
+     60,
+     60
+    ]
+   },
+   {
+    "type": "brollow",
+    "at": {
+     "hp": 90
+    },
+    "mag": 200,
+    "count": 3,
+    "delay": [
+     0.6666666666666666,
+     0.6666666666666666
+    ]
+   },
+   {
+    "type": "brollow",
+    "at": {
+     "hp": 80
+    },
+    "mag": 200,
+    "count": 3,
+    "delay": [
+     0.6666666666666666,
+     0.6666666666666666
+    ]
+   },
+   {
+    "type": "brollow",
+    "at": {
+     "hp": 70
+    },
+    "mag": 200,
+    "count": 3,
+    "delay": [
+     0.6666666666666666,
+     0.6666666666666666
+    ]
+   }
+  ]
+ },
+ {
+  "sub": 13,
+  "stage": {
+   "name": "허물없는 나이트 비치",
+   "jp": "無礼講ナイトビーチ",
+   "flag": "🗺️",
+   "hp": 900000,
+   "max": 20,
+   "xp": 6460,
+   "sky": "#bfeee0",
+   "land": "#d9c08a",
+   "drop": {}
+  },
+  "rules": [
+   {
+    "type": "croakley",
+    "at": {
+     "t": 16.666666666666668
+    },
+    "mag": 150,
+    "count": 1
+   },
+   {
+    "type": "guys",
+    "at": {
+     "t": 10
+    },
+    "mag": 4000,
+    "delay": [
+     2,
+     4
+    ]
+   },
+   {
+    "type": "hienergy",
+    "at": {
+     "t": 3.3333333333333335
+    },
+    "mag": 300,
+    "count": 1,
+    "boss": true
+   },
+   {
+    "type": "otta",
+    "at": {
+     "t": 23.333333333333332
+    },
+    "mag": 800,
+    "count": 2,
+    "delay": [
+     33.333333333333336,
+     33.333333333333336
+    ]
+   }
+  ]
+ },
+ {
+  "sub": 13,
+  "stage": {
+   "name": "13번 홀의 주민",
+   "jp": "13番ホールの住人",
+   "flag": "🗺️",
+   "hp": 800000,
+   "max": 16,
+   "xp": 6840,
+   "sky": "#bfeee0",
+   "land": "#d9c08a",
+   "drop": {
+    "speed": 0.01
+   }
+  },
+  "rules": [
+   {
+    "type": "croco",
+    "at": {
+     "t": 0
+    },
+    "mag": 4000,
+    "delay": [
+     2,
+     10
+    ]
+   },
+   {
+    "type": "zroco",
+    "at": {
+     "t": 20
+    },
+    "mag": 300,
+    "count": 30,
+    "delay": [
+     2,
+     10
+    ]
+   },
+   {
+    "type": "kroxo",
+    "at": {
+     "t": 40
+    },
+    "mag": 2400,
+    "count": 15,
+    "delay": [
+     4,
+     10
+    ]
+   },
+   {
+    "type": "henry",
+    "at": {
+     "t": 30
+    },
+    "mag": 150,
+    "count": 1
+   },
+   {
+    "type": "sael",
+    "at": {
+     "t": 0
+    },
+    "mag": 2400,
+    "delay": [
+     13.333333333333334,
+     20
+    ]
+   }
+  ]
+ },
+ {
+  "sub": 13,
+  "stage": {
+   "name": "승천 스파 마사지",
+   "jp": "昇天スパマッサージ",
+   "flag": "🗺️",
+   "hp": 1000000,
+   "max": 8,
+   "xp": 7220,
+   "sky": "#bfeee0",
+   "land": "#d9c08a",
+   "drop": {}
+  },
+  "rules": [
+   {
+    "type": "kurosawah",
+    "at": {
+     "t": 0
+    },
+    "mag": 400,
+    "count": 1,
+    "boss": true
+   },
+   {
+    "type": "squirrel",
+    "at": {
+     "t": 120
+    },
+    "mag": 4000,
+    "delay": [
+     16,
+     24
+    ]
+   },
+   {
+    "type": "darkdog",
+    "at": {
+     "t": 6.666666666666667
+    },
+    "mag": 1000,
+    "delay": [
+     16,
+     24
+    ]
+   },
+   {
+    "type": "darkdog",
+    "at": {
+     "t": 6.666666666666667
+    },
+    "mag": 1000,
+    "delay": [
+     16,
+     24
+    ]
+   },
+   {
+    "type": "boraphim",
+    "at": {
+     "t": 90
+    },
+    "mag": 100,
+    "count": 1
+   },
+   {
+    "type": "sleipnir",
+    "at": {
+     "t": 60
+    },
+    "mag": 250,
+    "count": 1
+   },
+   {
+    "type": "calamaria",
+    "at": {
+     "t": 30
+    },
+    "mag": 100,
+    "count": 1
+   }
+  ]
+ },
+ {
+  "sub": 13,
+  "stage": {
+   "name": "호텔 화조풍월",
+   "jp": "ホテル花鳥風月",
+   "flag": "🗺️",
+   "hp": 1200000,
+   "max": 10,
+   "xp": 8360,
+   "sky": "#bfeee0",
+   "land": "#d9c08a",
+   "drop": {}
+  },
+  "rules": [
+   {
+    "type": "owlbrow",
+    "at": {
+     "t": 10
+    },
+    "mag": 1200,
+    "count": 1
+   },
+   {
+    "type": "pigeon",
+    "at": {
+     "t": 40
+    },
+    "mag": 300,
+    "count": 8,
+    "delay": [
+     6.666666666666667,
+     13.333333333333334
+    ]
+   },
+   {
+    "type": "oldree",
+    "at": {
+     "hp": 99
+    },
+    "mag": 100,
+    "count": 3,
+    "delay": [
+     40,
+     40
+    ]
+   },
+   {
+    "type": "bigdream",
+    "at": {
+     "hp": 99
+    },
+    "mag": 1200,
+    "count": 1,
+    "boss": true
+   }
+  ]
+ },
+ {
+  "sub": 14,
+  "stage": {
+   "name": "털가죽 튀김",
+   "jp": "毛皮をかき揚げて",
+   "flag": "🗺️",
+   "hp": 770000,
+   "max": 15,
+   "xp": 7220,
+   "sky": "#d6c6ea",
+   "land": "#6f5f8a",
+   "drop": {
+    "nyan": 0.01
+   }
+  },
+  "rules": [
+   {
+    "type": "dog",
+    "at": {
+     "t": 0
+    },
+    "mag": 4000,
+    "delay": [
+     3,
+     20
+    ]
+   },
+   {
+    "type": "snache",
+    "at": {
+     "t": 0
+    },
+    "mag": 4000,
+    "delay": [
+     3,
+     20
+    ]
+   },
+   {
+    "type": "guys",
+    "at": {
+     "t": 40
+    },
+    "mag": 4000,
+    "delay": [
+     3,
+     20
+    ]
+   },
+   {
+    "type": "sunfish",
+    "at": {
+     "t": 0
+    },
+    "mag": 150,
+    "count": 1,
+    "boss": true
+   },
+   {
+    "type": "hiyokoel",
+    "at": {
+     "t": 20
+    },
+    "mag": 250,
+    "count": 2,
+    "delay": [
+     66.66666666666667,
+     66.66666666666667
+    ]
+   },
+   {
+    "type": "hiyokoel",
+    "at": {
+     "t": 20.333333333333332
+    },
+    "mag": 250,
+    "count": 2,
+    "delay": [
+     66.66666666666667,
+     66.66666666666667
+    ]
+   },
+   {
+    "type": "hiyokoel",
+    "at": {
+     "t": 20.666666666666668
+    },
+    "mag": 250,
+    "count": 2,
+    "delay": [
+     66.66666666666667,
+     66.66666666666667
+    ]
+   },
+   {
+    "type": "dagshund",
+    "at": {
+     "t": 22.666666666666668
+    },
+    "mag": 1000,
+    "count": 2,
+    "delay": [
+     66.66666666666667,
+     66.66666666666667
+    ]
+   },
+   {
+    "type": "gabriel",
+    "at": {
+     "t": 40
+    },
+    "mag": 500,
+    "count": 10,
+    "delay": [
+     13.333333333333334,
+     13.333333333333334
+    ]
+   }
+  ]
+ },
+ {
+  "sub": 14,
+  "stage": {
+   "name": "인어 앙카케",
+   "jp": "マーメイドのあんかけ",
+   "flag": "🗺️",
+   "hp": 830000,
+   "max": 10,
+   "xp": 6840,
+   "sky": "#d6c6ea",
+   "land": "#6f5f8a",
+   "drop": {
+    "speed": 0.01
+   }
+  },
+  "rules": [
+   {
+    "type": "zoge",
+    "at": {
+     "t": 1.3333333333333333
+    },
+    "mag": 300,
+    "delay": [
+     20,
+     30
+    ]
+   },
+   {
+    "type": "nyororon",
+    "at": {
+     "t": 3.3333333333333335
+    },
+    "mag": 300,
+    "delay": [
+     20,
+     30
+    ]
+   },
+   {
+    "type": "guys",
+    "at": {
+     "t": 0
+    },
+    "mag": 4000,
+    "delay": [
+     3,
+     20
+    ]
+   },
+   {
+    "type": "ultrabaabaa",
+    "at": {
+     "t": 6.666666666666667
+    },
+    "mag": 1200,
+    "count": 1
+   },
+   {
+    "type": "ultrabaabaa",
+    "at": {
+     "hp": 99
+    },
+    "mag": 1200,
+    "count": 4,
+    "delay": [
+     13.333333333333334,
+     26.666666666666668
+    ]
+   },
+   {
+    "type": "kidtappa",
+    "at": {
+     "hp": 99
+    },
+    "mag": 1200,
+    "count": 2,
+    "delay": [
+     26.666666666666668,
+     26.666666666666668
+    ]
+   },
+   {
+    "type": "zory",
+    "at": {
+     "hp": 99
+    },
+    "mag": 300,
+    "count": 3,
+    "delay": [
+     33.333333333333336,
+     33.333333333333336
+    ]
+   },
+   {
+    "type": "zbore",
+    "at": {
+     "hp": 99
+    },
+    "mag": 300,
+    "count": 1,
+    "boss": true
+   }
+  ]
+ },
+ {
+  "sub": 14,
+  "stage": {
+   "name": "제왕의 교실",
+   "jp": "帝王の教室",
+   "flag": "🗺️",
+   "hp": 900000,
+   "max": 5,
+   "xp": 6650,
+   "sky": "#d6c6ea",
+   "land": "#6f5f8a",
+   "drop": {}
+  },
+  "rules": [
+   {
+    "type": "alienbunbun",
+    "at": {
+     "hp": 99
+    },
+    "mag": 400,
+    "count": 1
+   },
+   {
+    "type": "phace",
+    "at": {
+     "hp": 99
+    },
+    "mag": 2400,
+    "count": 1
+   },
+   {
+    "type": "lilbunbun",
+    "at": {
+     "hp": 99
+    },
+    "mag": 1500,
+    "count": 10,
+    "delay": [
+     0.06666666666666667,
+     0.06666666666666667
+    ]
+   },
+   {
+    "type": "maawth",
+    "at": {
+     "hp": 99
+    },
+    "mag": 2400,
+    "count": 1
+   },
+   {
+    "type": "lilbunbun",
+    "at": {
+     "hp": 99
+    },
+    "mag": 1500,
+    "count": 4,
+    "delay": [
+     0.06666666666666667,
+     0.06666666666666667
+    ]
+   },
+   {
+    "type": "lilbunbun",
+    "at": {
+     "hp": 99
+    },
+    "mag": 1500,
+    "count": 4,
+    "delay": [
+     0.06666666666666667,
+     0.06666666666666667
+    ]
+   },
+   {
+    "type": "calamary",
+    "at": {
+     "hp": 99
+    },
+    "mag": 500,
+    "count": 1
+   },
+   {
+    "type": "lilbunbun",
+    "at": {
+     "hp": 99
+    },
+    "mag": 5,
+    "count": 1,
+    "boss": true
+   },
+   {
+    "type": "lilbunbun",
+    "at": {
+     "t": 6.666666666666667
+    },
+    "mag": 1500,
+    "count": 3,
+    "delay": [
+     12,
+     18
+    ]
+   }
+  ]
+ },
+ {
+  "sub": 14,
+  "stage": {
+   "name": "허둥지둥 대들보",
+   "jp": "バタバタ大黒柱",
+   "flag": "🗺️",
+   "hp": 750000,
+   "max": 12,
+   "xp": 7600,
+   "sky": "#d6c6ea",
+   "land": "#6f5f8a",
+   "drop": {
+    "nyan": 0.01
+   }
+  },
+  "rules": [
+   {
+    "type": "dog",
+    "at": {
+     "t": 0
+    },
+    "mag": 4000,
+    "delay": [
+     3,
+     20
+    ]
+   },
+   {
+    "type": "darkdog",
+    "at": {
+     "hp": 99
+    },
+    "mag": 1000,
+    "delay": [
+     5.333333333333333,
+     12
+    ]
+   },
+   {
+    "type": "squirrel",
+    "at": {
+     "hp": 99
+    },
+    "mag": 4000,
+    "delay": [
+     5.333333333333333,
+     12
+    ]
+   },
+   {
+    "type": "tackey",
+    "at": {
+     "hp": 99
+    },
+    "mag": 200,
+    "count": 4,
+    "delay": [
+     30,
+     33.333333333333336
+    ]
+   },
+   {
+    "type": "mooth",
+    "at": {
+     "hp": 99
+    },
+    "mag": 4000,
+    "count": 1
+   },
+   {
+    "type": "mooth",
+    "at": {
+     "hp": 99
+    },
+    "mag": 4000,
+    "count": 1
+   },
+   {
+    "type": "shyboy",
+    "at": {
+     "hp": 99
+    },
+    "mag": 2000,
+    "count": 2,
+    "delay": [
+     50,
+     50
+    ]
+   },
+   {
+    "type": "shyboy",
+    "at": {
+     "hp": 99
+    },
+    "mag": 2000,
+    "count": 2,
+    "delay": [
+     50,
+     50
+    ]
+   },
+   {
+    "type": "face",
+    "at": {
+     "hp": 99
+    },
+    "mag": 2000,
+    "count": 1,
+    "boss": true
+   }
+  ]
+ },
+ {
+  "sub": 14,
+  "stage": {
+   "name": "결벽증 파수꾼",
+   "jp": "潔癖症の番人",
+   "flag": "🗺️",
+   "hp": 1000000,
+   "max": 8,
+   "xp": 6840,
+   "sky": "#d6c6ea",
+   "land": "#6f5f8a",
+   "drop": {}
+  },
+  "rules": [
+   {
+    "type": "guys",
+    "at": {
+     "t": 0
+    },
+    "mag": 4000,
+    "delay": [
+     2,
+     8
+    ]
+   },
+   {
+    "type": "painter",
+    "at": {
+     "t": 0
+    },
+    "mag": 2500,
+    "count": 1
+   },
+   {
+    "type": "madampoodle",
+    "at": {
+     "hp": 99
+    },
+    "mag": 1200,
+    "count": 3,
+    "delay": [
+     0.26666666666666666,
+     0.6666666666666666
+    ]
+   },
+   {
+    "type": "otta",
+    "at": {
+     "hp": 99
+    },
+    "mag": 800,
+    "count": 1
+   },
+   {
+    "type": "otta",
+    "at": {
+     "hp": 99
+    },
+    "mag": 800,
+    "count": 1
+   },
+   {
+    "type": "otta",
+    "at": {
+     "hp": 99
+    },
+    "mag": 800,
+    "count": 1
+   },
+   {
+    "type": "otta",
+    "at": {
+     "hp": 99
+    },
+    "mag": 800,
+    "count": 9,
+    "delay": [
+     14,
+     26.666666666666668
+    ]
+   },
+   {
+    "type": "ministercyclone",
+    "at": {
+     "hp": 99
+    },
+    "mag": 1000,
+    "count": 3,
+    "delay": [
+     26.666666666666668,
+     33.333333333333336
+    ]
+   },
+   {
+    "type": "ministercyclone",
+    "at": {
+     "hp": 99
+    },
+    "mag": 1000,
+    "count": 6,
+    "delay": [
+     13.333333333333334,
+     16.666666666666668
+    ]
+   },
+   {
+    "type": "eldersloth",
+    "at": {
+     "hp": 99
+    },
+    "mag": 300,
+    "count": 1,
+    "boss": true
+   }
+  ]
+ },
+ {
+  "sub": 14,
+  "stage": {
+   "name": "절대 근시 구역",
+   "jp": "絶対近視区域",
+   "flag": "🗺️",
+   "hp": 1111111,
+   "max": 10,
+   "xp": 8550,
+   "sky": "#d6c6ea",
+   "land": "#6f5f8a",
+   "drop": {}
+  },
+  "rules": [
+   {
+    "type": "metaldoge",
+    "at": {
+     "t": 6.666666666666667
+    },
+    "mag": 300,
+    "count": 10,
+    "delay": [
+     6.666666666666667,
+     13.333333333333334
+    ]
+   },
+   {
+    "type": "ancientdog",
+    "at": {
+     "t": 13.333333333333334
+    },
+    "mag": 100,
+    "count": 5,
+    "delay": [
+     10,
+     16.666666666666668
+    ]
+   },
+   {
+    "type": "metaldoge",
+    "at": {
+     "hp": 99
+    },
+    "mag": 300,
+    "delay": [
+     13.333333333333334,
+     16.666666666666668
+    ]
+   },
+   {
+    "type": "supermetalhippo",
+    "at": {
+     "hp": 99
+    },
+    "mag": 300,
+    "count": 3,
+    "delay": [
+     46.666666666666664,
+     50
+    ]
+   },
+   {
+    "type": "datemegane",
+    "at": {
+     "hp": 99
+    },
+    "mag": 100,
+    "count": 4,
+    "delay": [
+     30,
+     30
+    ]
+   },
+   {
+    "type": "metalseal",
+    "at": {
+     "hp": 99
+    },
+    "mag": 300,
+    "count": 1,
+    "boss": true
+   }
+  ]
+ },
+ {
+  "sub": 15,
+  "stage": {
+   "name": "두근두근 현관",
+   "jp": "胸騒ぎ玄関",
+   "flag": "🗺️",
+   "hp": 720000,
+   "max": 5,
+   "xp": 6650,
+   "sky": "#f3e3c4",
+   "land": "#a88a6a",
+   "drop": {
+    "speed": 0.01
+   }
+  },
+  "rules": [
+   {
+    "type": "dog",
+    "at": {
+     "t": 0
+    },
+    "mag": 4000,
+    "count": 3,
+    "delay": [
+     3,
+     6.666666666666667
+    ]
+   },
+   {
+    "type": "snache",
+    "at": {
+     "t": 0
+    },
+    "mag": 4000,
+    "count": 3,
+    "delay": [
+     3,
+     6.666666666666667
+    ]
+   },
+   {
+    "type": "peng",
+    "at": {
+     "t": 6.666666666666667
+    },
+    "mag": 4000,
+    "count": 1
+   },
+   {
+    "type": "cyberx",
+    "at": {
+     "hp": 99
+    },
+    "mag": 1200,
+    "count": 3,
+    "delay": [
+     20,
+     20
+    ]
+   },
+   {
+    "type": "madampoodle",
+    "at": {
+     "hp": 99
+    },
+    "mag": 1200,
+    "count": 10,
+    "delay": [
+     13.333333333333334,
+     20
+    ]
+   },
+   {
+    "type": "madampoodle",
+    "at": {
+     "hp": 99
+    },
+    "mag": 1200,
+    "count": 10,
+    "delay": [
+     13.333333333333334,
+     20
+    ]
+   },
+   {
+    "type": "supermayor",
+    "at": {
+     "hp": 99
+    },
+    "mag": 100,
+    "count": 1,
+    "boss": true
+   }
+  ]
+ },
+ {
+  "sub": 15,
+  "stage": {
+   "name": "뒹굴뒹굴 복도",
+   "jp": "ごろ寝廊下",
+   "flag": "🗺️",
+   "hp": 750000,
+   "max": 4,
+   "xp": 6840,
+   "sky": "#f3e3c4",
+   "land": "#a88a6a",
+   "drop": {
+    "nyan": 0.01
+   }
+  },
+  "rules": [
+   {
+    "type": "pigge",
+    "at": {
+     "t": 0
+    },
+    "mag": 4000,
+    "count": 2,
+    "delay": [
+     10,
+     13.333333333333334
+    ]
+   },
+   {
+    "type": "ostrich",
+    "at": {
+     "hp": 99
+    },
+    "mag": 250,
+    "count": 2,
+    "delay": [
+     20,
+     23.333333333333332
+    ]
+   },
+   {
+    "type": "stpigge",
+    "at": {
+     "hp": 99
+    },
+    "mag": 2000,
+    "count": 3,
+    "delay": [
+     20,
+     20
+    ]
+   },
+   {
+    "type": "stpigge",
+    "at": {
+     "hp": 99
+    },
+    "mag": 2000,
+    "count": 3,
+    "delay": [
+     20,
+     20
+    ]
+   },
+   {
+    "type": "stpigge",
+    "at": {
+     "hp": 99
+    },
+    "mag": 2000,
+    "count": 3,
+    "delay": [
+     20,
+     20
+    ]
+   },
+   {
+    "type": "squirrel",
+    "at": {
+     "hp": 99
+    },
+    "mag": 100,
+    "count": 1,
+    "boss": true
+   }
+  ]
+ },
+ {
+  "sub": 15,
+  "stage": {
+   "name": "술 취한 거실",
+   "jp": "酔いどれリビング",
+   "flag": "🗺️",
+   "hp": 1000000,
+   "max": 12,
+   "xp": 7030,
+   "sky": "#f3e3c4",
+   "land": "#a88a6a",
+   "drop": {}
+  },
+  "rules": [
+   {
+    "type": "nyandam",
+    "at": {
+     "t": 3.3333333333333335
+    },
+    "mag": 2800,
+    "count": 1,
+    "boss": true
+   },
+   {
+    "type": "bigsal",
+    "at": {
+     "t": 6.666666666666667
+    },
+    "mag": 200,
+    "count": 1
+   },
+   {
+    "type": "looper",
+    "at": {
+     "t": 16.666666666666668
+    },
+    "mag": 1000,
+    "count": 2,
+    "delay": [
+     20,
+     20
+    ]
+   }
+  ]
+ },
+ {
+  "sub": 15,
+  "stage": {
+   "name": "깔끔한 키친",
+   "jp": "きちんとキッチン",
+   "flag": "🗺️",
+   "hp": 920000,
+   "max": 12,
+   "xp": 7220,
+   "sky": "#f3e3c4",
+   "land": "#a88a6a",
+   "drop": {
+    "speed": 0.01
+   }
+  },
+  "rules": [
+   {
+    "type": "dog",
+    "at": {
+     "t": 0
+    },
+    "mag": 4000,
+    "delay": [
+     6,
+     20
+    ]
+   },
+   {
+    "type": "snache",
+    "at": {
+     "t": 0
+    },
+    "mag": 4000,
+    "delay": [
+     6,
+     20
+    ]
+   },
+   {
+    "type": "leboin",
+    "at": {
+     "t": 10
+    },
+    "mag": 8000,
+    "count": 4,
+    "delay": [
+     60,
+     66.66666666666667
+    ]
+   },
+   {
+    "type": "hippo",
+    "at": {
+     "t": 20
+    },
+    "mag": 4000,
+    "count": 20,
+    "delay": [
+     6,
+     20
+    ]
+   },
+   {
+    "type": "peng",
+    "at": {
+     "t": 40
+    },
+    "mag": 4000,
+    "count": 12,
+    "delay": [
+     0.6666666666666666,
+     4
+    ]
+   },
+   {
+    "type": "zackiepeng",
+    "at": {
+     "t": 40
+    },
+    "mag": 300,
+    "count": 12,
+    "delay": [
+     0.6666666666666666,
+     4
+    ]
+   },
+   {
+    "type": "starpeng",
+    "at": {
+     "t": 40
+    },
+    "mag": 2500,
+    "count": 12,
+    "delay": [
+     0.6666666666666666,
+     4
+    ]
+   },
+   {
+    "type": "spaceborg",
+    "at": {
+     "t": 60
+    },
+    "mag": 2500,
+    "count": 1
+   }
+  ]
+ },
+ {
+  "sub": 15,
+  "stage": {
+   "name": "매복 욕실",
+   "jp": "まちぶせ風呂",
+   "flag": "🗺️",
+   "hp": 900000,
+   "max": 12,
+   "xp": 7410,
+   "sky": "#f3e3c4",
+   "land": "#a88a6a",
+   "drop": {}
+  },
+  "rules": [
+   {
+    "type": "brollow",
+    "at": {
+     "t": 16.666666666666668
+    },
+    "mag": 200,
+    "delay": [
+     33.333333333333336,
+     50
+    ]
+   },
+   {
+    "type": "squirrel",
+    "at": {
+     "t": 16.666666666666668
+    },
+    "mag": 4000,
+    "delay": [
+     3.3333333333333335,
+     10
+    ]
+   },
+   {
+    "type": "croco",
+    "at": {
+     "t": 16.666666666666668
+    },
+    "mag": 2000,
+    "count": 3,
+    "delay": [
+     0.06666666666666667,
+     0.06666666666666667
+    ]
+   },
+   {
+    "type": "brollow",
+    "at": {
+     "t": 16.666666666666668
+    },
+    "mag": 200,
+    "count": 24,
+    "delay": [
+     1,
+     3
+    ]
+   },
+   {
+    "type": "croco",
+    "at": {
+     "t": 16.666666666666668
+    },
+    "mag": 2000,
+    "count": 3,
+    "delay": [
+     0.06666666666666667,
+     0.06666666666666667
+    ]
+   },
+   {
+    "type": "brollow",
+    "at": {
+     "t": 16.666666666666668
+    },
+    "mag": 200,
+    "count": 20,
+    "delay": [
+     2,
+     6
+    ]
+   },
+   {
+    "type": "croco",
+    "at": {
+     "t": 16.666666666666668
+    },
+    "mag": 2000,
+    "count": 3,
+    "delay": [
+     0.06666666666666667,
+     0.06666666666666667
+    ]
+   },
+   {
+    "type": "brollow",
+    "at": {
+     "t": 16.666666666666668
+    },
+    "mag": 200,
+    "count": 16,
+    "delay": [
+     3,
+     9
+    ]
+   },
+   {
+    "type": "croco",
+    "at": {
+     "t": 12
+    },
+    "mag": 2000,
+    "count": 4,
+    "delay": [
+     0.6666666666666666,
+     1.3333333333333333
+    ]
+   },
+   {
+    "type": "croco",
+    "at": {
+     "t": 11
+    },
+    "mag": 2000,
+    "count": 4,
+    "delay": [
+     0.6666666666666666,
+     1.3333333333333333
+    ]
+   },
+   {
+    "type": "croco",
+    "at": {
+     "t": 10
+    },
+    "mag": 2000,
+    "count": 4,
+    "delay": [
+     0.6666666666666666,
+     1.3333333333333333
+    ]
+   },
+   {
+    "type": "hackey",
+    "at": {
+     "t": 6.666666666666667
+    },
+    "mag": 200,
+    "count": 1
+   },
+   {
+    "type": "hackey",
+    "at": {
+     "t": 3.3333333333333335
+    },
+    "mag": 200,
+    "count": 1
+   }
+  ]
+ },
+ {
+  "sub": 15,
+  "stage": {
+   "name": "어린 양의 침실",
+   "jp": "子羊の寝室",
+   "flag": "🗺️",
+   "hp": 980000,
+   "max": 10,
+   "xp": 8550,
+   "sky": "#f3e3c4",
+   "land": "#a88a6a",
+   "drop": {}
+  },
+  "rules": [
+   {
+    "type": "darkdog",
+    "at": {
+     "t": 7.333333333333333
+    },
+    "mag": 1000,
+    "delay": [
+     20,
+     22
+    ]
+   },
+   {
+    "type": "darkdog",
+    "at": {
+     "t": 6.666666666666667
+    },
+    "mag": 1000,
+    "delay": [
+     20,
+     22
+    ]
+   },
+   {
+    "type": "kangaroo",
+    "at": {
+     "hp": 99
+    },
+    "mag": 100,
+    "firstDelay": 10,
+    "delay": [
+     40,
+     66.66666666666667
+    ]
+   },
+   {
+    "type": "dolphina",
+    "at": {
+     "hp": 99
+    },
+    "mag": 100,
+    "count": 5,
+    "delay": [
+     23.333333333333332,
+     26.666666666666668
+    ]
+   },
+   {
+    "type": "kory",
+    "at": {
+     "hp": 99
+    },
+    "mag": 600,
+    "count": 1
+   },
+   {
+    "type": "bunbunblack",
+    "at": {
+     "hp": 99
+    },
+    "mag": 400,
+    "count": 1,
+    "boss": true
+   }
+  ]
  }
 ];
-const TRUELEGEND_SUBS=[{"name":"진·전설의 시작","en":"A New Legend","jp":"真・伝説のはじまり","start":324,"len":1,"crowns":[1,1.5,2,1]},{"name":"배부른 비경","en":"Gluttonous Wilds","jp":"まんぷく秘境","start":325,"len":6,"crowns":[1,1.5,2,1]},{"name":"어드벤 대삼림","en":"Adventure Forest","jp":"アドベン大森林","start":331,"len":6,"crowns":[1,1.5,2,1]},{"name":"철벅철벅 옛 바닷길","en":"Old Sea Road","jp":"じゃぶじゃぶ旧海道","start":337,"len":6,"crowns":[1,1.5,2,1]},{"name":"멍멍 만","en":"Doggy Bay","jp":"ワンワン湾","start":343,"len":6,"crowns":[1,1.5,2,1]},{"name":"심연을 들여다보는 자","en":"Abyss Watcher","jp":"深淵を覗く者","start":349,"len":6,"crowns":[1,1.5,2,1]},{"name":"데스 메가 시티","en":"Death Mega City","jp":"デスメガシティ","start":355,"len":6,"crowns":[1,1.5,2,1]},{"name":"무법지대의 규칙","en":"Lawless Code","jp":"無法地帯のオキテ","start":361,"len":6,"crowns":[1,1.5,2,1]},{"name":"파라리라 반도","en":"Paralira Peninsula","jp":"パラリラ半島","start":367,"len":6,"crowns":[1,1.5,2,1]},{"name":"캣 쿠데타","en":"Coup de Chat","jp":"キャットクーデター","start":373,"len":6,"crowns":[1,1.5,2,1]},{"name":"체리 섬","en":"Cherry Isles","jp":"桜んぼ島","start":379,"len":6,"crowns":[1,1.4,1.8,1]},{"name":"혼의 밑바닥에서의 귀화","en":"Return from the Soul","jp":"魂底からの帰化","start":385,"len":6,"crowns":[1,1.4,1.8,1]},{"name":"멸종 해양 타운","en":"Extinct Ocean Town","jp":"絶滅海洋タウン","start":391,"len":6,"crowns":[1,1.4,1.8,1]}];
+const TRUELEGEND_SUBS=[{"name":"진·전설의 시작","en":"A New Legend","jp":"真・伝説のはじまり","start":324,"len":1,"crowns":[1,1.5,2,1]},{"name":"배부른 비경","en":"Gluttonous Wilds","jp":"まんぷく秘境","start":325,"len":6,"crowns":[1,1.5,2,1]},{"name":"어드벤 대삼림","en":"Adventure Forest","jp":"アドベン大森林","start":331,"len":6,"crowns":[1,1.5,2,1]},{"name":"철벅철벅 옛 바닷길","en":"Old Sea Road","jp":"じゃぶじゃぶ旧海道","start":337,"len":6,"crowns":[1,1.5,2,1]},{"name":"멍멍 만","en":"Doggy Bay","jp":"ワンワン湾","start":343,"len":6,"crowns":[1,1.5,2,1]},{"name":"심연을 들여다보는 자","en":"Abyss Watcher","jp":"深淵を覗く者","start":349,"len":6,"crowns":[1,1.5,2,1]},{"name":"데스 메가 시티","en":"Death Mega City","jp":"デスメガシティ","start":355,"len":6,"crowns":[1,1.5,2,1]},{"name":"무법지대의 규칙","en":"Lawless Code","jp":"無法地帯のオキテ","start":361,"len":6,"crowns":[1,1.5,2,1]},{"name":"파라리라 반도","en":"Paralira Peninsula","jp":"パラリラ半島","start":367,"len":6,"crowns":[1,1.5,2,1]},{"name":"캣 쿠데타","en":"Coup de Chat","jp":"キャットクーデター","start":373,"len":6,"crowns":[1,1.5,2,1]},{"name":"체리 섬","en":"Cherry Isles","jp":"桜んぼ島","start":379,"len":6,"crowns":[1,1.4,1.8,1]},{"name":"혼의 밑바닥에서의 귀화","en":"Return from the Soul","jp":"魂底からの帰化","start":385,"len":6,"crowns":[1,1.4,1.8,1]},{"name":"멸종 해양 타운","en":"Extinct Ocean Town","jp":"絶滅海洋タウン","start":391,"len":6,"crowns":[1,1.4,1.8,1]},{"name":"유배 리조트","en":"Exile Resort","jp":"島流しリゾート","start":397,"len":6,"crowns":[1,1.4,1.8,1]},{"name":"미혹의 마도로","en":"Bewildering Magic Road","jp":"まどいの魔道路","start":403,"len":6,"crowns":[1,1.4,1.8,1]},{"name":"천계 바르 골목","en":"Heavenly Bar Alley","jp":"天界バル横丁","start":409,"len":6,"crowns":[1,1.4,1.8,1]}];
 // 등록: 다른 모든 스테이지 모듈 뒤에 붙인다(저장된 절대 번호 유지). 레전드 키 324~396, 서브챕터 49~61.
 // 열림: 구레전드 49장(고대 연구소)을 ★1로 깨면 0장이 열리고, 이후 앞 장 ★1 완주로 다음 장이 열린다(game.js legendSubOpen의 순차 규칙 그대로, 사용자 10-31).
 const TRUELEGEND_START=STAGES.length,TRUELEGEND_K0=324,TRUELEGEND_SUB0=LEGEND_SUBS.length,TRUELEGEND_KN=TRUELEGEND_K0+TRUELEGEND_DATA.length;
