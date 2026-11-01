@@ -1,0 +1,6696 @@
+{
+  "date": "2026-11-01",
+  "scope": "121 new maps, two fixed decks, one seed, smart2, max income, full treasures, all owned third forms",
+  "decks": [
+    [
+      "red",
+      "yellow",
+      "blue",
+      "purple",
+      "heliotrope",
+      "wisteria",
+      "blossom",
+      "almondblossom",
+      "lightrainbow",
+      "raspberry"
+    ],
+    [
+      "red",
+      "yellow",
+      "blue",
+      "purple",
+      "hacienda",
+      "lightcream",
+      "moss",
+      "ruby",
+      "gold",
+      "coral"
+    ]
+  ],
+  "availability": [
+    {
+      "i": 759,
+      "allies": 127
+    },
+    {
+      "i": 760,
+      "allies": 127
+    },
+    {
+      "i": 761,
+      "allies": 127
+    },
+    {
+      "i": 762,
+      "allies": 127
+    },
+    {
+      "i": 763,
+      "allies": 127
+    },
+    {
+      "i": 764,
+      "allies": 127
+    },
+    {
+      "i": 765,
+      "allies": 127
+    },
+    {
+      "i": 766,
+      "allies": 127
+    },
+    {
+      "i": 767,
+      "allies": 127
+    },
+    {
+      "i": 768,
+      "allies": 127
+    },
+    {
+      "i": 769,
+      "allies": 127
+    },
+    {
+      "i": 770,
+      "allies": 127
+    },
+    {
+      "i": 771,
+      "allies": 127
+    },
+    {
+      "i": 772,
+      "allies": 127
+    },
+    {
+      "i": 773,
+      "allies": 127
+    },
+    {
+      "i": 774,
+      "allies": 127
+    },
+    {
+      "i": 775,
+      "allies": 127
+    },
+    {
+      "i": 776,
+      "allies": 127
+    },
+    {
+      "i": 777,
+      "allies": 127
+    },
+    {
+      "i": 778,
+      "allies": 127
+    },
+    {
+      "i": 779,
+      "allies": 127
+    },
+    {
+      "i": 780,
+      "allies": 127
+    },
+    {
+      "i": 781,
+      "allies": 127
+    },
+    {
+      "i": 782,
+      "allies": 127
+    },
+    {
+      "i": 783,
+      "allies": 127
+    },
+    {
+      "i": 784,
+      "allies": 127
+    },
+    {
+      "i": 785,
+      "allies": 127
+    },
+    {
+      "i": 786,
+      "allies": 127
+    },
+    {
+      "i": 787,
+      "allies": 127
+    },
+    {
+      "i": 788,
+      "allies": 127
+    },
+    {
+      "i": 789,
+      "allies": 127
+    },
+    {
+      "i": 790,
+      "allies": 127
+    },
+    {
+      "i": 791,
+      "allies": 127
+    },
+    {
+      "i": 792,
+      "allies": 127
+    },
+    {
+      "i": 793,
+      "allies": 127
+    },
+    {
+      "i": 794,
+      "allies": 127
+    },
+    {
+      "i": 795,
+      "allies": 127
+    },
+    {
+      "i": 796,
+      "allies": 127
+    },
+    {
+      "i": 797,
+      "allies": 127
+    },
+    {
+      "i": 798,
+      "allies": 127
+    },
+    {
+      "i": 799,
+      "allies": 127
+    },
+    {
+      "i": 800,
+      "allies": 127
+    },
+    {
+      "i": 801,
+      "allies": 127
+    },
+    {
+      "i": 802,
+      "allies": 127
+    },
+    {
+      "i": 803,
+      "allies": 127
+    },
+    {
+      "i": 804,
+      "allies": 127
+    },
+    {
+      "i": 805,
+      "allies": 127
+    },
+    {
+      "i": 806,
+      "allies": 127
+    },
+    {
+      "i": 807,
+      "allies": 127
+    },
+    {
+      "i": 808,
+      "allies": 127
+    },
+    {
+      "i": 809,
+      "allies": 127
+    },
+    {
+      "i": 810,
+      "allies": 127
+    },
+    {
+      "i": 811,
+      "allies": 127
+    },
+    {
+      "i": 812,
+      "allies": 127
+    },
+    {
+      "i": 813,
+      "allies": 127
+    },
+    {
+      "i": 814,
+      "allies": 127
+    },
+    {
+      "i": 815,
+      "allies": 127
+    },
+    {
+      "i": 816,
+      "allies": 127
+    },
+    {
+      "i": 817,
+      "allies": 127
+    },
+    {
+      "i": 818,
+      "allies": 127
+    },
+    {
+      "i": 819,
+      "allies": 127
+    },
+    {
+      "i": 820,
+      "allies": 127
+    },
+    {
+      "i": 821,
+      "allies": 127
+    },
+    {
+      "i": 822,
+      "allies": 127
+    },
+    {
+      "i": 823,
+      "allies": 127
+    },
+    {
+      "i": 824,
+      "allies": 127
+    },
+    {
+      "i": 825,
+      "allies": 127
+    },
+    {
+      "i": 826,
+      "allies": 127
+    },
+    {
+      "i": 827,
+      "allies": 127
+    },
+    {
+      "i": 828,
+      "allies": 127
+    },
+    {
+      "i": 829,
+      "allies": 127
+    },
+    {
+      "i": 830,
+      "allies": 127
+    },
+    {
+      "i": 831,
+      "allies": 127
+    },
+    {
+      "i": 832,
+      "allies": 127
+    },
+    {
+      "i": 833,
+      "allies": 127
+    },
+    {
+      "i": 834,
+      "allies": 127
+    },
+    {
+      "i": 835,
+      "allies": 127
+    },
+    {
+      "i": 836,
+      "allies": 127
+    },
+    {
+      "i": 837,
+      "allies": 127
+    },
+    {
+      "i": 838,
+      "allies": 127
+    },
+    {
+      "i": 839,
+      "allies": 127
+    },
+    {
+      "i": 840,
+      "allies": 127
+    },
+    {
+      "i": 841,
+      "allies": 127
+    },
+    {
+      "i": 842,
+      "allies": 127
+    },
+    {
+      "i": 843,
+      "allies": 127
+    },
+    {
+      "i": 844,
+      "allies": 127
+    },
+    {
+      "i": 845,
+      "allies": 127
+    },
+    {
+      "i": 846,
+      "allies": 127
+    },
+    {
+      "i": 847,
+      "allies": 127
+    },
+    {
+      "i": 848,
+      "allies": 127
+    },
+    {
+      "i": 849,
+      "allies": 127
+    },
+    {
+      "i": 850,
+      "allies": 127
+    },
+    {
+      "i": 851,
+      "allies": 127
+    },
+    {
+      "i": 852,
+      "allies": 127
+    },
+    {
+      "i": 853,
+      "allies": 127
+    },
+    {
+      "i": 854,
+      "allies": 127
+    },
+    {
+      "i": 855,
+      "allies": 127
+    },
+    {
+      "i": 856,
+      "allies": 127
+    },
+    {
+      "i": 857,
+      "allies": 127
+    },
+    {
+      "i": 858,
+      "allies": 127
+    },
+    {
+      "i": 859,
+      "allies": 127
+    },
+    {
+      "i": 860,
+      "allies": 127
+    },
+    {
+      "i": 861,
+      "allies": 127
+    },
+    {
+      "i": 862,
+      "allies": 127
+    },
+    {
+      "i": 863,
+      "allies": 127
+    },
+    {
+      "i": 864,
+      "allies": 127
+    },
+    {
+      "i": 865,
+      "allies": 127
+    },
+    {
+      "i": 866,
+      "allies": 127
+    },
+    {
+      "i": 867,
+      "allies": 127
+    },
+    {
+      "i": 868,
+      "allies": 127
+    },
+    {
+      "i": 869,
+      "allies": 127
+    },
+    {
+      "i": 870,
+      "allies": 127
+    },
+    {
+      "i": 871,
+      "allies": 127
+    },
+    {
+      "i": 872,
+      "allies": 127
+    },
+    {
+      "i": 873,
+      "allies": 127
+    },
+    {
+      "i": 874,
+      "allies": 127
+    },
+    {
+      "i": 875,
+      "allies": 127
+    },
+    {
+      "i": 876,
+      "allies": 127
+    },
+    {
+      "i": 877,
+      "allies": 127
+    },
+    {
+      "i": 878,
+      "allies": 127
+    },
+    {
+      "i": 879,
+      "allies": 127
+    }
+  ],
+  "meta": [
+    {
+      "i": 759,
+      "name": "지구",
+      "deck": 0
+    },
+    {
+      "i": 759,
+      "name": "지구",
+      "deck": 1
+    },
+    {
+      "i": 760,
+      "name": "화성",
+      "deck": 0
+    },
+    {
+      "i": 760,
+      "name": "화성",
+      "deck": 1
+    },
+    {
+      "i": 761,
+      "name": "목성",
+      "deck": 0
+    },
+    {
+      "i": 761,
+      "name": "목성",
+      "deck": 1
+    },
+    {
+      "i": 762,
+      "name": "토성",
+      "deck": 0
+    },
+    {
+      "i": 762,
+      "name": "토성",
+      "deck": 1
+    },
+    {
+      "i": 763,
+      "name": "금성",
+      "deck": 0
+    },
+    {
+      "i": 763,
+      "name": "금성",
+      "deck": 1
+    },
+    {
+      "i": 764,
+      "name": "수성",
+      "deck": 0
+    },
+    {
+      "i": 764,
+      "name": "수성",
+      "deck": 1
+    },
+    {
+      "i": 765,
+      "name": "태양",
+      "deck": 0
+    },
+    {
+      "i": 765,
+      "name": "태양",
+      "deck": 1
+    },
+    {
+      "i": 766,
+      "name": "우라노스",
+      "deck": 0
+    },
+    {
+      "i": 766,
+      "name": "우라노스",
+      "deck": 1
+    },
+    {
+      "i": 767,
+      "name": "넵튠",
+      "deck": 0
+    },
+    {
+      "i": 767,
+      "name": "넵튠",
+      "deck": 1
+    },
+    {
+      "i": 768,
+      "name": "트리톤",
+      "deck": 0
+    },
+    {
+      "i": 768,
+      "name": "트리톤",
+      "deck": 1
+    },
+    {
+      "i": 769,
+      "name": "플루토",
+      "deck": 0
+    },
+    {
+      "i": 769,
+      "name": "플루토",
+      "deck": 1
+    },
+    {
+      "i": 770,
+      "name": "붉은 직사각형 성운",
+      "deck": 0
+    },
+    {
+      "i": 770,
+      "name": "붉은 직사각형 성운",
+      "deck": 1
+    },
+    {
+      "i": 771,
+      "name": "에스키모 성운",
+      "deck": 0
+    },
+    {
+      "i": 771,
+      "name": "에스키모 성운",
+      "deck": 1
+    },
+    {
+      "i": 772,
+      "name": "고양이눈 성운",
+      "deck": 0
+    },
+    {
+      "i": 772,
+      "name": "고양이눈 성운",
+      "deck": 1
+    },
+    {
+      "i": 773,
+      "name": "알 성운",
+      "deck": 0
+    },
+    {
+      "i": 773,
+      "name": "알 성운",
+      "deck": 1
+    },
+    {
+      "i": 774,
+      "name": "호리병박 성운",
+      "deck": 0
+    },
+    {
+      "i": 774,
+      "name": "호리병박 성운",
+      "deck": 1
+    },
+    {
+      "i": 775,
+      "name": "알타이르",
+      "deck": 0
+    },
+    {
+      "i": 775,
+      "name": "알타이르",
+      "deck": 1
+    },
+    {
+      "i": 776,
+      "name": "시리우스",
+      "deck": 0
+    },
+    {
+      "i": 776,
+      "name": "시리우스",
+      "deck": 1
+    },
+    {
+      "i": 777,
+      "name": "카노푸스",
+      "deck": 0
+    },
+    {
+      "i": 777,
+      "name": "카노푸스",
+      "deck": 1
+    },
+    {
+      "i": 778,
+      "name": "베가",
+      "deck": 0
+    },
+    {
+      "i": 778,
+      "name": "베가",
+      "deck": 1
+    },
+    {
+      "i": 779,
+      "name": "알데바란",
+      "deck": 0
+    },
+    {
+      "i": 779,
+      "name": "알데바란",
+      "deck": 1
+    },
+    {
+      "i": 780,
+      "name": "베텔게우스",
+      "deck": 0
+    },
+    {
+      "i": 780,
+      "name": "베텔게우스",
+      "deck": 1
+    },
+    {
+      "i": 781,
+      "name": "데네브",
+      "deck": 0
+    },
+    {
+      "i": 781,
+      "name": "데네브",
+      "deck": 1
+    },
+    {
+      "i": 782,
+      "name": "과자 행성",
+      "deck": 0
+    },
+    {
+      "i": 782,
+      "name": "과자 행성",
+      "deck": 1
+    },
+    {
+      "i": 783,
+      "name": "사이타 별",
+      "deck": 0
+    },
+    {
+      "i": 783,
+      "name": "사이타 별",
+      "deck": 1
+    },
+    {
+      "i": 784,
+      "name": "괴황성",
+      "deck": 0
+    },
+    {
+      "i": 784,
+      "name": "괴황성",
+      "deck": 1
+    },
+    {
+      "i": 785,
+      "name": "대마젤란 성운",
+      "deck": 0
+    },
+    {
+      "i": 785,
+      "name": "대마젤란 성운",
+      "deck": 1
+    },
+    {
+      "i": 786,
+      "name": "부타라 별",
+      "deck": 0
+    },
+    {
+      "i": 786,
+      "name": "부타라 별",
+      "deck": 1
+    },
+    {
+      "i": 787,
+      "name": "모스칸다그",
+      "deck": 0
+    },
+    {
+      "i": 787,
+      "name": "모스칸다그",
+      "deck": 1
+    },
+    {
+      "i": 788,
+      "name": "콜론 별",
+      "deck": 0
+    },
+    {
+      "i": 788,
+      "name": "콜론 별",
+      "deck": 1
+    },
+    {
+      "i": 789,
+      "name": "야키소판",
+      "deck": 0
+    },
+    {
+      "i": 789,
+      "name": "야키소판",
+      "deck": 1
+    },
+    {
+      "i": 790,
+      "name": "매실 별",
+      "deck": 0
+    },
+    {
+      "i": 790,
+      "name": "매실 별",
+      "deck": 1
+    },
+    {
+      "i": 791,
+      "name": "다라라라",
+      "deck": 0
+    },
+    {
+      "i": 791,
+      "name": "다라라라",
+      "deck": 1
+    },
+    {
+      "i": 792,
+      "name": "마이도무리",
+      "deck": 0
+    },
+    {
+      "i": 792,
+      "name": "마이도무리",
+      "deck": 1
+    },
+    {
+      "i": 793,
+      "name": "멜토즈",
+      "deck": 0
+    },
+    {
+      "i": 793,
+      "name": "멜토즈",
+      "deck": 1
+    },
+    {
+      "i": 794,
+      "name": "우랄루",
+      "deck": 0
+    },
+    {
+      "i": 794,
+      "name": "우랄루",
+      "deck": 1
+    },
+    {
+      "i": 795,
+      "name": "아구하무무",
+      "deck": 0
+    },
+    {
+      "i": 795,
+      "name": "아구하무무",
+      "deck": 1
+    },
+    {
+      "i": 796,
+      "name": "소모론",
+      "deck": 0
+    },
+    {
+      "i": 796,
+      "name": "소모론",
+      "deck": 1
+    },
+    {
+      "i": 797,
+      "name": "아바 부아",
+      "deck": 0
+    },
+    {
+      "i": 797,
+      "name": "아바 부아",
+      "deck": 1
+    },
+    {
+      "i": 798,
+      "name": "티탄",
+      "deck": 0
+    },
+    {
+      "i": 798,
+      "name": "티탄",
+      "deck": 1
+    },
+    {
+      "i": 799,
+      "name": "데스스탄",
+      "deck": 0
+    },
+    {
+      "i": 799,
+      "name": "데스스탄",
+      "deck": 1
+    },
+    {
+      "i": 800,
+      "name": "고릴라의 행성",
+      "deck": 0
+    },
+    {
+      "i": 800,
+      "name": "고릴라의 행성",
+      "deck": 1
+    },
+    {
+      "i": 801,
+      "name": "초이바트론 별",
+      "deck": 0
+    },
+    {
+      "i": 801,
+      "name": "초이바트론 별",
+      "deck": 1
+    },
+    {
+      "i": 802,
+      "name": "크림슨 별",
+      "deck": 0
+    },
+    {
+      "i": 802,
+      "name": "크림슨 별",
+      "deck": 1
+    },
+    {
+      "i": 803,
+      "name": "N77 성운",
+      "deck": 0
+    },
+    {
+      "i": 803,
+      "name": "N77 성운",
+      "deck": 1
+    },
+    {
+      "i": 804,
+      "name": "안드로메다",
+      "deck": 0
+    },
+    {
+      "i": 804,
+      "name": "안드로메다",
+      "deck": 1
+    },
+    {
+      "i": 805,
+      "name": "블랙홀",
+      "deck": 0
+    },
+    {
+      "i": 805,
+      "name": "블랙홀",
+      "deck": 1
+    },
+    {
+      "i": 806,
+      "name": "빅뱅",
+      "deck": 0
+    },
+    {
+      "i": 806,
+      "name": "빅뱅",
+      "deck": 1
+    },
+    {
+      "i": 807,
+      "name": "고대의 저주",
+      "deck": 0
+    },
+    {
+      "i": 807,
+      "name": "고대의 저주",
+      "deck": 1
+    },
+    {
+      "i": 808,
+      "name": "필라프 대초원",
+      "deck": 0
+    },
+    {
+      "i": 808,
+      "name": "필라프 대초원",
+      "deck": 1
+    },
+    {
+      "i": 809,
+      "name": "냥달메시안",
+      "deck": 0
+    },
+    {
+      "i": 809,
+      "name": "냥달메시안",
+      "deck": 1
+    },
+    {
+      "i": 810,
+      "name": "안닌 고개",
+      "deck": 0
+    },
+    {
+      "i": 810,
+      "name": "안닌 고개",
+      "deck": 1
+    },
+    {
+      "i": 811,
+      "name": "아히요 고원",
+      "deck": 0
+    },
+    {
+      "i": 811,
+      "name": "아히요 고원",
+      "deck": 1
+    },
+    {
+      "i": 812,
+      "name": "파스타 사구",
+      "deck": 0
+    },
+    {
+      "i": 812,
+      "name": "파스타 사구",
+      "deck": 1
+    },
+    {
+      "i": 813,
+      "name": "루러우 구릉",
+      "deck": 0
+    },
+    {
+      "i": 813,
+      "name": "루러우 구릉",
+      "deck": 1
+    },
+    {
+      "i": 814,
+      "name": "코사족 유적",
+      "deck": 0
+    },
+    {
+      "i": 814,
+      "name": "코사족 유적",
+      "deck": 1
+    },
+    {
+      "i": 815,
+      "name": "덴지로 바다",
+      "deck": 0
+    },
+    {
+      "i": 815,
+      "name": "덴지로 바다",
+      "deck": 1
+    },
+    {
+      "i": 816,
+      "name": "산적 흉내",
+      "deck": 0
+    },
+    {
+      "i": 816,
+      "name": "산적 흉내",
+      "deck": 1
+    },
+    {
+      "i": 817,
+      "name": "동글동글 웅덩이",
+      "deck": 0
+    },
+    {
+      "i": 817,
+      "name": "동글동글 웅덩이",
+      "deck": 1
+    },
+    {
+      "i": 818,
+      "name": "스릴 넘치는 담소",
+      "deck": 0
+    },
+    {
+      "i": 818,
+      "name": "스릴 넘치는 담소",
+      "deck": 1
+    },
+    {
+      "i": 819,
+      "name": "장 굴",
+      "deck": 0
+    },
+    {
+      "i": 819,
+      "name": "장 굴",
+      "deck": 1
+    },
+    {
+      "i": 820,
+      "name": "마리네 타운",
+      "deck": 0
+    },
+    {
+      "i": 820,
+      "name": "마리네 타운",
+      "deck": 1
+    },
+    {
+      "i": 821,
+      "name": "떠도는 소라고둥",
+      "deck": 0
+    },
+    {
+      "i": 821,
+      "name": "떠도는 소라고둥",
+      "deck": 1
+    },
+    {
+      "i": 822,
+      "name": "파르카치오 해구",
+      "deck": 0
+    },
+    {
+      "i": 822,
+      "name": "파르카치오 해구",
+      "deck": 1
+    },
+    {
+      "i": 823,
+      "name": "곰치 해저 화산",
+      "deck": 0
+    },
+    {
+      "i": 823,
+      "name": "곰치 해저 화산",
+      "deck": 1
+    },
+    {
+      "i": 824,
+      "name": "새벽 프론탈레",
+      "deck": 0
+    },
+    {
+      "i": 824,
+      "name": "새벽 프론탈레",
+      "deck": 1
+    },
+    {
+      "i": 825,
+      "name": "루츠보 소용돌이",
+      "deck": 0
+    },
+    {
+      "i": 825,
+      "name": "루츠보 소용돌이",
+      "deck": 1
+    },
+    {
+      "i": 826,
+      "name": "팔딱팔딱 어장",
+      "deck": 0
+    },
+    {
+      "i": 826,
+      "name": "팔딱팔딱 어장",
+      "deck": 1
+    },
+    {
+      "i": 827,
+      "name": "반항적 경제 수역",
+      "deck": 0
+    },
+    {
+      "i": 827,
+      "name": "반항적 경제 수역",
+      "deck": 1
+    },
+    {
+      "i": 828,
+      "name": "가마토로 방파제",
+      "deck": 0
+    },
+    {
+      "i": 828,
+      "name": "가마토로 방파제",
+      "deck": 1
+    },
+    {
+      "i": 829,
+      "name": "괴수 쇼 암굴",
+      "deck": 0
+    },
+    {
+      "i": 829,
+      "name": "괴수 쇼 암굴",
+      "deck": 1
+    },
+    {
+      "i": 830,
+      "name": "해마 해변",
+      "deck": 0
+    },
+    {
+      "i": 830,
+      "name": "해마 해변",
+      "deck": 1
+    },
+    {
+      "i": 831,
+      "name": "멋진 오징어 곶",
+      "deck": 0
+    },
+    {
+      "i": 831,
+      "name": "멋진 오징어 곶",
+      "deck": 1
+    },
+    {
+      "i": 832,
+      "name": "단단한 암흑 병기",
+      "deck": 0
+    },
+    {
+      "i": 832,
+      "name": "단단한 암흑 병기",
+      "deck": 1
+    },
+    {
+      "i": 833,
+      "name": "귀여운 벽화",
+      "deck": 0
+    },
+    {
+      "i": 833,
+      "name": "귀여운 벽화",
+      "deck": 1
+    },
+    {
+      "i": 834,
+      "name": "선샤인 동굴",
+      "deck": 0
+    },
+    {
+      "i": 834,
+      "name": "선샤인 동굴",
+      "deck": 1
+    },
+    {
+      "i": 835,
+      "name": "종유석 일루미네이션",
+      "deck": 0
+    },
+    {
+      "i": 835,
+      "name": "종유석 일루미네이션",
+      "deck": 1
+    },
+    {
+      "i": 836,
+      "name": "핼쑥 성악설",
+      "deck": 0
+    },
+    {
+      "i": 836,
+      "name": "핼쑥 성악설",
+      "deck": 1
+    },
+    {
+      "i": 837,
+      "name": "느긋한 지저호",
+      "deck": 0
+    },
+    {
+      "i": 837,
+      "name": "느긋한 지저호",
+      "deck": 1
+    },
+    {
+      "i": 838,
+      "name": "리코펜의 밤",
+      "deck": 0
+    },
+    {
+      "i": 838,
+      "name": "리코펜의 밤",
+      "deck": 1
+    },
+    {
+      "i": 839,
+      "name": "메트로폴리스 오아시스",
+      "deck": 0
+    },
+    {
+      "i": 839,
+      "name": "메트로폴리스 오아시스",
+      "deck": 1
+    },
+    {
+      "i": 840,
+      "name": "허울뿐인 마천루",
+      "deck": 0
+    },
+    {
+      "i": 840,
+      "name": "허울뿐인 마천루",
+      "deck": 1
+    },
+    {
+      "i": 841,
+      "name": "무법자의 황혼",
+      "deck": 0
+    },
+    {
+      "i": 841,
+      "name": "무법자의 황혼",
+      "deck": 1
+    },
+    {
+      "i": 842,
+      "name": "콘크리트 오션",
+      "deck": 0
+    },
+    {
+      "i": 842,
+      "name": "콘크리트 오션",
+      "deck": 1
+    },
+    {
+      "i": 843,
+      "name": "무인역의 결투",
+      "deck": 0
+    },
+    {
+      "i": 843,
+      "name": "무인역의 결투",
+      "deck": 1
+    },
+    {
+      "i": 844,
+      "name": "골풀 탑",
+      "deck": 0
+    },
+    {
+      "i": 844,
+      "name": "골풀 탑",
+      "deck": 1
+    },
+    {
+      "i": 845,
+      "name": "카우걸 감옥",
+      "deck": 0
+    },
+    {
+      "i": 845,
+      "name": "카우걸 감옥",
+      "deck": 1
+    },
+    {
+      "i": 846,
+      "name": "N.G. 목장",
+      "deck": 0
+    },
+    {
+      "i": 846,
+      "name": "N.G. 목장",
+      "deck": 1
+    },
+    {
+      "i": 847,
+      "name": "헌팅 산",
+      "deck": 0
+    },
+    {
+      "i": 847,
+      "name": "헌팅 산",
+      "deck": 1
+    },
+    {
+      "i": 848,
+      "name": "벌벌 고원",
+      "deck": 0
+    },
+    {
+      "i": 848,
+      "name": "벌벌 고원",
+      "deck": 1
+    },
+    {
+      "i": 849,
+      "name": "데드 리볼버 계곡",
+      "deck": 0
+    },
+    {
+      "i": 849,
+      "name": "데드 리볼버 계곡",
+      "deck": 1
+    },
+    {
+      "i": 850,
+      "name": "흰다랑어 해안",
+      "deck": 0
+    },
+    {
+      "i": 850,
+      "name": "흰다랑어 해안",
+      "deck": 1
+    },
+    {
+      "i": 851,
+      "name": "궁극 병기 바다사자",
+      "deck": 0
+    },
+    {
+      "i": 851,
+      "name": "궁극 병기 바다사자",
+      "deck": 1
+    },
+    {
+      "i": 852,
+      "name": "미꾸라지 깨기",
+      "deck": 0
+    },
+    {
+      "i": 852,
+      "name": "미꾸라지 깨기",
+      "deck": 1
+    },
+    {
+      "i": 853,
+      "name": "괭이갈매기 만",
+      "deck": 0
+    },
+    {
+      "i": 853,
+      "name": "괭이갈매기 만",
+      "deck": 1
+    },
+    {
+      "i": 854,
+      "name": "날름날름 늪",
+      "deck": 0
+    },
+    {
+      "i": 854,
+      "name": "날름날름 늪",
+      "deck": 1
+    },
+    {
+      "i": 855,
+      "name": "보이스 피싱",
+      "deck": 0
+    },
+    {
+      "i": 855,
+      "name": "보이스 피싱",
+      "deck": 1
+    },
+    {
+      "i": 856,
+      "name": "귀뚜라미 이데올로기",
+      "deck": 0
+    },
+    {
+      "i": 856,
+      "name": "귀뚜라미 이데올로기",
+      "deck": 1
+    },
+    {
+      "i": 857,
+      "name": "굴속의 최고 권력자",
+      "deck": 0
+    },
+    {
+      "i": 857,
+      "name": "굴속의 최고 권력자",
+      "deck": 1
+    },
+    {
+      "i": 858,
+      "name": "인민과 당근",
+      "deck": 0
+    },
+    {
+      "i": 858,
+      "name": "인민과 당근",
+      "deck": 1
+    },
+    {
+      "i": 859,
+      "name": "밀고자 군단",
+      "deck": 0
+    },
+    {
+      "i": 859,
+      "name": "밀고자 군단",
+      "deck": 1
+    },
+    {
+      "i": 860,
+      "name": "망명 전야의 기습",
+      "deck": 0
+    },
+    {
+      "i": 860,
+      "name": "망명 전야의 기습",
+      "deck": 1
+    },
+    {
+      "i": 861,
+      "name": "레드 캣 작전",
+      "deck": 0
+    },
+    {
+      "i": 861,
+      "name": "레드 캣 작전",
+      "deck": 1
+    },
+    {
+      "i": 862,
+      "name": "용암 온욕",
+      "deck": 0
+    },
+    {
+      "i": 862,
+      "name": "용암 온욕",
+      "deck": 1
+    },
+    {
+      "i": 863,
+      "name": "음속 화쇄류",
+      "deck": 0
+    },
+    {
+      "i": 863,
+      "name": "음속 화쇄류",
+      "deck": 1
+    },
+    {
+      "i": 864,
+      "name": "재의 비, 사랑을 위해",
+      "deck": 0
+    },
+    {
+      "i": 864,
+      "name": "재의 비, 사랑을 위해",
+      "deck": 1
+    },
+    {
+      "i": 865,
+      "name": "정상의 대현자",
+      "deck": 0
+    },
+    {
+      "i": 865,
+      "name": "정상의 대현자",
+      "deck": 1
+    },
+    {
+      "i": 866,
+      "name": "폭군 칼데라",
+      "deck": 0
+    },
+    {
+      "i": 866,
+      "name": "폭군 칼데라",
+      "deck": 1
+    },
+    {
+      "i": 867,
+      "name": "슈퍼 볼케이노",
+      "deck": 0
+    },
+    {
+      "i": 867,
+      "name": "슈퍼 볼케이노",
+      "deck": 1
+    },
+    {
+      "i": 868,
+      "name": "이상한 찬송가",
+      "deck": 0
+    },
+    {
+      "i": 868,
+      "name": "이상한 찬송가",
+      "deck": 1
+    },
+    {
+      "i": 869,
+      "name": "연유 수도굴의 처녀",
+      "deck": 0
+    },
+    {
+      "i": 869,
+      "name": "연유 수도굴의 처녀",
+      "deck": 1
+    },
+    {
+      "i": 870,
+      "name": "흥겨운 기도",
+      "deck": 0
+    },
+    {
+      "i": 870,
+      "name": "흥겨운 기도",
+      "deck": 1
+    },
+    {
+      "i": 871,
+      "name": "르상티망의 숲",
+      "deck": 0
+    },
+    {
+      "i": 871,
+      "name": "르상티망의 숲",
+      "deck": 1
+    },
+    {
+      "i": 872,
+      "name": "수다쟁이 은둔자",
+      "deck": 0
+    },
+    {
+      "i": 872,
+      "name": "수다쟁이 은둔자",
+      "deck": 1
+    },
+    {
+      "i": 873,
+      "name": "원시에 깃든 혼",
+      "deck": 0
+    },
+    {
+      "i": 873,
+      "name": "원시에 깃든 혼",
+      "deck": 1
+    },
+    {
+      "i": 874,
+      "name": "이와록 암초",
+      "deck": 0
+    },
+    {
+      "i": 874,
+      "name": "이와록 암초",
+      "deck": 1
+    },
+    {
+      "i": 875,
+      "name": "앵무조개 무덤",
+      "deck": 0
+    },
+    {
+      "i": 875,
+      "name": "앵무조개 무덤",
+      "deck": 1
+    },
+    {
+      "i": 876,
+      "name": "바다에서 돌아온 망자",
+      "deck": 0
+    },
+    {
+      "i": 876,
+      "name": "바다에서 돌아온 망자",
+      "deck": 1
+    },
+    {
+      "i": 877,
+      "name": "인면어의 물가",
+      "deck": 0
+    },
+    {
+      "i": 877,
+      "name": "인면어의 물가",
+      "deck": 1
+    },
+    {
+      "i": 878,
+      "name": "낙타 안벽",
+      "deck": 0
+    },
+    {
+      "i": 878,
+      "name": "낙타 안벽",
+      "deck": 1
+    },
+    {
+      "i": 879,
+      "name": "시야 없는 사해",
+      "deck": 0
+    },
+    {
+      "i": 879,
+      "name": "시야 없는 사해",
+      "deck": 1
+    }
+  ],
+  "raw": [
+    {
+      "id": 0,
+      "win": true,
+      "timeout": false,
+      "seconds": 12.93,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 1,
+      "win": true,
+      "timeout": false,
+      "seconds": 21.6,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 2,
+      "win": true,
+      "timeout": false,
+      "seconds": 14,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 3,
+      "win": true,
+      "timeout": false,
+      "seconds": 38.2,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 4,
+      "win": true,
+      "timeout": false,
+      "seconds": 16.57,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 5,
+      "win": true,
+      "timeout": false,
+      "seconds": 69.97,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 6,
+      "win": true,
+      "timeout": false,
+      "seconds": 13.53,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 7,
+      "win": true,
+      "timeout": false,
+      "seconds": 36.5,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 8,
+      "win": true,
+      "timeout": false,
+      "seconds": 20.2,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 9,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 60000,
+      "enemyHp": 431304
+    },
+    {
+      "id": 10,
+      "win": true,
+      "timeout": false,
+      "seconds": 15.73,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 11,
+      "win": true,
+      "timeout": false,
+      "seconds": 59.23,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 12,
+      "win": true,
+      "timeout": false,
+      "seconds": 20.07,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 13,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 60000,
+      "enemyHp": 431304
+    },
+    {
+      "id": 14,
+      "win": true,
+      "timeout": false,
+      "seconds": 19.97,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 15,
+      "win": true,
+      "timeout": false,
+      "seconds": 86.37,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 16,
+      "win": true,
+      "timeout": false,
+      "seconds": 15.97,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 17,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 60000,
+      "enemyHp": 303472
+    },
+    {
+      "id": 18,
+      "win": true,
+      "timeout": false,
+      "seconds": 18.7,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 19,
+      "win": false,
+      "timeout": false,
+      "seconds": 66.13,
+      "allyHp": 0,
+      "enemyHp": 412608
+    },
+    {
+      "id": 20,
+      "win": true,
+      "timeout": false,
+      "seconds": 18.83,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 21,
+      "win": true,
+      "timeout": false,
+      "seconds": 55.43,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 22,
+      "win": true,
+      "timeout": false,
+      "seconds": 19.17,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 23,
+      "win": true,
+      "timeout": false,
+      "seconds": 33.27,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 24,
+      "win": true,
+      "timeout": false,
+      "seconds": 16.37,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 25,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 60000,
+      "enemyHp": 456240
+    },
+    {
+      "id": 26,
+      "win": true,
+      "timeout": false,
+      "seconds": 11.9,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 27,
+      "win": true,
+      "timeout": false,
+      "seconds": 22.9,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 28,
+      "win": true,
+      "timeout": false,
+      "seconds": 13.8,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 29,
+      "win": false,
+      "timeout": false,
+      "seconds": 199.2,
+      "allyHp": 0,
+      "enemyHp": 347322
+    },
+    {
+      "id": 30,
+      "win": true,
+      "timeout": false,
+      "seconds": 16.77,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 31,
+      "win": true,
+      "timeout": false,
+      "seconds": 61.5,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 32,
+      "win": true,
+      "timeout": false,
+      "seconds": 14.77,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 33,
+      "win": false,
+      "timeout": false,
+      "seconds": 80.23,
+      "allyHp": 0,
+      "enemyHp": 490000
+    },
+    {
+      "id": 34,
+      "win": true,
+      "timeout": false,
+      "seconds": 19.07,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 35,
+      "win": true,
+      "timeout": false,
+      "seconds": 105.47,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 36,
+      "win": true,
+      "timeout": false,
+      "seconds": 118.03,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 37,
+      "win": true,
+      "timeout": false,
+      "seconds": 75.07,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 38,
+      "win": true,
+      "timeout": false,
+      "seconds": 16.83,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 39,
+      "win": true,
+      "timeout": false,
+      "seconds": 65.17,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 40,
+      "win": true,
+      "timeout": false,
+      "seconds": 14.27,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 41,
+      "win": true,
+      "timeout": false,
+      "seconds": 139.6,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 42,
+      "win": true,
+      "timeout": false,
+      "seconds": 17.77,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 43,
+      "win": false,
+      "timeout": false,
+      "seconds": 22.5,
+      "allyHp": 0,
+      "enemyHp": 40274
+    },
+    {
+      "id": 44,
+      "win": true,
+      "timeout": false,
+      "seconds": 15.47,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 45,
+      "win": true,
+      "timeout": false,
+      "seconds": 109.27,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 46,
+      "win": true,
+      "timeout": false,
+      "seconds": 16.37,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 47,
+      "win": true,
+      "timeout": false,
+      "seconds": 33.83,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 48,
+      "win": true,
+      "timeout": false,
+      "seconds": 13.43,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 49,
+      "win": false,
+      "timeout": false,
+      "seconds": 149.2,
+      "allyHp": 0,
+      "enemyHp": 57213
+    },
+    {
+      "id": 50,
+      "win": true,
+      "timeout": false,
+      "seconds": 18.77,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 51,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 60000,
+      "enemyHp": 565000
+    },
+    {
+      "id": 52,
+      "win": true,
+      "timeout": false,
+      "seconds": 17.47,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 53,
+      "win": true,
+      "timeout": false,
+      "seconds": 40.37,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 54,
+      "win": true,
+      "timeout": false,
+      "seconds": 14.8,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 55,
+      "win": true,
+      "timeout": false,
+      "seconds": 19.1,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 56,
+      "win": true,
+      "timeout": false,
+      "seconds": 30.77,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 57,
+      "win": true,
+      "timeout": false,
+      "seconds": 58.83,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 58,
+      "win": true,
+      "timeout": false,
+      "seconds": 25.07,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 59,
+      "win": false,
+      "timeout": false,
+      "seconds": 37.97,
+      "allyHp": 0,
+      "enemyHp": 606304
+    },
+    {
+      "id": 60,
+      "win": true,
+      "timeout": false,
+      "seconds": 14.63,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 61,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 60000,
+      "enemyHp": 373516
+    },
+    {
+      "id": 62,
+      "win": true,
+      "timeout": false,
+      "seconds": 18.43,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 63,
+      "win": true,
+      "timeout": false,
+      "seconds": 42.87,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 64,
+      "win": true,
+      "timeout": false,
+      "seconds": 15.67,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 65,
+      "win": true,
+      "timeout": false,
+      "seconds": 247.9,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 66,
+      "win": true,
+      "timeout": false,
+      "seconds": 22.2,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 67,
+      "win": false,
+      "timeout": false,
+      "seconds": 87.13,
+      "allyHp": 0,
+      "enemyHp": 576956
+    },
+    {
+      "id": 68,
+      "win": true,
+      "timeout": false,
+      "seconds": 38.57,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 69,
+      "win": false,
+      "timeout": false,
+      "seconds": 84.87,
+      "allyHp": 0,
+      "enemyHp": 640000
+    },
+    {
+      "id": 70,
+      "win": true,
+      "timeout": false,
+      "seconds": 20.77,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 71,
+      "win": true,
+      "timeout": false,
+      "seconds": 50.67,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 72,
+      "win": true,
+      "timeout": false,
+      "seconds": 60.1,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 73,
+      "win": false,
+      "timeout": false,
+      "seconds": 245.97,
+      "allyHp": 0,
+      "enemyHp": 681304
+    },
+    {
+      "id": 74,
+      "win": true,
+      "timeout": false,
+      "seconds": 20,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 75,
+      "win": true,
+      "timeout": false,
+      "seconds": 91.17,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 76,
+      "win": true,
+      "timeout": false,
+      "seconds": 14.47,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 77,
+      "win": true,
+      "timeout": false,
+      "seconds": 132.33,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 78,
+      "win": true,
+      "timeout": false,
+      "seconds": 24.7,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 79,
+      "win": true,
+      "timeout": false,
+      "seconds": 83.87,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 80,
+      "win": true,
+      "timeout": false,
+      "seconds": 35.7,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 81,
+      "win": false,
+      "timeout": false,
+      "seconds": 69.43,
+      "allyHp": 0,
+      "enemyHp": 661304
+    },
+    {
+      "id": 82,
+      "win": true,
+      "timeout": false,
+      "seconds": 21.3,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 83,
+      "win": false,
+      "timeout": false,
+      "seconds": 114.27,
+      "allyHp": 0,
+      "enemyHp": 731304
+    },
+    {
+      "id": 84,
+      "win": true,
+      "timeout": false,
+      "seconds": 26.6,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 85,
+      "win": false,
+      "timeout": false,
+      "seconds": 106.97,
+      "allyHp": 0,
+      "enemyHp": 660000
+    },
+    {
+      "id": 86,
+      "win": true,
+      "timeout": false,
+      "seconds": 14.1,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 87,
+      "win": false,
+      "timeout": false,
+      "seconds": 82.6,
+      "allyHp": 0,
+      "enemyHp": 7950
+    },
+    {
+      "id": 88,
+      "win": true,
+      "timeout": false,
+      "seconds": 121.27,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 89,
+      "win": false,
+      "timeout": false,
+      "seconds": 100.43,
+      "allyHp": 0,
+      "enemyHp": 690000
+    },
+    {
+      "id": 90,
+      "win": false,
+      "timeout": false,
+      "seconds": 45.03,
+      "allyHp": 0,
+      "enemyHp": 700000
+    },
+    {
+      "id": 91,
+      "win": false,
+      "timeout": false,
+      "seconds": 50.2,
+      "allyHp": 0,
+      "enemyHp": 731304
+    },
+    {
+      "id": 92,
+      "win": false,
+      "timeout": false,
+      "seconds": 28.53,
+      "allyHp": 0,
+      "enemyHp": 610000
+    },
+    {
+      "id": 93,
+      "win": false,
+      "timeout": false,
+      "seconds": 38.93,
+      "allyHp": 0,
+      "enemyHp": 633472
+    },
+    {
+      "id": 94,
+      "win": true,
+      "timeout": false,
+      "seconds": 120.43,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 95,
+      "win": false,
+      "timeout": false,
+      "seconds": 75.07,
+      "allyHp": 0,
+      "enemyHp": 984780
+    },
+    {
+      "id": 96,
+      "win": true,
+      "timeout": false,
+      "seconds": 52.3,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 97,
+      "win": true,
+      "timeout": false,
+      "seconds": 93.73,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 98,
+      "win": true,
+      "timeout": false,
+      "seconds": 14.9,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 99,
+      "win": true,
+      "timeout": false,
+      "seconds": 24.27,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 100,
+      "win": true,
+      "timeout": false,
+      "seconds": 16.07,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 101,
+      "win": true,
+      "timeout": false,
+      "seconds": 20.67,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 102,
+      "win": true,
+      "timeout": false,
+      "seconds": 28.5,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 103,
+      "win": true,
+      "timeout": false,
+      "seconds": 40.43,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 104,
+      "win": true,
+      "timeout": false,
+      "seconds": 20.87,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 105,
+      "win": false,
+      "timeout": false,
+      "seconds": 67.37,
+      "allyHp": 0,
+      "enemyHp": 1000000
+    },
+    {
+      "id": 106,
+      "win": true,
+      "timeout": false,
+      "seconds": 27.83,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 107,
+      "win": true,
+      "timeout": false,
+      "seconds": 81.17,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 108,
+      "win": true,
+      "timeout": false,
+      "seconds": 37.33,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 109,
+      "win": true,
+      "timeout": false,
+      "seconds": 68.83,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 110,
+      "win": true,
+      "timeout": false,
+      "seconds": 24.43,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 111,
+      "win": false,
+      "timeout": false,
+      "seconds": 59.03,
+      "allyHp": 0,
+      "enemyHp": 886956
+    },
+    {
+      "id": 112,
+      "win": true,
+      "timeout": false,
+      "seconds": 16.57,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 113,
+      "win": true,
+      "timeout": false,
+      "seconds": 39.37,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 114,
+      "win": true,
+      "timeout": false,
+      "seconds": 52.17,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 115,
+      "win": true,
+      "timeout": false,
+      "seconds": 76.27,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 116,
+      "win": true,
+      "timeout": false,
+      "seconds": 17.43,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 117,
+      "win": true,
+      "timeout": false,
+      "seconds": 24.83,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 118,
+      "win": true,
+      "timeout": false,
+      "seconds": 22.73,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 119,
+      "win": true,
+      "timeout": false,
+      "seconds": 101.63,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 120,
+      "win": true,
+      "timeout": false,
+      "seconds": 16.4,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 121,
+      "win": true,
+      "timeout": false,
+      "seconds": 33.87,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 122,
+      "win": true,
+      "timeout": false,
+      "seconds": 49.73,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 123,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 60000,
+      "enemyHp": 800000
+    },
+    {
+      "id": 124,
+      "win": true,
+      "timeout": false,
+      "seconds": 16,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 125,
+      "win": true,
+      "timeout": false,
+      "seconds": 44.37,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 126,
+      "win": true,
+      "timeout": false,
+      "seconds": 20.97,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 127,
+      "win": true,
+      "timeout": false,
+      "seconds": 112.57,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 128,
+      "win": true,
+      "timeout": false,
+      "seconds": 21.77,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 129,
+      "win": true,
+      "timeout": false,
+      "seconds": 122.3,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 130,
+      "win": true,
+      "timeout": false,
+      "seconds": 22.13,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 131,
+      "win": true,
+      "timeout": false,
+      "seconds": 98.77,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 132,
+      "win": true,
+      "timeout": false,
+      "seconds": 24.67,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 133,
+      "win": true,
+      "timeout": false,
+      "seconds": 133.27,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 134,
+      "win": true,
+      "timeout": false,
+      "seconds": 19.63,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 135,
+      "win": true,
+      "timeout": false,
+      "seconds": 121.8,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 136,
+      "win": true,
+      "timeout": false,
+      "seconds": 15.97,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 137,
+      "win": true,
+      "timeout": false,
+      "seconds": 21.37,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 138,
+      "win": true,
+      "timeout": false,
+      "seconds": 19.03,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 139,
+      "win": true,
+      "timeout": false,
+      "seconds": 63.8,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 140,
+      "win": true,
+      "timeout": false,
+      "seconds": 92.1,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 141,
+      "win": true,
+      "timeout": false,
+      "seconds": 195.07,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 142,
+      "win": true,
+      "timeout": false,
+      "seconds": 16.9,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 143,
+      "win": true,
+      "timeout": false,
+      "seconds": 27.67,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 144,
+      "win": true,
+      "timeout": false,
+      "seconds": 23,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 145,
+      "win": true,
+      "timeout": false,
+      "seconds": 83.93,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 146,
+      "win": true,
+      "timeout": false,
+      "seconds": 33.4,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 147,
+      "win": true,
+      "timeout": false,
+      "seconds": 103.43,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 148,
+      "win": true,
+      "timeout": false,
+      "seconds": 21.6,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 149,
+      "win": true,
+      "timeout": false,
+      "seconds": 27.57,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 150,
+      "win": true,
+      "timeout": false,
+      "seconds": 32.47,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 151,
+      "win": true,
+      "timeout": false,
+      "seconds": 73.3,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 152,
+      "win": true,
+      "timeout": false,
+      "seconds": 19.13,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 153,
+      "win": true,
+      "timeout": false,
+      "seconds": 68.87,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 154,
+      "win": true,
+      "timeout": false,
+      "seconds": 53.7,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 155,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 60000,
+      "enemyHp": 600000
+    },
+    {
+      "id": 156,
+      "win": true,
+      "timeout": false,
+      "seconds": 23.4,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 157,
+      "win": true,
+      "timeout": false,
+      "seconds": 52.97,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 158,
+      "win": true,
+      "timeout": false,
+      "seconds": 25.37,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 159,
+      "win": false,
+      "timeout": false,
+      "seconds": 146.6,
+      "allyHp": 0,
+      "enemyHp": 478249
+    },
+    {
+      "id": 160,
+      "win": true,
+      "timeout": false,
+      "seconds": 16.9,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 161,
+      "win": true,
+      "timeout": false,
+      "seconds": 26.73,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 162,
+      "win": true,
+      "timeout": false,
+      "seconds": 23.8,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 163,
+      "win": true,
+      "timeout": false,
+      "seconds": 114.77,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 164,
+      "win": true,
+      "timeout": false,
+      "seconds": 23.6,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 165,
+      "win": true,
+      "timeout": false,
+      "seconds": 77.03,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 166,
+      "win": true,
+      "timeout": false,
+      "seconds": 23.73,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 167,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 60000,
+      "enemyHp": 982608
+    },
+    {
+      "id": 168,
+      "win": true,
+      "timeout": false,
+      "seconds": 44.33,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 169,
+      "win": true,
+      "timeout": false,
+      "seconds": 174.83,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 170,
+      "win": true,
+      "timeout": false,
+      "seconds": 17.13,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 171,
+      "win": true,
+      "timeout": false,
+      "seconds": 42.23,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 172,
+      "win": true,
+      "timeout": false,
+      "seconds": 35.2,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 173,
+      "win": false,
+      "timeout": false,
+      "seconds": 53.6,
+      "allyHp": 0,
+      "enemyHp": 866956
+    },
+    {
+      "id": 174,
+      "win": true,
+      "timeout": false,
+      "seconds": 16.1,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 175,
+      "win": true,
+      "timeout": false,
+      "seconds": 24.07,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 176,
+      "win": true,
+      "timeout": false,
+      "seconds": 15.47,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 177,
+      "win": true,
+      "timeout": false,
+      "seconds": 24.2,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 178,
+      "win": true,
+      "timeout": false,
+      "seconds": 23.93,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 179,
+      "win": true,
+      "timeout": false,
+      "seconds": 82.83,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 180,
+      "win": true,
+      "timeout": false,
+      "seconds": 27.87,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 181,
+      "win": true,
+      "timeout": false,
+      "seconds": 176.83,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 182,
+      "win": true,
+      "timeout": false,
+      "seconds": 29.97,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 183,
+      "win": true,
+      "timeout": false,
+      "seconds": 70.77,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 184,
+      "win": true,
+      "timeout": false,
+      "seconds": 22.63,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 185,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 60000,
+      "enemyHp": 791304
+    },
+    {
+      "id": 186,
+      "win": true,
+      "timeout": false,
+      "seconds": 27.3,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 187,
+      "win": true,
+      "timeout": false,
+      "seconds": 42.53,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 188,
+      "win": true,
+      "timeout": false,
+      "seconds": 23,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 189,
+      "win": true,
+      "timeout": false,
+      "seconds": 85.33,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 190,
+      "win": true,
+      "timeout": false,
+      "seconds": 100.93,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 191,
+      "win": true,
+      "timeout": false,
+      "seconds": 77.33,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 192,
+      "win": true,
+      "timeout": false,
+      "seconds": 48,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 193,
+      "win": true,
+      "timeout": false,
+      "seconds": 180.67,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 194,
+      "win": true,
+      "timeout": false,
+      "seconds": 30.13,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 195,
+      "win": true,
+      "timeout": false,
+      "seconds": 97.57,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 196,
+      "win": true,
+      "timeout": false,
+      "seconds": 60.9,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 197,
+      "win": true,
+      "timeout": false,
+      "seconds": 46.67,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 198,
+      "win": false,
+      "timeout": false,
+      "seconds": 17.83,
+      "allyHp": 0,
+      "enemyHp": 102777
+    },
+    {
+      "id": 199,
+      "win": false,
+      "timeout": false,
+      "seconds": 21.33,
+      "allyHp": 0,
+      "enemyHp": 169324
+    },
+    {
+      "id": 200,
+      "win": true,
+      "timeout": false,
+      "seconds": 15.9,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 201,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 60000,
+      "enemyHp": 100000
+    },
+    {
+      "id": 202,
+      "win": true,
+      "timeout": false,
+      "seconds": 9.2,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 203,
+      "win": true,
+      "timeout": false,
+      "seconds": 13.27,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 204,
+      "win": true,
+      "timeout": false,
+      "seconds": 55.37,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 205,
+      "win": true,
+      "timeout": false,
+      "seconds": 111.8,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 206,
+      "win": true,
+      "timeout": false,
+      "seconds": 17,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 207,
+      "win": true,
+      "timeout": false,
+      "seconds": 47.23,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 208,
+      "win": true,
+      "timeout": false,
+      "seconds": 27.37,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 209,
+      "win": false,
+      "timeout": false,
+      "seconds": 41.33,
+      "allyHp": 0,
+      "enemyHp": 986955
+    },
+    {
+      "id": 210,
+      "win": false,
+      "timeout": false,
+      "seconds": 66.77,
+      "allyHp": 0,
+      "enemyHp": 200000
+    },
+    {
+      "id": 211,
+      "win": false,
+      "timeout": false,
+      "seconds": 23.6,
+      "allyHp": 0,
+      "enemyHp": 200000
+    },
+    {
+      "id": 212,
+      "win": true,
+      "timeout": false,
+      "seconds": 15.33,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 213,
+      "win": true,
+      "timeout": false,
+      "seconds": 118.43,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 214,
+      "win": true,
+      "timeout": false,
+      "seconds": 31.7,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 215,
+      "win": false,
+      "timeout": false,
+      "seconds": 62.77,
+      "allyHp": 0,
+      "enemyHp": 982607
+    },
+    {
+      "id": 216,
+      "win": true,
+      "timeout": false,
+      "seconds": 96.1,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 217,
+      "win": false,
+      "timeout": false,
+      "seconds": 165.53,
+      "allyHp": 0,
+      "enemyHp": 1186956
+    },
+    {
+      "id": 218,
+      "win": true,
+      "timeout": false,
+      "seconds": 20.9,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 219,
+      "win": true,
+      "timeout": false,
+      "seconds": 59.47,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 220,
+      "win": true,
+      "timeout": false,
+      "seconds": 21.17,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 221,
+      "win": true,
+      "timeout": false,
+      "seconds": 86.73,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 222,
+      "win": true,
+      "timeout": false,
+      "seconds": 21.77,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 223,
+      "win": true,
+      "timeout": false,
+      "seconds": 33.53,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 224,
+      "win": true,
+      "timeout": false,
+      "seconds": 100.53,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 225,
+      "win": false,
+      "timeout": false,
+      "seconds": 95.83,
+      "allyHp": 0,
+      "enemyHp": 726304
+    },
+    {
+      "id": 226,
+      "win": true,
+      "timeout": false,
+      "seconds": 18.27,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 227,
+      "win": true,
+      "timeout": false,
+      "seconds": 108,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 228,
+      "win": true,
+      "timeout": false,
+      "seconds": 19.07,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 229,
+      "win": true,
+      "timeout": false,
+      "seconds": 110.53,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 230,
+      "win": true,
+      "timeout": false,
+      "seconds": 17.43,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 231,
+      "win": false,
+      "timeout": false,
+      "seconds": 124.73,
+      "allyHp": 0,
+      "enemyHp": 181750
+    },
+    {
+      "id": 232,
+      "win": true,
+      "timeout": false,
+      "seconds": 26.9,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 233,
+      "win": true,
+      "timeout": false,
+      "seconds": 283.33,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 234,
+      "win": true,
+      "timeout": false,
+      "seconds": 16.3,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 235,
+      "win": false,
+      "timeout": false,
+      "seconds": 79,
+      "allyHp": 0,
+      "enemyHp": 97902
+    },
+    {
+      "id": 236,
+      "win": true,
+      "timeout": false,
+      "seconds": 21.4,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 237,
+      "win": false,
+      "timeout": false,
+      "seconds": 169.23,
+      "allyHp": 0,
+      "enemyHp": 800000
+    },
+    {
+      "id": 238,
+      "win": true,
+      "timeout": false,
+      "seconds": 18.1,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 239,
+      "win": true,
+      "timeout": false,
+      "seconds": 33.63,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 240,
+      "win": true,
+      "timeout": false,
+      "seconds": 21.83,
+      "allyHp": 60000,
+      "enemyHp": 0
+    },
+    {
+      "id": 241,
+      "win": false,
+      "timeout": false,
+      "seconds": 198.4,
+      "allyHp": 0,
+      "enemyHp": 726076
+    }
+  ],
+  "maps": [
+    {
+      "i": 759,
+      "name": "지구",
+      "win": true,
+      "attempts": [
+        {
+          "id": 0,
+          "win": true,
+          "timeout": false,
+          "seconds": 12.93,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 1,
+          "win": true,
+          "timeout": false,
+          "seconds": 21.6,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 760,
+      "name": "화성",
+      "win": true,
+      "attempts": [
+        {
+          "id": 2,
+          "win": true,
+          "timeout": false,
+          "seconds": 14,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 3,
+          "win": true,
+          "timeout": false,
+          "seconds": 38.2,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 761,
+      "name": "목성",
+      "win": true,
+      "attempts": [
+        {
+          "id": 4,
+          "win": true,
+          "timeout": false,
+          "seconds": 16.57,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 5,
+          "win": true,
+          "timeout": false,
+          "seconds": 69.97,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 762,
+      "name": "토성",
+      "win": true,
+      "attempts": [
+        {
+          "id": 6,
+          "win": true,
+          "timeout": false,
+          "seconds": 13.53,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 7,
+          "win": true,
+          "timeout": false,
+          "seconds": 36.5,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 763,
+      "name": "금성",
+      "win": true,
+      "attempts": [
+        {
+          "id": 8,
+          "win": true,
+          "timeout": false,
+          "seconds": 20.2,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 9,
+          "win": false,
+          "timeout": true,
+          "seconds": 300,
+          "allyHp": 60000,
+          "enemyHp": 431304,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 764,
+      "name": "수성",
+      "win": true,
+      "attempts": [
+        {
+          "id": 10,
+          "win": true,
+          "timeout": false,
+          "seconds": 15.73,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 11,
+          "win": true,
+          "timeout": false,
+          "seconds": 59.23,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 765,
+      "name": "태양",
+      "win": true,
+      "attempts": [
+        {
+          "id": 12,
+          "win": true,
+          "timeout": false,
+          "seconds": 20.07,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 13,
+          "win": false,
+          "timeout": true,
+          "seconds": 300,
+          "allyHp": 60000,
+          "enemyHp": 431304,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 766,
+      "name": "우라노스",
+      "win": true,
+      "attempts": [
+        {
+          "id": 14,
+          "win": true,
+          "timeout": false,
+          "seconds": 19.97,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 15,
+          "win": true,
+          "timeout": false,
+          "seconds": 86.37,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 767,
+      "name": "넵튠",
+      "win": true,
+      "attempts": [
+        {
+          "id": 16,
+          "win": true,
+          "timeout": false,
+          "seconds": 15.97,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 17,
+          "win": false,
+          "timeout": true,
+          "seconds": 300,
+          "allyHp": 60000,
+          "enemyHp": 303472,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 768,
+      "name": "트리톤",
+      "win": true,
+      "attempts": [
+        {
+          "id": 18,
+          "win": true,
+          "timeout": false,
+          "seconds": 18.7,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 19,
+          "win": false,
+          "timeout": false,
+          "seconds": 66.13,
+          "allyHp": 0,
+          "enemyHp": 412608,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 769,
+      "name": "플루토",
+      "win": true,
+      "attempts": [
+        {
+          "id": 20,
+          "win": true,
+          "timeout": false,
+          "seconds": 18.83,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 21,
+          "win": true,
+          "timeout": false,
+          "seconds": 55.43,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 770,
+      "name": "붉은 직사각형 성운",
+      "win": true,
+      "attempts": [
+        {
+          "id": 22,
+          "win": true,
+          "timeout": false,
+          "seconds": 19.17,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 23,
+          "win": true,
+          "timeout": false,
+          "seconds": 33.27,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 771,
+      "name": "에스키모 성운",
+      "win": true,
+      "attempts": [
+        {
+          "id": 24,
+          "win": true,
+          "timeout": false,
+          "seconds": 16.37,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 25,
+          "win": false,
+          "timeout": true,
+          "seconds": 300,
+          "allyHp": 60000,
+          "enemyHp": 456240,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 772,
+      "name": "고양이눈 성운",
+      "win": true,
+      "attempts": [
+        {
+          "id": 26,
+          "win": true,
+          "timeout": false,
+          "seconds": 11.9,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 27,
+          "win": true,
+          "timeout": false,
+          "seconds": 22.9,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 773,
+      "name": "알 성운",
+      "win": true,
+      "attempts": [
+        {
+          "id": 28,
+          "win": true,
+          "timeout": false,
+          "seconds": 13.8,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 29,
+          "win": false,
+          "timeout": false,
+          "seconds": 199.2,
+          "allyHp": 0,
+          "enemyHp": 347322,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 774,
+      "name": "호리병박 성운",
+      "win": true,
+      "attempts": [
+        {
+          "id": 30,
+          "win": true,
+          "timeout": false,
+          "seconds": 16.77,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 31,
+          "win": true,
+          "timeout": false,
+          "seconds": 61.5,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 775,
+      "name": "알타이르",
+      "win": true,
+      "attempts": [
+        {
+          "id": 32,
+          "win": true,
+          "timeout": false,
+          "seconds": 14.77,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 33,
+          "win": false,
+          "timeout": false,
+          "seconds": 80.23,
+          "allyHp": 0,
+          "enemyHp": 490000,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 776,
+      "name": "시리우스",
+      "win": true,
+      "attempts": [
+        {
+          "id": 34,
+          "win": true,
+          "timeout": false,
+          "seconds": 19.07,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 35,
+          "win": true,
+          "timeout": false,
+          "seconds": 105.47,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 777,
+      "name": "카노푸스",
+      "win": true,
+      "attempts": [
+        {
+          "id": 36,
+          "win": true,
+          "timeout": false,
+          "seconds": 118.03,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 37,
+          "win": true,
+          "timeout": false,
+          "seconds": 75.07,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 778,
+      "name": "베가",
+      "win": true,
+      "attempts": [
+        {
+          "id": 38,
+          "win": true,
+          "timeout": false,
+          "seconds": 16.83,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 39,
+          "win": true,
+          "timeout": false,
+          "seconds": 65.17,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 779,
+      "name": "알데바란",
+      "win": true,
+      "attempts": [
+        {
+          "id": 40,
+          "win": true,
+          "timeout": false,
+          "seconds": 14.27,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 41,
+          "win": true,
+          "timeout": false,
+          "seconds": 139.6,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 780,
+      "name": "베텔게우스",
+      "win": true,
+      "attempts": [
+        {
+          "id": 42,
+          "win": true,
+          "timeout": false,
+          "seconds": 17.77,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 43,
+          "win": false,
+          "timeout": false,
+          "seconds": 22.5,
+          "allyHp": 0,
+          "enemyHp": 40274,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 781,
+      "name": "데네브",
+      "win": true,
+      "attempts": [
+        {
+          "id": 44,
+          "win": true,
+          "timeout": false,
+          "seconds": 15.47,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 45,
+          "win": true,
+          "timeout": false,
+          "seconds": 109.27,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 782,
+      "name": "과자 행성",
+      "win": true,
+      "attempts": [
+        {
+          "id": 46,
+          "win": true,
+          "timeout": false,
+          "seconds": 16.37,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 47,
+          "win": true,
+          "timeout": false,
+          "seconds": 33.83,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 783,
+      "name": "사이타 별",
+      "win": true,
+      "attempts": [
+        {
+          "id": 48,
+          "win": true,
+          "timeout": false,
+          "seconds": 13.43,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 49,
+          "win": false,
+          "timeout": false,
+          "seconds": 149.2,
+          "allyHp": 0,
+          "enemyHp": 57213,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 784,
+      "name": "괴황성",
+      "win": true,
+      "attempts": [
+        {
+          "id": 50,
+          "win": true,
+          "timeout": false,
+          "seconds": 18.77,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 51,
+          "win": false,
+          "timeout": true,
+          "seconds": 300,
+          "allyHp": 60000,
+          "enemyHp": 565000,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 785,
+      "name": "대마젤란 성운",
+      "win": true,
+      "attempts": [
+        {
+          "id": 52,
+          "win": true,
+          "timeout": false,
+          "seconds": 17.47,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 53,
+          "win": true,
+          "timeout": false,
+          "seconds": 40.37,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 786,
+      "name": "부타라 별",
+      "win": true,
+      "attempts": [
+        {
+          "id": 54,
+          "win": true,
+          "timeout": false,
+          "seconds": 14.8,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 55,
+          "win": true,
+          "timeout": false,
+          "seconds": 19.1,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 787,
+      "name": "모스칸다그",
+      "win": true,
+      "attempts": [
+        {
+          "id": 56,
+          "win": true,
+          "timeout": false,
+          "seconds": 30.77,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 57,
+          "win": true,
+          "timeout": false,
+          "seconds": 58.83,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 788,
+      "name": "콜론 별",
+      "win": true,
+      "attempts": [
+        {
+          "id": 58,
+          "win": true,
+          "timeout": false,
+          "seconds": 25.07,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 59,
+          "win": false,
+          "timeout": false,
+          "seconds": 37.97,
+          "allyHp": 0,
+          "enemyHp": 606304,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 789,
+      "name": "야키소판",
+      "win": true,
+      "attempts": [
+        {
+          "id": 60,
+          "win": true,
+          "timeout": false,
+          "seconds": 14.63,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 61,
+          "win": false,
+          "timeout": true,
+          "seconds": 300,
+          "allyHp": 60000,
+          "enemyHp": 373516,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 790,
+      "name": "매실 별",
+      "win": true,
+      "attempts": [
+        {
+          "id": 62,
+          "win": true,
+          "timeout": false,
+          "seconds": 18.43,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 63,
+          "win": true,
+          "timeout": false,
+          "seconds": 42.87,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 791,
+      "name": "다라라라",
+      "win": true,
+      "attempts": [
+        {
+          "id": 64,
+          "win": true,
+          "timeout": false,
+          "seconds": 15.67,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 65,
+          "win": true,
+          "timeout": false,
+          "seconds": 247.9,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 792,
+      "name": "마이도무리",
+      "win": true,
+      "attempts": [
+        {
+          "id": 66,
+          "win": true,
+          "timeout": false,
+          "seconds": 22.2,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 67,
+          "win": false,
+          "timeout": false,
+          "seconds": 87.13,
+          "allyHp": 0,
+          "enemyHp": 576956,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 793,
+      "name": "멜토즈",
+      "win": true,
+      "attempts": [
+        {
+          "id": 68,
+          "win": true,
+          "timeout": false,
+          "seconds": 38.57,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 69,
+          "win": false,
+          "timeout": false,
+          "seconds": 84.87,
+          "allyHp": 0,
+          "enemyHp": 640000,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 794,
+      "name": "우랄루",
+      "win": true,
+      "attempts": [
+        {
+          "id": 70,
+          "win": true,
+          "timeout": false,
+          "seconds": 20.77,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 71,
+          "win": true,
+          "timeout": false,
+          "seconds": 50.67,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 795,
+      "name": "아구하무무",
+      "win": true,
+      "attempts": [
+        {
+          "id": 72,
+          "win": true,
+          "timeout": false,
+          "seconds": 60.1,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 73,
+          "win": false,
+          "timeout": false,
+          "seconds": 245.97,
+          "allyHp": 0,
+          "enemyHp": 681304,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 796,
+      "name": "소모론",
+      "win": true,
+      "attempts": [
+        {
+          "id": 74,
+          "win": true,
+          "timeout": false,
+          "seconds": 20,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 75,
+          "win": true,
+          "timeout": false,
+          "seconds": 91.17,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 797,
+      "name": "아바 부아",
+      "win": true,
+      "attempts": [
+        {
+          "id": 76,
+          "win": true,
+          "timeout": false,
+          "seconds": 14.47,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 77,
+          "win": true,
+          "timeout": false,
+          "seconds": 132.33,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 798,
+      "name": "티탄",
+      "win": true,
+      "attempts": [
+        {
+          "id": 78,
+          "win": true,
+          "timeout": false,
+          "seconds": 24.7,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 79,
+          "win": true,
+          "timeout": false,
+          "seconds": 83.87,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 799,
+      "name": "데스스탄",
+      "win": true,
+      "attempts": [
+        {
+          "id": 80,
+          "win": true,
+          "timeout": false,
+          "seconds": 35.7,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 81,
+          "win": false,
+          "timeout": false,
+          "seconds": 69.43,
+          "allyHp": 0,
+          "enemyHp": 661304,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 800,
+      "name": "고릴라의 행성",
+      "win": true,
+      "attempts": [
+        {
+          "id": 82,
+          "win": true,
+          "timeout": false,
+          "seconds": 21.3,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 83,
+          "win": false,
+          "timeout": false,
+          "seconds": 114.27,
+          "allyHp": 0,
+          "enemyHp": 731304,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 801,
+      "name": "초이바트론 별",
+      "win": true,
+      "attempts": [
+        {
+          "id": 84,
+          "win": true,
+          "timeout": false,
+          "seconds": 26.6,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 85,
+          "win": false,
+          "timeout": false,
+          "seconds": 106.97,
+          "allyHp": 0,
+          "enemyHp": 660000,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 802,
+      "name": "크림슨 별",
+      "win": true,
+      "attempts": [
+        {
+          "id": 86,
+          "win": true,
+          "timeout": false,
+          "seconds": 14.1,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 87,
+          "win": false,
+          "timeout": false,
+          "seconds": 82.6,
+          "allyHp": 0,
+          "enemyHp": 7950,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 803,
+      "name": "N77 성운",
+      "win": true,
+      "attempts": [
+        {
+          "id": 88,
+          "win": true,
+          "timeout": false,
+          "seconds": 121.27,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 89,
+          "win": false,
+          "timeout": false,
+          "seconds": 100.43,
+          "allyHp": 0,
+          "enemyHp": 690000,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 804,
+      "name": "안드로메다",
+      "win": false,
+      "attempts": [
+        {
+          "id": 90,
+          "win": false,
+          "timeout": false,
+          "seconds": 45.03,
+          "allyHp": 0,
+          "enemyHp": 700000,
+          "deck": 0
+        },
+        {
+          "id": 91,
+          "win": false,
+          "timeout": false,
+          "seconds": 50.2,
+          "allyHp": 0,
+          "enemyHp": 731304,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 805,
+      "name": "블랙홀",
+      "win": false,
+      "attempts": [
+        {
+          "id": 92,
+          "win": false,
+          "timeout": false,
+          "seconds": 28.53,
+          "allyHp": 0,
+          "enemyHp": 610000,
+          "deck": 0
+        },
+        {
+          "id": 93,
+          "win": false,
+          "timeout": false,
+          "seconds": 38.93,
+          "allyHp": 0,
+          "enemyHp": 633472,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 806,
+      "name": "빅뱅",
+      "win": true,
+      "attempts": [
+        {
+          "id": 94,
+          "win": true,
+          "timeout": false,
+          "seconds": 120.43,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 95,
+          "win": false,
+          "timeout": false,
+          "seconds": 75.07,
+          "allyHp": 0,
+          "enemyHp": 984780,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 807,
+      "name": "고대의 저주",
+      "win": true,
+      "attempts": [
+        {
+          "id": 96,
+          "win": true,
+          "timeout": false,
+          "seconds": 52.3,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 97,
+          "win": true,
+          "timeout": false,
+          "seconds": 93.73,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 808,
+      "name": "필라프 대초원",
+      "win": true,
+      "attempts": [
+        {
+          "id": 98,
+          "win": true,
+          "timeout": false,
+          "seconds": 14.9,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 99,
+          "win": true,
+          "timeout": false,
+          "seconds": 24.27,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 809,
+      "name": "냥달메시안",
+      "win": true,
+      "attempts": [
+        {
+          "id": 100,
+          "win": true,
+          "timeout": false,
+          "seconds": 16.07,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 101,
+          "win": true,
+          "timeout": false,
+          "seconds": 20.67,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 810,
+      "name": "안닌 고개",
+      "win": true,
+      "attempts": [
+        {
+          "id": 102,
+          "win": true,
+          "timeout": false,
+          "seconds": 28.5,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 103,
+          "win": true,
+          "timeout": false,
+          "seconds": 40.43,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 811,
+      "name": "아히요 고원",
+      "win": true,
+      "attempts": [
+        {
+          "id": 104,
+          "win": true,
+          "timeout": false,
+          "seconds": 20.87,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 105,
+          "win": false,
+          "timeout": false,
+          "seconds": 67.37,
+          "allyHp": 0,
+          "enemyHp": 1000000,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 812,
+      "name": "파스타 사구",
+      "win": true,
+      "attempts": [
+        {
+          "id": 106,
+          "win": true,
+          "timeout": false,
+          "seconds": 27.83,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 107,
+          "win": true,
+          "timeout": false,
+          "seconds": 81.17,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 813,
+      "name": "루러우 구릉",
+      "win": true,
+      "attempts": [
+        {
+          "id": 108,
+          "win": true,
+          "timeout": false,
+          "seconds": 37.33,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 109,
+          "win": true,
+          "timeout": false,
+          "seconds": 68.83,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 814,
+      "name": "코사족 유적",
+      "win": true,
+      "attempts": [
+        {
+          "id": 110,
+          "win": true,
+          "timeout": false,
+          "seconds": 24.43,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 111,
+          "win": false,
+          "timeout": false,
+          "seconds": 59.03,
+          "allyHp": 0,
+          "enemyHp": 886956,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 815,
+      "name": "덴지로 바다",
+      "win": true,
+      "attempts": [
+        {
+          "id": 112,
+          "win": true,
+          "timeout": false,
+          "seconds": 16.57,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 113,
+          "win": true,
+          "timeout": false,
+          "seconds": 39.37,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 816,
+      "name": "산적 흉내",
+      "win": true,
+      "attempts": [
+        {
+          "id": 114,
+          "win": true,
+          "timeout": false,
+          "seconds": 52.17,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 115,
+          "win": true,
+          "timeout": false,
+          "seconds": 76.27,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 817,
+      "name": "동글동글 웅덩이",
+      "win": true,
+      "attempts": [
+        {
+          "id": 116,
+          "win": true,
+          "timeout": false,
+          "seconds": 17.43,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 117,
+          "win": true,
+          "timeout": false,
+          "seconds": 24.83,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 818,
+      "name": "스릴 넘치는 담소",
+      "win": true,
+      "attempts": [
+        {
+          "id": 118,
+          "win": true,
+          "timeout": false,
+          "seconds": 22.73,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 119,
+          "win": true,
+          "timeout": false,
+          "seconds": 101.63,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 819,
+      "name": "장 굴",
+      "win": true,
+      "attempts": [
+        {
+          "id": 120,
+          "win": true,
+          "timeout": false,
+          "seconds": 16.4,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 121,
+          "win": true,
+          "timeout": false,
+          "seconds": 33.87,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 820,
+      "name": "마리네 타운",
+      "win": true,
+      "attempts": [
+        {
+          "id": 122,
+          "win": true,
+          "timeout": false,
+          "seconds": 49.73,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 123,
+          "win": false,
+          "timeout": true,
+          "seconds": 300,
+          "allyHp": 60000,
+          "enemyHp": 800000,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 821,
+      "name": "떠도는 소라고둥",
+      "win": true,
+      "attempts": [
+        {
+          "id": 124,
+          "win": true,
+          "timeout": false,
+          "seconds": 16,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 125,
+          "win": true,
+          "timeout": false,
+          "seconds": 44.37,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 822,
+      "name": "파르카치오 해구",
+      "win": true,
+      "attempts": [
+        {
+          "id": 126,
+          "win": true,
+          "timeout": false,
+          "seconds": 20.97,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 127,
+          "win": true,
+          "timeout": false,
+          "seconds": 112.57,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 823,
+      "name": "곰치 해저 화산",
+      "win": true,
+      "attempts": [
+        {
+          "id": 128,
+          "win": true,
+          "timeout": false,
+          "seconds": 21.77,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 129,
+          "win": true,
+          "timeout": false,
+          "seconds": 122.3,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 824,
+      "name": "새벽 프론탈레",
+      "win": true,
+      "attempts": [
+        {
+          "id": 130,
+          "win": true,
+          "timeout": false,
+          "seconds": 22.13,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 131,
+          "win": true,
+          "timeout": false,
+          "seconds": 98.77,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 825,
+      "name": "루츠보 소용돌이",
+      "win": true,
+      "attempts": [
+        {
+          "id": 132,
+          "win": true,
+          "timeout": false,
+          "seconds": 24.67,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 133,
+          "win": true,
+          "timeout": false,
+          "seconds": 133.27,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 826,
+      "name": "팔딱팔딱 어장",
+      "win": true,
+      "attempts": [
+        {
+          "id": 134,
+          "win": true,
+          "timeout": false,
+          "seconds": 19.63,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 135,
+          "win": true,
+          "timeout": false,
+          "seconds": 121.8,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 827,
+      "name": "반항적 경제 수역",
+      "win": true,
+      "attempts": [
+        {
+          "id": 136,
+          "win": true,
+          "timeout": false,
+          "seconds": 15.97,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 137,
+          "win": true,
+          "timeout": false,
+          "seconds": 21.37,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 828,
+      "name": "가마토로 방파제",
+      "win": true,
+      "attempts": [
+        {
+          "id": 138,
+          "win": true,
+          "timeout": false,
+          "seconds": 19.03,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 139,
+          "win": true,
+          "timeout": false,
+          "seconds": 63.8,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 829,
+      "name": "괴수 쇼 암굴",
+      "win": true,
+      "attempts": [
+        {
+          "id": 140,
+          "win": true,
+          "timeout": false,
+          "seconds": 92.1,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 141,
+          "win": true,
+          "timeout": false,
+          "seconds": 195.07,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 830,
+      "name": "해마 해변",
+      "win": true,
+      "attempts": [
+        {
+          "id": 142,
+          "win": true,
+          "timeout": false,
+          "seconds": 16.9,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 143,
+          "win": true,
+          "timeout": false,
+          "seconds": 27.67,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 831,
+      "name": "멋진 오징어 곶",
+      "win": true,
+      "attempts": [
+        {
+          "id": 144,
+          "win": true,
+          "timeout": false,
+          "seconds": 23,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 145,
+          "win": true,
+          "timeout": false,
+          "seconds": 83.93,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 832,
+      "name": "단단한 암흑 병기",
+      "win": true,
+      "attempts": [
+        {
+          "id": 146,
+          "win": true,
+          "timeout": false,
+          "seconds": 33.4,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 147,
+          "win": true,
+          "timeout": false,
+          "seconds": 103.43,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 833,
+      "name": "귀여운 벽화",
+      "win": true,
+      "attempts": [
+        {
+          "id": 148,
+          "win": true,
+          "timeout": false,
+          "seconds": 21.6,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 149,
+          "win": true,
+          "timeout": false,
+          "seconds": 27.57,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 834,
+      "name": "선샤인 동굴",
+      "win": true,
+      "attempts": [
+        {
+          "id": 150,
+          "win": true,
+          "timeout": false,
+          "seconds": 32.47,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 151,
+          "win": true,
+          "timeout": false,
+          "seconds": 73.3,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 835,
+      "name": "종유석 일루미네이션",
+      "win": true,
+      "attempts": [
+        {
+          "id": 152,
+          "win": true,
+          "timeout": false,
+          "seconds": 19.13,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 153,
+          "win": true,
+          "timeout": false,
+          "seconds": 68.87,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 836,
+      "name": "핼쑥 성악설",
+      "win": true,
+      "attempts": [
+        {
+          "id": 154,
+          "win": true,
+          "timeout": false,
+          "seconds": 53.7,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 155,
+          "win": false,
+          "timeout": true,
+          "seconds": 300,
+          "allyHp": 60000,
+          "enemyHp": 600000,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 837,
+      "name": "느긋한 지저호",
+      "win": true,
+      "attempts": [
+        {
+          "id": 156,
+          "win": true,
+          "timeout": false,
+          "seconds": 23.4,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 157,
+          "win": true,
+          "timeout": false,
+          "seconds": 52.97,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 838,
+      "name": "리코펜의 밤",
+      "win": true,
+      "attempts": [
+        {
+          "id": 158,
+          "win": true,
+          "timeout": false,
+          "seconds": 25.37,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 159,
+          "win": false,
+          "timeout": false,
+          "seconds": 146.6,
+          "allyHp": 0,
+          "enemyHp": 478249,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 839,
+      "name": "메트로폴리스 오아시스",
+      "win": true,
+      "attempts": [
+        {
+          "id": 160,
+          "win": true,
+          "timeout": false,
+          "seconds": 16.9,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 161,
+          "win": true,
+          "timeout": false,
+          "seconds": 26.73,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 840,
+      "name": "허울뿐인 마천루",
+      "win": true,
+      "attempts": [
+        {
+          "id": 162,
+          "win": true,
+          "timeout": false,
+          "seconds": 23.8,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 163,
+          "win": true,
+          "timeout": false,
+          "seconds": 114.77,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 841,
+      "name": "무법자의 황혼",
+      "win": true,
+      "attempts": [
+        {
+          "id": 164,
+          "win": true,
+          "timeout": false,
+          "seconds": 23.6,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 165,
+          "win": true,
+          "timeout": false,
+          "seconds": 77.03,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 842,
+      "name": "콘크리트 오션",
+      "win": true,
+      "attempts": [
+        {
+          "id": 166,
+          "win": true,
+          "timeout": false,
+          "seconds": 23.73,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 167,
+          "win": false,
+          "timeout": true,
+          "seconds": 300,
+          "allyHp": 60000,
+          "enemyHp": 982608,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 843,
+      "name": "무인역의 결투",
+      "win": true,
+      "attempts": [
+        {
+          "id": 168,
+          "win": true,
+          "timeout": false,
+          "seconds": 44.33,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 169,
+          "win": true,
+          "timeout": false,
+          "seconds": 174.83,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 844,
+      "name": "골풀 탑",
+      "win": true,
+      "attempts": [
+        {
+          "id": 170,
+          "win": true,
+          "timeout": false,
+          "seconds": 17.13,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 171,
+          "win": true,
+          "timeout": false,
+          "seconds": 42.23,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 845,
+      "name": "카우걸 감옥",
+      "win": true,
+      "attempts": [
+        {
+          "id": 172,
+          "win": true,
+          "timeout": false,
+          "seconds": 35.2,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 173,
+          "win": false,
+          "timeout": false,
+          "seconds": 53.6,
+          "allyHp": 0,
+          "enemyHp": 866956,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 846,
+      "name": "N.G. 목장",
+      "win": true,
+      "attempts": [
+        {
+          "id": 174,
+          "win": true,
+          "timeout": false,
+          "seconds": 16.1,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 175,
+          "win": true,
+          "timeout": false,
+          "seconds": 24.07,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 847,
+      "name": "헌팅 산",
+      "win": true,
+      "attempts": [
+        {
+          "id": 176,
+          "win": true,
+          "timeout": false,
+          "seconds": 15.47,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 177,
+          "win": true,
+          "timeout": false,
+          "seconds": 24.2,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 848,
+      "name": "벌벌 고원",
+      "win": true,
+      "attempts": [
+        {
+          "id": 178,
+          "win": true,
+          "timeout": false,
+          "seconds": 23.93,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 179,
+          "win": true,
+          "timeout": false,
+          "seconds": 82.83,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 849,
+      "name": "데드 리볼버 계곡",
+      "win": true,
+      "attempts": [
+        {
+          "id": 180,
+          "win": true,
+          "timeout": false,
+          "seconds": 27.87,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 181,
+          "win": true,
+          "timeout": false,
+          "seconds": 176.83,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 850,
+      "name": "흰다랑어 해안",
+      "win": true,
+      "attempts": [
+        {
+          "id": 182,
+          "win": true,
+          "timeout": false,
+          "seconds": 29.97,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 183,
+          "win": true,
+          "timeout": false,
+          "seconds": 70.77,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 851,
+      "name": "궁극 병기 바다사자",
+      "win": true,
+      "attempts": [
+        {
+          "id": 184,
+          "win": true,
+          "timeout": false,
+          "seconds": 22.63,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 185,
+          "win": false,
+          "timeout": true,
+          "seconds": 300,
+          "allyHp": 60000,
+          "enemyHp": 791304,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 852,
+      "name": "미꾸라지 깨기",
+      "win": true,
+      "attempts": [
+        {
+          "id": 186,
+          "win": true,
+          "timeout": false,
+          "seconds": 27.3,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 187,
+          "win": true,
+          "timeout": false,
+          "seconds": 42.53,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 853,
+      "name": "괭이갈매기 만",
+      "win": true,
+      "attempts": [
+        {
+          "id": 188,
+          "win": true,
+          "timeout": false,
+          "seconds": 23,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 189,
+          "win": true,
+          "timeout": false,
+          "seconds": 85.33,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 854,
+      "name": "날름날름 늪",
+      "win": true,
+      "attempts": [
+        {
+          "id": 190,
+          "win": true,
+          "timeout": false,
+          "seconds": 100.93,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 191,
+          "win": true,
+          "timeout": false,
+          "seconds": 77.33,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 855,
+      "name": "보이스 피싱",
+      "win": true,
+      "attempts": [
+        {
+          "id": 192,
+          "win": true,
+          "timeout": false,
+          "seconds": 48,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 193,
+          "win": true,
+          "timeout": false,
+          "seconds": 180.67,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 856,
+      "name": "귀뚜라미 이데올로기",
+      "win": true,
+      "attempts": [
+        {
+          "id": 194,
+          "win": true,
+          "timeout": false,
+          "seconds": 30.13,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 195,
+          "win": true,
+          "timeout": false,
+          "seconds": 97.57,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 857,
+      "name": "굴속의 최고 권력자",
+      "win": true,
+      "attempts": [
+        {
+          "id": 196,
+          "win": true,
+          "timeout": false,
+          "seconds": 60.9,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 197,
+          "win": true,
+          "timeout": false,
+          "seconds": 46.67,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 858,
+      "name": "인민과 당근",
+      "win": false,
+      "attempts": [
+        {
+          "id": 198,
+          "win": false,
+          "timeout": false,
+          "seconds": 17.83,
+          "allyHp": 0,
+          "enemyHp": 102777,
+          "deck": 0
+        },
+        {
+          "id": 199,
+          "win": false,
+          "timeout": false,
+          "seconds": 21.33,
+          "allyHp": 0,
+          "enemyHp": 169324,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 859,
+      "name": "밀고자 군단",
+      "win": true,
+      "attempts": [
+        {
+          "id": 200,
+          "win": true,
+          "timeout": false,
+          "seconds": 15.9,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 201,
+          "win": false,
+          "timeout": true,
+          "seconds": 300,
+          "allyHp": 60000,
+          "enemyHp": 100000,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 860,
+      "name": "망명 전야의 기습",
+      "win": true,
+      "attempts": [
+        {
+          "id": 202,
+          "win": true,
+          "timeout": false,
+          "seconds": 9.2,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 203,
+          "win": true,
+          "timeout": false,
+          "seconds": 13.27,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 861,
+      "name": "레드 캣 작전",
+      "win": true,
+      "attempts": [
+        {
+          "id": 204,
+          "win": true,
+          "timeout": false,
+          "seconds": 55.37,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 205,
+          "win": true,
+          "timeout": false,
+          "seconds": 111.8,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 862,
+      "name": "용암 온욕",
+      "win": true,
+      "attempts": [
+        {
+          "id": 206,
+          "win": true,
+          "timeout": false,
+          "seconds": 17,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 207,
+          "win": true,
+          "timeout": false,
+          "seconds": 47.23,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 863,
+      "name": "음속 화쇄류",
+      "win": true,
+      "attempts": [
+        {
+          "id": 208,
+          "win": true,
+          "timeout": false,
+          "seconds": 27.37,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 209,
+          "win": false,
+          "timeout": false,
+          "seconds": 41.33,
+          "allyHp": 0,
+          "enemyHp": 986955,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 864,
+      "name": "재의 비, 사랑을 위해",
+      "win": false,
+      "attempts": [
+        {
+          "id": 210,
+          "win": false,
+          "timeout": false,
+          "seconds": 66.77,
+          "allyHp": 0,
+          "enemyHp": 200000,
+          "deck": 0
+        },
+        {
+          "id": 211,
+          "win": false,
+          "timeout": false,
+          "seconds": 23.6,
+          "allyHp": 0,
+          "enemyHp": 200000,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 865,
+      "name": "정상의 대현자",
+      "win": true,
+      "attempts": [
+        {
+          "id": 212,
+          "win": true,
+          "timeout": false,
+          "seconds": 15.33,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 213,
+          "win": true,
+          "timeout": false,
+          "seconds": 118.43,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 866,
+      "name": "폭군 칼데라",
+      "win": true,
+      "attempts": [
+        {
+          "id": 214,
+          "win": true,
+          "timeout": false,
+          "seconds": 31.7,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 215,
+          "win": false,
+          "timeout": false,
+          "seconds": 62.77,
+          "allyHp": 0,
+          "enemyHp": 982607,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 867,
+      "name": "슈퍼 볼케이노",
+      "win": true,
+      "attempts": [
+        {
+          "id": 216,
+          "win": true,
+          "timeout": false,
+          "seconds": 96.1,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 217,
+          "win": false,
+          "timeout": false,
+          "seconds": 165.53,
+          "allyHp": 0,
+          "enemyHp": 1186956,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 868,
+      "name": "이상한 찬송가",
+      "win": true,
+      "attempts": [
+        {
+          "id": 218,
+          "win": true,
+          "timeout": false,
+          "seconds": 20.9,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 219,
+          "win": true,
+          "timeout": false,
+          "seconds": 59.47,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 869,
+      "name": "연유 수도굴의 처녀",
+      "win": true,
+      "attempts": [
+        {
+          "id": 220,
+          "win": true,
+          "timeout": false,
+          "seconds": 21.17,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 221,
+          "win": true,
+          "timeout": false,
+          "seconds": 86.73,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 870,
+      "name": "흥겨운 기도",
+      "win": true,
+      "attempts": [
+        {
+          "id": 222,
+          "win": true,
+          "timeout": false,
+          "seconds": 21.77,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 223,
+          "win": true,
+          "timeout": false,
+          "seconds": 33.53,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 871,
+      "name": "르상티망의 숲",
+      "win": true,
+      "attempts": [
+        {
+          "id": 224,
+          "win": true,
+          "timeout": false,
+          "seconds": 100.53,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 225,
+          "win": false,
+          "timeout": false,
+          "seconds": 95.83,
+          "allyHp": 0,
+          "enemyHp": 726304,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 872,
+      "name": "수다쟁이 은둔자",
+      "win": true,
+      "attempts": [
+        {
+          "id": 226,
+          "win": true,
+          "timeout": false,
+          "seconds": 18.27,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 227,
+          "win": true,
+          "timeout": false,
+          "seconds": 108,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 873,
+      "name": "원시에 깃든 혼",
+      "win": true,
+      "attempts": [
+        {
+          "id": 228,
+          "win": true,
+          "timeout": false,
+          "seconds": 19.07,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 229,
+          "win": true,
+          "timeout": false,
+          "seconds": 110.53,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 874,
+      "name": "이와록 암초",
+      "win": true,
+      "attempts": [
+        {
+          "id": 230,
+          "win": true,
+          "timeout": false,
+          "seconds": 17.43,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 231,
+          "win": false,
+          "timeout": false,
+          "seconds": 124.73,
+          "allyHp": 0,
+          "enemyHp": 181750,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 875,
+      "name": "앵무조개 무덤",
+      "win": true,
+      "attempts": [
+        {
+          "id": 232,
+          "win": true,
+          "timeout": false,
+          "seconds": 26.9,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 233,
+          "win": true,
+          "timeout": false,
+          "seconds": 283.33,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 876,
+      "name": "바다에서 돌아온 망자",
+      "win": true,
+      "attempts": [
+        {
+          "id": 234,
+          "win": true,
+          "timeout": false,
+          "seconds": 16.3,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 235,
+          "win": false,
+          "timeout": false,
+          "seconds": 79,
+          "allyHp": 0,
+          "enemyHp": 97902,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 877,
+      "name": "인면어의 물가",
+      "win": true,
+      "attempts": [
+        {
+          "id": 236,
+          "win": true,
+          "timeout": false,
+          "seconds": 21.4,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 237,
+          "win": false,
+          "timeout": false,
+          "seconds": 169.23,
+          "allyHp": 0,
+          "enemyHp": 800000,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 878,
+      "name": "낙타 안벽",
+      "win": true,
+      "attempts": [
+        {
+          "id": 238,
+          "win": true,
+          "timeout": false,
+          "seconds": 18.1,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 239,
+          "win": true,
+          "timeout": false,
+          "seconds": 33.63,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 1
+        }
+      ]
+    },
+    {
+      "i": 879,
+      "name": "시야 없는 사해",
+      "win": true,
+      "attempts": [
+        {
+          "id": 240,
+          "win": true,
+          "timeout": false,
+          "seconds": 21.83,
+          "allyHp": 60000,
+          "enemyHp": 0,
+          "deck": 0
+        },
+        {
+          "id": 241,
+          "win": false,
+          "timeout": false,
+          "seconds": 198.4,
+          "allyHp": 0,
+          "enemyHp": 726076,
+          "deck": 1
+        }
+      ]
+    }
+  ],
+  "wins": 117,
+  "errors": 0,
+  "note": "Not proof that every stage is impossible or clearable; fixed-deck smoke only."
+}

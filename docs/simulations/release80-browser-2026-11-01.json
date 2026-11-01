@@ -1,0 +1,126 @@
+{
+  "version": "8.0.0",
+  "scripts": 118,
+  "images": [
+    {
+      "path": "assets/anim_ancientdog.webp",
+      "width": 2445,
+      "height": 56
+    },
+    {
+      "path": "assets/anim_datemegane.webp",
+      "width": 3937,
+      "height": 348
+    },
+    {
+      "path": "assets/anim_dogumaru.webp",
+      "width": 4092,
+      "height": 648
+    },
+    {
+      "path": "assets/anim_finalgod.webp",
+      "width": 4038,
+      "height": 970
+    },
+    {
+      "path": "assets/anim_gardeneels.webp",
+      "width": 4057,
+      "height": 905
+    },
+    {
+      "path": "assets/anim_inglis.webp",
+      "width": 2210,
+      "height": 83
+    },
+    {
+      "path": "assets/anim_kogaou.webp",
+      "width": 4006,
+      "height": 650
+    },
+    {
+      "path": "assets/anim_koraino.webp",
+      "width": 4016,
+      "height": 206
+    },
+    {
+      "path": "assets/anim_looper.webp",
+      "width": 4040,
+      "height": 402
+    },
+    {
+      "path": "assets/anim_ministercyclone.webp",
+      "width": 4079,
+      "height": 252
+    },
+    {
+      "path": "assets/anim_oldree.webp",
+      "width": 4026,
+      "height": 312
+    },
+    {
+      "path": "assets/anim_supermayor.webp",
+      "width": 3981,
+      "height": 270
+    },
+    {
+      "path": "assets/anim_truebunbun.webp",
+      "width": 4047,
+      "height": 812
+    },
+    {
+      "path": "assets/busters-remaining-motion/lightrainbow_1.webp?v=1",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "path": "assets/busters-remaining-motion/lightrainbow_2.webp?v=1",
+      "width": 1536,
+      "height": 1024
+    }
+  ],
+  "draw": {
+    "kind": "prism",
+    "guaranteed": true,
+    "id": "lightrainbow",
+    "name": "라이트 레인보우",
+    "fixTicket": true,
+    "isNew": true
+  },
+  "forms": [
+    {
+      "id": "hacienda",
+      "range": 330,
+      "sheet": "assets/third-form-80-redesign-motion/hacienda_3.webp?v=1"
+    },
+    {
+      "id": "lightcream",
+      "range": 230,
+      "sheet": "assets/third-form-80-redesign-motion/lightcream_3.webp?v=1"
+    },
+    {
+      "id": "moss",
+      "range": 510,
+      "sheet": "assets/third-form-80-redesign-motion/moss_3.webp?v=1"
+    },
+    {
+      "id": "ruby",
+      "range": 300,
+      "sheet": "assets/third-form-80-redesign-motion/ruby_3.webp?v=1"
+    }
+  ],
+  "cosmos2": 693,
+  "cosmos3": 806,
+  "chapters": [
+    48,
+    73
+  ],
+  "save": true,
+  "reload": {
+    "bigBang2": true,
+    "bigBang3": true,
+    "legend": true,
+    "light": true,
+    "tickets": 1,
+    "thirds": true
+  }
+}
