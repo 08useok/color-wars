@@ -1,0 +1,2807 @@
+{
+  "note": "Lv30 full treasures, max income, 9 arenas, seed1 smart2. Limited general-purpose ranking, not all specialty performance.",
+  "rows": [
+    {
+      "id": "aqua",
+      "name": "아쿠아",
+      "score": 0.023444444444444427,
+      "gains": [
+        0.19356666666666666,
+        0.01743333333333319,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "indigo",
+      "name": "인디고",
+      "score": 0.1650740740740741,
+      "gains": [
+        0.20090000000000008,
+        -0.018000000000000016,
+        0,
+        0,
+        0,
+        1.3027666666666669,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "gold",
+      "name": "골드",
+      "score": 0.17682592592592594,
+      "gains": [
+        0.2310000000000001,
+        -0.04066666666666663,
+        0,
+        0,
+        0,
+        1.4011,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "lightcream",
+      "name": "라이트 크림",
+      "score": 0.20093703703703703,
+      "gains": [
+        0.14533333333333331,
+        0.010199999999999987,
+        0,
+        0,
+        0,
+        0,
+        1.6529,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "fusioncream",
+      "name": "퓨전 크림",
+      "score": 0.28623333333333334,
+      "gains": [
+        0.403,
+        -0.01856666666666662,
+        0,
+        0,
+        1.1811,
+        1.0105666666666666,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "verdigris",
+      "name": "베르디그리",
+      "score": 0.2955074074074074,
+      "gains": [
+        0.19333333333333336,
+        -0.06766666666666676,
+        1.2002333333333333,
+        0,
+        0,
+        1.3336666666666668,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "hacienda",
+      "name": "하시엔다",
+      "score": 0.30403703703703705,
+      "gains": [
+        0.2673333333333334,
+        -0.0020000000000000018,
+        1.2889,
+        0,
+        0,
+        1.1821000000000002,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "violet",
+      "name": "바이올",
+      "score": 0.3090148148148148,
+      "gains": [
+        0.2278,
+        -0.011466666666666736,
+        1.3418999999999999,
+        0,
+        1.2229,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "moss",
+      "name": "모스",
+      "score": 0.3243111111111111,
+      "gains": [
+        0.2191333333333334,
+        0.015666666666666718,
+        1.3111000000000002,
+        0,
+        0,
+        1.3729,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "ruby",
+      "name": "루비",
+      "score": 0.3466296296296296,
+      "gains": [
+        0.32133333333333325,
+        0.09709999999999996,
+        1.4285666666666668,
+        0,
+        0,
+        1.2726666666666668,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "beige",
+      "name": "베이지",
+      "score": 0.3657740740740741,
+      "gains": [
+        0.389,
+        0.0021999999999999797,
+        1.5876666666666668,
+        0,
+        0,
+        1.3131,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "salmon",
+      "name": "살몬",
+      "score": 0.4834666666666667,
+      "gains": [
+        0.20566666666666666,
+        0.0018666666666666831,
+        1.3275666666666668,
+        0,
+        0,
+        1.391,
+        0,
+        0,
+        1.4251
+      ]
+    },
+    {
+      "id": "cream",
+      "name": "크림",
+      "score": 0.5237296296296295,
+      "gains": [
+        0.29246666666666665,
+        0.031099999999999905,
+        1.5455666666666668,
+        0,
+        1.4870999999999999,
+        1.3573333333333333,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "hotpink",
+      "name": "핫 핑크",
+      "score": 0.5241518518518519,
+      "gains": [
+        0.27746666666666675,
+        0.04266666666666663,
+        1.4135666666666666,
+        0,
+        1.425,
+        1.5586666666666666,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "spintoprainbow",
+      "name": "팽이 레인보우",
+      "score": 0.5261962962962963,
+      "gains": [
+        0.18523333333333336,
+        0.02843333333333331,
+        1.4604333333333335,
+        0,
+        0,
+        1.2912333333333335,
+        1.7704333333333333,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "coral",
+      "name": "코랄",
+      "score": 0.5410518518518519,
+      "gains": [
+        0.29889999999999994,
+        0.02733333333333321,
+        1.5876666666666668,
+        0,
+        1.3023333333333333,
+        1.6532333333333333,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "orchid",
+      "name": "오키드",
+      "score": 0.5479851851851852,
+      "gains": [
+        0.28756666666666675,
+        -0.003466666666666729,
+        1.5247666666666668,
+        0,
+        1.5239,
+        1.5991,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "babypink",
+      "name": "베이비 핑크",
+      "score": 0.5490407407407407,
+      "gains": [
+        0.3929,
+        0.055333333333333234,
+        1.5626666666666666,
+        0,
+        1.5369,
+        1.3935666666666666,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "lava",
+      "name": "라바",
+      "score": 0.5654814814814815,
+      "gains": [
+        0.3588,
+        0.03843333333333332,
+        1.7107666666666668,
+        0,
+        1.4990999999999999,
+        1.4822333333333333,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "lilac",
+      "name": "라일락",
+      "score": 0.566174074074074,
+      "gains": [
+        0.39480000000000004,
+        0.027099999999999902,
+        1.5555666666666665,
+        0,
+        1.5621,
+        1.556,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "crystal",
+      "name": "크리스탈",
+      "score": 0.6635185185185185,
+      "gains": [
+        0.20433333333333326,
+        -0.09146666666666659,
+        1.2805666666666666,
+        0,
+        1.4654333333333334,
+        1.5229,
+        1.5899,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "babyblue",
+      "name": "베이비 블루",
+      "score": 0.6816444444444445,
+      "gains": [
+        0.39346666666666663,
+        0.09233333333333338,
+        1.6439,
+        0,
+        1.3417666666666666,
+        1.3441,
+        0,
+        1.3192333333333335,
+        0
+      ]
+    },
+    {
+      "id": "drumscarlet",
+      "name": "군악 스칼렛",
+      "score": 0.6902481481481482,
+      "gains": [
+        0.25746666666666673,
+        0.00876666666666659,
+        1.4079000000000002,
+        0,
+        1.3836666666666666,
+        1.3871,
+        1.7673333333333334,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "hulasilver",
+      "name": "훌라 실버",
+      "score": 0.6932259259259259,
+      "gains": [
+        0.29289999999999994,
+        0.006999999999999895,
+        1.4509,
+        0,
+        1.3046666666666666,
+        1.4213333333333333,
+        1.7622333333333333,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "rhythmpink",
+      "name": "리듬 핑크",
+      "score": 0.7238370370370371,
+      "gains": [
+        0.31899999999999995,
+        0.018333333333333313,
+        1.5263333333333333,
+        0,
+        1.4956666666666667,
+        1.3824333333333332,
+        1.7727666666666666,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "raspberry",
+      "name": "라즈베리",
+      "score": 0.7444074074074075,
+      "gains": [
+        0.29456666666666664,
+        0.014000000000000012,
+        1.5263333333333333,
+        0,
+        1.6284333333333334,
+        1.6177666666666668,
+        1.6185666666666667,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "clover",
+      "name": "클로버",
+      "score": 0.7604444444444445,
+      "gains": [
+        0.401,
+        0.04686666666666661,
+        1.5443333333333333,
+        0,
+        1.514,
+        1.5612333333333335,
+        1.7765666666666666,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "lavender",
+      "name": "라벤더",
+      "score": 0.8606666666666666,
+      "gains": [
+        0.27356666666666674,
+        0.03200000000000003,
+        1.4993333333333334,
+        1.3484333333333334,
+        1.5,
+        1.5852333333333333,
+        0,
+        1.5074333333333332,
+        0
+      ]
+    },
+    {
+      "id": "magenta",
+      "name": "마젠타",
+      "score": 0.8912814814814816,
+      "gains": [
+        0.3349,
+        0.07176666666666676,
+        1.6093333333333333,
+        0,
+        1.6114333333333333,
+        1.6033333333333333,
+        0,
+        1.5296666666666667,
+        1.2610999999999999
+      ]
+    },
+    {
+      "id": "azure",
+      "name": "애저",
+      "score": 0.9529037037037037,
+      "gains": [
+        0.3917999999999999,
+        0.08919999999999995,
+        1.6619,
+        0,
+        1.6397666666666666,
+        1.69,
+        1.6682333333333332,
+        0,
+        1.4352333333333334
+      ]
+    },
+    {
+      "id": "ivory",
+      "name": "아이보리",
+      "score": 1.123577777777778,
+      "gains": [
+        0.3377999999999999,
+        0.04576666666666651,
+        1.5920999999999998,
+        1.5513333333333335,
+        1.5941,
+        1.6474333333333333,
+        1.7473333333333334,
+        1.5963333333333334,
+        0
+      ]
+    }
+  ],
+  "raw": [
+    {
+      "id": 0,
+      "win": true,
+      "timeout": false,
+      "seconds": 191.07,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 1,
+      "win": true,
+      "timeout": false,
+      "seconds": 121.77,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 2,
+      "win": true,
+      "timeout": false,
+      "seconds": 89.73,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 3,
+      "win": true,
+      "timeout": false,
+      "seconds": 73.53,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 4,
+      "win": true,
+      "timeout": false,
+      "seconds": 129.77,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 5,
+      "win": true,
+      "timeout": false,
+      "seconds": 109,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 6,
+      "win": true,
+      "timeout": false,
+      "seconds": 129.37,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 7,
+      "win": true,
+      "timeout": false,
+      "seconds": 102.7,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 8,
+      "win": true,
+      "timeout": false,
+      "seconds": 74.37,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 9,
+      "win": true,
+      "timeout": false,
+      "seconds": 103.33,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 10,
+      "win": true,
+      "timeout": false,
+      "seconds": 70.77,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 11,
+      "win": true,
+      "timeout": false,
+      "seconds": 130.8,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 12,
+      "win": true,
+      "timeout": false,
+      "seconds": 72.63,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 13,
+      "win": true,
+      "timeout": false,
+      "seconds": 107.83,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 14,
+      "win": true,
+      "timeout": false,
+      "seconds": 94.67,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 15,
+      "win": true,
+      "timeout": false,
+      "seconds": 110.87,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 16,
+      "win": true,
+      "timeout": false,
+      "seconds": 122.73,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 17,
+      "win": true,
+      "timeout": false,
+      "seconds": 125.33,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 18,
+      "win": true,
+      "timeout": false,
+      "seconds": 101.4,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 19,
+      "win": true,
+      "timeout": false,
+      "seconds": 133,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 20,
+      "win": true,
+      "timeout": false,
+      "seconds": 73.03,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 21,
+      "win": true,
+      "timeout": false,
+      "seconds": 147.47,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 22,
+      "win": true,
+      "timeout": false,
+      "seconds": 70.17,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 23,
+      "win": true,
+      "timeout": false,
+      "seconds": 83.43,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 24,
+      "win": true,
+      "timeout": false,
+      "seconds": 73.2,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 25,
+      "win": true,
+      "timeout": false,
+      "seconds": 90.6,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 26,
+      "win": true,
+      "timeout": false,
+      "seconds": 104.8,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 27,
+      "win": true,
+      "timeout": false,
+      "seconds": 133.07,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 28,
+      "win": true,
+      "timeout": false,
+      "seconds": 95.37,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 29,
+      "win": true,
+      "timeout": false,
+      "seconds": 103.2,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 30,
+      "win": true,
+      "timeout": false,
+      "seconds": 113.83,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 31,
+      "win": true,
+      "timeout": false,
+      "seconds": 135.5,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 32,
+      "win": true,
+      "timeout": false,
+      "seconds": 106.53,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 33,
+      "win": true,
+      "timeout": false,
+      "seconds": 118.73,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 34,
+      "win": true,
+      "timeout": false,
+      "seconds": 92.8,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 35,
+      "win": true,
+      "timeout": false,
+      "seconds": 79.77,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 36,
+      "win": true,
+      "timeout": false,
+      "seconds": 133.97,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 37,
+      "win": true,
+      "timeout": false,
+      "seconds": 96.93,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 38,
+      "win": true,
+      "timeout": false,
+      "seconds": 105.97,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 39,
+      "win": true,
+      "timeout": false,
+      "seconds": 102.33,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 40,
+      "win": true,
+      "timeout": false,
+      "seconds": 105.87,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 41,
+      "win": true,
+      "timeout": false,
+      "seconds": 97.2,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 42,
+      "win": true,
+      "timeout": false,
+      "seconds": 92.47,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 43,
+      "win": true,
+      "timeout": false,
+      "seconds": 111.93,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 44,
+      "win": true,
+      "timeout": false,
+      "seconds": 98.4,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 45,
+      "win": true,
+      "timeout": false,
+      "seconds": 93.73,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 46,
+      "win": true,
+      "timeout": false,
+      "seconds": 77.4,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 47,
+      "win": true,
+      "timeout": false,
+      "seconds": 107.13,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 48,
+      "win": true,
+      "timeout": false,
+      "seconds": 109.97,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 49,
+      "win": true,
+      "timeout": false,
+      "seconds": 101.83,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 50,
+      "win": true,
+      "timeout": false,
+      "seconds": 98.33,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 51,
+      "win": true,
+      "timeout": false,
+      "seconds": 101.3,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 52,
+      "win": true,
+      "timeout": false,
+      "seconds": 78.83,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 53,
+      "win": true,
+      "timeout": false,
+      "seconds": 103.47,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 54,
+      "win": true,
+      "timeout": false,
+      "seconds": 112.1,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 55,
+      "win": true,
+      "timeout": false,
+      "seconds": 95,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 56,
+      "win": true,
+      "timeout": false,
+      "seconds": 89.93,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 57,
+      "win": true,
+      "timeout": false,
+      "seconds": 85,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 58,
+      "win": true,
+      "timeout": false,
+      "seconds": 107.57,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 59,
+      "win": true,
+      "timeout": false,
+      "seconds": 126.83,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 60,
+      "win": true,
+      "timeout": false,
+      "seconds": 101.03,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 61,
+      "win": true,
+      "timeout": false,
+      "seconds": 104.43,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 62,
+      "win": true,
+      "timeout": false,
+      "seconds": 103.9,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 63,
+      "win": true,
+      "timeout": false,
+      "seconds": 98,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 64,
+      "win": false,
+      "timeout": false,
+      "seconds": 80.37,
+      "allyHp": 0,
+      "enemyHp": 2986956
+    },
+    {
+      "id": 65,
+      "win": false,
+      "timeout": false,
+      "seconds": 84.47,
+      "allyHp": 0,
+      "enemyHp": 2986956
+    },
+    {
+      "id": 66,
+      "win": true,
+      "timeout": false,
+      "seconds": 122.37,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 67,
+      "win": true,
+      "timeout": false,
+      "seconds": 101.43,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 68,
+      "win": true,
+      "timeout": false,
+      "seconds": 215.83,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 69,
+      "win": true,
+      "timeout": false,
+      "seconds": 150.2,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 70,
+      "win": true,
+      "timeout": false,
+      "seconds": 201.73,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 71,
+      "win": true,
+      "timeout": false,
+      "seconds": 142.1,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 72,
+      "win": true,
+      "timeout": false,
+      "seconds": 123.7,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 73,
+      "win": true,
+      "timeout": false,
+      "seconds": 136.33,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 74,
+      "win": true,
+      "timeout": false,
+      "seconds": 136.7,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 75,
+      "win": false,
+      "timeout": false,
+      "seconds": 81.67,
+      "allyHp": 0,
+      "enemyHp": 2986956
+    },
+    {
+      "id": 76,
+      "win": true,
+      "timeout": false,
+      "seconds": 133.33,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 77,
+      "win": true,
+      "timeout": false,
+      "seconds": 175.93,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 78,
+      "win": true,
+      "timeout": false,
+      "seconds": 171.43,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 79,
+      "win": true,
+      "timeout": false,
+      "seconds": 213.33,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 80,
+      "win": true,
+      "timeout": false,
+      "seconds": 197.43,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 81,
+      "win": true,
+      "timeout": false,
+      "seconds": 206.67,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 82,
+      "win": true,
+      "timeout": false,
+      "seconds": 123.7,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 83,
+      "win": false,
+      "timeout": false,
+      "seconds": 92.57,
+      "allyHp": 0,
+      "enemyHp": 2986956
+    },
+    {
+      "id": 84,
+      "win": true,
+      "timeout": false,
+      "seconds": 106.83,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 85,
+      "win": false,
+      "timeout": false,
+      "seconds": 91.83,
+      "allyHp": 0,
+      "enemyHp": 2986956
+    },
+    {
+      "id": 86,
+      "win": false,
+      "timeout": false,
+      "seconds": 86.17,
+      "allyHp": 0,
+      "enemyHp": 2936427
+    },
+    {
+      "id": 87,
+      "win": true,
+      "timeout": false,
+      "seconds": 86.77,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 88,
+      "win": true,
+      "timeout": false,
+      "seconds": 131.2,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 89,
+      "win": true,
+      "timeout": false,
+      "seconds": 117.2,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 90,
+      "win": true,
+      "timeout": false,
+      "seconds": 142.57,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 91,
+      "win": true,
+      "timeout": false,
+      "seconds": 239.93,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 92,
+      "win": true,
+      "timeout": false,
+      "seconds": 142.1,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 93,
+      "win": true,
+      "timeout": false,
+      "seconds": 164.73,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 94,
+      "win": true,
+      "timeout": false,
+      "seconds": 177.63,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 95,
+      "win": true,
+      "timeout": false,
+      "seconds": 161.87,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 96,
+      "win": false,
+      "timeout": false,
+      "seconds": 31.27,
+      "allyHp": 0,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 97,
+      "win": false,
+      "timeout": false,
+      "seconds": 33.27,
+      "allyHp": 0,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 98,
+      "win": true,
+      "timeout": false,
+      "seconds": 134.6,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 99,
+      "win": false,
+      "timeout": false,
+      "seconds": 33.43,
+      "allyHp": 0,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 100,
+      "win": false,
+      "timeout": false,
+      "seconds": 34.33,
+      "allyHp": 0,
+      "enemyHp": 2978260
+    },
+    {
+      "id": 101,
+      "win": true,
+      "timeout": false,
+      "seconds": 195.47,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 102,
+      "win": false,
+      "timeout": false,
+      "seconds": 33.4,
+      "allyHp": 0,
+      "enemyHp": 2978260
+    },
+    {
+      "id": 103,
+      "win": false,
+      "timeout": false,
+      "seconds": 40.17,
+      "allyHp": 0,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 104,
+      "win": false,
+      "timeout": false,
+      "seconds": 35.07,
+      "allyHp": 0,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 105,
+      "win": false,
+      "timeout": false,
+      "seconds": 38.73,
+      "allyHp": 0,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 106,
+      "win": false,
+      "timeout": false,
+      "seconds": 39.33,
+      "allyHp": 0,
+      "enemyHp": 2978260
+    },
+    {
+      "id": 107,
+      "win": false,
+      "timeout": false,
+      "seconds": 34.2,
+      "allyHp": 0,
+      "enemyHp": 2978260
+    },
+    {
+      "id": 108,
+      "win": false,
+      "timeout": false,
+      "seconds": 50.33,
+      "allyHp": 0,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 109,
+      "win": false,
+      "timeout": false,
+      "seconds": 35.27,
+      "allyHp": 0,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 110,
+      "win": false,
+      "timeout": false,
+      "seconds": 34.3,
+      "allyHp": 0,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 111,
+      "win": false,
+      "timeout": false,
+      "seconds": 39.33,
+      "allyHp": 0,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 112,
+      "win": false,
+      "timeout": false,
+      "seconds": 35.1,
+      "allyHp": 0,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 113,
+      "win": false,
+      "timeout": false,
+      "seconds": 38.53,
+      "allyHp": 0,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 114,
+      "win": false,
+      "timeout": false,
+      "seconds": 32.53,
+      "allyHp": 0,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 115,
+      "win": false,
+      "timeout": false,
+      "seconds": 47.7,
+      "allyHp": 0,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 116,
+      "win": false,
+      "timeout": false,
+      "seconds": 58.03,
+      "allyHp": 0,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 117,
+      "win": false,
+      "timeout": false,
+      "seconds": 33.4,
+      "allyHp": 0,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 118,
+      "win": false,
+      "timeout": false,
+      "seconds": 35.93,
+      "allyHp": 0,
+      "enemyHp": 2917085
+    },
+    {
+      "id": 119,
+      "win": false,
+      "timeout": false,
+      "seconds": 61.93,
+      "allyHp": 0,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 120,
+      "win": false,
+      "timeout": false,
+      "seconds": 57.1,
+      "allyHp": 0,
+      "enemyHp": 2978260
+    },
+    {
+      "id": 121,
+      "win": false,
+      "timeout": false,
+      "seconds": 62.6,
+      "allyHp": 0,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 122,
+      "win": false,
+      "timeout": false,
+      "seconds": 35.5,
+      "allyHp": 0,
+      "enemyHp": 3000000
+    },
+    {
+      "id": 123,
+      "win": false,
+      "timeout": false,
+      "seconds": 33.47,
+      "allyHp": 0,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 124,
+      "win": false,
+      "timeout": false,
+      "seconds": 37.7,
+      "allyHp": 0,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 125,
+      "win": false,
+      "timeout": false,
+      "seconds": 36.33,
+      "allyHp": 0,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 126,
+      "win": false,
+      "timeout": false,
+      "seconds": 37.63,
+      "allyHp": 0,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 127,
+      "win": false,
+      "timeout": false,
+      "seconds": 30.03,
+      "allyHp": 0,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 128,
+      "win": false,
+      "timeout": false,
+      "seconds": 106.93,
+      "allyHp": 0,
+      "enemyHp": 2970050
+    },
+    {
+      "id": 129,
+      "win": false,
+      "timeout": false,
+      "seconds": 147.5,
+      "allyHp": 0,
+      "enemyHp": 2978503
+    },
+    {
+      "id": 130,
+      "win": true,
+      "timeout": false,
+      "seconds": 121.77,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 131,
+      "win": true,
+      "timeout": false,
+      "seconds": 108.07,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 132,
+      "win": true,
+      "timeout": false,
+      "seconds": 160.37,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 133,
+      "win": true,
+      "timeout": false,
+      "seconds": 150,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 134,
+      "win": false,
+      "timeout": false,
+      "seconds": 156.7,
+      "allyHp": 0,
+      "enemyHp": 2927785
+    },
+    {
+      "id": 135,
+      "win": true,
+      "timeout": false,
+      "seconds": 111.47,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 136,
+      "win": false,
+      "timeout": false,
+      "seconds": 133.37,
+      "allyHp": 0,
+      "enemyHp": 2970050
+    },
+    {
+      "id": 137,
+      "win": true,
+      "timeout": false,
+      "seconds": 153.87,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 138,
+      "win": true,
+      "timeout": false,
+      "seconds": 145.8,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 139,
+      "win": false,
+      "timeout": false,
+      "seconds": 112.97,
+      "allyHp": 0,
+      "enemyHp": 2970050
+    },
+    {
+      "id": 140,
+      "win": true,
+      "timeout": false,
+      "seconds": 131.37,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 141,
+      "win": true,
+      "timeout": false,
+      "seconds": 172.5,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 142,
+      "win": false,
+      "timeout": false,
+      "seconds": 130.93,
+      "allyHp": 0,
+      "enemyHp": 2970050
+    },
+    {
+      "id": 143,
+      "win": false,
+      "timeout": false,
+      "seconds": 136.5,
+      "allyHp": 0,
+      "enemyHp": 2970050
+    },
+    {
+      "id": 144,
+      "win": true,
+      "timeout": false,
+      "seconds": 233.13,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 145,
+      "win": false,
+      "timeout": false,
+      "seconds": 197.93,
+      "allyHp": 0,
+      "enemyHp": 2970050
+    },
+    {
+      "id": 146,
+      "win": true,
+      "timeout": false,
+      "seconds": 209.3,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 147,
+      "win": false,
+      "timeout": false,
+      "seconds": 128.33,
+      "allyHp": 0,
+      "enemyHp": 2970050
+    },
+    {
+      "id": 148,
+      "win": true,
+      "timeout": false,
+      "seconds": 197.47,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 149,
+      "win": false,
+      "timeout": false,
+      "seconds": 126.5,
+      "allyHp": 0,
+      "enemyHp": 2961597
+    },
+    {
+      "id": 150,
+      "win": true,
+      "timeout": false,
+      "seconds": 245.67,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 151,
+      "win": true,
+      "timeout": false,
+      "seconds": 150.27,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 152,
+      "win": true,
+      "timeout": false,
+      "seconds": 138.93,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 153,
+      "win": true,
+      "timeout": false,
+      "seconds": 116.57,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 154,
+      "win": true,
+      "timeout": false,
+      "seconds": 142.83,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 155,
+      "win": false,
+      "timeout": false,
+      "seconds": 220.3,
+      "allyHp": 0,
+      "enemyHp": 2961597
+    },
+    {
+      "id": 156,
+      "win": true,
+      "timeout": false,
+      "seconds": 151.3,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 157,
+      "win": true,
+      "timeout": false,
+      "seconds": 208.6,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 158,
+      "win": true,
+      "timeout": false,
+      "seconds": 184.9,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 159,
+      "win": false,
+      "timeout": false,
+      "seconds": 201.57,
+      "allyHp": 0,
+      "enemyHp": 2975164
+    },
+    {
+      "id": 160,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2936238
+    },
+    {
+      "id": 161,
+      "win": true,
+      "timeout": false,
+      "seconds": 179.67,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 162,
+      "win": true,
+      "timeout": false,
+      "seconds": 105.77,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 163,
+      "win": true,
+      "timeout": false,
+      "seconds": 93,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 164,
+      "win": true,
+      "timeout": false,
+      "seconds": 143.13,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 165,
+      "win": true,
+      "timeout": false,
+      "seconds": 124.43,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 166,
+      "win": true,
+      "timeout": false,
+      "seconds": 182.7,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 167,
+      "win": true,
+      "timeout": false,
+      "seconds": 114.67,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 168,
+      "win": true,
+      "timeout": false,
+      "seconds": 206.07,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 169,
+      "win": true,
+      "timeout": false,
+      "seconds": 192.8,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 170,
+      "win": true,
+      "timeout": false,
+      "seconds": 131.63,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 171,
+      "win": true,
+      "timeout": false,
+      "seconds": 209.17,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 172,
+      "win": true,
+      "timeout": false,
+      "seconds": 133.2,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 173,
+      "win": true,
+      "timeout": false,
+      "seconds": 132.4,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 174,
+      "win": true,
+      "timeout": false,
+      "seconds": 218.2,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 175,
+      "win": true,
+      "timeout": false,
+      "seconds": 245.37,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 176,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 858350
+    },
+    {
+      "id": 177,
+      "win": true,
+      "timeout": false,
+      "seconds": 188.13,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 178,
+      "win": true,
+      "timeout": false,
+      "seconds": 104.03,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 179,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2270320
+    },
+    {
+      "id": 180,
+      "win": true,
+      "timeout": false,
+      "seconds": 196.77,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 181,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 265960
+    },
+    {
+      "id": 182,
+      "win": true,
+      "timeout": false,
+      "seconds": 296.83,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 183,
+      "win": true,
+      "timeout": false,
+      "seconds": 155.33,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 184,
+      "win": true,
+      "timeout": false,
+      "seconds": 181.93,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 185,
+      "win": true,
+      "timeout": false,
+      "seconds": 119,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 186,
+      "win": true,
+      "timeout": false,
+      "seconds": 120.27,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 187,
+      "win": true,
+      "timeout": false,
+      "seconds": 199.9,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 188,
+      "win": true,
+      "timeout": false,
+      "seconds": 185.27,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 189,
+      "win": true,
+      "timeout": false,
+      "seconds": 173.6,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 190,
+      "win": true,
+      "timeout": false,
+      "seconds": 183.87,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 191,
+      "win": true,
+      "timeout": false,
+      "seconds": 212.63,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 192,
+      "win": false,
+      "timeout": false,
+      "seconds": 159.93,
+      "allyHp": 0,
+      "enemyHp": 2965702
+    },
+    {
+      "id": 193,
+      "win": false,
+      "timeout": false,
+      "seconds": 169.43,
+      "allyHp": 0,
+      "enemyHp": 2974155
+    },
+    {
+      "id": 194,
+      "win": true,
+      "timeout": false,
+      "seconds": 75.8,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 195,
+      "win": true,
+      "timeout": false,
+      "seconds": 99.53,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 196,
+      "win": true,
+      "timeout": false,
+      "seconds": 123.03,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 197,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2516028
+    },
+    {
+      "id": 198,
+      "win": false,
+      "timeout": false,
+      "seconds": 84.53,
+      "allyHp": 0,
+      "enemyHp": 2974155
+    },
+    {
+      "id": 199,
+      "win": true,
+      "timeout": false,
+      "seconds": 114.43,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 200,
+      "win": false,
+      "timeout": false,
+      "seconds": 127.6,
+      "allyHp": 0,
+      "enemyHp": 2912446
+    },
+    {
+      "id": 201,
+      "win": false,
+      "timeout": false,
+      "seconds": 138.5,
+      "allyHp": 0,
+      "enemyHp": 2860470
+    },
+    {
+      "id": 202,
+      "win": true,
+      "timeout": false,
+      "seconds": 67.03,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 203,
+      "win": false,
+      "timeout": false,
+      "seconds": 143.33,
+      "allyHp": 0,
+      "enemyHp": 2965702
+    },
+    {
+      "id": 204,
+      "win": false,
+      "timeout": false,
+      "seconds": 150.27,
+      "allyHp": 0,
+      "enemyHp": 2908342
+    },
+    {
+      "id": 205,
+      "win": false,
+      "timeout": false,
+      "seconds": 151.03,
+      "allyHp": 0,
+      "enemyHp": 2868416
+    },
+    {
+      "id": 206,
+      "win": false,
+      "timeout": false,
+      "seconds": 131.47,
+      "allyHp": 0,
+      "enemyHp": 2932492
+    },
+    {
+      "id": 207,
+      "win": false,
+      "timeout": false,
+      "seconds": 119.27,
+      "allyHp": 0,
+      "enemyHp": 2965702
+    },
+    {
+      "id": 208,
+      "win": false,
+      "timeout": false,
+      "seconds": 130.87,
+      "allyHp": 0,
+      "enemyHp": 2940582
+    },
+    {
+      "id": 209,
+      "win": false,
+      "timeout": false,
+      "seconds": 175.13,
+      "allyHp": 0,
+      "enemyHp": 2965702
+    },
+    {
+      "id": 210,
+      "win": false,
+      "timeout": false,
+      "seconds": 147.33,
+      "allyHp": 0,
+      "enemyHp": 2870662
+    },
+    {
+      "id": 211,
+      "win": false,
+      "timeout": false,
+      "seconds": 128.27,
+      "allyHp": 0,
+      "enemyHp": 2965702
+    },
+    {
+      "id": 212,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 1
+    },
+    {
+      "id": 213,
+      "win": true,
+      "timeout": false,
+      "seconds": 104.13,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 214,
+      "win": false,
+      "timeout": false,
+      "seconds": 140.33,
+      "allyHp": 0,
+      "enemyHp": 2935714
+    },
+    {
+      "id": 215,
+      "win": false,
+      "timeout": false,
+      "seconds": 125.97,
+      "allyHp": 0,
+      "enemyHp": 2965702
+    },
+    {
+      "id": 216,
+      "win": false,
+      "timeout": false,
+      "seconds": 159.27,
+      "allyHp": 0,
+      "enemyHp": 2719372
+    },
+    {
+      "id": 217,
+      "win": false,
+      "timeout": false,
+      "seconds": 151.07,
+      "allyHp": 0,
+      "enemyHp": 2965702
+    },
+    {
+      "id": 218,
+      "win": false,
+      "timeout": false,
+      "seconds": 116.57,
+      "allyHp": 0,
+      "enemyHp": 3000000
+    },
+    {
+      "id": 219,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 1
+    },
+    {
+      "id": 220,
+      "win": true,
+      "timeout": false,
+      "seconds": 68.17,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 221,
+      "win": true,
+      "timeout": false,
+      "seconds": 71.33,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 222,
+      "win": true,
+      "timeout": false,
+      "seconds": 69.8,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 223,
+      "win": true,
+      "timeout": false,
+      "seconds": 68.87,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 224,
+      "win": false,
+      "timeout": false,
+      "seconds": 70.17,
+      "allyHp": 0,
+      "enemyHp": 1
+    },
+    {
+      "id": 225,
+      "win": false,
+      "timeout": false,
+      "seconds": 69.5,
+      "allyHp": 0,
+      "enemyHp": 1
+    },
+    {
+      "id": 226,
+      "win": true,
+      "timeout": false,
+      "seconds": 121.1,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 227,
+      "win": false,
+      "timeout": false,
+      "seconds": 77.13,
+      "allyHp": 0,
+      "enemyHp": 833048
+    },
+    {
+      "id": 228,
+      "win": false,
+      "timeout": false,
+      "seconds": 66.9,
+      "allyHp": 0,
+      "enemyHp": 122414
+    },
+    {
+      "id": 229,
+      "win": true,
+      "timeout": false,
+      "seconds": 147.77,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 230,
+      "win": false,
+      "timeout": false,
+      "seconds": 66.83,
+      "allyHp": 0,
+      "enemyHp": 130137
+    },
+    {
+      "id": 231,
+      "win": false,
+      "timeout": false,
+      "seconds": 69.23,
+      "allyHp": 0,
+      "enemyHp": 1
+    },
+    {
+      "id": 232,
+      "win": false,
+      "timeout": false,
+      "seconds": 75.5,
+      "allyHp": 0,
+      "enemyHp": 1
+    },
+    {
+      "id": 233,
+      "win": false,
+      "timeout": false,
+      "seconds": 75.43,
+      "allyHp": 0,
+      "enemyHp": 1
+    },
+    {
+      "id": 234,
+      "win": false,
+      "timeout": false,
+      "seconds": 73.77,
+      "allyHp": 0,
+      "enemyHp": 1
+    },
+    {
+      "id": 235,
+      "win": false,
+      "timeout": false,
+      "seconds": 72.17,
+      "allyHp": 0,
+      "enemyHp": 1
+    },
+    {
+      "id": 236,
+      "win": false,
+      "timeout": false,
+      "seconds": 78.43,
+      "allyHp": 0,
+      "enemyHp": 1
+    },
+    {
+      "id": 237,
+      "win": false,
+      "timeout": false,
+      "seconds": 75.23,
+      "allyHp": 0,
+      "enemyHp": 1
+    },
+    {
+      "id": 238,
+      "win": false,
+      "timeout": false,
+      "seconds": 70.9,
+      "allyHp": 0,
+      "enemyHp": 1
+    },
+    {
+      "id": 239,
+      "win": false,
+      "timeout": false,
+      "seconds": 75.63,
+      "allyHp": 0,
+      "enemyHp": 1
+    },
+    {
+      "id": 240,
+      "win": false,
+      "timeout": false,
+      "seconds": 71.67,
+      "allyHp": 0,
+      "enemyHp": 1
+    },
+    {
+      "id": 241,
+      "win": false,
+      "timeout": false,
+      "seconds": 78.37,
+      "allyHp": 0,
+      "enemyHp": 1
+    },
+    {
+      "id": 242,
+      "win": false,
+      "timeout": false,
+      "seconds": 78.9,
+      "allyHp": 0,
+      "enemyHp": 1
+    },
+    {
+      "id": 243,
+      "win": false,
+      "timeout": false,
+      "seconds": 72.4,
+      "allyHp": 0,
+      "enemyHp": 1
+    },
+    {
+      "id": 244,
+      "win": true,
+      "timeout": false,
+      "seconds": 204.23,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 245,
+      "win": false,
+      "timeout": false,
+      "seconds": 66.53,
+      "allyHp": 0,
+      "enemyHp": 1
+    },
+    {
+      "id": 246,
+      "win": false,
+      "timeout": false,
+      "seconds": 68.83,
+      "allyHp": 0,
+      "enemyHp": 1
+    },
+    {
+      "id": 247,
+      "win": false,
+      "timeout": false,
+      "seconds": 85.3,
+      "allyHp": 0,
+      "enemyHp": 1
+    },
+    {
+      "id": 248,
+      "win": false,
+      "timeout": false,
+      "seconds": 73.53,
+      "allyHp": 0,
+      "enemyHp": 1
+    },
+    {
+      "id": 249,
+      "win": true,
+      "timeout": false,
+      "seconds": 141.1,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 250,
+      "win": false,
+      "timeout": false,
+      "seconds": 75.17,
+      "allyHp": 0,
+      "enemyHp": 412960
+    },
+    {
+      "id": 251,
+      "win": false,
+      "timeout": false,
+      "seconds": 72.07,
+      "allyHp": 0,
+      "enemyHp": 1456452
+    },
+    {
+      "id": 252,
+      "win": false,
+      "timeout": false,
+      "seconds": 78.93,
+      "allyHp": 0,
+      "enemyHp": 94332
+    },
+    {
+      "id": 253,
+      "win": false,
+      "timeout": false,
+      "seconds": 67.17,
+      "allyHp": 0,
+      "enemyHp": 604632
+    },
+    {
+      "id": 254,
+      "win": false,
+      "timeout": false,
+      "seconds": 75.6,
+      "allyHp": 0,
+      "enemyHp": 238212
+    },
+    {
+      "id": 255,
+      "win": false,
+      "timeout": false,
+      "seconds": 76.1,
+      "allyHp": 0,
+      "enemyHp": 1297556
+    },
+    {
+      "id": 256,
+      "win": false,
+      "timeout": false,
+      "seconds": 81.27,
+      "allyHp": 0,
+      "enemyHp": 2923680
+    },
+    {
+      "id": 257,
+      "win": false,
+      "timeout": false,
+      "seconds": 77.57,
+      "allyHp": 0,
+      "enemyHp": 2953144
+    },
+    {
+      "id": 258,
+      "win": false,
+      "timeout": false,
+      "seconds": 132.87,
+      "allyHp": 0,
+      "enemyHp": 2786747
+    },
+    {
+      "id": 259,
+      "win": true,
+      "timeout": false,
+      "seconds": 169.43,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 260,
+      "win": false,
+      "timeout": false,
+      "seconds": 95.07,
+      "allyHp": 0,
+      "enemyHp": 2813797
+    },
+    {
+      "id": 261,
+      "win": false,
+      "timeout": false,
+      "seconds": 113.5,
+      "allyHp": 0,
+      "enemyHp": 2684189
+    },
+    {
+      "id": 262,
+      "win": true,
+      "timeout": false,
+      "seconds": 172.47,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 263,
+      "win": false,
+      "timeout": false,
+      "seconds": 124.27,
+      "allyHp": 0,
+      "enemyHp": 2768689
+    },
+    {
+      "id": 264,
+      "win": false,
+      "timeout": false,
+      "seconds": 89.9,
+      "allyHp": 0,
+      "enemyHp": 2818014
+    },
+    {
+      "id": 265,
+      "win": false,
+      "timeout": false,
+      "seconds": 85.67,
+      "allyHp": 0,
+      "enemyHp": 2818448
+    },
+    {
+      "id": 266,
+      "win": false,
+      "timeout": false,
+      "seconds": 93.7,
+      "allyHp": 0,
+      "enemyHp": 2877569
+    },
+    {
+      "id": 267,
+      "win": false,
+      "timeout": false,
+      "seconds": 80.6,
+      "allyHp": 0,
+      "enemyHp": 2944691
+    },
+    {
+      "id": 268,
+      "win": false,
+      "timeout": false,
+      "seconds": 113.5,
+      "allyHp": 0,
+      "enemyHp": 2866320
+    },
+    {
+      "id": 269,
+      "win": false,
+      "timeout": false,
+      "seconds": 80.37,
+      "allyHp": 0,
+      "enemyHp": 2868088
+    },
+    {
+      "id": 270,
+      "win": false,
+      "timeout": false,
+      "seconds": 83.33,
+      "allyHp": 0,
+      "enemyHp": 2815296
+    },
+    {
+      "id": 271,
+      "win": false,
+      "timeout": false,
+      "seconds": 82.23,
+      "allyHp": 0,
+      "enemyHp": 2898321
+    },
+    {
+      "id": 272,
+      "win": false,
+      "timeout": false,
+      "seconds": 77.17,
+      "allyHp": 0,
+      "enemyHp": 2896387
+    },
+    {
+      "id": 273,
+      "win": false,
+      "timeout": false,
+      "seconds": 80.13,
+      "allyHp": 0,
+      "enemyHp": 2923680
+    },
+    {
+      "id": 274,
+      "win": false,
+      "timeout": false,
+      "seconds": 83.37,
+      "allyHp": 0,
+      "enemyHp": 2850801
+    },
+    {
+      "id": 275,
+      "win": false,
+      "timeout": false,
+      "seconds": 87.27,
+      "allyHp": 0,
+      "enemyHp": 2923680
+    },
+    {
+      "id": 276,
+      "win": false,
+      "timeout": false,
+      "seconds": 85.3,
+      "allyHp": 0,
+      "enemyHp": 2820852
+    },
+    {
+      "id": 277,
+      "win": false,
+      "timeout": false,
+      "seconds": 85.5,
+      "allyHp": 0,
+      "enemyHp": 2872719
+    },
+    {
+      "id": 278,
+      "win": false,
+      "timeout": false,
+      "seconds": 93.63,
+      "allyHp": 0,
+      "enemyHp": 2711571
+    },
+    {
+      "id": 279,
+      "win": false,
+      "timeout": false,
+      "seconds": 104.63,
+      "allyHp": 0,
+      "enemyHp": 2780740
+    },
+    {
+      "id": 280,
+      "win": false,
+      "timeout": false,
+      "seconds": 101.13,
+      "allyHp": 0,
+      "enemyHp": 2583443
+    },
+    {
+      "id": 281,
+      "win": true,
+      "timeout": false,
+      "seconds": 221.67,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 282,
+      "win": false,
+      "timeout": false,
+      "seconds": 110.77,
+      "allyHp": 0,
+      "enemyHp": 2822724
+    },
+    {
+      "id": 283,
+      "win": false,
+      "timeout": false,
+      "seconds": 88.3,
+      "allyHp": 0,
+      "enemyHp": 2906774
+    },
+    {
+      "id": 284,
+      "win": false,
+      "timeout": false,
+      "seconds": 88.33,
+      "allyHp": 0,
+      "enemyHp": 2879213
+    },
+    {
+      "id": 285,
+      "win": false,
+      "timeout": false,
+      "seconds": 112.97,
+      "allyHp": 0,
+      "enemyHp": 2915227
+    },
+    {
+      "id": 286,
+      "win": false,
+      "timeout": false,
+      "seconds": 138.8,
+      "allyHp": 0,
+      "enemyHp": 2889868
+    },
+    {
+      "id": 287,
+      "win": false,
+      "timeout": false,
+      "seconds": 87.5,
+      "allyHp": 0,
+      "enemyHp": 2825302
+    }
+  ]
+}

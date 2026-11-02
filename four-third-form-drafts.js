@@ -3,7 +3,7 @@
 const THIRD_FORM_72_DRAFTS={
  lavender:{hp:1.5,atk:1.4,bonus:{atkDownChance:1,atkDownDuration:7,slowChance:1,slowDuration:3,interval:3,strengthen:{at:.5,mult:2}}},
  azure:{hp:3,atk:3,bonus:{critChance:.2,critMult:2,savageChance:.3,savageMult:3,wave:{chance:.3,level:10,reach:77.1,mult:1}}},
- aqua:{hp:1.5,atk:2.5,bonus:{slowChance:1,slowDuration:8,statusVs:['floating','angel']}},
+ aqua:{hp:1.5,atk:2.5,bonus:{slowChance:1,slowDuration:8,statusVs:['alien','angel']}},
  babyblue:{hp:1.5,atk:2.5,bonus:{interval:.75,blowChance:.7}}
 };
 for(const [id,draft]of Object.entries(THIRD_FORM_72_DRAFTS)){

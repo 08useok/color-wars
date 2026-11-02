@@ -1,0 +1,60 @@
+{
+  "events": [
+    {
+      "id": "primeval",
+      "stage": "원시의 소용돌이",
+      "reward": "explorermintcyan",
+      "image": [
+        3986,
+        1339
+      ]
+    },
+    {
+      "id": "supercosmic",
+      "stage": "진격의 워프홀",
+      "reward": "anchorgrey",
+      "image": [
+        4086,
+        2870
+      ]
+    }
+  ],
+  "allies": [
+    {
+      "id": "explorermintcyan",
+      "form": 1,
+      "hp": 24348,
+      "atk": 853,
+      "range": 130
+    },
+    {
+      "id": "explorermintcyan",
+      "form": 2,
+      "hp": 28000,
+      "atk": 980,
+      "range": 130
+    },
+    {
+      "id": "anchorgrey",
+      "form": 1,
+      "hp": 54783,
+      "atk": 9740,
+      "range": 260
+    },
+    {
+      "id": "anchorgrey",
+      "form": 2,
+      "hp": 63000,
+      "atk": 11200,
+      "range": 260
+    }
+  ],
+  "reload": {
+    "owned": true,
+    "cleared": true,
+    "levels": [
+      30,
+      30
+    ]
+  }
+}

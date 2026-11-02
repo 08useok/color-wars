@@ -8,7 +8,7 @@
 const THIRD80_NAMES={hacienda:'가디언 하시엔다',lightcream:'스파크 라이트 크림',moss:'룬 모스',ruby:'글레이셜 루비'};// 이름·능력 사용자 확정(2026-10-31)
 for(const id of Object.keys(THIRD80_NAMES)){TRUE_FORM_HP_MULT[id]=1.5;TRUE_FORM_ATK_MULT[id]=1.5;TRUE_NAME[id]=THIRD80_NAMES[id];}
 TRUE_FORM_BONUS.hacienda={massiveVs:['angel','ancient']};
-TRUE_FORM_BONUS.lightcream={critChance:.3,massiveVs:['ancient']};
+TRUE_FORM_BONUS.lightcream={critChance:.3,massiveVs:['ancient'],immune:{curse:true}};
 TRUE_FORM_BONUS.moss={statusVs:['alien','ancient','floating'],curseChance:.5,curseDuration:3.08};
 TRUE_FORM_BONUS.ruby={statusVs:['red','ancient'],freezeChance:1,freezeDuration:3};
 {const before=unitStats;

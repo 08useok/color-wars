@@ -1,0 +1,4569 @@
+{
+  "note": "Bottom six from all31 quick ranking; 9 maps x3seeds x2policies, best policy per map/seed. General arena ranking only.",
+  "rows": [
+    {
+      "id": "aqua",
+      "score": 0.5913851851851851
+    },
+    {
+      "id": "verdigris",
+      "score": 0.6441691358024692
+    },
+    {
+      "id": "lightcream",
+      "score": 0.7184518518518518
+    },
+    {
+      "id": "fusioncream",
+      "score": 0.7887493827160492
+    },
+    {
+      "id": "indigo",
+      "score": 0.9136703703703705
+    },
+    {
+      "id": "gold",
+      "score": 1.113382716049383
+    }
+  ],
+  "meta": [
+    {
+      "id": "aqua",
+      "i": 750,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "id": "aqua",
+      "i": 750,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "id": "aqua",
+      "i": 750,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "id": "aqua",
+      "i": 750,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "id": "aqua",
+      "i": 750,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "id": "aqua",
+      "i": 750,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "id": "aqua",
+      "i": 751,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "id": "aqua",
+      "i": 751,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "id": "aqua",
+      "i": 751,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "id": "aqua",
+      "i": 751,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "id": "aqua",
+      "i": 751,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "id": "aqua",
+      "i": 751,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "id": "aqua",
+      "i": 752,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "id": "aqua",
+      "i": 752,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "id": "aqua",
+      "i": 752,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "id": "aqua",
+      "i": 752,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "id": "aqua",
+      "i": 752,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "id": "aqua",
+      "i": 752,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "id": "aqua",
+      "i": 753,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "id": "aqua",
+      "i": 753,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "id": "aqua",
+      "i": 753,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "id": "aqua",
+      "i": 753,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "id": "aqua",
+      "i": 753,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "id": "aqua",
+      "i": 753,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "id": "aqua",
+      "i": 754,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "id": "aqua",
+      "i": 754,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "id": "aqua",
+      "i": 754,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "id": "aqua",
+      "i": 754,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "id": "aqua",
+      "i": 754,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "id": "aqua",
+      "i": 754,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "id": "aqua",
+      "i": 755,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "id": "aqua",
+      "i": 755,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "id": "aqua",
+      "i": 755,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "id": "aqua",
+      "i": 755,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "id": "aqua",
+      "i": 755,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "id": "aqua",
+      "i": 755,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "id": "aqua",
+      "i": 756,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "id": "aqua",
+      "i": 756,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "id": "aqua",
+      "i": 756,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "id": "aqua",
+      "i": 756,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "id": "aqua",
+      "i": 756,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "id": "aqua",
+      "i": 756,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "id": "aqua",
+      "i": 757,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "id": "aqua",
+      "i": 757,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "id": "aqua",
+      "i": 757,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "id": "aqua",
+      "i": 757,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "id": "aqua",
+      "i": 757,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "id": "aqua",
+      "i": 757,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "id": "aqua",
+      "i": 758,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "id": "aqua",
+      "i": 758,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "id": "aqua",
+      "i": 758,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "id": "aqua",
+      "i": 758,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "id": "aqua",
+      "i": 758,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "id": "aqua",
+      "i": 758,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "id": "indigo",
+      "i": 750,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "id": "indigo",
+      "i": 750,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "id": "indigo",
+      "i": 750,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "id": "indigo",
+      "i": 750,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "id": "indigo",
+      "i": 750,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "id": "indigo",
+      "i": 750,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "id": "indigo",
+      "i": 751,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "id": "indigo",
+      "i": 751,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "id": "indigo",
+      "i": 751,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "id": "indigo",
+      "i": 751,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "id": "indigo",
+      "i": 751,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "id": "indigo",
+      "i": 751,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "id": "indigo",
+      "i": 752,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "id": "indigo",
+      "i": 752,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "id": "indigo",
+      "i": 752,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "id": "indigo",
+      "i": 752,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "id": "indigo",
+      "i": 752,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "id": "indigo",
+      "i": 752,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "id": "indigo",
+      "i": 753,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "id": "indigo",
+      "i": 753,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "id": "indigo",
+      "i": 753,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "id": "indigo",
+      "i": 753,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "id": "indigo",
+      "i": 753,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "id": "indigo",
+      "i": 753,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "id": "indigo",
+      "i": 754,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "id": "indigo",
+      "i": 754,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "id": "indigo",
+      "i": 754,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "id": "indigo",
+      "i": 754,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "id": "indigo",
+      "i": 754,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "id": "indigo",
+      "i": 754,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "id": "indigo",
+      "i": 755,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "id": "indigo",
+      "i": 755,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "id": "indigo",
+      "i": 755,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "id": "indigo",
+      "i": 755,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "id": "indigo",
+      "i": 755,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "id": "indigo",
+      "i": 755,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "id": "indigo",
+      "i": 756,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "id": "indigo",
+      "i": 756,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "id": "indigo",
+      "i": 756,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "id": "indigo",
+      "i": 756,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "id": "indigo",
+      "i": 756,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "id": "indigo",
+      "i": 756,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "id": "indigo",
+      "i": 757,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "id": "indigo",
+      "i": 757,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "id": "indigo",
+      "i": 757,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "id": "indigo",
+      "i": 757,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "id": "indigo",
+      "i": 757,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "id": "indigo",
+      "i": 757,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "id": "indigo",
+      "i": 758,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "id": "indigo",
+      "i": 758,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "id": "indigo",
+      "i": 758,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "id": "indigo",
+      "i": 758,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "id": "indigo",
+      "i": 758,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "id": "indigo",
+      "i": 758,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "id": "gold",
+      "i": 750,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "id": "gold",
+      "i": 750,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "id": "gold",
+      "i": 750,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "id": "gold",
+      "i": 750,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "id": "gold",
+      "i": 750,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "id": "gold",
+      "i": 750,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "id": "gold",
+      "i": 751,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "id": "gold",
+      "i": 751,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "id": "gold",
+      "i": 751,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "id": "gold",
+      "i": 751,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "id": "gold",
+      "i": 751,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "id": "gold",
+      "i": 751,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "id": "gold",
+      "i": 752,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "id": "gold",
+      "i": 752,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "id": "gold",
+      "i": 752,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "id": "gold",
+      "i": 752,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "id": "gold",
+      "i": 752,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "id": "gold",
+      "i": 752,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "id": "gold",
+      "i": 753,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "id": "gold",
+      "i": 753,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "id": "gold",
+      "i": 753,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "id": "gold",
+      "i": 753,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "id": "gold",
+      "i": 753,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "id": "gold",
+      "i": 753,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "id": "gold",
+      "i": 754,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "id": "gold",
+      "i": 754,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "id": "gold",
+      "i": 754,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "id": "gold",
+      "i": 754,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "id": "gold",
+      "i": 754,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "id": "gold",
+      "i": 754,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "id": "gold",
+      "i": 755,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "id": "gold",
+      "i": 755,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "id": "gold",
+      "i": 755,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "id": "gold",
+      "i": 755,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "id": "gold",
+      "i": 755,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "id": "gold",
+      "i": 755,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "id": "gold",
+      "i": 756,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "id": "gold",
+      "i": 756,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "id": "gold",
+      "i": 756,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "id": "gold",
+      "i": 756,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "id": "gold",
+      "i": 756,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "id": "gold",
+      "i": 756,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "id": "gold",
+      "i": 757,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "id": "gold",
+      "i": 757,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "id": "gold",
+      "i": 757,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "id": "gold",
+      "i": 757,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "id": "gold",
+      "i": 757,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "id": "gold",
+      "i": 757,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "id": "gold",
+      "i": 758,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "id": "gold",
+      "i": 758,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "id": "gold",
+      "i": 758,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "id": "gold",
+      "i": 758,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "id": "gold",
+      "i": 758,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "id": "gold",
+      "i": 758,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "id": "lightcream",
+      "i": 750,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "id": "lightcream",
+      "i": 750,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "id": "lightcream",
+      "i": 750,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "id": "lightcream",
+      "i": 750,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "id": "lightcream",
+      "i": 750,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "id": "lightcream",
+      "i": 750,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "id": "lightcream",
+      "i": 751,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "id": "lightcream",
+      "i": 751,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "id": "lightcream",
+      "i": 751,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "id": "lightcream",
+      "i": 751,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "id": "lightcream",
+      "i": 751,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "id": "lightcream",
+      "i": 751,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "id": "lightcream",
+      "i": 752,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "id": "lightcream",
+      "i": 752,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "id": "lightcream",
+      "i": 752,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "id": "lightcream",
+      "i": 752,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "id": "lightcream",
+      "i": 752,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "id": "lightcream",
+      "i": 752,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "id": "lightcream",
+      "i": 753,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "id": "lightcream",
+      "i": 753,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "id": "lightcream",
+      "i": 753,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "id": "lightcream",
+      "i": 753,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "id": "lightcream",
+      "i": 753,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "id": "lightcream",
+      "i": 753,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "id": "lightcream",
+      "i": 754,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "id": "lightcream",
+      "i": 754,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "id": "lightcream",
+      "i": 754,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "id": "lightcream",
+      "i": 754,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "id": "lightcream",
+      "i": 754,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "id": "lightcream",
+      "i": 754,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "id": "lightcream",
+      "i": 755,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "id": "lightcream",
+      "i": 755,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "id": "lightcream",
+      "i": 755,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "id": "lightcream",
+      "i": 755,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "id": "lightcream",
+      "i": 755,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "id": "lightcream",
+      "i": 755,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "id": "lightcream",
+      "i": 756,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "id": "lightcream",
+      "i": 756,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "id": "lightcream",
+      "i": 756,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "id": "lightcream",
+      "i": 756,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "id": "lightcream",
+      "i": 756,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "id": "lightcream",
+      "i": 756,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "id": "lightcream",
+      "i": 757,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "id": "lightcream",
+      "i": 757,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "id": "lightcream",
+      "i": 757,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "id": "lightcream",
+      "i": 757,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "id": "lightcream",
+      "i": 757,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "id": "lightcream",
+      "i": 757,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "id": "lightcream",
+      "i": 758,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "id": "lightcream",
+      "i": 758,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "id": "lightcream",
+      "i": 758,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "id": "lightcream",
+      "i": 758,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "id": "lightcream",
+      "i": 758,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "id": "lightcream",
+      "i": 758,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "id": "fusioncream",
+      "i": 750,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "id": "fusioncream",
+      "i": 750,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "id": "fusioncream",
+      "i": 750,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "id": "fusioncream",
+      "i": 750,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "id": "fusioncream",
+      "i": 750,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "id": "fusioncream",
+      "i": 750,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "id": "fusioncream",
+      "i": 751,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "id": "fusioncream",
+      "i": 751,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "id": "fusioncream",
+      "i": 751,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "id": "fusioncream",
+      "i": 751,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "id": "fusioncream",
+      "i": 751,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "id": "fusioncream",
+      "i": 751,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "id": "fusioncream",
+      "i": 752,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "id": "fusioncream",
+      "i": 752,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "id": "fusioncream",
+      "i": 752,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "id": "fusioncream",
+      "i": 752,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "id": "fusioncream",
+      "i": 752,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "id": "fusioncream",
+      "i": 752,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "id": "fusioncream",
+      "i": 753,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "id": "fusioncream",
+      "i": 753,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "id": "fusioncream",
+      "i": 753,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "id": "fusioncream",
+      "i": 753,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "id": "fusioncream",
+      "i": 753,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "id": "fusioncream",
+      "i": 753,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "id": "fusioncream",
+      "i": 754,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "id": "fusioncream",
+      "i": 754,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "id": "fusioncream",
+      "i": 754,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "id": "fusioncream",
+      "i": 754,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "id": "fusioncream",
+      "i": 754,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "id": "fusioncream",
+      "i": 754,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "id": "fusioncream",
+      "i": 755,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "id": "fusioncream",
+      "i": 755,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "id": "fusioncream",
+      "i": 755,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "id": "fusioncream",
+      "i": 755,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "id": "fusioncream",
+      "i": 755,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "id": "fusioncream",
+      "i": 755,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "id": "fusioncream",
+      "i": 756,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "id": "fusioncream",
+      "i": 756,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "id": "fusioncream",
+      "i": 756,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "id": "fusioncream",
+      "i": 756,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "id": "fusioncream",
+      "i": 756,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "id": "fusioncream",
+      "i": 756,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "id": "fusioncream",
+      "i": 757,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "id": "fusioncream",
+      "i": 757,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "id": "fusioncream",
+      "i": 757,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "id": "fusioncream",
+      "i": 757,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "id": "fusioncream",
+      "i": 757,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "id": "fusioncream",
+      "i": 757,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "id": "fusioncream",
+      "i": 758,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "id": "fusioncream",
+      "i": 758,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "id": "fusioncream",
+      "i": 758,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "id": "fusioncream",
+      "i": 758,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "id": "fusioncream",
+      "i": 758,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "id": "fusioncream",
+      "i": 758,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "id": "verdigris",
+      "i": 750,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "id": "verdigris",
+      "i": 750,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "id": "verdigris",
+      "i": 750,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "id": "verdigris",
+      "i": 750,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "id": "verdigris",
+      "i": 750,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "id": "verdigris",
+      "i": 750,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "id": "verdigris",
+      "i": 751,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "id": "verdigris",
+      "i": 751,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "id": "verdigris",
+      "i": 751,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "id": "verdigris",
+      "i": 751,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "id": "verdigris",
+      "i": 751,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "id": "verdigris",
+      "i": 751,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "id": "verdigris",
+      "i": 752,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "id": "verdigris",
+      "i": 752,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "id": "verdigris",
+      "i": 752,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "id": "verdigris",
+      "i": 752,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "id": "verdigris",
+      "i": 752,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "id": "verdigris",
+      "i": 752,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "id": "verdigris",
+      "i": 753,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "id": "verdigris",
+      "i": 753,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "id": "verdigris",
+      "i": 753,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "id": "verdigris",
+      "i": 753,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "id": "verdigris",
+      "i": 753,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "id": "verdigris",
+      "i": 753,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "id": "verdigris",
+      "i": 754,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "id": "verdigris",
+      "i": 754,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "id": "verdigris",
+      "i": 754,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "id": "verdigris",
+      "i": 754,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "id": "verdigris",
+      "i": 754,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "id": "verdigris",
+      "i": 754,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "id": "verdigris",
+      "i": 755,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "id": "verdigris",
+      "i": 755,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "id": "verdigris",
+      "i": 755,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "id": "verdigris",
+      "i": 755,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "id": "verdigris",
+      "i": 755,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "id": "verdigris",
+      "i": 755,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "id": "verdigris",
+      "i": 756,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "id": "verdigris",
+      "i": 756,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "id": "verdigris",
+      "i": 756,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "id": "verdigris",
+      "i": 756,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "id": "verdigris",
+      "i": 756,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "id": "verdigris",
+      "i": 756,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "id": "verdigris",
+      "i": 757,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "id": "verdigris",
+      "i": 757,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "id": "verdigris",
+      "i": 757,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "id": "verdigris",
+      "i": 757,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "id": "verdigris",
+      "i": 757,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "id": "verdigris",
+      "i": 757,
+      "seed": 3,
+      "policy": "smart2"
+    },
+    {
+      "id": "verdigris",
+      "i": 758,
+      "seed": 1,
+      "policy": "auto"
+    },
+    {
+      "id": "verdigris",
+      "i": 758,
+      "seed": 1,
+      "policy": "smart2"
+    },
+    {
+      "id": "verdigris",
+      "i": 758,
+      "seed": 2,
+      "policy": "auto"
+    },
+    {
+      "id": "verdigris",
+      "i": 758,
+      "seed": 2,
+      "policy": "smart2"
+    },
+    {
+      "id": "verdigris",
+      "i": 758,
+      "seed": 3,
+      "policy": "auto"
+    },
+    {
+      "id": "verdigris",
+      "i": 758,
+      "seed": 3,
+      "policy": "smart2"
+    }
+  ],
+  "raw": [
+    {
+      "id": 0,
+      "win": true,
+      "timeout": false,
+      "seconds": 133,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 1,
+      "win": true,
+      "timeout": false,
+      "seconds": 133,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 2,
+      "win": true,
+      "timeout": false,
+      "seconds": 133,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 3,
+      "win": true,
+      "timeout": false,
+      "seconds": 133,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 4,
+      "win": true,
+      "timeout": false,
+      "seconds": 133,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 5,
+      "win": true,
+      "timeout": false,
+      "seconds": 133,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 6,
+      "win": true,
+      "timeout": false,
+      "seconds": 101.3,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 7,
+      "win": true,
+      "timeout": false,
+      "seconds": 101.3,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 8,
+      "win": true,
+      "timeout": false,
+      "seconds": 101.3,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 9,
+      "win": true,
+      "timeout": false,
+      "seconds": 101.3,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 10,
+      "win": true,
+      "timeout": false,
+      "seconds": 101.3,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 11,
+      "win": true,
+      "timeout": false,
+      "seconds": 101.3,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 12,
+      "win": true,
+      "timeout": false,
+      "seconds": 176.47,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 13,
+      "win": false,
+      "timeout": false,
+      "seconds": 92.57,
+      "allyHp": 0,
+      "enemyHp": 2986956
+    },
+    {
+      "id": 14,
+      "win": true,
+      "timeout": false,
+      "seconds": 176.47,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 15,
+      "win": false,
+      "timeout": false,
+      "seconds": 92.57,
+      "allyHp": 0,
+      "enemyHp": 2986956
+    },
+    {
+      "id": 16,
+      "win": true,
+      "timeout": false,
+      "seconds": 176.47,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 17,
+      "win": false,
+      "timeout": false,
+      "seconds": 92.57,
+      "allyHp": 0,
+      "enemyHp": 2986956
+    },
+    {
+      "id": 18,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 19,
+      "win": false,
+      "timeout": false,
+      "seconds": 47.7,
+      "allyHp": 0,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 20,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 21,
+      "win": false,
+      "timeout": false,
+      "seconds": 49.4,
+      "allyHp": 0,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 22,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 23,
+      "win": false,
+      "timeout": false,
+      "seconds": 49.2,
+      "allyHp": 0,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 24,
+      "win": true,
+      "timeout": false,
+      "seconds": 281.2,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 25,
+      "win": false,
+      "timeout": false,
+      "seconds": 128.33,
+      "allyHp": 0,
+      "enemyHp": 2970050
+    },
+    {
+      "id": 26,
+      "win": true,
+      "timeout": false,
+      "seconds": 296.27,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 27,
+      "win": false,
+      "timeout": false,
+      "seconds": 116.27,
+      "allyHp": 0,
+      "enemyHp": 2970050
+    },
+    {
+      "id": 28,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 1840621
+    },
+    {
+      "id": 29,
+      "win": false,
+      "timeout": false,
+      "seconds": 119.97,
+      "allyHp": 0,
+      "enemyHp": 2970050
+    },
+    {
+      "id": 30,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2769367
+    },
+    {
+      "id": 31,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2270320
+    },
+    {
+      "id": 32,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2769367
+    },
+    {
+      "id": 33,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2270320
+    },
+    {
+      "id": 34,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2769367
+    },
+    {
+      "id": 35,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2270320
+    },
+    {
+      "id": 36,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2965702
+    },
+    {
+      "id": 37,
+      "win": false,
+      "timeout": false,
+      "seconds": 128.27,
+      "allyHp": 0,
+      "enemyHp": 2965702
+    },
+    {
+      "id": 38,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2965702
+    },
+    {
+      "id": 39,
+      "win": false,
+      "timeout": false,
+      "seconds": 128.27,
+      "allyHp": 0,
+      "enemyHp": 2965702
+    },
+    {
+      "id": 40,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2965702
+    },
+    {
+      "id": 41,
+      "win": false,
+      "timeout": false,
+      "seconds": 128.27,
+      "allyHp": 0,
+      "enemyHp": 2965702
+    },
+    {
+      "id": 42,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 1919147
+    },
+    {
+      "id": 43,
+      "win": false,
+      "timeout": false,
+      "seconds": 72.4,
+      "allyHp": 0,
+      "enemyHp": 1
+    },
+    {
+      "id": 44,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2066756
+    },
+    {
+      "id": 45,
+      "win": false,
+      "timeout": false,
+      "seconds": 72.07,
+      "allyHp": 0,
+      "enemyHp": 1
+    },
+    {
+      "id": 46,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 1692891
+    },
+    {
+      "id": 47,
+      "win": false,
+      "timeout": false,
+      "seconds": 72.47,
+      "allyHp": 0,
+      "enemyHp": 1
+    },
+    {
+      "id": 48,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2923680
+    },
+    {
+      "id": 49,
+      "win": false,
+      "timeout": false,
+      "seconds": 87.27,
+      "allyHp": 0,
+      "enemyHp": 2923680
+    },
+    {
+      "id": 50,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2923680
+    },
+    {
+      "id": 51,
+      "win": false,
+      "timeout": false,
+      "seconds": 87.27,
+      "allyHp": 0,
+      "enemyHp": 2923680
+    },
+    {
+      "id": 52,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2923680
+    },
+    {
+      "id": 53,
+      "win": false,
+      "timeout": false,
+      "seconds": 87.27,
+      "allyHp": 0,
+      "enemyHp": 2923680
+    },
+    {
+      "id": 54,
+      "win": true,
+      "timeout": false,
+      "seconds": 130.8,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 55,
+      "win": true,
+      "timeout": false,
+      "seconds": 130.8,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 56,
+      "win": true,
+      "timeout": false,
+      "seconds": 130.8,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 57,
+      "win": true,
+      "timeout": false,
+      "seconds": 130.8,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 58,
+      "win": true,
+      "timeout": false,
+      "seconds": 130.8,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 59,
+      "win": true,
+      "timeout": false,
+      "seconds": 130.8,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 60,
+      "win": true,
+      "timeout": false,
+      "seconds": 111.93,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 61,
+      "win": true,
+      "timeout": false,
+      "seconds": 111.93,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 62,
+      "win": true,
+      "timeout": false,
+      "seconds": 114.23,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 63,
+      "win": true,
+      "timeout": false,
+      "seconds": 114.23,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 64,
+      "win": true,
+      "timeout": false,
+      "seconds": 105.43,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 65,
+      "win": true,
+      "timeout": false,
+      "seconds": 105.43,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 66,
+      "win": true,
+      "timeout": false,
+      "seconds": 170.7,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 67,
+      "win": false,
+      "timeout": false,
+      "seconds": 81.67,
+      "allyHp": 0,
+      "enemyHp": 2986956
+    },
+    {
+      "id": 68,
+      "win": true,
+      "timeout": false,
+      "seconds": 175.8,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 69,
+      "win": false,
+      "timeout": false,
+      "seconds": 81.67,
+      "allyHp": 0,
+      "enemyHp": 2986956
+    },
+    {
+      "id": 70,
+      "win": true,
+      "timeout": false,
+      "seconds": 183.47,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 71,
+      "win": false,
+      "timeout": false,
+      "seconds": 81.67,
+      "allyHp": 0,
+      "enemyHp": 2986956
+    },
+    {
+      "id": 72,
+      "win": true,
+      "timeout": false,
+      "seconds": 241.3,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 73,
+      "win": false,
+      "timeout": false,
+      "seconds": 34.2,
+      "allyHp": 0,
+      "enemyHp": 2978260
+    },
+    {
+      "id": 74,
+      "win": true,
+      "timeout": false,
+      "seconds": 265.57,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 75,
+      "win": false,
+      "timeout": false,
+      "seconds": 36.47,
+      "allyHp": 0,
+      "enemyHp": 2978260
+    },
+    {
+      "id": 76,
+      "win": true,
+      "timeout": false,
+      "seconds": 241,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 77,
+      "win": false,
+      "timeout": false,
+      "seconds": 33.43,
+      "allyHp": 0,
+      "enemyHp": 2978260
+    },
+    {
+      "id": 78,
+      "win": true,
+      "timeout": false,
+      "seconds": 284.9,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 79,
+      "win": false,
+      "timeout": false,
+      "seconds": 112.97,
+      "allyHp": 0,
+      "enemyHp": 2970050
+    },
+    {
+      "id": 80,
+      "win": true,
+      "timeout": false,
+      "seconds": 246.37,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 81,
+      "win": false,
+      "timeout": false,
+      "seconds": 127.07,
+      "allyHp": 0,
+      "enemyHp": 2970050
+    },
+    {
+      "id": 82,
+      "win": true,
+      "timeout": false,
+      "seconds": 258.23,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 83,
+      "win": false,
+      "timeout": false,
+      "seconds": 119.63,
+      "allyHp": 0,
+      "enemyHp": 2970050
+    },
+    {
+      "id": 84,
+      "win": true,
+      "timeout": false,
+      "seconds": 208.07,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 85,
+      "win": true,
+      "timeout": false,
+      "seconds": 209.17,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 86,
+      "win": true,
+      "timeout": false,
+      "seconds": 218.7,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 87,
+      "win": true,
+      "timeout": false,
+      "seconds": 206.17,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 88,
+      "win": true,
+      "timeout": false,
+      "seconds": 193.7,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 89,
+      "win": true,
+      "timeout": false,
+      "seconds": 197.8,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 90,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2965702
+    },
+    {
+      "id": 91,
+      "win": false,
+      "timeout": false,
+      "seconds": 143.33,
+      "allyHp": 0,
+      "enemyHp": 2965702
+    },
+    {
+      "id": 92,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2965702
+    },
+    {
+      "id": 93,
+      "win": false,
+      "timeout": false,
+      "seconds": 143.33,
+      "allyHp": 0,
+      "enemyHp": 2965702
+    },
+    {
+      "id": 94,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2965702
+    },
+    {
+      "id": 95,
+      "win": false,
+      "timeout": false,
+      "seconds": 143.33,
+      "allyHp": 0,
+      "enemyHp": 2965702
+    },
+    {
+      "id": 96,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 835378
+    },
+    {
+      "id": 97,
+      "win": false,
+      "timeout": false,
+      "seconds": 72.17,
+      "allyHp": 0,
+      "enemyHp": 1
+    },
+    {
+      "id": 98,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 510916
+    },
+    {
+      "id": 99,
+      "win": false,
+      "timeout": false,
+      "seconds": 71.07,
+      "allyHp": 0,
+      "enemyHp": 1
+    },
+    {
+      "id": 100,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 1709279
+    },
+    {
+      "id": 101,
+      "win": false,
+      "timeout": false,
+      "seconds": 70.27,
+      "allyHp": 0,
+      "enemyHp": 1
+    },
+    {
+      "id": 102,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2944691
+    },
+    {
+      "id": 103,
+      "win": false,
+      "timeout": false,
+      "seconds": 80.6,
+      "allyHp": 0,
+      "enemyHp": 2944691
+    },
+    {
+      "id": 104,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2944691
+    },
+    {
+      "id": 105,
+      "win": false,
+      "timeout": false,
+      "seconds": 80.6,
+      "allyHp": 0,
+      "enemyHp": 2944691
+    },
+    {
+      "id": 106,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2944691
+    },
+    {
+      "id": 107,
+      "win": false,
+      "timeout": false,
+      "seconds": 80.6,
+      "allyHp": 0,
+      "enemyHp": 2944691
+    },
+    {
+      "id": 108,
+      "win": true,
+      "timeout": false,
+      "seconds": 121.77,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 109,
+      "win": true,
+      "timeout": false,
+      "seconds": 121.77,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 110,
+      "win": true,
+      "timeout": false,
+      "seconds": 121.77,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 111,
+      "win": true,
+      "timeout": false,
+      "seconds": 121.77,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 112,
+      "win": true,
+      "timeout": false,
+      "seconds": 121.77,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 113,
+      "win": true,
+      "timeout": false,
+      "seconds": 121.77,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 114,
+      "win": true,
+      "timeout": false,
+      "seconds": 118.73,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 115,
+      "win": true,
+      "timeout": false,
+      "seconds": 118.73,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 116,
+      "win": true,
+      "timeout": false,
+      "seconds": 118.73,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 117,
+      "win": true,
+      "timeout": false,
+      "seconds": 118.73,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 118,
+      "win": true,
+      "timeout": false,
+      "seconds": 118.73,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 119,
+      "win": true,
+      "timeout": false,
+      "seconds": 118.73,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 120,
+      "win": true,
+      "timeout": false,
+      "seconds": 161.83,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 121,
+      "win": false,
+      "timeout": false,
+      "seconds": 84.47,
+      "allyHp": 0,
+      "enemyHp": 2986956
+    },
+    {
+      "id": 122,
+      "win": true,
+      "timeout": false,
+      "seconds": 161.83,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 123,
+      "win": false,
+      "timeout": false,
+      "seconds": 84.47,
+      "allyHp": 0,
+      "enemyHp": 2986956
+    },
+    {
+      "id": 124,
+      "win": true,
+      "timeout": false,
+      "seconds": 161.83,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 125,
+      "win": false,
+      "timeout": false,
+      "seconds": 84.47,
+      "allyHp": 0,
+      "enemyHp": 2986956
+    },
+    {
+      "id": 126,
+      "win": true,
+      "timeout": false,
+      "seconds": 188.83,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 127,
+      "win": false,
+      "timeout": false,
+      "seconds": 33.27,
+      "allyHp": 0,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 128,
+      "win": true,
+      "timeout": false,
+      "seconds": 182.07,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 129,
+      "win": false,
+      "timeout": false,
+      "seconds": 30.87,
+      "allyHp": 0,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 130,
+      "win": true,
+      "timeout": false,
+      "seconds": 185.8,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 131,
+      "win": false,
+      "timeout": false,
+      "seconds": 33.43,
+      "allyHp": 0,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 132,
+      "win": true,
+      "timeout": false,
+      "seconds": 197.6,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 133,
+      "win": false,
+      "timeout": false,
+      "seconds": 147.5,
+      "allyHp": 0,
+      "enemyHp": 2978503
+    },
+    {
+      "id": 134,
+      "win": true,
+      "timeout": false,
+      "seconds": 213.9,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 135,
+      "win": false,
+      "timeout": false,
+      "seconds": 159.47,
+      "allyHp": 0,
+      "enemyHp": 2978503
+    },
+    {
+      "id": 136,
+      "win": true,
+      "timeout": false,
+      "seconds": 199.4,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 137,
+      "win": false,
+      "timeout": false,
+      "seconds": 111.1,
+      "allyHp": 0,
+      "enemyHp": 2978503
+    },
+    {
+      "id": 138,
+      "win": true,
+      "timeout": false,
+      "seconds": 166.97,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 139,
+      "win": true,
+      "timeout": false,
+      "seconds": 179.67,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 140,
+      "win": true,
+      "timeout": false,
+      "seconds": 166.97,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 141,
+      "win": true,
+      "timeout": false,
+      "seconds": 179.67,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 142,
+      "win": true,
+      "timeout": false,
+      "seconds": 166.97,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 143,
+      "win": true,
+      "timeout": false,
+      "seconds": 179.67,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 144,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2974155
+    },
+    {
+      "id": 145,
+      "win": false,
+      "timeout": false,
+      "seconds": 169.43,
+      "allyHp": 0,
+      "enemyHp": 2974155
+    },
+    {
+      "id": 146,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2974155
+    },
+    {
+      "id": 147,
+      "win": false,
+      "timeout": false,
+      "seconds": 169.43,
+      "allyHp": 0,
+      "enemyHp": 2974155
+    },
+    {
+      "id": 148,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2974155
+    },
+    {
+      "id": 149,
+      "win": false,
+      "timeout": false,
+      "seconds": 169.43,
+      "allyHp": 0,
+      "enemyHp": 2974155
+    },
+    {
+      "id": 150,
+      "win": true,
+      "timeout": false,
+      "seconds": 202.07,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 151,
+      "win": false,
+      "timeout": false,
+      "seconds": 69.5,
+      "allyHp": 0,
+      "enemyHp": 1
+    },
+    {
+      "id": 152,
+      "win": true,
+      "timeout": false,
+      "seconds": 261.53,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 153,
+      "win": false,
+      "timeout": false,
+      "seconds": 65.5,
+      "allyHp": 0,
+      "enemyHp": 158577
+    },
+    {
+      "id": 154,
+      "win": true,
+      "timeout": false,
+      "seconds": 242.5,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 155,
+      "win": false,
+      "timeout": false,
+      "seconds": 68.4,
+      "allyHp": 0,
+      "enemyHp": 1
+    },
+    {
+      "id": 156,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2953144
+    },
+    {
+      "id": 157,
+      "win": false,
+      "timeout": false,
+      "seconds": 77.57,
+      "allyHp": 0,
+      "enemyHp": 2953144
+    },
+    {
+      "id": 158,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2953144
+    },
+    {
+      "id": 159,
+      "win": false,
+      "timeout": false,
+      "seconds": 77.57,
+      "allyHp": 0,
+      "enemyHp": 2953144
+    },
+    {
+      "id": 160,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2953144
+    },
+    {
+      "id": 161,
+      "win": false,
+      "timeout": false,
+      "seconds": 77.57,
+      "allyHp": 0,
+      "enemyHp": 2953144
+    },
+    {
+      "id": 162,
+      "win": true,
+      "timeout": false,
+      "seconds": 147.47,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 163,
+      "win": true,
+      "timeout": false,
+      "seconds": 147.47,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 164,
+      "win": true,
+      "timeout": false,
+      "seconds": 154.67,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 165,
+      "win": true,
+      "timeout": false,
+      "seconds": 154.67,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 166,
+      "win": true,
+      "timeout": false,
+      "seconds": 155.7,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 167,
+      "win": true,
+      "timeout": false,
+      "seconds": 155.7,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 168,
+      "win": true,
+      "timeout": false,
+      "seconds": 103.47,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 169,
+      "win": true,
+      "timeout": false,
+      "seconds": 103.47,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 170,
+      "win": true,
+      "timeout": false,
+      "seconds": 101.5,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 171,
+      "win": true,
+      "timeout": false,
+      "seconds": 101.5,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 172,
+      "win": true,
+      "timeout": false,
+      "seconds": 103.23,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 173,
+      "win": true,
+      "timeout": false,
+      "seconds": 103.23,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 174,
+      "win": true,
+      "timeout": false,
+      "seconds": 205.23,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 175,
+      "win": false,
+      "timeout": false,
+      "seconds": 91.83,
+      "allyHp": 0,
+      "enemyHp": 2986956
+    },
+    {
+      "id": 176,
+      "win": true,
+      "timeout": false,
+      "seconds": 228.27,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 177,
+      "win": true,
+      "timeout": false,
+      "seconds": 218.8,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 178,
+      "win": true,
+      "timeout": false,
+      "seconds": 211.27,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 179,
+      "win": false,
+      "timeout": false,
+      "seconds": 86.57,
+      "allyHp": 0,
+      "enemyHp": 2986956
+    },
+    {
+      "id": 180,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 181,
+      "win": false,
+      "timeout": false,
+      "seconds": 33.4,
+      "allyHp": 0,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 182,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 183,
+      "win": false,
+      "timeout": false,
+      "seconds": 37.17,
+      "allyHp": 0,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 184,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 185,
+      "win": false,
+      "timeout": false,
+      "seconds": 36.57,
+      "allyHp": 0,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 186,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2961597
+    },
+    {
+      "id": 187,
+      "win": false,
+      "timeout": false,
+      "seconds": 126.5,
+      "allyHp": 0,
+      "enemyHp": 2961597
+    },
+    {
+      "id": 188,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2961597
+    },
+    {
+      "id": 189,
+      "win": false,
+      "timeout": false,
+      "seconds": 130.3,
+      "allyHp": 0,
+      "enemyHp": 2961597
+    },
+    {
+      "id": 190,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2970050
+    },
+    {
+      "id": 191,
+      "win": false,
+      "timeout": false,
+      "seconds": 119.1,
+      "allyHp": 0,
+      "enemyHp": 2970050
+    },
+    {
+      "id": 192,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 31574
+    },
+    {
+      "id": 193,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 265960
+    },
+    {
+      "id": 194,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 65353
+    },
+    {
+      "id": 195,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2139325
+    },
+    {
+      "id": 196,
+      "win": true,
+      "timeout": false,
+      "seconds": 279.57,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 197,
+      "win": true,
+      "timeout": false,
+      "seconds": 279.53,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 198,
+      "win": true,
+      "timeout": false,
+      "seconds": 104.13,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 199,
+      "win": true,
+      "timeout": false,
+      "seconds": 104.13,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 200,
+      "win": true,
+      "timeout": false,
+      "seconds": 101.07,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 201,
+      "win": true,
+      "timeout": false,
+      "seconds": 101.9,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 202,
+      "win": true,
+      "timeout": false,
+      "seconds": 104,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 203,
+      "win": true,
+      "timeout": false,
+      "seconds": 94.47,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 204,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 1966899
+    },
+    {
+      "id": 205,
+      "win": false,
+      "timeout": false,
+      "seconds": 66.53,
+      "allyHp": 0,
+      "enemyHp": 1
+    },
+    {
+      "id": 206,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 1499474
+    },
+    {
+      "id": 207,
+      "win": false,
+      "timeout": false,
+      "seconds": 74.87,
+      "allyHp": 0,
+      "enemyHp": 1
+    },
+    {
+      "id": 208,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 1916882
+    },
+    {
+      "id": 209,
+      "win": false,
+      "timeout": false,
+      "seconds": 80.03,
+      "allyHp": 0,
+      "enemyHp": 1
+    },
+    {
+      "id": 210,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2872719
+    },
+    {
+      "id": 211,
+      "win": false,
+      "timeout": false,
+      "seconds": 85.5,
+      "allyHp": 0,
+      "enemyHp": 2872719
+    },
+    {
+      "id": 212,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2923680
+    },
+    {
+      "id": 213,
+      "win": false,
+      "timeout": false,
+      "seconds": 79.13,
+      "allyHp": 0,
+      "enemyHp": 2923680
+    },
+    {
+      "id": 214,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2881415
+    },
+    {
+      "id": 215,
+      "win": false,
+      "timeout": false,
+      "seconds": 86.1,
+      "allyHp": 0,
+      "enemyHp": 2881415
+    },
+    {
+      "id": 216,
+      "win": true,
+      "timeout": false,
+      "seconds": 70.17,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 217,
+      "win": true,
+      "timeout": false,
+      "seconds": 70.17,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 218,
+      "win": true,
+      "timeout": false,
+      "seconds": 70.17,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 219,
+      "win": true,
+      "timeout": false,
+      "seconds": 70.17,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 220,
+      "win": true,
+      "timeout": false,
+      "seconds": 70.17,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 221,
+      "win": true,
+      "timeout": false,
+      "seconds": 70.17,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 222,
+      "win": true,
+      "timeout": false,
+      "seconds": 112.1,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 223,
+      "win": true,
+      "timeout": false,
+      "seconds": 112.1,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 224,
+      "win": true,
+      "timeout": false,
+      "seconds": 112.1,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 225,
+      "win": true,
+      "timeout": false,
+      "seconds": 112.1,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 226,
+      "win": true,
+      "timeout": false,
+      "seconds": 112.1,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 227,
+      "win": true,
+      "timeout": false,
+      "seconds": 112.1,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 228,
+      "win": true,
+      "timeout": false,
+      "seconds": 195.77,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 229,
+      "win": false,
+      "timeout": false,
+      "seconds": 86.17,
+      "allyHp": 0,
+      "enemyHp": 2936427
+    },
+    {
+      "id": 230,
+      "win": true,
+      "timeout": false,
+      "seconds": 195.77,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 231,
+      "win": false,
+      "timeout": false,
+      "seconds": 86.17,
+      "allyHp": 0,
+      "enemyHp": 2936427
+    },
+    {
+      "id": 232,
+      "win": true,
+      "timeout": false,
+      "seconds": 195.77,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 233,
+      "win": false,
+      "timeout": false,
+      "seconds": 86.17,
+      "allyHp": 0,
+      "enemyHp": 2936427
+    },
+    {
+      "id": 234,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2917085
+    },
+    {
+      "id": 235,
+      "win": false,
+      "timeout": false,
+      "seconds": 35.93,
+      "allyHp": 0,
+      "enemyHp": 2917085
+    },
+    {
+      "id": 236,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2888334
+    },
+    {
+      "id": 237,
+      "win": false,
+      "timeout": false,
+      "seconds": 34.83,
+      "allyHp": 0,
+      "enemyHp": 2888334
+    },
+    {
+      "id": 238,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2917085
+    },
+    {
+      "id": 239,
+      "win": false,
+      "timeout": false,
+      "seconds": 35.37,
+      "allyHp": 0,
+      "enemyHp": 2917085
+    },
+    {
+      "id": 240,
+      "win": true,
+      "timeout": false,
+      "seconds": 279.33,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 241,
+      "win": true,
+      "timeout": false,
+      "seconds": 245.67,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 242,
+      "win": true,
+      "timeout": false,
+      "seconds": 161.57,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 243,
+      "win": true,
+      "timeout": false,
+      "seconds": 161.57,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 244,
+      "win": true,
+      "timeout": false,
+      "seconds": 235.13,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 245,
+      "win": true,
+      "timeout": false,
+      "seconds": 221.07,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 246,
+      "win": true,
+      "timeout": false,
+      "seconds": 282.9,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 247,
+      "win": true,
+      "timeout": false,
+      "seconds": 296.83,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 248,
+      "win": true,
+      "timeout": false,
+      "seconds": 282.9,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 249,
+      "win": true,
+      "timeout": false,
+      "seconds": 296.83,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 250,
+      "win": true,
+      "timeout": false,
+      "seconds": 282.9,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 251,
+      "win": true,
+      "timeout": false,
+      "seconds": 296.83,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 252,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2935714
+    },
+    {
+      "id": 253,
+      "win": false,
+      "timeout": false,
+      "seconds": 140.33,
+      "allyHp": 0,
+      "enemyHp": 2935714
+    },
+    {
+      "id": 254,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2935714
+    },
+    {
+      "id": 255,
+      "win": false,
+      "timeout": false,
+      "seconds": 140.33,
+      "allyHp": 0,
+      "enemyHp": 2935714
+    },
+    {
+      "id": 256,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2935714
+    },
+    {
+      "id": 257,
+      "win": false,
+      "timeout": false,
+      "seconds": 140.33,
+      "allyHp": 0,
+      "enemyHp": 2935714
+    },
+    {
+      "id": 258,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 1597594
+    },
+    {
+      "id": 259,
+      "win": false,
+      "timeout": false,
+      "seconds": 68.83,
+      "allyHp": 0,
+      "enemyHp": 1
+    },
+    {
+      "id": 260,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 976278
+    },
+    {
+      "id": 261,
+      "win": false,
+      "timeout": false,
+      "seconds": 69.73,
+      "allyHp": 0,
+      "enemyHp": 1
+    },
+    {
+      "id": 262,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 1515430
+    },
+    {
+      "id": 263,
+      "win": false,
+      "timeout": false,
+      "seconds": 73.3,
+      "allyHp": 0,
+      "enemyHp": 1
+    },
+    {
+      "id": 264,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2711571
+    },
+    {
+      "id": 265,
+      "win": false,
+      "timeout": false,
+      "seconds": 93.63,
+      "allyHp": 0,
+      "enemyHp": 2711571
+    },
+    {
+      "id": 266,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2711571
+    },
+    {
+      "id": 267,
+      "win": false,
+      "timeout": false,
+      "seconds": 93.63,
+      "allyHp": 0,
+      "enemyHp": 2711571
+    },
+    {
+      "id": 268,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2711571
+    },
+    {
+      "id": 269,
+      "win": false,
+      "timeout": false,
+      "seconds": 93.63,
+      "allyHp": 0,
+      "enemyHp": 2711571
+    },
+    {
+      "id": 270,
+      "win": true,
+      "timeout": false,
+      "seconds": 133.07,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 271,
+      "win": true,
+      "timeout": false,
+      "seconds": 133.07,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 272,
+      "win": true,
+      "timeout": false,
+      "seconds": 127.2,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 273,
+      "win": true,
+      "timeout": false,
+      "seconds": 127.2,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 274,
+      "win": true,
+      "timeout": false,
+      "seconds": 72.67,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 275,
+      "win": true,
+      "timeout": false,
+      "seconds": 72.67,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 276,
+      "win": true,
+      "timeout": false,
+      "seconds": 126.83,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 277,
+      "win": true,
+      "timeout": false,
+      "seconds": 126.83,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 278,
+      "win": true,
+      "timeout": false,
+      "seconds": 109,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 279,
+      "win": true,
+      "timeout": false,
+      "seconds": 109,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 280,
+      "win": true,
+      "timeout": false,
+      "seconds": 119.3,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 281,
+      "win": true,
+      "timeout": false,
+      "seconds": 119.3,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 282,
+      "win": true,
+      "timeout": false,
+      "seconds": 222.93,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 283,
+      "win": true,
+      "timeout": false,
+      "seconds": 239.93,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 284,
+      "win": true,
+      "timeout": false,
+      "seconds": 242.83,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 285,
+      "win": true,
+      "timeout": false,
+      "seconds": 232.77,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 286,
+      "win": true,
+      "timeout": false,
+      "seconds": 214.03,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 287,
+      "win": false,
+      "timeout": false,
+      "seconds": 83.2,
+      "allyHp": 0,
+      "enemyHp": 2986956
+    },
+    {
+      "id": 288,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 289,
+      "win": false,
+      "timeout": false,
+      "seconds": 33.47,
+      "allyHp": 0,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 290,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 291,
+      "win": false,
+      "timeout": false,
+      "seconds": 39.13,
+      "allyHp": 0,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 292,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 1
+    },
+    {
+      "id": 293,
+      "win": false,
+      "timeout": false,
+      "seconds": 33.87,
+      "allyHp": 0,
+      "enemyHp": 2947824
+    },
+    {
+      "id": 294,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2961597
+    },
+    {
+      "id": 295,
+      "win": false,
+      "timeout": false,
+      "seconds": 220.3,
+      "allyHp": 0,
+      "enemyHp": 2961597
+    },
+    {
+      "id": 296,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2518587
+    },
+    {
+      "id": 297,
+      "win": false,
+      "timeout": false,
+      "seconds": 158.77,
+      "allyHp": 0,
+      "enemyHp": 2944691
+    },
+    {
+      "id": 298,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2944691
+    },
+    {
+      "id": 299,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2944691
+    },
+    {
+      "id": 300,
+      "win": true,
+      "timeout": false,
+      "seconds": 216.97,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 301,
+      "win": true,
+      "timeout": false,
+      "seconds": 199.9,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 302,
+      "win": true,
+      "timeout": false,
+      "seconds": 203.7,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 303,
+      "win": true,
+      "timeout": false,
+      "seconds": 224.2,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 304,
+      "win": true,
+      "timeout": false,
+      "seconds": 247.07,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 305,
+      "win": true,
+      "timeout": false,
+      "seconds": 220.83,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 306,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 1
+    },
+    {
+      "id": 307,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 1
+    },
+    {
+      "id": 308,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 1278678
+    },
+    {
+      "id": 309,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2674386
+    },
+    {
+      "id": 310,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2341366
+    },
+    {
+      "id": 311,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2591774
+    },
+    {
+      "id": 312,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 1405860
+    },
+    {
+      "id": 313,
+      "win": false,
+      "timeout": false,
+      "seconds": 72.07,
+      "allyHp": 0,
+      "enemyHp": 1456452
+    },
+    {
+      "id": 314,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 1348414
+    },
+    {
+      "id": 315,
+      "win": false,
+      "timeout": false,
+      "seconds": 68,
+      "allyHp": 0,
+      "enemyHp": 722788
+    },
+    {
+      "id": 316,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 1720496
+    },
+    {
+      "id": 317,
+      "win": false,
+      "timeout": false,
+      "seconds": 79.53,
+      "allyHp": 0,
+      "enemyHp": 1643812
+    },
+    {
+      "id": 318,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2906774
+    },
+    {
+      "id": 319,
+      "win": false,
+      "timeout": false,
+      "seconds": 88.3,
+      "allyHp": 0,
+      "enemyHp": 2906774
+    },
+    {
+      "id": 320,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2915227
+    },
+    {
+      "id": 321,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 291693,
+      "enemyHp": 2915227
+    },
+    {
+      "id": 322,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2897835
+    },
+    {
+      "id": 323,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2897835
+    }
+  ]
+}
