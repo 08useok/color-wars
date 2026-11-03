@@ -13,7 +13,8 @@ const BUSTERS75={
 };
 // Capture exclusive pity before the old series loader filters unknown series.
 const BUSTERS75_SAVED_PITY=(()=>{try{return JSON.parse(localStorage.getItem('red-battle-gacha-v1')||'{}').pityS||{};}catch{return {};}})();
-for(const [id,s]of Object.entries(BUSTERS75)){
+// 8.2 busters-81-allies.js registers its own entries through the same function after the ancient trait exists.
+function registerBuster75(id,s){
  for(const list of [EX_TYPES,EX_GRADE,ALLIES,NEW_ALLY_TYPES,GENERIC_CD_TYPES])if(!list.includes(id))list.push(id);
  // Existing LV30 growth, 2nd-form x1.15 and complete treasure x2.5 total x4.025.
  const target={hp:s.hp/4.025,atk:s.dps*s.interval/4.025};
@@ -21,9 +22,10 @@ for(const [id,s]of Object.entries(BUSTERS75)){
  LV20_TARGET[id]=target;UNIT_NAMES[id]=EX_NAME[id]=s.name;COLORS[id]=s.color;ROLES[id]=s.extra.attackClass+' · '+s.traits.map(t=>TRAIT_NAMES[t]).join('·')+' 초데미지·정지';
  PROFILE_TEXT[id]=s.profile;PROFILE_TEXT_EVOLVED[id]=s.evolved+' '+s.profile;EVOLUTION_TEXT[id]='체력·공격력 +15% · 사거리 유지';ACQUIRE_TEXT[id]='바스터즈 전용 뽑기로 획득';
  const saved=SUBSPECIES_SAVED_TRAINING?.levels?.[id];training.levels[id]=Number.isInteger(saved)?Math.max(1,Math.min(LEVEL_HARD_MAX,saved)):1;if(SUBSPECIES_SAVED_TRAINING?.forms?.[id]===1)training.forms[id]=1;
- NEW_ATLASES[id]={...s.atlas[id+'_1'],evolved:{...s.atlas[id+'_2']}};PROFILE_ART[id]=[1,2].map(f=>'assets/'+(id==='heliotrope'?'heliotrope-motion':'busters-remaining-motion')+'/'+id+'_'+f+'-profile.webp?v=1');RARE_STRIKE[id]=2;EVO_BODY_H[id]=104;
+ NEW_ATLASES[id]={...s.atlas[id+'_1'],evolved:{...s.atlas[id+'_2']}};PROFILE_ART[id]=[1,2].map(f=>'assets/'+(s.dir||(id==='heliotrope'?'heliotrope-motion':'busters-remaining-motion'))+'/'+id+'_'+f+'-profile.webp?v=1');RARE_STRIKE[id]=2;EVO_BODY_H[id]=104;
  const b=document.createElement('button');b.id=id+'Btn';b.className='unit-btn';b.innerHTML='<i style="background:'+s.color+'"></i><strong>'+s.name+'</strong><small></small><em></em>';b.onclick=()=>addUnit(id);$('.controls').append(b);
 }
+for(const [id,s]of Object.entries(BUSTERS75))registerBuster75(id,s);
 {const before=gradeOf;gradeOf=function(id){return BUSTERS75[id]?'uber':before(id);};}
 // Poison-specific damage contexts are ignored without blocking ordinary hits.
 {const before=damage;damage=function(v,amount,from){if(v?.ally&&v.stats?.immune?.poison&&game.inPoison)return;return before.apply(this,arguments);};}

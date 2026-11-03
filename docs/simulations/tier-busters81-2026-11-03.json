@@ -1,0 +1,1140 @@
+{
+  "date": "2026-11-03",
+  "method": "quick: 11-01 간이 티어표와 같은 조건(9맵·시드1·smart2), 그림 없이 라이트 레인보우 그림을 빌린 초안 수치",
+  "maps": [
+    {
+      "i": 750,
+      "name": "티어 시험 · 범용"
+    },
+    {
+      "i": 751,
+      "name": "티어 시험 · 빨간 적"
+    },
+    {
+      "i": 752,
+      "name": "티어 시험 · 검은 적"
+    },
+    {
+      "i": 753,
+      "name": "티어 시험 · 천사"
+    },
+    {
+      "i": 754,
+      "name": "티어 시험 · 에이리언"
+    },
+    {
+      "i": 755,
+      "name": "티어 시험 · 떠 있는 적"
+    },
+    {
+      "i": 756,
+      "name": "티어 시험 · 메탈"
+    },
+    {
+      "i": 757,
+      "name": "티어 시험 · 좀비"
+    },
+    {
+      "i": 758,
+      "name": "티어 시험 · 파동"
+    }
+  ],
+  "core": [
+    "red",
+    "yellow",
+    "blue",
+    "purple"
+  ],
+  "rows": [
+    {
+      "id": "blossom",
+      "name": "블로섬",
+      "score": 0.9049654049654049,
+      "tier": "OP",
+      "wins": 8
+    },
+    {
+      "id": "apricot",
+      "name": "애프리",
+      "score": 0.8711843711843712,
+      "tier": "SSS+",
+      "wins": 7
+    },
+    {
+      "id": "heliotrope",
+      "name": "헬리오트로프",
+      "score": 0.8109483109483109,
+      "tier": "SSS-",
+      "wins": 6
+    },
+    {
+      "id": "almondblossom",
+      "name": "아몬드 블로섬",
+      "score": 0.8052503052503054,
+      "tier": "SSS-",
+      "wins": 6
+    },
+    {
+      "id": "lightrainbow",
+      "name": "라이트 레인보우",
+      "score": 0.7228327228327229,
+      "tier": "SS-",
+      "wins": 5
+    },
+    {
+      "id": "marigold",
+      "name": "메리",
+      "score": 0.6450956450956452,
+      "tier": "S",
+      "wins": 4
+    }
+  ],
+  "perMap": [
+    {
+      "map": 750,
+      "id": "apricot",
+      "baseline": 0,
+      "candidate": 1,
+      "gain": 0.40456666666666674,
+      "win": true,
+      "seconds": 69.7,
+      "pct": 0.9963369963369964
+    },
+    {
+      "map": 750,
+      "id": "marigold",
+      "baseline": 0,
+      "candidate": 2,
+      "gain": 0.33366666666666656,
+      "win": true,
+      "seconds": 90.97,
+      "pct": 0.8644688644688645
+    },
+    {
+      "map": 750,
+      "id": "lightrainbow",
+      "baseline": 0,
+      "candidate": 3,
+      "gain": 0.3706666666666667,
+      "win": true,
+      "seconds": 79.87,
+      "pct": 0.9358974358974359
+    },
+    {
+      "map": 750,
+      "id": "heliotrope",
+      "baseline": 0,
+      "candidate": 4,
+      "gain": 0.3771333333333333,
+      "win": true,
+      "seconds": 77.93,
+      "pct": 0.9395604395604396
+    },
+    {
+      "map": 750,
+      "id": "blossom",
+      "baseline": 0,
+      "candidate": 5,
+      "gain": 0.3661333333333334,
+      "win": true,
+      "seconds": 81.23,
+      "pct": 0.9285714285714286
+    },
+    {
+      "map": 750,
+      "id": "almondblossom",
+      "baseline": 0,
+      "candidate": 6,
+      "gain": 0.40280000000000005,
+      "win": true,
+      "seconds": 70.23,
+      "pct": 0.9908424908424909
+    },
+    {
+      "map": 751,
+      "id": "apricot",
+      "baseline": 7,
+      "candidate": 8,
+      "gain": 0.08299999999999996,
+      "win": true,
+      "seconds": 81.63,
+      "pct": 0.9743589743589743
+    },
+    {
+      "map": 751,
+      "id": "marigold",
+      "baseline": 7,
+      "candidate": 9,
+      "gain": 0.03466666666666662,
+      "win": true,
+      "seconds": 96.13,
+      "pct": 0.8351648351648352
+    },
+    {
+      "map": 751,
+      "id": "lightrainbow",
+      "baseline": 7,
+      "candidate": 10,
+      "gain": 0.06719999999999993,
+      "win": true,
+      "seconds": 86.37,
+      "pct": 0.9615384615384616
+    },
+    {
+      "map": 751,
+      "id": "heliotrope",
+      "baseline": 7,
+      "candidate": 11,
+      "gain": 0.11586666666666656,
+      "win": true,
+      "seconds": 71.77,
+      "pct": 0.9871794871794872
+    },
+    {
+      "map": 751,
+      "id": "blossom",
+      "baseline": 7,
+      "candidate": 12,
+      "gain": 0.045433333333333215,
+      "win": true,
+      "seconds": 92.9,
+      "pct": 0.9102564102564102
+    },
+    {
+      "map": 751,
+      "id": "almondblossom",
+      "baseline": 7,
+      "candidate": 13,
+      "gain": 0.12219999999999986,
+      "win": true,
+      "seconds": 69.87,
+      "pct": 0.9945054945054945
+    },
+    {
+      "map": 752,
+      "id": "apricot",
+      "baseline": 14,
+      "candidate": 15,
+      "gain": 1.6882333333333333,
+      "win": true,
+      "seconds": 93.53,
+      "pct": 0.9743589743589743
+    },
+    {
+      "map": 752,
+      "id": "marigold",
+      "baseline": 14,
+      "candidate": 16,
+      "gain": 1.5949,
+      "win": true,
+      "seconds": 121.53,
+      "pct": 0.9157509157509157
+    },
+    {
+      "map": 752,
+      "id": "lightrainbow",
+      "baseline": 14,
+      "candidate": 17,
+      "gain": 1.5665666666666667,
+      "win": true,
+      "seconds": 130.03,
+      "pct": 0.8846153846153846
+    },
+    {
+      "map": 752,
+      "id": "heliotrope",
+      "baseline": 14,
+      "candidate": 18,
+      "gain": 1.695,
+      "win": true,
+      "seconds": 91.5,
+      "pct": 0.9761904761904762
+    },
+    {
+      "map": 752,
+      "id": "blossom",
+      "baseline": 14,
+      "candidate": 19,
+      "gain": 1.6834333333333333,
+      "win": true,
+      "seconds": 94.97,
+      "pct": 0.9688644688644689
+    },
+    {
+      "map": 752,
+      "id": "almondblossom",
+      "baseline": 14,
+      "candidate": 20,
+      "gain": 1.7566666666666666,
+      "win": true,
+      "seconds": 73,
+      "pct": 0.9945054945054945
+    },
+    {
+      "map": 753,
+      "id": "apricot",
+      "baseline": 21,
+      "candidate": 22,
+      "gain": 0,
+      "win": false,
+      "seconds": 37.67,
+      "pct": 0.4908424908424908
+    },
+    {
+      "map": 753,
+      "id": "marigold",
+      "baseline": 21,
+      "candidate": 23,
+      "gain": 0,
+      "win": false,
+      "seconds": 31.27,
+      "pct": 0.4908424908424908
+    },
+    {
+      "map": 753,
+      "id": "lightrainbow",
+      "baseline": 21,
+      "candidate": 24,
+      "gain": 0,
+      "win": false,
+      "seconds": 31.27,
+      "pct": 0.4908424908424908
+    },
+    {
+      "map": 753,
+      "id": "heliotrope",
+      "baseline": 21,
+      "candidate": 25,
+      "gain": 0,
+      "win": false,
+      "seconds": 33.57,
+      "pct": 0.4908424908424908
+    },
+    {
+      "map": 753,
+      "id": "blossom",
+      "baseline": 21,
+      "candidate": 26,
+      "gain": 1.7512333333333334,
+      "win": true,
+      "seconds": 74.63,
+      "pct": 0.9981684981684982
+    },
+    {
+      "map": 753,
+      "id": "almondblossom",
+      "baseline": 21,
+      "candidate": 27,
+      "gain": 0,
+      "win": false,
+      "seconds": 45.17,
+      "pct": 0.4908424908424908
+    },
+    {
+      "map": 754,
+      "id": "apricot",
+      "baseline": 28,
+      "candidate": 29,
+      "gain": 1.6456666666666666,
+      "win": true,
+      "seconds": 106.3,
+      "pct": 0.9853479853479854
+    },
+    {
+      "map": 754,
+      "id": "marigold",
+      "baseline": 28,
+      "candidate": 30,
+      "gain": 0,
+      "win": false,
+      "seconds": 114.03,
+      "pct": 0.3443223443223443
+    },
+    {
+      "map": 754,
+      "id": "lightrainbow",
+      "baseline": 28,
+      "candidate": 31,
+      "gain": 1.5714333333333332,
+      "win": true,
+      "seconds": 128.57,
+      "pct": 0.9010989010989011
+    },
+    {
+      "map": 754,
+      "id": "heliotrope",
+      "baseline": 28,
+      "candidate": 32,
+      "gain": 1.6320999999999999,
+      "win": true,
+      "seconds": 110.37,
+      "pct": 0.9761904761904762
+    },
+    {
+      "map": 754,
+      "id": "blossom",
+      "baseline": 28,
+      "candidate": 33,
+      "gain": 1.6196666666666668,
+      "win": true,
+      "seconds": 114.1,
+      "pct": 0.9542124542124543
+    },
+    {
+      "map": 754,
+      "id": "almondblossom",
+      "baseline": 28,
+      "candidate": 34,
+      "gain": 1.6257666666666668,
+      "win": true,
+      "seconds": 112.27,
+      "pct": 0.9688644688644689
+    },
+    {
+      "map": 755,
+      "id": "apricot",
+      "baseline": 35,
+      "candidate": 36,
+      "gain": 1.7103333333333333,
+      "win": true,
+      "seconds": 86.9,
+      "pct": 0.9853479853479854
+    },
+    {
+      "map": 755,
+      "id": "marigold",
+      "baseline": 35,
+      "candidate": 37,
+      "gain": 1.6405666666666667,
+      "win": true,
+      "seconds": 107.83,
+      "pct": 0.9413919413919414
+    },
+    {
+      "map": 755,
+      "id": "lightrainbow",
+      "baseline": 35,
+      "candidate": 38,
+      "gain": 1.5887666666666667,
+      "win": true,
+      "seconds": 123.37,
+      "pct": 0.9175824175824175
+    },
+    {
+      "map": 755,
+      "id": "heliotrope",
+      "baseline": 35,
+      "candidate": 39,
+      "gain": 1.7696666666666667,
+      "win": true,
+      "seconds": 69.1,
+      "pct": 0.9981684981684982
+    },
+    {
+      "map": 755,
+      "id": "blossom",
+      "baseline": 35,
+      "candidate": 40,
+      "gain": 1.6889,
+      "win": true,
+      "seconds": 93.33,
+      "pct": 0.9652014652014652
+    },
+    {
+      "map": 755,
+      "id": "almondblossom",
+      "baseline": 35,
+      "candidate": 41,
+      "gain": 1.5314333333333334,
+      "win": true,
+      "seconds": 140.57,
+      "pct": 0.86996336996337
+    },
+    {
+      "map": 756,
+      "id": "apricot",
+      "baseline": 42,
+      "candidate": 43,
+      "gain": 0,
+      "win": false,
+      "seconds": 134.13,
+      "pct": 0.4523809523809524
+    },
+    {
+      "map": 756,
+      "id": "marigold",
+      "baseline": 42,
+      "candidate": 44,
+      "gain": 0,
+      "win": false,
+      "seconds": 159.93,
+      "pct": 0.4523809523809524
+    },
+    {
+      "map": 756,
+      "id": "lightrainbow",
+      "baseline": 42,
+      "candidate": 45,
+      "gain": 0,
+      "win": false,
+      "seconds": 159.93,
+      "pct": 0.4523809523809524
+    },
+    {
+      "map": 756,
+      "id": "heliotrope",
+      "baseline": 42,
+      "candidate": 46,
+      "gain": 0,
+      "win": false,
+      "seconds": 129.53,
+      "pct": 0.4523809523809524
+    },
+    {
+      "map": 756,
+      "id": "blossom",
+      "baseline": 42,
+      "candidate": 47,
+      "gain": 0,
+      "win": false,
+      "seconds": 134.13,
+      "pct": 0.4523809523809524
+    },
+    {
+      "map": 756,
+      "id": "almondblossom",
+      "baseline": 42,
+      "candidate": 48,
+      "gain": 0,
+      "win": false,
+      "seconds": 182.17,
+      "pct": 0.4523809523809524
+    },
+    {
+      "map": 757,
+      "id": "apricot",
+      "baseline": 49,
+      "candidate": 50,
+      "gain": 1.6864333333333335,
+      "win": true,
+      "seconds": 94.07,
+      "pct": 1
+    },
+    {
+      "map": 757,
+      "id": "marigold",
+      "baseline": 49,
+      "candidate": 51,
+      "gain": 0,
+      "win": false,
+      "seconds": 70.17,
+      "pct": 0.48717948717948717
+    },
+    {
+      "map": 757,
+      "id": "lightrainbow",
+      "baseline": 49,
+      "candidate": 52,
+      "gain": 0,
+      "win": false,
+      "seconds": 70.17,
+      "pct": 0.48717948717948717
+    },
+    {
+      "map": 757,
+      "id": "heliotrope",
+      "baseline": 49,
+      "candidate": 53,
+      "gain": 0,
+      "win": false,
+      "seconds": 75.8,
+      "pct": 0.48717948717948717
+    },
+    {
+      "map": 757,
+      "id": "blossom",
+      "baseline": 49,
+      "candidate": 54,
+      "gain": 1.5726666666666667,
+      "win": true,
+      "seconds": 128.2,
+      "pct": 0.9908424908424909
+    },
+    {
+      "map": 757,
+      "id": "almondblossom",
+      "baseline": 49,
+      "candidate": 55,
+      "gain": 0,
+      "win": false,
+      "seconds": 69.53,
+      "pct": 0.48717948717948717
+    },
+    {
+      "map": 758,
+      "id": "apricot",
+      "baseline": 56,
+      "candidate": 57,
+      "gain": 1.4704333333333333,
+      "win": true,
+      "seconds": 158.87,
+      "pct": 0.9816849816849816
+    },
+    {
+      "map": 758,
+      "id": "marigold",
+      "baseline": 56,
+      "candidate": 58,
+      "gain": 0,
+      "win": false,
+      "seconds": 149.17,
+      "pct": 0.47435897435897434
+    },
+    {
+      "map": 758,
+      "id": "lightrainbow",
+      "baseline": 56,
+      "candidate": 59,
+      "gain": 0,
+      "win": false,
+      "seconds": 146.9,
+      "pct": 0.47435897435897434
+    },
+    {
+      "map": 758,
+      "id": "heliotrope",
+      "baseline": 56,
+      "candidate": 60,
+      "gain": 1.6963333333333335,
+      "win": true,
+      "seconds": 91.1,
+      "pct": 0.9908424908424909
+    },
+    {
+      "map": 758,
+      "id": "blossom",
+      "baseline": 56,
+      "candidate": 61,
+      "gain": 1.4275666666666667,
+      "win": true,
+      "seconds": 171.73,
+      "pct": 0.9761904761904762
+    },
+    {
+      "map": 758,
+      "id": "almondblossom",
+      "baseline": 56,
+      "candidate": 62,
+      "gain": 1.7596666666666667,
+      "win": true,
+      "seconds": 72.1,
+      "pct": 0.9981684981684982
+    }
+  ],
+  "raw": [
+    {
+      "id": 0,
+      "win": true,
+      "timeout": false,
+      "seconds": 191.07,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 1,
+      "win": true,
+      "timeout": false,
+      "seconds": 69.7,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 2,
+      "win": true,
+      "timeout": false,
+      "seconds": 90.97,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 3,
+      "win": true,
+      "timeout": false,
+      "seconds": 79.87,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 4,
+      "win": true,
+      "timeout": false,
+      "seconds": 77.93,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 5,
+      "win": true,
+      "timeout": false,
+      "seconds": 81.23,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 6,
+      "win": true,
+      "timeout": false,
+      "seconds": 70.23,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 7,
+      "win": true,
+      "timeout": false,
+      "seconds": 106.53,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 8,
+      "win": true,
+      "timeout": false,
+      "seconds": 81.63,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 9,
+      "win": true,
+      "timeout": false,
+      "seconds": 96.13,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 10,
+      "win": true,
+      "timeout": false,
+      "seconds": 86.37,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 11,
+      "win": true,
+      "timeout": false,
+      "seconds": 71.77,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 12,
+      "win": true,
+      "timeout": false,
+      "seconds": 92.9,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 13,
+      "win": true,
+      "timeout": false,
+      "seconds": 69.87,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 14,
+      "win": false,
+      "timeout": false,
+      "seconds": 80.37,
+      "allyHp": 0,
+      "enemyHp": 2986956
+    },
+    {
+      "id": 15,
+      "win": true,
+      "timeout": false,
+      "seconds": 93.53,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 16,
+      "win": true,
+      "timeout": false,
+      "seconds": 121.53,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 17,
+      "win": true,
+      "timeout": false,
+      "seconds": 130.03,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 18,
+      "win": true,
+      "timeout": false,
+      "seconds": 91.5,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 19,
+      "win": true,
+      "timeout": false,
+      "seconds": 94.97,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 20,
+      "win": true,
+      "timeout": false,
+      "seconds": 73,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 21,
+      "win": false,
+      "timeout": false,
+      "seconds": 31.27,
+      "allyHp": 0,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 22,
+      "win": false,
+      "timeout": false,
+      "seconds": 37.67,
+      "allyHp": 0,
+      "enemyHp": 3000000
+    },
+    {
+      "id": 23,
+      "win": false,
+      "timeout": false,
+      "seconds": 31.27,
+      "allyHp": 0,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 24,
+      "win": false,
+      "timeout": false,
+      "seconds": 31.27,
+      "allyHp": 0,
+      "enemyHp": 2991304
+    },
+    {
+      "id": 25,
+      "win": false,
+      "timeout": false,
+      "seconds": 33.57,
+      "allyHp": 0,
+      "enemyHp": 3000000
+    },
+    {
+      "id": 26,
+      "win": true,
+      "timeout": false,
+      "seconds": 74.63,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 27,
+      "win": false,
+      "timeout": false,
+      "seconds": 45.17,
+      "allyHp": 0,
+      "enemyHp": 2978260
+    },
+    {
+      "id": 28,
+      "win": false,
+      "timeout": false,
+      "seconds": 106.93,
+      "allyHp": 0,
+      "enemyHp": 2970050
+    },
+    {
+      "id": 29,
+      "win": true,
+      "timeout": false,
+      "seconds": 106.3,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 30,
+      "win": false,
+      "timeout": false,
+      "seconds": 114.03,
+      "allyHp": 0,
+      "enemyHp": 2970050
+    },
+    {
+      "id": 31,
+      "win": true,
+      "timeout": false,
+      "seconds": 128.57,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 32,
+      "win": true,
+      "timeout": false,
+      "seconds": 110.37,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 33,
+      "win": true,
+      "timeout": false,
+      "seconds": 114.1,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 34,
+      "win": true,
+      "timeout": false,
+      "seconds": 112.27,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 35,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2936238
+    },
+    {
+      "id": 36,
+      "win": true,
+      "timeout": false,
+      "seconds": 86.9,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 37,
+      "win": true,
+      "timeout": false,
+      "seconds": 107.83,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 38,
+      "win": true,
+      "timeout": false,
+      "seconds": 123.37,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 39,
+      "win": true,
+      "timeout": false,
+      "seconds": 69.1,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 40,
+      "win": true,
+      "timeout": false,
+      "seconds": 93.33,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 41,
+      "win": true,
+      "timeout": false,
+      "seconds": 140.57,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 42,
+      "win": false,
+      "timeout": false,
+      "seconds": 159.93,
+      "allyHp": 0,
+      "enemyHp": 2965702
+    },
+    {
+      "id": 43,
+      "win": false,
+      "timeout": false,
+      "seconds": 134.13,
+      "allyHp": 0,
+      "enemyHp": 3000000
+    },
+    {
+      "id": 44,
+      "win": false,
+      "timeout": false,
+      "seconds": 159.93,
+      "allyHp": 0,
+      "enemyHp": 2965702
+    },
+    {
+      "id": 45,
+      "win": false,
+      "timeout": false,
+      "seconds": 159.93,
+      "allyHp": 0,
+      "enemyHp": 2965702
+    },
+    {
+      "id": 46,
+      "win": false,
+      "timeout": false,
+      "seconds": 129.53,
+      "allyHp": 0,
+      "enemyHp": 3000000
+    },
+    {
+      "id": 47,
+      "win": false,
+      "timeout": false,
+      "seconds": 134.13,
+      "allyHp": 0,
+      "enemyHp": 3000000
+    },
+    {
+      "id": 48,
+      "win": false,
+      "timeout": false,
+      "seconds": 182.17,
+      "allyHp": 0,
+      "enemyHp": 3000000
+    },
+    {
+      "id": 49,
+      "win": false,
+      "timeout": false,
+      "seconds": 70.17,
+      "allyHp": 0,
+      "enemyHp": 1
+    },
+    {
+      "id": 50,
+      "win": true,
+      "timeout": false,
+      "seconds": 94.07,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 51,
+      "win": false,
+      "timeout": false,
+      "seconds": 70.17,
+      "allyHp": 0,
+      "enemyHp": 1
+    },
+    {
+      "id": 52,
+      "win": false,
+      "timeout": false,
+      "seconds": 70.17,
+      "allyHp": 0,
+      "enemyHp": 1
+    },
+    {
+      "id": 53,
+      "win": false,
+      "timeout": false,
+      "seconds": 75.8,
+      "allyHp": 0,
+      "enemyHp": 1228196
+    },
+    {
+      "id": 54,
+      "win": true,
+      "timeout": false,
+      "seconds": 128.2,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 55,
+      "win": false,
+      "timeout": false,
+      "seconds": 69.53,
+      "allyHp": 0,
+      "enemyHp": 1
+    },
+    {
+      "id": 56,
+      "win": false,
+      "timeout": false,
+      "seconds": 81.27,
+      "allyHp": 0,
+      "enemyHp": 2923680
+    },
+    {
+      "id": 57,
+      "win": true,
+      "timeout": false,
+      "seconds": 158.87,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 58,
+      "win": false,
+      "timeout": false,
+      "seconds": 149.17,
+      "allyHp": 0,
+      "enemyHp": 2815952
+    },
+    {
+      "id": 59,
+      "win": false,
+      "timeout": false,
+      "seconds": 146.9,
+      "allyHp": 0,
+      "enemyHp": 2769250
+    },
+    {
+      "id": 60,
+      "win": true,
+      "timeout": false,
+      "seconds": 91.1,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 61,
+      "win": true,
+      "timeout": false,
+      "seconds": 171.73,
+      "allyHp": 300000,
+      "enemyHp": 0
+    },
+    {
+      "id": 62,
+      "win": true,
+      "timeout": false,
+      "seconds": 72.1,
+      "allyHp": 300000,
+      "enemyHp": 0
+    }
+  ]
+}
