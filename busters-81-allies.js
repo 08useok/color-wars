@@ -14,7 +14,7 @@ const BUSTERS81={
   extra:{attackClass:'원거리',metalKiller:.75,immune:{warp:true}},
   profile:'남성, 35세. 양봉가. 금잔화 꽃밭 옆 벌통에서 날려 보낸 벌 떼로 아주 먼 곳의 메탈 적과 떠 있는 적 한 마리를 겨눈다. 메탈의 남은 체력을 깎고 워프를 무시하지만, 가까이 붙은 적은 맞히지 못한다.',evolved:'방충 모자와 작업복을 갖춘 메리. 벌 떼를 더 멀리 날려 필드 한가운데의 적까지 정지시킨다.'}
 };
-if(BUSTERS81_ART){
+if(BUSTERS81_ART&&typeof registerBuster75==='function'){// 7.5 바스터즈 파일이 빠진 시험 엔진에서는 등록하지 않는다
  for(const [id,s]of Object.entries(BUSTERS81)){
   BUSTERS75[id]={...s,atlas:BUSTERS81_ART};registerBuster75(id,BUSTERS75[id]);
   if(s.role)ROLES[id]=s.role;

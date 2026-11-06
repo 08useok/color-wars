@@ -1,11 +1,11 @@
 // 8.2 신규 울슈레 애프리·메리(busters-81-allies.js): 그림이 없으면 등록하지 않고, 있으면(BUSTERS81_DRAFT=1은 라이트 레인보우 그림을 빌림)
 // 계획 수치·사거리·사각지대·속성 대응·정지·저주·킬러 능력이 맞고 기존 형태는 그대로인지 본다.
-const assert=require('node:assert/strict'),make=require('./full-harness.cjs');
-const SETUP='globalThis.__b={resolveAttack,fire,damage,setRand:f=>{Math.random=f},data,ALLIES,deadZone,hasTrait,ROLES,gradeOf};';
+const assert=require('node:assert/strict'),fs=require('fs'),make=require('./full-harness.cjs');
+const SETUP='globalThis.__b={resolveAttack,fire,damage,setRand:f=>{Math.random=f},data,ALLIES,deadZone,hasTrait,ROLES,gradeOf,atlases:NEW_ATLASES,profiles:PROFILE_ART};';
 function engine(env){const keep={...process.env};for(const k of Object.keys(env)){if(env[k]===undefined)delete process.env[k];else process.env[k]=env[k]}
  try{const e=make({extraSetup:SETUP});const h=globalThis.__b;delete globalThis.__b;return {e,h}}finally{for(const k of Object.keys(env)){if(keep[k]===undefined)delete process.env[k];else process.env[k]=keep[k]}}}
 // ---- 1) 그림이 없으면 등록하지 않는다(실제 게임·덱·뽑기에 나오지 않음). 기존 형태는 어떤 경우에도 그대로.
-const base=engine({BUSTERS81_DRAFT:undefined,HARNESS_SKIP:'busters-81-allies.js'}),none=engine({BUSTERS81_DRAFT:undefined}),{e,h}=engine({BUSTERS81_DRAFT:'1'});
+const base=engine({BUSTERS81_DRAFT:undefined,HARNESS_SKIP:'busters-81-allies.js'}),none=engine({BUSTERS81_DRAFT:undefined,HARNESS_SKIP:'assets/busters-81-motion/motion-atlases.js'}),{e,h}=engine({BUSTERS81_DRAFT:undefined,HARNESS_SKIP:undefined});
 assert(!none.e.units.apricot&&!none.e.units.marigold,'그림이 없으면 등록하지 않음');assert.equal(none.e.roster.length,base.e.roster.length);
 assert.equal(e.roster.length,base.e.roster.length+2);for(const id of ['apricot','marigold'])assert(e.roster.includes(id)&&e.units[id],id);
 let same=0;for(const id of base.e.roster)for(const form of [1,2]){e.setProfile({level:30,forms:{[id]:form}});base.e.setProfile({level:30,forms:{[id]:form}});assert.deepEqual(e.unitStats(id),base.e.unitStats(id),id+' '+form+'진 수치가 바뀜');same++}
@@ -13,6 +13,8 @@ let same=0;for(const id of base.e.roster)for(const form of [1,2]){e.setProfile({
 const SPEC={apricot:{hp:300000,dps:28000,interval:2.5,cost:4000,wait:40,freeze:3.5,traits:['ancient','zombie'],range:490},marigold:{hp:220000,dps:40000,interval:3,cost:4500,wait:45,freeze:4,traits:['metal','floating'],range:900}};
 e.setProfile({level:30});const S={};
 for(const [id,s]of Object.entries(SPEC)){const d=S[id]=e.unitStats(id);assert.equal(e.gradeOf(id),'uber');assert(Math.abs(d.hp-s.hp)<=3,id+' 체력 '+d.hp);assert(Math.abs(d.atk/d.interval-s.dps)<=3,id+' DPS');assert.equal(d.interval,s.interval);assert.equal(d.cooldown,s.wait);assert.equal(d.freezeChance,1);assert.equal(d.freezeDuration,s.freeze);assert(d.freezeDuration>d.interval,id+' 연속 정지');assert.deepEqual(d.massiveVs,s.traits);assert.deepEqual(d.statusVs,s.traits);assert.equal(Math.round(d.range/.034),s.range,id+' 사거리');assert.equal(d.flatCost,true);assert.equal(d.knockbacks,3);assert(d.cost>0)}
+// 그림: 1·2진 시트·프로필 파일이 있고, 공격 프레임이 공격 모션 시간(선딜+후딜) 30fps와 같은 길이다
+for(const id of ['apricot','marigold']){const d=h.data.units[id];for(const a of [h.atlases[id],h.atlases[id].evolved]){assert(fs.existsSync(a.sheet.split('?')[0]),a.sheet);assert.equal(a.attack.length,Math.round(d.attackDuration*30),id+' 공격 프레임');assert(a.walk.length>=4&&a.hurt.length>=1,id+' 걷기·피격')}for(const f of h.profiles[id])assert(fs.existsSync(f.split('?')[0]),f)}
 assert.deepEqual(h.data.units.apricot.cost,4000);assert.deepEqual(h.data.units.marigold.cost,4500);
 // ---- 3) 애프리: 범위·저주·저주 무효·좀비 킬러, 사각지대 없음
 {const a=S.apricot;assert(a.area&&!a.blindSpot&&a.zombieKiller&&a.immune.curse);assert.equal(a.curseChance,1);assert.equal(a.curseDuration,4);assert(a.curseDuration>a.interval,'저주도 연속');assert.equal(a.attackClass,'범위')}
