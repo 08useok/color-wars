@@ -1,7 +1,7 @@
 // 8.2 신규 울슈레 애프리·메리(busters-81-allies.js): 그림이 없으면 등록하지 않고, 있으면(BUSTERS81_DRAFT=1은 라이트 레인보우 그림을 빌림)
 // 계획 수치·사거리·사각지대·속성 대응·정지·저주·킬러 능력이 맞고 기존 형태는 그대로인지 본다.
 const assert=require('node:assert/strict'),fs=require('fs'),make=require('./full-harness.cjs');
-const SETUP='globalThis.__b={resolveAttack,fire,damage,setRand:f=>{Math.random=f},data,ALLIES,deadZone,hasTrait,ROLES,gradeOf,atlases:NEW_ATLASES,profiles:PROFILE_ART};';
+const SETUP='globalThis.__b={resolveAttack,fire,damage,setRand:f=>{Math.random=f},data,ALLIES,deadZone,hasTrait,ROLES,gradeOf,atlases:NEW_ATLASES,profiles:PROFILE_ART,activeAllyCombos,applyAllyComboStats,ALLY_COMBOS};';
 function engine(env){const keep={...process.env};for(const k of Object.keys(env)){if(env[k]===undefined)delete process.env[k];else process.env[k]=env[k]}
  try{const e=make({extraSetup:SETUP});const h=globalThis.__b;delete globalThis.__b;return {e,h}}finally{for(const k of Object.keys(env)){if(keep[k]===undefined)delete process.env[k];else process.env[k]=keep[k]}}}
 // ---- 1) 그림이 없으면 등록하지 않는다(실제 게임·덱·뽑기에 나오지 않음). 기존 형태는 어떤 경우에도 그대로.
@@ -19,7 +19,7 @@ assert.deepEqual(h.data.units.apricot.cost,4000);assert.deepEqual(h.data.units.m
 // ---- 3) 애프리: 범위·저주·저주 무효·좀비 킬러, 사각지대 없음
 {const a=S.apricot;assert(a.area&&!a.blindSpot&&a.zombieKiller&&a.immune.curse);assert.equal(a.curseChance,1);assert.equal(a.curseDuration,4);assert(a.curseDuration>a.interval,'저주도 연속');assert.equal(a.attackClass,'범위')}
 // ---- 4) 메리: 초원거리 개체, 사각지대, 메탈 킬러, 워프 무효. 현재 가장 먼 아군
-{const m=S.marigold;assert(!m.area&&m.blindSpot&&m.metalKiller===.75&&m.immune.warp);assert.equal(m.attackClass,'원거리');assert.equal(Math.round(h.deadZone({ally:true,type:'marigold',stats:m})/.034),225,'사각지대 = 사거리의 25%');
+{const m=S.marigold;assert(!m.area&&m.blindSpot&&m.metalKiller===.75&&m.immune.warp);assert.equal(m.critChance,.2);assert.equal(m.critMult,2);assert.equal(m.attackClass,'원거리');assert.equal(Math.round(h.deadZone({ally:true,type:'marigold',stats:m})/.034),225,'사각지대 = 사거리의 25%');
  assert(/초원거리/.test(h.ROLES.marigold));let longest=0;for(const id of base.e.roster){for(const f of [1,2]){base.e.setProfile({level:30,forms:{[id]:f}});const s=base.e.unitStats(id);longest=Math.max(longest,s.range,s.zoneMax||0)}}assert(m.range>longest,'메리 사거리 '+m.range/.034+' > 기존 최장 '+longest/.034)}
 // ---- 5) 실제 전투
 const ids=Object.keys(h.data.units).filter(id=>!h.ALLIES.includes(id));
@@ -40,13 +40,19 @@ h.setRand(()=>0);
 {const {g,u,foes:[met,flo]}=arena('marigold',[[F.metal,45],[F.floating,44]]);h.resolveAttack(u,met);assert(met.hp<1e12);assert.equal(flo.hp,1e12,'개체 공격');assert(met.freezeUntil>g.elapsed+3.9,'메탈 정지 '+(met.freezeUntil-g.elapsed));
  h.resolveAttack(u,flo);assert(flo.hp<1e12&&flo.freezeUntil>g.elapsed+3.9,'떠있는 적 정지');
  const {g:g2,u:u2,foes:[red]}=arena('marigold',[[F.red,45]]);h.resolveAttack(u2,red);assert(!(red.freezeUntil>g2.elapsed),'빨간 적은 정지 안 됨');
- // 메탈 킬러: 비크리티컬 메탈 타격 = 1 + 남은 체력의 25%(올림)
- const {u:u3,foes:[m3]}=arena('marigold',[[F.metal,45]]);m3.hp=m3.max=100000;m3.stats.immune={};h.damage(m3,u3.stats.atk,u3);const loss=100000-m3.hp;assert.equal(loss,1+Math.ceil(100000*.75),'메탈 킬러 '+loss);
+ // 메탈 킬러: 비크리티컬 메탈 타격 = 1 + 남은 체력의 75%(올림). 크리티컬(20%)이 터지면 메탈 킬러 대신 실제 피해가 그대로 들어간다
+ h.setRand(()=>.999);const {u:u3,foes:[m3]}=arena('marigold',[[F.metal,45]]);m3.hp=m3.max=100000;m3.stats.immune={};h.damage(m3,u3.stats.atk,u3);const loss=100000-m3.hp;assert.equal(loss,1+Math.ceil(100000*.75),'메탈 킬러 '+loss);
+ h.setRand(()=>0);const {u:u4,foes:[m4]}=arena('marigold',[[F.metal,45]]);m4.hp=m4.max=1e9;m4.stats.immune={};h.damage(m4,u4.stats.atk,u4);assert(1e9-m4.hp>=u4.stats.atk*2,'메탈 크리티컬 '+(1e9-m4.hp)+' / 공격력 '+u4.stats.atk);
  // 워프 무효
  const w=arena('marigold',[['captainmogu',60]]);const wv=w.foes[0];wv.stats.warpChance=1;wv.stats.warpDistance=8.5;wv.stats.warpDuration=1;h.damage(w.u,1,wv);assert(!w.u.warpLeft,'워프 무효')}
+// 냥콤보 벌침 한 방: 메리 혼자 1열에 있으면 켜지고 크리티컬 20% → 21%, 크리티컬이 없는 아군(애프리)에게는 영향 없음
+{const c=h.ALLY_COMBOS.find(x=>x.id==='bee-sting');assert.deepEqual(c.members,['marigold']);assert.equal(c.critBonus,.01);
+ const on=h.activeAllyCombos(['marigold','red','yellow']);assert(on.some(x=>x.id==='bee-sting'),'메리만 있어도 켜짐');assert(!h.activeAllyCombos(['red','yellow','blue']).some(x=>x.id==='bee-sting'));
+ assert(!h.activeAllyCombos(['red','yellow','blue','purple','apricot','marigold']).some(x=>x.id==='bee-sting'),'6번째 칸(2열)은 안 됨');
+ assert(Math.abs(h.applyAllyComboStats(S.marigold,on).critChance-.21)<1e-9);assert.equal(h.applyAllyComboStats(S.apricot,on).critChance,S.apricot.critChance)}
 // 사각지대: 5칸 앞(225 안쪽)의 적은 못 맞히고 25칸 앞 적은 맞힌다. 메리 사거리 30.6
 {const near=arena('marigold',[[F.metal,65]]);near.u.stats.speed=0;for(let n=0;n<240;n++)e.update(1/30);assert.equal(near.foes[0].hp,1e12,'사각지대 안은 못 맞힘');
  const far=arena('marigold',[[F.metal,45]]);far.u.stats.speed=0;for(let n=0;n<240;n++)e.update(1/30);assert(far.foes[0].hp<1e12,'멀리 있는 적은 맞힘');
  const edge=arena('marigold',[[F.metal,70-29]]);edge.u.stats.speed=0;for(let n=0;n<240;n++)e.update(1/30);assert(edge.foes[0].hp<1e12,'사거리 끝(29칸)에서도 맞힘')}
-console.log('PASS: 8.2 신규 울슈레 애프리·메리 — 그림이 없으면 미등록, 기존 '+same+'개 형태 불변, 계획 수치·사거리(490/900)·사각지대 225, 애프리 범위 정지+4초 저주·저주 무효·연속 유지, 메리 개체 정지·메탈 킬러·워프 무효·초원거리 적중');
+console.log('PASS: 8.2 신규 울슈레 애프리·메리 — 그림이 없으면 미등록, 기존 '+same+'개 형태 불변, 계획 수치·사거리(490/900)·사각지대 225, 애프리 범위 정지+4초 저주·저주 무효·연속 유지, 메리 개체 정지·메탈 킬러·크리티컬 20%·워프 무효·초원거리 적중, 냥콤보 벌침 한 방(메리 단독·+1%)');
 process.exit(0);
