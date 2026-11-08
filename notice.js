@@ -2,9 +2,13 @@
 // v1 세계편 (first push, 2026-09-24) · v2 레전드 스토리 (09-30) · v3 미래편 1장 (10-03) · v4 미래편 2장 + 3진 (10-06) · v5 미래편 3장 (10-08) · v6 우주편 1장 (10-09) · v7 우주편 2장 (10-22).
 // User release rule (2026-10-18): bump PATCH for every commit-and-push release unless an explicit version is requested; do not bump twice when already prepared.
 // A new NOTICE.version shows the notice once on load; the 공지 button on the stage screen reopens it.
-const GAME_VERSION='8.1.0';
-const NOTICE={version:GAME_VERSION,date:'2026-11-02',title:`v${GAME_VERSION} 업데이트`,html:`
+const GAME_VERSION='8.2.0';
+const NOTICE={version:GAME_VERSION,date:'2026-11-08',title:`v${GAME_VERSION} 업데이트`,html:`
 <p class="notice-lead">지금까지 <b>세계편 1~3장 · 미래편 1~3장 · 우주편 1~3장 · 레전드 스토리 1~49장 · 신레전드 0~15장</b>을 담았습니다.</p>
+<h3>🎨 v8.2.0 신규 울슈레와 기본 캐릭터 그림체 개편</h3>
+<ul><li>레드·그린·블루·오렌·옐로·퍼플·핑크·시안의 1·2진 그림과 도감 이미지를 교체했습니다. 대기·걷기·공격·넉백에 전용 그림을 사용하며 걷기는 6장으로 0.6초마다 반복됩니다.</li>
+<li>애프리·메리의 1·2진 전용 그림과 모션을 연결했습니다. 애프리는 고대·좀비 바스터즈, 메리는 메탈·떠적 바스터즈에서 획득합니다. 메리는 크리티컬 20%를 가지며 앞줄에 편성하면 벌침 한 방 콤보로 크리티컬 확률이 1%p 증가합니다.</li>
+<li>도감의 획득 방법에 뽑기 바로가기를 추가했습니다. 바스터즈는 해당 배너로 이동하고, 일반 시리즈는 로테이션에 맞춰 이용할 수 있습니다.</li></ul>
 <h3>🌪️ v8.1.0 고대의 폭풍과 신규 3진</h3>
 <ul><li>팽이 레인보우·훌라 실버·리듬 핑크·군악 스칼렛의 3진을 추가했습니다. 공체가 2진의 280%로 늘고 사거리·연타·크리티컬과 기존 확률 능력이 강화됩니다. 각 재강림 강화판 클리어 후 진화할 수 있습니다.</li><li>고대 사이클론·슈퍼 스페이스 사이클론과 전용 강림을 추가했습니다. 보상은 여성 아종 탐사 민트시안·앵커 그레이이며 각각 30% 확률로 획득합니다.</li><li>아쿠아·인디고 3진 본능과 라이트 크림 3진 고대의 저주 무효를 추가했습니다. 본능은 캐릭터 강화에서 XP로 구매합니다.</li><li>신레전드 13~15장 18맵과 사이클론 재강림 4종 8맵을 추가했습니다.</li></ul>
 <h3>💾 v8.0.1 우주편 2장 저장 보강</h3>
