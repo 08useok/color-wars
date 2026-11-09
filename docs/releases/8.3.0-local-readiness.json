@@ -1,0 +1,248 @@
+{
+  "version": "8.3.0",
+  "date": "2026-11-09",
+  "status": "local-ready-not-committed",
+  "scripts": 146,
+  "assets": 23,
+  "stages": 927,
+  "previousStages": 908,
+  "legacyStageIdsPreserved": true,
+  "legacyLegendKeysPreserved": true,
+  "runtimeFiles": [
+    {
+      "file": "assets/anim_clionel.webp",
+      "bytes": 2534942,
+      "sha256": "48910315957d07fff446f3804742c1233f9236f9202c327ae7b04b9705880ee8"
+    },
+    {
+      "file": "assets/anim_puffington.webp",
+      "bytes": 951800,
+      "sha256": "651cacbc2910bdb317beae1ff6a6d6345bd197680f30874f31e4bf8c7cd6bf33"
+    },
+    {
+      "file": "assets/basic-third83-motion/blue_3-profile.webp",
+      "bytes": 34208,
+      "sha256": "7246aff7edd9098707bcbebfaf330ab2588b5f432c32c1071deaac29c3ae77bc"
+    },
+    {
+      "file": "assets/basic-third83-motion/blue_3.webp",
+      "bytes": 849378,
+      "sha256": "484b9366d30f8b6b10eabbc387de3c6432fbe3d7f93f7d3056f9600db5f90bdc"
+    },
+    {
+      "file": "assets/basic-third83-motion/cyan_3-profile.webp",
+      "bytes": 37674,
+      "sha256": "8c43704735ab05bf024c3a0c12720b88faeecfcbb1ff321d0852b47dc424a248"
+    },
+    {
+      "file": "assets/basic-third83-motion/cyan_3.webp",
+      "bytes": 912422,
+      "sha256": "591fa9ff8295d7933cdbcea6167db7da9deaaec833b78d868ce22097f3617607"
+    },
+    {
+      "file": "assets/basic-third83-motion/green_3-profile.webp",
+      "bytes": 31706,
+      "sha256": "8e52f93668e2cbfd6715cdeb3fa8261cb83b7d09c4e0713f515acb355b3067a1"
+    },
+    {
+      "file": "assets/basic-third83-motion/green_3.webp",
+      "bytes": 733458,
+      "sha256": "8628afefb789330433c40a9e811923869cc0b90733404417f8169dd311d1b518"
+    },
+    {
+      "file": "assets/basic-third83-motion/motion-atlases.js",
+      "bytes": 24230,
+      "sha256": "e65fd06a596690c1cd9aec802ff9eb620bb91bcfaa1d502389d9e8d995259418"
+    },
+    {
+      "file": "assets/basic-third83-motion/orange_3-profile.webp",
+      "bytes": 41368,
+      "sha256": "8964179519519914da6f6c8ffc4ece48f047e665c26aefc4df5b3b5dd78bda64"
+    },
+    {
+      "file": "assets/basic-third83-motion/orange_3.webp",
+      "bytes": 990490,
+      "sha256": "db863c94407afbb5de82763af6d98c54b965ae3b86098a0684ecd72f267e194c"
+    },
+    {
+      "file": "assets/basic-third83-motion/pink_3-profile.webp",
+      "bytes": 41484,
+      "sha256": "9509879f0913f4ca168d465e706f3d1e68113ee2a7cb68e19d8ce4dedd1dd378"
+    },
+    {
+      "file": "assets/basic-third83-motion/pink_3.webp",
+      "bytes": 1073234,
+      "sha256": "26afff6acc3a233ce455d73e83c35c62502fd942d95e95ccaacd153b0fafeaf4"
+    },
+    {
+      "file": "assets/basic-third83-motion/purple_3-profile.webp",
+      "bytes": 39988,
+      "sha256": "65352407c574a3f137a8c6e25326de81f4fc56c4744686bbc886523fae0e38cf"
+    },
+    {
+      "file": "assets/basic-third83-motion/purple_3.webp",
+      "bytes": 975354,
+      "sha256": "fc174a7125d8d3eb4d4f39b5b3915fa50239a91aa76e4e9f6bd38332561b205c"
+    },
+    {
+      "file": "assets/basic-third83-motion/red_3-profile.webp",
+      "bytes": 30626,
+      "sha256": "97d8171df5addab03d235fea2911058f03257639a6d13b4e790cc718e81c8052"
+    },
+    {
+      "file": "assets/basic-third83-motion/red_3.webp",
+      "bytes": 736428,
+      "sha256": "0c88225feea52918e68ac2f7748450f37b28831e764ab235f578fc23ebe39d63"
+    },
+    {
+      "file": "assets/basic-third83-motion/yellow_3-profile.webp",
+      "bytes": 35676,
+      "sha256": "13ea7e5dcc98d60f0a97fdc79ef39b8329b2b7c07dec348f61be430f32a2a78e"
+    },
+    {
+      "file": "assets/basic-third83-motion/yellow_3.webp",
+      "bytes": 855926,
+      "sha256": "5190bd97f9409e49bb3f93c4449a038de032db6ba5b8f6ad1c0d4594645e1aa8"
+    },
+    {
+      "file": "assets/march-yellow-motion/flag.webp",
+      "bytes": 155678,
+      "sha256": "830d6a34bea4657d184eca74ddf7cc6b8b69e4dcb91f690ac0ccbdc13deba14f"
+    },
+    {
+      "file": "assets/march-yellow-motion/marchyellow_1-profile.webp",
+      "bytes": 18874,
+      "sha256": "8dfc640fc27cbf42e0b8f5b8de1045c01fcf48d6cad7ea779ed1abfe7f42eef1"
+    },
+    {
+      "file": "assets/march-yellow-motion/marchyellow_1.webp",
+      "bytes": 898764,
+      "sha256": "d89268b8120c59a273fad338246da0b99ebde04cd8cecdd6ad8b8850fba621da"
+    },
+    {
+      "file": "assets/march-yellow-motion/marchyellow_2-profile.webp",
+      "bytes": 38742,
+      "sha256": "e189285c3a8c27ba3809a4cb262607a33f1b42cf11149c0a34bc373819588eeb"
+    },
+    {
+      "file": "assets/march-yellow-motion/marchyellow_2.webp",
+      "bytes": 1905288,
+      "sha256": "9de45251a5099d2936e14d04eb9f6f84afbbc04e532b88642d7239899a8bafe1"
+    },
+    {
+      "file": "assets/march-yellow-motion/motion-atlases.js",
+      "bytes": 6704,
+      "sha256": "124cc7d21588d861e201ec081783495f49d71c52fc997ad77ae685ca0efbd3c0"
+    },
+    {
+      "file": "basic-third83-reviews.js",
+      "bytes": 3608,
+      "sha256": "ede53b3c3d398820d66882f25e35259bba83c7cbe88bd2c44447e97927aa99a9"
+    },
+    {
+      "file": "basic-third83.js",
+      "bytes": 2454,
+      "sha256": "0eb257387a61b929c1d42050d8c8ea38931040f62ddd1e3ddf18d773f951ef51"
+    },
+    {
+      "file": "clionel-advent.js",
+      "bytes": 2595,
+      "sha256": "b3421e52b88f69996c73626239a4d1a69c895e79f1cb8e0375940e7144a10c3a"
+    },
+    {
+      "file": "clionel-atlas.js",
+      "bytes": 2375,
+      "sha256": "36f6730997200fc2d5f78a6666ccb08a9e60e56f768e149155bb6211ad2a6d83"
+    },
+    {
+      "file": "march-yellow-review.js",
+      "bytes": 890,
+      "sha256": "4ecafd92f3fb17e27532fc6eaad44fc8f4f3d8f6b7b20d6df89f8ee84d39cfa8"
+    },
+    {
+      "file": "march-yellow.js",
+      "bytes": 3423,
+      "sha256": "ef19946ac8e21dfc704e60559b2a8b6bf11cb4355ae9a25be8dffa49d41c03a2"
+    },
+    {
+      "file": "notice.js",
+      "bytes": 58729,
+      "sha256": "e6455fa5f8dba6d320edbceeaaffd1bfcfd9048b57d0317a61f9d9e0cb76348a"
+    },
+    {
+      "file": "puffington-atlas.js",
+      "bytes": 4664,
+      "sha256": "20c2b4f5cb8e4cb6953c058c0d1fe81ee6438ae941a1a5adca6b2b6d040ce068"
+    },
+    {
+      "file": "puffington.js",
+      "bytes": 759,
+      "sha256": "e314d265b8c91af7e3cf20916f2b562d91b4d617b3cfceb53706245340a72892"
+    },
+    {
+      "file": "red-battle-doge.html",
+      "bytes": 36066,
+      "sha256": "b9a2763c8b14b61a61caa74850fc714a43a98dbf00bfcd6c39d449276782e6f2"
+    },
+    {
+      "file": "true-legend83.js",
+      "bytes": 27111,
+      "sha256": "3f6981037871ae70b868b1ca08b0688bfb5d31905123eb0baed0c83afd20396e"
+    }
+  ],
+  "crownReview": {
+    "conditions": 54,
+    "clearedAtLevel30": 53,
+    "unconfirmedAtLevel30": [
+      {
+        "k": 416,
+        "crown": 4,
+        "name": "끈적끈적 샤워"
+      }
+    ]
+  },
+  "higherLevelClear": [
+    {
+      "level": 40,
+      "deck": "modern",
+      "policy": "auto",
+      "seed": 1,
+      "seconds": 407.53
+    },
+    {
+      "level": 40,
+      "deck": "modern",
+      "policy": "auto",
+      "seed": 2,
+      "seconds": 470.33
+    },
+    {
+      "level": 40,
+      "deck": "modern",
+      "policy": "auto",
+      "seed": 3,
+      "seconds": 531.37
+    },
+    {
+      "level": 50,
+      "deck": "modern",
+      "policy": "auto",
+      "seed": 1,
+      "seconds": 281.37
+    },
+    {
+      "level": 50,
+      "deck": "modern",
+      "policy": "auto",
+      "seed": 2,
+      "seconds": 290.7
+    },
+    {
+      "level": 50,
+      "deck": "modern",
+      "policy": "auto",
+      "seed": 3,
+      "seconds": 282.37
+    }
+  ]
+}

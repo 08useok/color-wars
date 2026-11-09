@@ -1,0 +1,57 @@
+{
+  "fps": 30,
+  "frameWidth": 320,
+  "frameHeight": 320,
+  "columns": 10,
+  "anchor": [
+    160,
+    315
+  ],
+  "forms": {
+    "1": {
+      "idle": {
+        "file": "marchyellow_1-idle.png",
+        "frames": 60,
+        "loop": true
+      },
+      "walk": {
+        "file": "marchyellow_1-walk.png",
+        "frames": 18,
+        "loop": true
+      },
+      "attack": {
+        "file": "marchyellow_1-attack.png",
+        "frames": 24,
+        "loop": true
+      },
+      "hurt": {
+        "file": "marchyellow_1-hurt.png",
+        "frames": 24,
+        "loop": false
+      }
+    },
+    "2": {
+      "idle": {
+        "file": "marchyellow_2-idle.png",
+        "frames": 60,
+        "loop": true
+      },
+      "walk": {
+        "file": "marchyellow_2-walk.png",
+        "frames": 18,
+        "loop": true
+      },
+      "attack": {
+        "file": "marchyellow_2-attack.png",
+        "frames": 24,
+        "loop": true
+      },
+      "hurt": {
+        "file": "marchyellow_2-hurt.png",
+        "frames": 24,
+        "loop": false
+      }
+    }
+  },
+  "projectile": "throwing-flag.png"
+}
