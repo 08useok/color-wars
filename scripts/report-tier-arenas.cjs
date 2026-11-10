@@ -15,7 +15,7 @@ md+='\n## 3진 전후 종합 비교\n\n|캐릭터|2진 점수|3진 점수|점수
 md+='\n## 속성별 상위 후보\n\n';for(const map of data.maps){const selected=[...best.values()].filter(r=>r.map===map.i);md+=`### ${map.name}\n\n선택된 출격 방식 기준 승리 ${selected.filter(r=>r.win).length}/${selected.length}회.\n\n|순위|캐릭터|맵 내 백분위|추가 이득 점수|\n|---|---|---:|---:|\n`;const rs=data.perMap.filter(r=>r.map===map.i&&!data.core.includes(r.id)).sort((a,b)=>b.gain-a.gain);for(const [i,r]of rs.slice(0,8).entries())md+=`|${i+1}|${names(r)}|${r.pct.toFixed(3)}|${r.gain.toFixed(4)}|\n`;}
 md+='\n## 전체 시험 순위\n\n|순위|캐릭터|희귀도|종합 점수|이전 단일 맵 순위(참고)|\n|---|---|---|---:|---:|\n';for(const r of safeRows)md+=`|${r.comparableRank}|${r.name}|${r.grade}|${r.score.toFixed(3)}|${r.oldRank??'신규'}|\n`;
 md+='\n## 기준덱 멤버: 별도 참고\n\n|캐릭터|비대칭 측정 점수|\n|---|---:|\n';for(const r of rows.filter(r=>r.coreMember))md+=`|${r.name}|${r.score.toFixed(3)}|\n`;
-md+='\n데이터: [원본](../simulations/tier-arena-benchmark-2026-10-30.json), [분석 JSON](../simulations/tier-arena-analysis-2026-10-30.json). 기존 전체 티어 문서는 유지했다. 커밋·푸시는 하지 않았다.\n';
-fs.writeFileSync('docs/기획-시험/티어-시험구역-전체측정-2026-10-30.md',md);
+md+='\n데이터: [원본](../../simulations/tier-arena-benchmark-2026-10-30.json), [분석 JSON](../../simulations/tier-arena-analysis-2026-10-30.json). 기존 전체 티어 문서는 유지했다. 커밋·푸시는 하지 않았다.\n';
+fs.writeFileSync('docs/기획-시험/기록/티어-시험구역-전체측정-2026-10-30.md',md);
 const highlights=safeRows.filter(r=>['lilac','babypink','magenta','fusioncream','ocean','sea'].includes(r.id));
 fs.writeFileSync('docs/simulations/tier-arena-analysis-2026-10-30.json',JSON.stringify({rows,highlights,hashes,uniqueSelectedResults:[...best.values()]},null,2));console.log(JSON.stringify({top:safeRows.slice(0,10),highlights},null,2));
