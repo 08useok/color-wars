@@ -5,5 +5,5 @@ for(const file of scripts){assert(fs.existsSync(path.join(root,file)),file);new 
 for(const file of ['cannon-loadout.js','cannon-effect-atlases.js','cannon-effects.js','zombie-original-atlases.js','zombie-original-motion.js'])assert(scripts.includes(file),file);
 assert(scripts.indexOf('cannon-effects.js')<scripts.indexOf('asset-loader.js'));
 assert(scripts.indexOf('zombie-original-motion.js')>scripts.indexOf('zombie-completion.js'));
-assert(fs.readFileSync(path.join(root,'notice.js'),'utf8').includes("GAME_VERSION='8.4.0'"));
-console.log('PASS v8.4.0 entry: '+scripts.length+' scripts exist/parse; effect preload and zombie replacement load order correct');
+assert(/GAME_VERSION='8\.4\.\d+'/.test(fs.readFileSync(path.join(root,'notice.js'),'utf8')));
+console.log('PASS v8.4.x entry: '+scripts.length+' scripts exist/parse; effect preload and zombie replacement load order correct');

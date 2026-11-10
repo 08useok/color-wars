@@ -2,9 +2,11 @@
 // v1 세계편 (first push, 2026-09-24) · v2 레전드 스토리 (09-30) · v3 미래편 1장 (10-03) · v4 미래편 2장 + 3진 (10-06) · v5 미래편 3장 (10-08) · v6 우주편 1장 (10-09) · v7 우주편 2장 (10-22).
 // User release rule (2026-10-18): bump PATCH for every commit-and-push release unless an explicit version is requested; do not bump twice when already prepared.
 // A new NOTICE.version shows the notice once on load; the 공지 button on the stage screen reopens it.
-const GAME_VERSION='8.4.0';
+const GAME_VERSION='8.4.1';
 const NOTICE={version:GAME_VERSION,date:'2026-11-10',title:`v${GAME_VERSION} 업데이트`,html:`
 <p class="notice-lead">지금까지 <b>세계편 1~3장 · 미래편 1~3장 · 우주편 1~3장 · 레전드 스토리 1~49장 · 신레전드 0~18장</b>을 담았습니다.</p>
+<h3>📦 v8.4.1 배포 방식 개선</h3>
+<p>게임 코드와 에셋만 묶는 전용 배포 경로를 추가했습니다. 기존 게임 주소와 저장 키는 유지합니다. 배포 뒤에는 실제 사이트의 버전과 주요 에셋도 확인합니다.</p>
 <h3>⚡ v8.4.0 대포 갈아끼우기 · 좀비 원작 모션</h3>
 <ul><li><b>기지 강화 → 대포 갈아끼우기</b>에서 냥코 대포·천둥포·슬로우포·캐논 브레이크포·천사포를 선택할 수 있습니다. 선택은 저장되며 전투 중에는 교체할 수 없습니다. 교체하면 충전이 초기화됩니다.</li>
 <li>천둥포는 적을 <b>2초 정지</b>, 슬로우포는 <b>4초 느리게</b>, 브레이크포는 <b>베리어 확정 파괴</b>, 천사포는 <b>좀비 피해와 직접 처치 시 부활 방지</b>를 사용합니다. 특수 대포는 기본보다 충전이 10초 길며 최소 10초입니다. 땅속·부활 대기 중인 적은 대상에서 제외됩니다.</li>

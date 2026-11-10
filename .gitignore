@@ -9,3 +9,6 @@ red-battle-doge1.html
 
 # 8.0 신규 적 프레임(굽기 중간 산출물, 시트는 assets/anim_*.webp)
 reference-sheets/enemies-80/frames/
+
+# GitHub Pages runtime bundle
+/_site/

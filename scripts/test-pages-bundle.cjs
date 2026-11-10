@@ -1,0 +1,9 @@
+const fs=require('fs'),path=require('path'),cp=require('child_process'),assert=require('node:assert/strict'),http=require('http');
+const root=path.resolve(__dirname,'..'),out=path.join(fs.mkdtempSync(path.join(root,'work/pages-bundle-')),'site');
+cp.execFileSync(process.execPath,[path.join(__dirname,'build-pages.cjs'),path.relative(root,out)],{cwd:root,stdio:'inherit'});
+const manifest=JSON.parse(fs.readFileSync(path.join(out,'_deployment.json'),'utf8')),head=cp.execFileSync('git',['rev-parse','HEAD'],{cwd:root}).toString().trim();assert.equal(manifest.commit,head);
+for(const dir of ['docs','work','scripts','sources','reference-sheets','.git','.github'])assert(!fs.existsSync(path.join(out,dir)),dir+' excluded');
+assert.equal(fs.readFileSync(path.join(out,'cyclone-advents2.js'),'utf8'),cp.execFileSync('git',['show','HEAD:cyclone-advents2.js'],{cwd:root}).toString(),'unrelated dirty files must not enter deployment');
+assert(fs.existsSync(path.join(out,'assets/cannon-effects/thunder.webp')));assert(fs.existsSync(path.join(out,'assets/anim_zbore.webp')));
+const server=http.createServer((req,res)=>{const file=path.resolve(out,'.'+decodeURIComponent(new URL(req.url,'http://localhost').pathname));if(!file.startsWith(out+path.sep)||!fs.existsSync(file)||!fs.statSync(file).isFile()){res.writeHead(404);return res.end();}res.end(fs.readFileSync(file));});
+server.listen(0,'127.0.0.1',()=>{const child=cp.spawn(process.execPath,[path.join(__dirname,'verify-pages.cjs'),'http://127.0.0.1:'+server.address().port+'/'],{cwd:root,stdio:'inherit'});child.on('error',err=>{console.error(err);server.close();process.exitCode=1;});child.on('close',code=>{server.close();if(code)process.exitCode=code;else console.log('PASS runtime-only bundle, committed-byte isolation and published-version verification');});});
