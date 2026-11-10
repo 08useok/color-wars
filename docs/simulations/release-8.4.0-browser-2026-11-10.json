@@ -1,0 +1,98 @@
+{
+  "version": "8.4.0",
+  "rows": [
+    {
+      "kind": "basic",
+      "included": true,
+      "cached": true,
+      "visual": true,
+      "swap": true,
+      "clean": true,
+      "ready": true
+    },
+    {
+      "kind": "thunder",
+      "included": true,
+      "cached": true,
+      "visual": true,
+      "swap": true,
+      "clean": true,
+      "ready": true
+    },
+    {
+      "kind": "slow",
+      "included": true,
+      "cached": true,
+      "visual": true,
+      "swap": true,
+      "clean": true,
+      "ready": true
+    },
+    {
+      "kind": "breaker",
+      "included": true,
+      "cached": true,
+      "visual": true,
+      "swap": true,
+      "clean": true,
+      "ready": true
+    },
+    {
+      "kind": "holy",
+      "included": true,
+      "cached": true,
+      "visual": true,
+      "swap": true,
+      "clean": true,
+      "ready": true
+    }
+  ],
+  "zombies": [
+    {
+      "id": "zbear",
+      "loaded": true,
+      "tint": null
+    },
+    {
+      "id": "zcapy",
+      "loaded": true,
+      "tint": null
+    },
+    {
+      "id": "zduche",
+      "loaded": true,
+      "tint": null
+    },
+    {
+      "id": "zbore",
+      "loaded": true,
+      "tint": null
+    },
+    {
+      "id": "zbrollow",
+      "loaded": true,
+      "tint": null
+    },
+    {
+      "id": "zcamelle",
+      "loaded": true,
+      "tint": null
+    },
+    {
+      "id": "zostrich",
+      "loaded": true,
+      "tint": null
+    },
+    {
+      "id": "zdagshund",
+      "loaded": true,
+      "tint": null
+    },
+    {
+      "id": "zthrillerz",
+      "loaded": true,
+      "tint": null
+    }
+  ],
+  "errors": []
+}

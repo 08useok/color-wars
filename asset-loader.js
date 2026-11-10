@@ -26,6 +26,8 @@ function battleImageUrls(){
   for(const m of rule.style.cssText.matchAll(/url\(["']?([^\s"')]+)["']?\)/g))urls.add(m[1]);
  }}
  for(const sheet of document.styleSheets){try{readRules(sheet.cssRules)}catch{}}
+ // Cannon sheets are assigned dynamically, so CSS scanning cannot discover them.
+ if(typeof cannonEffectImageUrls==='function')for(const url of cannonEffectImageUrls())urls.add(url);
  return [...urls];
 }
 const IMAGE_LOADING=document.createElement('section');IMAGE_LOADING.className='overlay hidden';IMAGE_LOADING.setAttribute('role','status');IMAGE_LOADING.style.cssText='z-index:10010;align-items:center;justify-content:center';
