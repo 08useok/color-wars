@@ -20,7 +20,7 @@ for(const id of Object.keys(WARP)){
 const types=new Set();for(const c of Object.keys(t.Z))for(const i of t.zs(+c))for(const r of t.zr(i))types.add(r.type);
 for(const id of types){assert(t.O.includes(id),id+' 도감 목록');assert(t.T[id],id+' 설명');assert(t.N[id],id+' 이름');}
 for(const id of ['zcamelle','zbore'])assert(t.O.includes(id)&&t.T[id],id);
-{t.save.clear=[];assert(!t.seen('zdog'));const i=t.zs(1).find(j=>t.zr(j).some(r=>r.type==='zdog'));t.save.clear=[i];assert(t.seen('zdog'),'침공판을 깨면 좀비 멍뭉이를 본 적 있음');t.save.clear=[];}
+{e.setCleared([]);t.save.clear=[];assert(!t.seen('zoge'));const i=t.zs(1).find(j=>t.zr(j).some(r=>r.type==='zoge'));t.save.clear=[i];assert(t.seen('zoge'),'침공판을 깨면 좀비 멍뭉이를 본 적 있음');t.save.clear=[];e.setCleared(e.stageList.map((_,i)=>i));}
 // 3) 설명과 능력
 const has=(id,k)=>t.T[id].includes(k);
 assert(has('sael','느리게')&&t.U.sael.slowChance);assert(has('maawth','멈추')&&t.U.maawth.freezeChance);assert(has('phace','멈추')&&t.U.phace.freezeChance);assert(has('liz56','파동')&&t.U.liz56.wave);

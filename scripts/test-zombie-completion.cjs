@@ -1,6 +1,8 @@
 const fs=require('fs'),assert=require('assert/strict'),make=require('./full-harness.cjs');
 const old=JSON.parse(fs.readFileSync('reference-sheets/zombie-completion/before.json','utf8'));
-const e=make({extraSetup:`globalThis.__outbreakTest={zombieRulesOf,zombieStagesOf,zombieAvailable,startOutbreak,zombieSlotRestore,zombieSave,slot:ZOMBIE_SLOT,completion:OUTBREAK_COMPLETION,allies:ALLIES,resolveAttack,deployFull:()=>allyDeployFull(),setStage:i=>selectedStage=i,setDeck:d=>deck=d,bases:data.bases,atlas:NEW_ATLASES,setWave:v=>game.inWave=v,setSurge:v=>game.inSurge=v,chapters:ZOMBIE_CHAPTERS,chapterOf,stageExtra:ZOMBIE_STAGE_EXTRA,maxEnemies};globalThis.__spawned={};const __updOutbreak=update;update=function(dt){const r=__updOutbreak.apply(this,arguments);if(game?.units)for(const u of game.units)if(!u.ally&&!u.__seen){u.__seen=1;globalThis.__spawned[u.type]=(globalThis.__spawned[u.type]||0)+1}return r};`});
+// Historical 6.9 completion logic is tested in isolation; the current 336-map
+// replacement has its own source/identity/save/cap tests.
+const e=make({addons:make.DEFAULT_ADDONS.filter(f=>!['zombie-outbreak-original-data.js','zombie-outbreak-original.js'].includes(f)),extraSetup:`globalThis.__outbreakTest={zombieRulesOf,zombieStagesOf,zombieAvailable,startOutbreak,zombieSlotRestore,zombieSave,slot:ZOMBIE_SLOT,completion:OUTBREAK_COMPLETION,allies:ALLIES,resolveAttack,deployFull:()=>allyDeployFull(),setStage:i=>selectedStage=i,setDeck:d=>deck=d,bases:data.bases,atlas:NEW_ATLASES,setWave:v=>game.inWave=v,setSurge:v=>game.inSurge=v,chapters:ZOMBIE_CHAPTERS,chapterOf,stageExtra:ZOMBIE_STAGE_EXTRA,maxEnemies};globalThis.__spawned={};const __updOutbreak=update;update=function(dt){const r=__updOutbreak.apply(this,arguments);if(game?.units)for(const u of game.units)if(!u.ally&&!u.__seen){u.__seen=1;globalThis.__spawned[u.type]=(globalThis.__spawned[u.type]||0)+1}return r};`});
 const t=globalThis.__outbreakTest;delete globalThis.__outbreakTest;
 for(const c of [1,2,3,5,6,7,8])assert.equal(t.zombieStagesOf(c).length,48);
 assert.equal(t.completion.size,37);
@@ -19,8 +21,10 @@ for(const b of old.allRules){
  });
  extra.forEach((r,k)=>assert.deepEqual(now[src.length+k],JSON.parse(JSON.stringify(r))));
 }
-// 10-30: 원작 워프 5종은 날려버림 → 워프로 바뀜(test-enemy-consistency가 확인)
-for(const [id,s]of Object.entries(old.units))if(!['zguys','shibalienelite','starpeng','painter','captainmogu','ribbo'].includes(id))assert.deepEqual(JSON.parse(JSON.stringify(e.units[id])),s,'existing unit changed '+id);
+// Compare against today's engine without this add-on. A 6.9 snapshot also
+// contains unrelated enemy timings which have legitimately changed since then.
+const currentBefore=make({addons:make.DEFAULT_ADDONS.filter(f=>!['zombie-outbreak-original-data.js','zombie-outbreak-original.js','zombie-outbreak-data.js','zombie-completion.js'].includes(f))});
+for(const [id,s]of Object.entries(currentBefore.units))assert.deepEqual(e.units[id],s,'completion changed existing unit '+id);
 assert.equal(e.names.zguys,'좀비 하마양');assert(e.units.zguys.area);
 for(const [i,d]of t.completion){assert(!old.allRules[i].rules);assert(d.rules.length);assert(d.rules.some(r=>e.units[r.type].trait==='zombie'||e.units[r.type].traits?.includes('zombie')));for(const r of d.rules)assert(e.units[r.type],r.type);}
 // Newly completed chapters require all 47 non-final outbreaks before the Moon/Big Bang.
@@ -59,6 +63,6 @@ const results=[],deck=['red','yellow','garnet','iron','grey','acid','fuchsia','p
 for(const [i,d]of t.completion){t.zombieSlotRestore();t.startOutbreak(i);const slot=e.stageList[t.slot];assert.equal(slot.zombieOf,i);assert.equal(slot.hp,d.hp);assert.equal(slot.maxEnemies,d.max);assert.equal(slot.allyLimit,d.limit);
  const r=e.simulate(t.slot,1,deck,1,180,'smart2');for(const v of [r.seconds,r.allyHp,r.enemyHp])assert(Number.isFinite(v));results.push({i,name:d.name,chapter:d.chapter,...r});
 }
-fs.writeFileSync('docs/simulations/zombie-completion-2026-10-22.json',JSON.stringify({counts:336,new:37,results},null,2));
+fs.mkdirSync('work/zombie-completion-test',{recursive:true});fs.writeFileSync('work/zombie-completion-test/report.json',JSON.stringify({counts:336,new:37,results},null,2));
 console.log('PASS: all seven chapters 48/48, 299 existing maps unchanged except the original pairing (guys normal / Thrillerz, hippo→좀비 하마양, 세계편 bear normal), Hawaii cap 3, Moon gates, four enemies, revival/Z-kill, Zuche damage shares, Zapy immunity/warp, 37 real outbreak smoke battles.');
 console.log(results.filter(r=>r.win).length+' wins; '+results.filter(r=>r.timeout).length+' timeouts (180s); balance not certified.');process.exit(0);

@@ -1,0 +1,3049 @@
+{
+  "date": "2026-11-15",
+  "total": 336,
+  "DB": 321,
+  "wiki": 15,
+  "rows": 2891,
+  "hpChanged": 6,
+  "rulesChanged": 300,
+  "sourceCorrections": [
+    {
+      "stage": "2:26",
+      "detail": "Wiki gives Croco first appearance as 36.67s but 900f. Use 1100f (=36.67s), corroborated by DB chapters 1 and 3 of the same stage.",
+      "sources": [
+        "https://battlecats-db.com/stage/s03000z-26.html",
+        "https://battlecats-db.com/stage/s03002z-26.html"
+      ]
+    },
+    {
+      "stage": "1:3,2:3,2:23",
+      "detail": "Simultaneous spawn row ordering corroborated by DB of the other EoC chapters, rather than prose grouping."
+    }
+  ],
+  "changes": [
+    {
+      "i": 0,
+      "chapter": 1,
+      "order": 1,
+      "name": "한국",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats.miraheze.org/wiki/Korea_(Empire_of_Cats)/Outbreak"
+    },
+    {
+      "i": 1,
+      "chapter": 1,
+      "order": 2,
+      "name": "몽골",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03000z-02.html"
+    },
+    {
+      "i": 2,
+      "chapter": 1,
+      "order": 3,
+      "name": "중국",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats.miraheze.org/wiki/China_(Empire_of_Cats)/Outbreak"
+    },
+    {
+      "i": 3,
+      "chapter": 1,
+      "order": 4,
+      "name": "태국",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03000z-04.html"
+    },
+    {
+      "i": 4,
+      "chapter": 1,
+      "order": 5,
+      "name": "캄보디아",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03000z-05.html"
+    },
+    {
+      "i": 5,
+      "chapter": 1,
+      "order": 6,
+      "name": "필리핀",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03000z-06.html"
+    },
+    {
+      "i": 6,
+      "chapter": 1,
+      "order": 7,
+      "name": "일본",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03000z-07.html"
+    },
+    {
+      "i": 7,
+      "chapter": 1,
+      "order": 8,
+      "name": "호주",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03000z-08.html"
+    },
+    {
+      "i": 8,
+      "chapter": 1,
+      "order": 9,
+      "name": "싱가포르",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03000z-09.html"
+    },
+    {
+      "i": 9,
+      "chapter": 1,
+      "order": 10,
+      "name": "몰디브",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03000z-10.html"
+    },
+    {
+      "i": 10,
+      "chapter": 1,
+      "order": 11,
+      "name": "인도",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03000z-11.html"
+    },
+    {
+      "i": 11,
+      "chapter": 1,
+      "order": 12,
+      "name": "네팔",
+      "hpChanged": true,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03000z-12.html"
+    },
+    {
+      "i": 12,
+      "chapter": 1,
+      "order": 13,
+      "name": "두바이",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03000z-13.html"
+    },
+    {
+      "i": 13,
+      "chapter": 1,
+      "order": 14,
+      "name": "사우디아라비아",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03000z-14.html"
+    },
+    {
+      "i": 14,
+      "chapter": 1,
+      "order": 15,
+      "name": "케냐",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03000z-15.html"
+    },
+    {
+      "i": 15,
+      "chapter": 1,
+      "order": 16,
+      "name": "마다가스카르",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03000z-16.html"
+    },
+    {
+      "i": 16,
+      "chapter": 1,
+      "order": 17,
+      "name": "남아프리카",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03000z-17.html"
+    },
+    {
+      "i": 17,
+      "chapter": 1,
+      "order": 18,
+      "name": "가나",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03000z-18.html"
+    },
+    {
+      "i": 18,
+      "chapter": 1,
+      "order": 19,
+      "name": "사하라사막",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03000z-19.html"
+    },
+    {
+      "i": 19,
+      "chapter": 1,
+      "order": 20,
+      "name": "이집트",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03000z-20.html"
+    },
+    {
+      "i": 20,
+      "chapter": 1,
+      "order": 21,
+      "name": "터키",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03000z-21.html"
+    },
+    {
+      "i": 21,
+      "chapter": 1,
+      "order": 22,
+      "name": "러시아",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03000z-22.html"
+    },
+    {
+      "i": 22,
+      "chapter": 1,
+      "order": 23,
+      "name": "그리스",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03000z-23.html"
+    },
+    {
+      "i": 23,
+      "chapter": 1,
+      "order": 24,
+      "name": "이탈리아",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03000z-24.html"
+    },
+    {
+      "i": 24,
+      "chapter": 1,
+      "order": 25,
+      "name": "모나코",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03000z-25.html"
+    },
+    {
+      "i": 25,
+      "chapter": 1,
+      "order": 26,
+      "name": "스페인",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03000z-26.html"
+    },
+    {
+      "i": 26,
+      "chapter": 1,
+      "order": 27,
+      "name": "프랑스",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03000z-27.html"
+    },
+    {
+      "i": 27,
+      "chapter": 1,
+      "order": 28,
+      "name": "독일",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03000z-28.html"
+    },
+    {
+      "i": 28,
+      "chapter": 1,
+      "order": 29,
+      "name": "덴마크",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03000z-29.html"
+    },
+    {
+      "i": 29,
+      "chapter": 1,
+      "order": 30,
+      "name": "노르웨이",
+      "hpChanged": true,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03000z-30.html"
+    },
+    {
+      "i": 30,
+      "chapter": 1,
+      "order": 31,
+      "name": "영국",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03000z-31.html"
+    },
+    {
+      "i": 31,
+      "chapter": 1,
+      "order": 32,
+      "name": "그린란드",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03000z-32.html"
+    },
+    {
+      "i": 32,
+      "chapter": 1,
+      "order": 33,
+      "name": "캐나다",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03000z-33.html"
+    },
+    {
+      "i": 33,
+      "chapter": 1,
+      "order": 34,
+      "name": "뉴욕",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03000z-34.html"
+    },
+    {
+      "i": 34,
+      "chapter": 1,
+      "order": 35,
+      "name": "버뮤다",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03000z-35.html"
+    },
+    {
+      "i": 35,
+      "chapter": 1,
+      "order": 36,
+      "name": "자메이카",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03000z-36.html"
+    },
+    {
+      "i": 36,
+      "chapter": 1,
+      "order": 37,
+      "name": "콜롬비아",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03000z-37.html"
+    },
+    {
+      "i": 37,
+      "chapter": 1,
+      "order": 38,
+      "name": "브라질",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03000z-38.html"
+    },
+    {
+      "i": 38,
+      "chapter": 1,
+      "order": 39,
+      "name": "아르헨티나",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03000z-39.html"
+    },
+    {
+      "i": 39,
+      "chapter": 1,
+      "order": 40,
+      "name": "마추픽추",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03000z-40.html"
+    },
+    {
+      "i": 40,
+      "chapter": 1,
+      "order": 41,
+      "name": "이스터섬",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03000z-41.html"
+    },
+    {
+      "i": 41,
+      "chapter": 1,
+      "order": 42,
+      "name": "멕시코",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03000z-42.html"
+    },
+    {
+      "i": 42,
+      "chapter": 1,
+      "order": 43,
+      "name": "NASA",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03000z-43.html"
+    },
+    {
+      "i": 43,
+      "chapter": 1,
+      "order": 44,
+      "name": "라스베이거스",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03000z-44.html"
+    },
+    {
+      "i": 44,
+      "chapter": 1,
+      "order": 45,
+      "name": "할리우드",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03000z-45.html"
+    },
+    {
+      "i": 45,
+      "chapter": 1,
+      "order": 46,
+      "name": "알래스카",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03000z-46.html"
+    },
+    {
+      "i": 46,
+      "chapter": 1,
+      "order": 47,
+      "name": "하와이",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03000z-47.html"
+    },
+    {
+      "i": 47,
+      "chapter": 1,
+      "order": 48,
+      "name": "달",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03000z-48.html"
+    },
+    {
+      "i": 48,
+      "chapter": 2,
+      "order": 1,
+      "name": "한국",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats.miraheze.org/wiki/Korea_(Empire_of_Cats)/Outbreak"
+    },
+    {
+      "i": 49,
+      "chapter": 2,
+      "order": 2,
+      "name": "몽골",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03001z-02.html"
+    },
+    {
+      "i": 50,
+      "chapter": 2,
+      "order": 3,
+      "name": "중국",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats.miraheze.org/wiki/China_(Empire_of_Cats)/Outbreak"
+    },
+    {
+      "i": 51,
+      "chapter": 2,
+      "order": 4,
+      "name": "태국",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03001z-04.html"
+    },
+    {
+      "i": 52,
+      "chapter": 2,
+      "order": 5,
+      "name": "캄보디아",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03001z-05.html"
+    },
+    {
+      "i": 53,
+      "chapter": 2,
+      "order": 6,
+      "name": "필리핀",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03001z-06.html"
+    },
+    {
+      "i": 54,
+      "chapter": 2,
+      "order": 7,
+      "name": "일본",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03001z-07.html"
+    },
+    {
+      "i": 55,
+      "chapter": 2,
+      "order": 8,
+      "name": "호주",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03001z-08.html"
+    },
+    {
+      "i": 56,
+      "chapter": 2,
+      "order": 9,
+      "name": "싱가포르",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03001z-09.html"
+    },
+    {
+      "i": 57,
+      "chapter": 2,
+      "order": 10,
+      "name": "몰디브",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03001z-10.html"
+    },
+    {
+      "i": 58,
+      "chapter": 2,
+      "order": 11,
+      "name": "인도",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03001z-11.html"
+    },
+    {
+      "i": 59,
+      "chapter": 2,
+      "order": 12,
+      "name": "네팔",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03001z-12.html"
+    },
+    {
+      "i": 60,
+      "chapter": 2,
+      "order": 13,
+      "name": "두바이",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03001z-13.html"
+    },
+    {
+      "i": 61,
+      "chapter": 2,
+      "order": 14,
+      "name": "사우디아라비아",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03001z-14.html"
+    },
+    {
+      "i": 62,
+      "chapter": 2,
+      "order": 15,
+      "name": "케냐",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03001z-15.html"
+    },
+    {
+      "i": 63,
+      "chapter": 2,
+      "order": 16,
+      "name": "마다가스카르",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03001z-16.html"
+    },
+    {
+      "i": 64,
+      "chapter": 2,
+      "order": 17,
+      "name": "남아프리카",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03001z-17.html"
+    },
+    {
+      "i": 65,
+      "chapter": 2,
+      "order": 18,
+      "name": "가나",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03001z-18.html"
+    },
+    {
+      "i": 66,
+      "chapter": 2,
+      "order": 19,
+      "name": "사하라사막",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03001z-19.html"
+    },
+    {
+      "i": 67,
+      "chapter": 2,
+      "order": 20,
+      "name": "이집트",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03001z-20.html"
+    },
+    {
+      "i": 68,
+      "chapter": 2,
+      "order": 21,
+      "name": "터키",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03001z-21.html"
+    },
+    {
+      "i": 69,
+      "chapter": 2,
+      "order": 22,
+      "name": "러시아",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03001z-22.html"
+    },
+    {
+      "i": 70,
+      "chapter": 2,
+      "order": 23,
+      "name": "그리스",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats.miraheze.org/wiki/Greece_(Empire_of_Cats)/Outbreak"
+    },
+    {
+      "i": 71,
+      "chapter": 2,
+      "order": 24,
+      "name": "이탈리아",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03001z-24.html"
+    },
+    {
+      "i": 72,
+      "chapter": 2,
+      "order": 25,
+      "name": "모나코",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03001z-25.html"
+    },
+    {
+      "i": 73,
+      "chapter": 2,
+      "order": 26,
+      "name": "스페인",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats.miraheze.org/wiki/Spain_(Empire_of_Cats)/Outbreak"
+    },
+    {
+      "i": 74,
+      "chapter": 2,
+      "order": 27,
+      "name": "프랑스",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03001z-27.html"
+    },
+    {
+      "i": 75,
+      "chapter": 2,
+      "order": 28,
+      "name": "독일",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03001z-28.html"
+    },
+    {
+      "i": 76,
+      "chapter": 2,
+      "order": 29,
+      "name": "덴마크",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03001z-29.html"
+    },
+    {
+      "i": 77,
+      "chapter": 2,
+      "order": 30,
+      "name": "노르웨이",
+      "hpChanged": true,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03001z-30.html"
+    },
+    {
+      "i": 78,
+      "chapter": 2,
+      "order": 31,
+      "name": "영국",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats.miraheze.org/wiki/United_Kingdom_(Empire_of_Cats)/Outbreak"
+    },
+    {
+      "i": 79,
+      "chapter": 2,
+      "order": 32,
+      "name": "그린란드",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03001z-32.html"
+    },
+    {
+      "i": 80,
+      "chapter": 2,
+      "order": 33,
+      "name": "캐나다",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03001z-33.html"
+    },
+    {
+      "i": 81,
+      "chapter": 2,
+      "order": 34,
+      "name": "뉴욕",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03001z-34.html"
+    },
+    {
+      "i": 82,
+      "chapter": 2,
+      "order": 35,
+      "name": "버뮤다",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03001z-35.html"
+    },
+    {
+      "i": 83,
+      "chapter": 2,
+      "order": 36,
+      "name": "자메이카",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03001z-36.html"
+    },
+    {
+      "i": 84,
+      "chapter": 2,
+      "order": 37,
+      "name": "콜롬비아",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03001z-37.html"
+    },
+    {
+      "i": 85,
+      "chapter": 2,
+      "order": 38,
+      "name": "브라질",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03001z-38.html"
+    },
+    {
+      "i": 86,
+      "chapter": 2,
+      "order": 39,
+      "name": "아르헨티나",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03001z-39.html"
+    },
+    {
+      "i": 87,
+      "chapter": 2,
+      "order": 40,
+      "name": "마추픽추",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03001z-40.html"
+    },
+    {
+      "i": 88,
+      "chapter": 2,
+      "order": 41,
+      "name": "이스터섬",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03001z-41.html"
+    },
+    {
+      "i": 89,
+      "chapter": 2,
+      "order": 42,
+      "name": "멕시코",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03001z-42.html"
+    },
+    {
+      "i": 90,
+      "chapter": 2,
+      "order": 43,
+      "name": "NASA",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03001z-43.html"
+    },
+    {
+      "i": 91,
+      "chapter": 2,
+      "order": 44,
+      "name": "라스베이거스",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03001z-44.html"
+    },
+    {
+      "i": 92,
+      "chapter": 2,
+      "order": 45,
+      "name": "할리우드",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03001z-45.html"
+    },
+    {
+      "i": 93,
+      "chapter": 2,
+      "order": 46,
+      "name": "알래스카",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03001z-46.html"
+    },
+    {
+      "i": 94,
+      "chapter": 2,
+      "order": 47,
+      "name": "하와이",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03001z-47.html"
+    },
+    {
+      "i": 95,
+      "chapter": 2,
+      "order": 48,
+      "name": "달",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03001z-48.html"
+    },
+    {
+      "i": 96,
+      "chapter": 3,
+      "order": 1,
+      "name": "한국",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03002z-01.html"
+    },
+    {
+      "i": 97,
+      "chapter": 3,
+      "order": 2,
+      "name": "몽골",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03002z-02.html"
+    },
+    {
+      "i": 98,
+      "chapter": 3,
+      "order": 3,
+      "name": "중국",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03002z-03.html"
+    },
+    {
+      "i": 99,
+      "chapter": 3,
+      "order": 4,
+      "name": "태국",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03002z-04.html"
+    },
+    {
+      "i": 100,
+      "chapter": 3,
+      "order": 5,
+      "name": "캄보디아",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03002z-05.html"
+    },
+    {
+      "i": 101,
+      "chapter": 3,
+      "order": 6,
+      "name": "필리핀",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03002z-06.html"
+    },
+    {
+      "i": 102,
+      "chapter": 3,
+      "order": 7,
+      "name": "일본",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03002z-07.html"
+    },
+    {
+      "i": 103,
+      "chapter": 3,
+      "order": 8,
+      "name": "호주",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03002z-08.html"
+    },
+    {
+      "i": 104,
+      "chapter": 3,
+      "order": 9,
+      "name": "싱가포르",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03002z-09.html"
+    },
+    {
+      "i": 105,
+      "chapter": 3,
+      "order": 10,
+      "name": "몰디브",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03002z-10.html"
+    },
+    {
+      "i": 106,
+      "chapter": 3,
+      "order": 11,
+      "name": "인도",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03002z-11.html"
+    },
+    {
+      "i": 107,
+      "chapter": 3,
+      "order": 12,
+      "name": "네팔",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03002z-12.html"
+    },
+    {
+      "i": 108,
+      "chapter": 3,
+      "order": 13,
+      "name": "두바이",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03002z-13.html"
+    },
+    {
+      "i": 109,
+      "chapter": 3,
+      "order": 14,
+      "name": "사우디아라비아",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03002z-14.html"
+    },
+    {
+      "i": 110,
+      "chapter": 3,
+      "order": 15,
+      "name": "케냐",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03002z-15.html"
+    },
+    {
+      "i": 111,
+      "chapter": 3,
+      "order": 16,
+      "name": "마다가스카르",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03002z-16.html"
+    },
+    {
+      "i": 112,
+      "chapter": 3,
+      "order": 17,
+      "name": "남아프리카",
+      "hpChanged": true,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03002z-17.html"
+    },
+    {
+      "i": 113,
+      "chapter": 3,
+      "order": 18,
+      "name": "가나",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03002z-18.html"
+    },
+    {
+      "i": 114,
+      "chapter": 3,
+      "order": 19,
+      "name": "사하라사막",
+      "hpChanged": true,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03002z-19.html"
+    },
+    {
+      "i": 115,
+      "chapter": 3,
+      "order": 20,
+      "name": "이집트",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03002z-20.html"
+    },
+    {
+      "i": 116,
+      "chapter": 3,
+      "order": 21,
+      "name": "터키",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03002z-21.html"
+    },
+    {
+      "i": 117,
+      "chapter": 3,
+      "order": 22,
+      "name": "러시아",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03002z-22.html"
+    },
+    {
+      "i": 118,
+      "chapter": 3,
+      "order": 23,
+      "name": "그리스",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03002z-23.html"
+    },
+    {
+      "i": 119,
+      "chapter": 3,
+      "order": 24,
+      "name": "이탈리아",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03002z-24.html"
+    },
+    {
+      "i": 120,
+      "chapter": 3,
+      "order": 25,
+      "name": "모나코",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03002z-25.html"
+    },
+    {
+      "i": 121,
+      "chapter": 3,
+      "order": 26,
+      "name": "스페인",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03002z-26.html"
+    },
+    {
+      "i": 122,
+      "chapter": 3,
+      "order": 27,
+      "name": "프랑스",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03002z-27.html"
+    },
+    {
+      "i": 123,
+      "chapter": 3,
+      "order": 28,
+      "name": "독일",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03002z-28.html"
+    },
+    {
+      "i": 124,
+      "chapter": 3,
+      "order": 29,
+      "name": "덴마크",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03002z-29.html"
+    },
+    {
+      "i": 125,
+      "chapter": 3,
+      "order": 30,
+      "name": "노르웨이",
+      "hpChanged": true,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03002z-30.html"
+    },
+    {
+      "i": 126,
+      "chapter": 3,
+      "order": 31,
+      "name": "영국",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats.miraheze.org/wiki/United_Kingdom_(Empire_of_Cats)/Outbreak"
+    },
+    {
+      "i": 127,
+      "chapter": 3,
+      "order": 32,
+      "name": "그린란드",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03002z-32.html"
+    },
+    {
+      "i": 128,
+      "chapter": 3,
+      "order": 33,
+      "name": "캐나다",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03002z-33.html"
+    },
+    {
+      "i": 129,
+      "chapter": 3,
+      "order": 34,
+      "name": "뉴욕",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03002z-34.html"
+    },
+    {
+      "i": 130,
+      "chapter": 3,
+      "order": 35,
+      "name": "버뮤다",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03002z-35.html"
+    },
+    {
+      "i": 131,
+      "chapter": 3,
+      "order": 36,
+      "name": "자메이카",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03002z-36.html"
+    },
+    {
+      "i": 132,
+      "chapter": 3,
+      "order": 37,
+      "name": "콜롬비아",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03002z-37.html"
+    },
+    {
+      "i": 133,
+      "chapter": 3,
+      "order": 38,
+      "name": "브라질",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03002z-38.html"
+    },
+    {
+      "i": 134,
+      "chapter": 3,
+      "order": 39,
+      "name": "아르헨티나",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03002z-39.html"
+    },
+    {
+      "i": 135,
+      "chapter": 3,
+      "order": 40,
+      "name": "마추픽추",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03002z-40.html"
+    },
+    {
+      "i": 136,
+      "chapter": 3,
+      "order": 41,
+      "name": "이스터섬",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03002z-41.html"
+    },
+    {
+      "i": 137,
+      "chapter": 3,
+      "order": 42,
+      "name": "멕시코",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03002z-42.html"
+    },
+    {
+      "i": 138,
+      "chapter": 3,
+      "order": 43,
+      "name": "NASA",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03002z-43.html"
+    },
+    {
+      "i": 139,
+      "chapter": 3,
+      "order": 44,
+      "name": "라스베이거스",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03002z-44.html"
+    },
+    {
+      "i": 140,
+      "chapter": 3,
+      "order": 45,
+      "name": "할리우드",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03002z-45.html"
+    },
+    {
+      "i": 141,
+      "chapter": 3,
+      "order": 46,
+      "name": "알래스카",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03002z-46.html"
+    },
+    {
+      "i": 142,
+      "chapter": 3,
+      "order": 47,
+      "name": "하와이",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03002z-47.html"
+    },
+    {
+      "i": 143,
+      "chapter": 3,
+      "order": 48,
+      "name": "달",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03002z-48.html"
+    },
+    {
+      "i": 159,
+      "chapter": 5,
+      "order": 1,
+      "name": "일본",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03003z-01.html"
+    },
+    {
+      "i": 160,
+      "chapter": 5,
+      "order": 2,
+      "name": "한국",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03003z-02.html"
+    },
+    {
+      "i": 161,
+      "chapter": 5,
+      "order": 3,
+      "name": "중국",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03003z-03.html"
+    },
+    {
+      "i": 162,
+      "chapter": 5,
+      "order": 4,
+      "name": "몽골",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03003z-04.html"
+    },
+    {
+      "i": 163,
+      "chapter": 5,
+      "order": 5,
+      "name": "러시아",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03003z-05.html"
+    },
+    {
+      "i": 164,
+      "chapter": 5,
+      "order": 6,
+      "name": "노르웨이",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03003z-06.html"
+    },
+    {
+      "i": 165,
+      "chapter": 5,
+      "order": 7,
+      "name": "영국",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03003z-07.html"
+    },
+    {
+      "i": 166,
+      "chapter": 5,
+      "order": 8,
+      "name": "덴마크",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03003z-08.html"
+    },
+    {
+      "i": 167,
+      "chapter": 5,
+      "order": 9,
+      "name": "독일",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03003z-09.html"
+    },
+    {
+      "i": 168,
+      "chapter": 5,
+      "order": 10,
+      "name": "프랑스",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03003z-10.html"
+    },
+    {
+      "i": 169,
+      "chapter": 5,
+      "order": 11,
+      "name": "스페인",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03003z-11.html"
+    },
+    {
+      "i": 170,
+      "chapter": 5,
+      "order": 12,
+      "name": "모나코",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03003z-12.html"
+    },
+    {
+      "i": 171,
+      "chapter": 5,
+      "order": 13,
+      "name": "이탈리아",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03003z-13.html"
+    },
+    {
+      "i": 172,
+      "chapter": 5,
+      "order": 14,
+      "name": "그리스",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03003z-14.html"
+    },
+    {
+      "i": 173,
+      "chapter": 5,
+      "order": 15,
+      "name": "터키",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03003z-15.html"
+    },
+    {
+      "i": 174,
+      "chapter": 5,
+      "order": 16,
+      "name": "두바이",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03003z-16.html"
+    },
+    {
+      "i": 175,
+      "chapter": 5,
+      "order": 17,
+      "name": "인도",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03003z-17.html"
+    },
+    {
+      "i": 176,
+      "chapter": 5,
+      "order": 18,
+      "name": "네팔",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03003z-18.html"
+    },
+    {
+      "i": 177,
+      "chapter": 5,
+      "order": 19,
+      "name": "태국",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03003z-19.html"
+    },
+    {
+      "i": 178,
+      "chapter": 5,
+      "order": 20,
+      "name": "캄보디아",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03003z-20.html"
+    },
+    {
+      "i": 179,
+      "chapter": 5,
+      "order": 21,
+      "name": "필리핀",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03003z-21.html"
+    },
+    {
+      "i": 180,
+      "chapter": 5,
+      "order": 22,
+      "name": "싱가포르",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03003z-22.html"
+    },
+    {
+      "i": 181,
+      "chapter": 5,
+      "order": 23,
+      "name": "호주",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03003z-23.html"
+    },
+    {
+      "i": 182,
+      "chapter": 5,
+      "order": 24,
+      "name": "심해의 소용돌이",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03003z-24.html"
+    },
+    {
+      "i": 183,
+      "chapter": 5,
+      "order": 25,
+      "name": "마다가스카르",
+      "hpChanged": false,
+      "rulesChanged": false,
+      "source": "https://battlecats-db.com/stage/s03003z-25.html"
+    },
+    {
+      "i": 184,
+      "chapter": 5,
+      "order": 26,
+      "name": "케냐",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03003z-26.html"
+    },
+    {
+      "i": 185,
+      "chapter": 5,
+      "order": 27,
+      "name": "사우디아라비아",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03003z-27.html"
+    },
+    {
+      "i": 186,
+      "chapter": 5,
+      "order": 28,
+      "name": "이집트",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03003z-28.html"
+    },
+    {
+      "i": 187,
+      "chapter": 5,
+      "order": 29,
+      "name": "사하라사막",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03003z-29.html"
+    },
+    {
+      "i": 188,
+      "chapter": 5,
+      "order": 30,
+      "name": "가나",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03003z-30.html"
+    },
+    {
+      "i": 189,
+      "chapter": 5,
+      "order": 31,
+      "name": "남아프리카",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03003z-31.html"
+    },
+    {
+      "i": 190,
+      "chapter": 5,
+      "order": 32,
+      "name": "아르헨티나",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03003z-32.html"
+    },
+    {
+      "i": 191,
+      "chapter": 5,
+      "order": 33,
+      "name": "이스터섬",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03003z-33.html"
+    },
+    {
+      "i": 192,
+      "chapter": 5,
+      "order": 34,
+      "name": "마추픽추",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03003z-34.html"
+    },
+    {
+      "i": 193,
+      "chapter": 5,
+      "order": 35,
+      "name": "콜롬비아",
+      "hpChanged": false,
+      "rulesChanged": false,
+      "source": "https://battlecats-db.com/stage/s03003z-35.html"
+    },
+    {
+      "i": 194,
+      "chapter": 5,
+      "order": 36,
+      "name": "자메이카",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03003z-36.html"
+    },
+    {
+      "i": 195,
+      "chapter": 5,
+      "order": 37,
+      "name": "멕시코",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03003z-37.html"
+    },
+    {
+      "i": 196,
+      "chapter": 5,
+      "order": 38,
+      "name": "할리우드",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03003z-38.html"
+    },
+    {
+      "i": 197,
+      "chapter": 5,
+      "order": 39,
+      "name": "라스베가스",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03003z-39.html"
+    },
+    {
+      "i": 198,
+      "chapter": 5,
+      "order": 40,
+      "name": "알래스카",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03003z-40.html"
+    },
+    {
+      "i": 199,
+      "chapter": 5,
+      "order": 41,
+      "name": "캐나다",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03003z-41.html"
+    },
+    {
+      "i": 200,
+      "chapter": 5,
+      "order": 42,
+      "name": "그린란드",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03003z-42.html"
+    },
+    {
+      "i": 201,
+      "chapter": 5,
+      "order": 43,
+      "name": "뉴욕",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03003z-43.html"
+    },
+    {
+      "i": 202,
+      "chapter": 5,
+      "order": 44,
+      "name": "NASA",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03003z-44.html"
+    },
+    {
+      "i": 203,
+      "chapter": 5,
+      "order": 45,
+      "name": "버뮤다",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03003z-45.html"
+    },
+    {
+      "i": 204,
+      "chapter": 5,
+      "order": 46,
+      "name": "브라질",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03003z-46.html"
+    },
+    {
+      "i": 205,
+      "chapter": 5,
+      "order": 47,
+      "name": "부유대륙",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03003z-47.html"
+    },
+    {
+      "i": 206,
+      "chapter": 5,
+      "order": 48,
+      "name": "달",
+      "hpChanged": false,
+      "rulesChanged": false,
+      "source": "https://battlecats-db.com/stage/s03003z-48.html"
+    },
+    {
+      "i": 353,
+      "chapter": 6,
+      "order": 1,
+      "name": "일본",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03004z-01.html"
+    },
+    {
+      "i": 354,
+      "chapter": 6,
+      "order": 2,
+      "name": "한국",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats.miraheze.org/wiki/Korea_(Into_the_Future)/Outbreak"
+    },
+    {
+      "i": 355,
+      "chapter": 6,
+      "order": 3,
+      "name": "중국",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03004z-03.html"
+    },
+    {
+      "i": 356,
+      "chapter": 6,
+      "order": 4,
+      "name": "몽골",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03004z-04.html"
+    },
+    {
+      "i": 357,
+      "chapter": 6,
+      "order": 5,
+      "name": "러시아",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03004z-05.html"
+    },
+    {
+      "i": 358,
+      "chapter": 6,
+      "order": 6,
+      "name": "노르웨이",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03004z-06.html"
+    },
+    {
+      "i": 359,
+      "chapter": 6,
+      "order": 7,
+      "name": "영국",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03004z-07.html"
+    },
+    {
+      "i": 360,
+      "chapter": 6,
+      "order": 8,
+      "name": "덴마크",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03004z-08.html"
+    },
+    {
+      "i": 361,
+      "chapter": 6,
+      "order": 9,
+      "name": "독일",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03004z-09.html"
+    },
+    {
+      "i": 362,
+      "chapter": 6,
+      "order": 10,
+      "name": "프랑스",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03004z-10.html"
+    },
+    {
+      "i": 363,
+      "chapter": 6,
+      "order": 11,
+      "name": "스페인",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03004z-11.html"
+    },
+    {
+      "i": 364,
+      "chapter": 6,
+      "order": 12,
+      "name": "모나코",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03004z-12.html"
+    },
+    {
+      "i": 365,
+      "chapter": 6,
+      "order": 13,
+      "name": "이탈리아",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03004z-13.html"
+    },
+    {
+      "i": 366,
+      "chapter": 6,
+      "order": 14,
+      "name": "그리스",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03004z-14.html"
+    },
+    {
+      "i": 367,
+      "chapter": 6,
+      "order": 15,
+      "name": "터키",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03004z-15.html"
+    },
+    {
+      "i": 368,
+      "chapter": 6,
+      "order": 16,
+      "name": "두바이",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03004z-16.html"
+    },
+    {
+      "i": 369,
+      "chapter": 6,
+      "order": 17,
+      "name": "인도",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03004z-17.html"
+    },
+    {
+      "i": 370,
+      "chapter": 6,
+      "order": 18,
+      "name": "네팔",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03004z-18.html"
+    },
+    {
+      "i": 371,
+      "chapter": 6,
+      "order": 19,
+      "name": "태국",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03004z-19.html"
+    },
+    {
+      "i": 372,
+      "chapter": 6,
+      "order": 20,
+      "name": "캄보디아",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03004z-20.html"
+    },
+    {
+      "i": 373,
+      "chapter": 6,
+      "order": 21,
+      "name": "필리핀",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03004z-21.html"
+    },
+    {
+      "i": 374,
+      "chapter": 6,
+      "order": 22,
+      "name": "싱가포르",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03004z-22.html"
+    },
+    {
+      "i": 375,
+      "chapter": 6,
+      "order": 23,
+      "name": "호주",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03004z-23.html"
+    },
+    {
+      "i": 376,
+      "chapter": 6,
+      "order": 24,
+      "name": "심해의 소용돌이",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats.miraheze.org/wiki/The_Great_Abyss_(Into_the_Future)/Outbreak"
+    },
+    {
+      "i": 377,
+      "chapter": 6,
+      "order": 25,
+      "name": "마다가스카르",
+      "hpChanged": false,
+      "rulesChanged": false,
+      "source": "https://battlecats-db.com/stage/s03004z-25.html"
+    },
+    {
+      "i": 378,
+      "chapter": 6,
+      "order": 26,
+      "name": "케냐",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03004z-26.html"
+    },
+    {
+      "i": 379,
+      "chapter": 6,
+      "order": 27,
+      "name": "사우디아라비아",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03004z-27.html"
+    },
+    {
+      "i": 380,
+      "chapter": 6,
+      "order": 28,
+      "name": "이집트",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03004z-28.html"
+    },
+    {
+      "i": 381,
+      "chapter": 6,
+      "order": 29,
+      "name": "사하라사막",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03004z-29.html"
+    },
+    {
+      "i": 382,
+      "chapter": 6,
+      "order": 30,
+      "name": "가나",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03004z-30.html"
+    },
+    {
+      "i": 383,
+      "chapter": 6,
+      "order": 31,
+      "name": "남아프리카",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03004z-31.html"
+    },
+    {
+      "i": 384,
+      "chapter": 6,
+      "order": 32,
+      "name": "아르헨티나",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03004z-32.html"
+    },
+    {
+      "i": 385,
+      "chapter": 6,
+      "order": 33,
+      "name": "이스터섬",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03004z-33.html"
+    },
+    {
+      "i": 386,
+      "chapter": 6,
+      "order": 34,
+      "name": "마추픽추",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03004z-34.html"
+    },
+    {
+      "i": 387,
+      "chapter": 6,
+      "order": 35,
+      "name": "콜롬비아",
+      "hpChanged": false,
+      "rulesChanged": false,
+      "source": "https://battlecats-db.com/stage/s03004z-35.html"
+    },
+    {
+      "i": 388,
+      "chapter": 6,
+      "order": 36,
+      "name": "자메이카",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03004z-36.html"
+    },
+    {
+      "i": 389,
+      "chapter": 6,
+      "order": 37,
+      "name": "멕시코",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03004z-37.html"
+    },
+    {
+      "i": 390,
+      "chapter": 6,
+      "order": 38,
+      "name": "할리우드",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03004z-38.html"
+    },
+    {
+      "i": 391,
+      "chapter": 6,
+      "order": 39,
+      "name": "라스베가스",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03004z-39.html"
+    },
+    {
+      "i": 392,
+      "chapter": 6,
+      "order": 40,
+      "name": "알래스카",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03004z-40.html"
+    },
+    {
+      "i": 393,
+      "chapter": 6,
+      "order": 41,
+      "name": "캐나다",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03004z-41.html"
+    },
+    {
+      "i": 394,
+      "chapter": 6,
+      "order": 42,
+      "name": "그린란드",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03004z-42.html"
+    },
+    {
+      "i": 395,
+      "chapter": 6,
+      "order": 43,
+      "name": "뉴욕",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03004z-43.html"
+    },
+    {
+      "i": 396,
+      "chapter": 6,
+      "order": 44,
+      "name": "NASA",
+      "hpChanged": false,
+      "rulesChanged": false,
+      "source": "https://battlecats-db.com/stage/s03004z-44.html"
+    },
+    {
+      "i": 397,
+      "chapter": 6,
+      "order": 45,
+      "name": "버뮤다",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03004z-45.html"
+    },
+    {
+      "i": 398,
+      "chapter": 6,
+      "order": 46,
+      "name": "브라질",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03004z-46.html"
+    },
+    {
+      "i": 399,
+      "chapter": 6,
+      "order": 47,
+      "name": "부유대륙",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03004z-47.html"
+    },
+    {
+      "i": 400,
+      "chapter": 6,
+      "order": 48,
+      "name": "달",
+      "hpChanged": false,
+      "rulesChanged": false,
+      "source": "https://battlecats-db.com/stage/s03004z-48.html"
+    },
+    {
+      "i": 459,
+      "chapter": 7,
+      "order": 1,
+      "name": "일본",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03005z-01.html"
+    },
+    {
+      "i": 460,
+      "chapter": 7,
+      "order": 2,
+      "name": "한국",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03005z-02.html"
+    },
+    {
+      "i": 461,
+      "chapter": 7,
+      "order": 3,
+      "name": "중국",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03005z-03.html"
+    },
+    {
+      "i": 462,
+      "chapter": 7,
+      "order": 4,
+      "name": "몽골",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03005z-04.html"
+    },
+    {
+      "i": 463,
+      "chapter": 7,
+      "order": 5,
+      "name": "러시아",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03005z-05.html"
+    },
+    {
+      "i": 464,
+      "chapter": 7,
+      "order": 6,
+      "name": "노르웨이",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03005z-06.html"
+    },
+    {
+      "i": 465,
+      "chapter": 7,
+      "order": 7,
+      "name": "영국",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03005z-07.html"
+    },
+    {
+      "i": 466,
+      "chapter": 7,
+      "order": 8,
+      "name": "덴마크",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03005z-08.html"
+    },
+    {
+      "i": 467,
+      "chapter": 7,
+      "order": 9,
+      "name": "독일",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03005z-09.html"
+    },
+    {
+      "i": 468,
+      "chapter": 7,
+      "order": 10,
+      "name": "프랑스",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03005z-10.html"
+    },
+    {
+      "i": 469,
+      "chapter": 7,
+      "order": 11,
+      "name": "스페인",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03005z-11.html"
+    },
+    {
+      "i": 470,
+      "chapter": 7,
+      "order": 12,
+      "name": "모나코",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03005z-12.html"
+    },
+    {
+      "i": 471,
+      "chapter": 7,
+      "order": 13,
+      "name": "이탈리아",
+      "hpChanged": false,
+      "rulesChanged": false,
+      "source": "https://battlecats-db.com/stage/s03005z-13.html"
+    },
+    {
+      "i": 472,
+      "chapter": 7,
+      "order": 14,
+      "name": "그리스",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03005z-14.html"
+    },
+    {
+      "i": 473,
+      "chapter": 7,
+      "order": 15,
+      "name": "터키",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03005z-15.html"
+    },
+    {
+      "i": 474,
+      "chapter": 7,
+      "order": 16,
+      "name": "두바이",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03005z-16.html"
+    },
+    {
+      "i": 475,
+      "chapter": 7,
+      "order": 17,
+      "name": "인도",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03005z-17.html"
+    },
+    {
+      "i": 476,
+      "chapter": 7,
+      "order": 18,
+      "name": "네팔",
+      "hpChanged": false,
+      "rulesChanged": false,
+      "source": "https://battlecats-db.com/stage/s03005z-18.html"
+    },
+    {
+      "i": 477,
+      "chapter": 7,
+      "order": 19,
+      "name": "태국",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03005z-19.html"
+    },
+    {
+      "i": 478,
+      "chapter": 7,
+      "order": 20,
+      "name": "캄보디아",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03005z-20.html"
+    },
+    {
+      "i": 479,
+      "chapter": 7,
+      "order": 21,
+      "name": "필리핀",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03005z-21.html"
+    },
+    {
+      "i": 480,
+      "chapter": 7,
+      "order": 22,
+      "name": "싱가포르",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03005z-22.html"
+    },
+    {
+      "i": 481,
+      "chapter": 7,
+      "order": 23,
+      "name": "호주",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03005z-23.html"
+    },
+    {
+      "i": 482,
+      "chapter": 7,
+      "order": 24,
+      "name": "심해의 소용돌이",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03005z-24.html"
+    },
+    {
+      "i": 483,
+      "chapter": 7,
+      "order": 25,
+      "name": "마다가스카르",
+      "hpChanged": false,
+      "rulesChanged": false,
+      "source": "https://battlecats-db.com/stage/s03005z-25.html"
+    },
+    {
+      "i": 484,
+      "chapter": 7,
+      "order": 26,
+      "name": "케냐",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03005z-26.html"
+    },
+    {
+      "i": 485,
+      "chapter": 7,
+      "order": 27,
+      "name": "사우디아라비아",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03005z-27.html"
+    },
+    {
+      "i": 486,
+      "chapter": 7,
+      "order": 28,
+      "name": "이집트",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03005z-28.html"
+    },
+    {
+      "i": 487,
+      "chapter": 7,
+      "order": 29,
+      "name": "사하라사막",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03005z-29.html"
+    },
+    {
+      "i": 488,
+      "chapter": 7,
+      "order": 30,
+      "name": "가나",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03005z-30.html"
+    },
+    {
+      "i": 489,
+      "chapter": 7,
+      "order": 31,
+      "name": "남아프리카",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03005z-31.html"
+    },
+    {
+      "i": 490,
+      "chapter": 7,
+      "order": 32,
+      "name": "아르헨티나",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03005z-32.html"
+    },
+    {
+      "i": 491,
+      "chapter": 7,
+      "order": 33,
+      "name": "이스터섬",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03005z-33.html"
+    },
+    {
+      "i": 492,
+      "chapter": 7,
+      "order": 34,
+      "name": "마추픽추",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03005z-34.html"
+    },
+    {
+      "i": 493,
+      "chapter": 7,
+      "order": 35,
+      "name": "콜롬비아",
+      "hpChanged": false,
+      "rulesChanged": false,
+      "source": "https://battlecats-db.com/stage/s03005z-35.html"
+    },
+    {
+      "i": 494,
+      "chapter": 7,
+      "order": 36,
+      "name": "자메이카",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03005z-36.html"
+    },
+    {
+      "i": 495,
+      "chapter": 7,
+      "order": 37,
+      "name": "멕시코",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03005z-37.html"
+    },
+    {
+      "i": 496,
+      "chapter": 7,
+      "order": 38,
+      "name": "할리우드",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03005z-38.html"
+    },
+    {
+      "i": 497,
+      "chapter": 7,
+      "order": 39,
+      "name": "라스베가스",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03005z-39.html"
+    },
+    {
+      "i": 498,
+      "chapter": 7,
+      "order": 40,
+      "name": "알래스카",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03005z-40.html"
+    },
+    {
+      "i": 499,
+      "chapter": 7,
+      "order": 41,
+      "name": "캐나다",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03005z-41.html"
+    },
+    {
+      "i": 500,
+      "chapter": 7,
+      "order": 42,
+      "name": "그린란드",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03005z-42.html"
+    },
+    {
+      "i": 501,
+      "chapter": 7,
+      "order": 43,
+      "name": "뉴욕",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03005z-43.html"
+    },
+    {
+      "i": 502,
+      "chapter": 7,
+      "order": 44,
+      "name": "NASA",
+      "hpChanged": false,
+      "rulesChanged": false,
+      "source": "https://battlecats-db.com/stage/s03005z-44.html"
+    },
+    {
+      "i": 503,
+      "chapter": 7,
+      "order": 45,
+      "name": "버뮤다",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03005z-45.html"
+    },
+    {
+      "i": 504,
+      "chapter": 7,
+      "order": 46,
+      "name": "브라질",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03005z-46.html"
+    },
+    {
+      "i": 505,
+      "chapter": 7,
+      "order": 47,
+      "name": "부유대륙",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03005z-47.html"
+    },
+    {
+      "i": 506,
+      "chapter": 7,
+      "order": 48,
+      "name": "달",
+      "hpChanged": false,
+      "rulesChanged": false,
+      "source": "https://battlecats-db.com/stage/s03005z-48.html"
+    },
+    {
+      "i": 507,
+      "chapter": 8,
+      "order": 1,
+      "name": "지구",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03006z-01.html"
+    },
+    {
+      "i": 508,
+      "chapter": 8,
+      "order": 2,
+      "name": "화성",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03006z-02.html"
+    },
+    {
+      "i": 509,
+      "chapter": 8,
+      "order": 3,
+      "name": "목성",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03006z-03.html"
+    },
+    {
+      "i": 510,
+      "chapter": 8,
+      "order": 4,
+      "name": "토성",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03006z-04.html"
+    },
+    {
+      "i": 511,
+      "chapter": 8,
+      "order": 5,
+      "name": "금성",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03006z-05.html"
+    },
+    {
+      "i": 512,
+      "chapter": 8,
+      "order": 6,
+      "name": "수성",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03006z-06.html"
+    },
+    {
+      "i": 513,
+      "chapter": 8,
+      "order": 7,
+      "name": "태양",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03006z-07.html"
+    },
+    {
+      "i": 514,
+      "chapter": 8,
+      "order": 8,
+      "name": "우라노스",
+      "hpChanged": false,
+      "rulesChanged": false,
+      "source": "https://battlecats-db.com/stage/s03006z-08.html"
+    },
+    {
+      "i": 515,
+      "chapter": 8,
+      "order": 9,
+      "name": "넵튠",
+      "hpChanged": false,
+      "rulesChanged": false,
+      "source": "https://battlecats.miraheze.org/wiki/Neptune_(Cats_of_the_Cosmos)/Outbreak"
+    },
+    {
+      "i": 516,
+      "chapter": 8,
+      "order": 10,
+      "name": "트리톤",
+      "hpChanged": false,
+      "rulesChanged": false,
+      "source": "https://battlecats.miraheze.org/wiki/Triton_(Cats_of_the_Cosmos)/Outbreak"
+    },
+    {
+      "i": 517,
+      "chapter": 8,
+      "order": 11,
+      "name": "플루토",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03006z-11.html"
+    },
+    {
+      "i": 518,
+      "chapter": 8,
+      "order": 12,
+      "name": "붉은 직사각형 성운",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03006z-12.html"
+    },
+    {
+      "i": 519,
+      "chapter": 8,
+      "order": 13,
+      "name": "에스키모 성운",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03006z-13.html"
+    },
+    {
+      "i": 520,
+      "chapter": 8,
+      "order": 14,
+      "name": "고양이눈 성운",
+      "hpChanged": false,
+      "rulesChanged": false,
+      "source": "https://battlecats-db.com/stage/s03006z-14.html"
+    },
+    {
+      "i": 521,
+      "chapter": 8,
+      "order": 15,
+      "name": "알 성운",
+      "hpChanged": false,
+      "rulesChanged": false,
+      "source": "https://battlecats-db.com/stage/s03006z-15.html"
+    },
+    {
+      "i": 522,
+      "chapter": 8,
+      "order": 16,
+      "name": "호리병박 성운",
+      "hpChanged": false,
+      "rulesChanged": false,
+      "source": "https://battlecats.miraheze.org/wiki/Calabash_Nebula_(Cats_of_the_Cosmos)/Outbreak"
+    },
+    {
+      "i": 523,
+      "chapter": 8,
+      "order": 17,
+      "name": "알타이르",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03006z-17.html"
+    },
+    {
+      "i": 524,
+      "chapter": 8,
+      "order": 18,
+      "name": "시리우스",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03006z-18.html"
+    },
+    {
+      "i": 525,
+      "chapter": 8,
+      "order": 19,
+      "name": "카노푸스",
+      "hpChanged": false,
+      "rulesChanged": false,
+      "source": "https://battlecats-db.com/stage/s03006z-19.html"
+    },
+    {
+      "i": 526,
+      "chapter": 8,
+      "order": 20,
+      "name": "베가",
+      "hpChanged": false,
+      "rulesChanged": false,
+      "source": "https://battlecats-db.com/stage/s03006z-20.html"
+    },
+    {
+      "i": 527,
+      "chapter": 8,
+      "order": 21,
+      "name": "알데바란",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03006z-21.html"
+    },
+    {
+      "i": 528,
+      "chapter": 8,
+      "order": 22,
+      "name": "베텔게우스",
+      "hpChanged": false,
+      "rulesChanged": false,
+      "source": "https://battlecats-db.com/stage/s03006z-22.html"
+    },
+    {
+      "i": 529,
+      "chapter": 8,
+      "order": 23,
+      "name": "데네브",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03006z-23.html"
+    },
+    {
+      "i": 530,
+      "chapter": 8,
+      "order": 24,
+      "name": "과자 행성",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03006z-24.html"
+    },
+    {
+      "i": 531,
+      "chapter": 8,
+      "order": 25,
+      "name": "사이타 별",
+      "hpChanged": false,
+      "rulesChanged": false,
+      "source": "https://battlecats-db.com/stage/s03006z-25.html"
+    },
+    {
+      "i": 532,
+      "chapter": 8,
+      "order": 26,
+      "name": "괴황성",
+      "hpChanged": false,
+      "rulesChanged": false,
+      "source": "https://battlecats-db.com/stage/s03006z-26.html"
+    },
+    {
+      "i": 533,
+      "chapter": 8,
+      "order": 27,
+      "name": "대마젤란 성운",
+      "hpChanged": false,
+      "rulesChanged": false,
+      "source": "https://battlecats-db.com/stage/s03006z-27.html"
+    },
+    {
+      "i": 534,
+      "chapter": 8,
+      "order": 28,
+      "name": "부타라 별",
+      "hpChanged": false,
+      "rulesChanged": false,
+      "source": "https://battlecats-db.com/stage/s03006z-28.html"
+    },
+    {
+      "i": 535,
+      "chapter": 8,
+      "order": 29,
+      "name": "모스칸다그",
+      "hpChanged": false,
+      "rulesChanged": false,
+      "source": "https://battlecats-db.com/stage/s03006z-29.html"
+    },
+    {
+      "i": 536,
+      "chapter": 8,
+      "order": 30,
+      "name": "콜론 별",
+      "hpChanged": false,
+      "rulesChanged": false,
+      "source": "https://battlecats-db.com/stage/s03006z-30.html"
+    },
+    {
+      "i": 537,
+      "chapter": 8,
+      "order": 31,
+      "name": "야키소판",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03006z-31.html"
+    },
+    {
+      "i": 538,
+      "chapter": 8,
+      "order": 32,
+      "name": "매실 별",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03006z-32.html"
+    },
+    {
+      "i": 539,
+      "chapter": 8,
+      "order": 33,
+      "name": "다라라라",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03006z-33.html"
+    },
+    {
+      "i": 540,
+      "chapter": 8,
+      "order": 34,
+      "name": "마이도무리",
+      "hpChanged": false,
+      "rulesChanged": false,
+      "source": "https://battlecats-db.com/stage/s03006z-34.html"
+    },
+    {
+      "i": 541,
+      "chapter": 8,
+      "order": 35,
+      "name": "멜토즈",
+      "hpChanged": false,
+      "rulesChanged": false,
+      "source": "https://battlecats.miraheze.org/wiki/Mertoz_(Cats_of_the_Cosmos)/Outbreak"
+    },
+    {
+      "i": 542,
+      "chapter": 8,
+      "order": 36,
+      "name": "우랄루",
+      "hpChanged": false,
+      "rulesChanged": false,
+      "source": "https://battlecats-db.com/stage/s03006z-36.html"
+    },
+    {
+      "i": 543,
+      "chapter": 8,
+      "order": 37,
+      "name": "아구하무무",
+      "hpChanged": false,
+      "rulesChanged": false,
+      "source": "https://battlecats-db.com/stage/s03006z-37.html"
+    },
+    {
+      "i": 544,
+      "chapter": 8,
+      "order": 38,
+      "name": "소모론",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03006z-38.html"
+    },
+    {
+      "i": 545,
+      "chapter": 8,
+      "order": 39,
+      "name": "아바 부아",
+      "hpChanged": false,
+      "rulesChanged": false,
+      "source": "https://battlecats-db.com/stage/s03006z-39.html"
+    },
+    {
+      "i": 546,
+      "chapter": 8,
+      "order": 40,
+      "name": "티탄",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03006z-40.html"
+    },
+    {
+      "i": 547,
+      "chapter": 8,
+      "order": 41,
+      "name": "데스스탄",
+      "hpChanged": false,
+      "rulesChanged": false,
+      "source": "https://battlecats-db.com/stage/s03006z-41.html"
+    },
+    {
+      "i": 548,
+      "chapter": 8,
+      "order": 42,
+      "name": "고릴라의 행성",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03006z-42.html"
+    },
+    {
+      "i": 549,
+      "chapter": 8,
+      "order": 43,
+      "name": "초이바트론 별",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03006z-43.html"
+    },
+    {
+      "i": 550,
+      "chapter": 8,
+      "order": 44,
+      "name": "크림슨 별",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats.miraheze.org/wiki/Crimson_Star_(Cats_of_the_Cosmos)/Outbreak"
+    },
+    {
+      "i": 551,
+      "chapter": 8,
+      "order": 45,
+      "name": "N77 성운",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03006z-45.html"
+    },
+    {
+      "i": 552,
+      "chapter": 8,
+      "order": 46,
+      "name": "안드로메다",
+      "hpChanged": false,
+      "rulesChanged": true,
+      "source": "https://battlecats-db.com/stage/s03006z-46.html"
+    },
+    {
+      "i": 553,
+      "chapter": 8,
+      "order": 47,
+      "name": "블랙홀",
+      "hpChanged": false,
+      "rulesChanged": false,
+      "source": "https://battlecats-db.com/stage/s03006z-47.html"
+    },
+    {
+      "i": 554,
+      "chapter": 8,
+      "order": 48,
+      "name": "빅뱅",
+      "hpChanged": false,
+      "rulesChanged": false,
+      "source": "https://battlecats-db.com/stage/s03006z-48.html"
+    }
+  ]
+}

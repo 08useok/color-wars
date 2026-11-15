@@ -1,0 +1,45 @@
+{
+  "fps": 30,
+  "characters": {
+    "smoke": {
+      "job": "남성 · 화재 조사관",
+      "forms": [
+        1,
+        2
+      ],
+      "frames": {
+        "idle": 60,
+        "walk": 18,
+        "attack": 30,
+        "hurt": 1
+      },
+      "walkDrawings": 6,
+      "strike": 15,
+      "source": [
+        "smoke-poses.png",
+        "smoke-walk.png"
+      ],
+      "hurt": "Single pose, both bounces supplied by combat engine"
+    },
+    "ash": {
+      "job": "여성 · 소각시설 운영 기사",
+      "forms": [
+        1,
+        2
+      ],
+      "frames": {
+        "idle": 60,
+        "walk": 18,
+        "attack": 27,
+        "hurt": 1
+      },
+      "walkDrawings": 6,
+      "strike": 12,
+      "source": [
+        "ash-poses.png",
+        "ash-walk.png"
+      ],
+      "hurt": "Single pose, both bounces supplied by combat engine"
+    }
+  }
+}

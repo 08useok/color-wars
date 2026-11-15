@@ -1258,7 +1258,7 @@ function damage(v,amount,from){
  const kbImmune=v.stats?.knockbackImmune||data.units[v.type].knockbackImmune;// 날려버린다 무효
  if(from?.stats?.push&&!kbImmune)startHitback(v,from.stats.push*fruitPushMultiplier(from,v),'push');// 날려버린다: always shoves the target back (bosses too) unless knockback-immune
  else if(from?.stats?.forceKnockback&&!isBoss&&!kbImmune){startHitback(v,HITBACK_DISTANCE,'push')}
- else if(!kbImmune&&from?.stats?.blowChance&&!from.stats.blowNot?.some(t=>hasTrait(data.units[v.type],t))&&Math.random()<from.stats.blowChance){startHitback(v,(from.stats.blowDistance||14)*fruitPushMultiplier(from,v),'push')}// 날려버린다: a chance to hurl the target far back
+ else if(!kbImmune&&from?.stats?.blowChance&&(!from.stats.blowVs||from.stats.blowVs.some(t=>hasTrait(data.units[v.type],t)))&&!from.stats.blowNot?.some(t=>hasTrait(data.units[v.type],t))&&Math.random()<from.stats.blowChance){startHitback(v,(from.stats.blowDistance||14)*fruitPushMultiplier(from,v),'push')}// blowVs restricts only the push, including enemies with multiple traits.
  else if(!kbImmune){
   const total=v.stats?.knockbacks??data.units[v.type].knockbacks;
   // Consume every crossed threshold, but play only one hitback for a single blow.
@@ -2113,8 +2113,8 @@ function pickDelay(range){return range[0]+Math.random()*(range[1]-range[0])}
 const LEGEND_FIRST_DELAY={13:[[5,26.67]],15:[[5,40]],19:[[3,40],[4,13.33],[5,13.33],[6,26.67],[7,40]],20:[[9,53.33]],22:[[3,40],[4,40]],27:[[3,40],[4,40],[5,40],[6,40],[7,40],[8,40],[9,40],[10,40],[11,40],[12,40],[13,40]],28:[[5,40]],30:[[4,40],[8,40]],32:[[4,40]],36:[[3,40],[4,40],[5,40],[6,40],[7,40]],37:[[2,40],[3,20],[4,20],[5,20],[7,40]],38:[[5,40],[6,40]],53:[[1,60]],55:[[3,40]],56:[[4,10],[5,10],[6,10],[7,10],[8,10]],63:[[3,40]],65:[[6,20],[7,20],[8,20]],75:[[3,40],[4,40]],81:[[5,26.67]],83:[[5,40]],87:[[3,40],[4,13.33],[5,13.33],[6,26.67],[7,40]],88:[[9,53.33]],90:[[3,40],[4,40]],95:[[3,40],[4,40],[5,40],[6,40],[7,40],[8,40],[9,40],[10,40],[11,40],[12,40],[13,40]],96:[[5,40]],98:[[4,40],[8,40]],100:[[4,40]],104:[[3,40],[4,40],[5,40],[6,40],[7,40]],105:[[2,40],[3,20],[4,20],[5,20],[7,40]],106:[[5,40],[6,40]],112:[[5,40],[9,40]],114:[[6,2]],115:[[7,4],[9,4]],121:[[4,0.07],[5,0.07]],122:[[10,40]],124:[[5,6.67],[6,6.67],[7,6.67]],128:[[2,0.07],[3,0.07],[4,0.07],[5,0.07]],129:[[3,0.07],[4,0.07]],130:[[6,20],[7,20]],133:[[3,0.07],[4,0.07],[7,0.07],[8,0.07],[9,0.07],[12,0.07]],134:[[6,22],[8,0.07]],137:[[1,0.07],[2,0.07],[3,0.07],[4,0.07],[5,0.07],[6,0.07],[7,0.07],[8,0.07],[9,0.07]],138:[[6,4]],140:[[0,0.07],[1,0.07],[2,0.07],[3,0.2],[4,0.27],[5,0.4],[6,0.47],[9,0.13]],141:[[5,40],[6,40]],146:[[1,0.07],[2,0.07],[3,0.07],[4,0.07],[5,0.07],[6,0.07],[7,0.07],[8,0.07],[9,0.07]],148:[[3,6.67]],150:[[2,0.07],[6,60],[9,2]],153:[[5,0.07]],154:[[12,13.33]],158:[[1,10]],162:[[6,53.33],[7,53.33],[9,6.67]],168:[[7,0.07],[8,0.07],[9,0.07]],169:[[3,0.07],[4,0.07],[5,0.07],[6,0.07],[7,0.07]],170:[[3,0.07],[4,0.07]],172:[[0,0.67],[1,0.67],[2,0.67],[3,0.67]],173:[[4,0.07],[5,0.07],[8,0.07],[9,0.07]],175:[[4,0.07],[5,0.07],[6,0.07],[7,0.07]],178:[[1,6.67],[2,20],[3,20],[4,20],[5,0.07],[6,6.67],[9,0.07]],179:[[2,0.07],[4,0.07],[5,0.07],[6,6.67]],199:[[2,0.07],[3,0.07],[4,0.07],[5,0.07],[6,0.07],[7,0.07],[8,0.07],[9,2]],200:[[3,0.07],[4,0.07],[5,0.07],[6,0.07],[7,0.07],[8,0.07],[9,0.07],[10,0.07],[11,0.07],[12,0.07],[13,0.07],[14,0.07],[15,0.07],[16,0.07]],203:[[2,2],[3,0.07],[4,8],[5,8],[6,2],[7,0.07]],207:[[12,0.07]],211:[[2,0.07],[3,0.07],[4,0.07],[5,0.07],[6,0.07],[7,0.07]],212:[[4,0.07],[5,0.07],[6,0.07],[7,0.07],[8,0.07],[9,0.07],[10,0.07],[11,0.07],[12,0.07],[13,0.07],[14,0.07]],213:[[2,0.07],[3,0.07],[4,0.07],[5,0.07]],214:[[4,0.07]],215:[[3,0.07],[4,0.07],[5,0.07],[6,0.07],[7,0.07],[8,0.07],[9,0.07],[10,0.07],[11,0.07],[12,0.07],[13,0.07],[14,0.07],[15,0.07],[16,0.07],[17,0.07]],217:[[0,0.07],[1,36.67],[2,0.07],[3,0.07],[4,0.07],[5,0.07],[6,0.07]],218:[[3,0.07],[4,0.07],[5,0.07],[6,0.07],[7,0.07],[8,0.07],[9,0.07]],219:[[0,0.07],[1,0.07],[2,0.07],[3,0.07],[4,0.07]],222:[[5,0.07],[6,0.07],[7,0.07],[8,0.07],[9,0.07],[10,0.07],[11,0.07],[12,0.07],[13,0.07],[14,0.07],[15,0.07]],224:[[5,0.07],[6,0.07],[7,0.07],[8,0.07],[9,0.07],[10,0.07],[11,0.07],[12,0.07],[13,0.07],[14,0.07],[15,0.07]],225:[[0,0.07],[1,0.07],[2,0.07],[3,0.07],[4,0.07]],229:[[0,0.07],[1,66.67],[2,133.33],[5,6.67]],231:[[1,0.07],[2,0.07],[3,0.07],[4,0.07],[5,0.07],[6,0.07],[7,0.07],[8,0.07],[9,0.07],[10,0.07]],234:[[1,0.07],[2,0.07],[3,20]],236:[[2,0.07],[3,0.07],[4,0.07],[5,0.07],[6,0.07],[7,0.07],[8,0.07],[9,0.07],[10,0.07]],238:[[5,0.07],[6,0.07],[7,0.07],[8,0.07],[9,0.07],[10,0.07],[11,0.07],[12,0.07]],239:[[0,0.07],[1,0.07]],242:[[1,0.07],[2,0.07],[3,0.07],[4,0.07]],244:[[3,0.07],[4,0.07],[5,0.07],[6,0.07],[7,0.07],[8,0.07],[9,0.07],[10,0.07],[11,0.07],[12,0.07],[13,0.07],[14,0.07],[15,0.07],[16,0.07],[17,0.07],[18,0.07]],246:[[4,0.07],[5,0.07],[6,0.07]],248:[[5,0.07],[6,0.07],[7,0.07]],252:[[4,0.07],[5,0.07],[6,0.07]],253:[[0,0.67],[1,0.67],[2,0.67],[3,0.67],[4,0.67],[5,0.67],[6,0.67],[7,0.67],[8,0.67]],255:[[7,0.07],[8,0.07],[9,0.07],[10,0.07],[11,0.07],[12,0.07]],256:[[4,0.07],[5,0.07],[6,0.07]],260:[[7,0.07],[8,0.07],[9,0.07]],262:[[1,0.07],[2,0.07],[3,0.07],[4,0.07],[5,0.07],[6,0.07],[7,0.07],[8,0.07]]};
 for(const [k,list] of Object.entries(LEGEND_FIRST_DELAY))for(const [i,s] of list){const r=STAGE_SPAWNS[legendIdx(+k)]?.[i];if(r&&r.at.hp!==undefined&&!r.firstDelay)r.firstDelay=s}
 function updateStageSpawns(dt){
- const hpPct=data.bases.enemy.hp/data.bases.enemy.max*100,cap=maxEnemies(selectedStage);
- let alive=game.units.filter(u=>!u.ally&&u.hp>0).length+game.defeated.filter(v=>!v.ally&&v.reviveAt!==undefined).length;const ready=[];// 좀비 웅덩이도 적 수 제한에 포함 (원작)
+ const hpPct=data.bases.enemy.hp/data.bases.enemy.max*100,cap=maxEnemies(selectedStage),timerEpsilon=STAGES[selectedStage]?.outbreakSource?1e-9:0;
+ let alive=game.units.filter(u=>!u.ally&&u.hp>0).length+game.defeated.filter(v=>!v.ally&&v.reviveAt!==undefined).length+((STAGES[selectedStage]?.zombieOf??-1)>=0?(game.burrowingCount||0):0);const ready=[];// 침공전은 잠복 중 좀비·부활 웅덩이도 적 상한에 포함
  for(const r of game.spawnRules){
   if(r.count!==undefined&&r.spawned>=r.count)continue;
   if(!r.triggered){
@@ -2123,7 +2123,7 @@ function updateStageSpawns(dt){
    r.triggered=true;r.clock=r.firstDelay||0;
   }
   r.clock-=dt;
-  if(r.clock<=0)ready.push(r);
+  if(r.clock<=timerEpsilon)ready.push(r);
  }
  // At the cap, a held rule's clock keeps running negative, so a freed slot goes to whoever
  // has waited longest instead of the first rule in the list (Hollywood: cap 2, Hippoe/Pigge every 1~2s).
@@ -3153,7 +3153,7 @@ function codexTraitBadges(d){const b=[attackTypeOf(d)+' 공격'];for(const t of 
  if(d.rage)b.push(`마지막 히트백 시 공격력 +${Math.round(d.rage*100)}%`);
  if(d.surge)b.push('열파');
  if(d.critChance)b.push(`크리티컬(${freqWord(d.critChance)})`);
- if(d.blowChance)b.push(d.blowNot?`메탈 제외 모든 적을 날려버린다(${freqWord(d.blowChance)})`:`날려버린다(${freqWord(d.blowChance)})`);
+ if(d.blowChance)b.push(d.blowVs?`${d.blowVs.map(t=>TRAIT_TARGET[t]||t).join('·')}을 날려버린다(${freqWord(d.blowChance)})`:d.blowNot?`메탈 제외 모든 적을 날려버린다(${freqWord(d.blowChance)})`:`날려버린다(${freqWord(d.blowChance)})`);
  if(d.killGold)b.push(`격파시 머니 UP +${Math.round(d.killGold*100)}%`);
  if(d.multiHit)b.push(`${d.multiHit}회 연속 공격`);
  if(d.zombieKiller)b.push('좀비 킬러');

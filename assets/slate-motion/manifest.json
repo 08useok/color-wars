@@ -1,0 +1,20 @@
+{
+  "fps": 30,
+  "forms": [
+    1,
+    2
+  ],
+  "frames": {
+    "idle": 60,
+    "walk": 18,
+    "attack": 24,
+    "hurt": 1
+  },
+  "walkDrawings": 6,
+  "attackStrike": 9,
+  "hurt": "Single drawing; both hitback bounces supplied by combat engine",
+  "source": [
+    "source-poses-tiles.png",
+    "source-walk-tiles.png"
+  ]
+}

@@ -1,0 +1,479 @@
+{
+  "date": "2026-11-15",
+  "main": "zombie-rares-benchmark-2026-11-15.json",
+  "games": 13,
+  "budgetProbe": {
+    "map": 595,
+    "name": "고양이들의 침묵",
+    "description": "Simulation-only counterfactual: Ash cost=0; all other stats unchanged. Not a proposed balance change.",
+    "rows": [
+      {
+        "variant": "baseline",
+        "seed": 1,
+        "policy": "auto",
+        "id": 0,
+        "win": true,
+        "timeout": false,
+        "seconds": 237,
+        "allyHp": 60000,
+        "enemyHp": 0
+      },
+      {
+        "variant": "baseline",
+        "seed": 1,
+        "policy": "smart2",
+        "id": 1,
+        "win": false,
+        "timeout": false,
+        "seconds": 139.5,
+        "allyHp": 0,
+        "enemyHp": 986956
+      },
+      {
+        "variant": "ash",
+        "seed": 1,
+        "policy": "auto",
+        "id": 2,
+        "win": false,
+        "timeout": true,
+        "seconds": 300,
+        "allyHp": 60000,
+        "enemyHp": 986956
+      },
+      {
+        "variant": "ash",
+        "seed": 1,
+        "policy": "smart2",
+        "id": 3,
+        "win": false,
+        "timeout": true,
+        "seconds": 300,
+        "allyHp": 60000,
+        "enemyHp": 986956
+      },
+      {
+        "variant": "freeAsh",
+        "seed": 1,
+        "policy": "auto",
+        "id": 4,
+        "win": false,
+        "timeout": true,
+        "seconds": 300,
+        "allyHp": 60000,
+        "enemyHp": 634768
+      },
+      {
+        "variant": "freeAsh",
+        "seed": 1,
+        "policy": "smart2",
+        "id": 5,
+        "win": true,
+        "timeout": false,
+        "seconds": 287.03,
+        "allyHp": 60000,
+        "enemyHp": 0
+      },
+      {
+        "variant": "freeAsh",
+        "seed": 2,
+        "policy": "auto",
+        "id": 6,
+        "win": false,
+        "timeout": true,
+        "seconds": 300,
+        "allyHp": 60000,
+        "enemyHp": 79745
+      },
+      {
+        "variant": "freeAsh",
+        "seed": 2,
+        "policy": "smart2",
+        "id": 7,
+        "win": true,
+        "timeout": false,
+        "seconds": 280.1,
+        "allyHp": 60000,
+        "enemyHp": 0
+      },
+      {
+        "variant": "freeAsh",
+        "seed": 3,
+        "policy": "auto",
+        "id": 8,
+        "win": true,
+        "timeout": false,
+        "seconds": 272.17,
+        "allyHp": 60000,
+        "enemyHp": 0
+      },
+      {
+        "variant": "freeAsh",
+        "seed": 3,
+        "policy": "smart2",
+        "id": 9,
+        "win": false,
+        "timeout": true,
+        "seconds": 300,
+        "allyHp": 60000,
+        "enemyHp": 986956
+      }
+    ]
+  },
+  "deploymentProbe": [
+    {
+      "variant": "baseline",
+      "policy": "auto",
+      "win": true,
+      "timeout": false,
+      "seconds": 237,
+      "allyHp": 60000,
+      "enemyHp": 0,
+      "frames": 7110,
+      "deployments": {
+        "blue": 78,
+        "purple": 27,
+        "yellow": 34,
+        "red": 119
+      },
+      "money": 15800,
+      "remainingAllies": [
+        {
+          "type": "blue",
+          "hp": 9315,
+          "x": 15.833333333333373
+        },
+        {
+          "type": "blue",
+          "hp": 62887,
+          "x": 15.874999999999945
+        },
+        {
+          "type": "purple",
+          "hp": 39300,
+          "x": 31.333333333333282
+        },
+        {
+          "type": "yellow",
+          "hp": 39784.79999999999,
+          "x": 38.83333333333321
+        },
+        {
+          "type": "red",
+          "hp": 5913,
+          "x": 30.199999999999115
+        },
+        {
+          "type": "red",
+          "hp": 13491,
+          "x": 30.199999999999157
+        },
+        {
+          "type": "yellow",
+          "hp": 116550,
+          "x": 34.166666666666416
+        },
+        {
+          "type": "purple",
+          "hp": 76878,
+          "x": 37.4999999999997
+        },
+        {
+          "type": "red",
+          "hp": 28647,
+          "x": 30.199999999999214
+        },
+        {
+          "type": "blue",
+          "hp": 10153,
+          "x": 32.624999999999986
+        },
+        {
+          "type": "red",
+          "hp": 36225,
+          "x": 40.79999999999933
+        },
+        {
+          "type": "red",
+          "hp": 36225,
+          "x": 52.7999999999995
+        },
+        {
+          "type": "blue",
+          "hp": 55309,
+          "x": 32.666666666666615
+        },
+        {
+          "type": "red",
+          "hp": 36225,
+          "x": 64.79999999999967
+        },
+        {
+          "type": "yellow",
+          "hp": 116550,
+          "x": 69.3333333333328
+        },
+        {
+          "type": "blue",
+          "hp": 100465,
+          "x": 41.95833333333322
+        },
+        {
+          "type": "red",
+          "hp": 36225,
+          "x": 76.79999999999984
+        },
+        {
+          "type": "purple",
+          "hp": 76878,
+          "x": 82.66666666666652
+        },
+        {
+          "type": "red",
+          "hp": 36225,
+          "x": 88.79999999999998
+        }
+      ]
+    },
+    {
+      "variant": "ash",
+      "policy": "auto",
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 60000,
+      "enemyHp": 986956,
+      "frames": 9000,
+      "deployments": {
+        "blue": 99,
+        "ash": 38,
+        "purple": 34,
+        "yellow": 43,
+        "red": 150
+      },
+      "money": 15800,
+      "remainingAllies": [
+        {
+          "type": "ash",
+          "hp": 4422.000000000007,
+          "x": 43.066666666665974
+        },
+        {
+          "type": "ash",
+          "hp": 18000,
+          "x": 43.0666666666659
+        },
+        {
+          "type": "ash",
+          "hp": 30000,
+          "x": 41.46666666666581
+        },
+        {
+          "type": "ash",
+          "hp": 36000,
+          "x": 52.399999999999054
+        },
+        {
+          "type": "yellow",
+          "hp": 8108.699999999997,
+          "x": 48.00000000000035
+        },
+        {
+          "type": "ash",
+          "hp": 48000,
+          "x": 50.93333333333229
+        },
+        {
+          "type": "yellow",
+          "hp": 65550,
+          "x": 38.00000000000009
+        },
+        {
+          "type": "red",
+          "hp": 6225,
+          "x": 36.79999999999907
+        },
+        {
+          "type": "red",
+          "hp": 6225,
+          "x": 48.199999999999235
+        },
+        {
+          "type": "yellow",
+          "hp": 116550,
+          "x": 36.499999999999716
+        },
+        {
+          "type": "ash",
+          "hp": 60000,
+          "x": 49.46666666666553
+        },
+        {
+          "type": "purple",
+          "hp": 76878,
+          "x": 39.66666666666634
+        },
+        {
+          "type": "red",
+          "hp": 36225,
+          "x": 36.79999999999927
+        },
+        {
+          "type": "blue",
+          "hp": 10465,
+          "x": 42.791666666666735
+        },
+        {
+          "type": "red",
+          "hp": 36225,
+          "x": 47.99999999999943
+        },
+        {
+          "type": "blue",
+          "hp": 70465,
+          "x": 42.95833333333328
+        },
+        {
+          "type": "red",
+          "hp": 36225,
+          "x": 59.9999999999996
+        },
+        {
+          "type": "yellow",
+          "hp": 116550,
+          "x": 71.6666666666662
+        },
+        {
+          "type": "red",
+          "hp": 36225,
+          "x": 71.99999999999977
+        },
+        {
+          "type": "blue",
+          "hp": 100465,
+          "x": 52.79166666666651
+        },
+        {
+          "type": "ash",
+          "hp": 60000,
+          "x": 81.59999999999968
+        },
+        {
+          "type": "purple",
+          "hp": 76878,
+          "x": 84.83333333333324
+        },
+        {
+          "type": "red",
+          "hp": 36225,
+          "x": 83.99999999999994
+        }
+      ]
+    },
+    {
+      "variant": "freeAsh",
+      "policy": "smart2",
+      "win": true,
+      "timeout": false,
+      "seconds": 287.03,
+      "allyHp": 60000,
+      "enemyHp": 0,
+      "frames": 8611,
+      "deployments": {
+        "blue": 95,
+        "purple": 32,
+        "yellow": 41,
+        "red": 144,
+        "ash": 36
+      },
+      "money": 15800,
+      "remainingAllies": [
+        {
+          "type": "blue",
+          "hp": 100465,
+          "x": 15.958333333333231
+        },
+        {
+          "type": "ash",
+          "hp": 13453.200000000004,
+          "x": 68.93333333332751
+        },
+        {
+          "type": "ash",
+          "hp": 22484.4,
+          "x": 79.33333333332872
+        },
+        {
+          "type": "ash",
+          "hp": 36000,
+          "x": 78.53333333333008
+        },
+        {
+          "type": "yellow",
+          "hp": 14550,
+          "x": 75.33333333333138
+        },
+        {
+          "type": "ash",
+          "hp": 48000,
+          "x": 71.19999999999777
+        },
+        {
+          "type": "yellow",
+          "hp": 59108.7,
+          "x": 65.66666666666524
+        },
+        {
+          "type": "blue",
+          "hp": 10465,
+          "x": 69.33333333333283
+        },
+        {
+          "type": "purple",
+          "hp": 46878,
+          "x": 77.66666666666598
+        },
+        {
+          "type": "red",
+          "hp": 6225,
+          "x": 75.39999999999962
+        },
+        {
+          "type": "ash",
+          "hp": 60000,
+          "x": 69.73333333333242
+        },
+        {
+          "type": "yellow",
+          "hp": 110108.7,
+          "x": 65.66666666666603
+        },
+        {
+          "type": "blue",
+          "hp": 55309,
+          "x": 68.95833333333306
+        },
+        {
+          "type": "red",
+          "hp": 28647,
+          "x": 66.3999999999997
+        },
+        {
+          "type": "red",
+          "hp": 36225,
+          "x": 76.59999999999984
+        },
+        {
+          "type": "blue",
+          "hp": 100465,
+          "x": 66.87499999999982
+        },
+        {
+          "type": "red",
+          "hp": 36225,
+          "x": 88.59999999999998
+        }
+      ]
+    }
+  ],
+  "interpretation": "Ash timed out with the castle undamaged. Cost=0 restored one smart2 win but also changes buy priority; this does not isolate money starvation. Observed Blue/Purple deployment rates were nearly unchanged. Do not infer cost alone as the cause."
+}

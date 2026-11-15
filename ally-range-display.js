@@ -10,6 +10,12 @@
   }
   if(label==='사각지대'&&codexUnit)dd.textContent=catRange(deadZone(codexUnit))+' 이내';
  }
+ if(codexTab==='ally'){
+  const s=codexUnit?.stats;
+  if(s)for(const dt of document.querySelectorAll('#codexExtra .codex-review-numbers dt'))if(dt.textContent==='사거리')dt.nextElementSibling.textContent=String(catRange(s.range));
+  const review=document.querySelector('#codexExtra .codex-review');
+  if(review)for(const p of review.querySelectorAll('p'))if(p.textContent.includes('표·총평 공통:'))p.textContent=p.textContent.replace('사거리는 게임 내 단위','사거리는 냥코식 단위');
+ }
  return out;
 };}
 {const before=renderUnitLevels;renderUnitLevels=function(){

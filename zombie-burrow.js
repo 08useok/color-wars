@@ -30,7 +30,12 @@ update=function(dt){
   var hidden=game.units.filter(u=>u.burrowing);
   if(hidden.length)game.units=game.units.filter(u=>!u.burrowing);
  }
- _zbUpdate.apply(this,arguments);
+ // Retain the census while buried units are absent from combat targeting.
+ const censusGame=game,previousCensus=game?.burrowingCount;
+ if(censusGame)censusGame.burrowingCount=typeof hidden==='undefined'?0:hidden.filter(u=>!u.ally&&u.hp>0).length;
+ try{_zbUpdate.apply(this,arguments);}finally{
+  if(censusGame){if(previousCensus===undefined)delete censusGame.burrowingCount;else censusGame.burrowingCount=previousCensus;}
+ }
  if(typeof hidden!=='undefined'&&hidden.length&&game&&game.units){
   const end=data.bases.ally.frontX??data.bases.ally.x;
   for(const z of hidden){

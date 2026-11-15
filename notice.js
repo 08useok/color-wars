@@ -2,9 +2,12 @@
 // v1 세계편 (first push, 2026-09-24) · v2 레전드 스토리 (09-30) · v3 미래편 1장 (10-03) · v4 미래편 2장 + 3진 (10-06) · v5 미래편 3장 (10-08) · v6 우주편 1장 (10-09) · v7 우주편 2장 (10-22).
 // User release rule (2026-10-18): bump PATCH for every commit-and-push release unless an explicit version is requested; do not bump twice when already prepared.
 // A new NOTICE.version shows the notice once on load; the 공지 button on the stage screen reopens it.
-const GAME_VERSION='8.4.2';
-const NOTICE={version:GAME_VERSION,date:'2026-11-10',title:`v${GAME_VERSION} 업데이트`,html:`
+const GAME_VERSION='8.5.0';
+const NOTICE={version:GAME_VERSION,date:'2026-11-15',title:`v${GAME_VERSION} 업데이트`,html:`
 <p class="notice-lead">지금까지 <b>세계편 1~3장 · 미래편 1~3장 · 우주편 1~3장 · 레전드 스토리 1~49장 · 신레전드 0~18장</b>을 담았습니다.</p>
+<h3>🧟 v8.5.0 좀비 전선 정비</h3>
+<p>좀비 대항 레어 <b>슬레이트·스모크·애쉬</b>가 합류했습니다. 각각 좀비 밀치기·범위 정지·맷집을 맡으며, 1·2진 전용 모션과 도감 총평을 추가했습니다.</p>
+<p>세계편 1~3장·미래편 1~3장·우주편 1장 <b>좀비 습격 336곳</b>의 편성·출현 시간·성 체력 조건을 원작 자료에 맞춰 정비했습니다. 보스 등장 대기시간과 땅속 이동 중인 적의 출현 제한 계산도 수정했습니다. 기존 클리어 기록과 보상 체계는 유지됩니다.</p>
 <h3>📚 v8.4.2 문서 정리</h3>
 <p>기획·전투·대포 문서를 주제별 종합 문서 6개로 통합하고, 기존 세부 기록과 문서 간 연결을 보존했습니다. 게임 능력치와 저장 방식은 유지됩니다.</p>
 <h3>📦 v8.4.1 배포 방식 개선</h3>

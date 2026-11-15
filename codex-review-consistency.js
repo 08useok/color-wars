@@ -68,7 +68,7 @@ function codexReviewAbilities(s){
  if(s.barrierBreak)a.push('베리어 브레이커 '+p(s.barrierBreak)+'. 일반 타격의 베리어 임계값과 별도로 판정됩니다.');
  if(s.waveBlock)a.push('파동 스토퍼로 적 파동이 뒤쪽 아군에게 이어지는 것을 막습니다.');
  if(s.pull)a.push('적을 '+n(s.pullDistance||3)+'만큼 당깁니다. 보스는 당기지 못하며 보스에게 주는 피해는 30% 늘어납니다.');
- if(s.push||s.blowChance)a.push(s.push?'적을 기본 '+n(s.push)+'만큼 날려 보냅니다.':'적을 '+p(s.blowChance)+' 확률로 기본 '+n(s.blowDistance||14)+'만큼 날려 보냅니다.');
+ if(s.push||s.blowChance)a.push(s.push?'적을 기본 '+n(s.push)+'만큼 날려 보냅니다.':(s.blowVs?.map(t=>TRAIT_TARGET[t]||t).join('·')||'적')+'을 '+p(s.blowChance)+' 확률로 기본 '+n(s.blowDistance||14)+'만큼 날려 보냅니다.');
  if(s.wave)a.push('공격 시 '+p(s.wave.chance)+' 확률의 파동: 기본 공격력의 '+n(s.wave.mult||1)+'배, 파동 도달 거리 '+n(s.wave.reach)+'.');
  if(s.surge)a.push('열파 추가 공격: '+n(s.surge.dur)+'초 동안 '+n(s.surge.tick)+'초 간격으로 기본 공격력의 '+n(s.surge.mult)+'배 피해. 위치가 맞아야 적중합니다.');
  if(s.killGold)a.push('직접 처치 보상금이 '+n(1+s.killGold)+'배가 됩니다.');

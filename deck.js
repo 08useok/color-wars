@@ -18,8 +18,8 @@ function deckCounterReasons(s,trait){
   if(s.freezeChance>0)reasons.push(prefix+'정지');
   if(s.slowChance>0)reasons.push(prefix+'느리게');
   if(s.atkDownChance>0&&s.atkDownPct>0)reasons.push(prefix+'공격력 다운');
-  if(s.blowChance>0)reasons.push(prefix+'날려버리기');
  }
+ if(s.blowChance>0&&(s.blowVs?s.blowVs.includes(trait):!s.statusVs?.length||s.statusVs.includes(trait)))reasons.push((s.blowVs?.length||s.statusVs?.length?'':'공통 ')+'날려버리기');
  return [...new Set(reasons)];
 }
 const ENDGAME_DECK=['red','yellow','brick','indigo','ribbonorange','rainbow','cornflower','khaki','silver','fusioncream'];
