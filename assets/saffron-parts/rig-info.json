@@ -4,27 +4,205 @@
   "metadata": "parts.js",
   "character": "saffron",
   "animations": {
-    "idle": {"cycleSeconds": 2, "expression": "idle", "blinkForm1": true},
-    "walk": {"cyclesPerSecond": 1.3, "expression": "idle"},
-    "attack": {"cycleSeconds": 1.6, "expression": "attack", "spiceEffectPhase": [0.25, 0.6]},
-    "hurt": {"cycleSeconds": 1, "expression": "hurt", "bounces": 2}
-  },
-  "form1": {"parts": 16, "headIncludes": ["round body", "scarf"], "independent": ["eyes", "mouth", "left hand", "right hand", "left foot", "right foot", "spoon", "pouch"]},
-  "form2": {
-    "parts": 16,
-    "headIncludes": ["hair", "scarf"],
-    "chains": [["shoulderL", "elbowL", "leftHand"], ["shoulderR", "elbowR", "rightHand"]],
-    "upperArmLength": 39,
-    "forearmLength": 36,
-    "props": {"spoon": "leftHand", "pouch": "rightHand"},
-    "jointImageAnchors": {
-      "upper-left": [[0.70, 0.14], [0.24, 0.88]],
-      "upper-right": [[0.24, 0.14], [0.77, 0.88]],
-      "fore-left": [[0.70, 0.13], [0.24, 0.86]],
-      "fore-right": [[0.25, 0.13], [0.73, 0.86]],
-      "leg-left": [[0.63, 0.08], [0.44, 0.91]],
-      "leg-right": [[0.63, 0.08], [0.44, 0.91]]
+    "idle": {
+      "cycleSeconds": 2,
+      "expression": "idle",
+      "blinkForm1": true
+    },
+    "walk": {
+      "cyclesPerSecond": 1.3,
+      "expression": "idle"
+    },
+    "attack": {
+      "cycleSeconds": 1.6,
+      "expression": "attack",
+      "spiceEffectPhase": [
+        0.25,
+        0.6
+      ]
+    },
+    "hurt": {
+      "cycleSeconds": 1,
+      "expression": "hurt",
+      "bounces": 2
     }
   },
-  "status": "parts and standalone motion preview only; battle stats and gacha are not registered"
+  "form1": {
+    "parts": 16,
+    "headIncludes": [
+      "round body",
+      "scarf"
+    ],
+    "independent": [
+      "eyes",
+      "mouth",
+      "left hand",
+      "right hand",
+      "left foot",
+      "right foot",
+      "spoon",
+      "pouch"
+    ]
+  },
+  "form2": {
+    "parts": 16,
+    "headIncludes": [
+      "hair",
+      "scarf"
+    ],
+    "chains": [
+      [
+        "shoulderL",
+        "leftHand"
+      ],
+      [
+        "shoulderR",
+        "rightHand"
+      ]
+    ],
+    "props": {
+      "spoon": "leftHand",
+      "pouch": "rightHand"
+    },
+    "jointImageAnchors": {
+      "upper-left": [
+        [
+          0.7,
+          0.14
+        ],
+        [
+          0.24,
+          0.88
+        ]
+      ],
+      "upper-right": [
+        [
+          0.24,
+          0.14
+        ],
+        [
+          0.77,
+          0.88
+        ]
+      ],
+      "fore-left": [
+        [
+          0.7,
+          0.13
+        ],
+        [
+          0.24,
+          0.86
+        ]
+      ],
+      "fore-right": [
+        [
+          0.25,
+          0.13
+        ],
+        [
+          0.73,
+          0.86
+        ]
+      ],
+      "leg-left": [
+        [
+          0.63,
+          0.08
+        ],
+        [
+          0.44,
+          0.91
+        ]
+      ],
+      "leg-right": [
+        [
+          0.63,
+          0.08
+        ],
+        [
+          0.44,
+          0.91
+        ]
+      ]
+    },
+    "armLength": 62,
+    "legLength": 57,
+    "unusedReferenceParts": [
+      "upper-left",
+      "upper-right"
+    ]
+  },
+  "status": "User-approved v7 rig, integrated into battle/codex for release 8.6.1",
+  "connectionFix": {
+    "version": 2,
+    "arms": "Use each complete forearm source once, rotating at the shoulder with a fixed 62px shoulder-to-hand distance. Upper-arm sources are retained as references, not stacked.",
+    "legs": "Rotate intact legs at hips with fixed 57px anchors; no gait stretching.",
+    "props": "Grip at opaque handle/rim pixels with hands in front. Form1 feet pivot at the ankle, overlapped with the body."
+  },
+  "faceRegistration": {
+    "version": 3,
+    "anchor": "midpoint of two main eye components; eyebrow bounds excluded",
+    "mouth": "upper lip fixed; expression height capped above chin",
+    "sharedHeadTransform": true
+  },
+  "headAlignment": {
+    "version": 6,
+    "form1": [
+      20,
+      -99
+    ],
+    "form2": [
+      22,
+      -231
+    ],
+    "basis": "Largest connected golden face region midpoint, aligned to body center rather than scarf-inclusive image bounds.",
+    "measurements": {
+      "1": {
+        "skin": {
+          "area": 22315,
+          "cx": 101.15142280976922,
+          "box": [
+            13,
+            81,
+            202,
+            237
+          ]
+        },
+        "faceMid": 107.5,
+        "offset": -19.9434628975265,
+        "headX": 20
+      },
+      "2": {
+        "skin": {
+          "area": 11228,
+          "cx": 118.2310295689348,
+          "box": [
+            55,
+            109,
+            192,
+            241
+          ]
+        },
+        "faceMid": 123.5,
+        "offset": -22.47670807453416,
+        "headX": 22
+      }
+    }
+  },
+  "eyesAndShoulders": {
+    "version": 7,
+    "form1EyeAndLipX": -19.9434628975,
+    "form2Shoulders": [
+      [
+        -30,
+        -154
+      ],
+      [
+        26,
+        -154
+      ]
+    ],
+    "layering": "Full arms behind torso; only hand pixels overlay props. The shoulder roots sit inside the torso outline."
+  }
 }

@@ -6,6 +6,7 @@ if(typeof SAFFRON_GAME_ATLASES!=='undefined'){
   evolved:'크림색 상인 코트와 향신료 주머니를 갖춘 사프. 긴 숟가락으로 향신료를 멀리 흩뿌린다.'};
  BUSTERS75.saffron=spec;registerBuster75('saffron',spec);
  RARE_STRIKE.saffron=1;
+ PROFILE_ART.saffron=[1,2].map(form=>'assets/saffron-parts/saffron_'+form+'-profile.webp?v=6');
  ROLES.saffron='원거리 범위 · 고대종·천사 초데미지·느리게 · 고대의 저주 무효';
  ACQUIRE_TEXT.saffron='고대·천사 바스터즈 전용 뽑기로 획득';
  if(typeof BUSTERS75_BANNERS!=='undefined'){

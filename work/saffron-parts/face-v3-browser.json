@@ -1,0 +1,121 @@
+{
+  "errors": [],
+  "results": [
+    {
+      "mode": "idle",
+      "face": [
+        {
+          "eyes": "eyes-idle",
+          "mouth": "mouth-idle",
+          "eyeAnchor": [
+            -18.490654205600002,
+            -85.6728971963
+          ],
+          "mouthAnchor": [
+            -19,
+            -66.84615384615384
+          ]
+        },
+        {
+          "eyes": "eyes-idle",
+          "mouth": "mouth-idle",
+          "eyeAnchor": [
+            -28.4322033898,
+            -200.8559322034
+          ],
+          "mouthAnchor": [
+            -28,
+            -183.34684684684686
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "walk",
+      "face": [
+        {
+          "eyes": "eyes-idle",
+          "mouth": "mouth-idle",
+          "eyeAnchor": [
+            -18.490654205600002,
+            -85.6728971963
+          ],
+          "mouthAnchor": [
+            -19,
+            -66.84615384615384
+          ]
+        },
+        {
+          "eyes": "eyes-idle",
+          "mouth": "mouth-idle",
+          "eyeAnchor": [
+            -28.4322033898,
+            -200.8559322034
+          ],
+          "mouthAnchor": [
+            -28,
+            -183.34684684684686
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "attack",
+      "face": [
+        {
+          "eyes": "eyes-attack",
+          "mouth": "mouth-attack",
+          "eyeAnchor": [
+            -18.490654205600002,
+            -85.6728971963
+          ],
+          "mouthAnchor": [
+            -19,
+            -66.84615384615384
+          ]
+        },
+        {
+          "eyes": "eyes-attack",
+          "mouth": "mouth-attack",
+          "eyeAnchor": [
+            -28.4322033898,
+            -200.8559322034
+          ],
+          "mouthAnchor": [
+            -28,
+            -183.34684684684686
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "hurt",
+      "face": [
+        {
+          "eyes": "eyes-hurt",
+          "mouth": "mouth-hurt",
+          "eyeAnchor": [
+            -18.490654205600002,
+            -85.6728971963
+          ],
+          "mouthAnchor": [
+            -19,
+            -66.84615384615384
+          ]
+        },
+        {
+          "eyes": "eyes-hurt",
+          "mouth": "mouth-hurt",
+          "eyeAnchor": [
+            -28.4322033898,
+            -200.8559322034
+          ],
+          "mouthAnchor": [
+            -28,
+            -183.34684684684686
+          ]
+        }
+      ]
+    }
+  ]
+}
