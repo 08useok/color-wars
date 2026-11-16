@@ -1,0 +1,106 @@
+{
+  "chapters": [
+    {
+      "name": "학교에 숨어든 악의",
+      "entries": 6,
+      "title": "🗺️ 학원 분쟁 유적"
+    },
+    {
+      "name": "우무 광맥",
+      "entries": 6,
+      "title": "🗺️ 털 많은 갱도"
+    },
+    {
+      "name": "만취 제철소",
+      "entries": 6,
+      "title": "🗺️ 프롤레타리아의 상자"
+    }
+  ],
+  "enemies": [
+    {
+      "id": "fenrirurs",
+      "name": "펜리르와 우르스",
+      "modes": [
+        {
+          "mode": "walk",
+          "w": 203,
+          "h": 155,
+          "position": "-207px 0px"
+        },
+        {
+          "mode": "attack",
+          "w": 306,
+          "h": 350,
+          "position": "-2966px -163px"
+        },
+        {
+          "mode": "hurt",
+          "w": 233,
+          "h": 137,
+          "position": "-736px -1345px"
+        }
+      ],
+      "image": [
+        4073,
+        1624
+      ]
+    },
+    {
+      "id": "waninator",
+      "name": "와니네이터",
+      "modes": [
+        {
+          "mode": "walk",
+          "w": 79,
+          "h": 36,
+          "position": "-158px 0px"
+        },
+        {
+          "mode": "attack",
+          "w": 88,
+          "h": 30,
+          "position": "-1275px 0px"
+        },
+        {
+          "mode": "hurt",
+          "w": 74,
+          "h": 68,
+          "position": "-1677px 0px"
+        }
+      ],
+      "image": [
+        1751,
+        68
+      ]
+    },
+    {
+      "id": "gobble",
+      "name": "독 칠면조",
+      "modes": [
+        {
+          "mode": "walk",
+          "w": 87,
+          "h": 79,
+          "position": "-90px 0px"
+        },
+        {
+          "mode": "attack",
+          "w": 99,
+          "h": 95,
+          "position": "-3930px 0px"
+        },
+        {
+          "mode": "hurt",
+          "w": 94,
+          "h": 123,
+          "position": "-3089px -98px"
+        }
+      ],
+      "image": [
+        4029,
+        221
+      ]
+    }
+  ],
+  "errors": []
+}

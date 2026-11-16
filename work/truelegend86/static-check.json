@@ -1,0 +1,10 @@
+{
+  "maps": 18,
+  "rules": 148,
+  "enemies": 3,
+  "save": true,
+  "unlock": true,
+  "poison": true,
+  "hpDelay": true,
+  "originalsUnchanged": true
+}

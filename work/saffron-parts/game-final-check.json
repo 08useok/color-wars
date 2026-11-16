@@ -1,0 +1,60 @@
+{
+  "reports": [
+    {
+      "form": 1,
+      "poses": [
+        {
+          "mode": "idle",
+          "hash": 202777500
+        },
+        {
+          "mode": "walk",
+          "hash": 3163954409
+        },
+        {
+          "mode": "attack",
+          "hash": 289523836
+        },
+        {
+          "mode": "hurt",
+          "hash": 4219923211
+        }
+      ]
+    },
+    {
+      "form": 2,
+      "poses": [
+        {
+          "mode": "idle",
+          "hash": 3473086974
+        },
+        {
+          "mode": "walk",
+          "hash": 3576403491
+        },
+        {
+          "mode": "attack",
+          "hash": 4183403607
+        },
+        {
+          "mode": "hurt",
+          "hash": 2174149859
+        }
+      ]
+    }
+  ],
+  "roll": {
+    "kind": "prism",
+    "guaranteed": true,
+    "id": "saffron",
+    "name": "사프",
+    "fixTicket": true,
+    "isNew": true
+  },
+  "battle": {
+    "canvas": true,
+    "mode": "attack",
+    "parts": 32
+  },
+  "errors": []
+}

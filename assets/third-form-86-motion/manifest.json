@@ -1,0 +1,55 @@
+{
+  "fps": 30,
+  "mode": "built-in image_gen source poses; deterministic crop/packing",
+  "characters": {
+    "crimson": {
+      "source": "crimson-source.png",
+      "frames": {
+        "idle": 60,
+        "walk": 18,
+        "attack": 17,
+        "hurt": 1
+      },
+      "strikeFrame": 0,
+      "attackDuration": 0.56,
+      "hurt": "one drawing; combat supplies both bounces"
+    },
+    "chartreuse": {
+      "source": "chartreuse-source.png",
+      "frames": {
+        "idle": 60,
+        "walk": 18,
+        "attack": 17,
+        "hurt": 1
+      },
+      "strikeFrame": 0,
+      "attackDuration": 0.56,
+      "hurt": "one drawing; combat supplies both bounces"
+    },
+    "mint": {
+      "source": "mint-source.png",
+      "frames": {
+        "idle": 60,
+        "walk": 18,
+        "attack": 17,
+        "hurt": 1
+      },
+      "strikeFrame": 0,
+      "attackDuration": 0.56,
+      "hurt": "one drawing; combat supplies both bounces",
+      "hurtMirrored": true
+    },
+    "black": {
+      "source": "black-source.png",
+      "frames": {
+        "idle": 60,
+        "walk": 18,
+        "attack": 18,
+        "hurt": 1
+      },
+      "strikeFrame": 6,
+      "attackDuration": 0.6,
+      "hurt": "one drawing; combat supplies both bounces"
+    }
+  }
+}

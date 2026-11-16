@@ -13,7 +13,7 @@
   hp=1;
   // Original outbreaks retain castle protection, but their source HP/time
   // triggers and first-appearance delays must still run through the scheduler.
-  if(STAGES[selectedStage]?.outbreakSource)return;
+  if(STAGES[selectedStage]?.outbreakSource||STAGES[selectedStage]?.originalSchedule)return;
   for(const r of waiting){r.triggered=true;r.clock=0}// 다음 프레임에 바로 소환(등장 지연·간격 무시)
   if(!waiting.length&&!game.cyHint){game.cyHint=true;$('#battleNotice').textContent='사이클론 보스를 쓰러뜨려야 성이 무너져요!';game.noticeTime=3}
  }});

@@ -1,0 +1,93 @@
+{
+  "note": "Lv30/full treasures/max income; pre-reward 2jin explorer; one seed per policy, smoke only",
+  "results": [
+    {
+      "stage": "시조의 오래된 소용돌이",
+      "policy": "auto",
+      "win": true,
+      "timeout": false,
+      "seconds": 48.27,
+      "allyHp": 60000,
+      "enemyHp": 0,
+      "frames": 1448,
+      "deployments": {
+        "ruby": 2,
+        "indigo": 2,
+        "clover": 2,
+        "moss": 2,
+        "lightcream": 2,
+        "coral": 2,
+        "explorermintcyan": 11,
+        "mintcyan": 5,
+        "white": 11,
+        "red": 11
+      }
+    },
+    {
+      "stage": "시조의 오래된 소용돌이",
+      "policy": "smart2",
+      "win": true,
+      "timeout": false,
+      "seconds": 48.27,
+      "allyHp": 60000,
+      "enemyHp": 0,
+      "frames": 1448,
+      "deployments": {
+        "ruby": 2,
+        "indigo": 2,
+        "clover": 2,
+        "moss": 2,
+        "lightcream": 2,
+        "coral": 2,
+        "explorermintcyan": 11,
+        "mintcyan": 5,
+        "white": 11,
+        "red": 11
+      }
+    },
+    {
+      "stage": "절멸의 오래된 소용돌이",
+      "policy": "auto",
+      "win": true,
+      "timeout": false,
+      "seconds": 175.6,
+      "allyHp": 60000,
+      "enemyHp": 0,
+      "frames": 5269,
+      "deployments": {
+        "blossom": 5,
+        "raspberry": 6,
+        "ivory": 9,
+        "ruby": 9,
+        "indigo": 8,
+        "moss": 9,
+        "lightcream": 9,
+        "explorermintcyan": 85,
+        "mintcyan": 34,
+        "white": 85
+      }
+    },
+    {
+      "stage": "절멸의 오래된 소용돌이",
+      "policy": "smart2",
+      "win": false,
+      "timeout": false,
+      "seconds": 101.93,
+      "allyHp": 0,
+      "enemyHp": 1187500,
+      "frames": 3058,
+      "deployments": {
+        "blossom": 3,
+        "raspberry": 3,
+        "ivory": 6,
+        "ruby": 5,
+        "indigo": 5,
+        "moss": 5,
+        "lightcream": 5,
+        "explorermintcyan": 49,
+        "mintcyan": 20,
+        "white": 49
+      }
+    }
+  ]
+}

@@ -28,6 +28,7 @@ function battleImageUrls(){
  for(const sheet of document.styleSheets){try{readRules(sheet.cssRules)}catch{}}
  // Cannon sheets are assigned dynamically, so CSS scanning cannot discover them.
  if(typeof cannonEffectImageUrls==='function')for(const url of cannonEffectImageUrls())urls.add(url);
+ if(typeof saffronPartImageUrls==='function')for(const url of saffronPartImageUrls(roster))urls.add(url);
  return [...urls];
 }
 const IMAGE_LOADING=document.createElement('section');IMAGE_LOADING.className='overlay hidden';IMAGE_LOADING.setAttribute('role','status');IMAGE_LOADING.style.cssText='z-index:10010;align-items:center;justify-content:center';

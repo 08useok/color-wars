@@ -1,0 +1,16 @@
+{
+  "date": "2026-11-16",
+  "targetVersion": "8.6.0",
+  "currentVersion": "8.6.0",
+  "checks": {
+    "workingTreeEntryAndResources": "PASS: 173 entry scripts, 71 runtime resources, 32 Saffron parts",
+    "verificationFailureCases": "PASS: wrong commit/version/notice and missing module/part rejected",
+    "committedBundleIsolation": "PASS: HEAD 0585176c8a5f6fad143a2d06e1d00e655f1445b4, version 8.5.0; unrelated dirty changes excluded",
+    "committedBundleLocalHttp": "PASS: local fixture only; this did not publish or check the public website"
+  },
+  "releaseVersionChanged": true,
+  "committed": false,
+  "pushed": false,
+  "deployed": false,
+  "phase": "8.6.0 prepared, before commit and push"
+}

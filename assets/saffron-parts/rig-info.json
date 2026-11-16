@@ -1,0 +1,30 @@
+{
+  "fps": 30,
+  "renderer": "saffron-rig.js",
+  "metadata": "parts.js",
+  "character": "saffron",
+  "animations": {
+    "idle": {"cycleSeconds": 2, "expression": "idle", "blinkForm1": true},
+    "walk": {"cyclesPerSecond": 1.3, "expression": "idle"},
+    "attack": {"cycleSeconds": 1.6, "expression": "attack", "spiceEffectPhase": [0.25, 0.6]},
+    "hurt": {"cycleSeconds": 1, "expression": "hurt", "bounces": 2}
+  },
+  "form1": {"parts": 16, "headIncludes": ["round body", "scarf"], "independent": ["eyes", "mouth", "left hand", "right hand", "left foot", "right foot", "spoon", "pouch"]},
+  "form2": {
+    "parts": 16,
+    "headIncludes": ["hair", "scarf"],
+    "chains": [["shoulderL", "elbowL", "leftHand"], ["shoulderR", "elbowR", "rightHand"]],
+    "upperArmLength": 39,
+    "forearmLength": 36,
+    "props": {"spoon": "leftHand", "pouch": "rightHand"},
+    "jointImageAnchors": {
+      "upper-left": [[0.70, 0.14], [0.24, 0.88]],
+      "upper-right": [[0.24, 0.14], [0.77, 0.88]],
+      "fore-left": [[0.70, 0.13], [0.24, 0.86]],
+      "fore-right": [[0.25, 0.13], [0.73, 0.86]],
+      "leg-left": [[0.63, 0.08], [0.44, 0.91]],
+      "leg-right": [[0.63, 0.08], [0.44, 0.91]]
+    }
+  },
+  "status": "parts and standalone motion preview only; battle stats and gacha are not registered"
+}
