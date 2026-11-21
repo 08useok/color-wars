@@ -1,0 +1,3084 @@
+{
+  "date": "2026-11-17",
+  "experiment": "Brown 3rd form attack x1.5; all other fields unchanged",
+  "sourceHash": "4d5df20a177cc436db6dfa49889dba557886c5846d712d15d7d50f223b507197",
+  "beforeWins": 15,
+  "afterWins": 15,
+  "pairedWinSecondsSaved": 21.83,
+  "jobs": [
+    {
+      "n": 6,
+      "i": 750,
+      "map": "general",
+      "seed": 1,
+      "policy": "auto",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 15,
+      "i": 750,
+      "map": "general",
+      "seed": 1,
+      "policy": "smart2",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 24,
+      "i": 750,
+      "map": "general",
+      "seed": 2,
+      "policy": "auto",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 33,
+      "i": 750,
+      "map": "general",
+      "seed": 2,
+      "policy": "smart2",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 42,
+      "i": 750,
+      "map": "general",
+      "seed": 3,
+      "policy": "auto",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 51,
+      "i": 750,
+      "map": "general",
+      "seed": 3,
+      "policy": "smart2",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 60,
+      "i": 751,
+      "map": "red",
+      "seed": 1,
+      "policy": "auto",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 69,
+      "i": 751,
+      "map": "red",
+      "seed": 1,
+      "policy": "smart2",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 78,
+      "i": 751,
+      "map": "red",
+      "seed": 2,
+      "policy": "auto",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 87,
+      "i": 751,
+      "map": "red",
+      "seed": 2,
+      "policy": "smart2",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 96,
+      "i": 751,
+      "map": "red",
+      "seed": 3,
+      "policy": "auto",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 105,
+      "i": 751,
+      "map": "red",
+      "seed": 3,
+      "policy": "smart2",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 114,
+      "i": 752,
+      "map": "black",
+      "seed": 1,
+      "policy": "auto",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 123,
+      "i": 752,
+      "map": "black",
+      "seed": 1,
+      "policy": "smart2",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 132,
+      "i": 752,
+      "map": "black",
+      "seed": 2,
+      "policy": "auto",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 141,
+      "i": 752,
+      "map": "black",
+      "seed": 2,
+      "policy": "smart2",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 150,
+      "i": 752,
+      "map": "black",
+      "seed": 3,
+      "policy": "auto",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 159,
+      "i": 752,
+      "map": "black",
+      "seed": 3,
+      "policy": "smart2",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 168,
+      "i": 753,
+      "map": "angel",
+      "seed": 1,
+      "policy": "auto",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 177,
+      "i": 753,
+      "map": "angel",
+      "seed": 1,
+      "policy": "smart2",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 186,
+      "i": 753,
+      "map": "angel",
+      "seed": 2,
+      "policy": "auto",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 195,
+      "i": 753,
+      "map": "angel",
+      "seed": 2,
+      "policy": "smart2",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 204,
+      "i": 753,
+      "map": "angel",
+      "seed": 3,
+      "policy": "auto",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 213,
+      "i": 753,
+      "map": "angel",
+      "seed": 3,
+      "policy": "smart2",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 222,
+      "i": 754,
+      "map": "alien",
+      "seed": 1,
+      "policy": "auto",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 231,
+      "i": 754,
+      "map": "alien",
+      "seed": 1,
+      "policy": "smart2",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 240,
+      "i": 754,
+      "map": "alien",
+      "seed": 2,
+      "policy": "auto",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 249,
+      "i": 754,
+      "map": "alien",
+      "seed": 2,
+      "policy": "smart2",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 258,
+      "i": 754,
+      "map": "alien",
+      "seed": 3,
+      "policy": "auto",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 267,
+      "i": 754,
+      "map": "alien",
+      "seed": 3,
+      "policy": "smart2",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 276,
+      "i": 755,
+      "map": "floating",
+      "seed": 1,
+      "policy": "auto",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 285,
+      "i": 755,
+      "map": "floating",
+      "seed": 1,
+      "policy": "smart2",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 294,
+      "i": 755,
+      "map": "floating",
+      "seed": 2,
+      "policy": "auto",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 303,
+      "i": 755,
+      "map": "floating",
+      "seed": 2,
+      "policy": "smart2",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 312,
+      "i": 755,
+      "map": "floating",
+      "seed": 3,
+      "policy": "auto",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 321,
+      "i": 755,
+      "map": "floating",
+      "seed": 3,
+      "policy": "smart2",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 330,
+      "i": 756,
+      "map": "metal",
+      "seed": 1,
+      "policy": "auto",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 339,
+      "i": 756,
+      "map": "metal",
+      "seed": 1,
+      "policy": "smart2",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 348,
+      "i": 756,
+      "map": "metal",
+      "seed": 2,
+      "policy": "auto",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 357,
+      "i": 756,
+      "map": "metal",
+      "seed": 2,
+      "policy": "smart2",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 366,
+      "i": 756,
+      "map": "metal",
+      "seed": 3,
+      "policy": "auto",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 375,
+      "i": 756,
+      "map": "metal",
+      "seed": 3,
+      "policy": "smart2",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 384,
+      "i": 757,
+      "map": "zombie",
+      "seed": 1,
+      "policy": "auto",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 393,
+      "i": 757,
+      "map": "zombie",
+      "seed": 1,
+      "policy": "smart2",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 402,
+      "i": 757,
+      "map": "zombie",
+      "seed": 2,
+      "policy": "auto",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 411,
+      "i": 757,
+      "map": "zombie",
+      "seed": 2,
+      "policy": "smart2",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 420,
+      "i": 757,
+      "map": "zombie",
+      "seed": 3,
+      "policy": "auto",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 429,
+      "i": 757,
+      "map": "zombie",
+      "seed": 3,
+      "policy": "smart2",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 438,
+      "i": 758,
+      "map": "wave",
+      "seed": 1,
+      "policy": "auto",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 447,
+      "i": 758,
+      "map": "wave",
+      "seed": 1,
+      "policy": "smart2",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 456,
+      "i": 758,
+      "map": "wave",
+      "seed": 2,
+      "policy": "auto",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 465,
+      "i": 758,
+      "map": "wave",
+      "seed": 2,
+      "policy": "smart2",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 474,
+      "i": 758,
+      "map": "wave",
+      "seed": 3,
+      "policy": "auto",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 483,
+      "i": 758,
+      "map": "wave",
+      "seed": 3,
+      "policy": "smart2",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 492,
+      "i": 947,
+      "map": "ancient",
+      "seed": 1,
+      "policy": "auto",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 501,
+      "i": 947,
+      "map": "ancient",
+      "seed": 1,
+      "policy": "smart2",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 510,
+      "i": 947,
+      "map": "ancient",
+      "seed": 2,
+      "policy": "auto",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 519,
+      "i": 947,
+      "map": "ancient",
+      "seed": 2,
+      "policy": "smart2",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 528,
+      "i": 947,
+      "map": "ancient",
+      "seed": 3,
+      "policy": "auto",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    },
+    {
+      "n": 537,
+      "i": 947,
+      "map": "ancient",
+      "seed": 3,
+      "policy": "smart2",
+      "unit": "brown",
+      "form": 3,
+      "deck": [
+        "benchred",
+        "benchyellow",
+        "benchblue",
+        "benchpurple",
+        "brown"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "n": 78,
+      "win": true,
+      "timeout": false,
+      "seconds": 111.93,
+      "allyHp": 300000,
+      "enemyHp": 0,
+      "frames": 3358,
+      "deployments": {
+        "benchblue": 35,
+        "brown": 8,
+        "benchpurple": 12,
+        "benchyellow": 15,
+        "benchred": 53
+      }
+    },
+    {
+      "n": 87,
+      "win": true,
+      "timeout": false,
+      "seconds": 111.93,
+      "allyHp": 300000,
+      "enemyHp": 0,
+      "frames": 3358,
+      "deployments": {
+        "benchblue": 35,
+        "brown": 8,
+        "benchpurple": 12,
+        "benchyellow": 15,
+        "benchred": 53
+      }
+    },
+    {
+      "n": 96,
+      "win": true,
+      "timeout": false,
+      "seconds": 111.93,
+      "allyHp": 300000,
+      "enemyHp": 0,
+      "frames": 3358,
+      "deployments": {
+        "benchblue": 35,
+        "brown": 8,
+        "benchpurple": 12,
+        "benchyellow": 15,
+        "benchred": 53
+      }
+    },
+    {
+      "n": 105,
+      "win": true,
+      "timeout": false,
+      "seconds": 111.93,
+      "allyHp": 300000,
+      "enemyHp": 0,
+      "frames": 3358,
+      "deployments": {
+        "benchblue": 35,
+        "brown": 8,
+        "benchpurple": 12,
+        "benchyellow": 15,
+        "benchred": 53
+      }
+    },
+    {
+      "n": 42,
+      "win": true,
+      "timeout": false,
+      "seconds": 142.2,
+      "allyHp": 300000,
+      "enemyHp": 0,
+      "frames": 4266,
+      "deployments": {
+        "benchblue": 47,
+        "brown": 11,
+        "benchpurple": 16,
+        "benchyellow": 20,
+        "benchred": 71
+      }
+    },
+    {
+      "n": 51,
+      "win": true,
+      "timeout": false,
+      "seconds": 142.2,
+      "allyHp": 300000,
+      "enemyHp": 0,
+      "frames": 4266,
+      "deployments": {
+        "benchblue": 47,
+        "brown": 11,
+        "benchpurple": 16,
+        "benchyellow": 20,
+        "benchred": 71
+      }
+    },
+    {
+      "n": 60,
+      "win": true,
+      "timeout": false,
+      "seconds": 111.93,
+      "allyHp": 300000,
+      "enemyHp": 0,
+      "frames": 3358,
+      "deployments": {
+        "benchblue": 35,
+        "brown": 8,
+        "benchpurple": 12,
+        "benchyellow": 15,
+        "benchred": 53
+      }
+    },
+    {
+      "n": 69,
+      "win": true,
+      "timeout": false,
+      "seconds": 111.93,
+      "allyHp": 300000,
+      "enemyHp": 0,
+      "frames": 3358,
+      "deployments": {
+        "benchblue": 35,
+        "brown": 8,
+        "benchpurple": 12,
+        "benchyellow": 15,
+        "benchred": 53
+      }
+    },
+    {
+      "n": 6,
+      "win": true,
+      "timeout": false,
+      "seconds": 142.2,
+      "allyHp": 300000,
+      "enemyHp": 0,
+      "frames": 4266,
+      "deployments": {
+        "benchblue": 47,
+        "brown": 11,
+        "benchpurple": 16,
+        "benchyellow": 20,
+        "benchred": 71
+      }
+    },
+    {
+      "n": 15,
+      "win": true,
+      "timeout": false,
+      "seconds": 142.2,
+      "allyHp": 300000,
+      "enemyHp": 0,
+      "frames": 4266,
+      "deployments": {
+        "benchblue": 47,
+        "brown": 11,
+        "benchpurple": 16,
+        "benchyellow": 20,
+        "benchred": 71
+      }
+    },
+    {
+      "n": 24,
+      "win": true,
+      "timeout": false,
+      "seconds": 142.2,
+      "allyHp": 300000,
+      "enemyHp": 0,
+      "frames": 4266,
+      "deployments": {
+        "benchblue": 47,
+        "brown": 11,
+        "benchpurple": 16,
+        "benchyellow": 20,
+        "benchred": 71
+      }
+    },
+    {
+      "n": 33,
+      "win": true,
+      "timeout": false,
+      "seconds": 142.2,
+      "allyHp": 300000,
+      "enemyHp": 0,
+      "frames": 4266,
+      "deployments": {
+        "benchblue": 47,
+        "brown": 11,
+        "benchpurple": 16,
+        "benchyellow": 20,
+        "benchred": 71
+      }
+    },
+    {
+      "n": 186,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2991304,
+      "frames": 9000,
+      "deployments": {
+        "benchblue": 97,
+        "brown": 23,
+        "benchpurple": 34,
+        "benchyellow": 43,
+        "benchred": 149
+      }
+    },
+    {
+      "n": 195,
+      "win": false,
+      "timeout": false,
+      "seconds": 44.3,
+      "allyHp": 0,
+      "enemyHp": 2991304,
+      "frames": 1329,
+      "deployments": {
+        "benchblue": 14,
+        "brown": 4,
+        "benchpurple": 5,
+        "benchyellow": 7,
+        "benchred": 22
+      }
+    },
+    {
+      "n": 204,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2991304,
+      "frames": 9000,
+      "deployments": {
+        "benchblue": 97,
+        "brown": 23,
+        "benchpurple": 34,
+        "benchyellow": 43,
+        "benchred": 149
+      }
+    },
+    {
+      "n": 213,
+      "win": false,
+      "timeout": false,
+      "seconds": 43.4,
+      "allyHp": 0,
+      "enemyHp": 2991304,
+      "frames": 1302,
+      "deployments": {
+        "benchblue": 13,
+        "brown": 4,
+        "benchpurple": 5,
+        "benchyellow": 7,
+        "benchred": 22
+      }
+    },
+    {
+      "n": 474,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2853921,
+      "frames": 9000,
+      "deployments": {
+        "benchblue": 99,
+        "brown": 24,
+        "benchpurple": 34,
+        "benchyellow": 43,
+        "benchred": 150
+      }
+    },
+    {
+      "n": 483,
+      "win": false,
+      "timeout": false,
+      "seconds": 89.3,
+      "allyHp": 0,
+      "enemyHp": 2853921,
+      "frames": 2679,
+      "deployments": {
+        "benchblue": 30,
+        "brown": 7,
+        "benchpurple": 10,
+        "benchyellow": 13,
+        "benchred": 45
+      }
+    },
+    {
+      "n": 492,
+      "win": true,
+      "timeout": false,
+      "seconds": 185.67,
+      "allyHp": 300000,
+      "enemyHp": 0,
+      "frames": 5570,
+      "deployments": {
+        "benchblue": 61,
+        "brown": 15,
+        "benchpurple": 21,
+        "benchyellow": 27,
+        "benchred": 92
+      }
+    },
+    {
+      "n": 501,
+      "win": true,
+      "timeout": false,
+      "seconds": 154.27,
+      "allyHp": 228000,
+      "enemyHp": 0,
+      "frames": 4628,
+      "deployments": {
+        "benchblue": 51,
+        "brown": 12,
+        "benchpurple": 18,
+        "benchyellow": 22,
+        "benchred": 78
+      }
+    },
+    {
+      "n": 222,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2970050,
+      "frames": 9000,
+      "deployments": {
+        "benchblue": 98,
+        "brown": 23,
+        "benchpurple": 34,
+        "benchyellow": 43,
+        "benchred": 150
+      }
+    },
+    {
+      "n": 231,
+      "win": false,
+      "timeout": false,
+      "seconds": 116.37,
+      "allyHp": 0,
+      "enemyHp": 2970050,
+      "frames": 3491,
+      "deployments": {
+        "benchblue": 37,
+        "brown": 9,
+        "benchpurple": 13,
+        "benchyellow": 17,
+        "benchred": 58
+      }
+    },
+    {
+      "n": 240,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2937291,
+      "frames": 9000,
+      "deployments": {
+        "benchblue": 99,
+        "brown": 24,
+        "benchpurple": 34,
+        "benchyellow": 43,
+        "benchred": 150
+      }
+    },
+    {
+      "n": 249,
+      "win": false,
+      "timeout": false,
+      "seconds": 136.53,
+      "allyHp": 0,
+      "enemyHp": 2937291,
+      "frames": 4096,
+      "deployments": {
+        "benchblue": 45,
+        "brown": 11,
+        "benchpurple": 16,
+        "benchyellow": 20,
+        "benchred": 68
+      }
+    },
+    {
+      "n": 258,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2970050,
+      "frames": 9000,
+      "deployments": {
+        "benchblue": 98,
+        "brown": 23,
+        "benchpurple": 34,
+        "benchyellow": 43,
+        "benchred": 150
+      }
+    },
+    {
+      "n": 267,
+      "win": false,
+      "timeout": false,
+      "seconds": 114.17,
+      "allyHp": 0,
+      "enemyHp": 2970050,
+      "frames": 3425,
+      "deployments": {
+        "benchblue": 37,
+        "brown": 9,
+        "benchpurple": 13,
+        "benchyellow": 17,
+        "benchred": 57
+      }
+    },
+    {
+      "n": 276,
+      "win": true,
+      "timeout": false,
+      "seconds": 245.97,
+      "allyHp": 300000,
+      "enemyHp": 0,
+      "frames": 7379,
+      "deployments": {
+        "benchblue": 82,
+        "brown": 19,
+        "benchpurple": 28,
+        "benchyellow": 35,
+        "benchred": 123
+      }
+    },
+    {
+      "n": 285,
+      "win": true,
+      "timeout": false,
+      "seconds": 245.97,
+      "allyHp": 300000,
+      "enemyHp": 0,
+      "frames": 7379,
+      "deployments": {
+        "benchblue": 82,
+        "brown": 19,
+        "benchpurple": 28,
+        "benchyellow": 35,
+        "benchred": 123
+      }
+    },
+    {
+      "n": 438,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2853921,
+      "frames": 9000,
+      "deployments": {
+        "benchblue": 99,
+        "brown": 24,
+        "benchpurple": 34,
+        "benchyellow": 43,
+        "benchred": 150
+      }
+    },
+    {
+      "n": 447,
+      "win": false,
+      "timeout": false,
+      "seconds": 89.3,
+      "allyHp": 0,
+      "enemyHp": 2853921,
+      "frames": 2679,
+      "deployments": {
+        "benchblue": 30,
+        "brown": 7,
+        "benchpurple": 10,
+        "benchyellow": 13,
+        "benchred": 45
+      }
+    },
+    {
+      "n": 456,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2853921,
+      "frames": 9000,
+      "deployments": {
+        "benchblue": 99,
+        "brown": 24,
+        "benchpurple": 34,
+        "benchyellow": 43,
+        "benchred": 150
+      }
+    },
+    {
+      "n": 465,
+      "win": false,
+      "timeout": false,
+      "seconds": 89.3,
+      "allyHp": 0,
+      "enemyHp": 2853921,
+      "frames": 2679,
+      "deployments": {
+        "benchblue": 30,
+        "brown": 7,
+        "benchpurple": 10,
+        "benchyellow": 13,
+        "benchred": 45
+      }
+    },
+    {
+      "n": 294,
+      "win": true,
+      "timeout": false,
+      "seconds": 245.97,
+      "allyHp": 300000,
+      "enemyHp": 0,
+      "frames": 7379,
+      "deployments": {
+        "benchblue": 82,
+        "brown": 19,
+        "benchpurple": 28,
+        "benchyellow": 35,
+        "benchred": 123
+      }
+    },
+    {
+      "n": 303,
+      "win": true,
+      "timeout": false,
+      "seconds": 245.97,
+      "allyHp": 300000,
+      "enemyHp": 0,
+      "frames": 7379,
+      "deployments": {
+        "benchblue": 82,
+        "brown": 19,
+        "benchpurple": 28,
+        "benchyellow": 35,
+        "benchred": 123
+      }
+    },
+    {
+      "n": 312,
+      "win": true,
+      "timeout": false,
+      "seconds": 245.97,
+      "allyHp": 300000,
+      "enemyHp": 0,
+      "frames": 7379,
+      "deployments": {
+        "benchblue": 82,
+        "brown": 19,
+        "benchpurple": 28,
+        "benchyellow": 35,
+        "benchred": 123
+      }
+    },
+    {
+      "n": 321,
+      "win": true,
+      "timeout": false,
+      "seconds": 245.97,
+      "allyHp": 300000,
+      "enemyHp": 0,
+      "frames": 7379,
+      "deployments": {
+        "benchblue": 82,
+        "brown": 19,
+        "benchpurple": 28,
+        "benchyellow": 35,
+        "benchred": 123
+      }
+    },
+    {
+      "n": 150,
+      "win": true,
+      "timeout": false,
+      "seconds": 208.4,
+      "allyHp": 300000,
+      "enemyHp": 0,
+      "frames": 6252,
+      "deployments": {
+        "benchblue": 69,
+        "brown": 16,
+        "benchpurple": 24,
+        "benchyellow": 30,
+        "benchred": 104
+      }
+    },
+    {
+      "n": 159,
+      "win": true,
+      "timeout": false,
+      "seconds": 223.03,
+      "allyHp": 300000,
+      "enemyHp": 0,
+      "frames": 6691,
+      "deployments": {
+        "benchblue": 73,
+        "brown": 17,
+        "benchpurple": 25,
+        "benchyellow": 32,
+        "benchred": 111
+      }
+    },
+    {
+      "n": 168,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2991304,
+      "frames": 9000,
+      "deployments": {
+        "benchblue": 97,
+        "brown": 23,
+        "benchpurple": 34,
+        "benchyellow": 43,
+        "benchred": 149
+      }
+    },
+    {
+      "n": 177,
+      "win": false,
+      "timeout": false,
+      "seconds": 44.83,
+      "allyHp": 0,
+      "enemyHp": 2991304,
+      "frames": 1345,
+      "deployments": {
+        "benchblue": 14,
+        "brown": 4,
+        "benchpurple": 5,
+        "benchyellow": 7,
+        "benchred": 23
+      }
+    },
+    {
+      "n": 366,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2958302,
+      "frames": 9000,
+      "deployments": {
+        "benchblue": 94,
+        "brown": 23,
+        "benchpurple": 33,
+        "benchyellow": 42,
+        "benchred": 143
+      }
+    },
+    {
+      "n": 375,
+      "win": false,
+      "timeout": false,
+      "seconds": 131.4,
+      "allyHp": 0,
+      "enemyHp": 2958302,
+      "frames": 3942,
+      "deployments": {
+        "benchblue": 36,
+        "brown": 10,
+        "benchpurple": 15,
+        "benchyellow": 18,
+        "benchred": 62
+      }
+    },
+    {
+      "n": 384,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2014580,
+      "frames": 9000,
+      "deployments": {
+        "benchblue": 89,
+        "brown": 23,
+        "benchpurple": 33,
+        "benchyellow": 41,
+        "benchred": 138
+      }
+    },
+    {
+      "n": 393,
+      "win": false,
+      "timeout": false,
+      "seconds": 76.37,
+      "allyHp": 0,
+      "enemyHp": 1,
+      "frames": 2291,
+      "deployments": {
+        "benchblue": 22,
+        "brown": 6,
+        "benchpurple": 9,
+        "benchyellow": 11,
+        "benchred": 38
+      }
+    },
+    {
+      "n": 402,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2014580,
+      "frames": 9000,
+      "deployments": {
+        "benchblue": 89,
+        "brown": 23,
+        "benchpurple": 33,
+        "benchyellow": 41,
+        "benchred": 138
+      }
+    },
+    {
+      "n": 411,
+      "win": false,
+      "timeout": false,
+      "seconds": 77.73,
+      "allyHp": 0,
+      "enemyHp": 1,
+      "frames": 2332,
+      "deployments": {
+        "benchblue": 22,
+        "brown": 6,
+        "benchpurple": 9,
+        "benchyellow": 11,
+        "benchred": 38
+      }
+    },
+    {
+      "n": 420,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2014580,
+      "frames": 9000,
+      "deployments": {
+        "benchblue": 89,
+        "brown": 23,
+        "benchpurple": 33,
+        "benchyellow": 41,
+        "benchred": 138
+      }
+    },
+    {
+      "n": 429,
+      "win": false,
+      "timeout": false,
+      "seconds": 73.57,
+      "allyHp": 0,
+      "enemyHp": 1,
+      "frames": 2207,
+      "deployments": {
+        "benchblue": 21,
+        "brown": 6,
+        "benchpurple": 9,
+        "benchyellow": 11,
+        "benchred": 36
+      }
+    },
+    {
+      "n": 510,
+      "win": true,
+      "timeout": false,
+      "seconds": 185.67,
+      "allyHp": 300000,
+      "enemyHp": 0,
+      "frames": 5570,
+      "deployments": {
+        "benchblue": 61,
+        "brown": 15,
+        "benchpurple": 21,
+        "benchyellow": 27,
+        "benchred": 92
+      }
+    },
+    {
+      "n": 519,
+      "win": true,
+      "timeout": false,
+      "seconds": 154.27,
+      "allyHp": 228000,
+      "enemyHp": 0,
+      "frames": 4628,
+      "deployments": {
+        "benchblue": 51,
+        "brown": 12,
+        "benchpurple": 18,
+        "benchyellow": 22,
+        "benchred": 78
+      }
+    },
+    {
+      "n": 528,
+      "win": true,
+      "timeout": false,
+      "seconds": 185.67,
+      "allyHp": 300000,
+      "enemyHp": 0,
+      "frames": 5570,
+      "deployments": {
+        "benchblue": 61,
+        "brown": 15,
+        "benchpurple": 21,
+        "benchyellow": 27,
+        "benchred": 92
+      }
+    },
+    {
+      "n": 537,
+      "win": true,
+      "timeout": false,
+      "seconds": 154.27,
+      "allyHp": 228000,
+      "enemyHp": 0,
+      "frames": 4628,
+      "deployments": {
+        "benchblue": 51,
+        "brown": 12,
+        "benchpurple": 18,
+        "benchyellow": 22,
+        "benchred": 78
+      }
+    },
+    {
+      "n": 114,
+      "win": true,
+      "timeout": false,
+      "seconds": 208.4,
+      "allyHp": 300000,
+      "enemyHp": 0,
+      "frames": 6252,
+      "deployments": {
+        "benchblue": 69,
+        "brown": 16,
+        "benchpurple": 24,
+        "benchyellow": 30,
+        "benchred": 104
+      }
+    },
+    {
+      "n": 123,
+      "win": true,
+      "timeout": false,
+      "seconds": 223.03,
+      "allyHp": 300000,
+      "enemyHp": 0,
+      "frames": 6691,
+      "deployments": {
+        "benchblue": 73,
+        "brown": 17,
+        "benchpurple": 25,
+        "benchyellow": 32,
+        "benchred": 111
+      }
+    },
+    {
+      "n": 132,
+      "win": true,
+      "timeout": false,
+      "seconds": 208.4,
+      "allyHp": 300000,
+      "enemyHp": 0,
+      "frames": 6252,
+      "deployments": {
+        "benchblue": 69,
+        "brown": 16,
+        "benchpurple": 24,
+        "benchyellow": 30,
+        "benchred": 104
+      }
+    },
+    {
+      "n": 141,
+      "win": true,
+      "timeout": false,
+      "seconds": 223.03,
+      "allyHp": 300000,
+      "enemyHp": 0,
+      "frames": 6691,
+      "deployments": {
+        "benchblue": 73,
+        "brown": 17,
+        "benchpurple": 25,
+        "benchyellow": 32,
+        "benchred": 111
+      }
+    },
+    {
+      "n": 330,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2958302,
+      "frames": 9000,
+      "deployments": {
+        "benchblue": 94,
+        "brown": 23,
+        "benchpurple": 33,
+        "benchyellow": 42,
+        "benchred": 143
+      }
+    },
+    {
+      "n": 339,
+      "win": false,
+      "timeout": false,
+      "seconds": 131.4,
+      "allyHp": 0,
+      "enemyHp": 2958302,
+      "frames": 3942,
+      "deployments": {
+        "benchblue": 36,
+        "brown": 10,
+        "benchpurple": 15,
+        "benchyellow": 18,
+        "benchred": 62
+      }
+    },
+    {
+      "n": 348,
+      "win": false,
+      "timeout": true,
+      "seconds": 300,
+      "allyHp": 300000,
+      "enemyHp": 2958302,
+      "frames": 9000,
+      "deployments": {
+        "benchblue": 94,
+        "brown": 23,
+        "benchpurple": 33,
+        "benchyellow": 42,
+        "benchred": 143
+      }
+    },
+    {
+      "n": 357,
+      "win": false,
+      "timeout": false,
+      "seconds": 131.4,
+      "allyHp": 0,
+      "enemyHp": 2958302,
+      "frames": 3942,
+      "deployments": {
+        "benchblue": 36,
+        "brown": 10,
+        "benchpurple": 15,
+        "benchyellow": 18,
+        "benchred": 62
+      }
+    }
+  ],
+  "summary": [
+    {
+      "map": "general",
+      "name": "티어 시험 · 범용",
+      "oldWins": 3,
+      "newWins": 3,
+      "paired": 3,
+      "secondsSaved": 16.53,
+      "pairs": [
+        {
+          "seed": 1,
+          "before": {
+            "n": 6,
+            "win": true,
+            "timeout": false,
+            "seconds": 158.73,
+            "allyHp": 300000,
+            "enemyHp": 0,
+            "frames": 4762,
+            "deployments": {
+              "benchblue": 49,
+              "brown": 12,
+              "benchpurple": 17,
+              "benchyellow": 21,
+              "benchred": 74
+            }
+          },
+          "after": {
+            "n": 6,
+            "win": true,
+            "timeout": false,
+            "seconds": 142.2,
+            "allyHp": 300000,
+            "enemyHp": 0,
+            "frames": 4266,
+            "deployments": {
+              "benchblue": 47,
+              "brown": 11,
+              "benchpurple": 16,
+              "benchyellow": 20,
+              "benchred": 71
+            }
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "n": 24,
+            "win": true,
+            "timeout": false,
+            "seconds": 158.73,
+            "allyHp": 300000,
+            "enemyHp": 0,
+            "frames": 4762,
+            "deployments": {
+              "benchblue": 49,
+              "brown": 12,
+              "benchpurple": 17,
+              "benchyellow": 21,
+              "benchred": 74
+            }
+          },
+          "after": {
+            "n": 24,
+            "win": true,
+            "timeout": false,
+            "seconds": 142.2,
+            "allyHp": 300000,
+            "enemyHp": 0,
+            "frames": 4266,
+            "deployments": {
+              "benchblue": 47,
+              "brown": 11,
+              "benchpurple": 16,
+              "benchyellow": 20,
+              "benchred": 71
+            }
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "n": 42,
+            "win": true,
+            "timeout": false,
+            "seconds": 158.73,
+            "allyHp": 300000,
+            "enemyHp": 0,
+            "frames": 4762,
+            "deployments": {
+              "benchblue": 49,
+              "brown": 12,
+              "benchpurple": 17,
+              "benchyellow": 21,
+              "benchred": 74
+            }
+          },
+          "after": {
+            "n": 42,
+            "win": true,
+            "timeout": false,
+            "seconds": 142.2,
+            "allyHp": 300000,
+            "enemyHp": 0,
+            "frames": 4266,
+            "deployments": {
+              "benchblue": 47,
+              "brown": 11,
+              "benchpurple": 16,
+              "benchyellow": 20,
+              "benchred": 71
+            }
+          }
+        }
+      ]
+    },
+    {
+      "map": "red",
+      "name": "티어 시험 · 빨간 적",
+      "oldWins": 3,
+      "newWins": 3,
+      "paired": 3,
+      "secondsSaved": 0.29999999999999716,
+      "pairs": [
+        {
+          "seed": 1,
+          "before": {
+            "n": 60,
+            "win": true,
+            "timeout": false,
+            "seconds": 112.23,
+            "allyHp": 300000,
+            "enemyHp": 0,
+            "frames": 3368,
+            "deployments": {
+              "benchblue": 35,
+              "brown": 8,
+              "benchpurple": 12,
+              "benchyellow": 15,
+              "benchred": 53
+            }
+          },
+          "after": {
+            "n": 60,
+            "win": true,
+            "timeout": false,
+            "seconds": 111.93,
+            "allyHp": 300000,
+            "enemyHp": 0,
+            "frames": 3358,
+            "deployments": {
+              "benchblue": 35,
+              "brown": 8,
+              "benchpurple": 12,
+              "benchyellow": 15,
+              "benchred": 53
+            }
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "n": 78,
+            "win": true,
+            "timeout": false,
+            "seconds": 112.23,
+            "allyHp": 300000,
+            "enemyHp": 0,
+            "frames": 3368,
+            "deployments": {
+              "benchblue": 35,
+              "brown": 8,
+              "benchpurple": 12,
+              "benchyellow": 15,
+              "benchred": 53
+            }
+          },
+          "after": {
+            "n": 78,
+            "win": true,
+            "timeout": false,
+            "seconds": 111.93,
+            "allyHp": 300000,
+            "enemyHp": 0,
+            "frames": 3358,
+            "deployments": {
+              "benchblue": 35,
+              "brown": 8,
+              "benchpurple": 12,
+              "benchyellow": 15,
+              "benchred": 53
+            }
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "n": 96,
+            "win": true,
+            "timeout": false,
+            "seconds": 112.23,
+            "allyHp": 300000,
+            "enemyHp": 0,
+            "frames": 3368,
+            "deployments": {
+              "benchblue": 35,
+              "brown": 8,
+              "benchpurple": 12,
+              "benchyellow": 15,
+              "benchred": 53
+            }
+          },
+          "after": {
+            "n": 96,
+            "win": true,
+            "timeout": false,
+            "seconds": 111.93,
+            "allyHp": 300000,
+            "enemyHp": 0,
+            "frames": 3358,
+            "deployments": {
+              "benchblue": 35,
+              "brown": 8,
+              "benchpurple": 12,
+              "benchyellow": 15,
+              "benchred": 53
+            }
+          }
+        }
+      ]
+    },
+    {
+      "map": "black",
+      "name": "티어 시험 · 검은 적",
+      "oldWins": 3,
+      "newWins": 3,
+      "paired": 3,
+      "secondsSaved": 8.22999999999999,
+      "pairs": [
+        {
+          "seed": 1,
+          "before": {
+            "n": 114,
+            "win": true,
+            "timeout": false,
+            "seconds": 216.63,
+            "allyHp": 300000,
+            "enemyHp": 0,
+            "frames": 6499,
+            "deployments": {
+              "benchblue": 70,
+              "brown": 17,
+              "benchpurple": 24,
+              "benchyellow": 31,
+              "benchred": 107
+            }
+          },
+          "after": {
+            "n": 114,
+            "win": true,
+            "timeout": false,
+            "seconds": 208.4,
+            "allyHp": 300000,
+            "enemyHp": 0,
+            "frames": 6252,
+            "deployments": {
+              "benchblue": 69,
+              "brown": 16,
+              "benchpurple": 24,
+              "benchyellow": 30,
+              "benchred": 104
+            }
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "n": 132,
+            "win": true,
+            "timeout": false,
+            "seconds": 216.63,
+            "allyHp": 300000,
+            "enemyHp": 0,
+            "frames": 6499,
+            "deployments": {
+              "benchblue": 70,
+              "brown": 17,
+              "benchpurple": 24,
+              "benchyellow": 31,
+              "benchred": 107
+            }
+          },
+          "after": {
+            "n": 132,
+            "win": true,
+            "timeout": false,
+            "seconds": 208.4,
+            "allyHp": 300000,
+            "enemyHp": 0,
+            "frames": 6252,
+            "deployments": {
+              "benchblue": 69,
+              "brown": 16,
+              "benchpurple": 24,
+              "benchyellow": 30,
+              "benchred": 104
+            }
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "n": 150,
+            "win": true,
+            "timeout": false,
+            "seconds": 216.63,
+            "allyHp": 300000,
+            "enemyHp": 0,
+            "frames": 6499,
+            "deployments": {
+              "benchblue": 70,
+              "brown": 17,
+              "benchpurple": 24,
+              "benchyellow": 31,
+              "benchred": 107
+            }
+          },
+          "after": {
+            "n": 150,
+            "win": true,
+            "timeout": false,
+            "seconds": 208.4,
+            "allyHp": 300000,
+            "enemyHp": 0,
+            "frames": 6252,
+            "deployments": {
+              "benchblue": 69,
+              "brown": 16,
+              "benchpurple": 24,
+              "benchyellow": 30,
+              "benchred": 104
+            }
+          }
+        }
+      ]
+    },
+    {
+      "map": "angel",
+      "name": "티어 시험 · 천사",
+      "oldWins": 0,
+      "newWins": 0,
+      "paired": 0,
+      "secondsSaved": null,
+      "pairs": [
+        {
+          "seed": 1,
+          "before": {
+            "n": 168,
+            "win": false,
+            "timeout": true,
+            "seconds": 300,
+            "allyHp": 300000,
+            "enemyHp": 2991304,
+            "frames": 9000,
+            "deployments": {
+              "benchblue": 97,
+              "brown": 23,
+              "benchpurple": 34,
+              "benchyellow": 43,
+              "benchred": 149
+            }
+          },
+          "after": {
+            "n": 168,
+            "win": false,
+            "timeout": true,
+            "seconds": 300,
+            "allyHp": 300000,
+            "enemyHp": 2991304,
+            "frames": 9000,
+            "deployments": {
+              "benchblue": 97,
+              "brown": 23,
+              "benchpurple": 34,
+              "benchyellow": 43,
+              "benchred": 149
+            }
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "n": 186,
+            "win": false,
+            "timeout": true,
+            "seconds": 300,
+            "allyHp": 300000,
+            "enemyHp": 2991304,
+            "frames": 9000,
+            "deployments": {
+              "benchblue": 97,
+              "brown": 23,
+              "benchpurple": 34,
+              "benchyellow": 43,
+              "benchred": 150
+            }
+          },
+          "after": {
+            "n": 186,
+            "win": false,
+            "timeout": true,
+            "seconds": 300,
+            "allyHp": 300000,
+            "enemyHp": 2991304,
+            "frames": 9000,
+            "deployments": {
+              "benchblue": 97,
+              "brown": 23,
+              "benchpurple": 34,
+              "benchyellow": 43,
+              "benchred": 149
+            }
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "n": 204,
+            "win": false,
+            "timeout": true,
+            "seconds": 300,
+            "allyHp": 300000,
+            "enemyHp": 2991304,
+            "frames": 9000,
+            "deployments": {
+              "benchblue": 97,
+              "brown": 23,
+              "benchpurple": 34,
+              "benchyellow": 43,
+              "benchred": 149
+            }
+          },
+          "after": {
+            "n": 204,
+            "win": false,
+            "timeout": true,
+            "seconds": 300,
+            "allyHp": 300000,
+            "enemyHp": 2991304,
+            "frames": 9000,
+            "deployments": {
+              "benchblue": 97,
+              "brown": 23,
+              "benchpurple": 34,
+              "benchyellow": 43,
+              "benchred": 149
+            }
+          }
+        }
+      ]
+    },
+    {
+      "map": "alien",
+      "name": "티어 시험 · 에이리언",
+      "oldWins": 0,
+      "newWins": 0,
+      "paired": 0,
+      "secondsSaved": null,
+      "pairs": [
+        {
+          "seed": 1,
+          "before": {
+            "n": 222,
+            "win": false,
+            "timeout": true,
+            "seconds": 300,
+            "allyHp": 300000,
+            "enemyHp": 2970050,
+            "frames": 9000,
+            "deployments": {
+              "benchblue": 98,
+              "brown": 23,
+              "benchpurple": 34,
+              "benchyellow": 43,
+              "benchred": 150
+            }
+          },
+          "after": {
+            "n": 222,
+            "win": false,
+            "timeout": true,
+            "seconds": 300,
+            "allyHp": 300000,
+            "enemyHp": 2970050,
+            "frames": 9000,
+            "deployments": {
+              "benchblue": 98,
+              "brown": 23,
+              "benchpurple": 34,
+              "benchyellow": 43,
+              "benchred": 150
+            }
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "n": 240,
+            "win": false,
+            "timeout": true,
+            "seconds": 300,
+            "allyHp": 300000,
+            "enemyHp": 2939758,
+            "frames": 9000,
+            "deployments": {
+              "benchblue": 99,
+              "brown": 24,
+              "benchpurple": 34,
+              "benchyellow": 43,
+              "benchred": 150
+            }
+          },
+          "after": {
+            "n": 240,
+            "win": false,
+            "timeout": true,
+            "seconds": 300,
+            "allyHp": 300000,
+            "enemyHp": 2937291,
+            "frames": 9000,
+            "deployments": {
+              "benchblue": 99,
+              "brown": 24,
+              "benchpurple": 34,
+              "benchyellow": 43,
+              "benchred": 150
+            }
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "n": 258,
+            "win": false,
+            "timeout": true,
+            "seconds": 300,
+            "allyHp": 300000,
+            "enemyHp": 2970050,
+            "frames": 9000,
+            "deployments": {
+              "benchblue": 98,
+              "brown": 23,
+              "benchpurple": 34,
+              "benchyellow": 43,
+              "benchred": 150
+            }
+          },
+          "after": {
+            "n": 258,
+            "win": false,
+            "timeout": true,
+            "seconds": 300,
+            "allyHp": 300000,
+            "enemyHp": 2970050,
+            "frames": 9000,
+            "deployments": {
+              "benchblue": 98,
+              "brown": 23,
+              "benchpurple": 34,
+              "benchyellow": 43,
+              "benchred": 150
+            }
+          }
+        }
+      ]
+    },
+    {
+      "map": "floating",
+      "name": "티어 시험 · 떠 있는 적",
+      "oldWins": 3,
+      "newWins": 3,
+      "paired": 3,
+      "secondsSaved": 39.53,
+      "pairs": [
+        {
+          "seed": 1,
+          "before": {
+            "n": 276,
+            "win": true,
+            "timeout": false,
+            "seconds": 285.5,
+            "allyHp": 300000,
+            "enemyHp": 0,
+            "frames": 8565,
+            "deployments": {
+              "benchblue": 94,
+              "brown": 22,
+              "benchpurple": 32,
+              "benchyellow": 41,
+              "benchred": 142
+            }
+          },
+          "after": {
+            "n": 276,
+            "win": true,
+            "timeout": false,
+            "seconds": 245.97,
+            "allyHp": 300000,
+            "enemyHp": 0,
+            "frames": 7379,
+            "deployments": {
+              "benchblue": 82,
+              "brown": 19,
+              "benchpurple": 28,
+              "benchyellow": 35,
+              "benchred": 123
+            }
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "n": 294,
+            "win": true,
+            "timeout": false,
+            "seconds": 285.5,
+            "allyHp": 300000,
+            "enemyHp": 0,
+            "frames": 8565,
+            "deployments": {
+              "benchblue": 94,
+              "brown": 22,
+              "benchpurple": 32,
+              "benchyellow": 41,
+              "benchred": 142
+            }
+          },
+          "after": {
+            "n": 294,
+            "win": true,
+            "timeout": false,
+            "seconds": 245.97,
+            "allyHp": 300000,
+            "enemyHp": 0,
+            "frames": 7379,
+            "deployments": {
+              "benchblue": 82,
+              "brown": 19,
+              "benchpurple": 28,
+              "benchyellow": 35,
+              "benchred": 123
+            }
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "n": 312,
+            "win": true,
+            "timeout": false,
+            "seconds": 285.5,
+            "allyHp": 300000,
+            "enemyHp": 0,
+            "frames": 8565,
+            "deployments": {
+              "benchblue": 94,
+              "brown": 22,
+              "benchpurple": 32,
+              "benchyellow": 41,
+              "benchred": 142
+            }
+          },
+          "after": {
+            "n": 312,
+            "win": true,
+            "timeout": false,
+            "seconds": 245.97,
+            "allyHp": 300000,
+            "enemyHp": 0,
+            "frames": 7379,
+            "deployments": {
+              "benchblue": 82,
+              "brown": 19,
+              "benchpurple": 28,
+              "benchyellow": 35,
+              "benchred": 123
+            }
+          }
+        }
+      ]
+    },
+    {
+      "map": "metal",
+      "name": "티어 시험 · 메탈",
+      "oldWins": 0,
+      "newWins": 0,
+      "paired": 0,
+      "secondsSaved": null,
+      "pairs": [
+        {
+          "seed": 1,
+          "before": {
+            "n": 330,
+            "win": false,
+            "timeout": true,
+            "seconds": 300,
+            "allyHp": 300000,
+            "enemyHp": 2960769,
+            "frames": 9000,
+            "deployments": {
+              "benchblue": 94,
+              "brown": 23,
+              "benchpurple": 33,
+              "benchyellow": 42,
+              "benchred": 143
+            }
+          },
+          "after": {
+            "n": 330,
+            "win": false,
+            "timeout": true,
+            "seconds": 300,
+            "allyHp": 300000,
+            "enemyHp": 2958302,
+            "frames": 9000,
+            "deployments": {
+              "benchblue": 94,
+              "brown": 23,
+              "benchpurple": 33,
+              "benchyellow": 42,
+              "benchred": 143
+            }
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "n": 348,
+            "win": false,
+            "timeout": true,
+            "seconds": 300,
+            "allyHp": 300000,
+            "enemyHp": 2960769,
+            "frames": 9000,
+            "deployments": {
+              "benchblue": 94,
+              "brown": 23,
+              "benchpurple": 33,
+              "benchyellow": 42,
+              "benchred": 143
+            }
+          },
+          "after": {
+            "n": 348,
+            "win": false,
+            "timeout": true,
+            "seconds": 300,
+            "allyHp": 300000,
+            "enemyHp": 2958302,
+            "frames": 9000,
+            "deployments": {
+              "benchblue": 94,
+              "brown": 23,
+              "benchpurple": 33,
+              "benchyellow": 42,
+              "benchred": 143
+            }
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "n": 366,
+            "win": false,
+            "timeout": true,
+            "seconds": 300,
+            "allyHp": 300000,
+            "enemyHp": 2960769,
+            "frames": 9000,
+            "deployments": {
+              "benchblue": 94,
+              "brown": 23,
+              "benchpurple": 33,
+              "benchyellow": 42,
+              "benchred": 143
+            }
+          },
+          "after": {
+            "n": 366,
+            "win": false,
+            "timeout": true,
+            "seconds": 300,
+            "allyHp": 300000,
+            "enemyHp": 2958302,
+            "frames": 9000,
+            "deployments": {
+              "benchblue": 94,
+              "brown": 23,
+              "benchpurple": 33,
+              "benchyellow": 42,
+              "benchred": 143
+            }
+          }
+        }
+      ]
+    },
+    {
+      "map": "zombie",
+      "name": "티어 시험 · 좀비",
+      "oldWins": 0,
+      "newWins": 0,
+      "paired": 0,
+      "secondsSaved": null,
+      "pairs": [
+        {
+          "seed": 1,
+          "before": {
+            "n": 393,
+            "win": false,
+            "timeout": false,
+            "seconds": 71.6,
+            "allyHp": 0,
+            "enemyHp": 1,
+            "frames": 2148,
+            "deployments": {
+              "benchblue": 21,
+              "brown": 6,
+              "benchpurple": 8,
+              "benchyellow": 10,
+              "benchred": 35
+            }
+          },
+          "after": {
+            "n": 393,
+            "win": false,
+            "timeout": false,
+            "seconds": 76.37,
+            "allyHp": 0,
+            "enemyHp": 1,
+            "frames": 2291,
+            "deployments": {
+              "benchblue": 22,
+              "brown": 6,
+              "benchpurple": 9,
+              "benchyellow": 11,
+              "benchred": 38
+            }
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "n": 411,
+            "win": false,
+            "timeout": false,
+            "seconds": 77.73,
+            "allyHp": 0,
+            "enemyHp": 1,
+            "frames": 2332,
+            "deployments": {
+              "benchblue": 22,
+              "brown": 6,
+              "benchpurple": 9,
+              "benchyellow": 11,
+              "benchred": 38
+            }
+          },
+          "after": {
+            "n": 411,
+            "win": false,
+            "timeout": false,
+            "seconds": 77.73,
+            "allyHp": 0,
+            "enemyHp": 1,
+            "frames": 2332,
+            "deployments": {
+              "benchblue": 22,
+              "brown": 6,
+              "benchpurple": 9,
+              "benchyellow": 11,
+              "benchred": 38
+            }
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "n": 429,
+            "win": false,
+            "timeout": false,
+            "seconds": 73.57,
+            "allyHp": 0,
+            "enemyHp": 1,
+            "frames": 2207,
+            "deployments": {
+              "benchblue": 21,
+              "brown": 6,
+              "benchpurple": 9,
+              "benchyellow": 11,
+              "benchred": 36
+            }
+          },
+          "after": {
+            "n": 429,
+            "win": false,
+            "timeout": false,
+            "seconds": 73.57,
+            "allyHp": 0,
+            "enemyHp": 1,
+            "frames": 2207,
+            "deployments": {
+              "benchblue": 21,
+              "brown": 6,
+              "benchpurple": 9,
+              "benchyellow": 11,
+              "benchred": 36
+            }
+          }
+        }
+      ]
+    },
+    {
+      "map": "wave",
+      "name": "티어 시험 · 파동",
+      "oldWins": 0,
+      "newWins": 0,
+      "paired": 0,
+      "secondsSaved": null,
+      "pairs": [
+        {
+          "seed": 1,
+          "before": {
+            "n": 438,
+            "win": false,
+            "timeout": true,
+            "seconds": 300,
+            "allyHp": 300000,
+            "enemyHp": 2873656,
+            "frames": 9000,
+            "deployments": {
+              "benchblue": 99,
+              "brown": 24,
+              "benchpurple": 34,
+              "benchyellow": 43,
+              "benchred": 150
+            }
+          },
+          "after": {
+            "n": 438,
+            "win": false,
+            "timeout": true,
+            "seconds": 300,
+            "allyHp": 300000,
+            "enemyHp": 2853921,
+            "frames": 9000,
+            "deployments": {
+              "benchblue": 99,
+              "brown": 24,
+              "benchpurple": 34,
+              "benchyellow": 43,
+              "benchred": 150
+            }
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "n": 456,
+            "win": false,
+            "timeout": true,
+            "seconds": 300,
+            "allyHp": 300000,
+            "enemyHp": 2873656,
+            "frames": 9000,
+            "deployments": {
+              "benchblue": 99,
+              "brown": 24,
+              "benchpurple": 34,
+              "benchyellow": 43,
+              "benchred": 150
+            }
+          },
+          "after": {
+            "n": 456,
+            "win": false,
+            "timeout": true,
+            "seconds": 300,
+            "allyHp": 300000,
+            "enemyHp": 2853921,
+            "frames": 9000,
+            "deployments": {
+              "benchblue": 99,
+              "brown": 24,
+              "benchpurple": 34,
+              "benchyellow": 43,
+              "benchred": 150
+            }
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "n": 474,
+            "win": false,
+            "timeout": true,
+            "seconds": 300,
+            "allyHp": 300000,
+            "enemyHp": 2873656,
+            "frames": 9000,
+            "deployments": {
+              "benchblue": 99,
+              "brown": 24,
+              "benchpurple": 34,
+              "benchyellow": 43,
+              "benchred": 150
+            }
+          },
+          "after": {
+            "n": 474,
+            "win": false,
+            "timeout": true,
+            "seconds": 300,
+            "allyHp": 300000,
+            "enemyHp": 2853921,
+            "frames": 9000,
+            "deployments": {
+              "benchblue": 99,
+              "brown": 24,
+              "benchpurple": 34,
+              "benchyellow": 43,
+              "benchred": 150
+            }
+          }
+        }
+      ]
+    },
+    {
+      "map": "ancient",
+      "name": "티어 시험 · 고대종",
+      "oldWins": 3,
+      "newWins": 3,
+      "paired": 3,
+      "secondsSaved": 44.56,
+      "pairs": [
+        {
+          "seed": 1,
+          "before": {
+            "n": 492,
+            "win": true,
+            "timeout": false,
+            "seconds": 198.83,
+            "allyHp": 300000,
+            "enemyHp": 0,
+            "frames": 5966,
+            "deployments": {
+              "benchblue": 62,
+              "brown": 15,
+              "benchpurple": 21,
+              "benchyellow": 27,
+              "benchred": 94
+            }
+          },
+          "after": {
+            "n": 501,
+            "win": true,
+            "timeout": false,
+            "seconds": 154.27,
+            "allyHp": 228000,
+            "enemyHp": 0,
+            "frames": 4628,
+            "deployments": {
+              "benchblue": 51,
+              "brown": 12,
+              "benchpurple": 18,
+              "benchyellow": 22,
+              "benchred": 78
+            }
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "n": 510,
+            "win": true,
+            "timeout": false,
+            "seconds": 198.83,
+            "allyHp": 300000,
+            "enemyHp": 0,
+            "frames": 5966,
+            "deployments": {
+              "benchblue": 62,
+              "brown": 15,
+              "benchpurple": 21,
+              "benchyellow": 27,
+              "benchred": 94
+            }
+          },
+          "after": {
+            "n": 519,
+            "win": true,
+            "timeout": false,
+            "seconds": 154.27,
+            "allyHp": 228000,
+            "enemyHp": 0,
+            "frames": 4628,
+            "deployments": {
+              "benchblue": 51,
+              "brown": 12,
+              "benchpurple": 18,
+              "benchyellow": 22,
+              "benchred": 78
+            }
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "n": 528,
+            "win": true,
+            "timeout": false,
+            "seconds": 198.83,
+            "allyHp": 300000,
+            "enemyHp": 0,
+            "frames": 5966,
+            "deployments": {
+              "benchblue": 62,
+              "brown": 15,
+              "benchpurple": 21,
+              "benchyellow": 27,
+              "benchred": 94
+            }
+          },
+          "after": {
+            "n": 537,
+            "win": true,
+            "timeout": false,
+            "seconds": 154.27,
+            "allyHp": 228000,
+            "enemyHp": 0,
+            "frames": 4628,
+            "deployments": {
+              "benchblue": 51,
+              "brown": 12,
+              "benchpurple": 18,
+              "benchyellow": 22,
+              "benchred": 78
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

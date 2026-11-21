@@ -1,0 +1,6 @@
+// Read source alpha bounds only. Generated image files are never rewritten.
+const fs=require('fs'),path=require('path'),zlib=require('zlib');
+const paeth=(a,b,c)=>{const p=a+b-c,pa=Math.abs(p-a),pb=Math.abs(p-b),pc=Math.abs(p-c);return pa<=pb&&pa<=pc?a:pb<=pc?b:c;};
+function decode(file){const png=fs.readFileSync(file);let at=8,w,h,color,depth,interlace,compressed=[];while(at<png.length){const n=png.readUInt32BE(at),type=png.toString('ascii',at+4,at+8),bytes=png.subarray(at+8,at+8+n);if(type==='IHDR'){w=bytes.readUInt32BE(0);h=bytes.readUInt32BE(4);depth=bytes[8];color=bytes[9];interlace=bytes[12]}if(type==='IDAT')compressed.push(bytes);at+=12+n;}if(depth!==8||color!==6||interlace)throw Error('Expected RGBA8 noninterlaced PNG: '+file+' '+[depth,color,interlace]);const src=zlib.inflateSync(Buffer.concat(compressed)),stride=w*4,out=Buffer.alloc(stride*h);let i=0;for(let y=0;y<h;y++){const filter=src[i++];for(let x=0;x<stride;x++){const p=y*stride+x,a=x>=4?out[p-4]:0,b=y?out[p-stride]:0,c=y&&x>=4?out[p-stride-4]:0,v=src[i++];out[p]=(v+(filter===0?0:filter===1?a:filter===2?b:filter===3?Math.floor((a+b)/2):filter===4?paeth(a,b,c):(()=>{throw Error('PNG filter')})()))&255;}}return{w,h,out};}
+
+module.exports={decode};
